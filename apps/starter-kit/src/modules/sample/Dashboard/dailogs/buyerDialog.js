@@ -19,7 +19,7 @@ import {
   TextField,
 } from '@mui/material';
 import { RiArrowDownSLine, RiPencilFill, RiSearchLine } from 'react-icons/ri';
-import MatchingContacts from '../common/matchingContacts';
+import MatchingContacts from '../../common/matchingContacts';
 
 const BuyerDialog = ({ open, handleClose, nextStep, step }) => {
   return (

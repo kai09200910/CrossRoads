@@ -15,7 +15,7 @@ import {
   RiAddCircleFill,
   RiErrorWarningFill,
 } from 'react-icons/ri';
-import ErrorDialog from './errorDialog';
+import ErrorDialog from './dailogs/errorDialog';
 
 const MediaTable = () => {
   const [isErrorDialogOpen, setIsErrorDialogOpen] = useState(false);
