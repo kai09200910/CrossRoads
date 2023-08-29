@@ -98,7 +98,6 @@ const AppHeader = ({
                     onClick={() => setShowNotification(true)}
                   >
                     <NotificationsNoneIcon />
-                    132456
                   </IconButton>
                 </Tooltip>
               </Box>

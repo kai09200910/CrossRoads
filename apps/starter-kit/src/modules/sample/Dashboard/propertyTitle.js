@@ -14,8 +14,8 @@ import {
   RiCheckboxCircleFill,
   RiPencilFill,
 } from 'react-icons/ri';
-import SubmittedDialogs from './submittedDialog';
-import BuyerDialog from './buyerDialog';
+import SubmittedDialogs from './dailogs/submittedDialog';
+import BuyerDialog from './dailogs/buyerDialog';
 
 const PropertyTitle = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
