@@ -1,0 +1,95 @@
+.stepper-wrap {
+  .MuiStepper-horizontal {
+    justify-content: center;
+    .MuiStep-horizontal {
+      .MuiStepLabel-horizontal {
+        flex-direction: column;
+        gap: 8px;
+        .MuiStepLabel-iconContainer {
+          color: #d9d9d9;
+          svg {
+            width: 25px;
+            height: 25px;
+            color: #d9d9d9;
+          }
+        }
+
+        .MuiStepLabel-label {
+          font-size: 13px;
+          color: #292929;
+          font-weight: 600;
+          font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+        .MuiTypography-caption {
+          display: none;
+        }
+        .MuiStepLabel-iconContainer.Mui-active {
+          color: #009a6c;
+          svg {
+            color: #009a6c;
+          }
+        }
+        .MuiStepLabel-label.Mui-active {
+          color: #009a6c;
+        }
+      }
+    }
+    .MuiStep-horizontal.Mui-completed {
+      .MuiStepLabel-iconContainer {
+        svg {
+          color: #009a6c;
+        }
+      }
+      .MuiStepLabel-label {
+        color: #009a6c;
+      }
+    }
+    .MuiStepConnector-horizontal {
+      width: 100px;
+      flex: inherit;
+      .MuiStepConnector-line {
+        height: 6px;
+        background-color: #d9d9d9;
+        border-radius: 14px;
+        border: none;
+      }
+    }
+    .MuiStepConnector-horizontal.Mui-active,
+    .MuiStepConnector-horizontal.Mui-completed {
+      .MuiStepConnector-line {
+        background-color: #009a6c;
+      }
+    }
+  }
+  .step-title {
+    margin: 30px 0 42px 0;
+    h2 {
+      margin-bottom: 8px;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+    p.title-agent-detail {
+      color: #999999;
+      margin: 0;
+      font-weight: 600;
+      span {
+        font-weight: 600;
+        display: inline-flex;
+        button {
+          font-size: 15px;
+          padding: 0;
+          margin-left: 8px;
+          color: #999999;
+        }
+      }
+    }
+  }
+  .secondary-btn.btn.add-location-btn {
+    width: 100% !important;
+    min-height: 47px;
+    border-radius: 8px !important;
+    gap: 22px;
+  }
+  .btn {
+    width: 196px !important;
+  }
+}

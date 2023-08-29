@@ -1,0 +1,459 @@
+:root {
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --bold: 600;
+  --extra-bold: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  height: 100%;
+}
+
+body {
+  line-height: 1.35 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  height: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.pointer {
+  cursor: pointer;
+}
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: #292929;
+}
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #717171;
+    outline: 1px solid #717171;
+    border-radius: 26px;
+  }
+}
+label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  span.optional-label {
+    font-size: 11px;
+    color: #999;
+    font-weight: 600;
+  }
+}
+label.empty-label {
+  height: 17.5px;
+  display: flex;
+}
+.MuiInputBase-input.MuiOutlinedInput-input {
+  padding: 13.5px 14px;
+}
+.MuiInputBase-root.MuiOutlinedInput-root {
+  &:hover {
+    fieldset.MuiOutlinedInput-notchedOutline {
+      border-color: #909090;
+    }
+  }
+  &:focus {
+    fieldset.MuiOutlinedInput-notchedOutline {
+      border-color: #2871ff;
+    }
+  }
+}
+fieldset.MuiOutlinedInput-notchedOutline {
+  border-color: #e1e1e1;
+}
+textarea {
+  padding: 0 !important;
+}
+.color-blue {
+  color: #2871ff;
+}
+.btn {
+  border-radius: 4px !important;
+  text-transform: capitalize !important;
+  box-shadow: none !important;
+  padding: 8px 16px !important;
+  min-height: 50px;
+  width: 124px !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+.btn.Mui-disabled {
+  opacity: 0.2;
+}
+.primary-btn {
+  background-color: #2871ff !important;
+  color: #fff !important;
+  &:hover {
+    background-color: #4381fd !important;
+  }
+}
+
+.primary-btn-small {
+  border-radius: 6px;
+  background-color: #2871ff !important;
+  color: #fff !important;
+  box-shadow: none;
+  text-transform: capitalize !important;
+  &:hover {
+    box-shadow: none;
+    background-color: #4381fd !important;
+  }
+}
+.secondary-btn {
+  background-color: #dfe8fa !important;
+  color: #2871ff !important;
+  &:hover {
+    background-color: #c7d9fc !important;
+  }
+}
+.outline-btn {
+  border-color: #292929 !important;
+  color: #292929 !important;
+  border-width: 1.5px !important;
+  cursor: pointer !important;
+  &:hover {
+    border-color: #202020 !important;
+    background-color: #fafafa !important;
+  }
+}
+.outline-primary {
+  border-color: #2871ff !important;
+  color: #2871ff !important;
+  &:hover {
+    border-color: #2871ff !important;
+    background-color: #fafafa !important;
+  }
+}
+.outline-success {
+  border-color: #009a6c !important;
+  color: #009a6c !important;
+  background-color: #f3fffb !important;
+  &:hover {
+    border-color: #009a6c !important;
+    background-color: rgb(233, 233, 233) !important;
+  }
+}
+.link-btn {
+  padding: 0;
+  font-weight: 400;
+  &:hover {
+    background-color: transparent;
+  }
+}
+.icon-btn {
+  width: 100%;
+  height: 47px;
+  border-radius: 5px;
+  span {
+    margin: 0;
+  }
+}
+a {
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+h2 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 30.24px !important;
+  @media (max-width: 992px) {
+  }
+  @media (max-width: 767px) {
+  }
+  @media (max-width: 480px) {
+  }
+}
+h3 {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 25.2px !important;
+  @media (max-width: 480px) {
+  }
+}
+h4 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 20.16px !important;
+}
+
+// Add Document Button Styles //
+
+.add-doc-btn-grp {
+  .add-doc-btn {
+    background-color: #f0f0f0 !important;
+    color: #292929 !important;
+    border: 3px solid transparent;
+    height: 60px;
+    min-width: 190px;
+    border-radius: 8px !important;
+    font-weight: 700;
+    svg {
+      color: #2871ff !important;
+    }
+    &:hover {
+      background-color: #dfdfdf !important;
+    }
+  }
+  .add-doc-btn.doc-added {
+    background-color: #f3fffb !important;
+    color: #009a6c !important;
+    border-color: #009a6c;
+    svg {
+      color: #009a6c !important;
+    }
+  }
+  .add-doc-btn.other-doc {
+    min-width: 125px !important;
+  }
+  .add-doc-btn.error {
+    background-color: #fff3f3 !important;
+    color: #d60000 !important;
+    border-color: #ff1414;
+    svg {
+      color: #d60000 !important;
+    }
+  }
+  .add-doc-btn.upload-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0 !important;
+    color: #292929 !important;
+    border: 3px solid transparent;
+    height: 60px;
+    min-width: 190px;
+    border-radius: 8px !important;
+    font-weight: 700;
+    svg {
+      color: #2871ff !important;
+    }
+    &:hover {
+      background-color: #dfdfdf !important;
+    }
+    .upload {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      cursor: pointer !important;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      width: 100%;
+      height: 100%;
+    }
+
+    input[type='file'] {
+      height: 55px;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+  }
+  .add-doc-btn.doc-added.upload-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #f3fffb !important;
+    color: #009a6c !important;
+    border-color: #009a6c;
+    svg {
+      color: #009a6c !important;
+    }
+  }
+}
+
+// Add Document Button Styles END //
+
+// Modal Dailog Styles //
+
+.modal-dailog-wrapper {
+  .MuiPaper-root {
+    min-width: 670px;
+    border-radius: 10px;
+    .modal-dailog-title {
+      padding: 40px 24px 0px 24px;
+    }
+    .modal-dailog-content {
+      padding: 40px 24px 20px 24px;
+      .error-value {
+        span {
+          display: flex;
+          color: #828282;
+          font-weight: 600;
+          margin-bottom: 14px;
+        }
+        p {
+          font-size: 17px;
+          font-weight: 500;
+        }
+        p.error-detail-list {
+          position: relative;
+          padding-left: 12px;
+          &::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 60%;
+            background-color: #292929;
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 8px;
+          }
+        }
+      }
+    }
+    .modal-dailog-footer {
+      padding: 8px 24px 48px 24px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+// Modal Dailog Styles END //
+
+// Matching Contact Details Styles //
+.matching-contact-detail {
+  border-radius: 10px;
+  border: 1px solid #e1e1e1;
+  thead {
+    tr {
+      th {
+        padding: 8px 16px !important;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        background-color: #f4f8ff;
+        padding: 12px 16px !important;
+      }
+    }
+  }
+}
+// Matching Contact Details Styles END //
+
+// IOS Custom Switch Styles //
+.ios-switch-custom {
+  padding: 0;
+  box-sizing: border-box;
+  margin-left: 12px;
+  width: 64px;
+  height: 40px;
+  .MuiSwitch-switchBase {
+    top: -4px;
+    left: -4px;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .MuiSwitch-switchBase.Mui-checked {
+    left: -2px;
+    top: -5px;
+    .MuiSwitch-track {
+      background-color: #2871ff;
+      opacity: 1;
+    }
+    .MuiSwitch-thumb {
+      background-color: #fff;
+    }
+  }
+  .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+    opacity: 1;
+    background-color: #2871ff;
+  }
+  .MuiSwitch-track {
+    width: 64px;
+    height: 40px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d9d9d9;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .MuiSwitch-thumb {
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    background-color: #999999;
+    box-shadow: none;
+  }
+}
+// IOS Custom Switch Styles END//
+.app-content {
+  padding-top: 0;
+}
+header {
+  .searchRoot {
+    input {
+      background-color: #dbdbdb !important;
+      width: 400px !important;
+    }
+  }
+}

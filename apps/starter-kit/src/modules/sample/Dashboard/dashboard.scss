@@ -1,0 +1,307 @@
+// Listing Doc Styles //
+.listing-doc-wrapper {
+  .title-wrap {
+    p.progress-area {
+      font-size: 16px;
+      color: #292929;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      span {
+        color: #2871ff;
+        margin-right: 2px;
+        font-weight: 600;
+      }
+      span.MuiCircularProgress-root {
+        background-color: transparent;
+        position: relative;
+        width: 25px !important;
+        height: 25px !important;
+        margin-right: 4px;
+        &::before {
+          content: '';
+          width: 25px !important;
+          height: 25px !important;
+          border: 2px solid #e9e9e9;
+          border-radius: 50%;
+          position: absolute;
+          top: 1px;
+          right: 0px;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+// Listing Doc Styles END //
+
+// Property Title Styles //
+.property-title-wrap {
+  .property-img {
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+  .title-wrap {
+    .MuiChip-filled {
+      font-size: 10px;
+      height: 20px;
+      color: #fff;
+    }
+    .MuiChip-filled.green {
+      background-color: #009a6c;
+    }
+    .MuiChip-filled.orange {
+      background-color: #fd9800;
+    }
+    .MuiChip-filled.blue {
+      background-color: #1fbbec;
+    }
+  }
+  .property-info {
+    .info-wrap {
+      position: relative;
+      border-right: 1px solid #e3e3e3;
+      padding-right: 28px;
+      &:last-child {
+        border: none;
+        padding-right: 0px;
+      }
+      p {
+        font-weight: 600;
+      }
+      span {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999;
+      }
+    }
+  }
+  .other-info {
+    .address {
+      p {
+        font-weight: 400;
+      }
+      .mls-info {
+        p {
+          font-weight: 700;
+          font-size: 14px;
+          border-right: 1px solid #e3e3e3;
+          padding-right: 10px;
+          &:last-child {
+            border: none;
+            padding-right: 0px;
+          }
+        }
+        svg {
+          margin-right: 4px;
+          color: #00ff0a;
+        }
+        a {
+          padding: 0;
+          text-decoration: underline;
+          color: #292929;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .status-bar {
+      .status {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        svg {
+          color: #d9d9d9;
+        }
+        span {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 14px;
+          max-width: 75px;
+          min-width: 75px;
+        }
+        &::before {
+          content: '';
+          background-color: #d9d9d9;
+          border-radius: 12px;
+          height: 6px;
+          width: 36px;
+          position: absolute;
+          right: -22px;
+          top: 8px;
+        }
+        &:last-child {
+          &::before {
+            display: none;
+          }
+        }
+      }
+      .status.success {
+        svg {
+          color: #009a6c;
+        }
+        span {
+          color: #009a6c;
+        }
+        &::before {
+          background-color: #009a6c;
+        }
+      }
+      .status.fail {
+        svg {
+          color: #d60000;
+        }
+        span {
+          color: #d60000;
+        }
+        // &::before {
+        //   background-color: #009a6c;
+        // }
+      }
+    }
+  }
+  .btn {
+    height: 40px !important;
+    min-height: 40px !important;
+    width: 124px !important;
+  }
+}
+// Property Title Styles END//
+
+// Property Detail Styles//
+.property-detail-wrap {
+  .MuiTabs-fixed {
+    button.MuiButtonBase-root.MuiTab-root {
+      text-transform: capitalize;
+      font-weight: 700;
+      border-bottom: 4px solid transparent;
+      position: relative;
+      min-width: 124px;
+      &::after {
+        content: '';
+        width: 2px;
+        height: 30px;
+        background-color: #ebebeb;
+        position: absolute;
+        right: -1px;
+      }
+      &:hover {
+        background-color: rgba(40, 113, 255, 0.15);
+      }
+    }
+    button.Mui-selected {
+      background-color: rgba(40, 113, 255, 0.15);
+      border-color: #2871ff;
+    }
+  }
+  ul.property-feature {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    li {
+      gap: 6px;
+      .MuiListItemIcon-root {
+        min-width: 22px;
+        svg {
+          color: #2871ff;
+        }
+      }
+      .MuiListItemText-root {
+        span {
+          font-weight: 400;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .link-btn {
+    font-weight: 12px;
+    color: #999999;
+  }
+  .edit-btn {
+    margin-right: 16px;
+  }
+  .marketing-tab-content-wrapper {
+    button {
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-direction: column;
+      background-color: #dfeaff !important;
+      color: #2871ff !important;
+      width: 100% !important;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 10px !important;
+      transition: all ease 0.3s;
+      svg {
+        color: #2871ff;
+      }
+      &:hover {
+        background-color: #d8e5ff !important;
+      }
+    }
+  }
+}
+// Property Detail Styles END//
+
+.edit-btn {
+  background-color: #dfe8fa;
+  border: none !important;
+  border-radius: 6px;
+  width: 72px;
+  &:hover {
+    border: none;
+    background-color: #eff4ff !important;
+  }
+}
+
+// Campaign Engagements Styles //
+.campaign-engagement-wrapper {
+  .section-title {
+    .section-sub-title {
+      font-weight: 600;
+      margin-top: 4px;
+      span {
+        margin-left: 4px;
+        font-weight: 600;
+      }
+    }
+  }
+  .primary-btn {
+    width: 100% !important;
+  }
+}
+// Campaign Engagements Styles END//
+
+.modal-dailog-wrapper.add-buyer-modal {
+  .MuiPaper-root {
+    .modal-dailog-footer {
+      justify-content: flex-end;
+    }
+    p.title-agent-detail {
+      color: #999999;
+      margin: 0;
+      font-weight: 600;
+      span {
+        font-weight: 600;
+        display: inline-flex;
+        button {
+          font-size: 15px;
+          padding: 0;
+          margin-left: 8px;
+          color: #999999;
+        }
+      }
+    }
+  }
+}
