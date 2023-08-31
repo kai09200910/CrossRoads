@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Paper, Button } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -38,6 +38,15 @@ const History = () => {
           padding: { xs: 5, xl: 4 },
         }}
       >
+        <Typography
+          variant='h4'
+          component='h4'
+          sx={{
+            paddingBottom: { xs: 3, xl: 3 },
+          }}
+        >
+          Listing History
+        </Typography>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label='simple table'>
             <TableHead>
@@ -59,8 +68,8 @@ const History = () => {
                   <TableCell component='th' scope='row'>
                     {row.activity}
                   </TableCell>
-                  <TableCell align='right'>{row.date}</TableCell>
-                  <TableCell align='right'>{row.by}</TableCell>
+                  <TableCell align='left'>{row.date}</TableCell>
+                  <TableCell align='left'>{row.by}</TableCell>
                   <TableCell align='right'>
                     {' '}
                     <Button

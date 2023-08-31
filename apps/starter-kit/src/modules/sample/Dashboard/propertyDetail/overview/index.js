@@ -4,12 +4,15 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-
-import { MdHomeFilled } from 'react-icons/md';
-import { IoIosBed, IoIosSnow } from 'react-icons/io';
-import { FaCalendarAlt, FaMapMarkedAlt } from 'react-icons/fa';
-import { GiTowerBridge } from 'react-icons/gi';
 import { RiArrowDownSLine } from 'react-icons/ri';
+
+import SingleFamilyIcon from '../../../../../assets/icon/property-overview/single-family.svg';
+import BedroomIcon from '../../../../../assets/icon/property-overview/Bedroom.svg';
+import BathroomIcon from '../../../../../assets/icon/property-overview/bathroom.svg';
+import BuiltYearIcon from '../../../../../assets/icon/property-overview/built-year.svg';
+import AreaIcon from '../../../../../assets/icon/property-overview/area.svg';
+import AirconditionIcon from '../../../../../assets/icon/property-overview/aircondition.svg';
+import StoriesIcon from '../../../../../assets/icon/property-overview/storie.svg';
 
 const Overview = () => {
   return (
@@ -81,14 +84,16 @@ const Overview = () => {
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                <MdHomeFilled size={22} />{' '}
+                {/* <MdHomeFilled size={22} /> */}
+                <img src={SingleFamilyIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='Single Family Residence ' />
             </ListItem>
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                <IoIosBed size={22} />{' '}
+                {/* <IoIosBed size={22} />{' '} */}
+                <img src={BedroomIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='10 Bedrooms ' />
             </ListItem>
@@ -96,35 +101,40 @@ const Overview = () => {
               <ListItemIcon>
                 {' '}
                 {/* <BiSolidShower size={22} />{' '} */}
-                <IoIosBed size={22} />{' '}
+                {/* <IoIosBed size={22} />{' '} */}
+                <img src={BathroomIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='12 Bathrooms / 2 Partial' />
             </ListItem>
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                <FaCalendarAlt size={22} />{' '}
+                {/* <FaCalendarAlt size={22} />{' '} */}
+                <img src={BuiltYearIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='Built in 2001' />
             </ListItem>
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                <FaMapMarkedAlt size={22} />{' '}
+                {/* <FaMapMarkedAlt size={22} />{' '} */}
+                <img src={AreaIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='1.35 acres / 5,000 Sq. Ft.  ' />
             </ListItem>
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                <IoIosSnow size={22} />{' '}
+                {/* <IoIosSnow size={22} />{' '} */}
+                <img src={AirconditionIcon} alt='Icon' />
               </ListItemIcon>
-              <ListItemText primary='Family Home' />
+              <ListItemText primary='Central' />
             </ListItem>
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                <GiTowerBridge size={22} />{' '}
+                {/* <GiTowerBridge size={22} />{' '} */}
+                <img src={StoriesIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='2 Stories' />
             </ListItem>
