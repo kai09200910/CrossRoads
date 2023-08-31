@@ -31,6 +31,14 @@ const routesConfig = [
         icon: <BiAlignLeft />,
         url: '/add-new-listing',
       },
+      {
+        id: 'campaigns',
+        title: 'Add new campaigns',
+        messageId: 'sidebar.sample.campaigns',
+        type: 'item',
+        icon: <BiAlignLeft />,
+        url: '/campaigns',
+      },
     ],
   },
 ];

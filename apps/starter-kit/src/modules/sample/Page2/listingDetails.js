@@ -2,11 +2,9 @@ import {
   Box,
   Button,
   Checkbox,
-  FormControlLabel,
   Grid,
   IconButton,
   MenuItem,
-  Paper,
   Select,
   Stack,
   TextField,
@@ -23,8 +21,6 @@ import {
 import { FcGoogle } from 'react-icons/fc';
 import MatchingContacts from '../common/matchingContacts';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 function createData(name, match, email) {
