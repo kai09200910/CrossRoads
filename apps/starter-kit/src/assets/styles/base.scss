@@ -139,6 +139,8 @@ textarea {
 .primary-btn {
   background-color: #2871ff !important;
   color: #fff !important;
+  text-transform: capitalize !important;
+  box-shadow: none !important;
   &:hover {
     background-color: #4381fd !important;
   }
@@ -208,6 +210,26 @@ a {
   &:hover {
     background-color: transparent !important;
   }
+}
+
+.secondary-btn-small {
+  background-color: #dfe8fa;
+  border: none !important;
+  border-radius: 6px;
+  min-width: 72px;
+  &:hover {
+    border: none;
+    background-color: #eff4ff !important;
+  }
+}
+.small-btn {
+  width: 70px;
+  height: 30px;
+  border-radius: 3px;
+}
+.outline-btn.small {
+}
+.primary-btn.small {
 }
 h2 {
   font-size: 24px !important;
@@ -445,7 +467,7 @@ h4 {
     box-shadow: none;
   }
 }
-// IOS Custom Switch Styles END//
+// IOS Custom Switch Styles END //
 .app-content {
   padding-top: 0;
 }
@@ -457,3 +479,33 @@ header {
     }
   }
 }
+
+// Dropzone Styles //
+.custome-dropzone {
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  .dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 290px;
+    background-color: #f0f0f0;
+    margin: 0;
+    border-radius: 0;
+    svg {
+      color: #c2c2c2;
+    }
+    p {
+      font-weight: 600;
+      color: #c2c2c2;
+    }
+  }
+}
+// Dropzone Styles END //

@@ -243,7 +243,7 @@ const PropertyTitle = () => {
                     variant='outlined'
                     size='small'
                     startIcon={<RiPencilFill />}
-                    className='edit-btn'
+                    className='edit-btn secondary-btn-small'
                   >
                     Edit
                   </Button>

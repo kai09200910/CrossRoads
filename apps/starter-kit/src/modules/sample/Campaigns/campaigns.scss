@@ -1,0 +1,106 @@
+// Campaigns Listing Styles //
+.campaign-list-wrap {
+  .campaign-list {
+    transition: all ease 0.3s;
+    .campaign-list-card {
+      transition: all ease 0.3s;
+      .intro {
+        h4 {
+          font-size: 14px !important;
+          font-weight: 600 !important;
+        }
+      }
+      .detail {
+        p {
+          font-weight: 600;
+        }
+        span {
+          font-size: 12px;
+          font-weight: 400;
+          color: #999999;
+        }
+      }
+      span {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+        margin: 0;
+      }
+      .MuiChip-filled {
+        background-color: #009a6c;
+        color: #fff;
+        border-radius: 4px;
+        width: 80px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-size: 10px;
+          color: #fff;
+          margin: 0;
+        }
+      }
+    }
+    .campaign-list-card.expand-data {
+      .campaign-info-card {
+        .info-card {
+          border-color: #d9d9d9;
+          border-radius: 5px;
+          background-color: #f4f4f4;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          text-align: center;
+          gap: 8px;
+          height: 120px;
+          box-shadow: none;
+          p {
+            font-size: 26px;
+            color: #2871ff;
+            font-weight: 700;
+            margin-bottom: 4px;
+          }
+          span {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999999;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+// Campaigns Listing Styles END //
+
+.email-campaign-list-wrapper {
+  .email-card {
+    background-color: #eee;
+    // padding: 16px 20px;
+    padding-bottom: 20px;
+    border-radius: 6px;
+    image {
+    }
+    .email-campaign-name {
+      p {
+        font-weight: 600;
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #383838;
+      }
+      span {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+        margin: 0;
+      }
+    }
+  }
+}
+.email-preview-area {
+  button {
+    width: 100% !important;
+  }
+}
