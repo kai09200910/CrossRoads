@@ -70,7 +70,7 @@ const Inquiries = ({ handleBack }) => {
                     <Button
                       variant='outlined'
                       size='small'
-                      className='edit-btn'
+                      className='edit-btn secondary-btn-small'
                       onClick={() => setIsSubmitted(true)}
                     >
                       View

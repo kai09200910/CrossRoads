@@ -70,7 +70,7 @@ const Events = ({ handleBack }) => {
                     <Button
                       variant='outlined'
                       size='small'
-                      className='edit-btn'
+                      className='edit-btn secondary-btn-small'
                     >
                       View
                     </Button>{' '}

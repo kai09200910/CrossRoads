@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import { TiFolderOpen } from 'react-icons/ti';
 import { useThemeContext } from '@crema/context/ThemeContextProvider';
+import { RiAddCircleFill } from 'react-icons/ri';
 
 const UploadModern = ({ customContent, uploadText, dropzone }) => {
   const { theme } = useThemeContext();
@@ -34,11 +35,10 @@ const UploadModern = ({ customContent, uploadText, dropzone }) => {
           customContent
         ) : (
           <>
-            <TiFolderOpen
+            <RiAddCircleFill
+              size={72}
               style={{
-                fontSize: 40,
-                marginBottom: 4,
-                color: theme.palette.primary.main,
+                marginBottom: 5,
               }}
             />
             <p>{uploadText}</p>

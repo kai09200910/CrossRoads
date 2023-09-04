@@ -67,17 +67,6 @@ const MatchingBuyers = ({ handleBack }) => {
                   </TableCell>
                   <TableCell align='left'>{row.match}</TableCell>
                   <TableCell align='left'>{row.contact}</TableCell>
-                  {/* <TableCell align='right'>
-                    {' '}
-                    <Button
-                      variant='outlined'
-                      size='small'
-                      className='edit-btn'
-                      onClick={() => setIsSubmitted(true)}
-                    >
-                      View
-                    </Button>{' '}
-                  </TableCell> */}
                 </TableRow>
               ))}
             </TableBody>

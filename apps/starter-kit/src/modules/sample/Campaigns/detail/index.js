@@ -15,7 +15,11 @@ const CreateCampaign = () => {
         >
           Listing Campaigns
         </Typography>
-        <Button variant='outlined' size='small' className='edit-btn'>
+        <Button
+          variant='outlined'
+          size='small'
+          className='edit-btn secondary-btn-small'
+        >
           +New campaign
         </Button>
       </Stack>
