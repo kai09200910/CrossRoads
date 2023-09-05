@@ -103,4 +103,31 @@
   button {
     width: 100% !important;
   }
+  img {
+    width: 100%;
+  }
+}
+.photo-selection-preview-area {
+  text-align: center;
+}
+.photoselection-list {
+  .photo-list {
+    background-color: #eeeeee;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px;
+    height: 400px;
+    overflow-y: auto;
+    .img-wrap {
+      width: 31.33%;
+      display: flex;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  button {
+    width: 100% !important;
+  }
 }

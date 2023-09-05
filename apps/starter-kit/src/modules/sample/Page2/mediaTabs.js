@@ -18,7 +18,7 @@ const MediaTabs = () => {
           <StyledTab value={4}>Brohures </StyledTab>
           {/* <StyledTab value={5}>Language</StyledTab> */}
         </StyledTabsList>
-        <StyledTabPanel value={0}>Photos</StyledTabPanel>
+        <StyledTabPanel value={0}>Photos 123</StyledTabPanel>
         <StyledTabPanel value={1}>Videos</StyledTabPanel>
         <StyledTabPanel value={2}>3D Tours</StyledTabPanel>
         <StyledTabPanel value={3}>Websites</StyledTabPanel>

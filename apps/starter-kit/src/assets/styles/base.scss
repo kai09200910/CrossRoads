@@ -101,6 +101,8 @@ label.empty-label {
 }
 .MuiInputBase-input.MuiOutlinedInput-input {
   padding: 13.5px 14px;
+  background-color: #fff;
+  border-radius: 8px;
 }
 .MuiInputBase-root.MuiOutlinedInput-root {
   &:hover {
@@ -227,10 +229,7 @@ a {
   height: 30px;
   border-radius: 3px;
 }
-.outline-btn.small {
-}
-.primary-btn.small {
-}
+
 h2 {
   font-size: 24px !important;
   font-weight: 700 !important;
@@ -482,7 +481,7 @@ header {
 
 // Dropzone Styles //
 .custome-dropzone {
-  height: 330px;
+  // height: 330px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -507,5 +506,33 @@ header {
       color: #c2c2c2;
     }
   }
+  .upload-doc-info {
+    width: 100%;
+    margin-top: 8px;
+    button {
+      width: initial !important;
+    }
+  }
 }
 // Dropzone Styles END //
+
+// Breadcrumbs Styles //
+.breadcrumb-wrap {
+  ol {
+    li {
+      a {
+        font-size: 16px;
+        font-weight: 600;
+        color: #999999;
+        text-decoration: none;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 600;
+        color: #292929;
+      }
+    }
+  }
+}
+
+// Breadcrumbs Styles END //
