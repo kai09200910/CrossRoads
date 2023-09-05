@@ -1,0 +1,136 @@
+.listing-fillter {
+  .fillter-switch.ios-switch-custom {
+    padding: 0;
+    box-sizing: border-box;
+    margin-left: 12px;
+    width: 182px;
+    height: 48px;
+    .MuiSwitch-switchBase {
+      top: -4px;
+      left: -4px;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    .MuiSwitch-switchBase.Mui-checked {
+      right: -8px;
+      .MuiSwitch-track {
+        background-color: #2871ff;
+        opacity: 1;
+      }
+      .MuiSwitch-thumb {
+        background-color: #2871ff;
+        color: #fff;
+        &::before {
+          content: 'Oldest';
+          position: absolute;
+          display: inline-block;
+          top: 11px;
+          left: 13px;
+        }
+      }
+    }
+    .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+      opacity: 1;
+    }
+    .MuiSwitch-track {
+      width: 154px;
+      height: 48px;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+      border: 1px solid #d9d9d9;
+      border-radius: 25px;
+      background-color: #fff;
+      box-shadow: none;
+      opacity: 1;
+      &::before {
+        content: 'Newest';
+        position: absolute;
+        display: inline-block;
+        top: 16px;
+        left: 16px;
+        color: #292929;
+      }
+      &::after {
+        content: 'Oldest';
+        position: absolute;
+        display: inline-block;
+        top: 16px;
+        right: 45px;
+        color: #292929;
+      }
+    }
+    .MuiSwitch-thumb {
+      box-sizing: border-box;
+      width: 73px;
+      height: 40px;
+      border-radius: 25px;
+      background-color: #2871ff;
+      box-shadow: none;
+      position: relative;
+      &::before {
+        content: 'Newest';
+        position: absolute;
+        display: inline-block;
+        top: 11px;
+        left: 11px;
+      }
+    }
+  }
+}
+.property-card-wrap {
+  border-radius: 12px;
+  .property-card {
+    h4 {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .property-info {
+      margin-bottom: 0px;
+      .info-wrap {
+        position: relative;
+        border-right: 1px solid #e3e3e3;
+        padding-right: 16px;
+        &:last-child {
+          border: none;
+          padding-right: 0px;
+        }
+        p {
+          font-weight: 600;
+        }
+        span {
+          font-size: 12px;
+          font-weight: 400;
+          color: #999;
+        }
+      }
+    }
+    .address {
+      p {
+        font-weight: 400;
+        margin-bottom: 16px;
+      }
+      .mls-info {
+        p {
+          font-weight: 700;
+          font-size: 14px;
+          border-right: 1px solid #e3e3e3;
+          padding-right: 10px;
+          &:last-child {
+            border: none;
+            padding-right: 0px;
+          }
+        }
+        svg {
+          margin-right: 4px;
+          color: #00ff0a;
+        }
+        a {
+          padding: 0;
+          text-decoration: underline;
+          color: #292929;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

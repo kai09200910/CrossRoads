@@ -422,7 +422,6 @@ const Campaigns = () => {
           </Stack>
         ) : null}
         <ViewemailcampaignDialog open={isSubmitted} handleClose={handleClose} />
-        ;
       </>
     );
   };

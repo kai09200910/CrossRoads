@@ -5,12 +5,19 @@ import UploadModern from '../../../../../../../libs/modules/src/lib/thirdParty/r
 import { useDropzone } from 'react-dropzone';
 import AppList from '@crema/components/AppList';
 import FileRow from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow/index';
+import ReviewPhotos from './reviewPhotos';
+import EmailSelection from './emailSelection';
+import DragPhotos from './dragPhotos';
+import { PhotoSizeSelectLargeSharp } from '@mui/icons-material';
+import PreviewPhoto from './PreviewPhoto';
+import NewComp from './photoSelection';
 
 const CreateCampaign = () => {
   // const StyledDropzone = () => {
   const dropzone = useDropzone();
   const [uploadedFiles, setUploadedFiles] = useState([]);
-
+  const [isPhotoSelection, setIsPhotoSelection] = useState(false);
+  const [photoStep, setPhotoStep] = useState('drag');
   useEffect(() => {
     setUploadedFiles(dropzone.acceptedFiles);
   }, [dropzone.acceptedFiles]);
@@ -20,6 +27,27 @@ const CreateCampaign = () => {
     setUploadedFiles([...dropzone.acceptedFiles]);
   };
 
+  const renderListComponent = (label) => {
+    switch (label) {
+      case 'review':
+        return <NewComp />;
+      default:
+        return <EmailSelection setPhotoStep={setPhotoStep} />;
+      // return <PhotoSelection />;
+    }
+  };
+  const renderPhotoComponent = (label) => {
+    switch (label) {
+      case 'review':
+        return <ReviewPhotos />;
+
+      case 'preview':
+        return <PreviewPhoto setPhotoStep={setPhotoStep} />;
+
+      default:
+        return <DragPhotos />;
+    }
+  };
   return (
     <>
       <Stack direction='row' justifyContent='space-between' alignItems='center'>
@@ -42,310 +70,10 @@ const CreateCampaign = () => {
       </Stack>
       <Grid container spacing={5} mt={5}>
         <Grid item xs={12} md={8}>
-          <Paper>
-            <Box
-              sx={{
-                padding: { xs: 5, xl: 5 },
-              }}
-              className=''
-            >
-              <Typography variant='h4' component='h4'>
-                Email Selection
-              </Typography>
-              <Box
-                variant='div'
-                component='div'
-                className='email-campaign-list-wrapper'
-              >
-                <Grid
-                  container
-                  spacing={8}
-                  sx={{
-                    padding: { xs: 4, xl: 4 },
-                  }}
-                  mt={0}
-                >
-                  <Grid item xs={12} md={6}>
-                    <Grid container spacing={3} className='email-card'>
-                      <Grid item xs={12} md={6}>
-                        <img
-                          src='../../../../assets/images/Email-thumbnail.png'
-                          alt='template-thumbnail '
-                        />
-                      </Grid>
-                      <Grid item xs={12} md={6}>
-                        <Stack
-                          direction='column'
-                          justifyContent='space-between'
-                          alignItems='flex-start'
-                          spacing={2}
-                          sx={{ height: '100%' }}
-                        >
-                          <Box
-                            variant='div'
-                            component='div'
-                            className='email-campaign-name'
-                          >
-                            <Typography variant='p' component='p'>
-                              New Listing (2 images)
-                            </Typography>
-                            <Typography variant='body1' component='span'>
-                              1 cover, 1 thumb images
-                            </Typography>
-                          </Box>
-                          <Stack
-                            direction='row'
-                            justifyContent='flex-end'
-                            alignItems='center'
-                            spacing={2}
-                          >
-                            <Button
-                              variant='outlined'
-                              size='small'
-                              // onClick={handleClose}
-                              className='outline-btn small-btn'
-                            >
-                              Preview
-                            </Button>
-                            <Button
-                              variant='contained'
-                              size='small'
-                              autoFocus
-                              // onClick={handleClose}
-                              className='primary-btn small-btn'
-                            >
-                              Select
-                            </Button>
-                          </Stack>
-                        </Stack>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <Grid container spacing={3} className='email-card'>
-                      <Grid item xs={12} md={6}>
-                        <img
-                          src='../../../../assets/images/Email-thumbnail.png'
-                          alt='template-thumbnail '
-                        />
-                      </Grid>
-                      <Grid item xs={12} md={6}>
-                        <Stack
-                          direction='column'
-                          justifyContent='space-between'
-                          alignItems='flex-start'
-                          spacing={2}
-                          sx={{ height: '100%' }}
-                        >
-                          <Box
-                            variant='div'
-                            component='div'
-                            className='email-campaign-name'
-                          >
-                            <Typography variant='p' component='p'>
-                              New Listing (1 images)
-                            </Typography>
-                            <Typography variant='body1' component='span'>
-                              1 cover, 1 thumb images
-                            </Typography>
-                          </Box>
-                          <Stack
-                            direction='row'
-                            justifyContent='flex-end'
-                            alignItems='center'
-                            spacing={2}
-                          >
-                            <Button
-                              variant='outlined'
-                              size='small'
-                              // onClick={handleClose}
-                              className='outline-btn small-btn'
-                            >
-                              Preview
-                            </Button>
-                            <Button
-                              variant='contained'
-                              size='small'
-                              autoFocus
-                              // onClick={handleClose}
-                              className='primary-btn small-btn'
-                            >
-                              Select
-                            </Button>
-                          </Stack>
-                        </Stack>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <Grid container spacing={3} className='email-card'>
-                      <Grid item xs={12} md={6}>
-                        <img
-                          src='../../../../assets/images/Email-thumbnail.png'
-                          alt='template-thumbnail '
-                        />
-                      </Grid>
-                      <Grid item xs={12} md={6}>
-                        <Stack
-                          direction='column'
-                          justifyContent='space-between'
-                          alignItems='flex-start'
-                          spacing={2}
-                          sx={{ height: '100%' }}
-                        >
-                          <Box
-                            variant='div'
-                            component='div'
-                            className='email-campaign-name'
-                          >
-                            <Typography variant='p' component='p'>
-                              New Listing (2 images)
-                            </Typography>
-                            <Typography variant='body1' component='span'>
-                              1 cover, 1 thumb images
-                            </Typography>
-                          </Box>
-                          <Stack
-                            direction='row'
-                            justifyContent='flex-end'
-                            alignItems='center'
-                            spacing={2}
-                          >
-                            <Button
-                              variant='outlined'
-                              size='small'
-                              // onClick={handleClose}
-                              className='outline-btn small-btn'
-                            >
-                              Preview
-                            </Button>
-                            <Button
-                              variant='contained'
-                              size='small'
-                              autoFocus
-                              // onClick={handleClose}
-                              className='primary-btn small-btn'
-                            >
-                              Select
-                            </Button>
-                          </Stack>
-                        </Stack>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <Grid container spacing={3} className='email-card'>
-                      <Grid item xs={12} md={6}>
-                        <img
-                          src='../../../../assets/images/Email-thumbnail.png'
-                          alt='template-thumbnail '
-                        />
-                      </Grid>
-                      <Grid item xs={12} md={6}>
-                        <Stack
-                          direction='column'
-                          justifyContent='space-between'
-                          alignItems='flex-start'
-                          spacing={2}
-                          sx={{ height: '100%' }}
-                        >
-                          <Box
-                            variant='div'
-                            component='div'
-                            className='email-campaign-name'
-                          >
-                            <Typography variant='p' component='p'>
-                              New Listing (2 images)
-                            </Typography>
-                            <Typography variant='body1' component='span'>
-                              1 cover, 1 thumb images
-                            </Typography>
-                          </Box>
-                          <Stack
-                            direction='row'
-                            justifyContent='flex-end'
-                            alignItems='center'
-                            spacing={2}
-                          >
-                            <Button
-                              variant='outlined'
-                              size='small'
-                              // onClick={handleClose}
-                              className='outline-btn small-btn'
-                            >
-                              Preview
-                            </Button>
-                            <Button
-                              variant='contained'
-                              size='small'
-                              autoFocus
-                              // onClick={handleClose}
-                              className='primary-btn small-btn'
-                            >
-                              Select
-                            </Button>
-                          </Stack>
-                        </Stack>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Box>
-            </Box>
-          </Paper>
+          <Paper>{renderListComponent(photoStep)}</Paper>
         </Grid>
         <Grid item xs={12} md={4}>
-          <Paper>
-            <Box
-              sx={{
-                padding: { xs: 5, xl: 5 },
-              }}
-            >
-              <Typography
-                variant='h3'
-                component='h3'
-                sx={{
-                  paddingBottom: { xs: 4, xl: 4 },
-                }}
-              >
-                Preview
-              </Typography>
-              <Box className='email-preview-area'>
-                <Box sx={{ position: 'relative' }} className='custome-dropzone'>
-                  <UploadModern
-                    uploadText='Drag and drop photos or click to upload '
-                    dropzone={dropzone}
-                  />
-                  <aside>
-                    <AppList
-                      data={uploadedFiles}
-                      renderRow={(file, index) => (
-                        <FileRow
-                          key={index + file.path}
-                          file={file}
-                          onDeleteUploadFile={onDeleteUploadFile}
-                        />
-                      )}
-                    />
-                  </aside>
-                </Box>
-
-                <Button
-                  variant='contained'
-                  size='small'
-                  autoFocus
-                  // onClick={handleClose}
-                  className='primary-btn btn'
-                  sx={{
-                    marginTop: { xs: 5, sm: 5, lg: 6 },
-                    width: '100%',
-                  }}
-                >
-                  Select
-                </Button>
-              </Box>
-            </Box>
-          </Paper>
+          <Paper>{renderPhotoComponent(photoStep)}</Paper>
         </Grid>
       </Grid>
     </>
