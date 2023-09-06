@@ -7,55 +7,57 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import { Checkbox } from '@mui/material';
+import {
+  Box,
+  Checkbox,
+  FormControlLabel,
+  IconButton,
+  Stack,
+  Typography,
+} from '@mui/material';
+import RowOrderIcon from '../../../assets/icon/table-row-ordering.svg';
+import ListViewIcon from '../../../assets/icon/list-view.svg';
+import GridViewIcon from '../../../assets/icon/grid-view.svg';
+import { RiCheckboxBlankCircleFill, RiDeleteBinLine } from 'react-icons/ri';
+// import { IconName } from "react-icons/tfi";
+// import { IconName } from "react-icons/hi";
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
+  { id: 'order', label: 'Order', minWidth: 40 },
+  { id: 'name', label: 'Name', align: 'center' },
+  { id: 'size', label: 'Size' },
   {
-    id: 'population',
-    label: 'Population',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
+    id: 'date',
+    label: 'Date',
+    align: 'left',
   },
   {
-    id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
+    id: 'displayonsite ',
+    label: 'Display on site ',
+    align: 'left',
   },
   {
-    id: 'density',
-    label: 'Density',
-    minWidth: 170,
+    id: 'action',
+    label: '',
+    minWidth: 40,
     align: 'right',
-    format: (value) => value.toFixed(2),
   },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
+function createData(order, name, size, date, displayonsite, action) {
+  return { order, name, size, date, displayonsite, action };
 }
 
 const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('', 'House.jpg', '500kb', '05/03/24', '', ''),
+  createData('', 'House.jpg', '500kb', '05/03/24', '', ''),
+  createData('', 'House.jpg', '500kb', '05/03/24', '', ''),
+  createData('', 'House.jpg', '500kb', '05/03/24', '', ''),
+  createData('', 'House.jpg', '1mb', '05/03/24', '', ''),
+  createData('', 'House.jpg', '1mb', '05/03/24', '', ''),
+  createData('', 'House.jpg', '2mb', '05/03/24', '', ''),
+  createData('', 'House.jpg', '2mb', '05/03/24', '', ''),
+  createData('', 'House.jpg', '3mb', '05/03/24', '', ''),
 ];
 
 const MediaTable = () => {
@@ -72,8 +74,27 @@ const MediaTable = () => {
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
+    <Paper
+      sx={{ width: '100%', overflow: 'hidden' }}
+      className='media-table-wrapper'
+    >
+      <Stack
+        direction='row'
+        justifyContent='flex-start'
+        alignItems='center'
+        spacing={4}
+        className='view-action'
+      >
+        {/* IoGridSharp
+   HiOutlineViewList */}
+        <IconButton aria-label='list' disableRipple>
+          <img src={ListViewIcon} alt='Icon' />
+        </IconButton>
+        <IconButton aria-label='grid' disableRipple>
+          <img src={GridViewIcon} alt='Icon' />
+        </IconButton>
+      </Stack>
+      <TableContainer sx={{ maxHeight: 440 }} className='media-table'>
         <Table stickyHeader aria-label='sticky table'>
           <TableHead>
             <TableRow>
@@ -94,20 +115,56 @@ const MediaTable = () => {
               .map((row) => {
                 return (
                   <TableRow hover role='checkbox' tabIndex={-1} key={row.code}>
-                    <TableCell>{row.name}</TableCell>
-                    <TableCell>{row.code}</TableCell>
-                    <TableCell>{row.population}</TableCell>
-                    <TableCell>{row.size}</TableCell>
-                    <TableCell>{row.density}</TableCell>
+                    <TableCell className='order'>
+                      <img src={RowOrderIcon} alt='Icon' />
+                    </TableCell>
+                    <TableCell>
+                      <Stack
+                        direction='row'
+                        justifyContent='flex-start'
+                        alignItems='center'
+                        spacing={4}
+                      >
+                        <Box className='img-wrap'>
+                          <img
+                            src='../../../assets/images/photo-house.png'
+                            alt='email-photo'
+                          />
+                        </Box>
+                        <Typography variant='span' component='span'>
+                          House.jpg
+                        </Typography>
+                      </Stack>
+                    </TableCell>
+                    <TableCell className='size'>
+                      <Typography variant='p' component='p'>
+                        <RiCheckboxBlankCircleFill size={6} className='green' />
+                        500Kb
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography variant='span' component='span'>
+                        05/03/24
+                      </Typography>
+                    </TableCell>
                     <TableCell>
                       {' '}
-                      <Checkbox
-                        color='primary'
-                        checked={true}
-                        //   inputProps={{
-                        //     'aria-labelledby': labelId,
-                        //   }}
-                      />
+                      <Stack
+                        direction='row'
+                        justifyContent='flex-start'
+                        alignItems='center'
+                        spacing={3}
+                      >
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label='Yes  '
+                          checked={true}
+                        />
+                        <FormControlLabel control={<Checkbox />} label='No  ' />
+                      </Stack>
+                    </TableCell>
+                    <TableCell className='action'>
+                      <RiDeleteBinLine size={24} />
                     </TableCell>
 
                     {/* {columns.map((column) => {

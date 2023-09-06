@@ -1,53 +1,50 @@
 import React, { useEffect, useState } from 'react';
-import { Paper, Box, Button, Grid, Stack, Typography } from '@mui/material';
+import { Paper, Button, Grid, Stack, Typography } from '@mui/material';
 import '../campaigns.scss';
-import UploadModern from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern/index';
 import { useDropzone } from 'react-dropzone';
-import AppList from '@crema/components/AppList';
-import FileRow from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow/index';
-import ReviewPhotos from './reviewPhotos';
-import EmailSelection from './emailSelection';
-import DragPhotos from './dragPhotos';
-import { PhotoSizeSelectLargeSharp } from '@mui/icons-material';
-import PreviewPhoto from './PreviewPhoto';
-import NewComp from './photoSelection';
+import ReviewPhotos from './photo/review';
+// import EmailSelection from '../list';
+// import DragPhotos from './dragPhotos';
+import PreviewPhoto from './photo/preview';
+import DragPhoto from './photo/drag';
+import EditList from './editList';
 
 const CreateCampaign = () => {
+  const [isEditList, setIsList] = useState(false);
   // const StyledDropzone = () => {
-  const dropzone = useDropzone();
-  const [uploadedFiles, setUploadedFiles] = useState([]);
-  const [isPhotoSelection, setIsPhotoSelection] = useState(false);
-  const [photoStep, setPhotoStep] = useState('drag');
-  useEffect(() => {
-    setUploadedFiles(dropzone.acceptedFiles);
-  }, [dropzone.acceptedFiles]);
+  // const dropzone = useDropzone();
+  // const [uploadedFiles, setUploadedFiles] = useState([]);
+  // const [isPhotoSelection, setIsPhotoSelection] = useState(false);
+  // const [photoStep, setPhotoStep] = useState('create');
+  // useEffect(() => {
+  //   setUploadedFiles(dropzone.acceptedFiles);
+  // }, [dropzone.acceptedFiles]);
 
-  const onDeleteUploadFile = (file) => {
-    dropzone.acceptedFiles.splice(dropzone.acceptedFiles.indexOf(file), 1);
-    setUploadedFiles([...dropzone.acceptedFiles]);
-  };
+  // const onDeleteUploadFile = (file) => {
+  //   dropzone.acceptedFiles.splice(dropzone.acceptedFiles.indexOf(file), 1);
+  //   setUploadedFiles([...dropzone.acceptedFiles]);
+  // };
 
-  const renderListComponent = (label) => {
-    switch (label) {
-      case 'review':
-        return <NewComp />;
-      default:
-        return <EmailSelection setPhotoStep={setPhotoStep} />;
-      // return <PhotoSelection />;
-    }
-  };
-  const renderPhotoComponent = (label) => {
-    switch (label) {
-      case 'review':
-        return <ReviewPhotos />;
+  // const renderListComponent = (label) => {
+  //   switch (label) {
+  //     case 'create':
+  //       return <DragPhoto />;
+  //     default:
+  //       return <EmailSelection setPhotoStep={setPhotoStep} />;
+  //   }
+  // };
+  // const renderPhotoComponent = (label) => {
+  //   switch (label) {
+  //     case 'create':
+  //       return <ReviewPhotos />;
 
-      case 'preview':
-        return <PreviewPhoto setPhotoStep={setPhotoStep} />;
+  //     case 'preview':
+  //       return <PreviewPhoto setPhotoStep={setPhotoStep} />;
 
-      default:
-        return <DragPhotos />;
-    }
-  };
+  //     default:
+  //       return <DragPhoto />;
+  //   }
+  // };
   return (
     <>
       <Stack direction='row' justifyContent='space-between' alignItems='center'>
@@ -68,14 +65,24 @@ const CreateCampaign = () => {
           +New campaign
         </Button>
       </Stack>
-      <Grid container spacing={5} mt={5}>
-        <Grid item xs={12} md={8}>
-          <Paper>{renderListComponent(photoStep)}</Paper>
+      {isEditList ? (
+        <EditList />
+      ) : (
+        <Grid container spacing={5} mt={5}>
+          <Grid item xs={12} md={8}>
+            <Paper>
+              <DragPhoto />
+              {/* {renderListComponent(photoStep)} */}
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Paper>
+              <ReviewPhotos setIsList={setIsList} />
+              {/* {renderPhotoComponent(photoStep)} */}
+            </Paper>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper>{renderPhotoComponent(photoStep)}</Paper>
-        </Grid>
-      </Grid>
+      )}
     </>
   );
 };

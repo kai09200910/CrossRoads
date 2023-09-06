@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React from 'react';
 import { Box, Button, Paper, Typography } from '@mui/material';
 
 const PreviewPhoto = ({ setPhotoStep }) => {

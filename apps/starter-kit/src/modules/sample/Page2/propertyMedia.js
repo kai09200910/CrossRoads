@@ -156,7 +156,7 @@ const PropertyMedia = () => {
             }}
           >
             <MediaTabs />
-            <MediaTable />
+            {/* <MediaTable /> */}
           </Box>
         </Box>
       </Box>

@@ -81,8 +81,6 @@
     // padding: 16px 20px;
     padding-bottom: 20px;
     border-radius: 6px;
-    image {
-    }
     .email-campaign-name {
       p {
         font-weight: 600;
@@ -129,5 +127,51 @@
   }
   button {
     width: 100% !important;
+  }
+}
+
+.email-template-area {
+  border: 1px solid #d8d8d8;
+  padding: 16px 24px;
+  width: 74%;
+  margin: 0 auto;
+  .custome-dropzone {
+    .MuiBox-root {
+      width: 100%;
+      .dropzone {
+        height: 230px;
+        svg {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+  }
+  .other-data {
+    h4 {
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+    .primary-btn {
+      width: 100% !important;
+      background-color: #333 !important;
+    }
+  }
+  .agent-info {
+    h3 {
+      margin-bottom: 12px;
+      font-size: 18px !important;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #333;
+    }
+    p {
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    span {
+      font-size: 9px;
+      font-weight: 500;
+      margin-top: 4px;
+    }
   }
 }

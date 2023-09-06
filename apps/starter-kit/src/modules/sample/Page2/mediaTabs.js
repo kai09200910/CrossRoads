@@ -5,6 +5,7 @@ import TabsList from '@mui/base/TabsList';
 import TabPanel from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
 import Tab, { tabClasses } from '@mui/base/Tab';
+import MediaTable from './mediaTable';
 
 const MediaTabs = () => {
   return (
@@ -16,19 +17,15 @@ const MediaTabs = () => {
           <StyledTab value={2}>3D Tours</StyledTab>
           <StyledTab value={3}>Websites </StyledTab>
           <StyledTab value={4}>Brohures </StyledTab>
-          {/* <StyledTab value={5}>Language</StyledTab> */}
         </StyledTabsList>
-        <StyledTabPanel value={0}>Photos 123</StyledTabPanel>
+        <StyledTabPanel value={0}>
+          <MediaTable />
+        </StyledTabPanel>
         <StyledTabPanel value={1}>Videos</StyledTabPanel>
         <StyledTabPanel value={2}>3D Tours</StyledTabPanel>
         <StyledTabPanel value={3}>Websites</StyledTabPanel>
         <StyledTabPanel value={4}>Brohures</StyledTabPanel>
       </Tabs>
-      {/* <Tabs value={value} onChange={handleChange} aria-label='nav tabs example'>
-        <LinkTab label='Page One' href='/drafts' />
-        <LinkTab label='Page Two' href='/trash' />
-        <LinkTab label='Page Three' href='/spam' />
-      </Tabs> */}
     </>
   );
 };
@@ -112,7 +109,7 @@ const StyledTabsList = styled(TabsList)(
   width: 550px;
   background-color: #fff;
   border-radius: 32px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
