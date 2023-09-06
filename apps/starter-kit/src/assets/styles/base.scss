@@ -131,7 +131,7 @@ textarea {
   box-shadow: none !important;
   padding: 8px 16px !important;
   min-height: 50px;
-  width: 124px !important;
+  min-width: 124px !important;
   font-size: 14px;
   font-weight: 600;
 }
@@ -536,3 +536,77 @@ header {
 }
 
 // Breadcrumbs Styles END //
+
+// Media Table Styles //
+.media-table-wrapper {
+  position: relative;
+  .view-action {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    z-index: 3;
+    button {
+      padding: 0;
+      &:hover {
+        background-color: initial;
+      }
+    }
+    svg {
+      color: #d9d9d9;
+    }
+  }
+  .media-table {
+    table {
+      thead {
+        tr {
+          th {
+            color: #c2c2c2;
+            background-color: #fff;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 8px 16px;
+            font-weight: 500;
+          }
+          td.order {
+            text-align: center;
+          }
+          .img-wrap {
+            border-radius: 3px;
+            overflow: hidden;
+            width: 60px;
+            height: 60px;
+            img {
+              width: 100%;
+            }
+          }
+          td.size {
+            p {
+              svg {
+                margin-right: 4px;
+              }
+            }
+          }
+          td.action {
+            svg {
+              color: #b0b0b0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.green {
+  color: #00ff0a;
+}
+.yellow {
+  color: #ffe600;
+}
+.red {
+  color: #d60000;
+}
+// Media Table Styles END //

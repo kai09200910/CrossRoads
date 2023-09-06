@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
-import SubmittedDialogs from './submittedDialog';
+import SubmittedDialogs from '../submittedDialog';
 
-const ReviewPhotos = () => {
+const ReviewPhotos = ({ setIsList }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const handleClose = () => {
     setIsSubmitted(false);
@@ -159,17 +159,17 @@ const ReviewPhotos = () => {
             size='small'
             autoFocus
             // onClick={handleClose}
-            onClick={() => setIsSubmitted(true)}
+            onClick={() => setIsList(true)}
             className='primary-btn btn'
             sx={{
               marginTop: { xs: 5, sm: 5, lg: 6 },
             }}
           >
-            Review list
+            View campaign list
           </Button>
         </Box>
       </Box>
-      <SubmittedDialogs open={isSubmitted} handleClose={handleClose} />
+      {/* <SubmittedDialogs open={isSubmitted} handleClose={handleClose} /> */}
     </>
   );
 };

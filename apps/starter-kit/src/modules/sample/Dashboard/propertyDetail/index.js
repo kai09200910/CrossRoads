@@ -10,7 +10,8 @@ import { RiPencilFill } from 'react-icons/ri';
 import History from './history';
 import Marketing from './marketing';
 import Overview from './overview';
-
+import MediaTabs from '../../Page2/mediaTabs';
+import MediaTable from '../../Page2/mediaTable';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -97,7 +98,8 @@ const PropertyDetails = () => {
                 padding: { xs: 4, xl: 12 },
               }}
             >
-              Media Tab Content display here
+              <MediaTabs />
+              {/* <MediaTable /> */}
             </Box>
           </TabPanel>
           <TabPanel value={value} index={3}>
