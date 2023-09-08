@@ -20,7 +20,7 @@ const Page1 = () => {
         variant='h3'
         component='h3'
         sx={{
-          paddingBottom: { xs: 4, xl: 4 },
+          paddingBottom: { xs: 3, xl: 2 },
           paddingTop: { xs: 5, xl: 5 },
         }}
       >
@@ -139,32 +139,34 @@ const Page1 = () => {
           </Grid>
         </Stack>
       </Box>
-      <Grid container spacing={5} mt={1} className='listing-card'>
-        <Grid item xs={12} md={6}>
-          <PropertyCard />
+      <Box className='listing-card-scrollable-content'>
+        <Grid container spacing={5} mt={1} className='listing-card'>
+          <Grid item xs={12} md={6}>
+            <PropertyCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <PropertyCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <PropertyCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <PropertyCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <PropertyCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <PropertyCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <PropertyCard />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <PropertyCard />
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <PropertyCard />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <PropertyCard />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <PropertyCard />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <PropertyCard />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <PropertyCard />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <PropertyCard />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <PropertyCard />
-        </Grid>
-      </Grid>
+      </Box>
     </>
   );
 };

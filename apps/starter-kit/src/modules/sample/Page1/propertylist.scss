@@ -134,3 +134,8 @@
     }
   }
 }
+.listing-card-scrollable-content {
+  height: calc(100vh - 254px);
+  overflow: auto;
+  padding-right: 8px;
+}

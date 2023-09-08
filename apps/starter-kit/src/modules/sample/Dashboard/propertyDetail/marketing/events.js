@@ -42,44 +42,49 @@ const Events = ({ handleBack }) => {
         >
           Events
         </Typography>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell align='left'>Date</TableCell>
-                <TableCell align='left'>Time</TableCell>
-                <TableCell align='right'></TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{
-                    '&:last-child td, &:last-child th': { border: 0 },
-                  }}
-                >
-                  <TableCell component='th' scope='row'>
-                    {row.name}
-                  </TableCell>
-                  <TableCell align='left'>{row.date}</TableCell>
-                  <TableCell align='left'>{row.time}</TableCell>
-                  <TableCell align='right'>
-                    {' '}
-                    <Button
-                      variant='outlined'
-                      size='small'
-                      className='edit-btn secondary-btn-small'
-                    >
-                      View
-                    </Button>{' '}
-                  </TableCell>
+        <Box
+          sx={{ width: '100%', overflow: 'hidden' }}
+          className='table-wrapper'
+        >
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Name</TableCell>
+                  <TableCell align='left'>Date</TableCell>
+                  <TableCell align='left'>Time</TableCell>
+                  <TableCell align='right'></TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow
+                    key={row.name}
+                    sx={{
+                      '&:last-child td, &:last-child th': { border: 0 },
+                    }}
+                  >
+                    <TableCell component='th' scope='row'>
+                      {row.name}
+                    </TableCell>
+                    <TableCell align='left'>{row.date}</TableCell>
+                    <TableCell align='left'>{row.time}</TableCell>
+                    <TableCell align='right'>
+                      {' '}
+                      <Button
+                        variant='outlined'
+                        size='small'
+                        className='edit-btn secondary-btn-small'
+                      >
+                        View
+                      </Button>{' '}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
         <Stack
           direction='row'
           justifyContent='space-between'

@@ -45,33 +45,38 @@ const MatchingBuyers = ({ handleBack }) => {
         >
           Matching Buyers
         </Typography>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>Matching Buyers</TableCell>
-                <TableCell align='left'>Match %</TableCell>
-                <TableCell align='left'>Contact</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{
-                    '&:last-child td, &:last-child th': { border: 0 },
-                  }}
-                >
-                  <TableCell component='th' scope='row'>
-                    {row.matchingbuyer}
-                  </TableCell>
-                  <TableCell align='left'>{row.match}</TableCell>
-                  <TableCell align='left'>{row.contact}</TableCell>
+        <Box
+          sx={{ width: '100%', overflow: 'hidden' }}
+          className='table-wrapper'
+        >
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Matching Buyers</TableCell>
+                  <TableCell align='left'>Match %</TableCell>
+                  <TableCell align='left'>Contact</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow
+                    key={row.name}
+                    sx={{
+                      '&:last-child td, &:last-child th': { border: 0 },
+                    }}
+                  >
+                    <TableCell component='th' scope='row'>
+                      {row.matchingbuyer}
+                    </TableCell>
+                    <TableCell align='left'>{row.match}</TableCell>
+                    <TableCell align='left'>{row.contact}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
         {/* <Button variant="text" onclick>Text</Button> */}
         <Stack
           direction='row'

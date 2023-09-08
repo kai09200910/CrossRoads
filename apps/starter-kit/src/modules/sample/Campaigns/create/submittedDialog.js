@@ -24,7 +24,7 @@ const SubmittedDialog = ({ open, handleClose }) => {
             component='h2'
             sx={{ paddingTop: 2 }}
           >
-            Successfully submitted listing documents
+            Successfully submitted campaign
           </Typography>
         </DialogContent>
         <DialogActions align='center' className='modal-dailog-footer'>

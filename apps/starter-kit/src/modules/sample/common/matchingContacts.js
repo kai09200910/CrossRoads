@@ -15,39 +15,41 @@ const rows = [createData('John Smith', '95%', 'johnsmith@email.com')];
 
 const MatchingContacts = () => {
   return (
-    <TableContainer className='matching-contact-detail'>
-      <Table sx={{ minWidth: 650 }} aria-label='simple table'>
-        <TableHead>
-          <TableRow>
-            <TableCell></TableCell>
-            <TableCell align=''>Name</TableCell>
-            <TableCell align=''>Match&nbsp;%</TableCell>
-            <TableCell align=''>Email</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{
-                '&:last-child td, &:last-child th': { border: 0 },
-              }}
-            >
-              <TableCell>
-                <FormControlLabel
-                  control={<Checkbox defaultChecked />}
-                  label=''
-                />
-              </TableCell>
-              <TableCell>{row.name}</TableCell>
-              {/* <TableCell align='right'>{row.name}</TableCell> */}
-              <TableCell align=''>{row.match}</TableCell>
-              <TableCell align=''>{row.email}</TableCell>
+    <Box sx={{ width: '100%', overflow: 'hidden' }} className='table-wrapper'>
+      <TableContainer className='matching-contact-detail'>
+        <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+          <TableHead>
+            <TableRow>
+              <TableCell></TableCell>
+              <TableCell align=''>Name</TableCell>
+              <TableCell align=''>Match&nbsp;%</TableCell>
+              <TableCell align=''>Email</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.name}
+                sx={{
+                  '&:last-child td, &:last-child th': { border: 0 },
+                }}
+              >
+                <TableCell>
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label=''
+                  />
+                </TableCell>
+                <TableCell>{row.name}</TableCell>
+                {/* <TableCell align='right'>{row.name}</TableCell> */}
+                <TableCell align=''>{row.match}</TableCell>
+                <TableCell align=''>{row.email}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
   );
 };
 

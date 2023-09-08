@@ -208,6 +208,19 @@ textarea {
     margin: 0;
   }
 }
+.icon-small-btn {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 6px;
+  background-color: #dfe8fa;
+  border: none;
+  padding: 6px;
+  &:hover {
+    border: none;
+    background-color: #d9e4fb;
+  }
+}
 a {
   &:hover {
     background-color: transparent !important;
@@ -400,8 +413,6 @@ h4 {
 
 // Matching Contact Details Styles //
 .matching-contact-detail {
-  border-radius: 10px;
-  border: 1px solid #e1e1e1;
   thead {
     tr {
       th {
@@ -521,13 +532,13 @@ header {
   ol {
     li {
       a {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
         color: #999999;
         text-decoration: none;
       }
       p {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
         color: #292929;
       }
@@ -542,13 +553,20 @@ header {
   position: relative;
   .view-action {
     position: absolute;
-    right: 16px;
-    top: 12px;
+    right: 0px;
+    top: 0px;
     z-index: 3;
+    background-color: #fff;
+    padding: 4px 16px !important;
+    height: 41px;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
     button {
       padding: 0;
       &:hover {
         background-color: initial;
+      }
+      img {
+        width: 24px !important;
       }
     }
     svg {
@@ -560,17 +578,13 @@ header {
       thead {
         tr {
           th {
-            color: #c2c2c2;
-            background-color: #fff;
+            // color: #c2c2c2;
+            // background-color: #fff;
           }
         }
       }
       tbody {
         tr {
-          td {
-            padding: 8px 16px;
-            font-weight: 500;
-          }
           td.order {
             text-align: center;
           }
@@ -591,6 +605,7 @@ header {
             }
           }
           td.action {
+            text-align: center;
             svg {
               color: #b0b0b0;
             }
@@ -610,3 +625,46 @@ header {
   color: #d60000;
 }
 // Media Table Styles END //
+
+// Table Styles //
+
+.table-wrapper {
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  table {
+    thead {
+      tr {
+        th {
+          color: #c2c2c2 !important;
+          background-color: #fff !important;
+          padding: 8px 16px !important;
+          font-size: 14px !important;
+          font-weight: 600 !important;
+          &:last-child {
+            padding: 4px 16px !important;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 8px 16px !important;
+          font-weight: 500 !important;
+        }
+      }
+    }
+  }
+}
+// Table Styles END //
+
+.MuiPaper-root.MuiPaper-rounded {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+}
+.scrollable-content {
+  height: calc(100vh - 170px);
+  overflow: auto;
+  padding-right: 8px;
+}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
-import SubmittedDialogs from '../submittedDialog';
 
 const ReviewPhotos = ({ setIsList }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -164,12 +163,12 @@ const ReviewPhotos = ({ setIsList }) => {
             sx={{
               marginTop: { xs: 5, sm: 5, lg: 6 },
             }}
+            disableRipple
           >
             View campaign list
           </Button>
         </Box>
       </Box>
-      {/* <SubmittedDialogs open={isSubmitted} handleClose={handleClose} /> */}
     </>
   );
 };
