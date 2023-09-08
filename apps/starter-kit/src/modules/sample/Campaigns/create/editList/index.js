@@ -17,6 +17,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Link } from 'react-router-dom';
 import SubmittedDialogs from '../submittedDialog';
+import { RiDeleteBinLine } from 'react-icons/ri';
 
 function createData(name, click, email, phone, remove) {
   return { name, click, email, phone, remove };
@@ -35,7 +36,6 @@ const rows = [
 const EditList = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const handleClose = () => {
-    console.log('test123');
     setIsSubmitted(false);
   };
 
@@ -70,7 +70,7 @@ const EditList = () => {
 
   return (
     <>
-      <Paper>
+      <Paper mt={2}>
         <Container>
           <Box
             sx={{
@@ -108,46 +108,51 @@ const EditList = () => {
               >
                 Campaign Stats
               </Typography>
-              <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label='simple table'>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>Name</TableCell>
-                      <TableCell align='left'>Clicks</TableCell>
-                      <TableCell align='left'>Email</TableCell>
-                      <TableCell align='left'>Phone</TableCell>
-                      <TableCell align='center'>Remove</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {rows.map((row) => (
-                      <TableRow
-                        key={row.name}
-                        sx={{
-                          '&:last-child td, &:last-child th': { border: 0 },
-                        }}
-                      >
-                        <TableCell component='th' scope='row'>
-                          {row.name}
-                        </TableCell>
-                        <TableCell align='left'>{row.click}</TableCell>
-                        <TableCell align='left'>{row.email}</TableCell>
-                        <TableCell align='left'>{row.phone}</TableCell>
-                        <TableCell align='center'>
-                          {' '}
-                          <Button
-                            variant='outlined'
-                            size='small'
-                            className='edit-btn secondary-btn-small'
-                          >
-                            View
-                          </Button>{' '}
-                        </TableCell>
+              <Box
+                sx={{ width: '100%', overflow: 'hidden' }}
+                className='table-wrapper'
+              >
+                <TableContainer>
+                  <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Name</TableCell>
+                        <TableCell align='left'>Clicks</TableCell>
+                        <TableCell align='left'>Email</TableCell>
+                        <TableCell align='left'>Phone</TableCell>
+                        <TableCell align='center'>Remove</TableCell>
                       </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
+                    </TableHead>
+                    <TableBody>
+                      {rows.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{
+                            '&:last-child td, &:last-child th': { border: 0 },
+                          }}
+                        >
+                          <TableCell component='th' scope='row'>
+                            {row.name}
+                          </TableCell>
+                          <TableCell align='left'>{row.click}</TableCell>
+                          <TableCell align='left'>{row.email}</TableCell>
+                          <TableCell align='left'>{row.phone}</TableCell>
+                          <TableCell align='center'>
+                            {' '}
+                            <Button
+                              variant='outlined'
+                              size='small'
+                              className='icon-small-btn'
+                            >
+                              <RiDeleteBinLine size={20} />
+                            </Button>{' '}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </Box>
               <Stack
                 direction='row'
                 justifyContent='flex-end'
@@ -159,7 +164,7 @@ const EditList = () => {
                 <Button
                   variant='contained'
                   size='large'
-                  onClick={handleClose}
+                  onClick={() => setIsSubmitted(true)}
                   className='primary-btn btn'
                 >
                   Send campaign

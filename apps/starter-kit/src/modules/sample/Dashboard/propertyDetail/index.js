@@ -95,7 +95,7 @@ const PropertyDetails = () => {
               component='div'
               className='media-tab-content-wrapper'
               sx={{
-                padding: { xs: 4, xl: 12 },
+                padding: { xs: 4, xl: 4 },
               }}
             >
               <MediaTabs />

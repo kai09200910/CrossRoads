@@ -47,45 +47,50 @@ const History = () => {
         >
           Listing History
         </Typography>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>Activity</TableCell>
-                <TableCell align='left'>Date</TableCell>
-                <TableCell align='left'>By</TableCell>
-                <TableCell align='right'></TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{
-                    '&:last-child td, &:last-child th': { border: 0 },
-                  }}
-                >
-                  <TableCell component='th' scope='row'>
-                    {row.activity}
-                  </TableCell>
-                  <TableCell align='left'>{row.date}</TableCell>
-                  <TableCell align='left'>{row.by}</TableCell>
-                  <TableCell align='right'>
-                    {' '}
-                    <Button
-                      variant='outlined'
-                      size='small'
-                      className='edit-btn secondary-btn-small'
-                      onClick={() => setIsSubmitted(true)}
-                    >
-                      View
-                    </Button>{' '}
-                  </TableCell>
+        <Box
+          sx={{ width: '100%', overflow: 'hidden' }}
+          className='table-wrapper'
+        >
+          <TableContainer>
+            <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Activity</TableCell>
+                  <TableCell align='left'>Date</TableCell>
+                  <TableCell align='left'>By</TableCell>
+                  <TableCell align='right'></TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow
+                    key={row.name}
+                    sx={{
+                      '&:last-child td, &:last-child th': { border: 0 },
+                    }}
+                  >
+                    <TableCell component='th' scope='row'>
+                      {row.activity}
+                    </TableCell>
+                    <TableCell align='left'>{row.date}</TableCell>
+                    <TableCell align='left'>{row.by}</TableCell>
+                    <TableCell align='right'>
+                      {' '}
+                      <Button
+                        variant='outlined'
+                        size='small'
+                        className='edit-btn secondary-btn-small'
+                        onClick={() => setIsSubmitted(true)}
+                      >
+                        View
+                      </Button>{' '}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
       </Box>
 
       <ListingnoteDialog open={isSubmitted} handleClose={handleClose} />

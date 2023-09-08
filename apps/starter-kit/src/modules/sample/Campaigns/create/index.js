@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Paper, Button, Grid, Stack, Typography } from '@mui/material';
+import { Paper, Button, Grid, Stack, Typography, Box } from '@mui/material';
 import '../campaigns.scss';
 import { useDropzone } from 'react-dropzone';
 import ReviewPhotos from './photo/review';
@@ -47,14 +47,16 @@ const CreateCampaign = () => {
   // };
   return (
     <>
-      <Stack direction='row' justifyContent='space-between' alignItems='center'>
-        <Typography
-          variant='h3'
-          component='h3'
-          sx={{
-            paddingBottom: { xs: 4, xl: 4 },
-          }}
-        >
+      <Stack
+        direction='row'
+        justifyContent='space-between'
+        alignItems='center'
+        sx={{
+          paddingBottom: { xs: 4, xl: 4 },
+          paddingTop: { xs: 5, xl: 5 },
+        }}
+      >
+        <Typography variant='h3' component='h3'>
           Listing Campaigns
         </Typography>
         <Button
@@ -68,20 +70,22 @@ const CreateCampaign = () => {
       {isEditList ? (
         <EditList />
       ) : (
-        <Grid container spacing={5} mt={5}>
-          <Grid item xs={12} md={8}>
-            <Paper>
-              <DragPhoto />
-              {/* {renderListComponent(photoStep)} */}
-            </Paper>
+        <Box className='scrollable-content'>
+          <Grid container spacing={5} mt={2}>
+            <Grid item xs={12} md={8}>
+              <Paper>
+                <DragPhoto />
+                {/* {renderListComponent(photoStep)} */}
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Paper>
+                <ReviewPhotos setIsList={setIsList} />
+                {/* {renderPhotoComponent(photoStep)} */}
+              </Paper>
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper>
-              <ReviewPhotos setIsList={setIsList} />
-              {/* {renderPhotoComponent(photoStep)} */}
-            </Paper>
-          </Grid>
-        </Grid>
+        </Box>
       )}
     </>
   );

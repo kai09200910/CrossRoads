@@ -469,16 +469,17 @@ const Campaigns = () => {
           +New campaign
         </Button>
       </Stack>
-
-      <Box sx={{ my: 2 }}>
-        <Box className='campaign-list-wrap'>
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-          <Row />
+      <Box className='scrollable-content'>
+        <Box sx={{ my: 2 }}>
+          <Box className='campaign-list-wrap'>
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+            <Row />
+          </Box>
         </Box>
       </Box>
     </>

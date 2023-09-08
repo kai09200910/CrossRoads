@@ -57,10 +57,6 @@ const DragPhoto = () => {
         </Box>
 
         <Box className='email-template-area'>
-          {/* <img
-            src='../../../../assets/images/email-photo-preview.png'
-            alt='template-thumbnail '
-          /> */}
           <Box className='email-template'>
             <Stack
               direction='row'
