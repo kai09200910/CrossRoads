@@ -72,6 +72,7 @@ const ErrorDialog = ({ open, handleClose }) => {
             autoFocus
             onClick={handleClose}
             className='primary-btn btn'
+            sx={{ marginTop: 9 }}
           >
             Got it!
           </Button>

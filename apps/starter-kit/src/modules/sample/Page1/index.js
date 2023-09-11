@@ -124,6 +124,9 @@ const Page1 = () => {
                 <label>Sort by </label>
                 <FormControlLabel
                   // control={<IOSSwitch  /> <Switch  sx={{ m: 1 }}
+                  sx={{
+                    height: '47px',
+                  }}
                   control={
                     <Switch
                       sx={{ m: 1 }}

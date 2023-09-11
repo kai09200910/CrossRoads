@@ -16,8 +16,9 @@ import {
   Typography,
 } from '@mui/material';
 import RowOrderIcon from '../../../assets/icon/table-row-ordering.svg';
-import ListViewIcon from '../../../assets/icon/list-view.svg';
-import GridViewIcon from '../../../assets/icon/grid-view.svg';
+import { ReactComponent as ListViewIcon } from '../../../assets/icon/list-view.svg';
+import { ReactComponent as GridViewIcon } from '../../../assets/icon/grid-view.svg';
+
 import { RiCheckboxBlankCircleFill, RiDeleteBinLine } from 'react-icons/ri';
 // import { IconName } from "react-icons/tfi";
 // import { IconName } from "react-icons/hi";
@@ -63,7 +64,11 @@ const rows = [
 ];
 
 const DragHandle = SortableHandle(({ style }) => (
-  <span style={{ ...style, ...{ cursor: 'move' } }}> {'::::'} </span>
+  // <span style={{ ...style, ...{ cursor: 'move' } }}> {'::::'} </span>
+  <span style={{ ...style, ...{ cursor: 'move' } }}>
+    {' '}
+    <img src={RowOrderIcon} alt='Icon' />{' '}
+  </span>
 ));
 
 const Row = SortableElement(({ data, ...other }) => {
@@ -90,9 +95,9 @@ const Row = SortableElement(({ data, ...other }) => {
           <DragHandle />
         </TableCell>
 
-        <TableCell className='order'>
+        {/* <TableCell className='order'>
           <img src={RowOrderIcon} alt='Icon' />
-        </TableCell>
+        </TableCell> */}
         <TableCell>
           <Stack
             direction='row'
@@ -222,26 +227,195 @@ const MediaTable = () => {
         spacing={4}
         className='view-action'
       >
-        {/* IoGridSharp
-   HiOutlineViewList */}
-        <IconButton aria-label='list' disableRipple>
-          <img
-            src={ListViewIcon}
-            alt='Icon'
-            onClick={() => setIsGridView(false)}
-          />
+        <IconButton
+          aria-label='list'
+          disableRipple
+          className={!isGridView ? 'active' : ''}
+          onClick={() => setIsGridView(false)}
+        >
+          <ListViewIcon />
         </IconButton>
-        <IconButton aria-label='grid' disableRipple>
-          <img
-            src={GridViewIcon}
-            alt='Icon'
-            onClick={() => setIsGridView(true)}
-          />
+        <IconButton
+          aria-label='grid'
+          disableRipple
+          className={isGridView ? 'active' : ''}
+          onClick={() => setIsGridView(true)}
+        >
+          <GridViewIcon />
         </IconButton>
       </Stack>
       {isGridView ? (
         <>
-          <Box>Grid view</Box>
+          <Box className='mediatable-gridlist'>
+            <Stack
+              direction='row'
+              justifyContent='flex-start'
+              alignItems='flex-start'
+              // spacing={2}
+              className='gridlist'
+            >
+              <Stack
+                direction='column'
+                justifyContent='space-evenly'
+                alignItems='center'
+                spacing={1}
+                className='data-block'
+              >
+                <Box className='img-wrap'>
+                  <img
+                    src='../../../assets/images/photo-house.png'
+                    alt='email-photo'
+                  />
+                </Box>
+                <Typography variant='p' component='p'>
+                  House.jpg
+                </Typography>
+                <Typography variant='body1' component='span'>
+                  500x345
+                </Typography>
+              </Stack>
+              <Stack
+                direction='column'
+                justifyContent='space-evenly'
+                alignItems='center'
+                spacing={1}
+                className='data-block'
+              >
+                <Box className='img-wrap'>
+                  <img
+                    src='../../../assets/images/photo-house.png'
+                    alt='email-photo'
+                  />
+                </Box>
+                <Typography variant='p' component='p'>
+                  House.jpg
+                </Typography>
+                <Typography variant='body1' component='span'>
+                  500x345
+                </Typography>
+              </Stack>
+              <Stack
+                direction='column'
+                justifyContent='space-evenly'
+                alignItems='center'
+                spacing={1}
+                className='data-block'
+              >
+                <Box className='img-wrap'>
+                  <img
+                    src='../../../assets/images/photo-house.png'
+                    alt='email-photo'
+                  />
+                </Box>
+                <Typography variant='p' component='p'>
+                  House.jpg
+                </Typography>
+                <Typography variant='body1' component='span'>
+                  500x345
+                </Typography>
+              </Stack>
+              <Stack
+                direction='column'
+                justifyContent='space-evenly'
+                alignItems='center'
+                spacing={1}
+                className='data-block'
+              >
+                <Box className='img-wrap'>
+                  <img
+                    src='../../../assets/images/photo-house.png'
+                    alt='email-photo'
+                  />
+                </Box>
+                <Typography variant='p' component='p'>
+                  House.jpg
+                </Typography>
+                <Typography variant='body1' component='span'>
+                  500x345
+                </Typography>
+              </Stack>
+              <Stack
+                direction='column'
+                justifyContent='space-evenly'
+                alignItems='center'
+                spacing={1}
+                className='data-block'
+              >
+                <Box className='img-wrap'>
+                  <img
+                    src='../../../assets/images/photo-house.png'
+                    alt='email-photo'
+                  />
+                </Box>
+                <Typography variant='p' component='p'>
+                  House.jpg
+                </Typography>
+                <Typography variant='body1' component='span'>
+                  500x345
+                </Typography>
+              </Stack>
+              <Stack
+                direction='column'
+                justifyContent='space-evenly'
+                alignItems='center'
+                spacing={1}
+                className='data-block'
+              >
+                <Box className='img-wrap'>
+                  <img
+                    src='../../../assets/images/photo-house.png'
+                    alt='email-photo'
+                  />
+                </Box>
+                <Typography variant='p' component='p'>
+                  House.jpg
+                </Typography>
+                <Typography variant='body1' component='span'>
+                  500x345
+                </Typography>
+              </Stack>
+              <Stack
+                direction='column'
+                justifyContent='space-evenly'
+                alignItems='center'
+                spacing={1}
+                className='data-block'
+              >
+                <Box className='img-wrap'>
+                  <img
+                    src='../../../assets/images/photo-house.png'
+                    alt='email-photo'
+                  />
+                </Box>
+                <Typography variant='p' component='p'>
+                  House.jpg
+                </Typography>
+                <Typography variant='body1' component='span'>
+                  500x345
+                </Typography>
+              </Stack>
+              <Stack
+                direction='column'
+                justifyContent='space-evenly'
+                alignItems='center'
+                spacing={1}
+                className='data-block'
+              >
+                <Box className='img-wrap'>
+                  <img
+                    src='../../../assets/images/photo-house.png'
+                    alt='email-photo'
+                  />
+                </Box>
+                <Typography variant='p' component='p'>
+                  House.jpg
+                </Typography>
+                <Typography variant='body1' component='span'>
+                  500x345
+                </Typography>
+              </Stack>
+            </Stack>
+          </Box>
         </>
       ) : (
         <>

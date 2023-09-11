@@ -35,7 +35,21 @@ const BuyerDialog = ({ open, handleClose, nextStep, step }) => {
           id='customized-dialog-title'
           className='modal-dailog-title'
         >
-          {step == 1 || step == 3 ? 'Buyer Information' : 'Matching buyer'}
+          <Stack
+            direction='row'
+            justifyContent='space-between'
+            alignItems='center'
+          >
+            {step == 1 || step == 3 ? 'Buyer Information' : 'Matching buyer'}
+            <Button
+              variant='outlined'
+              size='small'
+              className='edit-btn secondary-btn-small'
+              // onClick={navigateToCreate}
+            >
+              +New buyer profile
+            </Button>
+          </Stack>
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
           {step === 1 ? (

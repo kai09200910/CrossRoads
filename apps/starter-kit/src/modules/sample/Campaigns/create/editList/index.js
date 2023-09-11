@@ -33,28 +33,21 @@ const rows = [
   createData('John Smith   ', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
 ];
 
-const EditList = () => {
+const EditList = ({ setIsList }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const handleClose = () => {
     setIsSubmitted(false);
   };
 
   const breadcrumbs = [
-    <Link
-      underline='hover'
-      key='1'
-      color='inherit'
-      href='/'
-      onClick={handleClick}
-    >
+    <Link underline='hover' key='1' color='inherit' to='/campaigns'>
       Email Selection
     </Link>,
     <Link
       underline='hover'
       key='1'
       color='inherit'
-      href='/'
-      onClick={handleClick}
+      onClick={() => setIsList(false)}
     >
       Photo Selection
     </Link>,

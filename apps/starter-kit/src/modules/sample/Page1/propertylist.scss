@@ -2,9 +2,10 @@
   .fillter-switch.ios-switch-custom {
     padding: 0;
     box-sizing: border-box;
-    margin-left: 12px;
-    width: 182px;
+    // margin-left: 12px;
+    // width: 182px;
     height: 48px;
+    width: initial;
     .MuiSwitch-switchBase {
       top: -4px;
       left: -4px;
@@ -13,7 +14,7 @@
       }
     }
     .MuiSwitch-switchBase.Mui-checked {
-      right: -8px;
+      right: -35px;
       .MuiSwitch-track {
         background-color: #2871ff;
         opacity: 1;
@@ -55,7 +56,7 @@
         position: absolute;
         display: inline-block;
         top: 16px;
-        right: 45px;
+        right: 22px;
         color: #292929;
       }
     }

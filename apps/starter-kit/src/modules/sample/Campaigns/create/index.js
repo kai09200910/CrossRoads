@@ -68,7 +68,7 @@ const CreateCampaign = () => {
         </Button>
       </Stack>
       {isEditList ? (
-        <EditList />
+        <EditList setIsList={setIsList} />
       ) : (
         <Box className='scrollable-content'>
           <Grid container spacing={5} mt={2}>
