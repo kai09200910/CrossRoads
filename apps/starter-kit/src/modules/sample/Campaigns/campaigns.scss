@@ -41,6 +41,10 @@
           margin: 0;
         }
       }
+      .MuiPaper-root.MuiPaper-rounded {
+        border-radius: 4px !important;
+        box-shadow: none !important;
+      }
     }
     .campaign-list-card.expand-data {
       .campaign-info-card {
@@ -55,7 +59,7 @@
           text-align: center;
           gap: 8px;
           height: 120px;
-          box-shadow: none;
+          box-shadow: none !important;
           p {
             font-size: 26px;
             color: #2871ff;

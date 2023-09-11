@@ -86,7 +86,6 @@ const Campaigns = () => {
                       className='detail'
                     >
                       <Grid
-                        spacing={5}
                         container
                         direction='row'
                         justifyContent='center'

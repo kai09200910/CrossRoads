@@ -14,8 +14,8 @@ const DragPhoto = () => {
       underline='hover'
       key='1'
       color='inherit'
-      href='/'
-      onClick={handleClick}
+      to='/campaigns'
+      //onClick={handleClick}
     >
       Email Selection
     </Link>,
