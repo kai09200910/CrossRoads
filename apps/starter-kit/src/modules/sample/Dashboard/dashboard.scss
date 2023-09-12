@@ -172,6 +172,7 @@
     height: 40px !important;
     min-height: 40px !important;
     width: 124px !important;
+    font-size: 13px;
   }
 }
 // Property Title Styles END//
@@ -250,6 +251,10 @@
       &:hover {
         background-color: #d8e5ff !important;
       }
+    }
+    .link-btn {
+      font-weight: 600;
+      min-width: inherit;
     }
   }
 }

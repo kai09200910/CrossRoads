@@ -489,6 +489,19 @@ header {
       width: 400px !important;
     }
   }
+  .notification-icon-btn {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      right: 12px;
+      top: 12px;
+      border-radius: 50%;
+      background-color: #ff0000;
+    }
+  }
 }
 
 // Dropzone Styles //

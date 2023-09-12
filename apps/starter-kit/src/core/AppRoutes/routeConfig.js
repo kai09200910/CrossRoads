@@ -1,4 +1,5 @@
 import { BiAlignLeft } from 'react-icons/bi';
+import { RiLayoutGridFill } from 'react-icons/ri';
 
 const routesConfig = [
   {
@@ -12,12 +13,12 @@ const routesConfig = [
         title: 'Dashboard',
         messageId: 'sidebar.sample.dashboard',
         type: 'item',
-        icon: <BiAlignLeft />,
+        icon: <RiLayoutGridFill />,
         url: '/dashboard',
       },
       {
         id: 'page-1',
-        title: 'My listings',
+        title: 'listings',
         messageId: 'sidebar.sample.page1',
         type: 'item',
         icon: <BiAlignLeft />,

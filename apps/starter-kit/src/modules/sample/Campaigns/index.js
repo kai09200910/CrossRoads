@@ -244,7 +244,7 @@ const Campaigns = () => {
                           variant='outlined'
                           size='small'
                           onClick={() => setIsSubmitted(true)}
-                          className='outline-btn'
+                          className='outline-primary'
                         >
                           View email
                         </Button>
@@ -388,35 +388,40 @@ const Campaigns = () => {
               >
                 Campaign Stats
               </Typography>
-              <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label='simple table'>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>Name</TableCell>
-                      <TableCell align='left'>Clicks</TableCell>
-                      <TableCell align='left'>Email</TableCell>
-                      <TableCell align='left'>Phone</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {rows.map((row) => (
-                      <TableRow
-                        key={row.name}
-                        sx={{
-                          '&:last-child td, &:last-child th': { border: 0 },
-                        }}
-                      >
-                        <TableCell component='th' scope='row'>
-                          {row.name}
-                        </TableCell>
-                        <TableCell align='left'>{row.click}</TableCell>
-                        <TableCell align='left'>{row.email}</TableCell>
-                        <TableCell align='left'>{row.phone}</TableCell>
+              <Box
+                sx={{ width: '100%', overflow: 'hidden' }}
+                className='table-wrapper'
+              >
+                <TableContainer>
+                  <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Name</TableCell>
+                        <TableCell align='left'>Clicks</TableCell>
+                        <TableCell align='left'>Email</TableCell>
+                        <TableCell align='left'>Phone</TableCell>
                       </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
+                    </TableHead>
+                    <TableBody>
+                      {rows.map((row) => (
+                        <TableRow
+                          key={row.name}
+                          sx={{
+                            '&:last-child td, &:last-child th': { border: 0 },
+                          }}
+                        >
+                          <TableCell component='th' scope='row'>
+                            {row.name}
+                          </TableCell>
+                          <TableCell align='left'>{row.click}</TableCell>
+                          <TableCell align='left'>{row.email}</TableCell>
+                          <TableCell align='left'>{row.phone}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </Box>
             </Box>
           </Stack>
         ) : null}
