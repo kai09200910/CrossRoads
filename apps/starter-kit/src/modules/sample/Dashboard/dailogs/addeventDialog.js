@@ -50,7 +50,7 @@ const AddeventDialog = ({ open, handleClose }) => {
             </Grid>
             <Grid item xs={12} md={12}>
               <Box variant='div' component='div'>
-                <label>Add phrase to property description</label>
+                <label>Description</label>
                 <TextField
                   fullWidth
                   id='outlined-basic'

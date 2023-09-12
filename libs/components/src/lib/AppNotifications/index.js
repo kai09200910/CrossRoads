@@ -7,6 +7,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 import NotificationItem from './NotificationItem';
+import { ReactComponent as GridViewIcon } from '../../../../../../CrossRoads/libs/modules/src/assets/icon/logo.svg';
 
 const options = [
   'Listing admin has request an update of documents for your listing',
@@ -40,8 +41,10 @@ const Notifications = () => {
         aria-expanded={open ? 'true' : undefined}
         aria-haspopup='true'
         onClick={handleClick}
+        className='notification-icon-btn'
       >
         <NotificationsNoneIcon />
+        {/* <GridViewIcon /> */}
       </IconButton>
       <Menu
         id='long-menu'

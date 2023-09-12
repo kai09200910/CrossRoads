@@ -46,7 +46,7 @@ const Inquiries = ({ handleBack }) => {
           sx={{ width: '100%', overflow: 'hidden' }}
           className='table-wrapper'
         >
-          <TableContainer component={Paper}>
+          <TableContainer>
             <Table sx={{ minWidth: 650 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
@@ -95,7 +95,11 @@ const Inquiries = ({ handleBack }) => {
             paddingTop: { xs: 4, xl: 4 },
           }}
         >
-          <Button variant='text' onClick={() => handleBack(null)}>
+          <Button
+            variant='text'
+            onClick={() => handleBack(null)}
+            className='link-btn'
+          >
             Back
           </Button>
         </Stack>
