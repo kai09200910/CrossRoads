@@ -1,6 +1,11 @@
 // Listing Doc Styles //
 .listing-doc-wrapper {
   .title-wrap {
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 16px;
+    }
     p.progress-area {
       font-size: 16px;
       color: #292929;
@@ -29,6 +34,10 @@
           right: 0px;
           z-index: -1;
         }
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+        margin: 0;
       }
     }
   }
@@ -62,10 +71,27 @@
     }
   }
   .property-info {
+    @media (max-width: 1024px) {
+      align-items: start;
+    }
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: flex-start;
+      margin: 12px 0;
+    }
     .info-wrap {
       position: relative;
       border-right: 1px solid #e3e3e3;
       padding-right: 28px;
+      @media (max-width: 1024px) {
+        padding-right: 16px;
+      }
+      @media (max-width: 767px) {
+        border: none;
+        width: 27.33%;
+        margin: 0;
+      }
       &:last-child {
         border: none;
         padding-right: 0px;
@@ -81,7 +107,14 @@
     }
   }
   .other-info {
+    @media (max-width: 1100px) {
+      flex-wrap: wrap;
+      gap: 24px;
+    }
     .address {
+      @media (max-width: 1100px) {
+        width: 100%;
+      }
       p {
         font-weight: 400;
       }
@@ -111,6 +144,20 @@
     }
 
     .status-bar {
+      @media (max-width: 1100px) {
+        width: 100%;
+      }
+      @media (max-width: 575px) {
+        flex-wrap: wrap;
+        margin: 0;
+      }
+      .primary-btn-small {
+        @media (max-width: 575px) {
+          width: 100%;
+          margin-top: 16px;
+          margin-left: 0;
+        }
+      }
       .status {
         display: flex;
         flex-direction: column;
@@ -168,39 +215,96 @@
       }
     }
   }
-  .btn {
-    height: 40px !important;
-    min-height: 40px !important;
-    width: 124px !important;
-    font-size: 13px;
+  .btn-group {
+    .secondary-btn-small {
+      @media (max-width: 900px) {
+        margin-bottom: 12px;
+      }
+    }
+    .final-btn-group {
+      gap: 8px;
+      @media (max-width: 900px) {
+        flex-direction: revert;
+        gap: 12px;
+      }
+      @media (max-width: 575px) {
+        width: 100%;
+      }
+    }
+    .btn {
+      height: 40px !important;
+      min-height: 40px !important;
+      width: 124px !important;
+      font-size: 13px;
+      @media (max-width: 575px) {
+        width: 50% !important;
+      }
+    }
   }
 }
 // Property Title Styles END//
 
 // Property Detail Styles//
 .property-detail-wrap {
-  .MuiTabs-fixed {
-    button.MuiButtonBase-root.MuiTab-root {
-      text-transform: capitalize;
-      font-weight: 700;
-      border-bottom: 4px solid transparent;
-      position: relative;
-      min-width: 124px;
-      &::after {
-        content: '';
-        width: 2px;
-        height: 30px;
-        background-color: #ebebeb;
-        position: absolute;
-        right: -1px;
+  .propertytab-wrap {
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: flex-end;
+    }
+    > .MuiTabs-root {
+      @media (max-width: 767px) {
+        order: 2;
+        width: 100%;
       }
-      &:hover {
-        background-color: rgba(40, 113, 255, 0.15);
+      .MuiTabs-fixed {
+        .MuiTabs-flexContainer {
+          @media (max-width: 767px) {
+            width: 100%;
+            min-width: inherit;
+            flex-wrap: wrap;
+            padding: 4px;
+            border-radius: 28px;
+          }
+          button.MuiButtonBase-root.MuiTab-root {
+            text-transform: capitalize;
+            font-weight: 700;
+            border-bottom: 4px solid transparent;
+            position: relative;
+            min-width: 124px;
+            &::after {
+              content: '';
+              width: 2px;
+              height: 30px;
+              background-color: #ebebeb;
+              position: absolute;
+              right: -1px;
+              @media (max-width: 767px) {
+                display: none;
+              }
+            }
+            &:hover {
+              background-color: rgba(40, 113, 255, 0.15);
+            }
+            @media (max-width: 767px) {
+              width: 100%;
+              border-bottom: 1px solid #ebebeb;
+              min-width: 100%;
+            }
+          }
+          button.Mui-selected {
+            background-color: rgba(40, 113, 255, 0.15);
+            border-color: #2871ff;
+          }
+        }
       }
     }
-    button.Mui-selected {
-      background-color: rgba(40, 113, 255, 0.15);
-      border-color: #2871ff;
+  }
+  .tab-content-wrap {
+    > .MuiBox-root {
+      @media (max-width: 767px) {
+        padding: 0;
+      }
     }
   }
   ul.property-feature {
@@ -224,11 +328,22 @@
     }
   }
   .link-btn {
-    font-weight: 12px;
+    font-weight: 600 !important;
     color: #999999;
+  }
+  .primary-btn {
+    @media (max-width: 767px) {
+      width: inherit !important;
+    }
   }
   .edit-btn {
     margin-right: 16px;
+    @media (max-width: 767px) {
+      order: 1;
+      margin: 4px 4px 0 4px;
+      display: flex;
+      justify-content: flex-end;
+    }
   }
   .marketing-tab-content-wrapper {
     button.tab-btn {

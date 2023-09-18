@@ -55,6 +55,7 @@ const CreateCampaign = () => {
           paddingBottom: { xs: 4, xl: 4 },
           paddingTop: { xs: 5, xl: 5 },
         }}
+        className='main-title'
       >
         <Typography variant='h3' component='h3'>
           Listing Campaigns

@@ -61,6 +61,7 @@ const PropertyDetails = () => {
               direction='row'
               justifyContent='space-between'
               alignItems='center'
+              className='propertytab-wrap'
             >
               <Tabs
                 value={value}
@@ -83,13 +84,13 @@ const PropertyDetails = () => {
               </Button>
             </Stack>
           </Box>
-          <TabPanel value={value} index={0}>
+          <TabPanel value={value} index={0} className='tab-content-wrap'>
             <Overview />
           </TabPanel>
-          <TabPanel value={value} index={1}>
+          <TabPanel value={value} index={1} className='tab-content-wrap'>
             <Marketing />
           </TabPanel>
-          <TabPanel value={value} index={2}>
+          <TabPanel value={value} index={2} className='tab-content-wrap'>
             <Box
               variant='div'
               component='div'
@@ -102,7 +103,7 @@ const PropertyDetails = () => {
               {/* <MediaTable /> */}
             </Box>
           </TabPanel>
-          <TabPanel value={value} index={3}>
+          <TabPanel value={value} index={3} className='tab-content-wrap'>
             <History />
           </TabPanel>
         </Box>

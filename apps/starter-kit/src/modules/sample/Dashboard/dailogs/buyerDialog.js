@@ -39,6 +39,7 @@ const BuyerDialog = ({ open, handleClose, nextStep, step }) => {
             direction='row'
             justifyContent='space-between'
             alignItems='center'
+            flexWrap='wrap'
           >
             {step == 1 || step == 3 ? 'Buyer Information' : 'Matching buyer'}
             <Button
