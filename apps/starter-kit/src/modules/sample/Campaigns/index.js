@@ -193,10 +193,10 @@ const Campaigns = () => {
                           direction='row'
                           alignItems='center'
                         >
-                          <Grid xs={12} md={3} sx={{ padding: '0px 20px' }}>
+                          <Grid xs={4} md={3} sx={{ padding: '0px 20px' }}>
                             <Chip label='Comeplete' className='green' />
                           </Grid>
-                          <Grid xs={12} md={3} sx={{ padding: '0px 24px' }}>
+                          <Grid xs={4} md={3} sx={{ padding: '0px 24px' }}>
                             <Typography variant='p' component='p'>
                               12/05/2023
                             </Typography>
@@ -205,7 +205,7 @@ const Campaigns = () => {
                             </Typography>
                           </Grid>
                           <Divider orientation='vertical' flexItem></Divider>
-                          <Grid xs={12} md={3} sx={{ padding: '0px 24px' }}>
+                          <Grid xs={4} md={3} sx={{ padding: '0px 24px' }}>
                             <Typography variant='p' component='p'>
                               John Smith
                             </Typography>
@@ -230,6 +230,7 @@ const Campaigns = () => {
                         sx={{
                           paddingTop: { xs: 3, sm: 5, xl: 5 },
                         }}
+                        className='btn-wrap'
                       >
                         <Button
                           variant='contained'
@@ -272,7 +273,7 @@ const Campaigns = () => {
                   alignItems='center'
                   className='campaign-info-card'
                 >
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={6} md={4}>
                     <Card
                       variant='outlined'
                       className='info-card'
@@ -286,7 +287,7 @@ const Campaigns = () => {
                       </Typography>
                     </Card>
                   </Grid>
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={6} md={4}>
                     <Card
                       variant='outlined'
                       className='info-card'
@@ -300,7 +301,7 @@ const Campaigns = () => {
                       </Typography>
                     </Card>
                   </Grid>
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={6} md={4}>
                     <Card
                       variant='outlined'
                       className='info-card'
@@ -314,7 +315,7 @@ const Campaigns = () => {
                       </Typography>
                     </Card>
                   </Grid>
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={6} md={4}>
                     <Card
                       variant='outlined'
                       className='info-card'
@@ -328,7 +329,7 @@ const Campaigns = () => {
                       </Typography>
                     </Card>
                   </Grid>
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={6} md={4}>
                     <Card
                       variant='outlined'
                       className='info-card'
@@ -342,7 +343,7 @@ const Campaigns = () => {
                       </Typography>
                     </Card>
                   </Grid>
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={6} md={4}>
                     <Card
                       variant='outlined'
                       className='info-card'
@@ -376,7 +377,7 @@ const Campaigns = () => {
             component={Paper}
           >
             <Box
-              className='campaign-list-card expand-data'
+              className='campaign-list-card expand-data campaign-stats-list'
               sx={{ width: '100%', padding: '20px 32px' }}
             >
               <Typography
@@ -460,6 +461,7 @@ const Campaigns = () => {
           paddingBottom: { xs: 4, xl: 4 },
           paddingTop: { xs: 5, xl: 5 },
         }}
+        className='main-title'
       >
         <Typography variant='h3' component='h3'>
           Listing Campaigns

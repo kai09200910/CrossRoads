@@ -79,8 +79,21 @@
   }
 }
 .property-card-wrap {
-  border-radius: 12px;
+  border-radius: 6px;
+  overflow: hidden;
   .property-card {
+    @media (max-width: 599px) {
+      height: 100%;
+    }
+    .property-img {
+      height: 100%;
+      img {
+        height: 100%;
+        @media (max-width: 599px) {
+          width: 100%;
+        }
+      }
+    }
     h4 {
       font-size: 18px;
       margin-bottom: 16px;

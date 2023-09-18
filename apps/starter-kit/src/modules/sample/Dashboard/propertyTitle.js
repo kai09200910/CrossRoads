@@ -49,7 +49,7 @@ const PropertyTitle = () => {
         >
           <>
             <Grid container spacing={5}>
-              <Grid item xs={12} md={3}>
+              <Grid item xs={12} md={3} lg={3}>
                 <Box variant='div' component='div' className='property-img'>
                   <Box
                     component='img'
@@ -58,7 +58,7 @@ const PropertyTitle = () => {
                   ></Box>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={7}>
+              <Grid item xs={12} md={7} lg={7}>
                 <Stack
                   direction='row'
                   justifyContent='flex-start'
@@ -232,12 +232,13 @@ const PropertyTitle = () => {
                   </Stack>
                 </Stack>
               </Grid>
-              <Grid item xs={12} md={2}>
+              <Grid item xs={12} md={2} lg={2}>
                 <Stack
                   direction='column'
                   justifyContent='space-between'
                   alignItems='flex-end'
                   sx={{ height: '100%' }}
+                  className='btn-group'
                 >
                   <Button
                     variant='outlined'
@@ -247,7 +248,7 @@ const PropertyTitle = () => {
                   >
                     Edit
                   </Button>
-                  <Stack spacing={2}>
+                  <Stack className='final-btn-group'>
                     <Button
                       variant='contained'
                       size='large'

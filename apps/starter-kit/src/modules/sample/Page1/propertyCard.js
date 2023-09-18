@@ -14,12 +14,12 @@ const PropertyCard = () => {
         className='property-card'
       >
         <Grid container spacing={0} className=''>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} sm={5} md={5}>
             <Box variant='div' component='div' className='property-img'>
               <Box component='img' src={PropertyImg} alt='property-image'></Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} sm={7} md={7}>
             <Box
               sx={{
                 padding: { padding: '20px 20px 20px 8px' },

@@ -10,7 +10,7 @@ import MediaTable from './mediaTable';
 const MediaTabs = () => {
   return (
     <>
-      <Tabs defaultValue={0}>
+      <Tabs defaultValue={0} className='mediatab-wrap'>
         <StyledTabsList>
           <StyledTab value={0}>Photos</StyledTab>
           <StyledTab value={1}>Videos</StyledTab>

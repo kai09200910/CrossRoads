@@ -40,11 +40,6 @@ img {
   height: auto;
 }
 
-h1 {
-  font-size: 22px;
-  font-weight: 600;
-}
-
 h5 {
   font-size: 14px;
   font-weight: 500;
@@ -135,6 +130,9 @@ textarea {
   min-width: 124px !important;
   font-size: 14px;
   font-weight: 600;
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 }
 .btn.Mui-disabled {
   opacity: 0.2;
@@ -243,23 +241,37 @@ a {
   height: 30px;
   border-radius: 3px;
 }
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
 
 h2 {
   font-size: 24px !important;
   font-weight: 700 !important;
   line-height: 30.24px !important;
   @media (max-width: 992px) {
+    font-size: 22px !important;
   }
   @media (max-width: 767px) {
+    font-size: 20px !important;
   }
   @media (max-width: 480px) {
+    font-size: 18px !important;
   }
 }
 h3 {
   font-size: 20px !important;
   font-weight: 700 !important;
   line-height: 25.2px !important;
+  @media (max-width: 992px) {
+    font-size: 18px !important;
+  }
+  @media (max-width: 767px) {
+    font-size: 16px !important;
+  }
   @media (max-width: 480px) {
+    font-size: 15px !important;
   }
 }
 h4 {
@@ -271,6 +283,10 @@ h4 {
 // Add Document Button Styles //
 
 .add-doc-btn-grp {
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
   .add-doc-btn {
     background-color: #f0f0f0 !important;
     color: #292929 !important;
@@ -360,6 +376,15 @@ h4 {
       color: #009a6c !important;
     }
   }
+  button,
+  .btn {
+    @media (max-width: 767px) {
+      width: 48% !important;
+    }
+    @media (max-width: 480px) {
+      width: 100% !important;
+    }
+  }
 }
 
 // Add Document Button Styles END //
@@ -370,8 +395,21 @@ h4 {
   .MuiPaper-root {
     min-width: 670px;
     border-radius: 10px;
+    @media (max-width: 767px) {
+      width: 100%;
+      min-width: inherit;
+      margin: 32px 16px;
+    }
     .modal-dailog-title {
       padding: 40px 24px 0px 24px;
+      @media (max-width: 767px) {
+        font-size: 20px !important;
+      }
+      button {
+        @media (max-width: 475px) {
+          margin-top: 16px;
+        }
+      }
     }
     .modal-dailog-content {
       padding: 40px 24px 20px 24px;
@@ -402,11 +440,25 @@ h4 {
           }
         }
       }
+      label.empty-label {
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
     }
     .modal-dailog-footer {
       padding: 8px 24px 48px 24px;
       align-items: center;
       justify-content: center;
+      @media (max-width: 374px) {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      button {
+        @media (max-width: 374px) {
+          margin: 0;
+        }
+      }
     }
   }
 }
@@ -487,6 +539,9 @@ header {
     input {
       background-color: #dbdbdb !important;
       width: 400px !important;
+      @media (max-width: 767px) {
+        width: 190px !important;
+      }
     }
   }
   .notification-icon-btn {
@@ -654,9 +709,16 @@ header {
     border-top: 1px solid rgba(224, 224, 224, 1);
     .data-block {
       width: 19%;
+      @media (max-width: 575px) {
+        width: 30%;
+      }
       .img-wrap {
         height: 95px;
         width: 95px;
+        @media (max-width: 575px) {
+          width: 100%;
+          height: auto;
+        }
         img {
           width: 100%;
         }
@@ -728,4 +790,39 @@ header {
   height: calc(100vh - 170px);
   overflow: auto;
   padding-right: 8px;
+}
+.main-title {
+  display: flex;
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  h4 {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  button {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}
+
+.mediatab-wrap {
+  .MuiTabsList-root {
+    @media (max-width: 767px) {
+      width: 100%;
+      min-width: inherit;
+      flex-wrap: wrap;
+      padding: 4px;
+      border-radius: 28px;
+    }
+    button {
+      @media (max-width: 767px) {
+        width: 100% !important;
+        margin: 2px 4px;
+      }
+    }
+  }
 }

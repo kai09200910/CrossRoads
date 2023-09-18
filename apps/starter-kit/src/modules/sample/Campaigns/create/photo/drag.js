@@ -63,6 +63,7 @@ const DragPhoto = () => {
               justifyContent='flex-start'
               alignItems='center'
               spacing={4}
+              flexWrap='wrap'
             >
               <img
                 src='../../../../assets/images/email-temp-logo.svg'
@@ -150,7 +151,8 @@ const DragPhoto = () => {
                   justifyContent='flex-start'
                   alignItems='center'
                   spacing={5}
-                  className='agent-info'
+                  className='agent-info-wrap'
+                  flexWrap='wrap'
                 >
                   <img
                     src='../../../../assets/images/estate-agent.png'
@@ -173,7 +175,11 @@ const DragPhoto = () => {
                       <Typography variant='p' component='p'>
                         dylan@HGC.com
                       </Typography>
-                      <Typography variant='span' component='span'>
+                      <Typography
+                        variant='span'
+                        component='span'
+                        className='link-url'
+                      >
                         https://www.hgchristie.com/eng/associate/529-a-me324397/dylan-christie/sales
                       </Typography>
                     </Box>

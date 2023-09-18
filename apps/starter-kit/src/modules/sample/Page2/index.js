@@ -135,6 +135,7 @@ const Page2 = () => {
                     flexDirection: 'row',
                     paddingTop: { xs: 9, xl: 18 },
                   }}
+                  className='listing-form-footer'
                 >
                   <Button
                     variant='outlined'
@@ -148,7 +149,12 @@ const Page2 = () => {
 
                   <Box sx={{ flex: '1 1 auto' }} />
 
-                  <Stack spacing={{ xs: 3, sm: 5 }} direction='row' useFlexGap>
+                  <Stack
+                    spacing={{ xs: 3, sm: 5 }}
+                    direction='row'
+                    useFlexGap
+                    className='btn-group'
+                  >
                     <Button
                       variant='contained'
                       size='large'

@@ -4,6 +4,9 @@
     transition: all ease 0.3s;
     .campaign-list-card {
       transition: all ease 0.3s;
+      @media (max-width: 767px) {
+        padding: 16px;
+      }
       .intro {
         h4 {
           font-size: 14px !important;
@@ -11,6 +14,11 @@
         }
       }
       .detail {
+        .MuiGrid-container {
+          @media (max-width: 767px) {
+            align-items: flex-start;
+          }
+        }
         p {
           font-weight: 600;
         }
@@ -19,7 +27,19 @@
           font-weight: 400;
           color: #999999;
         }
+        hr {
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+        .MuiGrid-grid-xs-true {
+          @media (max-width: 768px) {
+            padding-left: 0;
+            padding-right: 16px;
+          }
+        }
       }
+
       span {
         font-size: 12px;
         font-weight: 400;
@@ -46,7 +66,26 @@
         box-shadow: none !important;
       }
     }
+    .campaign-list-card.compact-data {
+      .primary-btn {
+        @media (max-width: 991px) {
+          height: 40px;
+          width: 100%;
+        }
+      }
+    }
     .campaign-list-card.expand-data {
+      .detail {
+        @media (max-width: 767px) {
+          margin-top: 16px;
+          margin-left: 16px;
+        }
+        .MuiGrid-grid-xs-4 {
+          @media (max-width: 767px) {
+            padding: 0px 8px;
+          }
+        }
+      }
       .campaign-info-card {
         .info-card {
           border-color: #d9d9d9;
@@ -60,11 +99,17 @@
           gap: 8px;
           height: 120px;
           box-shadow: none !important;
+          @media (max-width: 767px) {
+            padding: 8px;
+          }
           p {
             font-size: 26px;
             color: #2871ff;
             font-weight: 700;
             margin-bottom: 4px;
+            @media (max-width: 767px) {
+              font-size: 18px;
+            }
           }
           span {
             font-size: 12px;
@@ -73,6 +118,28 @@
             margin: 0;
           }
         }
+      }
+      .btn-wrap {
+        @media (max-width: 767px) {
+          flex-wrap: wrap;
+          width: 100%;
+        }
+        button {
+          @media (max-width: 767px) {
+            width: 48%;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+  .campaign-list-card.expand-data.campaign-stats-list {
+    @media (max-width: 767px) {
+      padding: 16px !important;
+    }
+    h4 {
+      @media (max-width: 767px) {
+        font-size: 15px !important;
       }
     }
   }
@@ -127,6 +194,12 @@
       img {
         width: 100%;
       }
+      @media (min-width: 992px) and (max-width: 1024px) {
+        width: 30.33%;
+      }
+      @media (max-width: 400px) {
+        width: 47%;
+      }
     }
   }
   button {
@@ -139,6 +212,12 @@
   padding: 16px 24px;
   width: 74%;
   margin: 0 auto;
+  @media (max-width: 1199px) {
+    width: 100%;
+  }
+  @media (max-width: 767px) {
+    padding: 16px;
+  }
   .custome-dropzone {
     .MuiBox-root {
       width: 100%;
@@ -161,21 +240,38 @@
       background-color: #333 !important;
     }
   }
-  .agent-info {
-    h3 {
-      margin-bottom: 12px;
-      font-size: 18px !important;
-      padding-bottom: 4px;
-      border-bottom: 1px solid #333;
+  .agent-info-wrap {
+    .agent-info {
+      @media (max-width: 600px) {
+        margin: 16px 0 0 0;
+      }
+      h3 {
+        margin-bottom: 12px;
+        font-size: 18px !important;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #333;
+      }
+      p {
+        margin-bottom: 4px;
+        font-weight: 500;
+      }
+      span {
+        font-size: 9px;
+        font-weight: 500;
+        margin-top: 4px;
+      }
+      span.link-url {
+        @media (max-width: 475px) {
+          word-break: break-all;
+        }
+      }
     }
-    p {
-      margin-bottom: 4px;
-      font-weight: 500;
-    }
-    span {
-      font-size: 9px;
-      font-weight: 500;
-      margin-top: 4px;
+  }
+  .email-template {
+    h3.MuiTypography-h3 {
+      @media (max-width: 600px) {
+        margin: 16px 0 0 0;
+      }
     }
   }
 }
