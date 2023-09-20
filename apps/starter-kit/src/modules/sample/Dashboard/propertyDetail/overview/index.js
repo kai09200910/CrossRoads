@@ -84,7 +84,6 @@ const Overview = () => {
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                {/* <MdHomeFilled size={22} /> */}
                 <img src={SingleFamilyIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='Single Family Residence ' />
@@ -92,7 +91,6 @@ const Overview = () => {
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                {/* <IoIosBed size={22} />{' '} */}
                 <img src={BedroomIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='10 Bedrooms ' />
@@ -100,8 +98,6 @@ const Overview = () => {
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                {/* <BiSolidShower size={22} />{' '} */}
-                {/* <IoIosBed size={22} />{' '} */}
                 <img src={BathroomIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='12 Bathrooms / 2 Partial' />
@@ -109,7 +105,6 @@ const Overview = () => {
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                {/* <FaCalendarAlt size={22} />{' '} */}
                 <img src={BuiltYearIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='Built in 2001' />
@@ -117,7 +112,6 @@ const Overview = () => {
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                {/* <FaMapMarkedAlt size={22} />{' '} */}
                 <img src={AreaIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='1.35 acres / 5,000 Sq. Ft.  ' />
@@ -125,7 +119,6 @@ const Overview = () => {
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                {/* <IoIosSnow size={22} />{' '} */}
                 <img src={AirconditionIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='Central' />
@@ -133,7 +126,6 @@ const Overview = () => {
             <ListItem disablePadding>
               <ListItemIcon>
                 {' '}
-                {/* <GiTowerBridge size={22} />{' '} */}
                 <img src={StoriesIcon} alt='Icon' />
               </ListItemIcon>
               <ListItemText primary='2 Stories' />
@@ -176,7 +168,6 @@ const Overview = () => {
             <Button
               variant='contained'
               size='large'
-              // onClick={handleNext}
               className='primary-btn btn'
             >
               +Add

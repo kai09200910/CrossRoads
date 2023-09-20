@@ -415,3 +415,132 @@
     }
   }
 }
+
+// Approval Tab Styles //
+.approval-tab-content {
+  .status-bar {
+    justify-content: center;
+    margin: 16px 0 32px 0;
+    span {
+      color: #999999;
+    }
+    span.Mui-checked {
+      color: #2871ff;
+    }
+  }
+  .approval-tab {
+    .approval-tab-list {
+      .MuiTabs-fixed {
+        text-align: center;
+        .MuiTabs-centered {
+          border: 1px solid #d9d9d9;
+          border-radius: 9px;
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+          display: inline-flex;
+          height: 48px;
+          padding: 4px;
+          button {
+            text-transform: capitalize;
+            font-weight: 600;
+            border-radius: 6px;
+            min-height: 40px !important;
+            &:hover {
+              color: #2871ff;
+            }
+          }
+          button.Mui-selected {
+            background: #2871ff;
+
+            color: #fff;
+          }
+        }
+        span.MuiTabs-indicator {
+          display: none;
+        }
+      }
+    }
+  }
+  .table-wrapper {
+    border-radius: 10px;
+    table {
+      thead {
+        tr {
+          th {
+            background: #999999;
+            background-color: #f9f9f9 !important ;
+            font-size: 12px !important;
+            padding: 4px 16px !important;
+          }
+        }
+      }
+      tbody {
+        tr {
+          th,
+          td {
+            padding: 8px 16px !important;
+            // height: 50px !important;
+            font-size: 14px;
+          }
+          &:hover {
+            th,
+            td {
+              background-color: #dfeaff59;
+              color: #2871ff;
+            }
+          }
+          th.field-name {
+            p {
+              color: #999999;
+              font-size: 11px;
+            }
+          }
+        }
+      }
+      .table-empty-state {
+        padding: 32px;
+        justify-content: center;
+        p {
+          color: #999;
+        }
+        svg {
+          color: #999;
+        }
+      }
+    }
+  }
+  .ios-switch-custom {
+    margin: 0;
+  }
+}
+.disapproval-feedback-dailog {
+  .MuiPaper-root {
+    .modal-dailog-footer {
+      justify-content: flex-end;
+    }
+    .custome-dropzone {
+      padding: 0;
+      background-color: #fff;
+      border-radius: 8px;
+      // border: 1px solid #e1e1e1;
+      height: 140px;
+      .MuiBox-root {
+        width: 100%;
+        .dropzone {
+          height: 140px;
+          background-color: #fff;
+          border-radius: 8px;
+          border: 1px solid #e1e1e1;
+          svg {
+            width: 36px;
+            height: 36px;
+          }
+          p {
+            font-size: 14px;
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+}
+// Approval Tab Styles END//
