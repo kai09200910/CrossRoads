@@ -12,6 +12,10 @@ import Marketing from './marketing';
 import Overview from './overview';
 import MediaTabs from '../../Page2/mediaTabs';
 import MediaTable from '../../Page2/mediaTable';
+import Approval from './approval';
+import Activity from './activity';
+
+const tabsOptions = ['Approval', 'Overview', 'Marketing', 'Media'];
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -46,12 +50,14 @@ function a11yProps(index) {
 }
 
 const PropertyDetails = () => {
-  const [value, setValue] = React.useState(0);
+  const [isAdmin, setIsAdmin] = useState(true);
+  const [value, setValue] = React.useState(isAdmin ? 0 : 1);
 
   const handleChange = (event, newValue) => {
+    console.log('newValue', newValue);
     setValue(newValue);
   };
-
+  console.log('value=========', value);
   return (
     <>
       <Paper sx={{ marginTop: 5 }}>
@@ -68,10 +74,17 @@ const PropertyDetails = () => {
                 onChange={handleChange}
                 aria-label='basic tabs example'
               >
-                <Tab label='Overview' {...a11yProps(0)} />
-                <Tab label='Marketing' {...a11yProps(1)} />
-                <Tab label='Media' {...a11yProps(2)} />
-                <Tab label='History' {...a11yProps(3)} />
+                <Tab label='Approval' {...a11yProps(0)} />
+                <Tab label='Overview' {...a11yProps(1)} />
+                <Tab label='Marketing' {...a11yProps(2)} />
+                <Tab label='Media' {...a11yProps(3)} />
+                {/* {tabsOptions.map((opt, index) => {
+                  return <Tab label={opt} {...a11yProps(index)} />;
+                })} */}
+                <Tab
+                  label={isAdmin ? 'Activity' : 'History'}
+                  {...a11yProps(4)}
+                />
               </Tabs>
 
               <Button
@@ -84,13 +97,17 @@ const PropertyDetails = () => {
               </Button>
             </Stack>
           </Box>
+
           <TabPanel value={value} index={0} className='tab-content-wrap'>
-            <Overview />
+            <Approval />
           </TabPanel>
           <TabPanel value={value} index={1} className='tab-content-wrap'>
-            <Marketing />
+            <Overview />
           </TabPanel>
           <TabPanel value={value} index={2} className='tab-content-wrap'>
+            <Marketing />
+          </TabPanel>
+          <TabPanel value={value} index={3} className='tab-content-wrap'>
             <Box
               variant='div'
               component='div'
@@ -100,11 +117,10 @@ const PropertyDetails = () => {
               }}
             >
               <MediaTabs />
-              {/* <MediaTable /> */}
             </Box>
           </TabPanel>
-          <TabPanel value={value} index={3} className='tab-content-wrap'>
-            <History />
+          <TabPanel value={value} index={4} className='tab-content-wrap'>
+            {isAdmin ? <Activity /> : <History />}
           </TabPanel>
         </Box>
       </Paper>

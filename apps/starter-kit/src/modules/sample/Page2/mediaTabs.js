@@ -6,6 +6,10 @@ import TabPanel from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
 import Tab, { tabClasses } from '@mui/base/Tab';
 import MediaTable from './mediaTable';
+import MediavideosTable from './mediavideosTable';
+import Media3dtoursTable from './media3dtoursTable';
+import MediawebsitesTable from './mediawebsitesTable';
+import MediabrohuresTable from './mediabrohuresTable';
 
 const MediaTabs = () => {
   return (
@@ -21,10 +25,18 @@ const MediaTabs = () => {
         <StyledTabPanel value={0}>
           <MediaTable />
         </StyledTabPanel>
-        <StyledTabPanel value={1}>Videos</StyledTabPanel>
-        <StyledTabPanel value={2}>3D Tours</StyledTabPanel>
-        <StyledTabPanel value={3}>Websites</StyledTabPanel>
-        <StyledTabPanel value={4}>Brohures</StyledTabPanel>
+        <StyledTabPanel value={1}>
+          <MediavideosTable />
+        </StyledTabPanel>
+        <StyledTabPanel value={2}>
+          <Media3dtoursTable />
+        </StyledTabPanel>
+        <StyledTabPanel value={3}>
+          <MediawebsitesTable />
+        </StyledTabPanel>
+        <StyledTabPanel value={4}>
+          <MediabrohuresTable />
+        </StyledTabPanel>
       </Tabs>
     </>
   );

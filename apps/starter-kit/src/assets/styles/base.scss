@@ -499,8 +499,8 @@ h4 {
     }
   }
   .MuiSwitch-switchBase.Mui-checked {
-    left: -2px;
     top: -5px;
+    left: -2px;
     .MuiSwitch-track {
       background-color: #2871ff;
       opacity: 1;
@@ -530,7 +530,43 @@ h4 {
     box-shadow: none;
   }
 }
+.ios-switch-custom.small {
+  width: 50px;
+  height: 30px;
+  .MuiSwitch-switchBase {
+    top: -5px;
+    left: -5px;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .MuiSwitch-switchBase.Mui-checked {
+    top: -5px;
+    left: -5px;
+    .MuiSwitch-track {
+      background-color: #fff;
+      opacity: 1;
+    }
+    .MuiSwitch-thumb {
+      background-color: #2871ff;
+    }
+  }
+  .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+    opacity: 1;
+    background-color: #fff;
+  }
+  .MuiSwitch-track {
+    width: 50px;
+    height: 30px;
+    border: 1px solid #aeaeae;
+  }
+  .MuiSwitch-thumb {
+    width: 22px;
+    height: 22px;
+  }
+}
 // IOS Custom Switch Styles END //
+
 .app-content {
   padding-top: 0;
 }
