@@ -1,5 +1,12 @@
-import { Box, Button, Checkbox, FormControlLabel, Stack } from '@mui/material';
-import React from 'react';
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Stack,
+  Typography,
+} from '@mui/material';
+import React, { useState } from 'react';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -8,12 +15,25 @@ import Documents from './documents';
 import ListingDetails from './listingDetails';
 import PropertyDetails from './propertyDetails';
 import MediaTabs from '../../../Page2/mediaTabs';
+import { RiErrorWarningFill } from 'react-icons/ri';
 
 const Approval = () => {
   const [value, setValue] = React.useState('1');
-
+  const [approvalStatus, setApprovalStatus] = useState({
+    documents: true,
+    listing: true,
+    property_detail: true,
+    media: true,
+  });
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const handleCheckBoxClick = (event) => {
+    setApprovalStatus((prevState) => ({
+      ...prevState,
+      [event.target.name]: event.target.checked,
+    }));
   };
   return (
     <>
@@ -33,31 +53,45 @@ const Approval = () => {
             sx={{
               paddingBottom: { xs: 2, xl: 2 },
             }}
-            className='status-bar'
+            className='approval-status-bar'
           >
-            <Stack spacing={{ xs: 1, sm: 2 }} direction='row' useFlexGap>
+            {/* <Stack spacing={{ xs: 1, sm: 2 }} direction='row' useFlexGap>
               <FormControlLabel
-                control={<Checkbox defaultChecked />}
+                control={<Checkbox checked={approvalStatus?.documents} />}
                 label='Documents'
+                name='documents'
+                onChange={handleCheckBoxClick}
               />
               <FormControlLabel
-                control={<Checkbox />}
+                control={<Checkbox checked={approvalStatus?.listing} />}
+                name='listing'
                 label='Listing Details'
+                onChange={handleCheckBoxClick}
               />
               <FormControlLabel
-                control={<Checkbox />}
+                control={<Checkbox checked={approvalStatus?.property_detail} />}
+                name='property_detail'
                 label='Property details'
+                onChange={handleCheckBoxClick}
               />
-              <FormControlLabel control={<Checkbox />} label='Media' />
+              <FormControlLabel
+                control={<Checkbox checked={approvalStatus?.media} />}
+                name='media'
+                label='Media'
+                onChange={handleCheckBoxClick}
+              />
             </Stack>
             <Button
               variant='contained'
               size='small'
-              className='primary-btn-small'
-              // onClick={() => setIsSubmitted(true)}
+              className={
+                Object.values(approvalStatus).every((val) => val == true)
+                  ? 'active'
+                  : '' + 'primary-btn-small'
+              }
             >
-              Submit
-            </Button>
+              Approve
+            </Button> */}
           </Stack>
         </Box>
         <Box className='approval-tab'>
@@ -72,11 +106,45 @@ const Approval = () => {
                 centered
                 className='approval-tab-list'
               >
-                <Tab label='Documents' value='1' />
-                <Tab label='Listing details' value='2' />
-                <Tab label='Property details' value='3' />
-                <Tab label='Media' value='4' />
+                <Tab
+                  label={
+                    <>
+                      <Typography>Documents</Typography>
+                      <RiErrorWarningFill size={10} />{' '}
+                    </>
+                  }
+                  value='1'
+                  className={approvalStatus.documents ? 'submited' : 'error'}
+                />
+                <Tab
+                  label='Listing details'
+                  value='2'
+                  className={approvalStatus.listing ? 'submited' : 'error'}
+                />
+                <Tab
+                  label='Property details'
+                  value='3'
+                  className={
+                    approvalStatus.property_detail ? 'submited' : 'error'
+                  }
+                />
+                <Tab
+                  label='Media'
+                  value='4'
+                  className={approvalStatus.media ? 'submited' : 'error'}
+                />
               </TabList>
+              <Button
+                variant='contained'
+                size='small'
+                className={
+                  Object.values(approvalStatus).every((val) => val == true)
+                    ? 'active'
+                    : '' + 'primary-btn-small'
+                }
+              >
+                Approve
+              </Button>
             </Box>
             <TabPanel value='1'>
               <Documents />

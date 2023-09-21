@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import { Box, Typography, FormControlLabel, Switch } from '@mui/material';
+import {
+  Box,
+  Typography,
+  FormControlLabel,
+  Switch,
+  Stack,
+  IconButton,
+  Button,
+} from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { RiPencilFill } from 'react-icons/ri';
 // import DisapprovalDialog from './disapprovalDialog';
 
 function createData(name, subinfo, approval) {
@@ -93,9 +102,18 @@ const ListingDetails = () => {
                       scope='row'
                       className='field-name'
                     >
-                      {row.name}
+                      <Stack
+                        direction='row'
+                        justifyContent='flex-start'
+                        alignItems='center'
+                        spacing={2}
+                      >
+                        {row.name}
+                        <IconButton aria-label='edit' disableRipple>
+                          <RiPencilFill size={14} />
+                        </IconButton>
+                      </Stack>
                       <Typography variant='body1' component='p'>
-                        {/* Listing type */}
                         {row.subinfo}
                       </Typography>
                     </TableCell>
@@ -122,6 +140,24 @@ const ListingDetails = () => {
             </Table>
           </TableContainer>
         </Box>
+        <Stack
+          direction='row'
+          justifyContent='end'
+          alignItems='center'
+          spacing={1}
+          sx={{
+            paddingTop: { xs: 5, xl: 8 },
+          }}
+        >
+          <Button
+            variant='contained'
+            size='large'
+            // onClick={() => setIsSubmitted(true)}
+            className='primary-btn btn'
+          >
+            Submit for MLS review
+          </Button>
+        </Stack>
       </Box>
       {/* <DisapprovalDialog open={isSubmitted} handleClose={handleClose} /> */}
     </>
