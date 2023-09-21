@@ -13,6 +13,7 @@ import {
   FormControlLabel,
   IconButton,
   Stack,
+  Switch,
   Typography,
 } from '@mui/material';
 import RowOrderIcon from '../../../assets/icon/table-row-ordering.svg';
@@ -29,7 +30,12 @@ import {
   arrayMove,
 } from 'react-sortable-hoc';
 import { Link } from 'react-router-dom';
-const columns = [
+
+const adminColumns = [
+  { id: 'name', label: 'Name', align: 'center' },
+  { id: 'approval', label: 'Approval' },
+];
+const userColumns = [
   { id: 'order', label: 'Order', minWidth: 40 },
   { id: 'name', label: 'Name', align: 'center' },
   // { id: 'size', label: 'Size' },
@@ -50,7 +56,6 @@ const columns = [
     align: 'center',
   },
 ];
-
 function createData(order, name, size, date, displayonsite, action) {
   return { order, name, size, date, displayonsite, action };
 }
@@ -71,7 +76,39 @@ const DragHandle = SortableHandle(({ style }) => (
     <img src={RowOrderIcon} alt='Icon' />{' '}
   </span>
 ));
-
+const Row1 = ({ data, ...other }) => {
+  return (
+    <>
+      <TableRow hover role='checkbox' tabIndex={-1} {...other}>
+        <TableCell>
+          <Stack
+            direction='row'
+            justifyContent='flex-start'
+            alignItems='center'
+            spacing={4}
+          >
+            <Link href='#'>3D-tour-link-here-for-property</Link>
+          </Stack>
+        </TableCell>
+        <TableCell className='size'>
+          <FormControlLabel
+            control={
+              <Switch
+                sx={{ m: 1 }}
+                className='ios-switch-custom small'
+                focusVisibleClassName='.Mui-focusVisible'
+                disableRipple
+                defaultChecked
+                //onClick={() => setIsSubmitted(true)}
+              />
+            }
+            label=''
+          />
+        </TableCell>
+      </TableRow>
+    </>
+  );
+};
 const Row = SortableElement(({ data, ...other }) => {
   return (
     <>
@@ -118,7 +155,7 @@ const Row = SortableElement(({ data, ...other }) => {
   );
 });
 
-const Media3dtoursTable = () => {
+const Media3dtoursTable = ({ isAdmin = false }) => {
   const [isGridView, setIsGridView] = React.useState(false);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -160,6 +197,12 @@ const Media3dtoursTable = () => {
       date: '05/03/24',
     },
   ]);
+  const [columns, setColumns] = React.useState(userColumns);
+
+  React.useEffect(() => {
+    setColumns(isAdmin ? adminColumns : userColumns);
+  }, [isAdmin]);
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -187,30 +230,32 @@ const Media3dtoursTable = () => {
       sx={{ width: '100%', overflow: 'hidden' }}
       className='media-table-wrapper table-wrapper'
     >
-      <Stack
-        direction='row'
-        justifyContent='flex-start'
-        alignItems='center'
-        spacing={4}
-        className='view-action'
-      >
-        <IconButton
-          aria-label='list'
-          disableRipple
-          className={!isGridView ? 'active' : ''}
-          onClick={() => setIsGridView(false)}
+      {!isAdmin ? (
+        <Stack
+          direction='row'
+          justifyContent='flex-start'
+          alignItems='center'
+          spacing={4}
+          className='view-action'
         >
-          <ListViewIcon />
-        </IconButton>
-        <IconButton
-          aria-label='grid'
-          disableRipple
-          className={isGridView ? 'active' : ''}
-          onClick={() => setIsGridView(true)}
-        >
-          <GridViewIcon />
-        </IconButton>
-      </Stack>
+          <IconButton
+            aria-label='list'
+            disableRipple
+            className={!isGridView ? 'active' : ''}
+            onClick={() => setIsGridView(false)}
+          >
+            <ListViewIcon />
+          </IconButton>
+          <IconButton
+            aria-label='grid'
+            disableRipple
+            className={isGridView ? 'active' : ''}
+            onClick={() => setIsGridView(true)}
+          >
+            <GridViewIcon />
+          </IconButton>
+        </Stack>
+      ) : null}
       {isGridView ? (
         <>
           <Box className='mediatable-gridlist'>
@@ -409,7 +454,11 @@ const Media3dtoursTable = () => {
                 {peoples
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row, index) => {
-                    return <Row index={index} key={row.index} data={row} />;
+                    return isAdmin ? (
+                      <Row1 index={index} key={row.index} data={row} />
+                    ) : (
+                      <Row index={index} key={row.index} data={row} />
+                    );
                   })}
               </TableBodySortable>
             </Table>

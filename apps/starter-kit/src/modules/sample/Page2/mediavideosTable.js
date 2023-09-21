@@ -13,6 +13,7 @@ import {
   FormControlLabel,
   IconButton,
   Stack,
+  Switch,
   Typography,
 } from '@mui/material';
 import RowOrderIcon from '../../../assets/icon/table-row-ordering.svg';
@@ -28,7 +29,13 @@ import {
   SortableElement,
   arrayMove,
 } from 'react-sortable-hoc';
-const columns = [
+const adminColumns = [
+  { id: 'name', label: 'Name', align: 'center' },
+  { id: 'size', label: 'Size' },
+  { id: 'approval', label: 'Approval' },
+];
+
+const userColumns = [
   { id: 'order', label: 'Order', minWidth: 40 },
   { id: 'name', label: 'Name', align: 'center' },
   { id: 'size', label: 'Size' },
@@ -64,40 +71,66 @@ const rows = [
 ];
 
 const DragHandle = SortableHandle(({ style }) => (
-  // <span style={{ ...style, ...{ cursor: 'move' } }}> {'::::'} </span>
   <span style={{ ...style, ...{ cursor: 'move' } }}>
     {' '}
     <img src={RowOrderIcon} alt='Icon' />{' '}
   </span>
 ));
+const Row1 = ({ data, ...other }) => {
+  return (
+    <>
+      <TableRow hover role='checkbox' tabIndex={-1} {...other}>
+        <TableCell>
+          <Stack
+            direction='row'
+            justifyContent='flex-start'
+            alignItems='center'
+            spacing={4}
+          >
+            <Box className='img-wrap'>
+              <img
+                src='../../../assets/images/photo-house.png'
+                alt='email-photo'
+              />
+            </Box>
+            <Typography variant='span' component='span'>
+              {data.name}
+            </Typography>
+          </Stack>
+        </TableCell>
+        <TableCell className='size'>
+          <Typography variant='p' component='p'>
+            {data.size}
+          </Typography>
+        </TableCell>
+        <TableCell className='size'>
+          <FormControlLabel
+            // control={<IOSSwitch  /> <Switch  sx={{ m: 1 }}
+            control={
+              <Switch
+                sx={{ m: 1 }}
+                className='ios-switch-custom small'
+                focusVisibleClassName='.Mui-focusVisible'
+                disableRipple
+                defaultChecked
+                //onClick={() => setIsSubmitted(true)}
+              />
+            }
+            label=''
+          />
+        </TableCell>
+      </TableRow>
+    </>
+  );
+};
 
 const Row = SortableElement(({ data, ...other }) => {
   return (
     <>
-      {/* <TableRow {...other}>
-      { other.children[0]}
-      <TableRowColumn style={{width :  '5%' }} >
-        <DragHandle/>
-      </TableRowColumn>
-      <TableRowColumn>
-        {data.id}
-      </TableRowColumn>
-      <TableRowColumn>
-        {data.name}
-      </TableRowColumn>
-      <TableRowColumn>
-        {data.status}
-      </TableRowColumn>
-    </TableRow > */}
-
       <TableRow hover role='checkbox' tabIndex={-1} {...other}>
         <TableCell style={{ width: '5%' }}>
           <DragHandle />
         </TableCell>
-
-        {/* <TableCell className='order'>
-          <img src={RowOrderIcon} alt='Icon' />
-        </TableCell> */}
         <TableCell>
           <Stack
             direction='row'
@@ -151,7 +184,7 @@ const Row = SortableElement(({ data, ...other }) => {
   );
 });
 
-const MediavideosTable = () => {
+const MediavideosTable = ({ isAdmin }) => {
   const [isGridView, setIsGridView] = React.useState(false);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -193,6 +226,11 @@ const MediavideosTable = () => {
       date: '05/03/24',
     },
   ]);
+  const [columns, setColumns] = React.useState(userColumns);
+
+  React.useEffect(() => {
+    setColumns(isAdmin ? adminColumns : userColumns);
+  }, [isAdmin]);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -210,9 +248,6 @@ const MediavideosTable = () => {
 
   TableBodySortable.muiName = 'TableBody';
   const onSortEnd = ({ oldIndex, newIndex }) => {
-    // this.setState({
-    //   peoples: arrayMove(this.state.peoples, oldIndex, newIndex),
-    // });
     setPeoples(arrayMove(peoples, oldIndex, newIndex));
   };
   return (
@@ -220,30 +255,32 @@ const MediavideosTable = () => {
       sx={{ width: '100%', overflow: 'hidden' }}
       className='media-table-wrapper table-wrapper'
     >
-      <Stack
-        direction='row'
-        justifyContent='flex-start'
-        alignItems='center'
-        spacing={4}
-        className='view-action'
-      >
-        <IconButton
-          aria-label='list'
-          disableRipple
-          className={!isGridView ? 'active' : ''}
-          onClick={() => setIsGridView(false)}
+      {!isAdmin ? (
+        <Stack
+          direction='row'
+          justifyContent='flex-start'
+          alignItems='center'
+          spacing={4}
+          className='view-action'
         >
-          <ListViewIcon />
-        </IconButton>
-        <IconButton
-          aria-label='grid'
-          disableRipple
-          className={isGridView ? 'active' : ''}
-          onClick={() => setIsGridView(true)}
-        >
-          <GridViewIcon />
-        </IconButton>
-      </Stack>
+          <IconButton
+            aria-label='list'
+            disableRipple
+            className={!isGridView ? 'active' : ''}
+            onClick={() => setIsGridView(false)}
+          >
+            <ListViewIcon />
+          </IconButton>
+          <IconButton
+            aria-label='grid'
+            disableRipple
+            className={isGridView ? 'active' : ''}
+            onClick={() => setIsGridView(true)}
+          >
+            <GridViewIcon />
+          </IconButton>
+        </Stack>
+      ) : null}
       {isGridView ? (
         <>
           <Box className='mediatable-gridlist'>
@@ -442,7 +479,11 @@ const MediavideosTable = () => {
                 {peoples
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row, index) => {
-                    return <Row index={index} key={row.index} data={row} />;
+                    return isAdmin ? (
+                      <Row1 index={index} key={row.index} data={row} />
+                    ) : (
+                      <Row index={index} key={row.index} data={row} />
+                    );
                   })}
               </TableBodySortable>
             </Table>

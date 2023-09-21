@@ -13,22 +13,20 @@ import {
   FormControlLabel,
   IconButton,
   Stack,
+  Switch,
   Typography,
 } from '@mui/material';
 import RowOrderIcon from '../../../assets/icon/table-row-ordering.svg';
 import { ReactComponent as ListViewIcon } from '../../../assets/icon/list-view.svg';
 import { ReactComponent as GridViewIcon } from '../../../assets/icon/grid-view.svg';
-
 import { RiCheckboxBlankCircleFill, RiDeleteBinLine } from 'react-icons/ri';
-// import { IconName } from "react-icons/tfi";
-// import { IconName } from "react-icons/hi";
 import {
   SortableContainer,
   SortableHandle,
   SortableElement,
   arrayMove,
 } from 'react-sortable-hoc';
-const columns = [
+const userColumns = [
   { id: 'order', label: 'Order', minWidth: 40 },
   { id: 'name', label: 'Name', align: 'center' },
   { id: 'size', label: 'Size' },
@@ -50,6 +48,12 @@ const columns = [
   },
 ];
 
+const adminColumns = [
+  { id: 'name', label: 'Name', align: 'center' },
+  { id: 'size', label: 'Size' },
+  { id: 'approval', label: 'Approval' },
+];
+
 function createData(order, name, size, date, displayonsite, action) {
   return { order, name, size, date, displayonsite, action };
 }
@@ -64,40 +68,66 @@ const rows = [
 ];
 
 const DragHandle = SortableHandle(({ style }) => (
-  // <span style={{ ...style, ...{ cursor: 'move' } }}> {'::::'} </span>
   <span style={{ ...style, ...{ cursor: 'move' } }}>
     {' '}
     <img src={RowOrderIcon} alt='Icon' />{' '}
   </span>
 ));
 
+const Row1 = ({ data, ...other }) => {
+  return (
+    <>
+      <TableRow hover role='checkbox' tabIndex={-1} {...other}>
+        <TableCell>
+          <Stack
+            direction='row'
+            justifyContent='flex-start'
+            alignItems='center'
+            spacing={4}
+          >
+            <Box className='img-wrap'>
+              <img
+                src='../../../assets/images/photo-house.png'
+                alt='email-photo'
+              />
+            </Box>
+            <Typography variant='span' component='span'>
+              {data.name}
+            </Typography>
+          </Stack>
+        </TableCell>
+        <TableCell className='size'>
+          <Typography variant='p' component='p'>
+            {data.size}
+          </Typography>
+        </TableCell>
+        <TableCell className='size'>
+          <FormControlLabel
+            // control={<IOSSwitch  /> <Switch  sx={{ m: 1 }}
+            control={
+              <Switch
+                sx={{ m: 1 }}
+                className='ios-switch-custom small'
+                focusVisibleClassName='.Mui-focusVisible'
+                disableRipple
+                defaultChecked
+                //onClick={() => setIsSubmitted(true)}
+              />
+            }
+            label=''
+          />
+        </TableCell>
+      </TableRow>
+    </>
+  );
+};
 const Row = SortableElement(({ data, ...other }) => {
   return (
     <>
-      {/* <TableRow {...other}>
-      { other.children[0]}
-      <TableRowColumn style={{width :  '5%' }} >
-        <DragHandle/>
-      </TableRowColumn>
-      <TableRowColumn>
-        {data.id}
-      </TableRowColumn>
-      <TableRowColumn>
-        {data.name}
-      </TableRowColumn>
-      <TableRowColumn>
-        {data.status}
-      </TableRowColumn>
-    </TableRow > */}
-
       <TableRow hover role='checkbox' tabIndex={-1} {...other}>
         <TableCell style={{ width: '5%' }}>
           <DragHandle />
         </TableCell>
-
-        {/* <TableCell className='order'>
-          <img src={RowOrderIcon} alt='Icon' />
-        </TableCell> */}
         <TableCell>
           <Stack
             direction='row'
@@ -151,7 +181,8 @@ const Row = SortableElement(({ data, ...other }) => {
   );
 });
 
-const MediaTable = () => {
+const MediaTable = ({ isAdmin = false }) => {
+  console.log('isAdmin', isAdmin);
   const [isGridView, setIsGridView] = React.useState(false);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -193,6 +224,11 @@ const MediaTable = () => {
       date: '05/03/24',
     },
   ]);
+  const [columns, setColumns] = React.useState(userColumns);
+
+  React.useEffect(() => {
+    setColumns(isAdmin ? adminColumns : userColumns);
+  }, [isAdmin]);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -220,30 +256,32 @@ const MediaTable = () => {
       sx={{ width: '100%', overflow: 'hidden' }}
       className='media-table-wrapper table-wrapper'
     >
-      <Stack
-        direction='row'
-        justifyContent='flex-start'
-        alignItems='center'
-        spacing={4}
-        className='view-action'
-      >
-        <IconButton
-          aria-label='list'
-          disableRipple
-          className={!isGridView ? 'active' : ''}
-          onClick={() => setIsGridView(false)}
+      {!isAdmin ? (
+        <Stack
+          direction='row'
+          justifyContent='flex-start'
+          alignItems='center'
+          spacing={4}
+          className='view-action'
         >
-          <ListViewIcon />
-        </IconButton>
-        <IconButton
-          aria-label='grid'
-          disableRipple
-          className={isGridView ? 'active' : ''}
-          onClick={() => setIsGridView(true)}
-        >
-          <GridViewIcon />
-        </IconButton>
-      </Stack>
+          <IconButton
+            aria-label='list'
+            disableRipple
+            className={!isGridView ? 'active' : ''}
+            onClick={() => setIsGridView(false)}
+          >
+            <ListViewIcon />
+          </IconButton>
+          <IconButton
+            aria-label='grid'
+            disableRipple
+            className={isGridView ? 'active' : ''}
+            onClick={() => setIsGridView(true)}
+          >
+            <GridViewIcon />
+          </IconButton>
+        </Stack>
+      ) : null}
       {isGridView ? (
         <>
           <Box className='mediatable-gridlist'>
@@ -444,73 +482,9 @@ const MediaTable = () => {
                 {peoples
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row, index) => {
-                    return (
-                      // <TableRow hover role='checkbox' tabIndex={-1} key={row.code}>
-                      //   <TableCell className='order'>
-                      //     <img src={RowOrderIcon} alt='Icon' />
-                      //   </TableCell>
-                      //   <TableCell>
-                      //     <Stack
-                      //       direction='row'
-                      //       justifyContent='flex-start'
-                      //       alignItems='center'
-                      //       spacing={4}
-                      //     >
-                      //       <Box className='img-wrap'>
-                      //         <img
-                      //           src='../../../assets/images/photo-house.png'
-                      //           alt='email-photo'
-                      //         />
-                      //       </Box>
-                      //       <Typography variant='span' component='span'>
-                      //         House.jpg
-                      //       </Typography>
-                      //     </Stack>
-                      //   </TableCell>
-                      //   <TableCell className='size'>
-                      //     <Typography variant='p' component='p'>
-                      //       <RiCheckboxBlankCircleFill size={6} className='green' />
-                      //       500Kb
-                      //     </Typography>
-                      //   </TableCell>
-                      //   <TableCell>
-                      //     <Typography variant='span' component='span'>
-                      //       05/03/24
-                      //     </Typography>
-                      //   </TableCell>
-                      //   <TableCell>
-                      //     {' '}
-                      //     <Stack
-                      //       direction='row'
-                      //       justifyContent='flex-start'
-                      //       alignItems='center'
-                      //       spacing={3}
-                      //     >
-                      //       <FormControlLabel
-                      //         control={<Checkbox />}
-                      //         label='Yes  '
-                      //         checked={true}
-                      //       />
-                      //       <FormControlLabel control={<Checkbox />} label='No  ' />
-                      //     </Stack>
-                      //   </TableCell>
-                      //   <TableCell className='action'>
-                      //     <RiDeleteBinLine size={24} />
-                      //   </TableCell>
-
-                      //   {/* {columns.map((column) => {
-                      //     const value = row[column.id];
-                      //     return (
-                      //       <>
-                      //       <TableCell key={column.id} align={column.align}>
-                      //         {column.format && typeof value === 'number'
-                      //           ? column.format(value)
-                      //           : value}
-                      //       </TableCell>
-                      //       </>
-                      //     );
-                      //   })} */}
-                      // </TableRow>
+                    return isAdmin ? (
+                      <Row1 index={index} key={row.index} data={row} />
+                    ) : (
                       <Row index={index} key={row.index} data={row} />
                     );
                   })}

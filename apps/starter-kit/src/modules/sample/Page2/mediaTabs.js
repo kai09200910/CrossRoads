@@ -23,19 +23,19 @@ const MediaTabs = () => {
           <StyledTab value={4}>Brohures </StyledTab>
         </StyledTabsList>
         <StyledTabPanel value={0}>
-          <MediaTable />
+          <MediaTable isAdmin={true} />
         </StyledTabPanel>
         <StyledTabPanel value={1}>
-          <MediavideosTable />
+          <MediavideosTable isAdmin={true} />
         </StyledTabPanel>
         <StyledTabPanel value={2}>
-          <Media3dtoursTable />
+          <Media3dtoursTable isAdmin={true} />
         </StyledTabPanel>
         <StyledTabPanel value={3}>
-          <MediawebsitesTable />
+          <MediawebsitesTable isAdmin={true} />
         </StyledTabPanel>
         <StyledTabPanel value={4}>
-          <MediabrohuresTable />
+          <MediabrohuresTable isAdmin={true} />
         </StyledTabPanel>
       </Tabs>
     </>

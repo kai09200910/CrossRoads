@@ -16,21 +16,31 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import DisapprovalDialog from './disapprovalDialog';
 import { RiErrorWarningFill } from 'react-icons/ri';
+import RevokeapprovalDialog from './revokeapprovalDialog';
 
-function createData(name, size, approval) {
-  return { name, size, approval };
+function createData(name, size, submitted) {
+  return { name, size, submitted };
 }
 
 const rows = [
-  createData('KYC Documents ', '120kb'),
-  createData('Listing Agreement ', '5mb'),
-  createData('Sales agreement ', '2.6kb'),
+  createData('KYC Documents ', '120kb', false),
+  createData('Listing Agreement ', '5mb', null),
+  createData('Sales agreement ', '2.6kb', true),
 ];
 
 const Documents = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const handleClose = () => {
     setIsSubmitted(false);
+  };
+
+  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
+  const handleBuyerOpen = () => {
+    // setStep(1);
+    setIsBuyerDialogOpen(true);
+  };
+  const handleBuyerClose = () => {
+    setIsBuyerDialogOpen(false);
   };
   return (
     <>
@@ -56,7 +66,7 @@ const Documents = () => {
             <Table sx={{ minWidth: 650 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
-                  <TableCell align='left' style={{ width: '55%' }}>
+                  <TableCell align='left' style={{ width: '45%' }}>
                     Name
                   </TableCell>
                   {/* <TableCell align='left'>Date</TableCell> */}
@@ -66,73 +76,78 @@ const Documents = () => {
                   <TableCell align='left' style={{ width: '30%' }}>
                     Approval
                   </TableCell>
+                  <TableCell align='left' style={{ width: '10%' }}></TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
-                {/* empty state here */}
-                <TableRow className='table-empty-state'>
-                  {/* <TableCell align='center' style={{ width: '100%' }}>
-                    <RiErrorWarningFill size={25} />
-                      <Typography gutterBottom variant='p' component='p'>
-                        No documents submitted yet,
-                      </Typography>
-                      <Typography gutterBottom variant='p' component='p'>
-                        all submitted items will appear here.
-                      </Typography>
-                  </TableCell> */}
-                  <Box variant='div' component='div' className=''>
-                    <Stack
-                      direction='column'
-                      justifyContent='center'
-                      alignItems='center'
-                      spacing={1}
+              {rows.length > 0 ? (
+                <TableBody>
+                  {rows.map((row) => (
+                    <TableRow
+                      key={row.name}
                       sx={{
-                        paddingBottom: { xs: 2, xl: 2 },
+                        '&:last-child td, &:last-child th': { border: 0 },
                       }}
-                      className=''
                     >
-                      <RiErrorWarningFill size={25} />
-                      <Typography gutterBottom variant='p' component='p'>
-                        No documents submitted yet,
-                      </Typography>
-                      <Typography gutterBottom variant='p' component='p'>
-                        all submitted items will appear here.
-                      </Typography>
-                    </Stack>
-                  </Box>
-                </TableRow>
-
-                {/* {rows.map((row) => (
-                  <TableRow
-                    key={row.name}
+                      <TableCell component='th' scope='row'>
+                        {row.name}
+                      </TableCell>
+                      <TableCell align='left'>{row.size}</TableCell>
+                      <TableCell align='left'>
+                        {' '}
+                        <FormControlLabel
+                          control={
+                            <Switch
+                              sx={{ m: 1 }}
+                              className='ios-switch-custom small'
+                              focusVisibleClassName='.Mui-focusVisible'
+                              disableRipple
+                              defaultChecked
+                              onClick={() => setIsSubmitted(true)}
+                            />
+                          }
+                          label=''
+                        />
+                      </TableCell>
+                      <TableCell align='left'>
+                        {row.submitted !== null ? (
+                          <Typography
+                            className={row.submitted ? 'success' : 'error'}
+                          >
+                            {row.submitted
+                              ? 'RESUBMITTED'
+                              : 'WAITING FOR RESUBMISSION'}
+                          </Typography>
+                        ) : null}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              ) : (
+                <Box
+                  variant='div'
+                  component='div'
+                  className='table-empty-state'
+                >
+                  <Stack
+                    direction='column'
+                    justifyContent='center'
+                    alignItems='center'
+                    spacing={1}
                     sx={{
-                      '&:last-child td, &:last-child th': { border: 0 },
+                      paddingBottom: { xs: 2, xl: 2 },
                     }}
+                    className=''
                   >
-                    <TableCell component='th' scope='row'>
-                      {row.name}
-                    </TableCell>
-                    <TableCell align='left'>{row.size}</TableCell>
-                    <TableCell align='left'>
-                      {' '}
-                      <FormControlLabel
-                        // control={<IOSSwitch  /> <Switch  sx={{ m: 1 }}
-                        control={
-                          <Switch
-                            sx={{ m: 1 }}
-                            className='ios-switch-custom small'
-                            focusVisibleClassName='.Mui-focusVisible'
-                            disableRipple
-                            defaultChecked
-                            onClick={() => setIsSubmitted(true)}
-                          />
-                        }
-                        label=''
-                      />
-                    </TableCell>
-                  </TableRow>
-                ))} */}
-              </TableBody>
+                    <RiErrorWarningFill size={25} />
+                    <Typography gutterBottom variant='p' component='p'>
+                      No documents submitted yet,
+                    </Typography>
+                    <Typography gutterBottom variant='p' component='p'>
+                      all submitted items will appear here.
+                    </Typography>
+                  </Stack>
+                </Box>
+              )}
             </Table>
           </TableContainer>
         </Box>
@@ -145,13 +160,6 @@ const Documents = () => {
             paddingTop: { xs: 5, xl: 8 },
           }}
         >
-          {/* <Button
-            variant='text'
-            onClick={() => handleBack(null)}
-            className='link-btn'
-          >
-            Back
-          </Button> */}
           <Button
             variant='contained'
             size='large'
@@ -160,9 +168,25 @@ const Documents = () => {
           >
             Submit for MLS review
           </Button>
+
+          <Button
+            variant='contained'
+            size='large'
+            onClick={handleBuyerOpen}
+            className='primary-btn btn'
+          >
+            Revoke approval
+          </Button>
         </Stack>
       </Box>
       <DisapprovalDialog open={isSubmitted} handleClose={handleClose} />
+
+      <RevokeapprovalDialog
+        open={isBuyerDialogOpen}
+        handleClose={handleBuyerClose}
+        // nextStep={nextStep}
+        // step={step}
+      />
     </>
   );
 };
