@@ -476,8 +476,10 @@
             }
             button.Mui-selected {
               background: #2871ff;
-
               color: #fff;
+              svg {
+                display: none;
+              }
             }
           }
           span.MuiTabs-indicator {
@@ -552,6 +554,7 @@
           }
         }
       }
+
       .table-empty-state {
         padding: 32px;
         justify-content: center;
@@ -571,7 +574,7 @@
 .disapproval-feedback-dailog {
   .MuiPaper-root {
     .modal-dailog-footer {
-      justify-content: flex-end;
+      justify-content: flex-end !important;
     }
     .custome-dropzone {
       padding: 0;
@@ -664,6 +667,25 @@
     }
   }
 }
+.table-with-footer {
+  tbody {
+    tr {
+      td {
+        .total-row {
+          p {
+            font-weight: 700 !important;
+            font-size: 14px !important;
+          }
+        }
+      }
+      .total-row {
+        font-weight: 700 !important;
+        font-size: 14px !important;
+      }
+    }
+  }
+}
+
 .t-report-wrapper {
   p {
     font-weight: 600;
@@ -673,6 +695,7 @@
   span {
     font-weight: 400;
     font-size: 12px;
+    color: #999;
   }
 }
 // Approval Tab Styles END//

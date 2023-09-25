@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   Stack,
-  Paper,
   Typography,
   FormControlLabel,
   Switch,
@@ -66,17 +65,17 @@ const Documents = () => {
             <Table sx={{ minWidth: 650 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
-                  <TableCell align='left' style={{ width: '45%' }}>
+                  <TableCell align='left' style={{ width: '48%' }}>
                     Name
                   </TableCell>
                   {/* <TableCell align='left'>Date</TableCell> */}
                   <TableCell align='left' style={{ width: '15%' }}>
                     Size
                   </TableCell>
-                  <TableCell align='left' style={{ width: '30%' }}>
+                  <TableCell align='left' style={{ width: '26%' }}>
                     Approval
                   </TableCell>
-                  <TableCell align='left' style={{ width: '10%' }}></TableCell>
+                  <TableCell align='left' style={{ width: '12%' }}></TableCell>
                 </TableRow>
               </TableHead>
               {rows.length > 0 ? (

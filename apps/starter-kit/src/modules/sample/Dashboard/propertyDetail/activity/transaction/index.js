@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Button, Stack } from '@mui/material';
-import InquiryinformationDialog from '../../dailogs/inquiryinformationDialog';
+import InquiryinformationDialog from '../../../dailogs/inquiryinformationDialog';
 import TransactionReport from './transactionReport';
 import Receipts from './receipts';
 import Expenses from './expenses';
+import Totals from './totals';
 
 function createData(name, date, listing, action) {
   return { name, date, listing, action };
@@ -32,6 +33,8 @@ const Transactions = ({ handleBack }) => {
           <Receipts />
 
           <Expenses />
+
+          <Totals />
         </Stack>
         <Stack
           direction='row'
