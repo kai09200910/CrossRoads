@@ -23,7 +23,7 @@ const MediaTabs = () => {
           <StyledTab value={4}>Brohures </StyledTab>
         </StyledTabsList>
         <StyledTabPanel value={0}>
-          <MediaTable isAdmin={true} />
+          <MediaTable isAdmin={false} />
         </StyledTabPanel>
         <StyledTabPanel value={1}>
           <MediavideosTable isAdmin={true} />

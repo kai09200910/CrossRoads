@@ -401,7 +401,7 @@ h4 {
       margin: 32px 16px;
     }
     .modal-dailog-title {
-      padding: 40px 24px 0px 24px;
+      padding: 40px 42px 0px 42px;
       @media (max-width: 767px) {
         font-size: 20px !important;
       }
@@ -412,7 +412,7 @@ h4 {
       }
     }
     .modal-dailog-content {
-      padding: 40px 24px 20px 24px;
+      padding: 40px 42px 20px 42px;
       .error-value {
         span {
           display: flex;
@@ -447,7 +447,7 @@ h4 {
       }
     }
     .modal-dailog-footer {
-      padding: 8px 24px 48px 24px;
+      padding: 8px 42px 48px 42px;
       align-items: center;
       justify-content: center;
       @media (max-width: 374px) {

@@ -107,15 +107,14 @@ const DisapprovalDialog = ({ open, handleClose }) => {
                         <TableCell align='left' style={{ width: '20%' }}>
                           Size
                         </TableCell>
-                        <TableCell align='left' style={{ width: '15%' }}>
-                          Action
-                        </TableCell>
+                        <TableCell
+                          align='left'
+                          style={{ width: '15%' }}
+                        ></TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      {/* {rows.map((row) => ( */}
                       <TableRow
-                        // key={row.name}
                         sx={{
                           '&:last-child td, &:last-child th': { border: 0 },
                         }}

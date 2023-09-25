@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -30,7 +30,7 @@ const rows = [
     'Complete',
     '$5,000,000',
   ),
-  createData('Total revenue: $569,390.00'),
+  //createData('Total revenue: $569,390.00'),
 ];
 
 const Receipts = () => {
@@ -39,6 +39,7 @@ const Receipts = () => {
       <Box
         sx={{
           paddingTop: { xs: 0, xl: 0 },
+          width: '100%',
         }}
       >
         <Typography
@@ -55,7 +56,11 @@ const Receipts = () => {
           className='table-wrapper activity-table'
         >
           <TableContainer>
-            <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+            <Table
+              sx={{ minWidth: 650 }}
+              aria-label='simple table'
+              className='table-with-footer'
+            >
               <TableHead>
                 <TableRow>
                   <TableCell align='left'>Number</TableCell>
@@ -88,6 +93,17 @@ const Receipts = () => {
                     <TableCell align='left'>{row.amount}</TableCell>
                   </TableRow>
                 ))}
+                <TableRow>
+                  <TableCell colSpan={7}>
+                    <Stack
+                      direction={'row'}
+                      justifyContent={'flex-end'}
+                      className='total-row'
+                    >
+                      <Typography>Total revenue: $569,390.00</Typography>
+                    </Stack>
+                  </TableCell>
+                </TableRow>
               </TableBody>
             </Table>
           </TableContainer>

@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Grid } from '@mui/material';
 import { HiOutlineCalendar, HiOutlineInbox } from 'react-icons/hi';
-// import Events from './listingHistory';
-// import Inquiries from './transactions';
-import ListingHistory from './listingHistory';
-import Transactions from './transactions';
+import ListingHistory from './listing-history';
+import Transactions from './transaction';
 
 const Activity = () => {
   const [renderComponent, setRenderComponent] = useState(null);
 
   const handleRenderOpen = (componentName) => {
-    // e.preventDefault();
     setRenderComponent(componentName);
   };
 
@@ -34,7 +31,7 @@ const Activity = () => {
               <Button
                 variant='contained'
                 size='large'
-                onClick={() => handleRenderOpen('events')}
+                onClick={() => handleRenderOpen('listing-history')}
                 className='secondary-btn btn tab-btn'
               >
                 <HiOutlineCalendar size={34} />
@@ -45,7 +42,7 @@ const Activity = () => {
               <Button
                 variant='contained'
                 size='large'
-                onClick={() => handleRenderOpen('inquiries')}
+                onClick={() => handleRenderOpen('transaction')}
                 className='secondary-btn btn tab-btn'
               >
                 <HiOutlineInbox size={34} />
@@ -53,12 +50,10 @@ const Activity = () => {
               </Button>
             </Grid>
           </Grid>
-        ) : renderComponent == 'events' ? (
+        ) : renderComponent == 'listing-history' ? (
           <ListingHistory handleBack={handleBack} />
-        ) : renderComponent == 'inquiries' ? (
+        ) : renderComponent == 'transaction' ? (
           <Transactions handleBack={handleBack} />
-        ) : renderComponent == 'email-campaign' ? (
-          <> </>
         ) : null}
       </Box>
     </>
