@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Grid } from '@mui/material';
 import { HiOutlineCalendar, HiOutlineInbox } from 'react-icons/hi';
-import Events from './events';
-import Inquiries from './Inquiries';
+// import Events from './listingHistory';
+// import Inquiries from './transactions';
+import ListingHistory from './listingHistory';
+import Transactions from './transactions';
 
 const Activity = () => {
   const [renderComponent, setRenderComponent] = useState(null);
@@ -52,9 +54,9 @@ const Activity = () => {
             </Grid>
           </Grid>
         ) : renderComponent == 'events' ? (
-          <Events handleBack={handleBack} />
+          <ListingHistory handleBack={handleBack} />
         ) : renderComponent == 'inquiries' ? (
-          <Inquiries handleBack={handleBack} />
+          <Transactions handleBack={handleBack} />
         ) : renderComponent == 'email-campaign' ? (
           <> </>
         ) : null}

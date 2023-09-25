@@ -21,14 +21,24 @@ const rows = [
   createData('Open house ', '05/07/24', '9:00am-1:30pm '),
 ];
 
-const Events = ({ handleBack }) => {
+const ListingHistory = ({ handleBack }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const handleClose = () => {
     setIsSubmitted(false);
   };
   return (
     <>
-      <Box
+      <Typography
+        variant='h4'
+        component='h4'
+        sx={{
+          paddingBottom: { xs: 3, xl: 3 },
+        }}
+      >
+        Listing History
+      </Typography>
+
+      {/* <Box
         sx={{
           paddingTop: { xs: 0, xl: 0 },
         }}
@@ -110,10 +120,18 @@ const Events = ({ handleBack }) => {
             +New Event
           </Button>
         </Stack>
-      </Box>
+      </Box> */}
+
+      <Button
+        variant='text'
+        onClick={() => handleBack(null)}
+        className='link-btn'
+      >
+        Back
+      </Button>
       <AddeventDialog open={isSubmitted} handleClose={handleClose} />
     </>
   );
 };
 
-export default Events;
+export default ListingHistory;

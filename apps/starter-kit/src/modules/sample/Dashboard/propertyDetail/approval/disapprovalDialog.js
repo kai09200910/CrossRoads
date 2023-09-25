@@ -5,11 +5,18 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
-import { Box, Grid, TextField } from '@mui/material';
+import { Box, Grid, IconButton, TextField } from '@mui/material';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 import UploadModern from '../../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
 import FileRow from '../../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
 import AppList from '@crema/components/AppList';
 import { useDropzone } from 'react-dropzone';
+import { RiDeleteBinLine } from 'react-icons/ri';
 
 const DisapprovalDialog = ({ open, handleClose }) => {
   const dropzone = useDropzone();
@@ -86,6 +93,54 @@ const DisapprovalDialog = ({ open, handleClose }) => {
                     )}
                   />
                 </aside>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={12}>
+              <Box sx={{ position: 'relative' }} className='document-list'>
+                <TableContainer className='table-wrapper'>
+                  <Table sx={{ minWidth: 400 }} aria-label='simple table'>
+                    <TableHead>
+                      <TableRow>
+                        <TableCell align='left' style={{ width: '65%' }}>
+                          Name
+                        </TableCell>
+                        <TableCell align='left' style={{ width: '20%' }}>
+                          Size
+                        </TableCell>
+                        <TableCell align='left' style={{ width: '15%' }}>
+                          Action
+                        </TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {/* {rows.map((row) => ( */}
+                      <TableRow
+                        // key={row.name}
+                        sx={{
+                          '&:last-child td, &:last-child th': { border: 0 },
+                        }}
+                      >
+                        <TableCell
+                          component='th'
+                          scope='row'
+                          className='field-name'
+                        >
+                          {/* {row.name} */}
+                          <Typography variant='body1' component='p'>
+                            Sales agreement
+                          </Typography>
+                        </TableCell>
+                        <TableCell align='left'>2.6 kb</TableCell>
+                        <TableCell align='left'>
+                          <IconButton aria-label='edit' disableRipple>
+                            <RiDeleteBinLine size={20} />
+                          </IconButton>
+                        </TableCell>
+                      </TableRow>
+                      {/* ))} */}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
               </Box>
             </Grid>
           </Grid>

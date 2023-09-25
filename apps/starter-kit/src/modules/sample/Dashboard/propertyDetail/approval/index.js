@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Checkbox,
-  FormControlLabel,
-  Stack,
-  Typography,
-} from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -15,7 +8,7 @@ import Documents from './documents';
 import ListingDetails from './listingDetails';
 import PropertyDetails from './propertyDetails';
 import MediaTabs from '../../../Page2/mediaTabs';
-import { RiErrorWarningFill } from 'react-icons/ri';
+import { RiCheckFill, RiErrorWarningLine } from 'react-icons/ri';
 
 const Approval = () => {
   const [value, setValue] = React.useState('1');
@@ -110,26 +103,45 @@ const Approval = () => {
                   label={
                     <>
                       <Typography>Documents</Typography>
-                      <RiErrorWarningFill size={10} />{' '}
+                      <RiCheckFill size={15} />{' '}
+                      {/* <RiErrorWarningLine size={15} /> */}
                     </>
                   }
                   value='1'
                   className={approvalStatus.documents ? 'submited' : 'error'}
                 />
                 <Tab
-                  label='Listing details'
+                  label={
+                    <>
+                      <Typography>Listing details</Typography>
+                      {/* <RiCheckFill size={10} />{' '} */}
+                      <RiErrorWarningLine size={15} />
+                    </>
+                  }
                   value='2'
                   className={approvalStatus.listing ? 'submited' : 'error'}
                 />
                 <Tab
-                  label='Property details'
+                  label={
+                    <>
+                      <Typography>Property details</Typography>
+                      <RiCheckFill size={15} />{' '}
+                      {/* <RiErrorWarningLine size={15} /> */}
+                    </>
+                  }
                   value='3'
                   className={
                     approvalStatus.property_detail ? 'submited' : 'error'
                   }
                 />
                 <Tab
-                  label='Media'
+                  label={
+                    <>
+                      <Typography>Media</Typography>
+                      <RiCheckFill size={15} />{' '}
+                      {/* <RiErrorWarningLine size={15} /> */}
+                    </>
+                  }
                   value='4'
                   className={approvalStatus.media ? 'submited' : 'error'}
                 />
