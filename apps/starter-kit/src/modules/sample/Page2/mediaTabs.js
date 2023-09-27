@@ -26,16 +26,16 @@ const MediaTabs = () => {
           <MediaTable isAdmin={false} />
         </StyledTabPanel>
         <StyledTabPanel value={1}>
-          <MediavideosTable isAdmin={true} />
+          <MediavideosTable isAdmin={false} />
         </StyledTabPanel>
         <StyledTabPanel value={2}>
-          <Media3dtoursTable isAdmin={true} />
+          <Media3dtoursTable isAdmin={false} />
         </StyledTabPanel>
         <StyledTabPanel value={3}>
-          <MediawebsitesTable isAdmin={true} />
+          <MediawebsitesTable isAdmin={false} />
         </StyledTabPanel>
         <StyledTabPanel value={4}>
-          <MediabrohuresTable isAdmin={true} />
+          <MediabrohuresTable isAdmin={false} />
         </StyledTabPanel>
       </Tabs>
     </>

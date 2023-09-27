@@ -373,6 +373,13 @@
     }
   }
 }
+.listing-history-table {
+  .edit-btn {
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+  }
+}
 // Property Detail Styles END//
 
 // Campaign Engagements Styles //
@@ -434,6 +441,7 @@
   //   .primary-btn-small.active {
   //   }
   // }
+  padding: 12px !important;
   .approval-tab {
     .tab-list-wrapper {
       display: flex;
@@ -441,6 +449,14 @@
       justify-content: center;
       gap: 32px;
       margin-bottom: 40px;
+      @media (max-width: 1150px) {
+        gap: 10px;
+      }
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 12px;
+      }
       .approval-tab-list {
         .MuiTabs-fixed {
           text-align: center;
@@ -452,6 +468,10 @@
             height: 48px;
             padding: 4px;
             gap: 4px;
+            @media (max-width: 600px) {
+              flex-wrap: wrap;
+              height: inherit;
+            }
             button {
               text-transform: capitalize;
               font-weight: 600;
@@ -459,8 +479,18 @@
               min-height: 40px !important;
               flex-wrap: wrap;
               gap: 6px;
+              @media (max-width: 600px) {
+                width: 49%;
+                height: 40px;
+              }
+              @media (max-width: 375px) {
+                padding: 12px 4px;
+              }
               p {
                 font-weight: 600;
+                @media (max-width: 375px) {
+                  font-size: 13px;
+                }
               }
               &:hover {
                 color: #2871ff;
@@ -496,6 +526,16 @@
         background: #2871ff;
       }
     }
+    .MuiTabPanel-root {
+      @media (max-width: 575px) {
+        padding: 0;
+      }
+    }
+    .primary-btn {
+      @media (max-width: 375px) {
+        width: 100%;
+      }
+    }
   }
   .table-wrapper {
     border-radius: 10px;
@@ -521,6 +561,9 @@
           .MuiIconButton-root {
             opacity: 0;
             color: #2871ff;
+            @media (max-width: 575px) {
+              padding: 0 0 0 8px;
+            }
           }
           &:hover {
             th,
@@ -571,75 +614,7 @@
     margin: 0;
   }
 }
-.disapproval-feedback-dailog {
-  .MuiPaper-root {
-    .modal-dailog-footer {
-      justify-content: flex-end !important;
-    }
-    .custome-dropzone {
-      padding: 0;
-      background-color: #fff;
-      border-radius: 8px;
-      // border: 1px solid #e1e1e1;
-      height: 140px;
-      .MuiBox-root {
-        width: 100%;
-        .dropzone {
-          height: 140px;
-          background-color: #fff;
-          border-radius: 8px;
-          border: 1px solid #e1e1e1;
-          svg {
-            width: 36px;
-            height: 36px;
-          }
-          p {
-            font-size: 14px;
-            color: #999;
-          }
-        }
-      }
-    }
-  }
-}
 
-.disapproval-feedback-dailog {
-  .document-list {
-    .table-wrapper {
-      border-radius: 10px;
-      table {
-        thead {
-          tr {
-            th {
-              background: #999999;
-              background-color: #f9f9f9 !important ;
-              font-size: 12px !important;
-              padding: 4px 16px !important;
-            }
-          }
-        }
-        tbody {
-          tr {
-            th,
-            td {
-              padding: 8px 16px !important;
-              font-size: 14px;
-            }
-            .MuiIconButton-root {
-              color: #2871ff;
-            }
-            th.field-name {
-              p {
-                color: #999999;
-                font-size: 11px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
 .table-wrapper.activity-table {
   border-radius: 10px;
   table {

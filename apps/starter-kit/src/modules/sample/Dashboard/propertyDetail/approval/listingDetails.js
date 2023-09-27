@@ -77,7 +77,7 @@ const ListingDetails = () => {
           className='table-wrapper'
         >
           <TableContainer>
-            <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+            <Table sx={{ minWidth: 400 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
                   <TableCell align='left' style={{ width: '70%' }}>
