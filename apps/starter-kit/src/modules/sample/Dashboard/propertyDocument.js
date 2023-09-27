@@ -16,14 +16,25 @@ import {
   RiErrorWarningFill,
 } from 'react-icons/ri';
 import ErrorDialog from './dailogs/errorDialog';
+import ListingagreementDialog from './dailogs/listingagreementDialog';
 
 const MediaTable = () => {
   const [isErrorDialogOpen, setIsErrorDialogOpen] = useState(false);
+  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
+
   const handleOpen = () => {
     setIsErrorDialogOpen(true);
   };
   const handleClose = () => {
     setIsErrorDialogOpen(false);
+  };
+
+  const handleBuyerOpen = () => {
+    setIsBuyerDialogOpen(true);
+  };
+
+  const handleBuyerClose = () => {
+    setIsBuyerDialogOpen(false);
   };
   return (
     <>
@@ -106,8 +117,9 @@ const MediaTable = () => {
               variant='div'
               component='div'
               className='btn add-doc-btn doc-added upload-wrapper'
+              onClick={handleBuyerOpen}
             >
-              <TextField type='file' className='upload'></TextField>
+              {/* <TextField type='file' className='upload'></TextField> */}
               <Typography variant='body1' component='span' className=''>
                 <RiCheckboxCircleFill size={20} />
                 Listing Agreement
@@ -146,7 +158,11 @@ const MediaTable = () => {
           </Stack>
         </Box>
       </Paper>
-      <ErrorDialog open={isErrorDialogOpen} handleClose={handleClose} />.
+      <ErrorDialog open={isErrorDialogOpen} handleClose={handleClose} />
+      <ListingagreementDialog
+        open={isBuyerDialogOpen}
+        handleClose={handleBuyerClose}
+      />
     </>
   );
 };

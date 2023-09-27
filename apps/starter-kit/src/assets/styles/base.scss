@@ -404,6 +404,7 @@ h4 {
       padding: 40px 42px 0px 42px;
       @media (max-width: 767px) {
         font-size: 20px !important;
+        padding: 24px 16px 0px 16px;
       }
       button {
         @media (max-width: 475px) {
@@ -413,6 +414,9 @@ h4 {
     }
     .modal-dailog-content {
       padding: 40px 42px 20px 42px;
+      @media (max-width: 767px) {
+        padding: 24px 16px 0px 16px;
+      }
       .error-value {
         span {
           display: flex;
@@ -458,6 +462,15 @@ h4 {
         @media (max-width: 374px) {
           margin: 0;
         }
+      }
+    }
+    .MuiDialogActions-root.MuiDialogActions-spacing {
+      padding: 8px 42px 48px 42px;
+      @media (max-width: 767px) {
+        padding: 24px 16px 24px 16px;
+      }
+      .MuiStack-root {
+        padding: 0;
       }
     }
   }
@@ -862,3 +875,74 @@ header {
     }
   }
 }
+// Upload Area & Doc List Styles //
+.disapproval-feedback-dailog {
+  .MuiPaper-root {
+    .modal-dailog-footer {
+      justify-content: flex-end !important;
+    }
+    .custome-dropzone {
+      padding: 0;
+      background-color: #fff;
+      border-radius: 8px;
+      // border: 1px solid #e1e1e1;
+      height: 140px;
+      .MuiBox-root {
+        width: 100%;
+        .dropzone {
+          height: 140px;
+          background-color: #fff;
+          border-radius: 8px;
+          border: 1px solid #e1e1e1;
+          svg {
+            width: 36px;
+            height: 36px;
+          }
+          p {
+            font-size: 14px;
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+}
+
+.disapproval-feedback-dailog {
+  .document-list {
+    .table-wrapper {
+      border-radius: 10px;
+      table {
+        thead {
+          tr {
+            th {
+              background: #999999;
+              background-color: #f9f9f9 !important ;
+              font-size: 12px !important;
+              padding: 4px 16px !important;
+            }
+          }
+        }
+        tbody {
+          tr {
+            th,
+            td {
+              padding: 8px 16px !important;
+              font-size: 14px;
+            }
+            .MuiIconButton-root {
+              color: #2871ff;
+            }
+            th.field-name {
+              p {
+                color: #999999;
+                font-size: 11px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Upload Area & Doc List Styles END //

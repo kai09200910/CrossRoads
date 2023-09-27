@@ -83,7 +83,7 @@ const TransactionReport = () => {
           }}
         >
           <Grid container spacing={5} mt={0}>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   NS354637
@@ -93,7 +93,7 @@ const TransactionReport = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   Sold
@@ -103,7 +103,7 @@ const TransactionReport = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   Listed
@@ -113,7 +113,7 @@ const TransactionReport = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   Listing
@@ -124,7 +124,7 @@ const TransactionReport = () => {
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   John Smith
@@ -134,7 +134,7 @@ const TransactionReport = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   Fred Smith
@@ -144,7 +144,7 @@ const TransactionReport = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   Phillip Smith
@@ -154,7 +154,7 @@ const TransactionReport = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   12/4/23
@@ -165,7 +165,7 @@ const TransactionReport = () => {
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   12/3/24
@@ -175,7 +175,7 @@ const TransactionReport = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   4/12/24
@@ -185,7 +185,7 @@ const TransactionReport = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   $1,000,000
@@ -195,7 +195,7 @@ const TransactionReport = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={4} md={4} lg={3}>
               <Box variant='div' component='div'>
                 <Typography gutterBottom variant='p' component='p'>
                   12/4/23
@@ -208,7 +208,6 @@ const TransactionReport = () => {
           </Grid>
         </Box>
       </Box>
-      {/* <DisapprovalDialog open={isSubmitted} handleClose={handleClose} /> */}
     </>
   );
 };

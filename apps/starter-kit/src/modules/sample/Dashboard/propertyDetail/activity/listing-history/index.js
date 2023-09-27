@@ -1,33 +1,65 @@
 import React, { useState } from 'react';
-import { Box, Button, Stack, Paper, Typography } from '@mui/material';
+import { Box, Button, Typography, Breadcrumbs } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import AddeventDialog from '../../../dailogs/addeventDialog';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import ListingnoteDialog from './listingnoteDialog';
+import { Link } from 'react-router-dom';
 
-function createData(name, date, time, action) {
-  return { name, date, time, action };
+function createData(name, date, by, action) {
+  return { name, date, by, action };
 }
 
 const rows = [
-  createData('Open house  ', '05/07/24', '9:00am-1:30pm '),
-  createData('Open house ', '05/07/24', '9:00am-1:30pm '),
-  createData('Open house ', '05/07/24', '9:00am-1:30pm '),
-  createData('Open house ', '05/07/24', '9:00am-1:30pm '),
-  createData('Open house ', '05/07/24', '9:00am-1:30pm '),
-  createData('Open house ', '05/07/24', '9:00am-1:30pm '),
+  createData('New note   ', '05/07/24', 'John Smith  '),
+  createData('Listing active ', '05/07/24', 'John Smith '),
+  createData('New note   ', '05/07/24', 'John Smith  '),
+  createData('New note   ', '05/07/24', 'John Smith  '),
+  createData('New note   ', '05/07/24', 'John Smith  '),
+  createData('New note   ', '05/07/24', 'John Smith  '),
 ];
 
 const ListingHistory = ({ handleBack }) => {
+  const breadcrumbs = [
+    <Link
+      underline='hover'
+      key='1'
+      color='inherit'
+      onClick={() => handleBack(null)}
+    >
+      Activity
+    </Link>,
+    <Typography key='3' color='text.primary'>
+      History
+    </Typography>,
+  ];
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const handleClose = () => {
     setIsSubmitted(false);
   };
   return (
     <>
+      <Box
+        variant='div'
+        component='div'
+        sx={{
+          paddingBottom: { xs: 4, xl: 5 },
+        }}
+        className='breadcrumb-wrap'
+      >
+        <Breadcrumbs
+          separator={<NavigateNextIcon fontSize='small' />}
+          aria-label='breadcrumb'
+        >
+          {breadcrumbs}
+        </Breadcrumbs>
+      </Box>
+
       <Typography
         variant='h4'
         component='h4'
@@ -38,31 +70,26 @@ const ListingHistory = ({ handleBack }) => {
         Listing History
       </Typography>
 
-      {/* <Box
+      <Box
         sx={{
           paddingTop: { xs: 0, xl: 0 },
         }}
       >
-        <Typography
-          variant='h4'
-          component='h4'
-          sx={{
-            paddingBottom: { xs: 3, xl: 3 },
-          }}
-        >
-          Events
-        </Typography>
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
           className='table-wrapper'
         >
           <TableContainer>
-            <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+            <Table
+              sx={{ minWidth: 650 }}
+              aria-label='simple table'
+              className='listing-history-table'
+            >
               <TableHead>
                 <TableRow>
-                  <TableCell>Name</TableCell>
+                  <TableCell>Activity </TableCell>
                   <TableCell align='left'>Date</TableCell>
-                  <TableCell align='left'>Time</TableCell>
+                  <TableCell align='left'>By</TableCell>
                   <TableCell align='right'></TableCell>
                 </TableRow>
               </TableHead>
@@ -78,13 +105,14 @@ const ListingHistory = ({ handleBack }) => {
                       {row.name}
                     </TableCell>
                     <TableCell align='left'>{row.date}</TableCell>
-                    <TableCell align='left'>{row.time}</TableCell>
+                    <TableCell align='left'>{row.by}</TableCell>
                     <TableCell align='right'>
                       {' '}
                       <Button
                         variant='outlined'
                         size='small'
                         className='edit-btn secondary-btn-small'
+                        onClick={() => setIsSubmitted(true)}
                       >
                         View
                       </Button>{' '}
@@ -95,41 +123,8 @@ const ListingHistory = ({ handleBack }) => {
             </Table>
           </TableContainer>
         </Box>
-        <Stack
-          direction='row'
-          justifyContent='space-between'
-          alignItems='center'
-          spacing={1}
-          sx={{
-            paddingTop: { xs: 4, xl: 4 },
-          }}
-        >
-          <Button
-            variant='text'
-            onClick={() => handleBack(null)}
-            className='link-btn'
-          >
-            Back
-          </Button>
-          <Button
-            variant='contained'
-            size='large'
-            onClick={() => setIsSubmitted(true)}
-            className='primary-btn btn'
-          >
-            +New Event
-          </Button>
-        </Stack>
-      </Box> */}
-
-      <Button
-        variant='text'
-        onClick={() => handleBack(null)}
-        className='link-btn'
-      >
-        Back
-      </Button>
-      <AddeventDialog open={isSubmitted} handleClose={handleClose} />
+      </Box>
+      <ListingnoteDialog open={isSubmitted} handleClose={handleClose} />
     </>
   );
 };

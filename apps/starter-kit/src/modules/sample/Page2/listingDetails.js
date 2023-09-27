@@ -11,7 +11,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   RiArrowDownSLine,
   RiPencilFill,
@@ -22,6 +22,7 @@ import { FcGoogle } from 'react-icons/fc';
 import MatchingContacts from '../common/matchingContacts';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import KycdocumentsDialog from './kycdocumentsDialog';
 
 function createData(name, match, email) {
   return { name, match, email };
@@ -30,6 +31,16 @@ function createData(name, match, email) {
 const rows = [createData('John Smith', '95%', 'johnsmith@email.com')];
 
 const ListingDetails = () => {
+  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
+
+  const handleBuyerOpen = () => {
+    setIsBuyerDialogOpen(true);
+  };
+
+  const handleBuyerClose = () => {
+    setIsBuyerDialogOpen(false);
+  };
+
   return (
     <>
       <Box variant='div' component='div' className='listing-detial-form'>
@@ -85,8 +96,9 @@ const ListingDetails = () => {
                   variant='div'
                   component='div'
                   className='btn add-doc-btn upload-wrapper'
+                  onClick={handleBuyerOpen}
                 >
-                  <TextField type='file' className='upload'></TextField>
+                  {/* <TextField type='file' className='upload'></TextField> */}
                   <Typography variant='body1' component='span' className=''>
                     <RiAddCircleFill size={20} />
                     Listing Agreement
@@ -526,6 +538,10 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
       </Box>
+      <KycdocumentsDialog
+        open={isBuyerDialogOpen}
+        handleClose={handleBuyerClose}
+      />
     </>
   );
 };
