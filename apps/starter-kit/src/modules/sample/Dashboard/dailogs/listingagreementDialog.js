@@ -126,7 +126,7 @@ const ListingagreementDialog = ({ open, handleClose }) => {
             className='primary-btn btn'
             sx={{ marginTop: 9 }}
           >
-            Send to agent
+            Done
           </Button>
         </DialogActions>
       </Dialog>
