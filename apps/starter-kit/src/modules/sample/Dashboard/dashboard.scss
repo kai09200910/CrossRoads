@@ -580,6 +580,10 @@
               color: #999999;
               font-size: 11px;
             }
+            p.main-name {
+              color: #292929;
+              font-size: 14px;
+            }
           }
           td {
             p.error {
@@ -612,6 +616,57 @@
   }
   .ios-switch-custom {
     margin: 0;
+  }
+
+  .small-input {
+    margin: 0 0 4px 0 !important;
+    .MuiInputBase-root.MuiOutlinedInput-root {
+      width: 300px;
+      input.MuiInputBase-input.MuiOutlinedInput-input {
+        padding: 4px 8px;
+        border-radius: 2px;
+        height: 32px;
+        box-sizing: border-box;
+        width: 300px;
+      }
+      fieldset.MuiOutlinedInput-notchedOutline {
+        border-style: dashed;
+        border-color: #b7b7b7;
+      }
+    }
+  }
+  .table-wrapper.listing-detail-table {
+    .field-name {
+    }
+    .small-input {
+      // display: none;
+    }
+    table {
+      tbody {
+        tr.resubmitted-approval {
+          th,
+          td {
+            background-color: #fff3f3;
+          }
+          td {
+            .note-label {
+              color: #d60000;
+              font-size: 12px;
+              font-weight: 600;
+            }
+          }
+          th {
+            .MuiIconButton-root {
+              display: none;
+            }
+            a.resubmition-btn {
+              color: #292929;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
