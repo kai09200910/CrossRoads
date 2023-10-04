@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import ListingnoteDialog from '../../dailogs/listingnoteDialog';
+import { Link } from 'react-router-dom';
 
 function createData(matchingbuyer, match, contact) {
   return { matchingbuyer, match, contact };
@@ -70,7 +71,14 @@ const MatchingBuyers = ({ handleBack }) => {
                       {row.matchingbuyer}
                     </TableCell>
                     <TableCell align='left'>{row.match}</TableCell>
-                    <TableCell align='left'>{row.contact}</TableCell>
+                    <TableCell align='left'>
+                      <Link
+                        className='viewinfo-btn'
+                        // onClick={() => setIsSubmitted(true)}
+                      >
+                        {row.contact}
+                      </Link>
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>

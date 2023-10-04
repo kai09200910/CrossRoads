@@ -7,7 +7,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import Documents from './documents';
 import ListingDetails from './listingDetails';
 import PropertyDetails from './propertyDetails';
-import MediaTabs from '../../../Page2/mediaTabs';
+import MediaTabs from '../../../Newlisting/mediaTabs';
 import { RiCheckFill, RiErrorWarningLine } from 'react-icons/ri';
 
 const Approval = () => {

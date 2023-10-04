@@ -1,5 +1,12 @@
 import { BiAlignLeft } from 'react-icons/bi';
-import { RiLayoutGridFill } from 'react-icons/ri';
+import {
+  RiFileAddLine,
+  RiFileList2Line,
+  RiLayoutGridFill,
+  RiMailLine,
+  RiSearchLine,
+  // RiListCheck3,
+} from 'react-icons/ri';
 
 const routesConfig = [
   {
@@ -17,11 +24,11 @@ const routesConfig = [
         url: '/dashboard',
       },
       {
-        id: 'page-1',
+        id: 'propertylist',
         title: 'listings',
         messageId: 'sidebar.sample.page1',
         type: 'item',
-        icon: <BiAlignLeft />,
+        icon: <RiSearchLine />,
         url: '/my-listing',
       },
       {
@@ -29,7 +36,7 @@ const routesConfig = [
         title: 'Add new listing',
         messageId: 'sidebar.sample.page2',
         type: 'item',
-        icon: <BiAlignLeft />,
+        icon: <RiFileAddLine />,
         url: '/add-new-listing',
       },
       {
@@ -37,8 +44,16 @@ const routesConfig = [
         title: 'Add new campaigns',
         messageId: 'sidebar.sample.campaigns',
         type: 'item',
-        icon: <BiAlignLeft />,
+        icon: <RiMailLine />,
         url: '/campaigns',
+      },
+      {
+        id: 'worklists',
+        title: 'Add new worklists',
+        messageId: 'Worklists',
+        type: 'item',
+        icon: <RiFileList2Line />,
+        url: '/worklists',
       },
     ],
   },

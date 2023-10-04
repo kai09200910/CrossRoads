@@ -10,8 +10,8 @@ import { RiPencilFill } from 'react-icons/ri';
 import History from './history';
 import Marketing from './marketing';
 import Overview from './overview';
-import MediaTabs from '../../Page2/mediaTabs';
-import MediaTable from '../../Page2/mediaTable';
+import MediaTabs from '../../Newlisting/mediaTabs';
+// import MediaTable from '../../Page2/mediaTable';
 import Approval from './approval';
 import Activity from './activity';
 

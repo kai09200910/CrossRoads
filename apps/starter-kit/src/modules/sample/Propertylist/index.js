@@ -13,7 +13,7 @@ import PropertyCard from './propertyCard';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import './propertylist.scss';
 
-const Page1 = () => {
+const PropertyList = () => {
   return (
     <>
       <Typography
@@ -174,4 +174,4 @@ const Page1 = () => {
   );
 };
 
-export default Page1;
+export default PropertyList;
