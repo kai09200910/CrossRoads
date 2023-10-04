@@ -14,7 +14,7 @@ import './listing.scss';
 
 const steps = ['Listing details', 'Property details', 'Listing media'];
 
-const Page2 = () => {
+const NewListing = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
@@ -181,4 +181,4 @@ const Page2 = () => {
   );
 };
 
-export default Page2;
+export default NewListing;
