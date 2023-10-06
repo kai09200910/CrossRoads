@@ -94,7 +94,7 @@ const NewListing = () => {
                         <Typography variant='body1' component='p'>
                           <Link
                             className='resubmition-btn'
-                            onClick={() => setIsSubmitted(true)}
+                            // onClick={() => setIsSubmitted(true)}
                           >
                             {' '}
                             {row.listing}{' '}

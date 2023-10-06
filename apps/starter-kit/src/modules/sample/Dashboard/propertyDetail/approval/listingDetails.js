@@ -56,9 +56,7 @@ const rows = [
 
 const ListingDetails = () => {
   const [isEditClicked, setIsEditClicked] = useState();
-  // const handleClose = () => {
-  //   setIsSubmitted(false);
-  // };
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isdisapproved, setIsDisapproved] = useState(false);
   const [isFeedbackSubmitted, setIsFeedbackSubmitted] = useState(false);

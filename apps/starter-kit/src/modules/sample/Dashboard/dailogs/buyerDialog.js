@@ -379,12 +379,7 @@ const BuyerDialog = ({ open, handleClose, nextStep, step }) => {
           )}
         </DialogContent>
         <DialogActions className='modal-dailog-footer'>
-          <Button
-            variant='outlined'
-            size='large'
-            // onClick={handleBack}
-            className='outline-btn btn'
-          >
+          <Button variant='outlined' size='large' className='outline-btn btn'>
             Cancel
           </Button>
           <Button

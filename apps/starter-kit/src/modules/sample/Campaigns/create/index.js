@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Paper, Button, Grid, Stack, Typography, Box } from '@mui/material';
 import '../campaigns.scss';
-import { useDropzone } from 'react-dropzone';
 import ReviewPhotos from './photo/review';
-// import EmailSelection from '../list';
-// import DragPhotos from './dragPhotos';
-import PreviewPhoto from './photo/preview';
 import DragPhoto from './photo/drag';
 import EditList from './editList';
 

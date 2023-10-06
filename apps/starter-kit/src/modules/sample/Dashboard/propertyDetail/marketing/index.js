@@ -15,7 +15,6 @@ const Marketing = () => {
   const [renderComponent, setRenderComponent] = useState(null);
 
   const handleRenderOpen = (componentName) => {
-    // e.preventDefault();
     setRenderComponent(componentName);
   };
 

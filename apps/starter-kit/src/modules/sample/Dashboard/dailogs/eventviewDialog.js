@@ -6,7 +6,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
 import { Box, Grid, Stack } from '@mui/material';
-import { RiPencilFill } from 'react-icons/ri';
 
 const EventviewDialog = ({ open, handleClose }) => {
   return (
@@ -75,7 +74,12 @@ const EventviewDialog = ({ open, handleClose }) => {
               padding: { xs: 3, sm: 6, xl: 6 },
             }}
           >
-            <Button variant='outlined' size='large' className='outline-btn btn'>
+            <Button
+              variant='outlined'
+              size='large'
+              className='outline-btn btn'
+              onClick={handleClose}
+            >
               Close
             </Button>
             {/* <Button

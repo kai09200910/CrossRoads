@@ -124,7 +124,6 @@ const DisapprovalDialog = ({ open, handleClose }) => {
                           scope='row'
                           className='field-name'
                         >
-                          {/* {row.name} */}
                           <Typography variant='body1' component='p'>
                             Sales agreement
                           </Typography>

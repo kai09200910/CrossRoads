@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -96,7 +96,6 @@ const ReviewResubmissionDialog = ({
                               scope='row'
                               className='field-name'
                             >
-                              {/* {row.name} */}
                               $5,000,000
                               <Typography variant='body1' component='p'>
                                 Listing price
@@ -115,7 +114,6 @@ const ReviewResubmissionDialog = ({
                               </Typography>
                             </TableCell>
                           </TableRow>
-                          {/* ))} */}
                         </TableBody>
                       </Table>
                     </TableContainer>
@@ -144,7 +142,6 @@ const ReviewResubmissionDialog = ({
                 isdisapproved ? handleClose() : handleSubmitOpen()
               }
               className='primary-btn btn'
-              // sx={{ marginTop: 9 }}
             >
               {isdisapproved ? 'Send to agent' : 'Approve'}
             </Button>
