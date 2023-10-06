@@ -1,13 +1,13 @@
-import React from 'react';
-import { Box, Button, Stack, Paper, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import ListingnoteDialog from '../../dailogs/listingnoteDialog';
 import { Link } from 'react-router-dom';
+import MatchingbuyersDialog from '../../dailogs/matchingbuyersDialog';
 
 function createData(matchingbuyer, match, contact) {
   return { matchingbuyer, match, contact };
@@ -22,14 +22,12 @@ const rows = [
   createData('John Smith', '95%', 'View info'),
 ];
 
-// const History = () => {
-//   const [isSubmitted, setIsSubmitted] = useState(false);
-//   const handleClose = () => {
-//     setIsSubmitted(false);
-//   };
-// };
-
 const MatchingBuyers = ({ handleBack }) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const handleClose = () => {
+    setIsSubmitted(false);
+  };
+
   return (
     <>
       <Box
@@ -74,7 +72,7 @@ const MatchingBuyers = ({ handleBack }) => {
                     <TableCell align='left'>
                       <Link
                         className='viewinfo-btn'
-                        // onClick={() => setIsSubmitted(true)}
+                        onClick={() => setIsSubmitted(true)}
                       >
                         {row.contact}
                       </Link>
@@ -104,7 +102,7 @@ const MatchingBuyers = ({ handleBack }) => {
           </Button>
         </Stack>
       </Box>
-      {/* <ListingnoteDialog open={isSubmitted} handleClose={handleClose} /> */}
+      <MatchingbuyersDialog open={isSubmitted} handleClose={handleClose} />
     </>
   );
 };

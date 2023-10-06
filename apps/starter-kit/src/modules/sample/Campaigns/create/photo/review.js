@@ -157,7 +157,6 @@ const ReviewPhotos = ({ setIsList }) => {
             variant='contained'
             size='small'
             autoFocus
-            // onClick={handleClose}
             onClick={() => setIsList(true)}
             className='primary-btn btn'
             sx={{

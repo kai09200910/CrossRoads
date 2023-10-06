@@ -97,7 +97,6 @@ const ListingagreementDialog = ({ open, handleClose }) => {
                             scope='row'
                             className='field-name'
                           >
-                            {/* {row.name} */}
                             <Typography variant='body1' component='p'>
                               {row.name}
                             </Typography>

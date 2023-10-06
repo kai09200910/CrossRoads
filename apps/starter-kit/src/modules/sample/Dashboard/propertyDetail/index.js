@@ -4,14 +4,12 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { Button, Paper, Stack } from '@mui/material';
-import { RiPencilFill } from 'react-icons/ri';
+import { Paper, Stack } from '@mui/material';
 
 import History from './history';
 import Marketing from './marketing';
 import Overview from './overview';
 import MediaTabs from '../../Newlisting/mediaTabs';
-// import MediaTable from '../../Page2/mediaTable';
 import Approval from './approval';
 import Activity from './activity';
 

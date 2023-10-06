@@ -2,7 +2,6 @@ import {
   Box,
   Checkbox,
   FormControlLabel,
-  FormGroup,
   Grid,
   IconButton,
   MenuItem,

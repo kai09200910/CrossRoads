@@ -89,10 +89,7 @@ const Approval = () => {
         </Box>
         <Box className='approval-tab'>
           <TabContext value={value}>
-            <Box
-              // sx={{ borderBottom: 1, borderColor: 'divider' }}
-              className='tab-list-wrapper'
-            >
+            <Box className='tab-list-wrapper'>
               <TabList
                 onChange={handleChange}
                 aria-label='lab API tabs example'
@@ -104,7 +101,6 @@ const Approval = () => {
                     <>
                       <Typography>Documents</Typography>
                       <RiCheckFill size={15} />{' '}
-                      {/* <RiErrorWarningLine size={15} /> */}
                     </>
                   }
                   value='1'
@@ -114,7 +110,6 @@ const Approval = () => {
                   label={
                     <>
                       <Typography>Listing details</Typography>
-                      {/* <RiCheckFill size={10} />{' '} */}
                       <RiErrorWarningLine size={15} />
                     </>
                   }
@@ -126,7 +121,6 @@ const Approval = () => {
                     <>
                       <Typography>Property details</Typography>
                       <RiCheckFill size={15} />{' '}
-                      {/* <RiErrorWarningLine size={15} /> */}
                     </>
                   }
                   value='3'
@@ -139,7 +133,6 @@ const Approval = () => {
                     <>
                       <Typography>Media</Typography>
                       <RiCheckFill size={15} />{' '}
-                      {/* <RiErrorWarningLine size={15} /> */}
                     </>
                   }
                   value='4'

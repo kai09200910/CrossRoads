@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -30,7 +30,6 @@ const rows = [
     'Complete',
     '$5,000,000',
   ),
-  //createData('Total revenue: $569,390.00'),
 ];
 
 const Receipts = () => {
@@ -64,7 +63,6 @@ const Receipts = () => {
               <TableHead>
                 <TableRow>
                   <TableCell align='left'>Number</TableCell>
-                  {/* <TableCell align='left'>Date</TableCell> */}
                   <TableCell align='left'>Entry date</TableCell>
                   <TableCell align='left'>Payer</TableCell>
                   <TableCell align='left'>Type</TableCell>

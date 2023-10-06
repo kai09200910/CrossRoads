@@ -5,9 +5,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Stack } from '@mui/material';
 
-const ErrorDialog = ({ open, handleClose }) => {
+const MatchingbuyersDialog = ({ open, handleClose }) => {
   return (
     <div>
       <Dialog
@@ -21,62 +21,66 @@ const ErrorDialog = ({ open, handleClose }) => {
           id='customized-dialog-title'
           className='modal-dailog-title'
         >
-          Document updates needed
+          <Stack
+            direction='row'
+            justifyContent='space-between'
+            alignItems='center'
+            flexWrap='wrap'
+          >
+            Matching Buyers Information
+          </Stack>
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
           <Grid container spacing={5}>
-            <Grid item xs={12} md={6}>
-              <Box variant='div' component='div' className='error-value'>
-                <Typography variant='body1' component='span' className=''>
-                  Admin
-                </Typography>
-                <Typography gutterBottom variant='p' component='p'>
-                  Chalene Curry
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box variant='div' component='div' className='error-value'>
-                <Typography variant='body1' component='span' className=''>
-                  Date
-                </Typography>
-                <Typography gutterBottom variant='p' component='p'>
-                  07/12/23
-                </Typography>
-              </Box>
-            </Grid>
             <Grid item xs={12} md={12}>
               <Box variant='div' component='div' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
-                  Details
+                  Name
                 </Typography>
-                <Typography
-                  gutterBottom
-                  variant='p'
-                  component='p'
-                  className='error-detail-list'
-                >
-                  KYC Documents missing signatures
+                <Typography gutterBottom variant='p' component='p'>
+                  John Smith
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box variant='div' component='div' className='error-value'>
+                <Typography variant='body1' component='span' className=''>
+                  Match %
+                </Typography>
+                <Typography gutterBottom variant='p' component='p'>
+                  95%
                 </Typography>
               </Box>
             </Grid>
           </Grid>
         </DialogContent>
-        <DialogActions align='center' className='modal-dailog-footer'>
-          <Button
-            variant='contained'
-            size='large'
-            autoFocus
-            onClick={handleClose}
-            className='primary-btn btn'
-            sx={{ marginTop: 9 }}
+        <DialogActions align='right' className=''>
+          <Stack
+            direction='row'
+            justifyContent='flex-end'
+            alignItems='center'
+            spacing={2}
+            sx={{
+              padding: { xs: 3, sm: 6, xl: 6 },
+            }}
           >
-            Got it!
-          </Button>
+            <Button variant='outlined' size='large' className='outline-btn btn'>
+              Close
+            </Button>
+            {/* <Button
+              variant='contained'
+              size='large'
+              autoFocus
+              onClick={handleClose}
+              className='primary-btn btn'
+            >
+              View contact
+            </Button> */}
+          </Stack>
         </DialogActions>
       </Dialog>
     </div>
   );
 };
 
-export default ErrorDialog;
+export default MatchingbuyersDialog;

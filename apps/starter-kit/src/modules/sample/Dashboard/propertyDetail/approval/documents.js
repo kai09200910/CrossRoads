@@ -35,7 +35,6 @@ const Documents = () => {
 
   const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
   const handleBuyerOpen = () => {
-    // setStep(1);
     setIsBuyerDialogOpen(true);
   };
   const handleBuyerClose = () => {
@@ -68,7 +67,6 @@ const Documents = () => {
                   <TableCell align='left' style={{ width: '48%' }}>
                     Name
                   </TableCell>
-                  {/* <TableCell align='left'>Date</TableCell> */}
                   <TableCell align='left' style={{ width: '15%' }}>
                     Size
                   </TableCell>
@@ -183,8 +181,6 @@ const Documents = () => {
       <RevokeapprovalDialog
         open={isBuyerDialogOpen}
         handleClose={handleBuyerClose}
-        // nextStep={nextStep}
-        // step={step}
       />
     </>
   );

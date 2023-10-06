@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Typography, FormControlLabel, Switch } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -6,7 +6,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-// import DisapprovalDialog from './disapprovalDialog';
 
 function createData(name, subinfo, approval) {
   return { name, subinfo, approval };
@@ -45,10 +44,6 @@ const rows = [
 ];
 
 const PropertyDetails = () => {
-  // const [isSubmitted, setIsSubmitted] = useState(false);
-  // const handleClose = () => {
-  //   setIsSubmitted(false);
-  // };
   return (
     <>
       <Box
@@ -104,7 +99,6 @@ const PropertyDetails = () => {
                     <TableCell align='left'>
                       {' '}
                       <FormControlLabel
-                        // control={<IOSSwitch  /> <Switch  sx={{ m: 1 }}
                         control={
                           <Switch
                             sx={{ m: 1 }}
@@ -112,7 +106,6 @@ const PropertyDetails = () => {
                             focusVisibleClassName='.Mui-focusVisible'
                             disableRipple
                             defaultChecked
-                            // onClick={() => setIsSubmitted(true)}
                           />
                         }
                         label=''
@@ -125,7 +118,6 @@ const PropertyDetails = () => {
           </TableContainer>
         </Box>
       </Box>
-      {/* <DisapprovalDialog open={isSubmitted} handleClose={handleClose} /> */}
     </>
   );
 };

@@ -9,8 +9,6 @@ import {
   TextField,
 } from '@mui/material';
 import {
-  // RiArrowDownSLine,
-  // RiPencilFill,
   RiCheckboxCircleFill,
   RiAddCircleFill,
   RiErrorWarningFill,
@@ -125,14 +123,6 @@ const MediaTable = () => {
                 Listing Agreement
               </Typography>
             </Box>
-            {/* <Button
-              variant='contained'
-              size='large'
-              className='btn add-doc-btn doc-added'
-              startIcon={<RiCheckboxCircleFill />}
-            >
-              Listing Agreement
-            </Button> */}
             <Box
               variant='div'
               component='div'
