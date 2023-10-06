@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import AddeventDialog from '../../dailogs/addeventDialog';
+import EventviewDialog from '../../dailogs/eventviewDialog';
 
 function createData(name, date, time, action) {
   return { name, date, time, action };
@@ -26,6 +27,12 @@ const Events = ({ handleBack }) => {
   const handleClose = () => {
     setIsSubmitted(false);
   };
+
+  const [isEventview, setIsEventview] = useState(false);
+  const handleeventviewClose = () => {
+    setIsEventview(false);
+  };
+
   return (
     <>
       <Box
@@ -75,6 +82,7 @@ const Events = ({ handleBack }) => {
                         variant='outlined'
                         size='small'
                         className='edit-btn secondary-btn-small'
+                        onClick={() => setIsEventview(true)}
                       >
                         View
                       </Button>{' '}
@@ -112,6 +120,7 @@ const Events = ({ handleBack }) => {
         </Stack>
       </Box>
       <AddeventDialog open={isSubmitted} handleClose={handleClose} />
+      <EventviewDialog open={isEventview} handleClose={handleeventviewClose} />
     </>
   );
 };

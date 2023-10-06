@@ -5,11 +5,11 @@ import TabsList from '@mui/base/TabsList';
 import TabPanel from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
 import Tab, { tabClasses } from '@mui/base/Tab';
-import MediaTable from './mediaTable';
-import MediavideosTable from './mediavideosTable';
-import Media3dtoursTable from './media3dtoursTable';
-import MediawebsitesTable from './mediawebsitesTable';
-import MediabrohuresTable from './mediabrohuresTable';
+import MediavideosTable from './mediatable/mediavideosTable';
+import Media3dtoursTable from './mediatable/media3dtoursTable';
+import MediawebsitesTable from './mediatable/mediawebsitesTable';
+import MediabrohuresTable from './mediatable/mediabrohuresTable';
+import MediaphotoTable from './mediatable/mediaphotosTable';
 
 const MediaTabs = () => {
   return (
@@ -20,10 +20,10 @@ const MediaTabs = () => {
           <StyledTab value={1}>Videos</StyledTab>
           <StyledTab value={2}>3D Tours</StyledTab>
           <StyledTab value={3}>Websites </StyledTab>
-          <StyledTab value={4}>Brohures </StyledTab>
+          <StyledTab value={4}>Brochures </StyledTab>
         </StyledTabsList>
         <StyledTabPanel value={0}>
-          <MediaTable isAdmin={false} />
+          <MediaphotoTable isAdmin={false} />
         </StyledTabPanel>
         <StyledTabPanel value={1}>
           <MediavideosTable isAdmin={false} />

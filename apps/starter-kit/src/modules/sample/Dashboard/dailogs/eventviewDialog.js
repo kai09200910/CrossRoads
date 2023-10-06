@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { Box, Grid, Stack } from '@mui/material';
 import { RiPencilFill } from 'react-icons/ri';
 
-const InquiryinformationDialog = ({ open, handleClose }) => {
+const EventviewDialog = ({ open, handleClose }) => {
   return (
     <div>
       <Dialog
@@ -28,27 +28,18 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
             alignItems='center'
             flexWrap='wrap'
           >
-            Inquiry Information
-            <Button
-              variant='outlined'
-              size='small'
-              startIcon={<RiPencilFill />}
-              className='edit-btn secondary-btn-small'
-              // onClick={navigateToCreate}
-            >
-              edit
-            </Button>
+            Event Information
           </Stack>
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
           <Grid container spacing={5}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={12}>
               <Box variant='div' component='div' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
                   Name
                 </Typography>
                 <Typography gutterBottom variant='p' component='p'>
-                  John Smith
+                  Open house
                 </Typography>
               </Box>
             </Grid>
@@ -58,38 +49,17 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
                   Date
                 </Typography>
                 <Typography gutterBottom variant='p' component='p'>
-                  07/12/23
+                  05/07/24
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
               <Box variant='div' component='div' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
-                  Number
+                  Time
                 </Typography>
                 <Typography gutterBottom variant='p' component='p'>
-                  242-234-6789
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box variant='div' component='div' className='error-value'>
-                <Typography variant='body1' component='span' className=''>
-                  Email
-                </Typography>
-                <Typography gutterBottom variant='p' component='p'>
-                  henrykaichristie@gmail.com
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={12}>
-              <Box variant='div' component='div' className='error-value'>
-                <Typography variant='body1' component='span' className=''>
-                  Details
-                </Typography>
-                <Typography gutterBottom variant='p' component='p'>
-                  HiIs it possible to see lots for sale in rose Island ? Arrive
-                  tomorrow 5 pm and stay 2 days or more WhatsApp i have.
+                  9:00am-1:30pm
                 </Typography>
               </Box>
             </Grid>
@@ -108,7 +78,7 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
             <Button variant='outlined' size='large' className='outline-btn btn'>
               Close
             </Button>
-            <Button
+            {/* <Button
               variant='contained'
               size='large'
               autoFocus
@@ -116,7 +86,7 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
               className='primary-btn btn'
             >
               View contact
-            </Button>
+            </Button> */}
           </Stack>
         </DialogActions>
       </Dialog>
@@ -124,4 +94,4 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
   );
 };
 
-export default InquiryinformationDialog;
+export default EventviewDialog;

@@ -10,26 +10,76 @@ import { Link } from 'react-router-dom';
 import ReviewResubmissionDialog from '../common/reviewresubmissionDialog';
 import SubmittedDialog from '../common/submittedDialog';
 
-function createData(listing, agent, date, status) {
+function createData(listing, agent, approvedby, submittedby, approvedon) {
   return {
     listing,
     agent,
-    date,
-    status,
+    approvedby,
+    submittedby,
+    approvedon,
   };
 }
 
 const rows = [
-  createData('NS12345', 'John Christie', '10/12/24', 'New '),
-  createData('NS12345', 'John Christie', '10/12/24', 'New '),
-  createData('NS12345', 'John Christie', '10/12/24', 'New '),
-  createData('NS12345', 'John Christie', '10/12/24', 'In Progress '),
-  createData('NS12345', 'John Christie', '10/12/24', 'In Progress '),
-  createData('NS12345', 'John Christie', '10/12/24', 'New '),
-  createData('NS12345', 'John Christie', '10/12/24', 'New '),
+  createData(
+    'NS12345',
+    'John Christie',
+    'Chalene Curry',
+    'John Christie',
+    '10/12/24',
+  ),
+  createData(
+    'NS12345',
+    'John Christie',
+    'Chalene Curry',
+    'John Christie',
+    '10/12/24',
+  ),
+  createData(
+    'NS12345',
+    'John Christie',
+    'Chalene Curry',
+    'John Christie',
+    '10/12/24',
+  ),
+  createData(
+    'NS12345',
+    'John Christie',
+    'Chalene Curry',
+    'John Christie',
+    '10/12/24',
+  ),
+  createData(
+    'NS12345',
+    'John Christie',
+    'Chalene Curry',
+    'John Christie',
+    '10/12/24',
+  ),
+  createData(
+    'NS12345',
+    'John Christie',
+    'Chalene Curry',
+    'John Christie',
+    '10/12/24',
+  ),
+  createData(
+    'NS12345',
+    'John Christie',
+    'Chalene Curry',
+    'John Christie',
+    '10/12/24',
+  ),
+  createData(
+    'NS12345',
+    'John Christie',
+    'Chalene Curry',
+    'John Christie',
+    '10/12/24',
+  ),
 ];
 
-const NewListing = () => {
+const HistoryList = () => {
   const [isEditClicked, setIsEditClicked] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isdisapproved, setIsDisapproved] = useState(false);
@@ -62,10 +112,13 @@ const NewListing = () => {
                     Agent
                   </TableCell>
                   <TableCell align='left' style={{ width: '%' }}>
-                    Date
+                    Approved by
                   </TableCell>
                   <TableCell align='left' style={{ width: '%' }}>
-                    Status
+                    Submitted by
+                  </TableCell>
+                  <TableCell align='left' style={{ width: '%' }}>
+                    Approved On
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -112,12 +165,17 @@ const NewListing = () => {
                     </TableCell>
                     <TableCell align='left'>
                       <Typography variant='body1' component='p'>
-                        {row.date}
+                        {row.approvedby}
                       </Typography>
                     </TableCell>
                     <TableCell align='left'>
                       <Typography variant='body1' component='p' className=''>
-                        {row.status}
+                        {row.submittedby}
+                      </Typography>
+                    </TableCell>
+                    <TableCell align='left'>
+                      <Typography variant='body1' component='p' className=''>
+                        {row.approvedon}
                       </Typography>
                     </TableCell>
                   </TableRow>
@@ -142,4 +200,4 @@ const NewListing = () => {
   );
 };
 
-export default NewListing;
+export default HistoryList;

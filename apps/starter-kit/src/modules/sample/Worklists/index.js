@@ -9,6 +9,7 @@ import './worklists.scss';
 import { Typography } from '@mui/material';
 import ResubmissionsList from './resubmissionsList';
 import NewListing from './newListing';
+import HistoryList from './historyList';
 
 const Worklists = () => {
   return (
@@ -26,14 +27,18 @@ const Worklists = () => {
       <Tabs defaultValue={0} className='mediatab-wrap'>
         <label>Sort by </label>
         <StyledTabsList>
-          <StyledTab value={0}>Resubmissions</StyledTab>
+          <StyledTab value={0}>Updates</StyledTab>
           <StyledTab value={1}>New listings</StyledTab>
+          <StyledTab value={2}>History</StyledTab>
         </StyledTabsList>
         <StyledTabPanel value={0}>
           <ResubmissionsList />
         </StyledTabPanel>
         <StyledTabPanel value={1}>
           <NewListing />
+        </StyledTabPanel>
+        <StyledTabPanel value={2}>
+          <HistoryList />
         </StyledTabPanel>
       </Tabs>
     </>
@@ -116,7 +121,7 @@ font-weight: 600;
 const StyledTabsList = styled(TabsList)(
   ({ theme }) => `
 min-width: 320px;
-width: 320px;
+width: 420px;
 background-color: #fff;
 border-radius: 32px;
 margin: 8px 0 20px 0;

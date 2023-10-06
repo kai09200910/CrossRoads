@@ -55,6 +55,9 @@
     }
   }
   .title-wrap {
+    @media (min-width: 1650px) {
+      padding-bottom: 42px;
+    }
     .MuiChip-filled {
       font-size: 10px;
       height: 20px;
@@ -71,6 +74,9 @@
     }
   }
   .property-info {
+    @media (min-width: 1650px) {
+      padding-bottom: 42px;
+    }
     @media (max-width: 1024px) {
       align-items: start;
     }
@@ -84,6 +90,9 @@
       position: relative;
       border-right: 1px solid #e3e3e3;
       padding-right: 28px;
+      @media (min-width: 1650px) {
+        padding-right: 68px;
+      }
       @media (max-width: 1024px) {
         padding-right: 16px;
       }
@@ -107,6 +116,9 @@
     }
   }
   .other-info {
+    @media (min-width: 1650px) {
+      gap: 40px;
+    }
     @media (max-width: 1100px) {
       flex-wrap: wrap;
       gap: 24px;
@@ -119,6 +131,9 @@
         font-weight: 400;
       }
       .mls-info {
+        @media (min-width: 1650px) {
+          margin-top: 24px;
+        }
         p {
           font-weight: 700;
           font-size: 14px;
@@ -336,15 +351,15 @@
       width: inherit !important;
     }
   }
-  .edit-btn {
-    margin-right: 16px;
-    @media (max-width: 767px) {
-      order: 1;
-      margin: 4px 4px 0 4px;
-      display: flex;
-      justify-content: flex-end;
-    }
-  }
+  // .edit-btn {
+  //   margin-right: 16px;
+  //   @media (max-width: 767px) {
+  //     order: 1;
+  //     margin: 4px 4px 0 4px;
+  //     display: flex;
+  //     justify-content: flex-end;
+  //   }
+  // }
   .marketing-tab-content-wrapper {
     button.tab-btn {
       height: 150px;
