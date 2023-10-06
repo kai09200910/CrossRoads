@@ -87,14 +87,14 @@ const PropertyDetails = () => {
                 />
               </Tabs>
 
-              <Button
+              {/* <Button
                 variant='outlined'
                 size='small'
                 startIcon={<RiPencilFill />}
                 className='edit-btn secondary-btn-small'
               >
                 Edit
-              </Button>
+              </Button> */}
             </Stack>
           </Box>
 

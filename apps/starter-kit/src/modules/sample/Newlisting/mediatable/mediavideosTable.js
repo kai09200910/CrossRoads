@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -16,29 +15,28 @@ import {
   Switch,
   Typography,
 } from '@mui/material';
-import RowOrderIcon from '../../../assets/icon/table-row-ordering.svg';
-import { ReactComponent as ListViewIcon } from '../../../assets/icon/list-view.svg';
-import { ReactComponent as GridViewIcon } from '../../../assets/icon/grid-view.svg';
+import RowOrderIcon from '../../../../assets/icon/table-row-ordering.svg';
+import { ReactComponent as ListViewIcon } from '../../../../assets/icon/list-view.svg';
+import { ReactComponent as GridViewIcon } from '../../../../assets/icon/grid-view.svg';
 
 import { RiCheckboxBlankCircleFill, RiDeleteBinLine } from 'react-icons/ri';
-// import { IconName } from "react-icons/tfi";
-// import { IconName } from "react-icons/hi";
+
 import {
   SortableContainer,
   SortableHandle,
   SortableElement,
   arrayMove,
 } from 'react-sortable-hoc';
-import { Link } from 'react-router-dom';
-
 const adminColumns = [
   { id: 'name', label: 'Name', align: 'center' },
+  { id: 'size', label: 'Size' },
   { id: 'approval', label: 'Approval' },
 ];
+
 const userColumns = [
   { id: 'order', label: 'Order', minWidth: 40 },
   { id: 'name', label: 'Name', align: 'center' },
-  // { id: 'size', label: 'Size' },
+  { id: 'size', label: 'Size' },
   {
     id: 'date',
     label: 'Date',
@@ -56,6 +54,7 @@ const userColumns = [
     align: 'center',
   },
 ];
+
 function createData(order, name, size, date, displayonsite, action) {
   return { order, name, size, date, displayonsite, action };
 }
@@ -70,7 +69,6 @@ const rows = [
 ];
 
 const DragHandle = SortableHandle(({ style }) => (
-  // <span style={{ ...style, ...{ cursor: 'move' } }}> {'::::'} </span>
   <span style={{ ...style, ...{ cursor: 'move' } }}>
     {' '}
     <img src={RowOrderIcon} alt='Icon' />{' '}
@@ -87,8 +85,21 @@ const Row1 = ({ data, ...other }) => {
             alignItems='center'
             spacing={4}
           >
-            <Link href='#'>3D-tour-link-here-for-property</Link>
+            <Box className='img-wrap'>
+              <img
+                src='../../../assets/images/photo-house.png'
+                alt='email-photo'
+              />
+            </Box>
+            <Typography variant='span' component='span'>
+              {data.name}
+            </Typography>
           </Stack>
+        </TableCell>
+        <TableCell className='size'>
+          <Typography variant='p' component='p'>
+            {data.size}
+          </Typography>
         </TableCell>
         <TableCell className='size'>
           <FormControlLabel
@@ -99,7 +110,6 @@ const Row1 = ({ data, ...other }) => {
                 focusVisibleClassName='.Mui-focusVisible'
                 disableRipple
                 defaultChecked
-                //onClick={() => setIsSubmitted(true)}
               />
             }
             label=''
@@ -109,6 +119,7 @@ const Row1 = ({ data, ...other }) => {
     </>
   );
 };
+
 const Row = SortableElement(({ data, ...other }) => {
   return (
     <>
@@ -123,8 +134,22 @@ const Row = SortableElement(({ data, ...other }) => {
             alignItems='center'
             spacing={4}
           >
-            <Link href='#'>3D-tour-link-here-for-property</Link>
+            <Box className='img-wrap'>
+              <img
+                src='../../../assets/images/photo-house.png'
+                alt='email-photo'
+              />
+            </Box>
+            <Typography variant='span' component='span'>
+              {data.name}
+            </Typography>
           </Stack>
+        </TableCell>
+        <TableCell className='size'>
+          <Typography variant='p' component='p'>
+            <RiCheckboxBlankCircleFill size={6} className='green' />
+            {data.size}
+          </Typography>
         </TableCell>
         <TableCell>
           <Typography variant='span' component='span'>
@@ -155,7 +180,7 @@ const Row = SortableElement(({ data, ...other }) => {
   );
 });
 
-const Media3dtoursTable = ({ isAdmin = false }) => {
+const MediavideosTable = ({ isAdmin }) => {
   const [isGridView, setIsGridView] = React.useState(false);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -202,7 +227,6 @@ const Media3dtoursTable = ({ isAdmin = false }) => {
   React.useEffect(() => {
     setColumns(isAdmin ? adminColumns : userColumns);
   }, [isAdmin]);
-
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -220,9 +244,6 @@ const Media3dtoursTable = ({ isAdmin = false }) => {
 
   TableBodySortable.muiName = 'TableBody';
   const onSortEnd = ({ oldIndex, newIndex }) => {
-    // this.setState({
-    //   peoples: arrayMove(this.state.peoples, oldIndex, newIndex),
-    // });
     setPeoples(arrayMove(peoples, oldIndex, newIndex));
   };
   return (
@@ -478,4 +499,4 @@ const Media3dtoursTable = ({ isAdmin = false }) => {
   );
 };
 
-export default Media3dtoursTable;
+export default MediavideosTable;

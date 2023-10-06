@@ -1,6 +1,6 @@
 import { Box, Grid, TextField, Typography } from '@mui/material';
 import React from 'react';
-import MediaTable from './mediaTable';
+// import MediaTable from './mediaTable';
 import MediaTabs from './mediaTabs';
 
 const PropertyMedia = () => {

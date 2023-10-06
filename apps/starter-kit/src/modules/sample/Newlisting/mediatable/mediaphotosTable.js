@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -16,25 +15,16 @@ import {
   Switch,
   Typography,
 } from '@mui/material';
-import RowOrderIcon from '../../../assets/icon/table-row-ordering.svg';
-import { ReactComponent as ListViewIcon } from '../../../assets/icon/list-view.svg';
-import { ReactComponent as GridViewIcon } from '../../../assets/icon/grid-view.svg';
-
+import RowOrderIcon from '../../../../assets/icon/table-row-ordering.svg';
+import { ReactComponent as ListViewIcon } from '../../../../assets/icon/list-view.svg';
+import { ReactComponent as GridViewIcon } from '../../../../assets/icon/grid-view.svg';
 import { RiCheckboxBlankCircleFill, RiDeleteBinLine } from 'react-icons/ri';
-// import { IconName } from "react-icons/tfi";
-// import { IconName } from "react-icons/hi";
 import {
   SortableContainer,
   SortableHandle,
   SortableElement,
   arrayMove,
 } from 'react-sortable-hoc';
-const adminColumns = [
-  { id: 'name', label: 'Name', align: 'center' },
-  { id: 'size', label: 'Size' },
-  { id: 'approval', label: 'Approval' },
-];
-
 const userColumns = [
   { id: 'order', label: 'Order', minWidth: 40 },
   { id: 'name', label: 'Name', align: 'center' },
@@ -57,6 +47,12 @@ const userColumns = [
   },
 ];
 
+const adminColumns = [
+  { id: 'name', label: 'Name', align: 'center' },
+  { id: 'size', label: 'Size' },
+  { id: 'approval', label: 'Approval' },
+];
+
 function createData(order, name, size, date, displayonsite, action) {
   return { order, name, size, date, displayonsite, action };
 }
@@ -76,6 +72,7 @@ const DragHandle = SortableHandle(({ style }) => (
     <img src={RowOrderIcon} alt='Icon' />{' '}
   </span>
 ));
+
 const Row1 = ({ data, ...other }) => {
   return (
     <>
@@ -123,7 +120,6 @@ const Row1 = ({ data, ...other }) => {
     </>
   );
 };
-
 const Row = SortableElement(({ data, ...other }) => {
   return (
     <>
@@ -184,45 +180,46 @@ const Row = SortableElement(({ data, ...other }) => {
   );
 });
 
-const MediavideosTable = ({ isAdmin }) => {
+const MediaphotoTable = ({ isAdmin = false }) => {
+  console.log('isAdmin', isAdmin);
   const [isGridView, setIsGridView] = React.useState(false);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [peoples, setPeoples] = React.useState([
     {
       id: 1,
-      name: 'Video1.mp4',
-      size: '200mb',
+      name: 'House.jpg',
+      size: '500kb',
       date: '05/03/24',
     },
     {
       id: 2,
-      name: 'Video2.mp4',
-      size: '180mb',
+      name: 'House.jpg',
+      size: '1mb',
       date: '05/03/24',
     },
     {
       id: 3,
-      name: 'Video3.mp4',
-      size: '210mb',
+      name: 'House.jpg',
+      size: '2mb',
       date: '05/03/24',
     },
     {
       id: 4,
-      name: 'Video4.mp4',
-      size: '300mb',
+      name: 'House.jpg',
+      size: '3mb',
       date: '05/03/24',
     },
     {
       id: 5,
-      name: 'Video5.mp4',
-      size: '94mb',
+      name: 'House.jpg',
+      size: '4mb',
       date: '05/03/24',
     },
     {
       id: 6,
-      name: 'Video6.mp4',
-      size: '65mb',
+      name: 'House.jpg',
+      size: '5mb',
       date: '05/03/24',
     },
   ]);
@@ -471,6 +468,7 @@ const MediavideosTable = ({ isAdmin }) => {
                   ))}
                 </TableRow>
               </TableHead>
+
               <TableBodySortable
                 onSortEnd={onSortEnd}
                 useDragHandle
@@ -503,4 +501,4 @@ const MediavideosTable = ({ isAdmin }) => {
   );
 };
 
-export default MediavideosTable;
+export default MediaphotoTable;

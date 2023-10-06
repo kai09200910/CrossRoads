@@ -15,20 +15,26 @@ import {
   Switch,
   Typography,
 } from '@mui/material';
-import RowOrderIcon from '../../../assets/icon/table-row-ordering.svg';
-import { ReactComponent as ListViewIcon } from '../../../assets/icon/list-view.svg';
-import { ReactComponent as GridViewIcon } from '../../../assets/icon/grid-view.svg';
-import { RiCheckboxBlankCircleFill, RiDeleteBinLine } from 'react-icons/ri';
+import RowOrderIcon from '../../../../assets/icon/table-row-ordering.svg';
+import { ReactComponent as ListViewIcon } from '../../../../assets/icon/list-view.svg';
+import { ReactComponent as GridViewIcon } from '../../../../assets/icon/grid-view.svg';
+
+import { RiDeleteBinLine } from 'react-icons/ri';
 import {
   SortableContainer,
   SortableHandle,
   SortableElement,
   arrayMove,
 } from 'react-sortable-hoc';
+import { Link } from 'react-router-dom';
+
+const adminColumns = [
+  { id: 'name', label: 'Name', align: 'center' },
+  { id: 'approval', label: 'Approval' },
+];
 const userColumns = [
   { id: 'order', label: 'Order', minWidth: 40 },
   { id: 'name', label: 'Name', align: 'center' },
-  { id: 'size', label: 'Size' },
   {
     id: 'date',
     label: 'Date',
@@ -46,13 +52,6 @@ const userColumns = [
     align: 'center',
   },
 ];
-
-const adminColumns = [
-  { id: 'name', label: 'Name', align: 'center' },
-  { id: 'size', label: 'Size' },
-  { id: 'approval', label: 'Approval' },
-];
-
 function createData(order, name, size, date, displayonsite, action) {
   return { order, name, size, date, displayonsite, action };
 }
@@ -67,12 +66,12 @@ const rows = [
 ];
 
 const DragHandle = SortableHandle(({ style }) => (
+  // <span style={{ ...style, ...{ cursor: 'move' } }}> {'::::'} </span>
   <span style={{ ...style, ...{ cursor: 'move' } }}>
     {' '}
     <img src={RowOrderIcon} alt='Icon' />{' '}
   </span>
 ));
-
 const Row1 = ({ data, ...other }) => {
   return (
     <>
@@ -84,25 +83,11 @@ const Row1 = ({ data, ...other }) => {
             alignItems='center'
             spacing={4}
           >
-            <Box className='img-wrap'>
-              <img
-                src='../../../assets/images/photo-house.png'
-                alt='email-photo'
-              />
-            </Box>
-            <Typography variant='span' component='span'>
-              {data.name}
-            </Typography>
+            <Link href='#'>3D-tour-link-here-for-property</Link>
           </Stack>
         </TableCell>
         <TableCell className='size'>
-          <Typography variant='p' component='p'>
-            {data.size}
-          </Typography>
-        </TableCell>
-        <TableCell className='size'>
           <FormControlLabel
-            // control={<IOSSwitch  /> <Switch  sx={{ m: 1 }}
             control={
               <Switch
                 sx={{ m: 1 }}
@@ -110,7 +95,6 @@ const Row1 = ({ data, ...other }) => {
                 focusVisibleClassName='.Mui-focusVisible'
                 disableRipple
                 defaultChecked
-                //onClick={() => setIsSubmitted(true)}
               />
             }
             label=''
@@ -134,22 +118,8 @@ const Row = SortableElement(({ data, ...other }) => {
             alignItems='center'
             spacing={4}
           >
-            <Box className='img-wrap'>
-              <img
-                src='../../../assets/images/photo-house.png'
-                alt='email-photo'
-              />
-            </Box>
-            <Typography variant='span' component='span'>
-              {data.name}
-            </Typography>
+            <Link href='#'>3D-tour-link-here-for-property</Link>
           </Stack>
-        </TableCell>
-        <TableCell className='size'>
-          <Typography variant='p' component='p'>
-            <RiCheckboxBlankCircleFill size={6} className='green' />
-            {data.size}
-          </Typography>
         </TableCell>
         <TableCell>
           <Typography variant='span' component='span'>
@@ -180,46 +150,45 @@ const Row = SortableElement(({ data, ...other }) => {
   );
 });
 
-const MediaTable = ({ isAdmin = false }) => {
-  console.log('isAdmin', isAdmin);
+const Media3dtoursTable = ({ isAdmin = false }) => {
   const [isGridView, setIsGridView] = React.useState(false);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [peoples, setPeoples] = React.useState([
     {
       id: 1,
-      name: 'House.jpg',
-      size: '500kb',
+      name: 'Video1.mp4',
+      size: '200mb',
       date: '05/03/24',
     },
     {
       id: 2,
-      name: 'House.jpg',
-      size: '1mb',
+      name: 'Video2.mp4',
+      size: '180mb',
       date: '05/03/24',
     },
     {
       id: 3,
-      name: 'House.jpg',
-      size: '2mb',
+      name: 'Video3.mp4',
+      size: '210mb',
       date: '05/03/24',
     },
     {
       id: 4,
-      name: 'House.jpg',
-      size: '3mb',
+      name: 'Video4.mp4',
+      size: '300mb',
       date: '05/03/24',
     },
     {
       id: 5,
-      name: 'House.jpg',
-      size: '4mb',
+      name: 'Video5.mp4',
+      size: '94mb',
       date: '05/03/24',
     },
     {
       id: 6,
-      name: 'House.jpg',
-      size: '5mb',
+      name: 'Video6.mp4',
+      size: '65mb',
       date: '05/03/24',
     },
   ]);
@@ -228,6 +197,7 @@ const MediaTable = ({ isAdmin = false }) => {
   React.useEffect(() => {
     setColumns(isAdmin ? adminColumns : userColumns);
   }, [isAdmin]);
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -245,9 +215,6 @@ const MediaTable = ({ isAdmin = false }) => {
 
   TableBodySortable.muiName = 'TableBody';
   const onSortEnd = ({ oldIndex, newIndex }) => {
-    // this.setState({
-    //   peoples: arrayMove(this.state.peoples, oldIndex, newIndex),
-    // });
     setPeoples(arrayMove(peoples, oldIndex, newIndex));
   };
   return (
@@ -471,8 +438,6 @@ const MediaTable = ({ isAdmin = false }) => {
                   ))}
                 </TableRow>
               </TableHead>
-              {/* <TableBody> */}
-
               <TableBodySortable
                 onSortEnd={onSortEnd}
                 useDragHandle
@@ -488,7 +453,6 @@ const MediaTable = ({ isAdmin = false }) => {
                     );
                   })}
               </TableBodySortable>
-              {/* </TableBody> */}
             </Table>
           </TableContainer>
           <TablePagination
@@ -506,4 +470,4 @@ const MediaTable = ({ isAdmin = false }) => {
   );
 };
 
-export default MediaTable;
+export default Media3dtoursTable;
