@@ -95,6 +95,11 @@
         }
       }
     }
+    .agent-selection {
+      .MuiGrid-item {
+        padding-top: 5px !important;
+      }
+    }
   }
   .add-doc-btn-grp {
     .add-doc-btn {

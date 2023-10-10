@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
-import { Button, Grid } from '@mui/material';
+
 import {
   HiOutlineCalendar,
   HiOutlineInbox,
   HiOutlineUsers,
   HiOutlineMail,
 } from 'react-icons/hi';
+import { Button, Grid } from '@mui/material';
 import Events from './events';
 import MatchingBuyers from './matchingBuyers';
 import Inquiries from './Inquiries';

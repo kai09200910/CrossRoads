@@ -5,9 +5,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
+import EditinquiryinformationDialog from './editinquiryinformationDialog';
 import { Box, Grid, Stack } from '@mui/material';
 import { RiPencilFill } from 'react-icons/ri';
-import EditinquiryinformationDialog from './editinquiryinformationDialog';
 
 const InquiryinformationDialog = ({ open, handleClose }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
