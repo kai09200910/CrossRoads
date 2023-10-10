@@ -131,6 +131,9 @@
             border: none;
             padding-right: 0px;
           }
+          @media (max-width: 991px) {
+            margin-bottom: 0;
+          }
         }
         svg {
           margin-right: 4px;
@@ -150,4 +153,7 @@
   height: calc(100vh - 254px);
   overflow: auto;
   padding-right: 8px;
+  @media (max-width: 991px) {
+    height: calc(100vh - 162px);
+  }
 }

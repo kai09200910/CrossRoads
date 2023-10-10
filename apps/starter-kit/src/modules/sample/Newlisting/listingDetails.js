@@ -30,6 +30,8 @@ function createData(name, match, email) {
 const rows = [createData('John Smith', '95%', 'johnsmith@email.com')];
 
 const ListingDetails = () => {
+  const [isEditClicked, setIsEditClicked] = useState(false);
+
   const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
 
   const handleBuyerOpen = () => {
@@ -48,15 +50,79 @@ const ListingDetails = () => {
           <Typography variant='h2' component='h2'>
             Listing Details
           </Typography>
-          <Typography variant='p' component='p' className='title-agent-detail'>
-            Agent:{''}
-            <Typography variant='body1' component='span' className=''>
-              John Smith
-              <IconButton aria-label='edit'>
-                <RiPencilFill />
-              </IconButton>
-            </Typography>
-          </Typography>
+          <Stack
+            direction='row'
+            justifyContent='flex-start'
+            alignItems='center'
+            spacing={2}
+            className='step-title-inner'
+          >
+            {' '}
+          </Stack>
+          Agent:{''}
+          {isEditClicked ? (
+            <>
+              <Stack
+                direction='row'
+                justifyContent='flex-start'
+                alignItems='center'
+                spacing={2}
+                className='agent-selection'
+              >
+                <Grid container spacing={5} mt={0}>
+                  <Grid item xs={12} md={5}>
+                    <Select
+                      fullWidth
+                      id='demo-simple-select'
+                      label=''
+                      placeholder='Select Agent'
+                      IconComponent={RiArrowDownSLine}
+                      pt={0}
+                    >
+                      <MenuItem value={10}>Agent 1</MenuItem>
+                      <MenuItem value={20}>Agent 2</MenuItem>
+                      <MenuItem value={30}>Agent 3 </MenuItem>
+                      <MenuItem value={40}>Agent 4 </MenuItem>
+                      <MenuItem value={10}>Agent 5</MenuItem>
+                      <MenuItem value={20}>Agent 6</MenuItem>
+                      <MenuItem value={30}>Agent 7 </MenuItem>
+                      <MenuItem value={40}>Agent 8 </MenuItem>
+                      <MenuItem value={30}>Agent 9 </MenuItem>
+                      <MenuItem value={40}>Agent 10 </MenuItem>
+                    </Select>
+                  </Grid>
+                  <Button
+                    variant='text'
+                    onClick={() => {
+                      setIsEditClicked(false);
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                </Grid>
+              </Stack>
+            </>
+          ) : (
+            <>
+              <Typography
+                variant='p'
+                component='p'
+                className='title-agent-detail'
+              >
+                <Typography variant='body1' component='span' className=''>
+                  John Smith
+                  <IconButton
+                    aria-label='edit'
+                    onClick={() => {
+                      setIsEditClicked(true);
+                    }}
+                  >
+                    <RiPencilFill />
+                  </IconButton>
+                </Typography>
+              </Typography>
+            </>
+          )}
         </Box>
         <Grid container spacing={5} mt={5}>
           <Grid item xs={12} md={6}>

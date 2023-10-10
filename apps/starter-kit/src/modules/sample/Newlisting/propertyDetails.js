@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   Checkbox,
@@ -10,7 +11,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import React from 'react';
+
 import { RiArrowDownSLine, RiCloseLine, RiPencilFill } from 'react-icons/ri';
 
 const PropertyDetails = () => {

@@ -150,7 +150,7 @@ const DisapprovalDialog = ({ open, handleClose }) => {
             autoFocus
             onClick={handleClose}
             className='primary-btn btn'
-            sx={{ marginTop: 9 }}
+            sx={{ marginTop: 3 }}
           >
             Send to agent
           </Button>

@@ -5,7 +5,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
-import { Box, Grid, IconButton } from '@mui/material';
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -13,6 +13,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import AppList from '@crema/components/AppList';
+import { Box, Grid, IconButton } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import UploadModern from '../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';

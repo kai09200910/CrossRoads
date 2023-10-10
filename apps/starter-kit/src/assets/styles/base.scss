@@ -735,6 +735,9 @@ header {
           }
           td.size {
             p {
+              display: flex;
+              align-items: center;
+              gap: 2px;
               svg {
                 margin-right: 4px;
               }
