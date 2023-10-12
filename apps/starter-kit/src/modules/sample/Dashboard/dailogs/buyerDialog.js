@@ -45,7 +45,6 @@ const BuyerDialog = ({ open, handleClose, nextStep, step }) => {
               variant='outlined'
               size='small'
               className='edit-btn secondary-btn-small'
-              // onClick={navigateToCreate}
             >
               +New buyer profile
             </Button>

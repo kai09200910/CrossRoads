@@ -20,6 +20,9 @@ const rows = [
   createData('New note', '05/07/2023', 'John Smith'),
   createData('New note', '05/07/2023', 'John Smith'),
   createData('New note', '05/07/2023', 'John Smith'),
+  createData('Listing active', '05/07/2023', 'John Smith'),
+  createData('New note', '05/07/2023', 'John Smith'),
+  createData('New note', '05/07/2023', 'John Smith'),
 ];
 
 const History = () => {
@@ -49,7 +52,7 @@ const History = () => {
         </Typography>
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
-          className='table-wrapper'
+          className='table-wrapper scrollable-table'
         >
           <TableContainer>
             <Table sx={{ minWidth: 650 }} aria-label='simple table'>

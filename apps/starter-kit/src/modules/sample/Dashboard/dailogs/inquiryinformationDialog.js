@@ -128,7 +128,6 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
                 variant='contained'
                 size='large'
                 autoFocus
-                // onClick={handleClose}
                 className='primary-btn btn'
               >
                 View contact

@@ -70,7 +70,7 @@ const ListingDetails = () => {
                 className='agent-selection'
               >
                 <Grid container spacing={5} mt={0}>
-                  <Grid item xs={12} md={5}>
+                  <Grid item xs={12} sm={6} md={5}>
                     <Select
                       fullWidth
                       id='demo-simple-select'

@@ -267,7 +267,6 @@ const PropertyTitle = () => {
                     <Button
                       variant='outlined'
                       size='large'
-                      // onClick={handleBack}
                       className='outline-btn outline-primary btn'
                     >
                       Owner info

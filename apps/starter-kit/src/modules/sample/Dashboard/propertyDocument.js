@@ -57,7 +57,6 @@ const MediaTable = () => {
               Listing Documents
             </Typography>
             <Typography variant='body1' component='p' className='progress-area'>
-              {/* <CircularProgressWithLabel value={progress} /> */}
               <Box sx={{ position: 'relative', display: 'inline-flex' }}>
                 <CircularProgress variant='determinate' value={50} />
                 <Box
@@ -109,7 +108,9 @@ const MediaTable = () => {
               startIcon={<RiErrorWarningFill />}
               onClick={() => handleOpen()}
             >
-              KYC Documents
+              <Typography variant='body1' component='span' className=''>
+                KYC Documents
+              </Typography>
             </Button>
             <Box
               variant='div'
@@ -117,7 +118,6 @@ const MediaTable = () => {
               className='btn add-doc-btn doc-added upload-wrapper'
               onClick={handleBuyerOpen}
             >
-              {/* <TextField type='file' className='upload'></TextField> */}
               <Typography variant='body1' component='span' className=''>
                 <RiCheckboxCircleFill size={20} />
                 Listing Agreement

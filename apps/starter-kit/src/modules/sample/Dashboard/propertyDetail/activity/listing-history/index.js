@@ -21,6 +21,9 @@ const rows = [
   createData('New note   ', '05/07/24', 'John Smith  '),
   createData('New note   ', '05/07/24', 'John Smith  '),
   createData('New note   ', '05/07/24', 'John Smith  '),
+  createData('Listing active ', '05/07/24', 'John Smith '),
+  createData('New note   ', '05/07/24', 'John Smith  '),
+  createData('New note   ', '05/07/24', 'John Smith  '),
 ];
 
 const ListingHistory = ({ handleBack }) => {
@@ -77,7 +80,7 @@ const ListingHistory = ({ handleBack }) => {
       >
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
-          className='table-wrapper'
+          className='table-wrapper scrollable-table'
         >
           <TableContainer>
             <Table
