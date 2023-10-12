@@ -20,6 +20,9 @@ const rows = [
   createData('Open house ', '05/07/24', '9:00am-1:30pm '),
   createData('Open house ', '05/07/24', '9:00am-1:30pm '),
   createData('Open house ', '05/07/24', '9:00am-1:30pm '),
+  createData('Open house ', '05/07/24', '9:00am-1:30pm '),
+  createData('Open house ', '05/07/24', '9:00am-1:30pm '),
+  createData('Open house ', '05/07/24', '9:00am-1:30pm '),
 ];
 
 const Events = ({ handleBack }) => {
@@ -51,7 +54,7 @@ const Events = ({ handleBack }) => {
         </Typography>
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
-          className='table-wrapper'
+          className='table-wrapper scrollable-table'
         >
           <TableContainer>
             <Table sx={{ minWidth: 650 }} aria-label='simple table'>

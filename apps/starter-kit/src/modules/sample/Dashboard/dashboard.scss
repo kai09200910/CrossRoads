@@ -226,9 +226,6 @@
         span {
           color: #d60000;
         }
-        // &::before {
-        //   background-color: #009a6c;
-        // }
       }
     }
   }
@@ -353,15 +350,7 @@
       width: inherit !important;
     }
   }
-  // .edit-btn {
-  //   margin-right: 16px;
-  //   @media (max-width: 767px) {
-  //     order: 1;
-  //     margin: 4px 4px 0 4px;
-  //     display: flex;
-  //     justify-content: flex-end;
-  //   }
-  // }
+
   .marketing-tab-content-wrapper {
     button.tab-btn {
       height: 150px;
@@ -459,6 +448,9 @@
   //   }
   // }
   padding: 12px !important;
+  @media (min-width: 991px) and (max-width: 1025px) {
+    padding: 0px !important;
+  }
   .approval-tab {
     .tab-list-wrapper {
       display: flex;
@@ -653,8 +645,6 @@
     }
   }
   .table-wrapper.listing-detail-table {
-    .field-name {
-    }
     .small-input {
       // display: none;
     }
@@ -697,6 +687,7 @@
           background-color: #f9f9f9 !important ;
           font-size: 12px !important;
           padding: 4px 16px !important;
+          font-weight: 400 !important;
         }
       }
     }

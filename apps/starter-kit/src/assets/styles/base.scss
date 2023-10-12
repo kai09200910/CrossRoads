@@ -322,6 +322,10 @@ h4 {
     svg {
       color: #d60000 !important;
     }
+    span {
+      font-weight: 700;
+      text-align: left;
+    }
   }
   .add-doc-btn.upload-wrapper {
     position: relative;
@@ -386,6 +390,12 @@ h4 {
     @media (max-width: 480px) {
       width: 100% !important;
     }
+  }
+  svg {
+    // font-size: 22px !important;
+    width: 30px;
+    height: 23px;
+    display: inline-block;
   }
 }
 
@@ -833,6 +843,23 @@ header {
           }
         }
       }
+    }
+  }
+}
+.table-wrapper.scrollable-table {
+  thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  tbody {
+    display: block;
+    height: 300px;
+    overflow: auto;
+    tr {
+      display: table !important;
+      width: 100%;
+      table-layout: fixed;
     }
   }
 }

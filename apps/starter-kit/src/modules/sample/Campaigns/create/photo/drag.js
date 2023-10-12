@@ -10,13 +10,7 @@ import { useDropzone } from 'react-dropzone';
 
 const DragPhoto = () => {
   const breadcrumbs = [
-    <Link
-      underline='hover'
-      key='1'
-      color='inherit'
-      to='/campaigns'
-      //onClick={handleClick}
-    >
+    <Link underline='hover' key='1' color='inherit' to='/campaigns'>
       Email Selection
     </Link>,
     <Typography key='3' color='text.primary'>

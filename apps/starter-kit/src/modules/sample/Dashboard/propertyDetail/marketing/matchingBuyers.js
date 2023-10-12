@@ -20,6 +20,9 @@ const rows = [
   createData('John Smith', '95%', 'View info'),
   createData('John Smith', '95%', 'View info'),
   createData('John Smith', '95%', 'View info'),
+  createData('John Smith', '95%', 'View info'),
+  createData('John Smith', '95%', 'View info'),
+  createData('John Smith', '95%', 'View info'),
 ];
 
 const MatchingBuyers = ({ handleBack }) => {
@@ -46,7 +49,7 @@ const MatchingBuyers = ({ handleBack }) => {
         </Typography>
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
-          className='table-wrapper'
+          className='table-wrapper scrollable-table'
         >
           <TableContainer>
             <Table sx={{ minWidth: 650 }} aria-label='simple table'>

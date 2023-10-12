@@ -65,7 +65,11 @@ const TransactionReport = () => {
           </IconButton>
         </Stack>
 
-        <Button variant='contained' size='small' className='primary-btn-small'>
+        <Button
+          variant='contained'
+          size='small'
+          className='primary-btn-small secondary-btn'
+        >
           + Add
         </Button>
       </Stack>

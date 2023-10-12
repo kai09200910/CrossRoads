@@ -6,7 +6,6 @@
     justify-content: center;
     .MuiStep-horizontal {
       @media (max-width: 480px) {
-        // padding: 0 4px;
       }
       .MuiStepLabel-horizontal {
         flex-direction: column;
@@ -98,6 +97,11 @@
     .agent-selection {
       .MuiGrid-item {
         padding-top: 5px !important;
+      }
+      button {
+        @media (max-width: 580px) {
+          margin-left: 20px;
+        }
       }
     }
   }

@@ -6,15 +6,6 @@ import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
 import { IoCheckmarkCircle } from 'react-icons/io5';
 
-// const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-//   '& .MuiDialogContent-root': {
-//     padding: theme.spacing(2),
-//   },
-//   '& .MuiDialogActions-root': {
-//     padding: theme.spacing(1),
-//   },
-// }));
-
 const SubmittedDialog = ({ open, handleClose }) => {
   return (
     <div>

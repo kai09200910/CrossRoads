@@ -67,15 +67,6 @@ const MatchingbuyersDialog = ({ open, handleClose }) => {
             <Button variant='outlined' size='large' className='outline-btn btn'>
               Close
             </Button>
-            {/* <Button
-              variant='contained'
-              size='large'
-              autoFocus
-              onClick={handleClose}
-              className='primary-btn btn'
-            >
-              View contact
-            </Button> */}
           </Stack>
         </DialogActions>
       </Dialog>

@@ -65,16 +65,7 @@ const EditinquiryinformationDialog = ({ open, handleClose }) => {
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Box variant='div' component='div'>
-                {/* <label>Privacy </label>
-                <Stack spacing={{ xs: 1, sm: 2 }} direction='row' useFlexGap>
-                  <FormControlLabel
-                    control={<Checkbox defaultChecked />}
-                    label='Public'
-                  />
-                  <FormControlLabel control={<Checkbox />} label='Private  ' />
-                </Stack> */}
-              </Box>
+              {/* Empty grid here for reason - do not delete  */}
             </Grid>
             <Grid item xs={12} md={6}>
               <Box variant='div' component='div'>
