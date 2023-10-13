@@ -99,7 +99,7 @@ const HistoryList = () => {
       <Box className='work-list-table'>
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
-          className='table-wrapper work-list-table'
+          className='table-wrapper work-list-table '
         >
           <TableContainer>
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
@@ -109,7 +109,7 @@ const HistoryList = () => {
                     Listing #
                   </TableCell>
                   <TableCell align='left' style={{ width: '%' }}>
-                    Agent
+                    Updated field
                   </TableCell>
                   <TableCell align='left' style={{ width: '%' }}>
                     Approved by
@@ -147,15 +147,12 @@ const HistoryList = () => {
                         <Typography variant='body1' component='p'>
                           <Link
                             className='resubmition-btn'
-                            // onClick={() => setIsSubmitted(true)}
+                            onClick={() => setIsSubmitted(true)}
                           >
                             {' '}
                             {row.listing}{' '}
                           </Link>
                         </Typography>
-                        {/* <Typography variant='span' component='span'>
-                          {row.namelabel}
-                        </Typography> */}
                       </Stack>
                     </TableCell>
                     <TableCell align='left'>
@@ -191,6 +188,7 @@ const HistoryList = () => {
         isdisapproved={isdisapproved}
         setIsDisapproved={setIsDisapproved}
         handleSubmitOpen={handleFeedbackSubmitOpen}
+        isClose={true}
       />
       <SubmittedDialog
         open={isFeedbackSubmitted}

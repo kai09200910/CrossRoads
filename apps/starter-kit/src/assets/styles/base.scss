@@ -863,6 +863,11 @@ header {
     }
   }
 }
+.table-wrapper.work-list-table.scrollable-table {
+  tbody {
+    height: 500px;
+  }
+}
 // Table Styles END //
 
 .MuiPaper-root.MuiPaper-rounded {

@@ -7,9 +7,10 @@ import { buttonClasses } from '@mui/base/Button';
 import Tab, { tabClasses } from '@mui/base/Tab';
 import './worklists.scss';
 import { Typography } from '@mui/material';
-import ResubmissionsList from './resubmissionsList';
 import NewListing from './newListing';
 import HistoryList from './historyList';
+import UpdatesList from './updatesList';
+import Filters from './filters';
 
 const Worklists = () => {
   return (
@@ -24,15 +25,16 @@ const Worklists = () => {
       >
         Work lists
       </Typography>
-      <Tabs defaultValue={0} className='mediatab-wrap'>
+      <Tabs defaultValue={0} className='mediatab-wrap worklist-wrap'>
         <label>Sort by </label>
         <StyledTabsList>
           <StyledTab value={0}>Updates</StyledTab>
           <StyledTab value={1}>New listings</StyledTab>
           <StyledTab value={2}>History</StyledTab>
         </StyledTabsList>
+        <Filters />
         <StyledTabPanel value={0}>
-          <ResubmissionsList />
+          <UpdatesList />
         </StyledTabPanel>
         <StyledTabPanel value={1}>
           <NewListing />
@@ -84,7 +86,7 @@ const StyledTab = styled(Tab)`
   padding: 10px 12px;
   margin: 4px 4px;
   border: none;
-  border-radius: 32px;
+  border-radius: 6px;
   display: flex;
   justify-content: center;
   transition: all ease 0.3s;
@@ -123,7 +125,7 @@ const StyledTabsList = styled(TabsList)(
 min-width: 320px;
 width: 420px;
 background-color: #fff;
-border-radius: 32px;
+border-radius: 9px;
 margin: 8px 0 20px 0;
 display: flex;
 align-items: center;

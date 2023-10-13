@@ -57,6 +57,7 @@ const TransactionReport = () => {
             sx={{
               paddingBottom: '0',
             }}
+            git
           >
             Transaction report
           </Typography>

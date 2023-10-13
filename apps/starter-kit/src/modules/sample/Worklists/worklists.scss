@@ -1,56 +1,97 @@
-.work-list-table {
-  border-radius: 10px;
-  table {
-    thead {
-      tr {
-        th {
-          background: #999999;
-          background-color: #f9f9f9 !important ;
-          font-size: 12px !important;
-          padding: 4px 16px !important;
+.worklist-wrap {
+  position: relative;
+  .MuiTabsList-root {
+    position: relative;
+    z-index: 9;
+    @media (max-width: 767px) {
+      border-radius: 9px;
+    }
+  }
+  .work-list-table {
+    border-radius: 10px;
+    table {
+      thead {
+        tr {
+          th {
+            background: #999999;
+            background-color: #f9f9f9 !important ;
+            font-size: 12px !important;
+            padding: 4px 16px !important;
+          }
+        }
+      }
+      tbody {
+        tr {
+          th,
+          td {
+            padding: 8px 16px !important;
+            font-size: 14px;
+            background-color: #fff;
+            a.resubmition-btn {
+              font-size: 14px;
+              color: #292929;
+            }
+            span {
+              margin-top: 0;
+              color: #999999;
+              font-size: 11px;
+              font-weight: 400;
+            }
+            p.listing-number {
+              text-decoration: underline;
+            }
+          }
+          &:hover {
+            th,
+            td {
+              background-color: #dfeaff59;
+              color: #2871ff;
+            }
+            a.resubmition-btn {
+              color: #2871ff;
+            }
+          }
+          th.field-name {
+            p {
+              color: #999999;
+              font-size: 11px;
+            }
+            p.main-name {
+              color: #292929;
+              font-size: 14px;
+            }
+          }
         }
       }
     }
-    tbody {
-      tr {
-        th,
-        td {
-          padding: 8px 16px !important;
-          font-size: 14px;
-          background-color: #fff;
-          a.resubmition-btn {
-            font-size: 14px;
-            color: #292929;
-          }
-          span {
-            margin-top: 0;
-            color: #999999;
-            font-size: 11px;
-            font-weight: 400;
-          }
-          p.listing-number {
-            text-decoration: underline;
-          }
-        }
-        &:hover {
-          th,
-          td {
-            background-color: #dfeaff59;
-            color: #2871ff;
-          }
-          a.resubmition-btn {
-            color: #2871ff;
+  }
+
+  .worklist-fillter {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    @media (max-width: 1380px) {
+      position: unset;
+      margin-bottom: 24px;
+    }
+    .fillter-inner-wrap {
+      .search-field {
+        .MuiFormControl-root {
+          .MuiInputBase-adornedStart {
+            background-color: #fff;
+            input {
+              padding-left: 4px;
+            }
           }
         }
-        th.field-name {
-          p {
-            color: #999999;
-            font-size: 11px;
-          }
-          p.main-name {
-            color: #292929;
-            font-size: 14px;
-          }
+      }
+      label {
+        margin-bottom: 8px;
+      }
+      .btn-group {
+        margin-left: 16px;
+        @media (max-width: 850px) {
+          margin: 16px 0 0 16px;
         }
       }
     }

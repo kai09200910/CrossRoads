@@ -49,7 +49,7 @@ const NewListing = () => {
       <Box className='work-list-table'>
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
-          className='table-wrapper work-list-table'
+          className='table-wrapper work-list-table '
         >
           <TableContainer>
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
@@ -92,17 +92,11 @@ const NewListing = () => {
                         spacing={2}
                       >
                         <Typography variant='body1' component='p'>
-                          <Link
-                            className='resubmition-btn'
-                            // onClick={() => setIsSubmitted(true)}
-                          >
+                          <Link className='resubmition-btn' to='/dashboard'>
                             {' '}
-                            {row.listing}{' '}
+                            {row.listing}
                           </Link>
                         </Typography>
-                        {/* <Typography variant='span' component='span'>
-                          {row.namelabel}
-                        </Typography> */}
                       </Stack>
                     </TableCell>
                     <TableCell align='left'>

@@ -38,6 +38,17 @@
             padding-right: 16px;
           }
         }
+        .data-wrapper {
+          @media (max-width: 480px) {
+            gap: 8px;
+          }
+          div {
+            @media (max-width: 480px) {
+              width: 100%;
+              flex-basis: inherit;
+            }
+          }
+        }
       }
 
       span {
@@ -65,6 +76,19 @@
         border-radius: 4px !important;
         box-shadow: none !important;
       }
+      .table-wrapper.campaign-stats-list {
+        tbody {
+          tr {
+            td {
+              .clicks-value {
+                span {
+                  margin-top: 10p;
+                }
+              }
+            }
+          }
+        }
+      }
     }
     .campaign-list-card.compact-data {
       .primary-btn {
@@ -83,6 +107,18 @@
         .MuiGrid-grid-xs-4 {
           @media (max-width: 767px) {
             padding: 0px 8px;
+          }
+        }
+        div {
+          @media (max-width: 480px) {
+            gap: 8px;
+          }
+          .MuiGrid-root {
+            @media (max-width: 480px) {
+              width: 100%;
+              flex-basis: inherit;
+              max-width: 100%;
+            }
           }
         }
       }
@@ -136,6 +172,8 @@
           }
         }
       }
+      .detail {
+      }
     }
   }
   .campaign-list-card.expand-data.campaign-stats-list {
@@ -145,6 +183,34 @@
     h4 {
       @media (max-width: 767px) {
         font-size: 15px !important;
+      }
+    }
+  }
+}
+.table-wrapper.campaign-stats-list {
+  tbody {
+    tr {
+      td {
+        .clicks-value {
+          span {
+            margin-top: 5px;
+          }
+          span.red {
+            svg {
+              color: #d60000;
+            }
+          }
+          span.green {
+            svg {
+              color: #00ff0a;
+            }
+          }
+          span.yellow {
+            svg {
+              color: #ffe600;
+            }
+          }
+        }
       }
     }
   }
