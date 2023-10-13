@@ -1,16 +1,19 @@
 import {
   Box,
   Button,
+  Checkbox,
   Grid,
   IconButton,
+  ListItemText,
   MenuItem,
+  OutlinedInput,
   Select,
   Stack,
   TextField,
   Typography,
 } from '@mui/material';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   RiArrowDownSLine,
   RiPencilFill,
@@ -42,6 +45,30 @@ const ListingDetails = () => {
     setIsBuyerDialogOpen(false);
   };
 
+  const names = [
+    'Agent 1',
+    'Agent 2',
+    'Agent 3',
+    'Agent 4',
+    'Agent 5',
+    'Agent 6',
+    'Agent 7',
+    'Agent 8',
+  ];
+
+  const [personName, setPersonName] = React.useState([]);
+  const [person, setPerson] = React.useState([]);
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
+
   return (
     <>
       <Box variant='div' component='div' className='listing-detial-form'>
@@ -60,6 +87,14 @@ const ListingDetails = () => {
             {' '}
           </Stack>
           Agent:{''}
+          <IconButton
+            aria-label='edit'
+            onClick={() => {
+              setIsEditClicked(true);
+            }}
+          >
+            <RiPencilFill />
+          </IconButton>
           {isEditClicked ? (
             <>
               <Stack
@@ -72,25 +107,32 @@ const ListingDetails = () => {
                 <Grid container spacing={5} mt={0}>
                   <Grid item xs={12} sm={6} md={5}>
                     <Select
-                      fullWidth
-                      id='demo-simple-select'
-                      label=''
-                      placeholder='Select Agent'
-                      IconComponent={RiArrowDownSLine}
-                      pt={0}
+                      id='demo-multiple-checkbox'
+                      multiple
+                      value={personName}
+                      onChange={handleChange}
+                      input={<OutlinedInput />}
+                      renderValue={(selected) => selected.join(', ')}
+                      className='multiselect-input'
                     >
-                      <MenuItem value={10}>Agent 1</MenuItem>
-                      <MenuItem value={20}>Agent 2</MenuItem>
-                      <MenuItem value={30}>Agent 3 </MenuItem>
-                      <MenuItem value={40}>Agent 4 </MenuItem>
-                      <MenuItem value={10}>Agent 5</MenuItem>
-                      <MenuItem value={20}>Agent 6</MenuItem>
-                      <MenuItem value={30}>Agent 7 </MenuItem>
-                      <MenuItem value={40}>Agent 8 </MenuItem>
-                      <MenuItem value={30}>Agent 9 </MenuItem>
-                      <MenuItem value={40}>Agent 10 </MenuItem>
+                      {names.map((name) => (
+                        <MenuItem key={name} value={name}>
+                          <Checkbox checked={personName.indexOf(name) > -1} />
+
+                          <ListItemText primary={name} />
+                        </MenuItem>
+                      ))}
                     </Select>
                   </Grid>
+                  <Button
+                    variant='text'
+                    onClick={() => {
+                      setPerson(personName);
+                      setIsEditClicked(false);
+                    }}
+                  >
+                    Save
+                  </Button>
                   <Button
                     variant='text'
                     onClick={() => {
@@ -110,15 +152,7 @@ const ListingDetails = () => {
                 className='title-agent-detail'
               >
                 <Typography variant='body1' component='span' className=''>
-                  John Smith
-                  <IconButton
-                    aria-label='edit'
-                    onClick={() => {
-                      setIsEditClicked(true);
-                    }}
-                  >
-                    <RiPencilFill />
-                  </IconButton>
+                  {person.length > 0 ? person : 'No agent selected'}
                 </Typography>
               </Typography>
             </>

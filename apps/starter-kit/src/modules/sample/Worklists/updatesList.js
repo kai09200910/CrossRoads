@@ -12,22 +12,22 @@ import ReviewResubmissionDialog from '../common/reviewresubmissionDialog';
 import SubmittedDialog from '../common/submittedDialog';
 
 function createData(
-  name,
+  updates,
   namelabel,
   agent,
   date,
   listing,
-  agreementapproved,
-  listingadmin,
+  listingapproved,
+  approvedby,
 ) {
   return {
-    name,
+    updates,
     namelabel,
     agent,
     date,
     listing,
-    agreementapproved,
-    listingadmin,
+    listingapproved,
+    approvedby,
   };
 }
 
@@ -39,7 +39,7 @@ const rows = [
     '10/12/24',
     'NS12345',
     'Yes',
-    'Yes',
+    'Chalene Curry',
   ),
   createData(
     '$4,000,000',
@@ -48,7 +48,7 @@ const rows = [
     '10/12/24',
     'NS12345',
     'Yes',
-    'Yes',
+    'Chalene Curry',
   ),
   createData(
     'Document.pdf',
@@ -57,7 +57,7 @@ const rows = [
     '10/12/24',
     'NS12345',
     'Yes',
-    'Yes',
+    'Chalene Curry',
   ),
   createData(
     '$4,000,000',
@@ -66,7 +66,7 @@ const rows = [
     '10/12/24',
     'NS12345',
     'Yes',
-    'Yes',
+    'Chalene Curry',
   ),
   createData(
     'Document.pdf',
@@ -74,8 +74,8 @@ const rows = [
     'John Christie',
     '10/12/24',
     'NS12345',
-    'Yes',
-    'Yes',
+    'No',
+    '',
   ),
   createData(
     '$4,000,000',
@@ -84,7 +84,7 @@ const rows = [
     '10/12/24',
     'NS12345',
     'Yes',
-    'Yes',
+    'Chalene Curry',
   ),
   createData(
     'Document.pdf',
@@ -92,8 +92,8 @@ const rows = [
     'John Christie',
     '10/12/24',
     'NS12345',
-    'Yes',
-    'Yes',
+    'No',
+    '',
   ),
   createData(
     '$4,000,000',
@@ -102,11 +102,11 @@ const rows = [
     '10/12/24',
     'NS12345',
     'Yes',
-    'Yes',
+    'Chalene Curry',
   ),
 ];
 
-const ResubmissionsList = () => {
+const UpdatesList = () => {
   const [isEditClicked, setIsEditClicked] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isdisapproved, setIsDisapproved] = useState(false);
@@ -133,7 +133,7 @@ const ResubmissionsList = () => {
               <TableHead>
                 <TableRow>
                   <TableCell align='left' style={{ width: '%' }}>
-                    Name
+                    Updates
                   </TableCell>
                   <TableCell align='left' style={{ width: '%' }}>
                     Agent
@@ -145,10 +145,10 @@ const ResubmissionsList = () => {
                     Listing #
                   </TableCell>
                   <TableCell align='left' style={{ width: '%' }}>
-                    Agreement approved
+                    Listing approved
                   </TableCell>
                   <TableCell align='left' style={{ width: '%' }}>
-                    Listing admin
+                    Approved by
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -180,7 +180,7 @@ const ResubmissionsList = () => {
                             onClick={() => setIsSubmitted(true)}
                           >
                             {' '}
-                            {row.name}{' '}
+                            {row.updates}{' '}
                           </Link>
                         </Typography>
                         <Typography variant='span' component='span'>
@@ -209,12 +209,12 @@ const ResubmissionsList = () => {
                     </TableCell>
                     <TableCell align='left'>
                       <Typography variant='body1' component='p'>
-                        {row.agreementapproved}
+                        {row.listingapproved}
                       </Typography>
                     </TableCell>
                     <TableCell align='left'>
                       <Typography variant='body1' component='p'>
-                        {row.listingadmin}
+                        {row.approvedby}
                       </Typography>
                     </TableCell>
                   </TableRow>
@@ -239,4 +239,4 @@ const ResubmissionsList = () => {
   );
 };
 
-export default ResubmissionsList;
+export default UpdatesList;

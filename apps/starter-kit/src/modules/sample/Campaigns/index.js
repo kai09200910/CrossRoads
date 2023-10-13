@@ -17,6 +17,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { useNavigate } from 'react-router-dom';
+import { BsDot } from 'react-icons/bs';
 import './campaigns.scss';
 import ViewemailcampaignDialog from './viewemailcampaignDialog';
 
@@ -90,6 +91,7 @@ const Campaigns = () => {
                         direction='row'
                         justifyContent='center'
                         alignItems='center'
+                        className='data-wrapper'
                       >
                         <Divider orientation='vertical' flexItem></Divider>
                         <Grid xs sx={{ padding: '0px 24px' }}>
@@ -391,7 +393,7 @@ const Campaigns = () => {
               </Typography>
               <Box
                 sx={{ width: '100%', overflow: 'hidden' }}
-                className='table-wrapper'
+                className='table-wrapper scrollable-table campaign-stats-list'
               >
                 <TableContainer>
                   <Table sx={{ minWidth: 650 }} aria-label='simple table'>
@@ -414,7 +416,24 @@ const Campaigns = () => {
                           <TableCell component='th' scope='row'>
                             {row.name}
                           </TableCell>
-                          <TableCell align='left'>{row.click}</TableCell>
+                          <TableCell align='left'>
+                            <Stack
+                              direction='row'
+                              justifyContent='flex-start'
+                              alignItems='center'
+                              spacing={4}
+                              className='clicks-value'
+                            >
+                              <Typography
+                                variant='span '
+                                component='span'
+                                className='red'
+                              >
+                                <BsDot size={20} />
+                              </Typography>
+                              {row.click}
+                            </Stack>
+                          </TableCell>
                           <TableCell align='left'>{row.email}</TableCell>
                           <TableCell align='left'>{row.phone}</TableCell>
                         </TableRow>

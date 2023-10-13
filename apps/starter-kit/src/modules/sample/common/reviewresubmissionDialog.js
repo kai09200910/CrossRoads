@@ -20,6 +20,7 @@ const ReviewResubmissionDialog = ({
   isdisapproved,
   setIsDisapproved,
   handleSubmitOpen,
+  isClose = false,
 }) => {
   return (
     <div>
@@ -34,7 +35,11 @@ const ReviewResubmissionDialog = ({
           id='customized-dialog-title'
           className='modal-dailog-title'
         >
-          {isdisapproved ? 'Disapproval Feedback' : 'Review resubmission'}
+          {isClose
+            ? 'Review Update'
+            : isdisapproved
+            ? 'Disapproval Feedback'
+            : 'Review resubmission'}
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
           {isdisapproved ? (
@@ -125,26 +130,41 @@ const ReviewResubmissionDialog = ({
         </DialogContent>
         <DialogActions className='modal-dailog-footer'>
           <>
-            <Button
-              variant='outlined'
-              size='large'
-              onClick={() => setIsDisapproved(!isdisapproved)}
-              className='outline-btn btn'
-            >
-              {isdisapproved ? 'Back' : 'Disapprove'}
-            </Button>
+            {isClose ? (
+              <Button
+                variant='outlined'
+                size='large'
+                onClick={() =>
+                  isClose ? handleClose() : setIsDisapproved(!isdisapproved)
+                }
+                className='outline-btn btn'
+              >
+                Close
+              </Button>
+            ) : (
+              <>
+                <Button
+                  variant='outlined'
+                  size='large'
+                  onClick={() => setIsDisapproved(!isdisapproved)}
+                  className='outline-btn btn'
+                >
+                  {isdisapproved ? 'Back' : 'Disapprove'}
+                </Button>
 
-            <Button
-              variant='contained'
-              size='large'
-              autoFocus
-              onClick={() =>
-                isdisapproved ? handleClose() : handleSubmitOpen()
-              }
-              className='primary-btn btn'
-            >
-              {isdisapproved ? 'Send to agent' : 'Approve'}
-            </Button>
+                <Button
+                  variant='contained'
+                  size='large'
+                  autoFocus
+                  onClick={() =>
+                    isdisapproved ? handleClose() : handleSubmitOpen()
+                  }
+                  className='primary-btn btn'
+                >
+                  {isdisapproved ? 'Send to agent' : 'Approve'}
+                </Button>
+              </>
+            )}
           </>
         </DialogActions>
       </Dialog>
