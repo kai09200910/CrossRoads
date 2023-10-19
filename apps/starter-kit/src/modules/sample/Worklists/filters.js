@@ -2,18 +2,14 @@ import React from 'react';
 import {
   Box,
   Button,
-  FormControlLabel,
   Grid,
-  IconButton,
   InputAdornment,
   MenuItem,
   Select,
   Stack,
   TextField,
-  Typography,
 } from '@mui/material';
 import { RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
-// import './propertylist.scss';
 
 const Filters = () => {
   return (

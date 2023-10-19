@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import { Link } from 'react-router-dom';
 import ReviewResubmissionDialog from '../common/reviewresubmissionDialog';
 import SubmittedDialog from '../common/submittedDialog';
+import Filters from './filters';
 
 function createData(listing, agent, approvedby, submittedby, approvedon) {
   return {
@@ -96,6 +97,7 @@ const HistoryList = () => {
   };
   return (
     <>
+      <Filters />
       <Box className='work-list-table'>
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}

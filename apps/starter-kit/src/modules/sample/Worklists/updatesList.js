@@ -132,24 +132,12 @@ const UpdatesList = () => {
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
-                  <TableCell align='left' style={{ width: '%' }}>
-                    Updates
-                  </TableCell>
-                  <TableCell align='left' style={{ width: '%' }}>
-                    Agent
-                  </TableCell>
-                  <TableCell align='left' style={{ width: '%' }}>
-                    Date
-                  </TableCell>
-                  <TableCell align='left' style={{ width: '%' }}>
-                    Listing #
-                  </TableCell>
-                  <TableCell align='left' style={{ width: '%' }}>
-                    Listing approved
-                  </TableCell>
-                  <TableCell align='left' style={{ width: '%' }}>
-                    Approved by
-                  </TableCell>
+                  <TableCell align='left'>Updates</TableCell>
+                  <TableCell align='left'>Agent</TableCell>
+                  <TableCell align='left'>Date</TableCell>
+                  <TableCell align='left'>Listing #</TableCell>
+                  <TableCell align='left'>Listing approved</TableCell>
+                  <TableCell align='left'>Approved by</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>

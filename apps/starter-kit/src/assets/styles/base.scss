@@ -914,6 +914,11 @@ header {
       }
     }
   }
+  .custome-dropzone {
+    .MuiBox-root {
+      width: 100%;
+    }
+  }
 }
 // Upload Area & Doc List Styles //
 .disapproval-feedback-dailog {

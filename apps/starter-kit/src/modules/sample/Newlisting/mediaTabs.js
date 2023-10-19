@@ -10,6 +10,7 @@ import Media3dtoursTable from './mediatable/media3dtoursTable';
 import MediawebsitesTable from './mediatable/mediawebsitesTable';
 import MediabrohuresTable from './mediatable/mediabrohuresTable';
 import MediaphotoTable from './mediatable/mediaphotosTable';
+import { Button } from '@mui/material';
 
 const MediaTabs = () => {
   return (
@@ -22,6 +23,7 @@ const MediaTabs = () => {
           <StyledTab value={3}>Websites </StyledTab>
           <StyledTab value={4}>Brochures </StyledTab>
         </StyledTabsList>
+
         <StyledTabPanel value={0}>
           <MediaphotoTable isAdmin={false} />
         </StyledTabPanel>
