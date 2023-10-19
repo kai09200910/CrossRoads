@@ -77,6 +77,21 @@ const DragHandle = SortableHandle(({ style }) => (
 const Row1 = ({ data, ...other }) => {
   return (
     <>
+      <Stack
+        direction='row'
+        justifyContent='flex-end'
+        alignItems='flex-start'
+        spacing={1}
+        className='add-btn-wrapper'
+      >
+        <Button
+          variant='contained'
+          size='small'
+          className='primary-btn-small secondary-btn'
+        >
+          + Add
+        </Button>
+      </Stack>
       <TableRow hover role='checkbox' tabIndex={-1} {...other}>
         <TableCell>
           <Stack

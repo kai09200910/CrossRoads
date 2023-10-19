@@ -10,7 +10,6 @@ import { Typography } from '@mui/material';
 import NewListing from './newListing';
 import HistoryList from './historyList';
 import UpdatesList from './updatesList';
-import Filters from './filters';
 
 const Worklists = () => {
   return (
@@ -32,7 +31,7 @@ const Worklists = () => {
           <StyledTab value={1}>New listings</StyledTab>
           <StyledTab value={2}>History</StyledTab>
         </StyledTabsList>
-        <Filters />
+
         <StyledTabPanel value={0}>
           <UpdatesList />
         </StyledTabPanel>

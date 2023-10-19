@@ -71,18 +71,19 @@ const AuthWrapper = ({ children }) => {
             }}
           >
             <Typography
-              component="h2"
+              component='h2'
               sx={{
                 fontWeight: Fonts.BOLD,
                 fontSize: 30,
                 mb: 4,
               }}
             >
-              Welcome to Crema!
+              Welcome to CrossRoads!
             </Typography>
             <Typography>
-              Crema is purely based on Material ui components and follows
-              Material ui guidelines.
+              Where real estate dreams find their perfect intersection. We
+              specialize in guiding you through the dynamic landscape of
+              property, helping you discover the ideal homes and investments.
             </Typography>
           </Box>
         </Box>

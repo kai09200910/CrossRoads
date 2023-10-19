@@ -66,7 +66,6 @@ const rows = [
 ];
 
 const DragHandle = SortableHandle(({ style }) => (
-  // <span style={{ ...style, ...{ cursor: 'move' } }}> {'::::'} </span>
   <span style={{ ...style, ...{ cursor: 'move' } }}>
     {' '}
     <img src={RowOrderIcon} alt='Icon' />{' '}

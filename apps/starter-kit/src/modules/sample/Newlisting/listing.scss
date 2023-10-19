@@ -95,8 +95,11 @@
       }
     }
     .agent-selection {
-      .MuiGrid-item {
-        padding-top: 5px !important;
+      .MuiGrid-container {
+        align-items: center;
+        .MuiGrid-item {
+          padding-top: 0px !important;
+        }
       }
       button {
         @media (max-width: 580px) {
@@ -105,6 +108,13 @@
       }
       .multiselect-input {
         width: 100%;
+      }
+    }
+
+    .MuiIconButton-root {
+      svg {
+        width: 16px;
+        height: 16px;
       }
     }
   }
@@ -123,6 +133,14 @@
   }
   .btn {
     width: 196px !important;
+  }
+}
+ul.MuiMenu-list {
+  li {
+    padding: 6px 16px;
+    span {
+      padding: 0 9px;
+    }
   }
 }
 .stepper-wrap {

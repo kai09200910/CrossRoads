@@ -13,7 +13,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import {
   RiArrowDownSLine,
   RiPencilFill,
@@ -77,7 +77,7 @@ const ListingDetails = () => {
           <Typography variant='h2' component='h2'>
             Listing Details
           </Typography>
-          <Stack
+          {/* <Stack
             direction='row'
             justifyContent='flex-start'
             alignItems='center'
@@ -85,7 +85,7 @@ const ListingDetails = () => {
             className='step-title-inner'
           >
             {' '}
-          </Stack>
+          </Stack> */}
           Agent:{''}
           <IconButton
             aria-label='edit'
@@ -130,6 +130,8 @@ const ListingDetails = () => {
                       setPerson(personName);
                       setIsEditClicked(false);
                     }}
+                    size='small'
+                    className='small-btn'
                   >
                     Save
                   </Button>
@@ -138,6 +140,8 @@ const ListingDetails = () => {
                     onClick={() => {
                       setIsEditClicked(false);
                     }}
+                    size='small'
+                    className='small-btn'
                   >
                     Cancel
                   </Button>
@@ -151,8 +155,14 @@ const ListingDetails = () => {
                 component='p'
                 className='title-agent-detail'
               >
-                <Typography variant='body1' component='span' className=''>
-                  {person.length > 0 ? person : 'No agent selected'}
+                <Typography
+                  variant='body1'
+                  component='span'
+                  className='agent-name'
+                >
+                  {person.length > 0
+                    ? person?.join(', ')
+                    : 'No agent selected yet'}
                 </Typography>
               </Typography>
             </>
@@ -220,7 +230,6 @@ const ListingDetails = () => {
               >
                 <MenuItem value={10}>MLS Exclusive</MenuItem>
                 <MenuItem value={20}>General</MenuItem>
-                <MenuItem value={30}>Co-broke </MenuItem>
                 <MenuItem value={40}>Exclusive (not on MLS)</MenuItem>
               </Select>
             </Box>
