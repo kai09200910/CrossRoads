@@ -1,12 +1,8 @@
 import {
   Box,
   Button,
-  Checkbox,
   Grid,
-  IconButton,
-  ListItemText,
   MenuItem,
-  OutlinedInput,
   Select,
   Stack,
   TextField,
@@ -16,7 +12,6 @@ import {
 import React, { useState } from 'react';
 import {
   RiArrowDownSLine,
-  RiPencilFill,
   RiCheckboxCircleFill,
   RiAddCircleFill,
 } from 'react-icons/ri';
@@ -25,6 +20,7 @@ import MatchingContacts from '../common/matchingContacts';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import KycdocumentsDialog from './kycdocumentsDialog';
+import Steptitle from './stepTitle';
 
 function createData(name, match, email) {
   return { name, match, email };
@@ -45,129 +41,21 @@ const ListingDetails = () => {
     setIsBuyerDialogOpen(false);
   };
 
-  const names = [
-    'Agent 1',
-    'Agent 2',
-    'Agent 3',
-    'Agent 4',
-    'Agent 5',
-    'Agent 6',
-    'Agent 7',
-    'Agent 8',
-  ];
-
   const [personName, setPersonName] = React.useState([]);
   const [person, setPerson] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
 
   return (
     <>
       <Box variant='div' component='div' className='listing-detial-form'>
         {' '}
-        <Box variant='div' component='div' className='step-title'>
-          <Typography variant='h2' component='h2'>
-            Listing Details
-          </Typography>
-          {/* <Stack
-            direction='row'
-            justifyContent='flex-start'
-            alignItems='center'
-            spacing={2}
-            className='step-title-inner'
-          >
-            {' '}
-          </Stack> */}
-          Agent:{''}
-          <IconButton
-            aria-label='edit'
-            onClick={() => {
-              setIsEditClicked(true);
-            }}
-          >
-            <RiPencilFill />
-          </IconButton>
-          {isEditClicked ? (
-            <>
-              <Stack
-                direction='row'
-                justifyContent='flex-start'
-                alignItems='center'
-                spacing={2}
-                className='agent-selection'
-              >
-                <Grid container spacing={5} mt={0}>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Select
-                      id='demo-multiple-checkbox'
-                      multiple
-                      value={personName}
-                      onChange={handleChange}
-                      input={<OutlinedInput />}
-                      renderValue={(selected) => selected.join(', ')}
-                      className='multiselect-input'
-                    >
-                      {names.map((name) => (
-                        <MenuItem key={name} value={name}>
-                          <Checkbox checked={personName.indexOf(name) > -1} />
-
-                          <ListItemText primary={name} />
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </Grid>
-                  <Button
-                    variant='text'
-                    onClick={() => {
-                      setPerson(personName);
-                      setIsEditClicked(false);
-                    }}
-                    size='small'
-                    className='small-btn'
-                  >
-                    Save
-                  </Button>
-                  <Button
-                    variant='text'
-                    onClick={() => {
-                      setIsEditClicked(false);
-                    }}
-                    size='small'
-                    className='small-btn'
-                  >
-                    Cancel
-                  </Button>
-                </Grid>
-              </Stack>
-            </>
-          ) : (
-            <>
-              <Typography
-                variant='p'
-                component='p'
-                className='title-agent-detail'
-              >
-                <Typography
-                  variant='body1'
-                  component='span'
-                  className='agent-name'
-                >
-                  {person.length > 0
-                    ? person?.join(', ')
-                    : 'No agent selected yet'}
-                </Typography>
-              </Typography>
-            </>
-          )}
-        </Box>
+        <Steptitle
+          isEditClicked={isEditClicked}
+          setIsEditClicked={setIsEditClicked}
+          personName={personName}
+          person={person}
+          setPerson={setPerson}
+          setPersonName={setPersonName}
+        />
         <Grid container spacing={5} mt={5}>
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
