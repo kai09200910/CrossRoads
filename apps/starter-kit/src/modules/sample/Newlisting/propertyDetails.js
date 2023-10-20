@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Checkbox,
   FormControlLabel,
   Grid,
-  IconButton,
   MenuItem,
   Select,
   Stack,
@@ -12,26 +11,36 @@ import {
   Typography,
 } from '@mui/material';
 
-import { RiArrowDownSLine, RiCloseLine, RiPencilFill } from 'react-icons/ri';
+import { RiArrowDownSLine, RiCloseLine } from 'react-icons/ri';
+import Steptitle from './stepTitle';
 
 const PropertyDetails = () => {
+  const [isEditClicked, setIsEditClicked] = useState(false);
+
+  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
+
+  const handleBuyerOpen = () => {
+    setIsBuyerDialogOpen(true);
+  };
+
+  const handleBuyerClose = () => {
+    setIsBuyerDialogOpen(false);
+  };
+
+  const [personName, setPersonName] = React.useState([]);
+  const [person, setPerson] = React.useState([]);
+
   return (
     <>
       <Box variant='div' component='div' className='propery-detial-form'>
-        <Box variant='div' component='div' className='step-title'>
-          <Typography variant='h2' component='h2'>
-            Property Details
-          </Typography>
-          <Typography variant='p' component='p' className='title-agent-detail'>
-            Agent:{''}
-            <Typography variant='body1' component='span' className=''>
-              John Smith
-              <IconButton aria-label='edit'>
-                <RiPencilFill />
-              </IconButton>
-            </Typography>
-          </Typography>
-        </Box>
+        <Steptitle
+          isEditClicked={isEditClicked}
+          setIsEditClicked={setIsEditClicked}
+          personName={personName}
+          person={person}
+          setPerson={setPerson}
+          setPersonName={setPersonName}
+        />
         <Box variant='div' component='div' className='property-detial-form'>
           <Grid container spacing={5} mt={4}>
             <Grid item xs={12} md={4}>

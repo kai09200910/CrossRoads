@@ -148,6 +148,7 @@ const Documents = () => {
             </Table>
           </TableContainer>
         </Box>
+
         <Stack
           direction='row'
           justifyContent='end'

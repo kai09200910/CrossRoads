@@ -1,5 +1,6 @@
 import { BiAlignLeft } from 'react-icons/bi';
 import {
+  RiContactsBook2Line,
   RiFileAddLine,
   RiFileList2Line,
   RiLayoutGridFill,
@@ -54,6 +55,14 @@ const routesConfig = [
         type: 'item',
         icon: <RiFileList2Line />,
         url: '/worklists',
+      },
+      {
+        id: 'contacts',
+        title: 'Add new contact',
+        messageId: 'contacts',
+        type: 'item',
+        icon: <RiContactsBook2Line />,
+        url: '/contacts',
       },
     ],
   },

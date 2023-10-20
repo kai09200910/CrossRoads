@@ -12,6 +12,8 @@ const CreateCampaign = React.lazy(() =>
 );
 const Worklists = React.lazy(() => import('../../modules/sample/Worklists'));
 
+const Contacts = React.lazy(() => import('../../modules/sample/Contacts'));
+
 export const samplePagesConfigs = [
   {
     permittedRole: RoutePermittedRole.User,
@@ -42,5 +44,10 @@ export const samplePagesConfigs = [
     permittedRole: RoutePermittedRole.User,
     path: '/worklists',
     element: <Worklists />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/contacts',
+    element: <Contacts />,
   },
 ];
