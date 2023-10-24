@@ -799,6 +799,20 @@ header {
   }
 }
 
+.table-wrapper.table-empty-state {
+  tbody {
+    overflow: initial !important;
+    height: 350px !important;
+    .custome-dropzone {
+      background-color: #fff;
+      .dropzone {
+        background-color: #fff;
+        border: none;
+        height: 300px;
+      }
+    }
+  }
+}
 .green {
   color: #00ff0a;
 }
@@ -899,6 +913,7 @@ header {
 }
 
 .mediatab-wrap {
+  position: relative;
   .MuiTabsList-root {
     @media (max-width: 767px) {
       width: 100%;
@@ -917,6 +932,15 @@ header {
   .custome-dropzone {
     .MuiBox-root {
       width: 100%;
+    }
+  }
+  .add-btn-wrapper {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    @media (max-width: 1490px) {
+      position: unset;
+      margin-bottom: 12px;
     }
   }
 }
