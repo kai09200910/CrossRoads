@@ -168,3 +168,17 @@ ul.MuiMenu-list {
     }
   }
 }
+.listing-media-form {
+  .property-detial-form {
+    .mediatab-wrap {
+      .add-btn-wrapper {
+        @media (max-width: 1490px) {
+          position: absolute !important;
+        }
+        @media (max-width: 812px) {
+          position: unset !important;
+        }
+      }
+    }
+  }
+}

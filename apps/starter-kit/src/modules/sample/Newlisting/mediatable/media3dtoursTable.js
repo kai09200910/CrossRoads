@@ -8,6 +8,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import {
   Box,
+  Button,
   Checkbox,
   FormControlLabel,
   IconButton,
@@ -217,255 +218,272 @@ const Media3dtoursTable = ({ isAdmin = false }) => {
     setPeoples(arrayMove(peoples, oldIndex, newIndex));
   };
   return (
-    <Box
-      sx={{ width: '100%', overflow: 'hidden' }}
-      className='media-table-wrapper table-wrapper'
-    >
-      {!isAdmin ? (
-        <Stack
-          direction='row'
-          justifyContent='flex-start'
-          alignItems='center'
-          spacing={4}
-          className='view-action'
+    <>
+      <Stack
+        direction='row'
+        justifyContent='flex-end'
+        alignItems='flex-start'
+        spacing={1}
+        className='add-btn-wrapper'
+      >
+        <Button
+          variant='contained'
+          size='small'
+          className='primary-btn-small secondary-btn'
         >
-          <IconButton
-            aria-label='list'
-            disableRipple
-            className={!isGridView ? 'active' : ''}
-            onClick={() => setIsGridView(false)}
+          + Add
+        </Button>
+      </Stack>
+      <Box
+        sx={{ width: '100%', overflow: 'hidden' }}
+        className='media-table-wrapper table-wrapper'
+      >
+        {!isAdmin ? (
+          <Stack
+            direction='row'
+            justifyContent='flex-start'
+            alignItems='center'
+            spacing={4}
+            className='view-action'
           >
-            <ListViewIcon />
-          </IconButton>
-          <IconButton
-            aria-label='grid'
-            disableRipple
-            className={isGridView ? 'active' : ''}
-            onClick={() => setIsGridView(true)}
-          >
-            <GridViewIcon />
-          </IconButton>
-        </Stack>
-      ) : null}
-      {isGridView ? (
-        <>
-          <Box className='mediatable-gridlist'>
-            <Stack
-              direction='row'
-              justifyContent='flex-start'
-              alignItems='flex-start'
-              // spacing={2}
-              className='gridlist'
+            <IconButton
+              aria-label='list'
+              disableRipple
+              className={!isGridView ? 'active' : ''}
+              onClick={() => setIsGridView(false)}
             >
+              <ListViewIcon />
+            </IconButton>
+            <IconButton
+              aria-label='grid'
+              disableRipple
+              className={isGridView ? 'active' : ''}
+              onClick={() => setIsGridView(true)}
+            >
+              <GridViewIcon />
+            </IconButton>
+          </Stack>
+        ) : null}
+        {isGridView ? (
+          <>
+            <Box className='mediatable-gridlist'>
               <Stack
-                direction='column'
-                justifyContent='space-evenly'
-                alignItems='center'
-                spacing={1}
-                className='data-block'
+                direction='row'
+                justifyContent='flex-start'
+                alignItems='flex-start'
+                // spacing={2}
+                className='gridlist'
               >
-                <Box className='img-wrap'>
-                  <img
-                    src='../../../assets/images/photo-house.png'
-                    alt='email-photo'
-                  />
-                </Box>
-                <Typography variant='p' component='p'>
-                  House.jpg
-                </Typography>
-                <Typography variant='body1' component='span'>
-                  500x345
-                </Typography>
+                <Stack
+                  direction='column'
+                  justifyContent='space-evenly'
+                  alignItems='center'
+                  spacing={1}
+                  className='data-block'
+                >
+                  <Box className='img-wrap'>
+                    <img
+                      src='../../../assets/images/photo-house.png'
+                      alt='email-photo'
+                    />
+                  </Box>
+                  <Typography variant='p' component='p'>
+                    House.jpg
+                  </Typography>
+                  <Typography variant='body1' component='span'>
+                    500x345
+                  </Typography>
+                </Stack>
+                <Stack
+                  direction='column'
+                  justifyContent='space-evenly'
+                  alignItems='center'
+                  spacing={1}
+                  className='data-block'
+                >
+                  <Box className='img-wrap'>
+                    <img
+                      src='../../../assets/images/photo-house.png'
+                      alt='email-photo'
+                    />
+                  </Box>
+                  <Typography variant='p' component='p'>
+                    House.jpg
+                  </Typography>
+                  <Typography variant='body1' component='span'>
+                    500x345
+                  </Typography>
+                </Stack>
+                <Stack
+                  direction='column'
+                  justifyContent='space-evenly'
+                  alignItems='center'
+                  spacing={1}
+                  className='data-block'
+                >
+                  <Box className='img-wrap'>
+                    <img
+                      src='../../../assets/images/photo-house.png'
+                      alt='email-photo'
+                    />
+                  </Box>
+                  <Typography variant='p' component='p'>
+                    House.jpg
+                  </Typography>
+                  <Typography variant='body1' component='span'>
+                    500x345
+                  </Typography>
+                </Stack>
+                <Stack
+                  direction='column'
+                  justifyContent='space-evenly'
+                  alignItems='center'
+                  spacing={1}
+                  className='data-block'
+                >
+                  <Box className='img-wrap'>
+                    <img
+                      src='../../../assets/images/photo-house.png'
+                      alt='email-photo'
+                    />
+                  </Box>
+                  <Typography variant='p' component='p'>
+                    House.jpg
+                  </Typography>
+                  <Typography variant='body1' component='span'>
+                    500x345
+                  </Typography>
+                </Stack>
+                <Stack
+                  direction='column'
+                  justifyContent='space-evenly'
+                  alignItems='center'
+                  spacing={1}
+                  className='data-block'
+                >
+                  <Box className='img-wrap'>
+                    <img
+                      src='../../../assets/images/photo-house.png'
+                      alt='email-photo'
+                    />
+                  </Box>
+                  <Typography variant='p' component='p'>
+                    House.jpg
+                  </Typography>
+                  <Typography variant='body1' component='span'>
+                    500x345
+                  </Typography>
+                </Stack>
+                <Stack
+                  direction='column'
+                  justifyContent='space-evenly'
+                  alignItems='center'
+                  spacing={1}
+                  className='data-block'
+                >
+                  <Box className='img-wrap'>
+                    <img
+                      src='../../../assets/images/photo-house.png'
+                      alt='email-photo'
+                    />
+                  </Box>
+                  <Typography variant='p' component='p'>
+                    House.jpg
+                  </Typography>
+                  <Typography variant='body1' component='span'>
+                    500x345
+                  </Typography>
+                </Stack>
+                <Stack
+                  direction='column'
+                  justifyContent='space-evenly'
+                  alignItems='center'
+                  spacing={1}
+                  className='data-block'
+                >
+                  <Box className='img-wrap'>
+                    <img
+                      src='../../../assets/images/photo-house.png'
+                      alt='email-photo'
+                    />
+                  </Box>
+                  <Typography variant='p' component='p'>
+                    House.jpg
+                  </Typography>
+                  <Typography variant='body1' component='span'>
+                    500x345
+                  </Typography>
+                </Stack>
+                <Stack
+                  direction='column'
+                  justifyContent='space-evenly'
+                  alignItems='center'
+                  spacing={1}
+                  className='data-block'
+                >
+                  <Box className='img-wrap'>
+                    <img
+                      src='../../../assets/images/photo-house.png'
+                      alt='email-photo'
+                    />
+                  </Box>
+                  <Typography variant='p' component='p'>
+                    House.jpg
+                  </Typography>
+                  <Typography variant='body1' component='span'>
+                    500x345
+                  </Typography>
+                </Stack>
               </Stack>
-              <Stack
-                direction='column'
-                justifyContent='space-evenly'
-                alignItems='center'
-                spacing={1}
-                className='data-block'
-              >
-                <Box className='img-wrap'>
-                  <img
-                    src='../../../assets/images/photo-house.png'
-                    alt='email-photo'
-                  />
-                </Box>
-                <Typography variant='p' component='p'>
-                  House.jpg
-                </Typography>
-                <Typography variant='body1' component='span'>
-                  500x345
-                </Typography>
-              </Stack>
-              <Stack
-                direction='column'
-                justifyContent='space-evenly'
-                alignItems='center'
-                spacing={1}
-                className='data-block'
-              >
-                <Box className='img-wrap'>
-                  <img
-                    src='../../../assets/images/photo-house.png'
-                    alt='email-photo'
-                  />
-                </Box>
-                <Typography variant='p' component='p'>
-                  House.jpg
-                </Typography>
-                <Typography variant='body1' component='span'>
-                  500x345
-                </Typography>
-              </Stack>
-              <Stack
-                direction='column'
-                justifyContent='space-evenly'
-                alignItems='center'
-                spacing={1}
-                className='data-block'
-              >
-                <Box className='img-wrap'>
-                  <img
-                    src='../../../assets/images/photo-house.png'
-                    alt='email-photo'
-                  />
-                </Box>
-                <Typography variant='p' component='p'>
-                  House.jpg
-                </Typography>
-                <Typography variant='body1' component='span'>
-                  500x345
-                </Typography>
-              </Stack>
-              <Stack
-                direction='column'
-                justifyContent='space-evenly'
-                alignItems='center'
-                spacing={1}
-                className='data-block'
-              >
-                <Box className='img-wrap'>
-                  <img
-                    src='../../../assets/images/photo-house.png'
-                    alt='email-photo'
-                  />
-                </Box>
-                <Typography variant='p' component='p'>
-                  House.jpg
-                </Typography>
-                <Typography variant='body1' component='span'>
-                  500x345
-                </Typography>
-              </Stack>
-              <Stack
-                direction='column'
-                justifyContent='space-evenly'
-                alignItems='center'
-                spacing={1}
-                className='data-block'
-              >
-                <Box className='img-wrap'>
-                  <img
-                    src='../../../assets/images/photo-house.png'
-                    alt='email-photo'
-                  />
-                </Box>
-                <Typography variant='p' component='p'>
-                  House.jpg
-                </Typography>
-                <Typography variant='body1' component='span'>
-                  500x345
-                </Typography>
-              </Stack>
-              <Stack
-                direction='column'
-                justifyContent='space-evenly'
-                alignItems='center'
-                spacing={1}
-                className='data-block'
-              >
-                <Box className='img-wrap'>
-                  <img
-                    src='../../../assets/images/photo-house.png'
-                    alt='email-photo'
-                  />
-                </Box>
-                <Typography variant='p' component='p'>
-                  House.jpg
-                </Typography>
-                <Typography variant='body1' component='span'>
-                  500x345
-                </Typography>
-              </Stack>
-              <Stack
-                direction='column'
-                justifyContent='space-evenly'
-                alignItems='center'
-                spacing={1}
-                className='data-block'
-              >
-                <Box className='img-wrap'>
-                  <img
-                    src='../../../assets/images/photo-house.png'
-                    alt='email-photo'
-                  />
-                </Box>
-                <Typography variant='p' component='p'>
-                  House.jpg
-                </Typography>
-                <Typography variant='body1' component='span'>
-                  500x345
-                </Typography>
-              </Stack>
-            </Stack>
-          </Box>
-        </>
-      ) : (
-        <>
-          <TableContainer sx={{ maxHeight: 440 }} className='media-table'>
-            <Table stickyHeader aria-label='sticky table'>
-              <TableHead>
-                <TableRow>
-                  {columns.map((column) => (
-                    <TableCell
-                      key={column.id}
-                      align={column.align}
-                      style={{ minWidth: column.minWidth }}
-                    >
-                      {column.label}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBodySortable
-                onSortEnd={onSortEnd}
-                useDragHandle
-                displayRowCheckbox={false}
-              >
-                {peoples
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row, index) => {
-                    return isAdmin ? (
-                      <Row1 index={index} key={row.index} data={row} />
-                    ) : (
-                      <Row index={index} key={row.index} data={row} />
-                    );
-                  })}
-              </TableBodySortable>
-            </Table>
-          </TableContainer>
-          <TablePagination
-            rowsPerPageOptions={[10, 25, 100]}
-            component='div'
-            count={rows.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </>
-      )}
-    </Box>
+            </Box>
+          </>
+        ) : (
+          <>
+            <TableContainer sx={{ maxHeight: 440 }} className='media-table'>
+              <Table stickyHeader aria-label='sticky table'>
+                <TableHead>
+                  <TableRow>
+                    {columns.map((column) => (
+                      <TableCell
+                        key={column.id}
+                        align={column.align}
+                        style={{ minWidth: column.minWidth }}
+                      >
+                        {column.label}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                </TableHead>
+                <TableBodySortable
+                  onSortEnd={onSortEnd}
+                  useDragHandle
+                  displayRowCheckbox={false}
+                >
+                  {peoples
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map((row, index) => {
+                      return isAdmin ? (
+                        <Row1 index={index} key={row.index} data={row} />
+                      ) : (
+                        <Row index={index} key={row.index} data={row} />
+                      );
+                    })}
+                </TableBodySortable>
+              </Table>
+            </TableContainer>
+            <TablePagination
+              rowsPerPageOptions={[10, 25, 100]}
+              component='div'
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </>
+        )}
+      </Box>
+    </>
   );
 };
 

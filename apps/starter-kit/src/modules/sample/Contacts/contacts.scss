@@ -1,36 +1,84 @@
 .contact-fillter {
-  .fillter-inner-wrap {
-    .search-field {
-      .MuiFormControl-root {
-        .MuiInputBase-adornedStart {
-          background-color: #fff;
-          input {
-            padding-left: 4px;
+  margin-top: 16px;
+  .MuiStack-root {
+    @media (max-width: 992px) {
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+    .fillter-inner-wrap {
+      .search-field {
+        .MuiFormControl-root {
+          .MuiInputBase-adornedStart {
+            background-color: #fff;
+            input {
+              padding-left: 4px;
+            }
+          }
+        }
+      }
+      label {
+        margin-bottom: 8px;
+      }
+      .btn-group {
+        margin-left: 16px;
+        @media (max-width: 850px) {
+          margin: 16px 0 0 16px;
+        }
+        .btn {
+          min-width: 75px !important;
+          @media (max-width: 480px) {
+            margin: 0 !important;
           }
         }
       }
     }
-    label {
-      margin-bottom: 8px;
-    }
-    .btn-group {
-      margin-left: 16px;
-      @media (max-width: 850px) {
-        margin: 16px 0 0 16px;
+    .MuiStack-root {
+      @media (max-width: 992px) {
+        margin-left: 0px !important;
+      }
+      @media (max-width: 480px) {
+        flex-wrap: initial;
+      }
+      @media (max-width: 374px) {
+        flex-wrap: wrap;
+      }
+      .add-btn {
+        background-color: #c2eade !important;
+        color: #007653 !important;
+        min-width: 82px !important;
+        @media (max-width: 480px) {
+          min-width: 72px !important;
+          width: 72px !important;
+        }
+      }
+      .upld-btn {
+        background-color: #e6dffa !important;
+        color: #8728ff !important;
+        min-width: 105px !important;
+        @media (max-width: 480px) {
+          min-width: 108px !important;
+          margin: 0 !important;
+        }
+        @media (max-width: 374px) {
+          min-width: 100px !important;
+          width: 100px;
+        }
+      }
+      .dwnload-btn {
+        background-color: #dfe8fa !important;
+        color: #2871ff !important;
+        min-width: 105px !important;
+        @media (max-width: 480px) {
+          min-width: 108px !important;
+          margin: 0 !important;
+        }
+        @media (max-width: 374px) {
+          min-width: 110px !important;
+          width: 100px;
+        }
       }
     }
-  }
-  .add-btn {
-    background-color: #c2eade !important;
-    color: #007653 !important;
-  }
-  .upld-btn {
-    background-color: #e6dffa !important;
-    color: #8728ff !important;
-  }
-  .dwnload-btn {
-    background-color: #dfe8fa !important;
-    color: #2871ff !important;
   }
 }
 

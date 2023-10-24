@@ -8,6 +8,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import {
   Box,
+  Button,
   Checkbox,
   FormControlLabel,
   IconButton,
@@ -29,6 +30,7 @@ import AppList from '@crema/components/AppList';
 import { useDropzone } from 'react-dropzone';
 import UploadModern from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
 import FileRow from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
+import EmptyTable from './emptyTable';
 
 const userColumns = [
   { id: 'order', label: 'Order', minWidth: 40 },
@@ -504,24 +506,25 @@ const MediaphotoTable = ({ isAdmin = false }) => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
   return (
-    <Box sx={{ position: 'relative' }} className='custome-dropzone'>
-      <UploadModern
-        uploadText='Drag and drop photos or click to upload '
-        dropzone={dropzone}
-      />
-      <aside className='upload-doc-info'>
-        <AppList
-          data={uploadedFiles}
-          renderRow={(file, index) => (
-            <FileRow
-              key={index + file.path}
-              file={file}
-              onDeleteUploadFile={onDeleteUploadFile}
-            />
-          )}
-        />
-      </aside>
-    </Box>
+    <>
+      <Stack
+        direction='row'
+        justifyContent='flex-end'
+        alignItems='flex-start'
+        spacing={1}
+        className='add-btn-wrapper'
+      >
+        <Button
+          variant='contained'
+          size='small'
+          className='primary-btn-small secondary-btn'
+        >
+          + Add
+        </Button>
+      </Stack>
+
+      <EmptyTable />
+    </>
   );
 };
 
