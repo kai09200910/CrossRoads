@@ -75,7 +75,7 @@ const ListingDetails = () => {
                   <TextField type='file' className='upload'></TextField>
                   <Typography variant='body1' component='span' className=''>
                     <RiAddCircleFill size={20} />
-                    KYC Documents
+                    KYC Documents             
                   </Typography>
                 </Box> */}
                 <Box

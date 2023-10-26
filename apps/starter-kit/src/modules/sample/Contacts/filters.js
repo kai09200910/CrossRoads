@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -16,8 +16,13 @@ import {
   RiSearchLine,
   RiUpload2Line,
 } from 'react-icons/ri';
+import EventviewDialog from './addcontactDialog';
 
 const Filters = () => {
+  const [isEventview, setIsEventview] = useState(false);
+  const handleeventviewClose = () => {
+    setIsEventview(false);
+  };
   return (
     <>
       <Box variant='div' component='div' className='contact-fillter'>
@@ -50,10 +55,10 @@ const Filters = () => {
                       <MenuItem value={20}>Seller </MenuItem>
                       <MenuItem value={30}>Renter </MenuItem>
                       <MenuItem value={40}>Landlord </MenuItem>
-                      <MenuItem value={10}>Appraisal client </MenuItem>
-                      <MenuItem value={20}>Co-broke agent </MenuItem>
-                      <MenuItem value={30}>Merchant/supplier </MenuItem>
-                      <MenuItem value={40}>HGC Associate</MenuItem>
+                      <MenuItem value={50}>Appraisal client </MenuItem>
+                      <MenuItem value={60}>Co-broke agent </MenuItem>
+                      <MenuItem value={70}>Merchant/supplier </MenuItem>
+                      <MenuItem value={80}>HGC Associate</MenuItem>
                     </Select>
                   </Box>
                 </Grid>
@@ -141,6 +146,7 @@ const Filters = () => {
               variant='contained'
               endIcon={<RiAddLine />}
               className='add-btn primary-btn btn'
+              onClick={() => setIsEventview(true)}
             >
               Add
             </Button>
@@ -161,6 +167,7 @@ const Filters = () => {
           </Stack>
         </Stack>
       </Box>
+      <EventviewDialog open={isEventview} handleClose={handleeventviewClose} />
     </>
   );
 };

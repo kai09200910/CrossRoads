@@ -142,3 +142,28 @@
     }
   }
 }
+
+.modal-dailog-wrapper {
+  .MuiPaper-root {
+    .modal-dailog-title {
+      padding: 32px 42px 0px 42px;
+    }
+    .modal-dailog-content {
+      overflow: initial;
+      padding: 12px 32px 16px 32px;
+      .mediatab-wrap {
+        .MuiTabsList-root {
+          margin-bottom: 8px;
+        }
+        .MuiTabPanel-root {
+          overflow: auto;
+          height: calc(100vh - 310px);
+          padding-right: 6px;
+        }
+      }
+    }
+    .MuiDialogActions-root.MuiDialogActions-spacing {
+      padding: 8px 42px 32px 42px;
+    }
+  }
+}

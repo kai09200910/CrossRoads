@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  FormControlLabel,
-  Grid,
-  MenuItem,
-  Select,
-  Stack,
-  Switch,
-  TablePagination,
-  Typography,
-} from '@mui/material';
+import { Box, Stack, TablePagination, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
