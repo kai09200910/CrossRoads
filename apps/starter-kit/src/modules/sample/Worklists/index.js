@@ -10,6 +10,9 @@ import { Typography } from '@mui/material';
 import NewListing from './newListing';
 import HistoryList from './historyList';
 import UpdatesList from './updatesList';
+// import Test1 from './test1';
+// import Test2 from './test2';
+// import Test3 from './test3';
 
 const Worklists = () => {
   return (
@@ -24,8 +27,26 @@ const Worklists = () => {
       >
         Work lists
       </Typography>
-      <Tabs defaultValue={0} className='mediatab-wrap worklist-wrap'>
-        <label>Sort by </label>
+      <label>Sort by </label>
+      <Tabs defaultValue={1} className='mediatab-wrap worklist-wrap'>
+        <StyledTabsList>
+          <StyledTab value={1}>Updates</StyledTab>
+          <StyledTab value={2}>New listings</StyledTab>
+          <StyledTab value={3}>History</StyledTab>
+        </StyledTabsList>
+
+        <StyledTabPanel value={1}>
+          <UpdatesList />
+        </StyledTabPanel>
+        <StyledTabPanel value={2}>
+          <NewListing />
+        </StyledTabPanel>
+        <StyledTabPanel value={3}>
+          <HistoryList />
+        </StyledTabPanel>
+      </Tabs>
+
+      {/* <Tabs defaultValue={0} className='mediatab-wrap'>
         <StyledTabsList>
           <StyledTab value={0}>Updates</StyledTab>
           <StyledTab value={1}>New listings</StyledTab>
@@ -33,15 +54,17 @@ const Worklists = () => {
         </StyledTabsList>
 
         <StyledTabPanel value={0}>
-          <UpdatesList />
+          <Test1 />
         </StyledTabPanel>
         <StyledTabPanel value={1}>
-          <NewListing />
+          {' '}
+          <Test2 />
         </StyledTabPanel>
         <StyledTabPanel value={2}>
-          <HistoryList />
+          {' '}
+          <Test3 />
         </StyledTabPanel>
-      </Tabs>
+      </Tabs> */}
     </>
   );
 };

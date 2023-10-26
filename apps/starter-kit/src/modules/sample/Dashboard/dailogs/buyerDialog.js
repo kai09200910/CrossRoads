@@ -377,20 +377,7 @@ const BuyerDialog = ({ open, handleClose, nextStep, step }) => {
             </Box>
           )}
         </DialogContent>
-        <DialogActions className='modal-dailog-footer'>
-          <Button variant='outlined' size='large' className='outline-btn btn'>
-            Cancel
-          </Button>
-          <Button
-            variant='contained'
-            size='large'
-            autoFocus
-            onClick={step == 1 || step == 2 ? nextStep : handleClose}
-            className='primary-btn btn'
-          >
-            + Add
-          </Button>
-        </DialogActions>
+        <DialogActions className='modal-dailog-footer'></DialogActions>
       </Dialog>
     </div>
   );
