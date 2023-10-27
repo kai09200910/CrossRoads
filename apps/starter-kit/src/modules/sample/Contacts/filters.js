@@ -8,6 +8,7 @@ import {
   Select,
   Stack,
   TextField,
+  Typography,
 } from '@mui/material';
 import {
   RiAddLine,
@@ -150,13 +151,17 @@ const Filters = () => {
             >
               Add
             </Button>
-            <Button
-              variant='contained'
-              endIcon={<RiUpload2Line />}
-              className='upld-btn primary-btn btn'
+
+            <Typography
+              variant='body1'
+              component='span'
+              className='primary-btn-small upld-btn secondary-btn'
             >
               Upload
-            </Button>
+              <RiUpload2Line size={20} />
+              <TextField type='file' className='upload'></TextField>
+            </Typography>
+
             <Button
               variant='contained'
               endIcon={<RiDownload2Line />}

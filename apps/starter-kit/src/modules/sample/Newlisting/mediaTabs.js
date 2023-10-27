@@ -10,7 +10,6 @@ import Media3dtoursTable from './mediatable/media3dtoursTable';
 import MediawebsitesTable from './mediatable/mediawebsitesTable';
 import MediabrohuresTable from './mediatable/mediabrohuresTable';
 import MediaphotoTable from './mediatable/mediaphotosTable';
-import { Button } from '@mui/material';
 
 const MediaTabs = () => {
   return (

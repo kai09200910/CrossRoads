@@ -14,12 +14,17 @@ import {
   IconButton,
   Stack,
   Switch,
+  TextField,
   Typography,
 } from '@mui/material';
 import RowOrderIcon from '../../../../assets/icon/table-row-ordering.svg';
 import { ReactComponent as ListViewIcon } from '../../../../assets/icon/list-view.svg';
 import { ReactComponent as GridViewIcon } from '../../../../assets/icon/grid-view.svg';
-import { RiCheckboxBlankCircleFill, RiDeleteBinLine } from 'react-icons/ri';
+import {
+  RiAddLine,
+  RiCheckboxBlankCircleFill,
+  RiDeleteBinLine,
+} from 'react-icons/ri';
 import {
   SortableContainer,
   SortableHandle,
@@ -512,15 +517,17 @@ const MediaphotoTable = ({ isAdmin = false }) => {
         justifyContent='flex-end'
         alignItems='flex-start'
         spacing={1}
-        className='add-btn-wrapper'
+        className='add-media-btn-wrapper'
       >
-        <Button
-          variant='contained'
-          size='small'
+        <Typography
+          variant='body1'
+          component='span'
           className='primary-btn-small secondary-btn'
         >
-          + Add
-        </Button>
+          <RiAddLine size={18} />
+          Add
+          <TextField type='file' className='upload'></TextField>
+        </Typography>
       </Stack>
 
       <EmptyTable />
