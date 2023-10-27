@@ -171,12 +171,18 @@ ul.MuiMenu-list {
 .listing-media-form {
   .property-detial-form {
     .mediatab-wrap {
-      .add-btn-wrapper {
+      .MuiTabsList-root {
+        @media (max-width: 812px) {
+          margin-bottom: 12px;
+        }
+      }
+      .add-media-btn-wrapper {
         @media (max-width: 1490px) {
           position: absolute !important;
         }
         @media (max-width: 812px) {
           position: unset !important;
+          margin-bottom: 8px;
         }
       }
     }

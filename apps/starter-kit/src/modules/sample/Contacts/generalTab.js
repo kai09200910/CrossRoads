@@ -13,7 +13,7 @@ import { RiArrowDownSLine, RiPencilFill, RiSearchLine } from 'react-icons/ri';
 const GeneralTab = () => {
   return (
     <>
-      <Box className='work-list-table'>
+      <Box className='genral-tab'>
         <Grid container spacing={5} mt={4}>
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>

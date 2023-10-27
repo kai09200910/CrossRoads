@@ -148,10 +148,12 @@ const DragPhoto = () => {
                   className='agent-info-wrap'
                   flexWrap='wrap'
                 >
-                  <img
-                    src='../../../../assets/images/estate-agent.png'
-                    alt='template-logo'
-                  />
+                  <Box className='agent-picture'>
+                    <img
+                      src='../../../../assets/images/estate-agent.png'
+                      alt='template-logo'
+                    />
+                  </Box>
                   <Box sx={{ position: 'relative' }} className='agent-info'>
                     <Typography variant='h3' component='h3'>
                       Dylan Christie

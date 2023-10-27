@@ -12,6 +12,7 @@ import TabPanel from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
 import Tab, { tabClasses } from '@mui/base/Tab';
 import GeneralTab from './generalTab';
+import PersonalinfoTab from './personalinfoTab';
 
 const EventviewDialog = ({ open, handleClose }) => {
   return (
@@ -49,7 +50,9 @@ const EventviewDialog = ({ open, handleClose }) => {
               <StyledTabPanel value={0}>
                 <GeneralTab />
               </StyledTabPanel>
-              <StyledTabPanel value={1}>Personal Tab content</StyledTabPanel>
+              <StyledTabPanel value={1}>
+                <PersonalinfoTab />
+              </StyledTabPanel>
               <StyledTabPanel value={2}>Notes Tab content</StyledTabPanel>
               <StyledTabPanel value={3}>Documents Tab content</StyledTabPanel>
             </Tabs>

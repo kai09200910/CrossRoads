@@ -675,6 +675,14 @@
       }
     }
   }
+  .media-tab-content-wrapper {
+    .add-media-btn-wrapper {
+      @media (max-width: 1540px) {
+        position: unset !important;
+        margin-bottom: 8px;
+      }
+    }
+  }
 }
 
 .table-wrapper.activity-table {
@@ -737,3 +745,16 @@
   }
 }
 // Approval Tab Styles END//
+
+.media-tab-content-wrapper {
+  .add-media-btn-wrapper {
+    @media (max-width: 1475px) {
+      position: unset !important;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 812px) {
+      position: unset !important;
+      margin-bottom: 8px;
+    }
+  }
+}
