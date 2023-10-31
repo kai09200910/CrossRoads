@@ -8,7 +8,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-import { RiArrowDownSLine } from 'react-icons/ri';
 import './contacts.scss';
 import Filters from './filters';
 

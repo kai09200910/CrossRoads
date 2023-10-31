@@ -9,8 +9,13 @@ import {
   TextField,
   Stack,
 } from '@mui/material';
-import { RiArrowDownSLine, RiPencilFill, RiSearchLine } from 'react-icons/ri';
+import { RiArrowDownSLine } from 'react-icons/ri';
+import TagsInput from '../common/tagsInput';
 const GeneralTab = () => {
+  function handleSelecetedTags(items) {
+    console.log(items);
+  }
+
   return (
     <>
       <Box className='genral-tab'>
@@ -106,12 +111,14 @@ const GeneralTab = () => {
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Tags </label>
-              <TextField
+              <TagsInput
+                selectedTags={handleSelecetedTags}
                 fullWidth
-                id='outlined-basic'
-                label=''
                 variant='outlined'
-                placeholder='Enter name'
+                id='tags'
+                name='tags'
+                placeholder='add Tags'
+                className='tag-input'
               />
             </Box>
           </Grid>

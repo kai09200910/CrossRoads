@@ -59,7 +59,7 @@ const routesConfig = [
       {
         id: 'contacts',
         title: 'Add new contact',
-        messageId: 'contacts',
+        messageId: 'Contacts',
         type: 'item',
         icon: <RiContactsBook2Line />,
         url: '/contacts',

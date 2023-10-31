@@ -12,12 +12,7 @@ import {
   Radio,
   InputAdornment,
 } from '@mui/material';
-import {
-  RiArrowDownSLine,
-  RiAddFill,
-  RiPencilFill,
-  RiSearchLine,
-} from 'react-icons/ri';
+import { RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
 
 const PersonalinfoTab = () => {
   const [activebed, setActivebed] = useState('');
