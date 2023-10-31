@@ -285,6 +285,34 @@ h4 {
 .span.MuiRadio-root {
   padding-right: 4px;
 }
+.tag-input {
+  .MuiInputBase-root {
+    padding: 0px 8px 0 8px;
+    flex-wrap: wrap;
+    grid-column-gap: 5px;
+    .MuiChip-root {
+      margin: 6px 0;
+      background-color: #dfe8fa;
+      border-radius: 4px;
+      color: #2871ff;
+      font-size: 15px;
+      font-weight: 500;
+      svg {
+        color: #5992ff;
+        font-size: 16px;
+      }
+    }
+    .MuiInputBase-input.MuiOutlinedInput-input {
+      width: fit-content;
+    }
+    .Mui-focused {
+      input.MuiInputBase-input {
+        padding: 4px 14px 8px 4px;
+      }
+    }
+  }
+}
+
 // Add Document Button Styles //
 
 .add-doc-btn-grp {

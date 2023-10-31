@@ -13,6 +13,8 @@ import { buttonClasses } from '@mui/base/Button';
 import Tab, { tabClasses } from '@mui/base/Tab';
 import GeneralTab from './generalTab';
 import PersonalinfoTab from './personalinfoTab';
+import NotesTab from './notesTab';
+import DocumentsTab from './documentTab';
 
 const EventviewDialog = ({ open, handleClose }) => {
   return (
@@ -53,8 +55,13 @@ const EventviewDialog = ({ open, handleClose }) => {
               <StyledTabPanel value={1}>
                 <PersonalinfoTab />
               </StyledTabPanel>
-              <StyledTabPanel value={2}>Notes Tab content</StyledTabPanel>
-              <StyledTabPanel value={3}>Documents Tab content</StyledTabPanel>
+              <StyledTabPanel value={2}>
+                <NotesTab />{' '}
+              </StyledTabPanel>
+              <StyledTabPanel value={3}>
+                {' '}
+                <DocumentsTab />
+              </StyledTabPanel>
             </Tabs>
           </>
         </DialogContent>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Breadcrumbs, Button, Stack, Typography } from '@mui/material';
+import { Box, Breadcrumbs, Stack, Typography } from '@mui/material';
 import InquiryinformationDialog from '../../../dailogs/inquiryinformationDialog';
 import TransactionReport from './transactionReport';
 import Receipts from './receipts';
