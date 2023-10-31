@@ -48,7 +48,7 @@ const NotesTab = () => {
           justifyContent='flex-end'
           alignItems='flex-start'
           spacing={1}
-          className='add-media-btn-wrapper'
+          className='add-note-btn-wrapper'
         >
           <Button
             variant='contained'

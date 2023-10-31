@@ -1,12 +1,5 @@
 .worklist-wrap {
   position: relative;
-  .MuiTabsList-root {
-    position: relative;
-    z-index: 9;
-    @media (max-width: 767px) {
-      border-radius: 9px;
-    }
-  }
   .work-list-table {
     border-radius: 10px;
     table {
@@ -65,7 +58,11 @@
       }
     }
   }
-
+  .tab-list-wrapper {
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+  }
   .worklist-fillter {
     position: absolute;
     width: 100%;

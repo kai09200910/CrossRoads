@@ -81,7 +81,6 @@ const rows = [
 ];
 
 const HistoryList = () => {
-  const [isEditClicked, setIsEditClicked] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isdisapproved, setIsDisapproved] = useState(false);
   const [isFeedbackSubmitted, setIsFeedbackSubmitted] = useState(false);
