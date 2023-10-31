@@ -1,20 +1,20 @@
 import React from 'react';
-import { styled } from '@mui/system';
-import Tabs from '@mui/base/Tabs';
-import TabsList from '@mui/base/TabsList';
-import TabPanel from '@mui/base/TabPanel';
-import { buttonClasses } from '@mui/base/Button';
-import Tab, { tabClasses } from '@mui/base/Tab';
+import { Box, Typography } from '@mui/material';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 import './worklists.scss';
-import { Typography } from '@mui/material';
 import NewListing from './newListing';
 import HistoryList from './historyList';
 import UpdatesList from './updatesList';
-// import Test1 from './test1';
-// import Test2 from './test2';
-// import Test3 from './test3';
 
 const Worklists = () => {
+  const [value, setValue] = React.useState('1');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
     <>
       <Typography
@@ -28,132 +28,54 @@ const Worklists = () => {
         Work lists
       </Typography>
       <label>Sort by </label>
-      <Tabs defaultValue={1} className='mediatab-wrap worklist-wrap'>
-        <StyledTabsList>
-          <StyledTab value={1}>Updates</StyledTab>
-          <StyledTab value={2}>New listings</StyledTab>
-          <StyledTab value={3}>History</StyledTab>
-        </StyledTabsList>
 
-        <StyledTabPanel value={1}>
-          <UpdatesList />
-        </StyledTabPanel>
-        <StyledTabPanel value={2}>
-          <NewListing />
-        </StyledTabPanel>
-        <StyledTabPanel value={3}>
-          <HistoryList />
-        </StyledTabPanel>
-      </Tabs>
-
-      {/* <Tabs defaultValue={0} className='mediatab-wrap'>
-        <StyledTabsList>
-          <StyledTab value={0}>Updates</StyledTab>
-          <StyledTab value={1}>New listings</StyledTab>
-          <StyledTab value={2}>History</StyledTab>
-        </StyledTabsList>
-
-        <StyledTabPanel value={0}>
-          <Test1 />
-        </StyledTabPanel>
-        <StyledTabPanel value={1}>
-          {' '}
-          <Test2 />
-        </StyledTabPanel>
-        <StyledTabPanel value={2}>
-          {' '}
-          <Test3 />
-        </StyledTabPanel>
-      </Tabs> */}
+      <Box className='worklist-tab worklist-wrap'>
+        <TabContext value={value} className=''>
+          <Box className='tab-list-wrapper'>
+            <TabList
+              onChange={handleChange}
+              aria-label='lab API tabs example'
+              className='tab-list'
+            >
+              <Tab
+                label={
+                  <>
+                    <Typography>Updates</Typography>
+                  </>
+                }
+                value='1'
+              />
+              <Tab
+                label={
+                  <>
+                    <Typography>New listings</Typography>
+                  </>
+                }
+                value='2'
+              />
+              <Tab
+                label={
+                  <>
+                    <Typography>History</Typography>
+                  </>
+                }
+                value='3'
+              />
+            </TabList>
+          </Box>
+          <TabPanel value='1'>
+            <UpdatesList />
+          </TabPanel>
+          <TabPanel value='2'>
+            <NewListing />
+          </TabPanel>
+          <TabPanel value='3'>
+            <HistoryList />
+          </TabPanel>
+        </TabContext>
+      </Box>
     </>
   );
 };
 
 export default Worklists;
-
-const blue = {
-  50: '#F0F7FF',
-  100: '#C2E0FF',
-  200: '#80BFFF',
-  300: '#66B2FF',
-  400: '#3399FF',
-  500: '#007FFF',
-  600: '#0072E5',
-  700: '#0059B2',
-  800: '#004C99',
-  900: '#003A75',
-};
-
-const grey = {
-  50: '#f6f8fa',
-  100: '#eaeef2',
-  200: '#d0d7de',
-  300: '#afb8c1',
-  400: '#8c959f',
-  500: '#6e7781',
-  600: '#57606a',
-  700: '#424a53',
-  800: '#32383f',
-  900: '#24292f',
-};
-
-const StyledTab = styled(Tab)`
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  color: #292929;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  background-color: transparent;
-  width: 100%;
-  padding: 10px 12px;
-  margin: 4px 4px;
-  border: none;
-  border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  transition: all ease 0.3s;
-  &:hover {
-    background-color: #4381fd;
-    color: #fff;
-  }
-
-  &:focus {
-    color: #fff;
-    outline: 3px solid #4381fd;
-  }
-
-  &.${tabClasses.selected} {
-    background-color: #2871ff;
-    color: #fff;
-  }
-
-  &.${buttonClasses.disabled} {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-`;
-
-const StyledTabPanel = styled(TabPanel)(
-  ({ theme }) => `
-width: 100%;
-font-family: 'Plus Jakarta Sans', sans-serif;
-font-size: 14px;
-font-weight: 600;
-`,
-);
-
-const StyledTabsList = styled(TabsList)(
-  ({ theme }) => `
-min-width: 320px;
-width: 420px;
-background-color: #fff;
-border-radius: 9px;
-margin: 8px 0 20px 0;
-display: flex;
-align-items: center;
-justify-content: center;
-align-content: space-between;
-border: 1px solid #D9D9D9;
-box-shadow: 0px 1px 10px rgb(41 41 41 / 13%)
-`,
-);

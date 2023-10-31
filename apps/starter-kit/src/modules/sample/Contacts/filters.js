@@ -17,12 +17,12 @@ import {
   RiSearchLine,
   RiUpload2Line,
 } from 'react-icons/ri';
-import EventviewDialog from './addcontactDialog';
+import AddcontactDialog from './addcontactDialog';
 
 const Filters = () => {
-  const [isEventview, setIsEventview] = useState(false);
-  const handleeventviewClose = () => {
-    setIsEventview(false);
+  const [isAddcontact, setIsAddcontact] = useState(false);
+  const handleaddcontactClose = () => {
+    setIsAddcontact(false);
   };
   return (
     <>
@@ -147,7 +147,7 @@ const Filters = () => {
               variant='contained'
               endIcon={<RiAddLine />}
               className='add-btn primary-btn btn'
-              onClick={() => setIsEventview(true)}
+              onClick={() => setIsAddcontact(true)}
             >
               Add
             </Button>
@@ -172,7 +172,10 @@ const Filters = () => {
           </Stack>
         </Stack>
       </Box>
-      <EventviewDialog open={isEventview} handleClose={handleeventviewClose} />
+      <AddcontactDialog
+        open={isAddcontact}
+        handleClose={handleaddcontactClose}
+      />
     </>
   );
 };

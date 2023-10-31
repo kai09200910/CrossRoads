@@ -1088,3 +1088,61 @@ header {
   }
 }
 // Upload Area & Doc List Styles END //
+
+// Tab list and Tab panel Styles //
+.tab-list-wrapper {
+  .tab-list {
+    margin: 8px 0 8px 0;
+    .MuiTabs-flexContainer {
+      width: fit-content;
+      background-color: #fff;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: space-between;
+      border: 1px solid #d9d9d9;
+      box-shadow: 0px 1px 10px rgb(41 41 41 / 13%);
+      button {
+        border: none;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        transition: all ease 0.3s;
+        cursor: pointer;
+        font-size: 14px;
+        text-transform: capitalize;
+        margin: 4px 4px;
+        padding: 6px 16px;
+        min-height: 38px;
+        p {
+          font-weight: 600;
+        }
+        &:hover {
+          background-color: #4381fd;
+          color: #fff;
+        }
+        @media (max-width: 580px) {
+          width: 96%;
+        }
+      }
+      button.Mui-selected {
+        background-color: #4381fd;
+        color: #fff;
+      }
+      @media (max-width: 580px) {
+        flex-wrap: wrap;
+        width: 100%;
+      }
+    }
+    .MuiTabs-indicator {
+      display: none;
+    }
+  }
+}
+.MuiTabPanel-root {
+  padding: 0 6px 0 0;
+  overflow-y: auto;
+  height: calc(100vh - 320px);
+}
+// Tab list and Tab panel Styles END //
