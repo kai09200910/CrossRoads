@@ -9,9 +9,9 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import GeneralTab from './generalTab';
-import PersonalinfoTab from './personalinfoTab';
 import NotesTab from './notesTab';
-import DocumentsTab from './documentTab';
+import PersonalinfoTab from './personalinfoTab';
+import BuyerprofileTab from './buyerprofileTab';
 
 const EventviewDialog = ({ open, handleClose }) => {
   const [value, setValue] = React.useState('1');
@@ -62,7 +62,7 @@ const EventviewDialog = ({ open, handleClose }) => {
                     <Tab
                       label={
                         <>
-                          <Typography>Personal info</Typography>
+                          <Typography>Buyer Profile</Typography>
                         </>
                       }
                       value='2'
@@ -70,7 +70,7 @@ const EventviewDialog = ({ open, handleClose }) => {
                     <Tab
                       label={
                         <>
-                          <Typography>Notes</Typography>
+                          <Typography>Personal info </Typography>
                         </>
                       }
                       value='3'
@@ -78,7 +78,7 @@ const EventviewDialog = ({ open, handleClose }) => {
                     <Tab
                       label={
                         <>
-                          <Typography>Documents</Typography>
+                          <Typography>Notes</Typography>
                         </>
                       }
                       value='4'
@@ -89,13 +89,13 @@ const EventviewDialog = ({ open, handleClose }) => {
                   <GeneralTab />
                 </TabPanel>
                 <TabPanel value='2'>
-                  <PersonalinfoTab />
+                  <BuyerprofileTab />
                 </TabPanel>
                 <TabPanel value='3'>
-                  <NotesTab />{' '}
+                  <PersonalinfoTab />
                 </TabPanel>
                 <TabPanel value='4'>
-                  <DocumentsTab />
+                  <NotesTab />{' '}
                 </TabPanel>
               </TabContext>
             </Box>

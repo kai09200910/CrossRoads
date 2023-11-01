@@ -228,8 +228,19 @@
       }
     }
   }
+  .MuiFormControl-root {
+    width: 100%;
+  }
 }
 
+ul.MuiList-root {
+  li.MuiMenuItem-root {
+    padding: 4px 12px !important;
+    span.MuiButtonBase-root {
+      padding: 2px 8px !important;
+    }
+  }
+}
 .personalinfo-tab {
   .add-location-btn {
     font-size: 13px;
@@ -296,6 +307,8 @@
       }
     }
     .table-wrapper.note-list-table {
+      position: relative;
+      min-height: 185px;
       border-radius: 10px;
       table {
         thead {
@@ -317,6 +330,39 @@
         th {
           border-right: 1px solid #e7e7e7 !important;
         }
+      }
+    }
+  }
+}
+.add-note-modal {
+  .MuiPopover-paper {
+    margin-top: 8px;
+    overflow: visible;
+    @media (max-width: 580px) {
+      width: 85%;
+    }
+    &::before {
+      // content: '';
+      // position: absolute;
+      // top: -12px;
+      // left: 10px;
+      // pointer-events: auto;
+      // border: 15px solid;
+      // border-color: transparent transparent #fff transparent;
+      // border-width: 0 15px 15px 15px;
+    }
+    .add-note-modal-inner {
+      background-color: #fff;
+      width: 420px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      @media (max-width: 580px) {
+        width: 100%;
+      }
+      .primary-btn-small {
+        margin-top: 8px;
       }
     }
   }

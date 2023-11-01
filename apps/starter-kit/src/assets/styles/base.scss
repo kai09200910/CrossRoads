@@ -932,6 +932,15 @@ header {
       }
     }
   }
+  .table-empty-state {
+    position: absolute;
+    width: 100%;
+    padding: 40px;
+    p,
+    svg {
+      color: #999;
+    }
+  }
 }
 .table-wrapper.scrollable-table {
   thead {
