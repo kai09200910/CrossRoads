@@ -549,6 +549,8 @@
   .table-wrapper {
     border-radius: 10px;
     table {
+      position: relative;
+      min-height: 185px;
       thead {
         tr {
           th {
@@ -614,6 +616,9 @@
       .table-empty-state {
         padding: 32px;
         justify-content: center;
+        position: absolute;
+        width: 100%;
+
         p {
           color: #999;
         }

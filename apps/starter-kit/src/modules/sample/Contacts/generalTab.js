@@ -8,13 +8,39 @@ import {
   Grid,
   TextField,
   Stack,
+  Checkbox,
+  ListItemText,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import TagsInput from '../common/tagsInput';
+
 const GeneralTab = () => {
   function handleSelecetedTags(items) {
     console.log(items);
   }
+
+  const names = [
+    'Buyer',
+    'Seller',
+    'Renter',
+    'Landlord',
+    'Appraisal client',
+    'Co-broke agent',
+    'Merchant/supplier',
+    'HGC Associate',
+  ];
+
+  const [personName, setPersonName] = React.useState([]);
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(typeof value === 'string' ? value.split(',') : value);
+  };
 
   return (
     <>
@@ -126,22 +152,24 @@ const GeneralTab = () => {
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Contact type </label>
-              <Select
-                fullWidth
-                id='demo-simple-select'
-                label=''
-                placeholder='Select'
-                IconComponent={RiArrowDownSLine}
-              >
-                <MenuItem value={10}>Buyer</MenuItem>
-                <MenuItem value={20}>Seller </MenuItem>
-                <MenuItem value={30}>Renter </MenuItem>
-                <MenuItem value={40}>Landlord </MenuItem>
-                <MenuItem value={50}>Appraisal client </MenuItem>
-                <MenuItem value={60}>Co-broke agent </MenuItem>
-                <MenuItem value={70}>Merchant/supplier </MenuItem>
-                <MenuItem value={80}>HGC Associate</MenuItem>
-              </Select>
+              <FormControl>
+                <Select
+                  labelId='demo-multiple-checkbox-label'
+                  id='demo-multiple-checkbox'
+                  multiple
+                  value={personName}
+                  onChange={handleChange}
+                  IconComponent={RiArrowDownSLine}
+                  renderValue={(selected) => selected.join(', ')}
+                >
+                  {names.map((name) => (
+                    <MenuItem key={name} value={name}>
+                      <Checkbox checked={personName.indexOf(name) > -1} />
+                      <ListItemText primary={name} />
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </Box>
           </Grid>
 
