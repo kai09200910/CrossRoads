@@ -1194,9 +1194,11 @@ header {
     }
   }
 }
-.MuiTabPanel-root {
-  padding: 0 6px 0 0;
-  overflow-y: auto;
-  height: calc(100vh - 320px);
+.add-contact-tab.contact-tab {
+  .MuiTabPanel-root {
+    padding: 0 6px 0 0;
+    overflow-y: auto;
+    height: calc(100vh - 320px);
+  }
 }
 // Tab list and Tab panel Styles END //

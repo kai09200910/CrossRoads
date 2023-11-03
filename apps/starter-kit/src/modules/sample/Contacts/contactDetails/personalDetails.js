@@ -4,7 +4,11 @@ import { Box, Grid, Paper, Typography } from '@mui/material';
 
 const PersonalDetails = () => {
   return (
-    <Paper>
+    <Paper
+      sx={{
+        marginBottom: { xs: 13, xl: 13 },
+      }}
+    >
       <Box
         sx={{
           padding: { xs: 9, xl: 9 },
@@ -32,7 +36,15 @@ const PersonalDetails = () => {
             <Box variant='div' component='div'>
               <label>Fred Ryan </label>
               <Typography variant='body1' component='span'>
-                Agent
+                Primary Agent
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Box variant='div' component='div'>
+              <label>Jhon Doe </label>
+              <Typography variant='body1' component='span'>
+                Secondary Agent
               </Typography>
             </Box>
           </Grid>
