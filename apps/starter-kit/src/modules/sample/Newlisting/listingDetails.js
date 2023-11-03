@@ -206,7 +206,7 @@ const ListingDetails = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
                 placeholder='Cell-phone '
               />
@@ -247,7 +247,7 @@ const ListingDetails = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
                 placeholder='$500,000'
               />
@@ -259,7 +259,7 @@ const ListingDetails = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
                 placeholder='$500,000'
               />
@@ -271,7 +271,7 @@ const ListingDetails = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
                 placeholder='5%,6%,7% etc. '
               />
@@ -285,7 +285,7 @@ const ListingDetails = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
                 placeholder='$500,000'
               />
@@ -309,7 +309,7 @@ const ListingDetails = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
                 placeholder='USD'
               />
@@ -323,7 +323,7 @@ const ListingDetails = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
                 placeholder='$500,000'
               />
@@ -463,7 +463,7 @@ const ListingDetails = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
                 placeholder='$500,000'
               />

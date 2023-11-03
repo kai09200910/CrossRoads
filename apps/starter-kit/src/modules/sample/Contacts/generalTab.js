@@ -45,7 +45,7 @@ const GeneralTab = () => {
   return (
     <>
       <Box className='genral-tab'>
-        <Grid container spacing={5} mt={4}>
+        <Grid container spacing={5} mt={3}>
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>First name </label>
@@ -54,7 +54,7 @@ const GeneralTab = () => {
                 id='outlined-basic'
                 label=''
                 variant='outlined'
-                placeholder='Select event type'
+                placeholder='Enter Last Name'
               />
             </Box>
           </Grid>
@@ -66,12 +66,12 @@ const GeneralTab = () => {
                 id='outlined-basic'
                 label=''
                 variant='outlined'
-                placeholder='Event name '
+                placeholder='Enter Last Name '
               />
             </Box>
           </Grid>
         </Grid>
-        <Grid container spacing={5} mt={2}>
+        <Grid container spacing={5} mt={3}>
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Nick name</label>
@@ -80,7 +80,7 @@ const GeneralTab = () => {
                 id='outlined-basic'
                 label=''
                 variant='outlined'
-                placeholder='Enter name'
+                placeholder='Enter Nick Name'
               />
             </Box>
           </Grid>
@@ -92,7 +92,7 @@ const GeneralTab = () => {
                 id='outlined-basic'
                 label=''
                 variant='outlined'
-                placeholder='Enter name'
+                placeholder='Enter Spouse Name'
               />
             </Box>
           </Grid>
@@ -103,9 +103,9 @@ const GeneralTab = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
-                placeholder='Enter name'
+                placeholder='Enter Home Phone'
               />
             </Box>
           </Grid>
@@ -115,9 +115,9 @@ const GeneralTab = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='number'
                 variant='outlined'
-                placeholder='Enter name'
+                placeholder='Enter Mobile Phone'
               />
             </Box>
           </Grid>
@@ -128,9 +128,9 @@ const GeneralTab = () => {
               <TextField
                 fullWidth
                 id='outlined-basic'
-                label=''
+                type='email'
                 variant='outlined'
-                placeholder='Enter name'
+                placeholder='Enter Email'
               />
             </Box>
           </Grid>
@@ -143,7 +143,7 @@ const GeneralTab = () => {
                 variant='outlined'
                 id='tags'
                 name='tags'
-                placeholder='add Tags'
+                placeholder='Tags (type and press enter)'
                 className='tag-input'
               />
             </Box>
@@ -157,6 +157,7 @@ const GeneralTab = () => {
                   labelId='demo-multiple-checkbox-label'
                   id='demo-multiple-checkbox'
                   multiple
+                  placeholder='Select Contact Type'
                   value={personName}
                   onChange={handleChange}
                   IconComponent={RiArrowDownSLine}
@@ -181,7 +182,7 @@ const GeneralTab = () => {
                 id='outlined-basic'
                 label=''
                 variant='outlined'
-                placeholder='Enter name'
+                placeholder='Enter Company name'
               />
             </Box>
           </Grid>
@@ -193,8 +194,15 @@ const GeneralTab = () => {
                 fullWidth
                 id='demo-simple-select'
                 label=''
-                placeholder='Select'
+                placeholder='Select Agent'
                 IconComponent={RiArrowDownSLine}
+                // renderValue={(selected) => {
+                //   if (selected.length === 0) {
+                //     return <em>Placeholder</em>;
+                //   }
+
+                //   return selected.join(', ');
+                // }}
               >
                 <MenuItem value={10}>Agent 1</MenuItem>
                 <MenuItem value={20}>Agent 2</MenuItem>
@@ -214,7 +222,7 @@ const GeneralTab = () => {
                 id='outlined-basic'
                 label=''
                 variant='outlined'
-                placeholder='Enter name'
+                placeholder='Enter Source Name'
               />
             </Box>
           </Grid>
@@ -226,12 +234,12 @@ const GeneralTab = () => {
                 id='outlined-basic'
                 label=''
                 variant='outlined'
-                placeholder='Enter name'
+                placeholder='Enter Care of'
               />
             </Box>
           </Grid>
         </Grid>
-        <Grid container spacing={5} mt={4}>
+        <Grid container spacing={5} mt={3}>
           <Grid item xs={12} md={6}>
             <Stack
               direction='row'

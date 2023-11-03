@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Stack, TablePagination, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -107,6 +107,7 @@ const rows = [
 ];
 
 const ContactList = () => {
+  const navigate = useNavigate();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -159,20 +160,15 @@ const ContactList = () => {
                   sx={{
                     '&:last-child td, &:last-child th': { border: 0 },
                   }}
+                  onClick={() => navigate('/contacts/details')}
                 >
                   <TableCell component='th' scope='row' className='field-name'>
                     <Typography variant='body1' component='p'>
-                      <Link
-                        className='resubmition-btn'
-                        onClick={() => setIsSubmitted(true)}
-                      >
-                        {' '}
-                        {row.firstname}{' '}
-                      </Link>
+                      {row.firstname}{' '}
                     </Typography>
                   </TableCell>
                   <TableCell align='left'>
-                    <Typography variant='span' component='span'>
+                    <Typography variant='body1' component='p'>
                       {row.lastname}
                     </Typography>
                   </TableCell>
