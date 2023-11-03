@@ -286,30 +286,33 @@ ul.MuiList-root {
         top: -15px;
       }
     }
-    .table-wrapper.note-list-table {
-      position: relative;
-      min-height: 185px;
-      border-radius: 10px;
-      table {
-        thead {
-          tr {
-            th {
-              border-right: 1px solid #e7e7e7 !important;
-              background: #999999;
-              background-color: #f9f9f9 !important ;
-              font-size: 12px !important;
-              padding: 4px 16px !important;
-            }
-          }
-        }
-        tr {
-          td {
-            border-right: 1px solid #e7e7e7 !important;
-          }
-        }
+  }
+}
+.table-wrapper.note-list-table {
+  position: relative;
+  min-height: 185px;
+  border-radius: 10px;
+  table {
+    thead {
+      tr {
         th {
           border-right: 1px solid #e7e7e7 !important;
+          background: #999999;
+          background-color: #f9f9f9 !important ;
+          font-size: 12px !important;
+          padding: 4px 16px !important;
         }
+      }
+    }
+    tbody {
+      background-color: #fff;
+      tr {
+        td {
+          border-right: 1px solid #e7e7e7 !important;
+        }
+      }
+      th {
+        border-right: 1px solid #e7e7e7 !important;
       }
     }
   }
@@ -393,5 +396,17 @@ ul.MuiList-root {
       color: #999999;
     }
   }
+  .other-detail-tab {
+    .tab-content-wrapper {
+      .main-title {
+        margin: 12px 0 8px 0;
+      }
+    }
+    > .MuiTabPanel-root {
+      height: unset;
+      padding: 12px 0;
+    }
+  }
 }
+
 // Contact Details Styles END //

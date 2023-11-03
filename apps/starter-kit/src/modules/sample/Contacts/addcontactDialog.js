@@ -45,7 +45,7 @@ const EventviewDialog = ({ open, handleClose }) => {
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
           <>
-            <Box className='add-contact-tab'>
+            <Box className='add-contact-tab contact-tab'>
               <TabContext value={value}>
                 <Box className='tab-list-wrapper'>
                   <TabList

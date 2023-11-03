@@ -10,9 +10,10 @@ import {
   RiRocketLine,
   RiArrowRightLine,
   RiLogoutBoxRLine,
+  RiNotification3Line,
 } from 'react-icons/ri';
 import PersonalDetails from './personalDetails';
-import OtherDetails from './otherDetails';
+import OtherDetails from './Otherdetails';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' to='/contacts'>
@@ -101,10 +102,10 @@ const ContactDetails = () => {
             </Button>
             <Button
               variant='contained'
-              startIcon={<RiRocketLine />}
+              startIcon={<RiNotification3Line />}
               className='dwnload-btn primary-btn btn purple-btn'
             >
-              Marketing Management
+              Listing alerts
             </Button>
 
             <Button
@@ -118,7 +119,7 @@ const ContactDetails = () => {
         </Stack>
 
         <PersonalDetails />
-        {/* <OtherDetails /> */}
+        <OtherDetails />
       </Box>
     </>
   );

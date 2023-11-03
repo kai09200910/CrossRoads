@@ -13,6 +13,7 @@ import {
   FormControl,
   InputLabel,
   OutlinedInput,
+  Typography,
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import TagsInput from '../common/tagsInput';
@@ -189,27 +190,49 @@ const GeneralTab = () => {
 
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Agent </label>
+              <label>Primary Agent </label>
               <Select
                 fullWidth
                 id='demo-simple-select'
                 label=''
                 placeholder='Select Agent'
                 IconComponent={RiArrowDownSLine}
-                // renderValue={(selected) => {
-                //   if (selected.length === 0) {
-                //     return <em>Placeholder</em>;
-                //   }
-
-                //   return selected.join(', ');
-                // }}
               >
-                <MenuItem value={10}>Agent 1</MenuItem>
-                <MenuItem value={20}>Agent 2</MenuItem>
-                <MenuItem value={30}>Agent 3</MenuItem>
-                <MenuItem value={10}>Agent 4</MenuItem>
-                <MenuItem value={20}>Agent 5</MenuItem>
-                <MenuItem value={30}>Agent 6</MenuItem>
+                <MenuItem value={10}>Primary Agent 1</MenuItem>
+                <MenuItem value={20}>Primary Agent 2</MenuItem>
+                <MenuItem value={30}>Primary Agent 3</MenuItem>
+                <MenuItem value={10}>Primary Agent 4</MenuItem>
+                <MenuItem value={20}>Primary Agent 5</MenuItem>
+                <MenuItem value={30}>Primary Agent 6</MenuItem>
+              </Select>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} md={6}>
+            <Box variant='div' component='div'>
+              <label>
+                Secondary Agent
+                <Typography
+                  variant='body1'
+                  component='span'
+                  className='optional-label'
+                >
+                  Optional
+                </Typography>
+              </label>
+              <Select
+                fullWidth
+                id='demo-simple-select'
+                label=''
+                placeholder='Select Agent'
+                IconComponent={RiArrowDownSLine}
+              >
+                <MenuItem value={10}>Secondary Agent 1</MenuItem>
+                <MenuItem value={20}>Secondary Agent 2</MenuItem>
+                <MenuItem value={30}>Secondary Agent 3</MenuItem>
+                <MenuItem value={10}>Secondary Agent 4</MenuItem>
+                <MenuItem value={20}>Secondary Agent 5</MenuItem>
+                <MenuItem value={30}>Secondary Agent 6</MenuItem>
               </Select>
             </Box>
           </Grid>
