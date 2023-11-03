@@ -12,6 +12,8 @@ import GeneralTab from './generalTab';
 import NotesTab from './notesTab';
 import PersonalinfoTab from './personalinfoTab';
 import BuyerprofileTab from './buyerprofileTab';
+import RenterprofileTab from './renterprofileTab';
+import SellerprofileTab from './sellerprofileTab';
 
 const EventviewDialog = ({ open, handleClose }) => {
   const [value, setValue] = React.useState('1');
@@ -70,7 +72,7 @@ const EventviewDialog = ({ open, handleClose }) => {
                     <Tab
                       label={
                         <>
-                          <Typography>Personal info </Typography>
+                          <Typography>Renter Profile</Typography>
                         </>
                       }
                       value='3'
@@ -78,10 +80,26 @@ const EventviewDialog = ({ open, handleClose }) => {
                     <Tab
                       label={
                         <>
-                          <Typography>Notes</Typography>
+                          <Typography>Seller Profile</Typography>
                         </>
                       }
                       value='4'
+                    />
+                    <Tab
+                      label={
+                        <>
+                          <Typography>Personal info </Typography>
+                        </>
+                      }
+                      value='5'
+                    />
+                    <Tab
+                      label={
+                        <>
+                          <Typography>Notes</Typography>
+                        </>
+                      }
+                      value='6'
                     />
                   </TabList>
                 </Box>
@@ -92,9 +110,15 @@ const EventviewDialog = ({ open, handleClose }) => {
                   <BuyerprofileTab />
                 </TabPanel>
                 <TabPanel value='3'>
-                  <PersonalinfoTab />
+                  <RenterprofileTab />
                 </TabPanel>
                 <TabPanel value='4'>
+                  <SellerprofileTab />
+                </TabPanel>
+                <TabPanel value='5'>
+                  <PersonalinfoTab />
+                </TabPanel>
+                <TabPanel value='6'>
                   <NotesTab />{' '}
                 </TabPanel>
               </TabContext>

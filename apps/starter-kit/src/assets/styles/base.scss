@@ -119,6 +119,14 @@ fieldset.MuiOutlinedInput-notchedOutline {
 textarea {
   padding: 0 !important;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
 .color-blue {
   color: #2871ff;
 }
@@ -242,6 +250,43 @@ a {
   width: 70px;
   height: 30px;
   border-radius: 3px;
+}
+.green-btn {
+  background-color: #c2eade !important;
+  color: #007653 !important;
+  min-width: 80px !important;
+  &:hover {
+    background-color: #96dfc9 !important;
+  }
+}
+.purple-btn {
+  background-color: #e6dffa !important;
+  color: #8728ff !important;
+  &:hover {
+    background-color: #dbd1fa !important;
+  }
+}
+.blue-btn {
+  background-color: #dfe8fa !important;
+  color: #2871ff !important;
+  min-width: 82px !important;
+  &:hover {
+    background-color: #cadafa !important;
+  }
+}
+.yellow-btn {
+  background-color: #ffe6c9 !important;
+  color: #ff8a00 !important;
+  &:hover {
+    background-color: #fcd9b1 !important;
+  }
+}
+.pink-btn {
+  background-color: #ffd7e5 !important;
+  color: #ff4385 !important;
+  &:hover {
+    background-color: #fcbed3 !important;
+  }
 }
 h1 {
   font-size: 22px;

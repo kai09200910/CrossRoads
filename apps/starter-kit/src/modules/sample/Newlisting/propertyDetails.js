@@ -49,7 +49,7 @@ const PropertyDetails = () => {
                 <TextField
                   fullWidth
                   id='outlined-basic'
-                  label=''
+                  type='number'
                   variant='outlined'
                   placeholder='Enter Number '
                 />
@@ -61,7 +61,7 @@ const PropertyDetails = () => {
                 <TextField
                   fullWidth
                   id='outlined-basic'
-                  label=''
+                  type='number'
                   variant='outlined'
                   placeholder='Enter Number '
                 />
@@ -82,7 +82,7 @@ const PropertyDetails = () => {
                 <TextField
                   fullWidth
                   id='outlined-basic'
-                  label=''
+                  type='number'
                   variant='outlined'
                   placeholder='1/2 '
                 />
@@ -173,7 +173,7 @@ const PropertyDetails = () => {
                 <TextField
                   fullWidth
                   id='outlined-basic'
-                  label=''
+                  type='number'
                   variant='outlined'
                   placeholder='Enter Number '
                 />
@@ -185,7 +185,7 @@ const PropertyDetails = () => {
                 <TextField
                   fullWidth
                   id='outlined-basic'
-                  label=''
+                  type='number'
                   variant='outlined'
                   placeholder='Enter Number '
                 />
@@ -197,7 +197,7 @@ const PropertyDetails = () => {
                 <TextField
                   fullWidth
                   id='outlined-basic'
-                  label=''
+                  type='number'
                   variant='outlined'
                   placeholder='1/2 '
                 />
@@ -375,7 +375,7 @@ const PropertyDetails = () => {
                 <TextField
                   fullWidth
                   id='outlined-basic'
-                  label=''
+                  type='number'
                   variant='outlined'
                   placeholder='4.758'
                 />
@@ -402,7 +402,7 @@ const PropertyDetails = () => {
                   <TextField
                     fullWidth
                     id='outlined-basic'
-                    label=''
+                    type='number'
                     variant='outlined'
                     placeholder='Enter Number '
                   />
@@ -413,7 +413,7 @@ const PropertyDetails = () => {
                   <TextField
                     fullWidth
                     id='outlined-basic'
-                    label=''
+                    type='number'
                     variant='outlined'
                     placeholder='Enter Number '
                   />
@@ -429,7 +429,7 @@ const PropertyDetails = () => {
                 <TextField
                   fullWidth
                   id='outlined-basic'
-                  label=''
+                  type='number'
                   variant='outlined'
                   placeholder='Enter building size '
                 />
@@ -479,7 +479,7 @@ const PropertyDetails = () => {
                   <TextField
                     fullWidth
                     id='outlined-basic'
-                    label=''
+                    type='number'
                     variant='outlined'
                     placeholder='Enter Number '
                   />
@@ -490,7 +490,7 @@ const PropertyDetails = () => {
                   <TextField
                     fullWidth
                     id='outlined-basic'
-                    label=''
+                    type='number'
                     variant='outlined'
                     placeholder='Enter Number '
                   />

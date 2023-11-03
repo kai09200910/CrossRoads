@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import { RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
 
-const BuyerprofileTab = () => {
+const RenterprofileTab = () => {
   const [activebed, setActivebed] = useState('');
   const [activebath, setActivebath] = useState('');
 
@@ -300,6 +300,27 @@ const BuyerprofileTab = () => {
 
         <Grid container spacing={5} mt={3}>
           <Grid item xs={12} md={8}>
+            <Box variant='div' component='div'>
+              <label>People per household </label>
+              <Select
+                fullWidth
+                id='demo-simple-select'
+                label=''
+                placeholder='Select'
+                IconComponent={RiArrowDownSLine}
+              >
+                <MenuItem value={10}>5 People</MenuItem>
+                <MenuItem value={20}>10 People</MenuItem>
+                <MenuItem value={30}>15 People</MenuItem>
+                <MenuItem value={40}>20 People</MenuItem>
+              </Select>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}></Grid>
+        </Grid>
+
+        <Grid container spacing={5} mt={3}>
+          <Grid item xs={12} md={8}>
             <Grid container spacing={5}>
               <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div'>
@@ -310,12 +331,12 @@ const BuyerprofileTab = () => {
                     name='row-radio-buttons-group'
                   >
                     <FormControlLabel
-                      value='female'
+                      value='Owns'
                       control={<Radio />}
                       label='Owns  '
                     />
                     <FormControlLabel
-                      value='male'
+                      value='Rents'
                       control={<Radio />}
                       label='Rents '
                     />
@@ -331,14 +352,56 @@ const BuyerprofileTab = () => {
                     name='row-radio-buttons-group'
                   >
                     <FormControlLabel
-                      value='female'
+                      value='Brokerage only '
                       control={<Radio />}
                       label='Brokerage only  '
                     />
                     <FormControlLabel
-                      value='male'
+                      value='MLS'
                       control={<Radio />}
                       label='MLS '
+                    />
+                  </RadioGroup>
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <Box variant='div' component='div'>
+                  <label>Pets allowed?</label>
+                  <RadioGroup
+                    row
+                    aria-labelledby='demo-row-radio-buttons-group-label'
+                    name='row-radio-buttons-group'
+                  >
+                    <FormControlLabel
+                      value='Yes'
+                      control={<Radio />}
+                      label='Yes  '
+                    />
+                    <FormControlLabel
+                      value='No'
+                      control={<Radio />}
+                      label='No '
+                    />
+                  </RadioGroup>
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <Box variant='div' component='div'>
+                  <label>Children allowed? </label>
+                  <RadioGroup
+                    row
+                    aria-labelledby='demo-row-radio-buttons-group-label'
+                    name='row-radio-buttons-group'
+                  >
+                    <FormControlLabel
+                      value='Yes'
+                      control={<Radio />}
+                      label='Yes '
+                    />
+                    <FormControlLabel
+                      value='No'
+                      control={<Radio />}
+                      label='No '
                     />
                   </RadioGroup>
                 </Box>
@@ -352,4 +415,4 @@ const BuyerprofileTab = () => {
   );
 };
 
-export default BuyerprofileTab;
+export default RenterprofileTab;

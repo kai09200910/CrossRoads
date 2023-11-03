@@ -146,7 +146,7 @@ const Filters = () => {
             <Button
               variant='contained'
               endIcon={<RiAddLine />}
-              className='add-btn primary-btn btn'
+              className='add-btn primary-btn btn green-btn'
               onClick={() => setIsAddcontact(true)}
             >
               Add
@@ -155,7 +155,7 @@ const Filters = () => {
             <Typography
               variant='body1'
               component='span'
-              className='primary-btn-small upld-btn secondary-btn'
+              className='primary-btn-small upld-btn secondary-btn purple-btn'
             >
               Upload
               <RiUpload2Line size={20} />
@@ -165,7 +165,7 @@ const Filters = () => {
             <Button
               variant='contained'
               endIcon={<RiDownload2Line />}
-              className='dwnload-btn primary-btn btn'
+              className='dwnload-btn primary-btn btn blue-btn'
             >
               Download
             </Button>
