@@ -14,32 +14,21 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
+import { RiAddLine, RiDeleteBinLine, RiUpload2Line } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
-function createData(date, by, note) {
+function createData(name, size, action) {
   return {
-    date,
-    by,
-    note,
+    name,
+    size,
+    action,
   };
 }
 
 const rows = [
-  createData(
-    '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
-  ),
-  createData(
-    '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
-  ),
-  createData(
-    '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
-  ),
+  createData('KYC Document 1', '2.6kb', 'D'),
+  createData('KYC Document 2', '2.8kb', 'D'),
+  createData('KYC Document 3', '2.4kb', 'D'),
 ];
 
 const DocumentsTab = () => {
@@ -148,14 +137,14 @@ const DocumentsTab = () => {
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
-                  <TableCell align='left' style={{ width: '15%' }}>
-                    Date:
+                  <TableCell align='left' style={{ width: '73%' }}>
+                    Name
                   </TableCell>
-                  <TableCell align='left' style={{ width: '15%' }}>
-                    By:
+                  <TableCell align='left' style={{ width: '20%' }}>
+                    Size
                   </TableCell>
-                  <TableCell align='left' style={{ width: '70%' }}>
-                    Note
+                  <TableCell align='left' style={{ width: '7%' }}>
+                    Action
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -179,17 +168,22 @@ const DocumentsTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          {row.date}
+                          {row.name}
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          {row.by}
+                          {row.size}
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          {row.note}
+                          <Link
+                            className='resubmition-btnq'
+                            // onClick={() => setIsSubmitted(true)}
+                          >
+                            <RiDeleteBinLine size={22} />
+                          </Link>
                         </Typography>
                       </TableCell>
                     </TableRow>
@@ -211,12 +205,12 @@ const DocumentsTab = () => {
                     }}
                     className=''
                   >
-                    <RiErrorWarningFill size={25} />
+                    <RiUpload2Line size={25} />
                     <Typography gutterBottom variant='p' component='p'>
-                      No documents submitted yet,
+                      Click to upload or drag and drop
                     </Typography>
                     <Typography gutterBottom variant='p' component='p'>
-                      all submitted items will appear here.
+                      documents here
                     </Typography>
                   </Stack>
                 </Box>

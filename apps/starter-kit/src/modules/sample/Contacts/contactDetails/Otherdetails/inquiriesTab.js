@@ -16,29 +16,33 @@ import TableRow from '@mui/material/TableRow';
 
 import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
 
-function createData(date, by, note) {
+function createData(listing, info, date, comments) {
   return {
+    listing,
+    info,
     date,
-    by,
-    note,
+    comments,
   };
 }
 
 const rows = [
   createData(
+    'NS1246',
+    'Lot#7823, Bahama Sound, EX, 15000 0 BD / 0 BA',
     '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ',
   ),
   createData(
+    'NS1246',
+    'Lot#7823, Bahama Sound, EX, 15000 0 BD / 0 BA',
     '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ',
   ),
   createData(
+    'NS1246',
+    'Lot#7823, Bahama Sound, EX, 15000 0 BD / 0 BA',
     '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ',
   ),
 ];
 
@@ -148,14 +152,17 @@ const InquiriesTab = () => {
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
-                  <TableCell align='left' style={{ width: '15%' }}>
-                    Date:
+                  <TableCell align='left' style={{ width: '8%' }}>
+                    Listing #
                   </TableCell>
-                  <TableCell align='left' style={{ width: '15%' }}>
-                    By:
+                  <TableCell align='left' style={{ width: '21%' }}>
+                    Listing info
                   </TableCell>
-                  <TableCell align='left' style={{ width: '70%' }}>
-                    Note
+                  <TableCell align='left' style={{ width: '10%' }}>
+                    Date created
+                  </TableCell>
+                  <TableCell align='left' style={{ width: '61%' }}>
+                    Comments
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -179,17 +186,22 @@ const InquiriesTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
+                          {row.listing}
+                        </Typography>
+                      </TableCell>
+                      <TableCell align='left'>
+                        <Typography variant='body1' component='p'>
+                          {row.info}
+                        </Typography>
+                      </TableCell>
+                      <TableCell align='left'>
+                        <Typography variant='body1' component='p'>
                           {row.date}
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          {row.by}
-                        </Typography>
-                      </TableCell>
-                      <TableCell align='left'>
-                        <Typography variant='body1' component='p'>
-                          {row.note}
+                          {row.comments}
                         </Typography>
                       </TableCell>
                     </TableRow>

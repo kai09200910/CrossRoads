@@ -14,32 +14,25 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
+import {
+  RiAddLine,
+  RiDeleteBinLine,
+  RiErrorWarningFill,
+  RiMailLine,
+} from 'react-icons/ri';
 
-function createData(date, by, note) {
+function createData(listing, info, action) {
   return {
-    date,
-    by,
-    note,
+    listing,
+    info,
+    action,
   };
 }
 
 const rows = [
-  createData(
-    '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
-  ),
-  createData(
-    '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
-  ),
-  createData(
-    '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
-  ),
+  createData('NS1246', 'Lot#7823, Bahama Sound, EX, 15000 0 BD / 0 BA', 'M'),
+  createData('NS1246', 'Lot#7823, Bahama Sound, EX, 15000 0 BD / 0 BA', 'M'),
+  createData('NS1246', 'Lot#7823, Bahama Sound, EX, 15000 0 BD / 0 BA', 'M'),
 ];
 
 const ListingmatchesTab = () => {
@@ -148,14 +141,14 @@ const ListingmatchesTab = () => {
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
-                  <TableCell align='left' style={{ width: '15%' }}>
-                    Date:
-                  </TableCell>
-                  <TableCell align='left' style={{ width: '15%' }}>
-                    By:
+                  <TableCell align='left' style={{ width: '20%' }}>
+                    Listing #
                   </TableCell>
                   <TableCell align='left' style={{ width: '70%' }}>
-                    Note
+                    Listing info
+                  </TableCell>
+                  <TableCell align='left' style={{ width: '10%' }}>
+                    Action
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -179,17 +172,24 @@ const ListingmatchesTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          {row.date}
+                          {row.listing}
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          {row.by}
+                          {row.info}
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          {row.note}
+                          {/* {row.action} */}
+                          <Button
+                            variant='outlined'
+                            size='small'
+                            className='icon-small-btn green-btn'
+                          >
+                            <RiMailLine size={20} />
+                          </Button>{' '}
                         </Typography>
                       </TableCell>
                     </TableRow>

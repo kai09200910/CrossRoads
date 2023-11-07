@@ -16,29 +16,37 @@ import TableRow from '@mui/material/TableRow';
 
 import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
 
-function createData(date, by, note) {
+function createData(by, name, date, status, email) {
   return {
-    date,
     by,
-    note,
+    name,
+    date,
+    status,
+    email,
   };
 }
 
 const rows = [
   createData(
-    '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
+    'John Smith ',
+    'Luxary Home Listing alert for John Smith ',
+    '10/12/35',
+    'Active ',
+    'View',
   ),
   createData(
-    '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
+    'John Smith ',
+    'Luxary Home Listing alert for John Smith ',
+    '10/12/35',
+    'Active ',
+    'View',
   ),
   createData(
-    '12/05/24',
-    'John Smith',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
+    'John Smith ',
+    'Luxary Home Listing alert for John Smith ',
+    '10/12/35',
+    'Active ',
+    'View',
   ),
 ];
 
@@ -148,14 +156,20 @@ const ListingalertsTab = () => {
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
-                  <TableCell align='left' style={{ width: '15%' }}>
-                    Date:
+                  <TableCell align='left' style={{ width: '18%' }}>
+                    Created by
+                  </TableCell>
+                  <TableCell align='left' style={{ width: '50%' }}>
+                    Campaign name
                   </TableCell>
                   <TableCell align='left' style={{ width: '15%' }}>
-                    By:
+                    Date created
                   </TableCell>
-                  <TableCell align='left' style={{ width: '70%' }}>
-                    Note
+                  <TableCell align='left' style={{ width: '13%' }}>
+                    Status
+                  </TableCell>
+                  <TableCell align='left' style={{ width: '19%' }}>
+                    Emails sent
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -179,17 +193,27 @@ const ListingalertsTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          {row.date}
-                        </Typography>
-                      </TableCell>
-                      <TableCell align='left'>
-                        <Typography variant='body1' component='p'>
                           {row.by}
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          {row.note}
+                          {row.name}
+                        </Typography>
+                      </TableCell>
+                      <TableCell align='left'>
+                        <Typography variant='body1' component='p'>
+                          {row.date}
+                        </Typography>
+                      </TableCell>
+                      <TableCell align='left'>
+                        <Typography variant='body1' component='p'>
+                          {row.status}
+                        </Typography>
+                      </TableCell>
+                      <TableCell align='left'>
+                        <Typography variant='body1' component='p'>
+                          {row.email}
                         </Typography>
                       </TableCell>
                     </TableRow>

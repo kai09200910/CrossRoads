@@ -11,8 +11,6 @@ import {
   Checkbox,
   ListItemText,
   FormControl,
-  InputLabel,
-  OutlinedInput,
   Typography,
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
