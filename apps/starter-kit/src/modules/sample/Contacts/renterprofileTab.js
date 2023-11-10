@@ -322,7 +322,7 @@ const RenterprofileTab = () => {
         <Grid container spacing={5} mt={3}>
           <Grid item xs={12} md={8}>
             <Grid container spacing={5}>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={4} md={4}>
                 <Box variant='div' component='div'>
                   <label>This contact currently: </label>
                   <RadioGroup
@@ -343,7 +343,7 @@ const RenterprofileTab = () => {
                   </RadioGroup>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={4} md={4}>
                 <Box variant='div' component='div'>
                   <label>Brokerage: </label>
                   <RadioGroup
@@ -364,7 +364,7 @@ const RenterprofileTab = () => {
                   </RadioGroup>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={4} md={4}>
                 <Box variant='div' component='div'>
                   <label>Pets allowed?</label>
                   <RadioGroup
@@ -385,7 +385,7 @@ const RenterprofileTab = () => {
                   </RadioGroup>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={4} md={4}>
                 <Box variant='div' component='div'>
                   <label>Children allowed? </label>
                   <RadioGroup

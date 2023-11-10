@@ -158,7 +158,7 @@
       min-width: 95%;
     }
     .modal-dailog-title {
-      padding: 32px 42px 0px 42px;
+      padding: 32px 32px 0px 32px;
       @media (max-width: 767px) {
         padding: 32px 24px 0px 24px;
       }
@@ -285,6 +285,9 @@ ul.MuiList-root {
         position: relative;
         top: -15px;
       }
+      .table-wrapper {
+        border: none !important;
+      }
     }
   }
 }
@@ -406,10 +409,28 @@ ul.MuiList-root {
         width: 50px;
         height: 50px;
       }
+      .green-link-btn {
+        color: #007653 !important;
+        font-weight: 600;
+      }
+      .red-link-btn {
+        color: #d60000 !important;
+        font-weight: 600;
+      }
+      a {
+        color: #292929 !important;
+      }
     }
     > .MuiTabPanel-root {
       height: unset;
       padding: 12px 0;
+    }
+    .tab-content-wrapper {
+      .add-note-btn-wrapper {
+        .table-wrapper {
+          border: none;
+        }
+      }
     }
   }
 }

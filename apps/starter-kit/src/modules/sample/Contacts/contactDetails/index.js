@@ -11,9 +11,13 @@ import {
   RiArrowRightLine,
   RiLogoutBoxRLine,
   RiNotification3Line,
+  RiAddLine,
 } from 'react-icons/ri';
 import PersonalDetails from './personalDetails';
 import OtherDetails from './Otherdetails';
+import ListingalertDialog from './listingalertDialog';
+import AddcontactDialog from '../addcontactDialog';
+import TransferDialog from './dailogs/transfercontactDialog';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' to='/contacts'>
@@ -25,6 +29,20 @@ const breadcrumbs = [
 ];
 
 const ContactDetails = () => {
+  const [isListingalert, setIsListingalert] = useState(false);
+  const handlelistingalertClose = () => {
+    setIsListingalert(false);
+  };
+
+  const [isAddcontact, setIsAddcontact] = useState(false);
+  const handleaddcontactClose = () => {
+    setIsAddcontact(false);
+  };
+
+  const [isTransfercontact, setIsTransfercontact] = useState(false);
+  const handletransfercontactClose = () => {
+    setIsTransfercontact(false);
+  };
   return (
     <>
       <Box variant='div' component='div' className='contact-detail-wrapper'>
@@ -67,7 +85,11 @@ const ContactDetails = () => {
           <Link href='#' className='chip green'>
             Buyer profile
           </Link> */}
-            <Link href='#' className='chip yellow'>
+            <Link
+              href='#'
+              className='chip yellow'
+              onClick={() => setIsAddcontact(true)}
+            >
               Seller profile
             </Link>
           </Stack>
@@ -82,9 +104,16 @@ const ContactDetails = () => {
               variant='contained'
               startIcon={<RiArrowRightLine />}
               className='add-btn primary-btn btn yellow-btn'
-              // onClick={() => setIsAddcontact(true)}
+              onClick={() => setIsTransfercontact(true)}
             >
               Transfer
+            </Button>
+            <Button
+              variant='contained'
+              startIcon={<RiAddLine />}
+              className='dwnload-btn primary-btn btn sky-blue-btn'
+            >
+              Follow up
             </Button>
             <Button
               variant='contained'
@@ -104,6 +133,7 @@ const ContactDetails = () => {
               variant='contained'
               startIcon={<RiNotification3Line />}
               className='dwnload-btn primary-btn btn purple-btn'
+              onClick={() => setIsListingalert(true)}
             >
               Listing alerts
             </Button>
@@ -121,6 +151,22 @@ const ContactDetails = () => {
         <PersonalDetails />
         <OtherDetails />
       </Box>
+      <ListingalertDialog
+        open={isListingalert}
+        handleClose={handlelistingalertClose}
+        title='Create listing alert'
+      />
+      <AddcontactDialog
+        open={isAddcontact}
+        handleClose={handleaddcontactClose}
+        title={'Edit Contact'}
+      />
+
+      <TransferDialog
+        open={isTransfercontact}
+        handleClose={handletransfercontactClose}
+        // title={'Edit Contact'}
+      />
     </>
   );
 };
