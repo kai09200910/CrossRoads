@@ -288,6 +288,14 @@ a {
     background-color: #fcbed3 !important;
   }
 }
+.sky-blue-btn {
+  background-color: #c9f5ff !important;
+  color: #0098b9 !important;
+  &:hover {
+    background-color: #aeeaf8 !important;
+  }
+}
+
 h1 {
   font-size: 22px;
   font-weight: 600;
@@ -560,6 +568,15 @@ h4 {
       .MuiStack-root {
         padding: 0;
       }
+    }
+  }
+}
+.modal-dailog-wrapper.small-modal {
+  .MuiPaper-root {
+    min-width: 470px;
+    @media (max-width: 480px) {
+      width: 100%;
+      min-width: inherit;
     }
   }
 }

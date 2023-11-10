@@ -15,7 +15,7 @@ import BuyerprofileTab from './buyerprofileTab';
 import RenterprofileTab from './renterprofileTab';
 import SellerprofileTab from './sellerprofileTab';
 
-const EventviewDialog = ({ open, handleClose }) => {
+const EventviewDialog = ({ open, handleClose, title }) => {
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
@@ -40,7 +40,7 @@ const EventviewDialog = ({ open, handleClose }) => {
             alignItems='center'
             flexWrap='wrap'
           >
-            Add Contact
+            {title}
           </Stack>
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>

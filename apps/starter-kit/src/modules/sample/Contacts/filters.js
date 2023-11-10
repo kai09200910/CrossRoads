@@ -175,6 +175,7 @@ const Filters = () => {
       <AddcontactDialog
         open={isAddcontact}
         handleClose={handleaddcontactClose}
+        title={'Add Contact'}
       />
     </>
   );

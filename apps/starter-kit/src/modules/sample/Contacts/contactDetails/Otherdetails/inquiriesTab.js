@@ -15,6 +15,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import AddPopover from '../../../common/addPopover';
 
 function createData(listing, info, date, comments) {
   return {
@@ -47,19 +49,6 @@ const rows = [
 ];
 
 const InquiriesTab = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
-
   return (
     <>
       <Box className='notes-tab tab-content-wrapper'>
@@ -81,66 +70,7 @@ const InquiriesTab = () => {
             spacing={1}
             className='add-note-btn-wrapper'
           >
-            <Button
-              variant='contained'
-              size='small'
-              autoFocus
-              className='primary-btn secondary-btn'
-              aria-describedby={id}
-              onClick={handleClick}
-            >
-              <RiAddLine size={18} />
-              Add
-            </Button>
-            <Popover
-              id={id}
-              open={open}
-              anchorEl={anchorEl}
-              onClose={handleClose}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              className='add-note-modal'
-            >
-              <Box className='add-note-modal-inner'>
-                <Typography
-                  variant='h4'
-                  component='h4'
-                  sx={{
-                    paddingBottom: { xs: 3, xl: 3 },
-                  }}
-                >
-                  Add note
-                </Typography>
-                <TextField
-                  fullWidth
-                  id='outlined-basic'
-                  label=''
-                  variant='outlined'
-                  placeholder='Add Notes'
-                  multiline
-                  rows={4}
-                  maxRows={4}
-                />
-                <Stack
-                  direction='row'
-                  justifyContent='flex-end'
-                  alignItems='center'
-                  spacing={2}
-                >
-                  <Button
-                    variant='contained'
-                    size='medium'
-                    autoFocus
-                    className='primary-btn-small'
-                    onClick={handleClose}
-                  >
-                    Add
-                  </Button>
-                </Stack>
-              </Box>
-            </Popover>
+            <AddPopover />
           </Stack>
         </Stack>
 
@@ -186,7 +116,7 @@ const InquiriesTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          {row.listing}
+                          <Link href='#'> {row.listing}</Link>
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
