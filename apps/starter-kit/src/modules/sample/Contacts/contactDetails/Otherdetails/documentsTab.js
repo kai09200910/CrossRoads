@@ -17,7 +17,8 @@ import TableRow from '@mui/material/TableRow';
 import { RiAddLine, RiDeleteBinLine, RiUpload2Line } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import AddPopover from '../../../common/addPopover';
-
+// import UploadModern from '../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
+// import FileRow from '../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
 function createData(name, size, action) {
   return {
     name,
@@ -143,6 +144,25 @@ const DocumentsTab = () => {
                     </Typography>
                   </Stack>
                 </Box>
+
+                // <Box sx={{ position: 'relative' }} className='custome-dropzone'>
+                //   <UploadModern
+                //     uploadText='Re-upload  corrected document if applicable '
+                //     dropzone={dropzone}
+                //   />
+                //   <aside className='upload-doc-info'>
+                //     <AppList
+                //       data={uploadedFiles}
+                //       renderRow={(file, index) => (
+                //         <FileRow
+                //           key={index + file.path}
+                //           file={file}
+                //           onDeleteUploadFile={onDeleteUploadFile}
+                //         />
+                //       )}
+                //     />
+                //   </aside>
+                // </Box>
               )}
             </Table>
           </TableContainer>
