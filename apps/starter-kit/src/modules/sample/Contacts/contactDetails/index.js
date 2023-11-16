@@ -18,6 +18,7 @@ import OtherDetails from './Otherdetails';
 import ListingalertDialog from './listingalertDialog';
 import AddcontactDialog from '../addcontactDialog';
 import TransferDialog from './dailogs/transfercontactDialog';
+import LogactivityDialog from './dailogs/logactivityDialog';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' to='/contacts'>
@@ -43,6 +44,12 @@ const ContactDetails = () => {
   const handletransfercontactClose = () => {
     setIsTransfercontact(false);
   };
+
+  const [isLogactivity, setIsLogactivity] = useState(false);
+  const handlelogactivityClose = () => {
+    setIsLogactivity(false);
+  };
+
   return (
     <>
       <Box variant='div' component='div' className='contact-detail-wrapper'>
@@ -119,6 +126,7 @@ const ContactDetails = () => {
               variant='contained'
               startIcon={<RiLogoutBoxRLine />}
               className='dwnload-btn primary-btn btn pink-btn'
+              onClick={() => setIsLogactivity(true)}
             >
               Log activity
             </Button>
@@ -166,6 +174,11 @@ const ContactDetails = () => {
         open={isTransfercontact}
         handleClose={handletransfercontactClose}
         // title={'Edit Contact'}
+      />
+
+      <LogactivityDialog
+        open={isLogactivity}
+        handleClose={handlelogactivityClose}
       />
     </>
   );

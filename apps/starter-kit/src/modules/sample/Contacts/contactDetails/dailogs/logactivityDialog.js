@@ -6,13 +6,11 @@ import DialogActions from '@mui/material/DialogActions';
 import {
   Box,
   Button,
-  FormControlLabel,
   Grid,
   MenuItem,
-  Radio,
-  RadioGroup,
   Select,
   Stack,
+  TextField,
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
 
@@ -46,46 +44,36 @@ const LogactivityDialog = ({ open, handleClose }) => {
               <Grid container spacing={5}>
                 <Grid item xs={12} md={12}>
                   <Box variant='div' component='div'>
-                    <label>Transfer type </label>
-                    <RadioGroup
-                      row
-                      aria-labelledby='demo-row-radio-buttons-group-label'
-                      name='row-radio-buttons-group'
-                    >
-                      <FormControlLabel
-                        value='main-agent'
-                        control={<Radio />}
-                        label='Main agent   '
-                      />
-                      <FormControlLabel
-                        value='secondary-agent '
-                        control={<Radio />}
-                        label='Secondary agent '
-                      />
-                    </RadioGroup>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
-                    <label>Select agent to transfer to </label>
+                    <label>Activity type </label>
                     <Select
                       fullWidth
                       id='demo-simple-select'
                       label=''
-                      placeholder='Select'
+                      placeholder='Select activity '
                       IconComponent={RiArrowDownSLine}
                     >
-                      <MenuItem value={10}>Main Agent </MenuItem>
-                      <MenuItem value={20}>Secondary Agent </MenuItem>
-                      <MenuItem value={10}>Main Agent 1</MenuItem>
-                      <MenuItem value={20}>Secondary Agent 1</MenuItem>
-                      <MenuItem value={10}>Main Agent 2</MenuItem>
-                      <MenuItem value={20}>Secondary Agent 2</MenuItem>
-                      <MenuItem value={10}>Main Agent 3</MenuItem>
-                      <MenuItem value={20}>Secondary Agent 3</MenuItem>
-                      <MenuItem value={10}>Main Agent 4</MenuItem>
-                      <MenuItem value={20}>Secondary Agent 4</MenuItem>
+                      <MenuItem value={10}>Email sent </MenuItem>
+                      <MenuItem value={20}>Spoke with client </MenuItem>
+                      <MenuItem value={10}>Left voicemail </MenuItem>
+                      <MenuItem value={20}>SMS</MenuItem>
+                      <MenuItem value={10}>Appointment set</MenuItem>
+                      <MenuItem value={20}>Meeting held </MenuItem>
                     </Select>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} md={12}>
+                  <Box variant='div' component='div'>
+                    <label>Add comment </label>
+                    <TextField
+                      fullWidth
+                      id='outlined-basic'
+                      label=''
+                      variant='outlined'
+                      placeholder='Additional comment'
+                      multiline
+                      rows={4}
+                      maxRows={4}
+                    />
                   </Box>
                 </Grid>
               </Grid>

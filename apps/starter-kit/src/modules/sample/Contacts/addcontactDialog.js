@@ -14,6 +14,7 @@ import PersonalinfoTab from './personalinfoTab';
 import BuyerprofileTab from './buyerprofileTab';
 import RenterprofileTab from './renterprofileTab';
 import SellerprofileTab from './sellerprofileTab';
+import HgcassociateprofileTab from './hgcassociateprofileTab';
 
 const EventviewDialog = ({ open, handleClose, title }) => {
   const [value, setValue] = React.useState('1');
@@ -88,7 +89,7 @@ const EventviewDialog = ({ open, handleClose, title }) => {
                     <Tab
                       label={
                         <>
-                          <Typography>Personal info </Typography>
+                          <Typography>HGC associate profile</Typography>
                         </>
                       }
                       value='5'
@@ -96,10 +97,18 @@ const EventviewDialog = ({ open, handleClose, title }) => {
                     <Tab
                       label={
                         <>
-                          <Typography>Notes</Typography>
+                          <Typography>Personal info </Typography>
                         </>
                       }
                       value='6'
+                    />
+                    <Tab
+                      label={
+                        <>
+                          <Typography>Notes</Typography>
+                        </>
+                      }
+                      value='7'
                     />
                   </TabList>
                 </Box>
@@ -116,9 +125,12 @@ const EventviewDialog = ({ open, handleClose, title }) => {
                   <SellerprofileTab />
                 </TabPanel>
                 <TabPanel value='5'>
-                  <PersonalinfoTab />
+                  <HgcassociateprofileTab />
                 </TabPanel>
                 <TabPanel value='6'>
+                  <PersonalinfoTab />
+                </TabPanel>
+                <TabPanel value='7'>
                   <NotesTab />{' '}
                 </TabPanel>
               </TabContext>

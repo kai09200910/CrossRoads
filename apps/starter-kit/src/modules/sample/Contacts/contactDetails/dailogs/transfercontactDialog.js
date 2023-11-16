@@ -112,6 +112,15 @@ const TransferDialog = ({ open, handleClose }) => {
             >
               Reassign lead
             </Button>
+
+            {/* <Button
+              variant='contained'
+              size='large'
+              autoFocus
+              className='primary-btn btn'
+            >
+              Send for approval 
+            </Button> */}
           </Stack>
         </DialogActions>
       </Dialog>
