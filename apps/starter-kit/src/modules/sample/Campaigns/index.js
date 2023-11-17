@@ -10,6 +10,9 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { Link, useLocation } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -22,13 +25,15 @@ import './campaigns.scss';
 import ViewemailcampaignDialog from './viewemailcampaignDialog';
 
 const Campaigns = () => {
-  const Row = () => {
+  const location = useLocation();
+  const user_campaigns = location?.state?.user_campaigns || false;
+  const Row = ({ isExpanded = false }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const handleClose = () => {
       setIsSubmitted(false);
     };
 
-    const [isExpand, setIsExpand] = useState(false);
+    const [isExpand, setIsExpand] = useState(isExpanded);
     const [isCompanignStatsOpen, SetIsCompanignStatsOpen] = useState(false);
     return (
       <>
@@ -234,7 +239,28 @@ const Campaigns = () => {
                         }}
                         className='btn-wrap'
                       >
-                        <Button
+                        {user_campaigns ? (
+                          <Button
+                            variant='contained'
+                            size='small'
+                            autoFocus
+                            onClick={() => SetIsCompanignStatsOpen(true)}
+                            className='primary-btn'
+                          >
+                            View Alert
+                          </Button>
+                        ) : (
+                          <Button
+                            variant='contained'
+                            size='small'
+                            autoFocus
+                            onClick={() => SetIsCompanignStatsOpen(true)}
+                            className='primary-btn'
+                          >
+                            View campaign
+                          </Button>
+                        )}
+                        {/* <Button
                           variant='contained'
                           size='small'
                           autoFocus
@@ -242,7 +268,7 @@ const Campaigns = () => {
                           className='primary-btn'
                         >
                           View campaign
-                        </Button>
+                        </Button> */}
                         <Button
                           variant='outlined'
                           size='small'
@@ -450,6 +476,15 @@ const Campaigns = () => {
     );
   };
 
+  const breadcrumbs = [
+    <Link underline='hover' key='1' color='inherit' to='/contacts'>
+      Contacts
+    </Link>,
+    <Typography key='3' color='text.primary'>
+      Campaign activity
+    </Typography>,
+  ];
+
   const navigate = useNavigate();
   const navigateToCreate = () => {
     navigate('/campaigns/create');
@@ -482,9 +517,42 @@ const Campaigns = () => {
         }}
         className='main-title'
       >
-        <Typography variant='h3' component='h3'>
-          Listing Campaigns
-        </Typography>
+        <Stack
+          direction='column'
+          justifyContent='flex-start'
+          alignItems='flex-start'
+          spacing={1}
+        >
+          {user_campaigns ? (
+            <Typography variant='h3' component='h3'>
+              <Typography variant='span' component='span'>
+                John’s new
+              </Typography>
+              listing alert
+            </Typography>
+          ) : (
+            <Typography variant='h3' component='h3'>
+              Listing Campaigns
+            </Typography>
+          )}
+          {user_campaigns ? (
+            <Box
+              variant='div'
+              component='div'
+              sx={{
+                paddingTop: { xs: 4, xl: 4 },
+              }}
+              className='breadcrumb-wrap'
+            >
+              <Breadcrumbs
+                separator={<NavigateNextIcon fontSize='small' />}
+                aria-label='breadcrumb'
+              >
+                {breadcrumbs}
+              </Breadcrumbs>
+            </Box>
+          ) : null}
+        </Stack>
         <Button
           variant='outlined'
           size='small'
@@ -497,13 +565,13 @@ const Campaigns = () => {
       <Box className='scrollable-content'>
         <Box sx={{ my: 2 }}>
           <Box className='campaign-list-wrap'>
-            <Row />
-            <Row />
-            <Row />
-            <Row />
-            <Row />
-            <Row />
-            <Row />
+            <Row isExpanded={false} />
+            <Row isExpanded={false} />
+            <Row isExpanded={user_campaigns} />
+            <Row isExpanded={false} />
+            <Row isExpanded={false} />
+            <Row isExpanded={false} />
+            <Row isExpanded={false} />
           </Box>
         </Box>
       </Box>

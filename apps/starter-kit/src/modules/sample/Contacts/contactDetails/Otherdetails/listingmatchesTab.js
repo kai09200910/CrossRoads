@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Stack,
-  Button,
-  Typography,
-  Popover,
-  TextField,
-} from '@mui/material';
+import { Box, Stack, Button, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -14,14 +7,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-import {
-  RiAddLine,
-  RiDeleteBinLine,
-  RiErrorWarningFill,
-  RiMailLine,
-} from 'react-icons/ri';
+import { RiErrorWarningFill, RiMailLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import AddPopover from '../../../common/addPopover';
 
 function createData(listing, info, action) {
   return {
@@ -51,16 +38,6 @@ const ListingmatchesTab = () => {
           <Typography variant='h3' component='h3'>
             Listing Matches
           </Typography>
-
-          <Stack
-            direction='row'
-            justifyContent='flex-end'
-            alignItems='flex-start'
-            spacing={1}
-            className='add-note-btn-wrapper'
-          >
-            <AddPopover />
-          </Stack>
         </Stack>
 
         <Box

@@ -320,6 +320,35 @@ ul.MuiList-root {
     }
   }
 }
+.table-wrapper.note-list-table.document-list-table {
+  min-height: 235px;
+  .table-empty-state {
+    padding: 0;
+    .custome-dropzone {
+      padding: 0;
+      .MuiBox-root {
+        width: 100%;
+        .dropzone {
+          height: 200px;
+          background-color: #fff;
+          border: none;
+          svg {
+            color: #cdcdcd;
+            width: 55px;
+            height: 55px;
+          }
+          p {
+            color: #999999;
+            font-size: 15px;
+          }
+        }
+      }
+      .upload-doc-info {
+        margin: 0;
+      }
+    }
+  }
+}
 .add-note-modal {
   .MuiPopover-paper {
     margin-top: 8px;
@@ -430,6 +459,12 @@ ul.MuiList-root {
         .table-wrapper {
           border: none;
         }
+      }
+    }
+    .document-tab {
+      .add-media-btn-wrapper.add-note-btn-wrapper {
+        position: relative;
+        top: 0px;
       }
     }
   }

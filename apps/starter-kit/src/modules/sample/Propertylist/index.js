@@ -3,7 +3,9 @@ import {
   Box,
   FormControlLabel,
   Grid,
+  InputLabel,
   MenuItem,
+  OutlinedInput,
   Select,
   Stack,
   Switch,
@@ -40,10 +42,21 @@ const PropertyList = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Sale or Rent'
                   IconComponent={RiArrowDownSLine}
+                  // input={<OutlinedInput />}
+                  displayEmpty
+                  inputProps={{ 'aria-label': 'Without label' }}
+                  // placeholder='test 123'
+                  // renderValue={(selected) => {
+                  //   if (selected.length === 0) {
+                  //     return <em>Placeholder</em>;
+                  //   }
+                  //   return selected.join(', ');
+                  // }}
                 >
+                  <MenuItem disabled value=''>
+                    Placeholder
+                  </MenuItem>
                   <MenuItem value={10}>MLS Exclusive</MenuItem>
                   <MenuItem value={20}>General</MenuItem>
                   <MenuItem value={30}>Co-broke </MenuItem>

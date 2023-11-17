@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Stack,
-  Button,
-  Typography,
-  Popover,
-  TextField,
-} from '@mui/material';
+import { Box, Stack, Button, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -20,9 +13,8 @@ import {
   RiErrorWarningFill,
   RiPencilFill,
 } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ListingalertDialog from '../listingalertDialog';
-import AddPopover from '../../../common/addPopover';
 
 function createData(by, name, date, status, email) {
   return {
@@ -59,10 +51,13 @@ const rows = [
 ];
 
 const ListingalertsTab = () => {
+  const navigate = useNavigate();
   const [isListingalert, setIsListingalert] = useState(false);
   const handlelistingalertClose = () => {
     setIsListingalert(false);
   };
+
+  const [alertDailogTitle, setAlertDailogTitle] = useState(false);
 
   return (
     <>
@@ -78,15 +73,19 @@ const ListingalertsTab = () => {
             Listing Alerts
           </Typography>
 
-          <Stack
-            direction='row'
-            justifyContent='flex-end'
-            alignItems='flex-start'
-            spacing={1}
-            className='add-note-btn-wrapper'
+          <Button
+            variant='contained'
+            size='small'
+            autoFocus
+            className='primary-btn secondary-btn'
+            onClick={() => {
+              setIsListingalert(true);
+              setAlertDailogTitle('Create listing alert');
+            }}
           >
-            <AddPopover />
-          </Stack>
+            <RiAddLine size={18} />
+            Add
+          </Button>
         </Stack>
 
         <Box
@@ -153,7 +152,10 @@ const ListingalertsTab = () => {
                             variant='text'
                             startIcon={<RiPencilFill size={16} gap={2} />}
                             className='green-link-btn'
-                            onClick={() => setIsListingalert(true)}
+                            onClick={() => {
+                              setIsListingalert(true);
+                              setAlertDailogTitle('Edit listing alert');
+                            }}
                           >
                             Active
                           </Button>
@@ -172,6 +174,11 @@ const ListingalertsTab = () => {
                           <Button
                             variant='text'
                             endIcon={<RiArrowRightLine size={16} />}
+                            onClick={() =>
+                              navigate('/campaigns', {
+                                state: { user_campaigns: true },
+                              })
+                            }
                           >
                             View
                           </Button>
@@ -213,7 +220,7 @@ const ListingalertsTab = () => {
       <ListingalertDialog
         open={isListingalert}
         handleClose={handlelistingalertClose}
-        title={'Edit listing alert '}
+        title={alertDailogTitle}
       />
     </>
   );
