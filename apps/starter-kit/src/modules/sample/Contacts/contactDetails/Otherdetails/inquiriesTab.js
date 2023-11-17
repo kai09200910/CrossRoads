@@ -16,7 +16,7 @@ import TableRow from '@mui/material/TableRow';
 
 import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import AddPopover from '../../../common/addPopover';
+// import AddPopover from '../../../common/addPopover';
 
 function createData(listing, info, date, comments) {
   return {
@@ -63,7 +63,7 @@ const InquiriesTab = () => {
             Inquiries
           </Typography>
 
-          <Stack
+          {/* <Stack
             direction='row'
             justifyContent='flex-end'
             alignItems='flex-start'
@@ -71,7 +71,7 @@ const InquiriesTab = () => {
             className='add-note-btn-wrapper'
           >
             <AddPopover />
-          </Stack>
+          </Stack> */}
         </Stack>
 
         <Box

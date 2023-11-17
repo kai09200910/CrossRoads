@@ -1,12 +1,5 @@
-import React from 'react';
-import {
-  Box,
-  Stack,
-  Typography,
-  Button,
-  Popover,
-  TextField,
-} from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Stack, Typography, Button } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -15,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
-import AddPopover from '../../../common/addPopover';
+import LogactivityDialog from '../dailogs/logactivityDialog';
 
 function createData(type, by, date, comments) {
   return {
@@ -48,6 +41,11 @@ const rows = [
 ];
 
 const ActivitiesTab = () => {
+  const [isLogactivity, setIsLogactivity] = useState(false);
+  const handlelogactivityClose = () => {
+    setIsLogactivity(false);
+  };
+
   return (
     <>
       <Box className='notes-tab tab-content-wrapper'>
@@ -62,15 +60,16 @@ const ActivitiesTab = () => {
             Activities
           </Typography>
 
-          <Stack
-            direction='row'
-            justifyContent='flex-end'
-            alignItems='flex-start'
-            spacing={1}
-            className='add-note-btn-wrapper'
+          <Button
+            variant='contained'
+            size='small'
+            autoFocus
+            className='primary-btn secondary-btn'
+            onClick={() => setIsLogactivity(true)}
           >
-            <AddPopover />
-          </Stack>
+            <RiAddLine size={18} />
+            Add
+          </Button>
         </Stack>
 
         <Box
@@ -166,6 +165,11 @@ const ActivitiesTab = () => {
           </TableContainer>
         </Box>
       </Box>
+
+      <LogactivityDialog
+        open={isLogactivity}
+        handleClose={handlelogactivityClose}
+      />
     </>
   );
 };

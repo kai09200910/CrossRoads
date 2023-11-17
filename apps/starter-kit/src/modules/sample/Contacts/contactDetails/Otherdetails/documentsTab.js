@@ -1,24 +1,18 @@
-import React from 'react';
-import {
-  Box,
-  Stack,
-  Button,
-  Typography,
-  Popover,
-  TextField,
-} from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Stack, Button, Typography, TextField } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-
 import { RiAddLine, RiDeleteBinLine, RiUpload2Line } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import AddPopover from '../../../common/addPopover';
-// import UploadModern from '../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
-// import FileRow from '../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
+import AppList from '@crema/components/AppList';
+import { useDropzone } from 'react-dropzone';
+import UploadModern from '../../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
+import FileRow from '../../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
 function createData(name, size, action) {
   return {
     name,
@@ -34,9 +28,11 @@ const rows = [
 ];
 
 const DocumentsTab = () => {
+  const dropzone = useDropzone();
+  const [uploadedFiles, setUploadedFiles] = useState([]);
   return (
     <>
-      <Box className='notes-tab tab-content-wrapper'>
+      <Box className='notes-tab tab-content-wrapper document-tab'>
         <Stack
           direction='row'
           justifyContent='space-between'
@@ -48,7 +44,7 @@ const DocumentsTab = () => {
             Documents
           </Typography>
 
-          <Stack
+          {/* <Stack
             direction='row'
             justifyContent='flex-end'
             alignItems='flex-start'
@@ -56,12 +52,30 @@ const DocumentsTab = () => {
             className='add-note-btn-wrapper'
           >
             <AddPopover />
+          </Stack> */}
+
+          <Stack
+            direction='row'
+            justifyContent='flex-end'
+            alignItems='flex-start'
+            spacing={1}
+            className='add-media-btn-wrapper add-note-btn-wrapper'
+          >
+            <Typography
+              variant='body1'
+              component='span'
+              className='primary-btn-small secondary-btn'
+            >
+              <RiAddLine size={18} />
+              Add
+              <TextField type='file' className='upload'></TextField>
+            </Typography>
           </Stack>
         </Stack>
 
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
-          className='table-wrapper note-list-table '
+          className='table-wrapper note-list-table document-list-table '
         >
           <TableContainer>
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
@@ -125,44 +139,28 @@ const DocumentsTab = () => {
                   component='div'
                   className='table-empty-state'
                 >
-                  <Stack
-                    direction='column'
-                    justifyContent='center'
-                    alignItems='center'
-                    spacing={1}
-                    sx={{
-                      paddingBottom: { xs: 2, xl: 2 },
-                    }}
-                    className=''
+                  <Box
+                    sx={{ position: 'relative' }}
+                    className='custome-dropzone'
                   >
-                    <RiUpload2Line size={25} />
-                    <Typography gutterBottom variant='p' component='p'>
-                      Click to upload or drag and drop
-                    </Typography>
-                    <Typography gutterBottom variant='p' component='p'>
-                      documents here
-                    </Typography>
-                  </Stack>
+                    <UploadModern
+                      uploadText=' Click to upload or drag and drop documents here'
+                      dropzone={dropzone}
+                    />
+                    <aside className='upload-doc-info'>
+                      <AppList
+                        data={uploadedFiles}
+                        renderRow={(file, index) => (
+                          <FileRow
+                            key={index + file.path}
+                            file={file}
+                            onDeleteUploadFile={onDeleteUploadFile}
+                          />
+                        )}
+                      />
+                    </aside>
+                  </Box>
                 </Box>
-
-                // <Box sx={{ position: 'relative' }} className='custome-dropzone'>
-                //   <UploadModern
-                //     uploadText='Re-upload  corrected document if applicable '
-                //     dropzone={dropzone}
-                //   />
-                //   <aside className='upload-doc-info'>
-                //     <AppList
-                //       data={uploadedFiles}
-                //       renderRow={(file, index) => (
-                //         <FileRow
-                //           key={index + file.path}
-                //           file={file}
-                //           onDeleteUploadFile={onDeleteUploadFile}
-                //         />
-                //       )}
-                //     />
-                //   </aside>
-                // </Box>
               )}
             </Table>
           </TableContainer>
