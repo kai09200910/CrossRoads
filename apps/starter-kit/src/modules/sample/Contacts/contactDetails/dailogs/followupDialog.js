@@ -3,18 +3,11 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import {
-  Box,
-  Button,
-  Grid,
-  MenuItem,
-  Select,
-  Stack,
-  TextField,
-} from '@mui/material';
-import { RiArrowDownSLine } from 'react-icons/ri';
+import { Box, Button, Grid, Stack, TextField } from '@mui/material';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-const LogactivityDialog = ({ open, handleClose }) => {
+const FollowupDialog = ({ open, handleClose }) => {
   return (
     <div>
       <Dialog
@@ -35,7 +28,7 @@ const LogactivityDialog = ({ open, handleClose }) => {
             flexWrap='wrap'
           >
             {/* {title} */}
-            Log activity
+            Add follow up
           </Stack>
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
@@ -44,32 +37,21 @@ const LogactivityDialog = ({ open, handleClose }) => {
               <Grid container spacing={5}>
                 <Grid item xs={12} md={12}>
                   <Box variant='div' component='div'>
-                    <label>Activity type </label>
-                    <Select
-                      fullWidth
-                      id='demo-simple-select'
-                      label=''
-                      placeholder='Select activity '
-                      IconComponent={RiArrowDownSLine}
-                    >
-                      <MenuItem value={10}>Email sent </MenuItem>
-                      <MenuItem value={20}>Spoke with client </MenuItem>
-                      <MenuItem value={10}>Left voicemail </MenuItem>
-                      <MenuItem value={20}>SMS</MenuItem>
-                      <MenuItem value={10}>Appointment set</MenuItem>
-                      <MenuItem value={20}>Meeting held </MenuItem>
-                    </Select>
+                    <label>Date</label>
+                    <DemoContainer components={['DatePicker']}>
+                      <DatePicker sx={{ width: '100%' }} />
+                    </DemoContainer>
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
                   <Box variant='div' component='div'>
-                    <label>Add comment </label>
+                    <label>Follow up note </label>
                     <TextField
                       fullWidth
                       id='outlined-basic'
                       label=''
                       variant='outlined'
-                      placeholder='Additional comment'
+                      placeholder='Add note '
                       multiline
                       rows={4}
                       maxRows={4}
@@ -97,7 +79,7 @@ const LogactivityDialog = ({ open, handleClose }) => {
               autoFocus
               className='primary-btn btn'
             >
-              Log activity
+              Save
             </Button>
           </Stack>
         </DialogActions>
@@ -106,4 +88,4 @@ const LogactivityDialog = ({ open, handleClose }) => {
   );
 };
 
-export default LogactivityDialog;
+export default FollowupDialog;

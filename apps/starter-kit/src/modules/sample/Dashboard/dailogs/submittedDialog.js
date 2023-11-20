@@ -27,6 +27,7 @@ const SubmittedDialog = ({ open, handleClose }) => {
             Successfully submitted listing documents
           </Typography>
         </DialogContent>
+
         <DialogActions align='center' className='modal-dailog-footer'>
           <Button
             variant='contained'

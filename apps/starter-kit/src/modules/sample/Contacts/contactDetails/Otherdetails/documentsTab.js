@@ -6,9 +6,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { RiAddLine, RiDeleteBinLine, RiUpload2Line } from 'react-icons/ri';
+import { RiAddLine, RiDeleteBinLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import AddPopover from '../../../common/addPopover';
 import AppList from '@crema/components/AppList';
 import { useDropzone } from 'react-dropzone';
 import UploadModern from '../../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
@@ -43,16 +42,6 @@ const DocumentsTab = () => {
           <Typography variant='h3' component='h3'>
             Documents
           </Typography>
-
-          {/* <Stack
-            direction='row'
-            justifyContent='flex-end'
-            alignItems='flex-start'
-            spacing={1}
-            className='add-note-btn-wrapper'
-          >
-            <AddPopover />
-          </Stack> */}
 
           <Stack
             direction='row'
@@ -92,7 +81,7 @@ const DocumentsTab = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-              {rows.length === 0 ? (
+              {rows.length > 0 ? (
                 <TableBody>
                   {rows.map((row, index) => (
                     <TableRow

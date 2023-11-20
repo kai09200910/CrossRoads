@@ -50,7 +50,7 @@ const GeneralTab = () => {
               <label>First name </label>
               <TextField
                 fullWidth
-                id='outlined-basic'
+                id='first-name'
                 label=''
                 variant='outlined'
                 placeholder='Enter Last Name'
@@ -62,7 +62,7 @@ const GeneralTab = () => {
               <label>Last name </label>
               <TextField
                 fullWidth
-                id='outlined-basic'
+                id='last-name'
                 label=''
                 variant='outlined'
                 placeholder='Enter Last Name '
@@ -76,7 +76,7 @@ const GeneralTab = () => {
               <label>Nick name</label>
               <TextField
                 fullWidth
-                id='outlined-basic'
+                id='nick-name'
                 label=''
                 variant='outlined'
                 placeholder='Enter Nick Name'
@@ -88,7 +88,7 @@ const GeneralTab = () => {
               <label>Spouse name </label>
               <TextField
                 fullWidth
-                id='outlined-basic'
+                id='spouse-name'
                 label=''
                 variant='outlined'
                 placeholder='Enter Spouse Name'
@@ -101,7 +101,7 @@ const GeneralTab = () => {
               <label>Home phone </label>
               <TextField
                 fullWidth
-                id='outlined-basic'
+                id='home-phone'
                 type='number'
                 variant='outlined'
                 placeholder='Enter Home Phone'
@@ -113,7 +113,7 @@ const GeneralTab = () => {
               <label>Mobile phone </label>
               <TextField
                 fullWidth
-                id='outlined-basic'
+                id='mobile-phone'
                 type='number'
                 variant='outlined'
                 placeholder='Enter Mobile Phone'
@@ -126,7 +126,7 @@ const GeneralTab = () => {
               <label>Email </label>
               <TextField
                 fullWidth
-                id='outlined-basic'
+                id='email'
                 type='email'
                 variant='outlined'
                 placeholder='Enter Email'
@@ -154,7 +154,7 @@ const GeneralTab = () => {
               <FormControl>
                 <Select
                   labelId='demo-multiple-checkbox-label'
-                  id='demo-multiple-checkbox'
+                  id='contact-type-multiple-checkbox'
                   multiple
                   placeholder='Select Contact Type'
                   value={personName}
@@ -178,7 +178,7 @@ const GeneralTab = () => {
               <label>Company name </label>
               <TextField
                 fullWidth
-                id='outlined-basic'
+                id='company-name'
                 label=''
                 variant='outlined'
                 placeholder='Enter Company name'
@@ -191,7 +191,7 @@ const GeneralTab = () => {
               <label>Primary Agent </label>
               <Select
                 fullWidth
-                id='demo-simple-select'
+                id='primary-agent'
                 label=''
                 placeholder='Select Agent'
                 IconComponent={RiArrowDownSLine}
@@ -220,7 +220,7 @@ const GeneralTab = () => {
               </label>
               <Select
                 fullWidth
-                id='demo-simple-select'
+                id='secondary-agent'
                 label=''
                 placeholder='Select Agent'
                 IconComponent={RiArrowDownSLine}
@@ -252,7 +252,7 @@ const GeneralTab = () => {
               <label>Care of</label>
               <TextField
                 fullWidth
-                id='outlined-basic'
+                id='care-of'
                 label=''
                 variant='outlined'
                 placeholder='Enter Care of'

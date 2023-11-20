@@ -19,6 +19,7 @@ import ListingalertDialog from './listingalertDialog';
 import AddcontactDialog from '../addcontactDialog';
 import TransferDialog from './dailogs/transfercontactDialog';
 import LogactivityDialog from './dailogs/logactivityDialog';
+import FollowupDialog from './dailogs/followupDialog';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' to='/contacts'>
@@ -48,6 +49,11 @@ const ContactDetails = () => {
   const [isLogactivity, setIsLogactivity] = useState(false);
   const handlelogactivityClose = () => {
     setIsLogactivity(false);
+  };
+
+  const [isFollowup, setIsFollowup] = useState(false);
+  const handlefollowupClose = () => {
+    setIsFollowup(false);
   };
 
   return (
@@ -119,6 +125,7 @@ const ContactDetails = () => {
               variant='contained'
               startIcon={<RiAddLine />}
               className='dwnload-btn primary-btn btn sky-blue-btn'
+              onClick={() => setIsFollowup(true)}
             >
               Follow up
             </Button>
@@ -180,6 +187,8 @@ const ContactDetails = () => {
         open={isLogactivity}
         handleClose={handlelogactivityClose}
       />
+
+      <FollowupDialog open={isFollowup} handleClose={handlefollowupClose} />
     </>
   );
 };

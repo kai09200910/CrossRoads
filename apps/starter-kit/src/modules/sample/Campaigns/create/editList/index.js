@@ -17,7 +17,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import SubmittedDialogs from '../submittedDialog';
-import { RiDeleteBinLine } from 'react-icons/ri';
+import { RiCheckboxBlankCircleFill, RiDeleteBinLine } from 'react-icons/ri';
 
 function createData(name, click, email, phone, remove) {
   return { name, click, email, phone, remove };
@@ -127,7 +127,19 @@ const EditList = ({ setIsList }) => {
                           <TableCell component='th' scope='row'>
                             {row.name}
                           </TableCell>
-                          <TableCell align='left'>{row.click}</TableCell>
+                          <TableCell align='left'>
+                            <RiCheckboxBlankCircleFill
+                              size={7}
+                              className='green'
+                            />
+                            <Typography
+                              variant='body1'
+                              component='span'
+                              sx={{ marginLeft: 1 }}
+                            >
+                              {row.click}
+                            </Typography>
+                          </TableCell>
                           <TableCell align='left'>{row.email}</TableCell>
                           <TableCell align='left'>{row.phone}</TableCell>
                           <TableCell align='center'>

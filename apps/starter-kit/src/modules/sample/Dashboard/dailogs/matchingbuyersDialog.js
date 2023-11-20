@@ -64,7 +64,12 @@ const MatchingbuyersDialog = ({ open, handleClose }) => {
               padding: { xs: 3, sm: 6, xl: 6 },
             }}
           >
-            <Button variant='outlined' size='large' className='outline-btn btn'>
+            <Button
+              variant='outlined'
+              size='large'
+              className='outline-btn btn'
+              onClick={handleClose}
+            >
               Close
             </Button>
           </Stack>

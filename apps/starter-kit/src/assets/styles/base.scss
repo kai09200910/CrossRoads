@@ -782,7 +782,6 @@ header {
     background-color: #fff;
     padding: 4px 16px !important;
     height: 40px;
-
     display: flex;
     justify-content: flex-end;
     button {
@@ -817,8 +816,7 @@ header {
       thead {
         tr {
           th {
-            // color: #c2c2c2;
-            // background-color: #fff;
+            background-color: #fff !important;
           }
         }
       }
@@ -860,7 +858,7 @@ header {
 .mediatable-gridlist {
   .gridlist {
     flex-wrap: wrap;
-    margin-top: 41px;
+    margin-top: 40px;
     padding: 24px;
     gap: 8px;
     border-top: 1px solid rgba(224, 224, 224, 1);
