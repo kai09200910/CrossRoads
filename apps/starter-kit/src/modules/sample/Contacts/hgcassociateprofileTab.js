@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
-  Switch,
   FormControlLabel,
   MenuItem,
   Select,
   Grid,
   TextField,
-  Stack,
-  Checkbox,
-  ListItemText,
-  FormControl,
-  Typography,
   RadioGroup,
   Radio,
 } from '@mui/material';
@@ -78,10 +72,10 @@ const HgcassociateprofileTab = () => {
               >
                 <MenuItem value={10}>Employment type 1 </MenuItem>
                 <MenuItem value={20}>Employment type 2 </MenuItem>
-                <MenuItem value={10}>Employment type 3 </MenuItem>
-                <MenuItem value={20}>Employment type 4 </MenuItem>
-                <MenuItem value={10}>Employment type 5 </MenuItem>
-                <MenuItem value={20}>Employment type 6 </MenuItem>
+                <MenuItem value={30}>Employment type 3 </MenuItem>
+                <MenuItem value={40}>Employment type 4 </MenuItem>
+                <MenuItem value={50}>Employment type 5 </MenuItem>
+                <MenuItem value={60}>Employment type 6 </MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -97,10 +91,10 @@ const HgcassociateprofileTab = () => {
               >
                 <MenuItem value={10}>Supervisor 1</MenuItem>
                 <MenuItem value={20}>Supervisor 2</MenuItem>
-                <MenuItem value={10}>Supervisor 3</MenuItem>
-                <MenuItem value={20}>Supervisor 4</MenuItem>
-                <MenuItem value={10}>Supervisor 5</MenuItem>
-                <MenuItem value={20}>Supervisor 6</MenuItem>
+                <MenuItem value={30}>Supervisor 3</MenuItem>
+                <MenuItem value={40}>Supervisor 4</MenuItem>
+                <MenuItem value={50}>Supervisor 5</MenuItem>
+                <MenuItem value={60}>Supervisor 6</MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -117,7 +111,7 @@ const HgcassociateprofileTab = () => {
               >
                 <MenuItem value={10}>Male</MenuItem>
                 <MenuItem value={20}>Female </MenuItem>
-                <MenuItem value={10}>Others </MenuItem>
+                <MenuItem value={30}>Others </MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -133,10 +127,10 @@ const HgcassociateprofileTab = () => {
               >
                 <MenuItem value={10}>NIB Number 12</MenuItem>
                 <MenuItem value={20}>NIB Number 23</MenuItem>
-                <MenuItem value={10}>NIB Number 34</MenuItem>
-                <MenuItem value={20}>NIB Number 45</MenuItem>
-                <MenuItem value={10}>NIB Number 56</MenuItem>
-                <MenuItem value={20}>NIB Number 67</MenuItem>
+                <MenuItem value={30}>NIB Number 34</MenuItem>
+                <MenuItem value={40}>NIB Number 45</MenuItem>
+                <MenuItem value={50}>NIB Number 56</MenuItem>
+                <MenuItem value={60}>NIB Number 67</MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -198,9 +192,9 @@ const HgcassociateprofileTab = () => {
                 <MenuItem value={10}>Account Status 1</MenuItem>
                 <MenuItem value={20}>Account Status 2</MenuItem>
                 <MenuItem value={30}>Account Status 3</MenuItem>
-                <MenuItem value={10}>Account Status 4</MenuItem>
-                <MenuItem value={20}>Account Status 5</MenuItem>
-                <MenuItem value={30}>Account Status 6</MenuItem>
+                <MenuItem value={40}>Account Status 4</MenuItem>
+                <MenuItem value={50}>Account Status 5</MenuItem>
+                <MenuItem value={60}>Account Status 6</MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -218,9 +212,9 @@ const HgcassociateprofileTab = () => {
                 <MenuItem value={10}>Employment status 1</MenuItem>
                 <MenuItem value={20}>Employment status 2</MenuItem>
                 <MenuItem value={30}>Employment status 3</MenuItem>
-                <MenuItem value={10}>Employment status 4</MenuItem>
-                <MenuItem value={20}>Employment status 5</MenuItem>
-                <MenuItem value={30}>Employment status 6</MenuItem>
+                <MenuItem value={40}>Employment status 4</MenuItem>
+                <MenuItem value={50}>Employment status 5</MenuItem>
+                <MenuItem value={60}>Employment status 6</MenuItem>
               </Select>
             </Box>
           </Grid>

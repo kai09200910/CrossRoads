@@ -47,7 +47,7 @@ const Filters = () => {
                     <label>Contact Type </label>
                     <Select
                       fullWidth
-                      id='demo-simple-select'
+                      id='contact-type-select-menu'
                       label=''
                       placeholder='Select '
                       IconComponent={RiArrowDownSLine}
@@ -69,7 +69,7 @@ const Filters = () => {
                     <label>Search </label>
                     <TextField
                       fullWidth
-                      id='outlined-basic'
+                      id='contact-search'
                       label=''
                       variant='outlined'
                       placeholder='Search contacts'
@@ -88,7 +88,7 @@ const Filters = () => {
                     <label>Agent </label>
                     <Select
                       fullWidth
-                      id='demo-simple-select'
+                      id='agent-select-menu'
                       label=''
                       placeholder='Select agent(s)'
                       IconComponent={RiArrowDownSLine}

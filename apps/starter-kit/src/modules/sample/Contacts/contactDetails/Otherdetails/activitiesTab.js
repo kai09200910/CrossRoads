@@ -153,10 +153,10 @@ const ActivitiesTab = () => {
                   >
                     <RiErrorWarningFill size={25} />
                     <Typography gutterBottom variant='p' component='p'>
-                      No documents submitted yet,
+                      No activities added yet,
                     </Typography>
                     <Typography gutterBottom variant='p' component='p'>
-                      all submitted items will appear here.
+                      all added activities will appear here.
                     </Typography>
                   </Stack>
                 </Box>

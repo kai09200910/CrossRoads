@@ -120,10 +120,10 @@ const ListingmatchesTab = () => {
                   >
                     <RiErrorWarningFill size={25} />
                     <Typography gutterBottom variant='p' component='p'>
-                      No documents submitted yet,
+                      No listing matches found yet,
                     </Typography>
                     <Typography gutterBottom variant='p' component='p'>
-                      all submitted items will appear here.
+                      all listing matches will appear here.
                     </Typography>
                   </Stack>
                 </Box>

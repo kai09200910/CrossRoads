@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Stack,
-  Button,
-  Typography,
-  Popover,
-  TextField,
-} from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -14,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
+import { RiErrorWarningFill } from 'react-icons/ri';
 import AddPopover from '../../../common/addPopover';
 
 function createData(date, by, note) {
@@ -142,10 +135,10 @@ const NotesTab = () => {
                   >
                     <RiErrorWarningFill size={25} />
                     <Typography gutterBottom variant='p' component='p'>
-                      No documents submitted yet,
+                      No notes found,
                     </Typography>
                     <Typography gutterBottom variant='p' component='p'>
-                      all submitted items will appear here.
+                      all recored notes will appear here
                     </Typography>
                   </Stack>
                 </Box>

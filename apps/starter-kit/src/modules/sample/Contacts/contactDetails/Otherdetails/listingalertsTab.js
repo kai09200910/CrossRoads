@@ -205,10 +205,10 @@ const ListingalertsTab = () => {
                   >
                     <RiErrorWarningFill size={25} />
                     <Typography gutterBottom variant='p' component='p'>
-                      No documents submitted yet,
+                      No listing alerts added yet,
                     </Typography>
                     <Typography gutterBottom variant='p' component='p'>
-                      all submitted items will appear here.
+                      all submitted listing alerts will appear here.
                     </Typography>
                   </Stack>
                 </Box>
