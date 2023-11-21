@@ -387,35 +387,50 @@ ul.MuiList-root {
 
 .contact-detail-wrapper {
   .contact-detail-title {
-    .MuiChip-root.green {
-      font-size: 12px;
-      height: 32px;
-      font-weight: 500;
-      background-color: #c2eade;
-      color: #009a6c;
-      text-transform: capitalize;
-    }
-    .chip {
-      font-size: 12px;
-      height: 32px;
-      font-weight: 500;
-      border-radius: 23px;
-      padding: 2px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-transform: capitalize;
-    }
-    .chip.green {
-      background-color: #c2eade;
-      color: #009a6c;
-      &:hover {
+    .main-title {
+      .MuiChip-root.green {
+        font-size: 12px;
+        height: 32px;
+        font-weight: 500;
         background-color: #c2eade;
+        color: #009a6c;
+        text-transform: capitalize;
+      }
+      .chip {
+        font-size: 12px;
+        height: 32px;
+        font-weight: 500;
+        border-radius: 23px;
+        padding: 2px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: capitalize;
+      }
+      .chip.green {
+        background-color: #c2eade;
+        color: #009a6c;
+        &:hover {
+          background-color: #c2eade;
+        }
+      }
+      .chip.yellow {
+        background-color: #ffefc5 !important;
+        color: #d68000;
       }
     }
-    .chip.yellow {
-      background-color: #ffefc5 !important;
-      color: #d68000;
+    .btn-group {
+      a.btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        text-decoration: none;
+        gap: 6px;
+        min-width: 124px !important;
+        font-size: 14px;
+        font-weight: 600;
+      }
     }
   }
   .personal-details {
@@ -437,6 +452,14 @@ ul.MuiList-root {
         min-width: initial !important;
         width: 50px;
         height: 50px;
+        width: 50px !important;
+        height: 50px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          color: #007653 !important;
+        }
       }
       .green-link-btn {
         color: #007653 !important;

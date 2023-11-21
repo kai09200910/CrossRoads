@@ -7,6 +7,8 @@ import UploadModern from '../../../../../../../../libs/modules/src/lib/thirdPart
 import FileRow from '../../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
 import AppList from '@crema/components/AppList';
 import { useDropzone } from 'react-dropzone';
+import { EditText, EditTextarea } from 'react-edit-text';
+import 'react-edit-text/dist/index.css';
 
 const DragPhoto = () => {
   const breadcrumbs = [
@@ -52,21 +54,29 @@ const DragPhoto = () => {
 
         <Box className='email-template-area'>
           <Box className='email-template'>
-            <Stack
-              direction='row'
-              justifyContent='flex-start'
-              alignItems='center'
-              spacing={4}
-              flexWrap='wrap'
-            >
-              <img
-                src='../../../../assets/images/email-temp-logo.svg'
-                alt='template-logo'
-              />
-              <Typography variant='h3' component='h3'>
-                Debuting the Market
-              </Typography>
-            </Stack>
+            <Grid container spacing={5} mt={0} alignItems='center'>
+              <Grid item xs={12} md={6}>
+                {' '}
+                <img
+                  src='../../../../assets/images/email-temp-logo.svg'
+                  alt='template-logo'
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Typography
+                  variant='h4'
+                  component='h4'
+                  className='editable-text-field'
+                >
+                  <EditText
+                    defaultValue='Debuting the Market'
+                    showEditButton
+                    className='text-field'
+                  />
+                </Typography>
+              </Grid>
+            </Grid>
+
             <Grid container spacing={5} mt={3}>
               <Grid item xs={12} md={12}>
                 <Box sx={{ position: 'relative' }} className='custome-dropzone'>
@@ -112,17 +122,44 @@ const DragPhoto = () => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <Box sx={{ position: 'relative' }} className='other-data'>
-                  <Typography variant='h4' component='h4'>
-                    Tropical Paradise on the Beach
+                  <Typography
+                    variant='h4'
+                    component='h4'
+                    className='editable-text-field'
+                  >
+                    <EditText
+                      defaultValue='Tropical Paradise on the Beach'
+                      showEditButton
+                      className='text-field'
+                    />
                   </Typography>
-                  <Typography variant='h4' component='h4'>
-                    Offered at $5,000,000
+                  <Typography
+                    variant='h4'
+                    component='h4'
+                    className='editable-text-field'
+                  >
+                    <EditText
+                      defaultValue='Offered at $5,000,000'
+                      showEditButton
+                      className='text-field'
+                    />
                   </Typography>
-                  <Typography variant='p' component='p'>
-                    Sea Breeze is naturally possessed of a light, airy and
+                  <Typography
+                    variant='h4'
+                    component='h4'
+                    className='editable-text-field'
+                  >
+                    <EditTextarea
+                      defaultValue='Sea Breeze is naturally possessed of a light, airy and
                     refreshing flow reminiscent of the tropical cocktail after
                     which it is so aptly named. Built in the mid 1980s this
-                    well-maintained home boasts five bedrooms.
+                    well-maintained home boasts five bedrooms.'
+                      showEditButton
+                      className='text-field'
+                      // multiline
+                      // rows={4}
+                      // maxRows={4}
+                    />
                   </Typography>
                   <Button
                     variant='contained'

@@ -62,6 +62,7 @@
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.5",
     "react-dropzone": "^14.2.3",
+    "react-edit-text": "^5.1.1",
     "react-froala-wysiwyg": "^4.0.19",
     "react-fusioncharts": "^4.0.0",
     "react-google-maps": "^9.4.5",
