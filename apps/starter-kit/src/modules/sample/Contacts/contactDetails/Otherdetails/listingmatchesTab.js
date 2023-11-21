@@ -90,13 +90,12 @@ const ListingmatchesTab = () => {
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
                           {/* {row.action} */}
-                          <Button
-                            variant='outlined'
-                            size='small'
+                          <Link
                             className='icon-small-btn green-btn'
+                            to='/campaigns/create'
                           >
                             <RiMailLine size={20} />
-                          </Button>{' '}
+                          </Link>
                         </Typography>
                       </TableCell>
                     </TableRow>

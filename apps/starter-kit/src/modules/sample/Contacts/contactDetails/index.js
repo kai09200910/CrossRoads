@@ -56,6 +56,26 @@ const ContactDetails = () => {
     setIsFollowup(false);
   };
 
+  const emailAddress = 'example@example.com';
+  const subject = 'Subject of the email';
+  const body = 'Body of the email';
+
+  const handleEmailButtonClick = () => {
+    // // Change the email address and other parameters as needed
+    // const emailAddress = 'example@example.com';
+    // const subject = 'Subject of the email';
+    // const body = 'Body of the email';
+
+    // // Create the mailto link
+    // const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
+    //   subject,
+    // )}&body=${encodeURIComponent(body)}`;
+
+    // // Open the user's default email client
+    // window.location.href = mailtoLink;
+    window.open('mailto:email@example.com');
+  };
+
   return (
     <>
       <Box variant='div' component='div' className='contact-detail-wrapper'>
@@ -137,13 +157,21 @@ const ContactDetails = () => {
             >
               Log activity
             </Button>
-            <Button
-              variant='contained'
-              startIcon={<RiMailLine />}
-              className='dwnload-btn primary-btn btn green-btn'
+            {/* <Link
+              className='dwnload-btn btn green-btn'
+              href='mailto:someone@example.com'
             >
+              <RiMailLine size={20} />
               Send email
-            </Button>
+            </Link> */}
+
+            <button
+              onClick={handleEmailButtonClick}
+              className='dwnload-btn btn green-btn'
+            >
+              Send Email 786
+            </button>
+
             <Button
               variant='contained'
               startIcon={<RiNotification3Line />}
@@ -157,6 +185,7 @@ const ContactDetails = () => {
               variant='contained'
               startIcon={<RiPencilFill />}
               className='dwnload-btn primary-btn btn blue-btn'
+              onClick={() => setIsAddcontact(true)}
             >
               Edit
             </Button>
@@ -180,7 +209,6 @@ const ContactDetails = () => {
       <TransferDialog
         open={isTransfercontact}
         handleClose={handletransfercontactClose}
-        // title={'Edit Contact'}
       />
 
       <LogactivityDialog

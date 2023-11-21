@@ -1219,3 +1219,36 @@ header {
   }
 }
 // Tab list and Tab panel Styles END //
+
+// Editable text field Styles //
+.editable-text-field {
+  border: 3px dashed #2871ff;
+  background-color: #e0eaff;
+  .text-field {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    &:hover {
+      background-color: #e0eaff;
+    }
+    span {
+      font-size: 15px !important;
+      font-weight: 500 !important;
+    }
+  }
+  input {
+    background-color: #e0eaff;
+    border-color: #2871ff;
+    margin: 0;
+  }
+  button {
+    background-color: #e0eaff;
+    cursor: pointer;
+    svg {
+      width: 15px;
+      height: 15px;
+      fill: #2871ff;
+    }
+  }
+}
+// Editable text field Styles END //
