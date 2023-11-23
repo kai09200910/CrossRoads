@@ -24,13 +24,13 @@ function createData(name, click, email, phone, remove) {
 }
 
 const rows = [
-  createData('John Smith   ', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
-  createData('John Smith   ', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
-  createData('John Smith   ', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
-  createData('John Smith   ', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
-  createData('John Smith   ', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
-  createData('John Smith   ', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
-  createData('John Smith   ', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
+  createData('John Smith', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
+  createData('John Smith', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
+  createData('John Smith', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
+  createData('John Smith', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
+  createData('John Smith', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
+  createData('John Smith', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
+  createData('John Smith', '3', 'adriendubreuil@gmail.com', '242-123-4567'),
 ];
 
 const EditList = ({ setIsList }) => {

@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
+import { RiErrorWarningFill } from 'react-icons/ri';
 import AddPopover from '../common/addPopover';
 
 function createData(date, by, note) {
@@ -70,7 +70,7 @@ const NotesTab = () => {
               </TableHead>
               {rows.length > 0 ? (
                 <TableBody>
-                  {rows.map((row, index) => (
+                  {rows.map((row) => (
                     <TableRow
                       className={
                         row?.approval > false ? 'resubmitted-approval' : ''

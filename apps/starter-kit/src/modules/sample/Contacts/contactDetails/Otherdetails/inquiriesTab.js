@@ -109,7 +109,7 @@ const InquiriesTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          <Link href='#'> {row.listing}</Link>
+                          <Link to='/dashboard'> {row.listing}</Link>
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>

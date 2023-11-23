@@ -15,15 +15,15 @@ function createData(name, date, by, action) {
 }
 
 const rows = [
-  createData('New note   ', '05/07/24', 'John Smith  '),
+  createData('New note', '05/07/24', 'John Smith  '),
   createData('Listing active ', '05/07/24', 'John Smith '),
-  createData('New note   ', '05/07/24', 'John Smith  '),
-  createData('New note   ', '05/07/24', 'John Smith  '),
-  createData('New note   ', '05/07/24', 'John Smith  '),
-  createData('New note   ', '05/07/24', 'John Smith  '),
+  createData('New note', '05/07/24', 'John Smith  '),
+  createData('New note', '05/07/24', 'John Smith  '),
+  createData('New note', '05/07/24', 'John Smith  '),
+  createData('New note', '05/07/24', 'John Smith  '),
   createData('Listing active ', '05/07/24', 'John Smith '),
-  createData('New note   ', '05/07/24', 'John Smith  '),
-  createData('New note   ', '05/07/24', 'John Smith  '),
+  createData('New note', '05/07/24', 'John Smith  '),
+  createData('New note', '05/07/24', 'John Smith  '),
 ];
 
 const ListingHistory = ({ handleBack }) => {

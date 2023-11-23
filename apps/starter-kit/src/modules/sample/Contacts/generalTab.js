@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
   Switch,
@@ -17,9 +17,7 @@ import { RiArrowDownSLine } from 'react-icons/ri';
 import TagsInput from '../common/tagsInput';
 
 const GeneralTab = () => {
-  function handleSelecetedTags(items) {
-    console.log(items);
-  }
+  function handleSelecetedTags(items) {}
 
   const names = [
     'Buyer',

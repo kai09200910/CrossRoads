@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 
 const ReviewPhotos = ({ setIsList }) => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const handleClose = () => {
-    setIsSubmitted(false);
-  };
-
   return (
     <>
       <Box

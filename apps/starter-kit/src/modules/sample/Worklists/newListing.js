@@ -30,7 +30,6 @@ const rows = [
 ];
 
 const NewListing = () => {
-  const [isEditClicked, setIsEditClicked] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isdisapproved, setIsDisapproved] = useState(false);
   const [isFeedbackSubmitted, setIsFeedbackSubmitted] = useState(false);
@@ -70,7 +69,7 @@ const NewListing = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row, index) => (
+                {rows.map((row) => (
                   <TableRow
                     className={
                       row?.approval === false ? 'resubmitted-approval' : ''

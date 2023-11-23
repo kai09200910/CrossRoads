@@ -20,7 +20,7 @@ import {
 import { RiArrowDownSLine, RiPencilFill, RiSearchLine } from 'react-icons/ri';
 import MatchingContacts from '../../common/matchingContacts';
 
-const BuyerDialog = ({ open, handleClose, nextStep, step }) => {
+const BuyerDialog = ({ open, handleClose, step }) => {
   return (
     <div>
       <Dialog
@@ -188,7 +188,6 @@ const BuyerDialog = ({ open, handleClose, nextStep, step }) => {
                   <Box variant='div' component='div'>
                     <label>Display on site </label>
                     <FormControlLabel
-                      // control={<IOSSwitch  /> <Switch  sx={{ m: 1 }}
                       control={
                         <Switch
                           sx={{ m: 1 }}

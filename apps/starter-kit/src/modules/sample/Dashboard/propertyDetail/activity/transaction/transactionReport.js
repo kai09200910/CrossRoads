@@ -20,19 +20,6 @@ const rows = [
 ];
 
 const TransactionReport = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const handleClose = () => {
-    setIsSubmitted(false);
-  };
-
-  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
-  const handleBuyerOpen = () => {
-    // setStep(1);
-    setIsBuyerDialogOpen(true);
-  };
-  const handleBuyerClose = () => {
-    setIsBuyerDialogOpen(false);
-  };
   return (
     <>
       <Stack

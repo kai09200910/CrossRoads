@@ -10,7 +10,6 @@ import InquiriesTab from './inquiriesTab';
 import DocumentsTab from './documentsTab';
 import ListingmatchesTab from './listingmatchesTab';
 import ListingalertsTab from './listingalertsTab';
-// import NotesTab from ' ./notesTab';
 
 const OtherDetails = () => {
   const [value, setValue] = React.useState('1');

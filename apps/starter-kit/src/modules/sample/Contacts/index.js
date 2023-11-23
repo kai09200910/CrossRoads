@@ -151,7 +151,7 @@ const ContactList = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row, index) => (
+              {rows.map((row) => (
                 <TableRow
                   className={
                     row?.approval === false ? 'resubmitted-approval' : ''

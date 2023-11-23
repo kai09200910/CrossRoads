@@ -14,30 +14,6 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const HgcassociateprofileTab = () => {
-  function handleSelecetedTags(items) {
-    console.log(items);
-  }
-
-  const names = [
-    'Buyer',
-    'Seller',
-    'Renter',
-    'Landlord',
-    'Appraisal client',
-    'Co-broke agent',
-    'Merchant/supplier',
-    'HGC Associate',
-  ];
-
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(typeof value === 'string' ? value.split(',') : value);
-  };
-
   return (
     <>
       <Box className='genral-tab'>

@@ -35,11 +35,7 @@ const adminColumns = [
 const userColumns = [
   { id: 'order', label: 'Order', minWidth: 40 },
   { id: 'name', label: 'Name', align: 'center' },
-  // {
-  //   id: 'date',
-  //   label: 'Date',
-  //   align: 'left',
-  // },
+
   {
     id: 'displayonsite ',
     label: 'Display on site ',
@@ -151,39 +147,21 @@ const MediawebsitesTable = ({ isAdmin = false }) => {
   const [peoples, setPeoples] = React.useState([
     {
       id: 1,
-      // name: 'Video1.mp4',
-      // size: '200mb',
-      // date: '05/03/24',
     },
     {
       id: 2,
-      // name: 'Video2.mp4',
-      // size: '180mb',
-      // date: '05/03/24',
     },
     {
       id: 3,
-      // name: 'Video3.mp4',
-      // size: '210mb',
-      // date: '05/03/24',
     },
     {
       id: 4,
-      // name: 'Video4.mp4',
-      // size: '300mb',
-      // date: '05/03/24',
     },
     {
       id: 5,
-      // name: 'Video5.mp4',
-      // size: '94mb',
-      // date: '05/03/24',
     },
     {
       id: 6,
-      // name: 'Video6.mp4',
-      // size: '65mb',
-      // date: '05/03/24',
     },
   ]);
   const [columns, setColumns] = React.useState(userColumns);

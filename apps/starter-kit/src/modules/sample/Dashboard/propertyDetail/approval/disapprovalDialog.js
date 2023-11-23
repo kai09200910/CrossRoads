@@ -135,7 +135,6 @@ const DisapprovalDialog = ({ open, handleClose }) => {
                           </IconButton>
                         </TableCell>
                       </TableRow>
-                      {/* ))} */}
                     </TableBody>
                   </Table>
                 </TableContainer>

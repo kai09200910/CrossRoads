@@ -5,7 +5,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { RiArrowDownSLine } from 'react-icons/ri';
-
 import SingleFamilyIcon from '../../../../../assets/icon/property-overview/single-family.svg';
 import BedroomIcon from '../../../../../assets/icon/property-overview/Bedroom.svg';
 import BathroomIcon from '../../../../../assets/icon/property-overview/bathroom.svg';

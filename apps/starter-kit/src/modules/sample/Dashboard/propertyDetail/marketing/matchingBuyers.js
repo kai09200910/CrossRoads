@@ -86,7 +86,6 @@ const MatchingBuyers = ({ handleBack }) => {
             </Table>
           </TableContainer>
         </Box>
-        {/* <Button variant="text" onclick>Text</Button> */}
         <Stack
           direction='row'
           justifyContent='space-between'
