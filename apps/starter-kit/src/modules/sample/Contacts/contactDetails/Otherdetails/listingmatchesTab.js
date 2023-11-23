@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Stack, Button, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -79,7 +79,7 @@ const ListingmatchesTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          <Link href='#'>{row.listing}</Link>
+                          <Link to='/dashboard'>{row.listing}</Link>
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>

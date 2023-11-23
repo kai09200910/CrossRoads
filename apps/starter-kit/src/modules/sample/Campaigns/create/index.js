@@ -7,40 +7,7 @@ import EditList from './editList';
 
 const CreateCampaign = () => {
   const [isEditList, setIsList] = useState(false);
-  // const StyledDropzone = () => {
-  // const dropzone = useDropzone();
-  // const [uploadedFiles, setUploadedFiles] = useState([]);
-  // const [isPhotoSelection, setIsPhotoSelection] = useState(false);
-  // const [photoStep, setPhotoStep] = useState('create');
-  // useEffect(() => {
-  //   setUploadedFiles(dropzone.acceptedFiles);
-  // }, [dropzone.acceptedFiles]);
 
-  // const onDeleteUploadFile = (file) => {
-  //   dropzone.acceptedFiles.splice(dropzone.acceptedFiles.indexOf(file), 1);
-  //   setUploadedFiles([...dropzone.acceptedFiles]);
-  // };
-
-  // const renderListComponent = (label) => {
-  //   switch (label) {
-  //     case 'create':
-  //       return <DragPhoto />;
-  //     default:
-  //       return <EmailSelection setPhotoStep={setPhotoStep} />;
-  //   }
-  // };
-  // const renderPhotoComponent = (label) => {
-  //   switch (label) {
-  //     case 'create':
-  //       return <ReviewPhotos />;
-
-  //     case 'preview':
-  //       return <PreviewPhoto setPhotoStep={setPhotoStep} />;
-
-  //     default:
-  //       return <DragPhoto />;
-  //   }
-  // };
   return (
     <>
       <Stack

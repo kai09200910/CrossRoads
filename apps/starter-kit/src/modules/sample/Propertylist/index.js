@@ -3,9 +3,7 @@ import {
   Box,
   FormControlLabel,
   Grid,
-  InputLabel,
   MenuItem,
-  OutlinedInput,
   Select,
   Stack,
   Switch,
@@ -43,16 +41,8 @@ const PropertyList = () => {
                   fullWidth
                   id='demo-simple-select'
                   IconComponent={RiArrowDownSLine}
-                  // input={<OutlinedInput />}
                   displayEmpty
                   inputProps={{ 'aria-label': 'Without label' }}
-                  // placeholder='test 123'
-                  // renderValue={(selected) => {
-                  //   if (selected.length === 0) {
-                  //     return <em>Placeholder</em>;
-                  //   }
-                  //   return selected.join(', ');
-                  // }}
                 >
                   <MenuItem disabled value=''>
                     Placeholder
@@ -136,7 +126,6 @@ const PropertyList = () => {
               <Box variant='div' component='div'>
                 <label>Sort by </label>
                 <FormControlLabel
-                  // control={<IOSSwitch  /> <Switch  sx={{ m: 1 }}
                   sx={{
                     height: '47px',
                   }}

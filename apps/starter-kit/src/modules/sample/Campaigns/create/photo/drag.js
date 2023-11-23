@@ -20,13 +20,8 @@ const DragPhoto = () => {
     </Typography>,
   ];
 
-  function handleClick(event) {
-    event.preventDefault();
-    console.info('You clicked a breadcrumb.');
-  }
-
   const dropzone = useDropzone();
-  const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [uploadedFiles] = useState([]);
 
   return (
     <>

@@ -28,7 +28,7 @@ const rows = [
 
 const DocumentsTab = () => {
   const dropzone = useDropzone();
-  const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [uploadedFiles] = useState([]);
   return (
     <>
       <Box className='notes-tab tab-content-wrapper document-tab'>
@@ -83,7 +83,7 @@ const DocumentsTab = () => {
               </TableHead>
               {rows.length > 0 ? (
                 <TableBody>
-                  {rows.map((row, index) => (
+                  {rows.map((row) => (
                     <TableRow
                       className={
                         row?.approval === false ? 'resubmitted-approval' : ''
@@ -101,7 +101,12 @@ const DocumentsTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          <Link href='#'>{row.name}</Link>
+                          <Link
+                            to='https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+                            target='_blank'
+                          >
+                            {row.name}
+                          </Link>
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
@@ -112,7 +117,7 @@ const DocumentsTab = () => {
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
                           <Link
-                            className='resubmition-btnq'
+                            className='resubmition-btn'
                             // onClick={() => setIsSubmitted(true)}
                           >
                             <RiDeleteBinLine size={22} />

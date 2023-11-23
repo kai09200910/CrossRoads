@@ -133,12 +133,12 @@ const ListingalertsTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          <Link href='#'> {row.by}</Link>
+                          <Link to='/contacts/details'> {row.by}</Link>
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          <Link href='#'> {row.name}</Link>
+                          <Link to='/campaigns'> {row.name}</Link>
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>

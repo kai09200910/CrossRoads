@@ -17,16 +17,6 @@ import Steptitle from './stepTitle';
 const PropertyDetails = () => {
   const [isEditClicked, setIsEditClicked] = useState(false);
 
-  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
-
-  const handleBuyerOpen = () => {
-    setIsBuyerDialogOpen(true);
-  };
-
-  const handleBuyerClose = () => {
-    setIsBuyerDialogOpen(false);
-  };
-
   const [personName, setPersonName] = React.useState([]);
   const [person, setPerson] = React.useState([]);
 

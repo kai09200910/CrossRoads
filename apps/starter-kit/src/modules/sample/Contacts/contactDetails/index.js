@@ -56,9 +56,9 @@ const ContactDetails = () => {
     setIsFollowup(false);
   };
 
-  const emailAddress = 'example@example.com';
-  const subject = 'Subject of the email';
-  const body = 'Body of the email';
+  // const emailAddress = 'example@example.com';
+  // const subject = 'Subject of the email';
+  // const body = 'Body of the email';
 
   const handleEmailButtonClick = () => {
     // // Change the email address and other parameters as needed
@@ -159,18 +159,27 @@ const ContactDetails = () => {
             </Button>
             {/* <Link
               className='dwnload-btn btn green-btn'
-              href='mailto:someone@example.com'
+              to='mailto:someone@example.com'
+              target='_blank'
             >
               <RiMailLine size={20} />
               Send email
             </Link> */}
-
-            <button
+            {/* <Link
+              to='http://www.gmail.com'
+              target='_blank'
+              className='dwnload-btn btn green-btn'
+            >
+              <RiMailLine size={20} />
+              Send email
+            </Link> */}
+            <Button
               onClick={handleEmailButtonClick}
               className='dwnload-btn btn green-btn'
             >
-              Send Email 786
-            </button>
+              <RiMailLine size={20} />
+              Send Email
+            </Button>
 
             <Button
               variant='contained'
@@ -180,7 +189,6 @@ const ContactDetails = () => {
             >
               Listing alerts
             </Button>
-
             <Button
               variant='contained'
               startIcon={<RiPencilFill />}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -13,7 +13,6 @@ import {
   RadioGroup,
   Select,
   Stack,
-  Typography,
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
 

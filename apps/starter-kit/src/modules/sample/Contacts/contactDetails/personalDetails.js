@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Grid, Paper, Typography } from '@mui/material';
-// import '../contacts.scss';
 
 const PersonalDetails = () => {
   return (

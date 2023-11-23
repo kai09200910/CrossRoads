@@ -114,7 +114,6 @@ const Row1 = ({ data, ...other }) => {
         </TableCell>
         <TableCell className='size'>
           <FormControlLabel
-            // control={<IOSSwitch  /> <Switch  sx={{ m: 1 }}
             control={
               <Switch
                 sx={{ m: 1 }}

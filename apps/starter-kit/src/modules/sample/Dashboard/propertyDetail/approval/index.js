@@ -22,12 +22,6 @@ const Approval = () => {
     setValue(newValue);
   };
 
-  const handleCheckBoxClick = (event) => {
-    setApprovalStatus((prevState) => ({
-      ...prevState,
-      [event.target.name]: event.target.checked,
-    }));
-  };
   return (
     <>
       <Box

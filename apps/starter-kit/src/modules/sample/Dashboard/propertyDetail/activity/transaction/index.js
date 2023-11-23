@@ -8,10 +8,6 @@ import Totals from './totals';
 import { Link } from 'react-router-dom';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-function createData(name, date, listing, action) {
-  return { name, date, listing, action };
-}
-
 const Transactions = ({ handleBack }) => {
   const breadcrumbs = [
     <Link

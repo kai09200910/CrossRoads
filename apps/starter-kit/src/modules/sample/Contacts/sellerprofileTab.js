@@ -12,7 +12,7 @@ import {
   Radio,
   InputAdornment,
 } from '@mui/material';
-import { RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
+import { RiAddFill, RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
 
 const SellerprofileTab = () => {
   const [activebed, setActivebed] = useState('');
@@ -69,9 +69,10 @@ const SellerprofileTab = () => {
                     variant='contained'
                     size='large'
                     className='secondary-btn btn add-location-btn '
-                    // startIcon={<RiAddFill />}
+                    startIcon={<RiAddFill size={18} />}
                   >
-                    + Map location
+                    {' '}
+                    Map location
                   </Button>
                 </Box>
               </Grid>
