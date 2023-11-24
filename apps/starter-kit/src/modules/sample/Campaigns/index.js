@@ -23,6 +23,7 @@ import { useNavigate } from 'react-router-dom';
 import { BsDot } from 'react-icons/bs';
 import './campaigns.scss';
 import ViewemailcampaignDialog from './viewemailcampaignDialog';
+import { RiAddFill } from 'react-icons/ri';
 
 const Campaigns = () => {
   const location = useLocation();
@@ -558,8 +559,9 @@ const Campaigns = () => {
           size='small'
           className='edit-btn secondary-btn-small'
           onClick={navigateToCreate}
+          startIcon={<RiAddFill size={18} />}
         >
-          +New campaign
+          New campaign
         </Button>
       </Stack>
       <Box className='scrollable-content'>

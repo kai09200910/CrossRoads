@@ -12,6 +12,7 @@ import AppList from '@crema/components/AppList';
 import { useDropzone } from 'react-dropzone';
 import UploadModern from '../../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
 import FileRow from '../../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
+import ConfirmationDialog from '../../../common/confirmationDialog';
 function createData(name, size, action) {
   return {
     name,
@@ -29,6 +30,16 @@ const rows = [
 const DocumentsTab = () => {
   const dropzone = useDropzone();
   const [uploadedFiles] = useState([]);
+
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const handleDeleteOpen = () => {
+    setIsDeleteDialogOpen(true);
+  };
+
+  const handleDeleteClose = () => {
+    setIsDeleteDialogOpen(false);
+  };
+
   return (
     <>
       <Box className='notes-tab tab-content-wrapper document-tab'>
@@ -116,12 +127,17 @@ const DocumentsTab = () => {
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          <Link
-                            className='resubmition-btn'
-                            // onClick={() => setIsSubmitted(true)}
+                          {/* <Link className='resubmition-btn'>
+                            <RiDeleteBinLine size={22} /> 
+                          </Link> */}
+                          <Button
+                            variant='outlined'
+                            size='small'
+                            className='icon-small-btn'
+                            onClick={handleDeleteOpen}
                           >
-                            <RiDeleteBinLine size={22} />
-                          </Link>
+                            <RiDeleteBinLine size={20} />
+                          </Button>{' '}
                         </Typography>
                       </TableCell>
                     </TableRow>
@@ -178,6 +194,10 @@ const DocumentsTab = () => {
           </Button>
         </Stack>
       </Box>
+      <ConfirmationDialog
+        open={isDeleteDialogOpen}
+        handleClose={handleDeleteClose}
+      />
     </>
   );
 };

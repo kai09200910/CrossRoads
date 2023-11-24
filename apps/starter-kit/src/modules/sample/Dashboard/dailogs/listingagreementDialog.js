@@ -16,6 +16,7 @@ import AppList from '@crema/components/AppList';
 import { useDropzone } from 'react-dropzone';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import UploadModern from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
+import ConfirmationDialog from '../../common/confirmationDialog';
 
 function createData(name, size, action) {
   return { name, size, action };
@@ -30,8 +31,17 @@ const ListingagreementDialog = ({ open, handleClose }) => {
   const dropzone = useDropzone();
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const handleDeleteOpen = () => {
+    setIsDeleteDialogOpen(true);
+  };
+
+  const handleDeleteClose = () => {
+    setIsDeleteDialogOpen(false);
+  };
+
   return (
-    <div>
+    <>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -103,9 +113,17 @@ const ListingagreementDialog = ({ open, handleClose }) => {
                           </TableCell>
                           <TableCell align='left'>{row.size}</TableCell>
                           <TableCell align='left'>
-                            <IconButton aria-label='edit' disableRipple>
+                            {/* <IconButton aria-label='edit' disableRipple>
                               <RiDeleteBinLine size={20} />
-                            </IconButton>
+                            </IconButton> */}
+                            <Button
+                              variant='outlined'
+                              size='small'
+                              className='icon-small-btn'
+                              onClick={handleDeleteOpen}
+                            >
+                              <RiDeleteBinLine size={20} />
+                            </Button>{' '}
                           </TableCell>
                         </TableRow>
                       ))}
@@ -129,7 +147,11 @@ const ListingagreementDialog = ({ open, handleClose }) => {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+      <ConfirmationDialog
+        open={isDeleteDialogOpen}
+        handleClose={handleDeleteClose}
+      />
+    </>
   );
 };
 

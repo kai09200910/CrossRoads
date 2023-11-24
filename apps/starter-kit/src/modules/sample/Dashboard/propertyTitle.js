@@ -10,14 +10,17 @@ import {
 } from '@mui/material';
 import PropertyImg from '../../../assets/images/PI-home1.png';
 import {
+  RiAddFill,
   RiCheckboxBlankCircleFill,
   RiCheckboxCircleFill,
   RiPencilFill,
 } from 'react-icons/ri';
 import SubmittedDialogs from './dailogs/submittedDialog';
 import BuyerDialog from './dailogs/buyerDialog';
+import { useNavigate } from 'react-router-dom';
 
 const PropertyTitle = () => {
+  const navigate = useNavigate();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
   const [step, setStep] = useState(1);
@@ -245,6 +248,7 @@ const PropertyTitle = () => {
                     size='small'
                     startIcon={<RiPencilFill />}
                     className='edit-btn secondary-btn-small'
+                    onClick={() => navigate('/add-new-listing')}
                   >
                     Edit
                   </Button>
@@ -254,8 +258,9 @@ const PropertyTitle = () => {
                       size='large'
                       onClick={handleBuyerOpen}
                       className='primary-btn btn'
+                      startIcon={<RiAddFill size={18} />}
                     >
-                      +Add buyer
+                      Add buyer
                     </Button>
                     {/* <Button
                     variant='outlined'

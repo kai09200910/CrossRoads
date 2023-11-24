@@ -1,4 +1,5 @@
 import * as React from 'react';
+// import React, { useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,6 +9,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import {
   Box,
+  Button,
   Checkbox,
   FormControlLabel,
   IconButton,
@@ -59,7 +61,14 @@ const userColumns = [
     align: 'center',
   },
 ];
+// const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+// const handleDeleteOpen = () => {
+//   setIsDeleteDialogOpen(true);
+// };
 
+// const handleDeleteClose = () => {
+//   setIsDeleteDialogOpen(false);
+// };
 function createData(order, name, size, date, displayonsite, action) {
   return { order, name, size, date, displayonsite, action };
 }
@@ -178,7 +187,15 @@ const Row = SortableElement(({ data, ...other }) => {
           </Stack>
         </TableCell>
         <TableCell className='action'>
-          <RiDeleteBinLine size={24} />
+          {/* <RiDeleteBinLine size={24} /> */}
+          <Button
+            variant='outlined'
+            size='small'
+            className='icon-small-btn'
+            // onClick={handleDeleteOpen}
+          >
+            <RiDeleteBinLine size={20} />
+          </Button>{' '}
         </TableCell>
       </TableRow>
     </>
@@ -520,6 +537,10 @@ const MediavideosTable = ({ isAdmin }) => {
           </>
         )}
       </Box>
+      {/* <ConfirmationDialog
+        open={isDeleteDialogOpen}
+        handleClose={handleDeleteClose}
+      /> */}
     </>
   );
 };

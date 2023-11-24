@@ -1,4 +1,5 @@
 import * as React from 'react';
+// import React, { useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,6 +9,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import {
   Box,
+  Button,
   Checkbox,
   FormControlLabel,
   IconButton,
@@ -132,7 +134,15 @@ const Row = SortableElement(({ data, ...other }) => {
           </Stack>
         </TableCell>
         <TableCell className='action'>
-          <RiDeleteBinLine size={24} />
+          {/* <RiDeleteBinLine size={24} /> */}
+          <Button
+            variant='outlined'
+            size='small'
+            className='icon-small-btn'
+            // onClick={handleDeleteOpen}
+          >
+            <RiDeleteBinLine size={20} />
+          </Button>{' '}
         </TableCell>
       </TableRow>
     </>

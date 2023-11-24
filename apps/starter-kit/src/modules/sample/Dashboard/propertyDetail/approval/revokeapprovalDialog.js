@@ -31,7 +31,7 @@ const RevokeapprovalDialog = ({ open, handleClose }) => {
           <Button
             variant='outlined'
             size='large'
-            // onClick={handleBack}
+            onClick={handleClose}
             className='outline-btn btn'
           >
             Cancel
@@ -40,7 +40,7 @@ const RevokeapprovalDialog = ({ open, handleClose }) => {
             variant='contained'
             size='large'
             autoFocus
-            onClick={handleClose}
+            // onClick={handleClose}
             className='primary-btn btn'
           >
             Confirm

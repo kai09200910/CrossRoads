@@ -17,7 +17,12 @@ import {
   Switch,
   TextField,
 } from '@mui/material';
-import { RiArrowDownSLine, RiPencilFill, RiSearchLine } from 'react-icons/ri';
+import {
+  RiAddFill,
+  RiArrowDownSLine,
+  RiPencilFill,
+  RiSearchLine,
+} from 'react-icons/ri';
 import MatchingContacts from '../../common/matchingContacts';
 
 const BuyerDialog = ({ open, handleClose, step }) => {
@@ -45,8 +50,9 @@ const BuyerDialog = ({ open, handleClose, step }) => {
               variant='outlined'
               size='small'
               className='edit-btn secondary-btn-small'
+              startIcon={<RiAddFill size={18} />}
             >
-              +New buyer profile
+              New buyer profile
             </Button>
           </Stack>
         </DialogTitle>
