@@ -7,7 +7,7 @@ import {
   Grid,
   IconButton,
 } from '@mui/material';
-import { RiPencilFill } from 'react-icons/ri';
+import { RiAddFill, RiPencilFill } from 'react-icons/ri';
 
 function createData(name, size, submitted) {
   return { name, size, submitted };
@@ -57,8 +57,9 @@ const TransactionReport = () => {
           variant='contained'
           size='small'
           className='primary-btn-small secondary-btn'
+          startIcon={<RiAddFill size={16} />}
         >
-          + Add
+          Add
         </Button>
       </Stack>
       <Box

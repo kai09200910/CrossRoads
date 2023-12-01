@@ -38,7 +38,7 @@ const HgcassociateprofileTab = () => {
         <Grid container spacing={5} mt={3}>
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Employment type </label>
+              <label>Employment role </label>
               <Select
                 fullWidth
                 id='demo-simple-select'
@@ -46,12 +46,11 @@ const HgcassociateprofileTab = () => {
                 placeholder='Select Employment type '
                 IconComponent={RiArrowDownSLine}
               >
-                <MenuItem value={10}>Employment type 1 </MenuItem>
+                <MenuItem value={10}>appraiser </MenuItem>
                 <MenuItem value={20}>Employment type 2 </MenuItem>
-                <MenuItem value={30}>Employment type 3 </MenuItem>
-                <MenuItem value={40}>Employment type 4 </MenuItem>
-                <MenuItem value={50}>Employment type 5 </MenuItem>
-                <MenuItem value={60}>Employment type 6 </MenuItem>
+                <MenuItem value={30}>Admin </MenuItem>
+                <MenuItem value={40}>Agent </MenuItem>
+                <MenuItem value={50}>ETC </MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -157,7 +156,7 @@ const HgcassociateprofileTab = () => {
 
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Account Status </label>
+              <label>CR Account Status </label>
               <Select
                 fullWidth
                 id='demo-simple-select'

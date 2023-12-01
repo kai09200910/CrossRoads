@@ -14,6 +14,7 @@ import {
   RiArrowDownSLine,
   RiCheckboxCircleFill,
   RiAddCircleFill,
+  RiAddLine,
 } from 'react-icons/ri';
 import { FcGoogle } from 'react-icons/fc';
 import MatchingContacts from '../common/matchingContacts';
@@ -491,7 +492,15 @@ const ListingDetails = () => {
               className='secondary-btn btn add-location-btn '
               startIcon={<FcGoogle />}
             >
-              + Add Location
+              <Stack
+                direction='row'
+                justifyContent='center'
+                alignItems='center'
+                spacing={3}
+              >
+                <RiAddLine size={18} />
+                Add Location
+              </Stack>
             </Button>
           </Grid>
           <Grid item xs={12} md={8}>

@@ -119,6 +119,7 @@ const PropertyDetails = () => {
           </TabPanel>
           <TabPanel value={value} index={4} className='tab-content-wrap'>
             {isAdmin ? <Activity /> : <History />}
+            {/* <History /> */}
           </TabPanel>
         </Box>
       </Paper>

@@ -310,12 +310,12 @@ const BuyerprofileTab = () => {
                     name='row-radio-buttons-group'
                   >
                     <FormControlLabel
-                      value='female'
+                      value='owns'
                       control={<Radio />}
                       label='Owns  '
                     />
                     <FormControlLabel
-                      value='male'
+                      value='rents'
                       control={<Radio />}
                       label='Rents '
                     />
@@ -331,12 +331,12 @@ const BuyerprofileTab = () => {
                     name='row-radio-buttons-group'
                   >
                     <FormControlLabel
-                      value='female'
+                      value='Brokerage only'
                       control={<Radio />}
                       label='Brokerage only  '
                     />
                     <FormControlLabel
-                      value='male'
+                      value='MLS'
                       control={<Radio />}
                       label='MLS '
                     />

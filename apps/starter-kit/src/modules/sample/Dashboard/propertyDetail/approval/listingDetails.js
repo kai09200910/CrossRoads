@@ -15,7 +15,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { RiPencilFill } from 'react-icons/ri';
+import { RiErrorWarningFill, RiPencilFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import ReviewResubmissionDialog from '../../../common/reviewresubmissionDialog';
 import SubmittedDialog from '../../../common/submittedDialog';
@@ -102,107 +102,133 @@ const ListingDetails = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
-                {/* empty state here */}
-                {rows.map((row, index) => (
-                  <TableRow
-                    className={
-                      row?.approval === false ? 'resubmitted-approval' : ''
-                    }
-                    key={row.name}
-                    sx={{
-                      '&:last-child td, &:last-child th': { border: 0 },
-                    }}
-                  >
-                    <TableCell
-                      component='th'
-                      scope='row'
-                      className='field-name'
+              {rows.length > 0 ? (
+                <TableBody>
+                  {rows.map((row, index) => (
+                    <TableRow
+                      className={
+                        row?.approval === false ? 'resubmitted-approval' : ''
+                      }
+                      key={row.name}
+                      sx={{
+                        '&:last-child td, &:last-child th': { border: 0 },
+                      }}
                     >
-                      {isEditClicked !== row?.name && (
-                        <Stack
-                          direction='row'
-                          justifyContent='flex-start'
-                          alignItems='center'
-                          spacing={2}
-                        >
-                          {row?.approval ? (
-                            <Typography className='main-name'>
-                              {row.name}
-                            </Typography>
-                          ) : (
-                            <Link
-                              className='resubmition-btn'
-                              onClick={() => setIsSubmitted(true)}
-                            >
-                              {' '}
-                              {row.name}{' '}
-                            </Link>
-                          )}
-                          <IconButton
-                            aria-label='edit'
-                            disableRipple
-                            onClick={() => {
-                              setIsEditClicked(row?.name);
-                            }}
+                      <TableCell
+                        component='th'
+                        scope='row'
+                        className='field-name'
+                      >
+                        {isEditClicked !== row?.name && (
+                          <Stack
+                            direction='row'
+                            justifyContent='flex-start'
+                            alignItems='center'
+                            spacing={2}
                           >
-                            <RiPencilFill size={14} />
-                          </IconButton>
-                        </Stack>
-                      )}
-                      {isEditClicked === row?.name && (
-                        <Stack
-                          direction='row'
-                          justifyContent='flex-start'
-                          alignItems='center'
-                          spacing={2}
-                        >
-                          <TextField
-                            fullWidth
-                            id='outlined-basic'
-                            label=''
-                            variant='outlined'
-                            placeholder='First Name'
-                            size='small'
-                            className='small-input'
-                            value={row?.name}
-                          />
-                        </Stack>
-                      )}
-
-                      <Typography variant='body1' component='p'>
-                        {row.namelabel}
-                      </Typography>
-                    </TableCell>
-                    <TableCell align='left'>
-                      {' '}
-                      {row?.approval ? (
-                        <FormControlLabel
-                          control={
-                            <Switch
-                              sx={{ m: 1 }}
-                              className='ios-switch-custom small'
-                              focusVisibleClassName='.Mui-focusVisible'
+                            {row?.approval ? (
+                              <Typography className='main-name'>
+                                {row.name}
+                              </Typography>
+                            ) : (
+                              <Link
+                                className='resubmition-btn'
+                                onClick={() => setIsSubmitted(true)}
+                              >
+                                {' '}
+                                {row.name}{' '}
+                              </Link>
+                            )}
+                            <IconButton
+                              aria-label='edit'
                               disableRipple
-                              defaultChecked
+                              onClick={() => {
+                                setIsEditClicked(row?.name);
+                              }}
+                            >
+                              <RiPencilFill size={14} />
+                            </IconButton>
+                          </Stack>
+                        )}
+                        {isEditClicked === row?.name && (
+                          <Stack
+                            direction='row'
+                            justifyContent='flex-start'
+                            alignItems='center'
+                            spacing={2}
+                          >
+                            <TextField
+                              fullWidth
+                              id='outlined-basic'
+                              label=''
+                              variant='outlined'
+                              placeholder='First Name'
+                              size='small'
+                              className='small-input'
+                              value={row?.name}
                             />
-                          }
-                          label=''
-                        />
-                      ) : (
-                        <Box
-                          variant='div'
-                          component='div'
-                          align='center'
-                          className='note-label'
-                        >
-                          RESUBMITTED NEEDS APPROVAL
-                        </Box>
-                      )}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
+                          </Stack>
+                        )}
+
+                        <Typography variant='body1' component='p'>
+                          {row.namelabel}
+                        </Typography>
+                      </TableCell>
+                      <TableCell align='left'>
+                        {' '}
+                        {row?.approval ? (
+                          <FormControlLabel
+                            control={
+                              <Switch
+                                sx={{ m: 1 }}
+                                className='ios-switch-custom small'
+                                focusVisibleClassName='.Mui-focusVisible'
+                                disableRipple
+                                defaultChecked
+                              />
+                            }
+                            label=''
+                          />
+                        ) : (
+                          <Box
+                            variant='div'
+                            component='div'
+                            align='center'
+                            className='note-label'
+                          >
+                            RESUBMITTED NEEDS APPROVAL
+                          </Box>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              ) : (
+                <Box
+                  variant='div'
+                  component='div'
+                  className='table-empty-state'
+                >
+                  <Stack
+                    direction='column'
+                    justifyContent='center'
+                    alignItems='center'
+                    spacing={1}
+                    sx={{
+                      paddingBottom: { xs: 2, xl: 2 },
+                    }}
+                    className=''
+                  >
+                    <RiErrorWarningFill size={25} />
+                    <Typography gutterBottom variant='p' component='p'>
+                      No listing detail submitted yet,
+                    </Typography>
+                    <Typography gutterBottom variant='p' component='p'>
+                      all submitted details will appear here.
+                    </Typography>
+                  </Stack>
+                </Box>
+              )}
             </Table>
           </TableContainer>
         </Box>

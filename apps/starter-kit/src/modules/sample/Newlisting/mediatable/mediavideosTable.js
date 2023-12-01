@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 // import React, { useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -34,6 +34,12 @@ import {
   SortableElement,
   arrayMove,
 } from 'react-sortable-hoc';
+
+import { useDropzone } from 'react-dropzone';
+import UploadModern from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
+import FileRow from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
+import EmptyTable from './emptyTable';
+
 const adminColumns = [
   { id: 'name', label: 'Name', align: 'center' },
   { id: 'size', label: 'Size' },
@@ -537,10 +543,33 @@ const MediavideosTable = ({ isAdmin }) => {
           </>
         )}
       </Box>
-      {/* <ConfirmationDialog
-        open={isDeleteDialogOpen}
-        handleClose={handleDeleteClose}
-      /> */}
+    </>
+  );
+
+  const dropzone = useDropzone();
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+
+  return (
+    <>
+      <Stack
+        direction='row'
+        justifyContent='flex-end'
+        alignItems='flex-start'
+        spacing={1}
+        className='add-media-btn-wrapper'
+      >
+        <Typography
+          variant='body1'
+          component='span'
+          className='primary-btn-small secondary-btn'
+        >
+          <RiAddLine size={18} />
+          Add
+          <TextField type='file' className='upload'></TextField>
+        </Typography>
+      </Stack>
+
+      <EmptyTable />
     </>
   );
 };
