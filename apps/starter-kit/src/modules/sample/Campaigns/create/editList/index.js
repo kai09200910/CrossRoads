@@ -18,6 +18,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import SubmittedDialogs from '../submittedDialog';
 import { RiCheckboxBlankCircleFill, RiDeleteBinLine } from 'react-icons/ri';
+import ConfirmationDialog from '../../../common/confirmationDialog';
 
 function createData(name, click, email, phone, remove) {
   return { name, click, email, phone, remove };
@@ -39,6 +40,15 @@ const EditList = ({ setIsList }) => {
     setIsSubmitted(false);
   };
 
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const handleDeleteOpen = () => {
+    setIsDeleteDialogOpen(true);
+  };
+
+  const handleDeleteClose = () => {
+    setIsDeleteDialogOpen(false);
+  };
+
   const breadcrumbs = [
     <Link underline='hover' key='1' color='inherit' to='/campaigns'>
       Email Selection
@@ -55,11 +65,6 @@ const EditList = ({ setIsList }) => {
       Edit list
     </Typography>,
   ];
-
-  function handleClick(event) {
-    event.preventDefault();
-    console.info('You clicked a breadcrumb.');
-  }
 
   return (
     <>
@@ -148,6 +153,7 @@ const EditList = ({ setIsList }) => {
                               variant='outlined'
                               size='small'
                               className='icon-small-btn'
+                              onClick={handleDeleteOpen}
                             >
                               <RiDeleteBinLine size={20} />
                             </Button>{' '}
@@ -180,6 +186,11 @@ const EditList = ({ setIsList }) => {
         </Container>
       </Paper>
       <SubmittedDialogs open={isSubmitted} handleClose={handleClose} />
+
+      <ConfirmationDialog
+        open={isDeleteDialogOpen}
+        handleClose={handleDeleteClose}
+      />
     </>
   );
 };

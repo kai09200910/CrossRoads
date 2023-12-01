@@ -16,7 +16,7 @@ import {
   Stack,
   TextField,
 } from '@mui/material';
-import { RiArrowDownSLine } from 'react-icons/ri';
+import { RiAddFill, RiArrowDownSLine } from 'react-icons/ri';
 import InquiryinformationDialog from './inquiryinformationDialog';
 
 const AddeventDialog = ({ open, handleClose }) => {
@@ -155,8 +155,9 @@ const AddeventDialog = ({ open, handleClose }) => {
                   setIsSubmitted(true);
                   handleClose();
                 }}
+                startIcon={<RiAddFill size={18} />}
               >
-                +Add
+                Add
               </Button>
             </Stack>
           </DialogActions>

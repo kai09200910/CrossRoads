@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,6 +9,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import {
   Box,
+  Button,
   Checkbox,
   FormControlLabel,
   IconButton,
@@ -32,6 +34,12 @@ import {
   SortableElement,
   arrayMove,
 } from 'react-sortable-hoc';
+
+import { useDropzone } from 'react-dropzone';
+import UploadModern from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
+import FileRow from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
+import EmptyTable from './emptyTable';
+
 const adminColumns = [
   { id: 'name', label: 'Name', align: 'center' },
   { id: 'size', label: 'Size' },
@@ -59,7 +67,14 @@ const userColumns = [
     align: 'center',
   },
 ];
+// const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+// const handleDeleteOpen = () => {
+//   setIsDeleteDialogOpen(true);
+// };
 
+// const handleDeleteClose = () => {
+//   setIsDeleteDialogOpen(false);
+// };
 function createData(order, name, size, date, displayonsite, action) {
   return { order, name, size, date, displayonsite, action };
 }
@@ -178,7 +193,15 @@ const Row = SortableElement(({ data, ...other }) => {
           </Stack>
         </TableCell>
         <TableCell className='action'>
-          <RiDeleteBinLine size={24} />
+          {/* <RiDeleteBinLine size={24} /> */}
+          <Button
+            variant='outlined'
+            size='small'
+            className='icon-small-btn'
+            // onClick={handleDeleteOpen}
+          >
+            <RiDeleteBinLine size={20} />
+          </Button>{' '}
         </TableCell>
       </TableRow>
     </>
@@ -520,6 +543,33 @@ const MediavideosTable = ({ isAdmin }) => {
           </>
         )}
       </Box>
+    </>
+  );
+
+  const dropzone = useDropzone();
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+
+  return (
+    <>
+      <Stack
+        direction='row'
+        justifyContent='flex-end'
+        alignItems='flex-start'
+        spacing={1}
+        className='add-media-btn-wrapper'
+      >
+        <Typography
+          variant='body1'
+          component='span'
+          className='primary-btn-small secondary-btn'
+        >
+          <RiAddLine size={18} />
+          Add
+          <TextField type='file' className='upload'></TextField>
+        </Typography>
+      </Stack>
+
+      <EmptyTable />
     </>
   );
 };

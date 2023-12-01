@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box, Button, Paper, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const PropertyEngagement = () => {
+  const navigate = useNavigate();
   return (
     <Paper sx={{ marginTop: 5 }}>
       <Box
@@ -36,6 +38,7 @@ const PropertyEngagement = () => {
           size='large'
           className='primary-btn btn'
           sx={{ width: '100%' }}
+          onClick={() => navigate('/campaigns')}
         >
           View campaigns
         </Button>

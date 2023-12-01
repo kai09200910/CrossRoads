@@ -4,6 +4,7 @@ import '../campaigns.scss';
 import ReviewPhotos from './photo/review';
 import DragPhoto from './photo/drag';
 import EditList from './editList';
+import { RiAddFill } from 'react-icons/ri';
 
 const CreateCampaign = () => {
   const [isEditList, setIsList] = useState(false);
@@ -27,8 +28,9 @@ const CreateCampaign = () => {
           variant='outlined'
           size='small'
           className='edit-btn secondary-btn-small'
+          startIcon={<RiAddFill size={18} />}
         >
-          +New campaign
+          New campaign
         </Button>
       </Stack>
       {isEditList ? (

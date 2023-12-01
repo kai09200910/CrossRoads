@@ -33,12 +33,13 @@ const Documents = () => {
     setIsSubmitted(false);
   };
 
-  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
-  const handleBuyerOpen = () => {
-    setIsBuyerDialogOpen(true);
+  const [isRevokeapprovalDialogOpen, setIsRevokeapprovalDialogOpen] =
+    useState(false);
+  const handleRevokeapprovalOpen = () => {
+    setIsRevokeapprovalDialogOpen(true);
   };
-  const handleBuyerClose = () => {
-    setIsBuyerDialogOpen(false);
+  const handleRevokeapprovalClose = () => {
+    setIsRevokeapprovalDialogOpen(false);
   };
   return (
     <>
@@ -170,7 +171,7 @@ const Documents = () => {
           <Button
             variant='contained'
             size='large'
-            onClick={handleBuyerOpen}
+            onClick={handleRevokeapprovalOpen}
             className='primary-btn btn'
           >
             Revoke approval
@@ -180,8 +181,8 @@ const Documents = () => {
       <DisapprovalDialog open={isSubmitted} handleClose={handleClose} />
 
       <RevokeapprovalDialog
-        open={isBuyerDialogOpen}
-        handleClose={handleBuyerClose}
+        open={isRevokeapprovalDialogOpen}
+        handleClose={handleRevokeapprovalClose}
       />
     </>
   );

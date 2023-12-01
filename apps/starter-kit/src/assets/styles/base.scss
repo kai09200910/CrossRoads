@@ -251,6 +251,9 @@ a {
   height: 30px;
   border-radius: 3px;
 }
+span.MuiButton-startIcon {
+  margin-right: 4px;
+}
 .green-btn {
   background-color: #c2eade !important;
   color: #007653 !important;
@@ -555,8 +558,8 @@ h4 {
         gap: 12px;
       }
       button {
-        @media (max-width: 374px) {
-          margin: 0;
+        @media (max-width: 767px) {
+          margin-top: 0 !important;
         }
       }
     }
@@ -847,7 +850,7 @@ header {
           td.action {
             text-align: center;
             svg {
-              color: #b0b0b0;
+              // color: #b0b0b0;
             }
           }
         }
@@ -1252,3 +1255,10 @@ header {
   }
 }
 // Editable text field Styles END //
+
+.notification-block {
+  .MuiMenu-paper {
+    height: calc(100vh - 50%);
+    overflow-y: auto;
+  }
+}

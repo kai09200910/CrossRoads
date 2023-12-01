@@ -4,7 +4,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { RiArrowDownSLine } from 'react-icons/ri';
+import { RiAddFill, RiArrowDownSLine } from 'react-icons/ri';
 import SingleFamilyIcon from '../../../../../assets/icon/property-overview/single-family.svg';
 import BedroomIcon from '../../../../../assets/icon/property-overview/Bedroom.svg';
 import BathroomIcon from '../../../../../assets/icon/property-overview/bathroom.svg';
@@ -168,8 +168,9 @@ const Overview = () => {
               variant='contained'
               size='large'
               className='primary-btn btn'
+              startIcon={<RiAddFill size={18} />}
             >
-              +Add
+              Add
             </Button>
           </Stack>
         </Grid>

@@ -191,7 +191,7 @@ const UpdatesList = () => {
                         component='p'
                         className='listing-number'
                       >
-                        {row.listing}
+                        <Link to='/dashboard'>{row.listing}</Link>
                       </Typography>
                     </TableCell>
                     <TableCell align='left'>

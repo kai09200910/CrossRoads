@@ -17,8 +17,15 @@ import {
   Switch,
   TextField,
 } from '@mui/material';
-import { RiArrowDownSLine, RiPencilFill, RiSearchLine } from 'react-icons/ri';
+import {
+  RiAddFill,
+  RiArrowDownSLine,
+  RiPencilFill,
+  RiSearchLine,
+} from 'react-icons/ri';
 import MatchingContacts from '../../common/matchingContacts';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const BuyerDialog = ({ open, handleClose, step }) => {
   return (
@@ -45,8 +52,9 @@ const BuyerDialog = ({ open, handleClose, step }) => {
               variant='outlined'
               size='small'
               className='edit-btn secondary-btn-small'
+              startIcon={<RiAddFill size={18} />}
             >
-              +New buyer profile
+              New buyer profile
             </Button>
           </Stack>
         </DialogTitle>
@@ -136,7 +144,10 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                 <Grid item xs={12} md={6}>
                   <Box variant='div' component='div'>
                     <label>Under contract date </label>
-                    <Select
+                    <DemoContainer components={['DatePicker']}>
+                      <DatePicker sx={{ width: '100%' }} />
+                    </DemoContainer>
+                    {/* <Select
                       fullWidth
                       id='demo-simple-select'
                       label=''
@@ -146,24 +157,16 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                       <MenuItem value={10}>Ten</MenuItem>
                       <MenuItem value={20}>Twenty</MenuItem>
                       <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
+                    </Select> */}
                   </Box>
                 </Grid>
 
                 <Grid item xs={12} md={6}>
                   <Box variant='div' component='div'>
                     <label>Date sold </label>
-                    <Select
-                      fullWidth
-                      id='demo-simple-select'
-                      label=''
-                      placeholder='Select'
-                      IconComponent={RiArrowDownSLine}
-                    >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
+                    <DemoContainer components={['DatePicker']}>
+                      <DatePicker sx={{ width: '100%' }} />
+                    </DemoContainer>
                   </Box>
                 </Grid>
               </Grid>
@@ -289,34 +292,18 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                   <Grid item xs={12} md={6}>
                     <Box variant='div' component='div'>
                       <label>Under contract date </label>
-                      <Select
-                        fullWidth
-                        id='demo-simple-select'
-                        label=''
-                        placeholder='Select'
-                        IconComponent={RiArrowDownSLine}
-                      >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                      </Select>
+                      <DemoContainer components={['DatePicker']}>
+                        <DatePicker sx={{ width: '100%' }} />
+                      </DemoContainer>
                     </Box>
                   </Grid>
 
                   <Grid item xs={12} md={6}>
                     <Box variant='div' component='div'>
                       <label>Date sold </label>
-                      <Select
-                        fullWidth
-                        id='demo-simple-select'
-                        label=''
-                        placeholder='Select'
-                        IconComponent={RiArrowDownSLine}
-                      >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                      </Select>
+                      <DemoContainer components={['DatePicker']}>
+                        <DatePicker sx={{ width: '100%' }} />
+                      </DemoContainer>
                     </Box>
                   </Grid>
                 </Grid>
@@ -376,7 +363,35 @@ const BuyerDialog = ({ open, handleClose, step }) => {
             </Box>
           )}
         </DialogContent>
-        <DialogActions className='modal-dailog-footer'></DialogActions>
+        <DialogActions className='modal-dailog-footer'>
+          <Stack
+            direction='row'
+            justifyContent='flex-end'
+            alignItems='center'
+            spacing={2}
+            sx={{
+              padding: { xs: 3, sm: 6, xl: 6 },
+            }}
+          >
+            <Button
+              variant='outlined'
+              size='large'
+              className='outline-btn btn'
+              onClick={handleClose}
+            >
+              Close
+            </Button>
+            <Button
+              variant='contained'
+              size='large'
+              autoFocus
+              className='primary-btn btn'
+              startIcon={<RiAddFill size={18} />}
+            >
+              Add
+            </Button>
+          </Stack>
+        </DialogActions>
       </Dialog>
     </div>
   );

@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import AddeventDialog from '../../dailogs/addeventDialog';
 import EventviewDialog from '../../dailogs/eventviewDialog';
+import { RiAddFill } from 'react-icons/ri';
 
 function createData(name, date, time, action) {
   return { name, date, time, action };
@@ -117,8 +118,9 @@ const Events = ({ handleBack }) => {
             size='large'
             onClick={() => setIsSubmitted(true)}
             className='primary-btn btn'
+            startIcon={<RiAddFill size={18} />}
           >
-            +New Event
+            New Event
           </Button>
         </Stack>
       </Box>

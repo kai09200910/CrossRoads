@@ -98,6 +98,7 @@ const ContactDetails = () => {
           direction='row'
           justifyContent='space-between'
           alignItems='center'
+          flexWrap='wrap'
           sx={{
             paddingBottom: { xs: 4, xl: 4 },
             paddingTop: { xs: 5, xl: 5 },
@@ -109,6 +110,7 @@ const ContactDetails = () => {
             alignItems='center'
             spacing={2}
             className='main-title'
+            flexWrap='wrap'
           >
             <Typography variant='h3' component='h3'>
               Contact Details
@@ -130,6 +132,7 @@ const ContactDetails = () => {
             direction='row'
             justifyContent='flex-start'
             alignItems='center'
+            flexWrap='wrap'
             spacing={2}
             className='btn-group'
           >
@@ -175,7 +178,7 @@ const ContactDetails = () => {
             </Link> */}
             <Button
               onClick={handleEmailButtonClick}
-              className='dwnload-btn btn green-btn'
+              className='custom-btn btn green-btn'
             >
               <RiMailLine size={20} />
               Send Email

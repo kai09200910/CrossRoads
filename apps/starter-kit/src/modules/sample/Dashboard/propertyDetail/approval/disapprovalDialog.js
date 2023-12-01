@@ -17,13 +17,23 @@ import FileRow from '../../../../../../../../libs/modules/src/lib/thirdParty/rea
 import AppList from '@crema/components/AppList';
 import { useDropzone } from 'react-dropzone';
 import { RiDeleteBinLine } from 'react-icons/ri';
+import ConfirmationDialog from '../../../common/confirmationDialog';
 
 const DisapprovalDialog = ({ open, handleClose }) => {
   const dropzone = useDropzone();
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const handleDeleteOpen = () => {
+    setIsDeleteDialogOpen(true);
+  };
+
+  const handleDeleteClose = () => {
+    setIsDeleteDialogOpen(false);
+  };
+
   return (
-    <div>
+    <>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -130,9 +140,17 @@ const DisapprovalDialog = ({ open, handleClose }) => {
                         </TableCell>
                         <TableCell align='left'>2.6 kb</TableCell>
                         <TableCell align='left'>
-                          <IconButton aria-label='edit' disableRipple>
+                          {/* <IconButton aria-label='edit' disableRipple>
                             <RiDeleteBinLine size={20} />
-                          </IconButton>
+                          </IconButton> */}
+                          <Button
+                            variant='outlined'
+                            size='small'
+                            className='icon-small-btn'
+                            onClick={handleDeleteOpen}
+                          >
+                            <RiDeleteBinLine size={20} />
+                          </Button>{' '}
                         </TableCell>
                       </TableRow>
                     </TableBody>
@@ -155,7 +173,11 @@ const DisapprovalDialog = ({ open, handleClose }) => {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+      <ConfirmationDialog
+        open={isDeleteDialogOpen}
+        handleClose={handleDeleteClose}
+      />
+    </>
   );
 };
 

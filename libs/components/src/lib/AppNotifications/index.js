@@ -15,6 +15,9 @@ const options = [
   'Listing admin has request an update of documents for your listing',
   'Listing admin has request an update of documents for your listing',
   'Listing admin has request an update of documents for your listing',
+  'Listing admin has request an update of documents for your listing',
+  'Listing admin has request an update of documents for your listing',
+  'Listing admin has request an update of documents for your listing',
 ];
 
 const ITEM_HEIGHT = 350;
@@ -60,6 +63,7 @@ const Notifications = () => {
             width: '56ch',
           },
         }}
+        className='notification-block'
       >
         {options.map((option) => (
           <MenuItem

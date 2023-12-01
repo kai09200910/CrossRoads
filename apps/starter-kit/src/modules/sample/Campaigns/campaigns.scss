@@ -165,6 +165,9 @@
             width: 48%;
             height: 40px;
           }
+          @media (max-width: 374px) {
+            font-size: 12px;
+          }
         }
         button.MuiButton-outlinedPrimary {
           @media (max-width: 767px) {
