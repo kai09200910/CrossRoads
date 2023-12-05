@@ -39,7 +39,7 @@ const ReviewResubmissionDialog = ({
             ? 'Review Update'
             : isdisapproved
             ? 'Disapproval Feedback'
-            : 'Review resubmission'}
+            : 'Review Resubmission'}
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
           {isdisapproved ? (

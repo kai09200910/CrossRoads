@@ -20,6 +20,9 @@ const PropertyDetails = () => {
   const [personName, setPersonName] = React.useState([]);
   const [person, setPerson] = React.useState([]);
 
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
+
   return (
     <>
       <Box variant='div' component='div' className='propery-detial-form'>
@@ -109,10 +112,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Water
+                  </MenuItem>
                   <MenuItem value={10}>Water 1</MenuItem>
                   <MenuItem value={20}>Water 2</MenuItem>
                   <MenuItem value={30}>Water 3 </MenuItem>
@@ -127,10 +143,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Sewer
+                  </MenuItem>
                   <MenuItem value={10}>Sewer 1</MenuItem>
                   <MenuItem value={20}>Sewer 2</MenuItem>
                   <MenuItem value={30}>Sewer 3</MenuItem>
@@ -144,10 +173,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Parking
+                  </MenuItem>
                   <MenuItem value={10}>Parking 1</MenuItem>
                   <MenuItem value={20}>Parking 2</MenuItem>
                   <MenuItem value={30}>Parking 3</MenuItem>
@@ -202,10 +244,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Appointments
+                  </MenuItem>
                   <MenuItem value={10}>Appointments 1</MenuItem>
                   <MenuItem value={20}>Appointments 2</MenuItem>
                   <MenuItem value={30}>Appointments 3</MenuItem>
@@ -220,10 +275,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Occupancy
+                  </MenuItem>
                   <MenuItem value={10}>Occupancy 1</MenuItem>
                   <MenuItem value={20}>Occupancy 2</MenuItem>
                   <MenuItem value={30}>Occupancy 3</MenuItem>
@@ -239,10 +307,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Style
+                  </MenuItem>
                   <MenuItem value={10}>Style 1</MenuItem>
                   <MenuItem value={20}>Style 2</MenuItem>
                   <MenuItem value={30}>Style 3</MenuItem>
@@ -257,10 +338,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Stories
+                  </MenuItem>
                   <MenuItem value={10}>2 Stories</MenuItem>
                   <MenuItem value={20}>3 Stories</MenuItem>
                   <MenuItem value={30}>4 Stories</MenuItem>
@@ -279,10 +373,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Construction
+                  </MenuItem>
                   <MenuItem value={10}>Construction 1</MenuItem>
                   <MenuItem value={20}>Construction 2</MenuItem>
                   <MenuItem value={30}>Construction 3</MenuItem>
@@ -297,10 +404,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select Agent'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Exterior Finish
+                  </MenuItem>
                   <MenuItem value={10}>Exterior Finish 7</MenuItem>
                   <MenuItem value={20}>Exterior Finish 8</MenuItem>
                   <MenuItem value={30}>Exterior Finish 9</MenuItem>
@@ -316,10 +436,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Air conditioning
+                  </MenuItem>
                   <MenuItem value={10}>Air conditioning 2</MenuItem>
                   <MenuItem value={20}>Air conditioning 3</MenuItem>
                   <MenuItem value={30}>Air conditioning 4</MenuItem>
@@ -334,10 +467,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select Agent'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Fee Includes
+                  </MenuItem>
                   <MenuItem value={10}>Yes</MenuItem>
                   <MenuItem value={20}>No</MenuItem>
                 </Select>
@@ -432,10 +578,23 @@ const PropertyDetails = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Built Year
+                  </MenuItem>
                   <MenuItem value={10}>2015</MenuItem>
                   <MenuItem value={20}>2016</MenuItem>
                   <MenuItem value={30}>2017</MenuItem>
@@ -493,7 +652,7 @@ const PropertyDetails = () => {
             <Grid item xs={12} md={12}>
               <Box variant='div' component='div'>
                 <label>
-                  Driving Directions{' '}
+                  Driving directions{' '}
                   <Typography
                     variant='body1'
                     component='span'

@@ -35,7 +35,7 @@ const SubmittedDialog = ({ open, handleClose }) => {
             onClick={handleClose}
             className='primary-btn btn'
           >
-            Got it!
+            Close
           </Button>
         </DialogActions>
       </Dialog>

@@ -24,6 +24,9 @@ const Filters = () => {
   const handleaddcontactClose = () => {
     setIsAddcontact(false);
   };
+
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   return (
     <>
       <Box variant='div' component='div' className='contact-fillter'>
@@ -48,10 +51,23 @@ const Filters = () => {
                     <Select
                       fullWidth
                       id='contact-type-select-menu'
-                      label=''
-                      placeholder='Select '
+                      value={value}
+                      defaultValue='none'
+                      onChange={(e) => setValue(e.target.value)}
+                      onFocus={(e) => setShowPlaceholder(false)}
+                      onClose={(e) =>
+                        setShowPlaceholder(e.target.value === undefined)
+                      }
                       IconComponent={RiArrowDownSLine}
                     >
+                      <MenuItem
+                        key='0'
+                        disabled
+                        value='none'
+                        className='place-holder'
+                      >
+                        Select Contact Type
+                      </MenuItem>
                       <MenuItem value={10}>Buyer</MenuItem>
                       <MenuItem value={20}>Seller </MenuItem>
                       <MenuItem value={30}>Renter </MenuItem>
@@ -89,10 +105,23 @@ const Filters = () => {
                     <Select
                       fullWidth
                       id='agent-select-menu'
-                      label=''
-                      placeholder='Select agent(s)'
+                      value={value}
+                      defaultValue='none'
+                      onChange={(e) => setValue(e.target.value)}
+                      onFocus={(e) => setShowPlaceholder(false)}
+                      onClose={(e) =>
+                        setShowPlaceholder(e.target.value === undefined)
+                      }
                       IconComponent={RiArrowDownSLine}
                     >
+                      <MenuItem
+                        key='0'
+                        disabled
+                        value='none'
+                        className='place-holder'
+                      >
+                        Select Agent
+                      </MenuItem>
                       <MenuItem value={10}>Agent Name </MenuItem>
                       <MenuItem value={20}>Agent Name 1</MenuItem>
                       <MenuItem value={30}>Agent Name 2 </MenuItem>
@@ -145,7 +174,7 @@ const Filters = () => {
           >
             <Button
               variant='contained'
-              endIcon={<RiAddLine />}
+              startIcon={<RiAddLine />}
               className='add-btn primary-btn btn green-btn'
               onClick={() => setIsAddcontact(true)}
             >
@@ -157,14 +186,14 @@ const Filters = () => {
               component='span'
               className='primary-btn-small upld-btn secondary-btn purple-btn'
             >
-              Upload
               <RiUpload2Line size={20} />
+              Upload
               <TextField type='file' className='upload'></TextField>
             </Typography>
 
             <Button
               variant='contained'
-              endIcon={<RiDownload2Line />}
+              startIcon={<RiDownload2Line />}
               className='dwnload-btn primary-btn btn blue-btn'
             >
               Download

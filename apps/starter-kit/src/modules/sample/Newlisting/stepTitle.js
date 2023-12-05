@@ -23,14 +23,14 @@ const Steptitle = ({
   setPersonName,
 }) => {
   const names = [
-    'Agent 1',
-    'Agent 2',
-    'Agent 3',
-    'Agent 4',
-    'Agent 5',
-    'Agent 6',
-    'Agent 7',
-    'Agent 8',
+    'Agent Name 1',
+    'Agent Name 2',
+    'Agent Name 3',
+    'Agent Name 4',
+    'Agent Name 5',
+    'Agent Name 6',
+    'Agent Name 7',
+    'Agent Name 8',
   ];
 
   const handleChange = (event) => {

@@ -145,7 +145,9 @@ const EditList = ({ setIsList }) => {
                               {row.click}
                             </Typography>
                           </TableCell>
-                          <TableCell align='left'>{row.email}</TableCell>
+                          <TableCell align='left'>
+                            <a href=''>{row.email}</a>
+                          </TableCell>
                           <TableCell align='left'>{row.phone}</TableCell>
                           <TableCell align='center'>
                             {' '}

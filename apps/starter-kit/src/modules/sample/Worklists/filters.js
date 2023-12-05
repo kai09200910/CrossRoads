@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -12,6 +12,8 @@ import {
 import { RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
 
 const Filters = () => {
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   return (
     <>
       <Box variant='div' component='div' className='worklist-fillter'>
@@ -48,10 +50,23 @@ const Filters = () => {
                 <Select
                   fullWidth
                   id='demo-simple-select'
-                  label=''
-                  placeholder='Select users'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select User name
+                  </MenuItem>
                   <MenuItem value={10}> User Name </MenuItem>
                   <MenuItem value={20}>User Name 1</MenuItem>
                   <MenuItem value={30}>User Name 2 </MenuItem>

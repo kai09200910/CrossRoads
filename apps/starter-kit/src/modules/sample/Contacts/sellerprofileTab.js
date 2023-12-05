@@ -18,6 +18,9 @@ const SellerprofileTab = () => {
   const [activebed, setActivebed] = useState('');
   const [activebath, setActivebath] = useState('');
 
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
+
   return (
     <>
       <Box className='personalinfo-tab'>
@@ -84,10 +87,23 @@ const SellerprofileTab = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Property type
+                </MenuItem>
                 <MenuItem value={10}>MLS Exclusive</MenuItem>
                 <MenuItem value={20}>General </MenuItem>
                 <MenuItem value={30}>Exclusive (not on MLS) </MenuItem>
@@ -279,10 +295,23 @@ const SellerprofileTab = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Lot acreage
+                </MenuItem>
                 <MenuItem value={10}>Lot acreage 123</MenuItem>
                 <MenuItem value={20}>Lot acreage 456</MenuItem>
                 <MenuItem value={30}>Lot acreage 789</MenuItem>
@@ -325,10 +354,23 @@ const SellerprofileTab = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select People
+                </MenuItem>
                 <MenuItem value={10}>5 People</MenuItem>
                 <MenuItem value={20}>10 People</MenuItem>
                 <MenuItem value={30}>15 People</MenuItem>
@@ -340,9 +382,9 @@ const SellerprofileTab = () => {
         </Grid>
 
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={12}>
             <Grid container spacing={5}>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={4} md={4}>
                 <Box variant='div' component='div'>
                   <label>This contact currently: </label>
                   <RadioGroup
@@ -363,7 +405,7 @@ const SellerprofileTab = () => {
                   </RadioGroup>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={4} md={4}>
                 <Box variant='div' component='div'>
                   <label>Brokerage: </label>
                   <RadioGroup
@@ -384,7 +426,7 @@ const SellerprofileTab = () => {
                   </RadioGroup>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={4} md={4}>
                 <Box variant='div' component='div'>
                   <label>Pets allowed?</label>
                   <RadioGroup
@@ -405,7 +447,7 @@ const SellerprofileTab = () => {
                   </RadioGroup>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={4} md={4}>
                 <Box variant='div' component='div'>
                   <label>Children allowed? </label>
                   <RadioGroup
