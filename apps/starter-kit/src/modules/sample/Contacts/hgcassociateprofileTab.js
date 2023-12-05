@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   FormControlLabel,
@@ -14,6 +14,8 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const HgcassociateprofileTab = () => {
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   return (
     <>
       <Box className='genral-tab'>
@@ -42,10 +44,23 @@ const HgcassociateprofileTab = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select Employment type '
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Employment role
+                </MenuItem>
                 <MenuItem value={10}>appraiser </MenuItem>
                 <MenuItem value={20}>Employment type 2 </MenuItem>
                 <MenuItem value={30}>Admin </MenuItem>
@@ -60,10 +75,23 @@ const HgcassociateprofileTab = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select Supervisor '
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Supervisor
+                </MenuItem>
                 <MenuItem value={10}>Supervisor 1</MenuItem>
                 <MenuItem value={20}>Supervisor 2</MenuItem>
                 <MenuItem value={30}>Supervisor 3</MenuItem>
@@ -80,10 +108,23 @@ const HgcassociateprofileTab = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select Gender '
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Gender
+                </MenuItem>
                 <MenuItem value={10}>Male</MenuItem>
                 <MenuItem value={20}>Female </MenuItem>
                 <MenuItem value={30}>Others </MenuItem>
@@ -96,10 +137,23 @@ const HgcassociateprofileTab = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select NIB Number '
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select NIB Number
+                </MenuItem>
                 <MenuItem value={10}>NIB Number 12</MenuItem>
                 <MenuItem value={20}>NIB Number 23</MenuItem>
                 <MenuItem value={30}>NIB Number 34</MenuItem>
@@ -160,10 +214,23 @@ const HgcassociateprofileTab = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select Account Status'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Account Status
+                </MenuItem>
                 <MenuItem value={10}>Account Status 1</MenuItem>
                 <MenuItem value={20}>Account Status 2</MenuItem>
                 <MenuItem value={30}>Account Status 3</MenuItem>
@@ -180,10 +247,23 @@ const HgcassociateprofileTab = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select Agent'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Employment status
+                </MenuItem>
                 <MenuItem value={10}>Employment status 1</MenuItem>
                 <MenuItem value={20}>Employment status 2</MenuItem>
                 <MenuItem value={30}>Employment status 3</MenuItem>

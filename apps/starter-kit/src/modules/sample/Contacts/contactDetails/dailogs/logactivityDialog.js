@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -15,6 +15,9 @@ import {
 import { RiArrowDownSLine } from 'react-icons/ri';
 
 const LogactivityDialog = ({ open, handleClose }) => {
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
+
   return (
     <div>
       <Dialog
@@ -48,10 +51,23 @@ const LogactivityDialog = ({ open, handleClose }) => {
                     <Select
                       fullWidth
                       id='demo-simple-select'
-                      label=''
-                      placeholder='Select activity '
+                      value={value}
+                      defaultValue='none'
+                      onChange={(e) => setValue(e.target.value)}
+                      onFocus={(e) => setShowPlaceholder(false)}
+                      onClose={(e) =>
+                        setShowPlaceholder(e.target.value === undefined)
+                      }
                       IconComponent={RiArrowDownSLine}
                     >
+                      <MenuItem
+                        key='0'
+                        disabled
+                        value='none'
+                        className='place-holder'
+                      >
+                        Select Activity type
+                      </MenuItem>
                       <MenuItem value={10}>Email sent </MenuItem>
                       <MenuItem value={20}>Spoke with client </MenuItem>
                       <MenuItem value={10}>Left voicemail </MenuItem>

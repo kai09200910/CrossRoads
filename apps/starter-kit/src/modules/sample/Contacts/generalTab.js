@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Switch,
@@ -38,7 +38,8 @@ const GeneralTab = () => {
     } = event;
     setPersonName(typeof value === 'string' ? value.split(',') : value);
   };
-
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   return (
     <>
       <Box className='genral-tab'>
@@ -190,10 +191,23 @@ const GeneralTab = () => {
               <Select
                 fullWidth
                 id='primary-agent'
-                label=''
-                placeholder='Select Agent'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Primary Agent
+                </MenuItem>
                 <MenuItem value={10}>Primary Agent 1</MenuItem>
                 <MenuItem value={20}>Primary Agent 2</MenuItem>
                 <MenuItem value={30}>Primary Agent 3</MenuItem>
@@ -219,10 +233,23 @@ const GeneralTab = () => {
               <Select
                 fullWidth
                 id='secondary-agent'
-                label=''
-                placeholder='Select Agent'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Secondary Agent
+                </MenuItem>
                 <MenuItem value={10}>Secondary Agent 1</MenuItem>
                 <MenuItem value={20}>Secondary Agent 2</MenuItem>
                 <MenuItem value={30}>Secondary Agent 3</MenuItem>

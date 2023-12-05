@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Checkbox, FormControlLabel } from '@mui/material';
+import { Box, Checkbox, FormControlLabel, Stack } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -26,26 +26,39 @@ const MatchingContacts = () => {
               <TableCell align=''>Email</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{
-                  '&:last-child td, &:last-child th': { border: 0 },
-                }}
+          {rows.length > 0 ? (
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow
+                  key={row.name}
+                  sx={{
+                    '&:last-child td, &:last-child th': { border: 0 },
+                  }}
+                >
+                  <TableCell>
+                    <FormControlLabel
+                      control={<Checkbox defaultChecked />}
+                      label=''
+                    />
+                  </TableCell>
+                  <TableCell>{row.name}</TableCell>
+                  <TableCell align=''>{row.match}</TableCell>
+                  <TableCell align=''>{row.email}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          ) : (
+            <Box variant='div' component='div' className='table-empty-state'>
+              <Stack
+                direction='row'
+                justifyContent='center'
+                alignItems='center'
+                spacing={2}
               >
-                <TableCell>
-                  <FormControlLabel
-                    control={<Checkbox defaultChecked />}
-                    label=''
-                  />
-                </TableCell>
-                <TableCell>{row.name}</TableCell>
-                <TableCell align=''>{row.match}</TableCell>
-                <TableCell align=''>{row.email}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
+                No matching contacts
+              </Stack>
+            </Box>
+          )}
         </Table>
       </TableContainer>
     </Box>

@@ -48,28 +48,12 @@ const KycdocumentsDialog = ({ open, handleClose }) => {
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
           <Grid container spacing={5}>
+            {/* <Grid item xs={12} md={12}></Grid> */}
             <Grid item xs={12} md={12}>
-              <Box sx={{ position: 'relative' }} className='custome-dropzone'>
-                <UploadModern
-                  uploadText='Re-upload  corrected document if applicable '
-                  dropzone={dropzone}
-                />
-                <aside className='upload-doc-info'>
-                  <AppList
-                    data={uploadedFiles}
-                    renderRow={(file, index) => (
-                      <FileRow
-                        key={index + file.path}
-                        file={file}
-                        onDeleteUploadFile={onDeleteUploadFile}
-                      />
-                    )}
-                  />
-                </aside>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={12}>
-              <Box sx={{ position: 'relative' }} className='document-list'>
+              <Box
+                sx={{ position: 'relative' }}
+                className='document-list kyc-document-list '
+              >
                 <TableContainer className='table-wrapper'>
                   <Table sx={{ minWidth: 400 }} aria-label='simple table'>
                     <TableHead>
@@ -86,32 +70,62 @@ const KycdocumentsDialog = ({ open, handleClose }) => {
                         ></TableCell>
                       </TableRow>
                     </TableHead>
-                    <TableBody>
-                      {rows.map((row) => (
-                        <TableRow
-                          key={row.name}
-                          sx={{
-                            '&:last-child td, &:last-child th': { border: 0 },
-                          }}
-                        >
-                          <TableCell
-                            component='th'
-                            scope='row'
-                            className='field-name'
+                    {rows.length === 0 ? (
+                      <TableBody>
+                        {rows.map((row) => (
+                          <TableRow
+                            key={row.name}
+                            sx={{
+                              '&:last-child td, &:last-child th': { border: 0 },
+                            }}
                           >
-                            <Typography variant='body1' component='p'>
-                              {row.name}
-                            </Typography>
-                          </TableCell>
-                          <TableCell align='left'> {row.size}</TableCell>
-                          <TableCell align='left'>
-                            <IconButton aria-label='edit' disableRipple>
-                              <RiDeleteBinLine size={20} />
-                            </IconButton>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
+                            <TableCell
+                              component='th'
+                              scope='row'
+                              className='field-name'
+                            >
+                              <Typography variant='body1' component='p'>
+                                {row.name}
+                              </Typography>
+                            </TableCell>
+                            <TableCell align='left'> {row.size}</TableCell>
+                            <TableCell align='left'>
+                              <IconButton aria-label='edit' disableRipple>
+                                <RiDeleteBinLine size={20} />
+                              </IconButton>
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    ) : (
+                      <Box
+                        variant='div'
+                        component='div'
+                        className='table-empty-state'
+                      >
+                        <Box
+                          sx={{ position: 'relative' }}
+                          className='custome-dropzone'
+                        >
+                          <UploadModern
+                            uploadText='Click to upload or drag and drop documents here '
+                            dropzone={dropzone}
+                          />
+                          <aside className='upload-doc-info'>
+                            <AppList
+                              data={uploadedFiles}
+                              renderRow={(file, index) => (
+                                <FileRow
+                                  key={index + file.path}
+                                  file={file}
+                                  onDeleteUploadFile={onDeleteUploadFile}
+                                />
+                              )}
+                            />
+                          </aside>
+                        </Box>
+                      </Box>
+                    )}
                   </Table>
                 </TableContainer>
               </Box>

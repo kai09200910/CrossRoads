@@ -72,7 +72,7 @@ const PropertyMedia = () => {
                   id='outlined-basic'
                   label=''
                   variant='outlined'
-                  placeholder='Enter Number '
+                  placeholder='Enter video link '
                 />
               </Box>
             </Grid>
@@ -96,7 +96,7 @@ const PropertyMedia = () => {
                   id='outlined-basic'
                   label=''
                   variant='outlined'
-                  placeholder='Enter Number '
+                  placeholder='Enter 3D tour link '
                 />
               </Box>
             </Grid>
@@ -120,7 +120,7 @@ const PropertyMedia = () => {
                   id='outlined-basic'
                   label=''
                   variant='outlined'
-                  placeholder='Enter Number '
+                  placeholder='Enter brochure link '
                 />
               </Box>
             </Grid>
@@ -130,7 +130,7 @@ const PropertyMedia = () => {
             <Grid item xs={12} md={12}>
               <Box variant='div' component='div'>
                 <label>
-                  Custom Website{' '}
+                  Cover photo
                   <Typography
                     variant='body1'
                     component='span'
@@ -144,7 +144,7 @@ const PropertyMedia = () => {
                   id='outlined-basic'
                   label=''
                   variant='outlined'
-                  placeholder='Enter Number '
+                  placeholder='Enter cover photo link '
                 />
               </Box>
             </Grid>

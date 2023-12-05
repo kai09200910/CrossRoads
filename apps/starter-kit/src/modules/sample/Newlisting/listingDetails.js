@@ -8,7 +8,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-
+import clsx from 'clsx';
 import React, { useState } from 'react';
 import {
   RiArrowDownSLine,
@@ -44,6 +44,9 @@ const ListingDetails = () => {
 
   const [personName, setPersonName] = React.useState([]);
   const [person, setPerson] = React.useState([]);
+
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
 
   return (
     <>
@@ -113,10 +116,23 @@ const ListingDetails = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Listing Type
+                </MenuItem>
                 <MenuItem value={10}>MLS Exclusive</MenuItem>
                 <MenuItem value={20}>General</MenuItem>
                 <MenuItem value={40}>Exclusive (not on MLS)</MenuItem>
@@ -130,10 +146,23 @@ const ListingDetails = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select Agent'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Agent
+                </MenuItem>
                 <MenuItem value={10}>Agent 1</MenuItem>
                 <MenuItem value={20}>Agent 2</MenuItem>
                 <MenuItem value={30}>Agent 3</MenuItem>
@@ -336,10 +365,23 @@ const ListingDetails = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='Select'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Occupancy
+                </MenuItem>
                 <MenuItem value={10}>Occupancy 1</MenuItem>
                 <MenuItem value={20}>Occupancy 2</MenuItem>
                 <MenuItem value={30}>Occupancy 3</MenuItem>
@@ -394,10 +436,23 @@ const ListingDetails = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='$500,000'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Country
+                </MenuItem>
                 <MenuItem value={10}>Country 1 </MenuItem>
                 <MenuItem value={20}>Country 2</MenuItem>
                 <MenuItem value={30}>Country 3</MenuItem>
@@ -411,10 +466,23 @@ const ListingDetails = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='$500,000'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Islands
+                </MenuItem>
                 <MenuItem value={10}>1</MenuItem>
                 <MenuItem value={20}>5</MenuItem>
                 <MenuItem value={30}>10</MenuItem>
@@ -437,10 +505,23 @@ const ListingDetails = () => {
               <Select
                 fullWidth
                 id='demo-simple-select'
-                label=''
-                placeholder='$500,000'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
                 IconComponent={RiArrowDownSLine}
               >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Area
+                </MenuItem>
                 <MenuItem value={10}>Area 1</MenuItem>
                 <MenuItem value={20}>Area 2</MenuItem>
                 <MenuItem value={30}>Area 3</MenuItem>

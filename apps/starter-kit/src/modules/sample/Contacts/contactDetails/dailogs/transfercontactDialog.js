@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -17,6 +17,8 @@ import {
 import { RiArrowDownSLine } from 'react-icons/ri';
 
 const TransferDialog = ({ open, handleClose }) => {
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   return (
     <div>
       <Dialog
@@ -71,10 +73,23 @@ const TransferDialog = ({ open, handleClose }) => {
                     <Select
                       fullWidth
                       id='demo-simple-select'
-                      label=''
-                      placeholder='Select'
+                      value={value}
+                      defaultValue='none'
+                      onChange={(e) => setValue(e.target.value)}
+                      onFocus={(e) => setShowPlaceholder(false)}
+                      onClose={(e) =>
+                        setShowPlaceholder(e.target.value === undefined)
+                      }
                       IconComponent={RiArrowDownSLine}
                     >
+                      <MenuItem
+                        key='0'
+                        disabled
+                        value='none'
+                        className='place-holder'
+                      >
+                        Select agent
+                      </MenuItem>
                       <MenuItem value={10}>Main Agent </MenuItem>
                       <MenuItem value={20}>Secondary Agent </MenuItem>
                       <MenuItem value={10}>Main Agent 1</MenuItem>

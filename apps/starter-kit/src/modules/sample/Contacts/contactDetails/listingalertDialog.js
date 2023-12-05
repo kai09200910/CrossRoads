@@ -28,6 +28,9 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
 
   const [activebed, setActivebed] = useState('');
   const [activebath, setActivebath] = useState('');
+
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   return (
     <div>
       <Dialog
@@ -91,10 +94,23 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                     <Select
                       fullWidth
                       id='demo-simple-select'
-                      label=''
-                      placeholder='Select'
+                      value={value}
+                      defaultValue='none'
+                      onChange={(e) => setValue(e.target.value)}
+                      onFocus={(e) => setShowPlaceholder(false)}
+                      onClose={(e) =>
+                        setShowPlaceholder(e.target.value === undefined)
+                      }
                       IconComponent={RiArrowDownSLine}
                     >
+                      <MenuItem
+                        key='0'
+                        disabled
+                        value='none'
+                        className='place-holder'
+                      >
+                        Select Property type
+                      </MenuItem>
                       <MenuItem value={10}>MLS Exclusive</MenuItem>
                       <MenuItem value={20}>General </MenuItem>
                       <MenuItem value={30}>Exclusive (not on MLS) </MenuItem>
@@ -318,10 +334,23 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                     <Select
                       fullWidth
                       id='demo-simple-select'
-                      label=''
-                      placeholder='Select'
+                      value={value}
+                      defaultValue='none'
+                      onChange={(e) => setValue(e.target.value)}
+                      onFocus={(e) => setShowPlaceholder(false)}
+                      onClose={(e) =>
+                        setShowPlaceholder(e.target.value === undefined)
+                      }
                       IconComponent={RiArrowDownSLine}
                     >
+                      <MenuItem
+                        key='0'
+                        disabled
+                        value='none'
+                        className='place-holder'
+                      >
+                        Select Lot acreage
+                      </MenuItem>
                       <MenuItem value={10}>Lot acreage 123</MenuItem>
                       <MenuItem value={20}>Lot acreage 456</MenuItem>
                       <MenuItem value={30}>Lot acreage 789</MenuItem>
@@ -361,10 +390,23 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                     <Select
                       fullWidth
                       id='demo-simple-select'
-                      label=''
-                      placeholder='Select'
+                      value={value}
+                      defaultValue='none'
+                      onChange={(e) => setValue(e.target.value)}
+                      onFocus={(e) => setShowPlaceholder(false)}
+                      onClose={(e) =>
+                        setShowPlaceholder(e.target.value === undefined)
+                      }
                       IconComponent={RiArrowDownSLine}
                     >
+                      <MenuItem
+                        key='0'
+                        disabled
+                        value='none'
+                        className='place-holder'
+                      >
+                        Select Amenities
+                      </MenuItem>
                       <MenuItem value={10}>Wifi</MenuItem>
                       <MenuItem value={20}>Parking</MenuItem>
                       <MenuItem value={30}>Pet-friendly </MenuItem>

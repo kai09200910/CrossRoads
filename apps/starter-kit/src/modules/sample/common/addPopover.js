@@ -24,7 +24,7 @@ const AddPopover = () => {
   const id = open ? 'simple-popover' : undefined;
 
   return (
-    <Box className='table-wrapper'>
+    <Box>
       <Button
         variant='contained'
         size='small'
@@ -62,7 +62,7 @@ const AddPopover = () => {
             id='outlined-basic'
             label=''
             variant='outlined'
-            placeholder='Add Notes'
+            placeholder='Type note here'
             multiline
             rows={4}
             maxRows={4}
