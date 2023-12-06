@@ -1,7 +1,8 @@
 import React from 'react';
 import { Box, Paper } from '@mui/material';
+import GoogleMap from '../common/googleMap';
 
-const MediaTable = () => {
+const PropertyMap = () => {
   return (
     <Paper>
       <Box
@@ -9,11 +10,14 @@ const MediaTable = () => {
           padding: { xs: 9, xl: 9 },
           height: '310px',
         }}
+        className='property-map'
       >
-        Property map will be display here
+        <Box className='map-container u-vr'>
+          <GoogleMap />
+        </Box>
       </Box>
     </Paper>
   );
 };
 
-export default MediaTable;
+export default PropertyMap;

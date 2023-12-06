@@ -8,7 +8,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import clsx from 'clsx';
 import React, { useState } from 'react';
 import {
   RiArrowDownSLine,
@@ -21,7 +20,7 @@ import MatchingContacts from '../common/matchingContacts';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import KycdocumentsDialog from './kycdocumentsDialog';
-import Steptitle from './stepTitle';
+import Agentinfo from './agentInfo';
 
 function createData(name, match, email) {
   return { name, match, email };
@@ -52,7 +51,12 @@ const ListingDetails = () => {
     <>
       <Box variant='div' component='div' className='listing-detial-form'>
         {' '}
-        <Steptitle
+        <Box variant='div' component='div' className='step-title'>
+          <Typography variant='h2' component='h2'>
+            Listing Details
+          </Typography>
+        </Box>
+        <Agentinfo
           isEditClicked={isEditClicked}
           setIsEditClicked={setIsEditClicked}
           personName={personName}

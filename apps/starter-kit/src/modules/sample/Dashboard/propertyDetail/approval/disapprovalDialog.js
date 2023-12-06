@@ -32,6 +32,15 @@ const DisapprovalDialog = ({ open, handleClose }) => {
     setIsDeleteDialogOpen(false);
   };
 
+  function createData(name, size, action) {
+    return { name, size, action };
+  }
+
+  const rows = [
+    createData('KYC Document 1', '2.6kb', ''),
+    createData('KYC Document 2', '2.6kb', ''),
+  ];
+
   return (
     <>
       <Dialog
@@ -86,26 +95,6 @@ const DisapprovalDialog = ({ open, handleClose }) => {
               </Box>
             </Grid>
             <Grid item xs={12} md={12}>
-              <Box sx={{ position: 'relative' }} className='custome-dropzone'>
-                <UploadModern
-                  uploadText='Re-upload  corrected document if applicable '
-                  dropzone={dropzone}
-                />
-                <aside className='upload-doc-info'>
-                  <AppList
-                    data={uploadedFiles}
-                    renderRow={(file, index) => (
-                      <FileRow
-                        key={index + file.path}
-                        file={file}
-                        onDeleteUploadFile={onDeleteUploadFile}
-                      />
-                    )}
-                  />
-                </aside>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={12}>
               <Box sx={{ position: 'relative' }} className='document-list'>
                 <TableContainer className='table-wrapper'>
                   <Table sx={{ minWidth: 400 }} aria-label='simple table'>
@@ -123,37 +112,69 @@ const DisapprovalDialog = ({ open, handleClose }) => {
                         ></TableCell>
                       </TableRow>
                     </TableHead>
-                    <TableBody>
-                      <TableRow
-                        sx={{
-                          '&:last-child td, &:last-child th': { border: 0 },
-                        }}
-                      >
-                        <TableCell
-                          component='th'
-                          scope='row'
-                          className='field-name'
-                        >
-                          <Typography variant='body1' component='p'>
-                            Sales agreement
-                          </Typography>
-                        </TableCell>
-                        <TableCell align='left'>2.6 kb</TableCell>
-                        <TableCell align='left'>
-                          {/* <IconButton aria-label='edit' disableRipple>
+                    {rows.length > 0 ? (
+                      <TableBody>
+                        {rows.map((row) => (
+                          <TableRow
+                            sx={{
+                              '&:last-child td, &:last-child th': { border: 0 },
+                            }}
+                          >
+                            <TableCell
+                              component='th'
+                              scope='row'
+                              className='field-name'
+                            >
+                              <Typography variant='body1' component='p'>
+                                {row.name}
+                              </Typography>
+                            </TableCell>
+                            <TableCell align='left'>{row.size}</TableCell>
+                            <TableCell align='left'>
+                              {/* <IconButton aria-label='edit' disableRipple>
                             <RiDeleteBinLine size={20} />
                           </IconButton> */}
-                          <Button
-                            variant='outlined'
-                            size='small'
-                            className='icon-small-btn'
-                            onClick={handleDeleteOpen}
-                          >
-                            <RiDeleteBinLine size={20} />
-                          </Button>{' '}
-                        </TableCell>
-                      </TableRow>
-                    </TableBody>
+                              <Button
+                                variant='outlined'
+                                size='small'
+                                className='icon-small-btn'
+                                onClick={handleDeleteOpen}
+                              >
+                                <RiDeleteBinLine size={20} />
+                              </Button>{' '}
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    ) : (
+                      <Box
+                        variant='div'
+                        component='div'
+                        className='table-empty-state'
+                      >
+                        <Box
+                          sx={{ position: 'relative' }}
+                          className='custome-dropzone'
+                        >
+                          <UploadModern
+                            uploadText='Click to upload or drag and drop documents here '
+                            dropzone={dropzone}
+                          />
+                          <aside className='upload-doc-info'>
+                            <AppList
+                              data={uploadedFiles}
+                              renderRow={(file, index) => (
+                                <FileRow
+                                  key={index + file.path}
+                                  file={file}
+                                  onDeleteUploadFile={onDeleteUploadFile}
+                                />
+                              )}
+                            />
+                          </aside>
+                        </Box>
+                      </Box>
+                    )}
                   </Table>
                 </TableContainer>
               </Box>

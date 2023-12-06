@@ -273,6 +273,7 @@ const PropertyTitle = () => {
                       variant='outlined'
                       size='large'
                       className='outline-btn outline-primary btn'
+                      onClick={() => navigate('/contacts/details')}
                     >
                       Owner info
                     </Button>

@@ -368,7 +368,9 @@ h4 {
     }
   }
 }
-
+.time-picker {
+  width: 100%;
+}
 // Add Document Button Styles //
 
 .add-doc-btn-grp {
@@ -1164,7 +1166,7 @@ header {
       }
     }
   }
-  .kyc-document-list {
+  .document-list {
     min-height: 180px;
     position: relative;
     .table-empty-state {
@@ -1274,5 +1276,11 @@ header {
   .MuiMenu-paper {
     height: calc(100vh - 50%);
     overflow-y: auto;
+  }
+}
+
+.amenities-selection {
+  .MuiFormControl-root {
+    width: 100%;
   }
 }

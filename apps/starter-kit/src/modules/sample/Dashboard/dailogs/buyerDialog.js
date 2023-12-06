@@ -98,16 +98,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
               <Grid container spacing={5} mt={2}>
                 <Grid item xs={12} md={12}>
                   <Box variant='div' component='div'>
-                    <label>
-                      Sold price
-                      <Typography
-                        variant='body1'
-                        component='span'
-                        className='optional-label'
-                      >
-                        Optional
-                      </Typography>
-                    </label>
+                    <label>Sold price</label>
                     <TextField
                       fullWidth
                       id='outlined-basic'

@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import { RiAddFill, RiArrowDownSLine } from 'react-icons/ri';
 import InquiryinformationDialog from './inquiryinformationDialog';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 const AddeventDialog = ({ open, handleClose }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -97,33 +98,13 @@ const AddeventDialog = ({ open, handleClose }) => {
               <Grid item xs={12} md={6}>
                 <Box variant='div' component='div'>
                   <label>From:</label>
-                  <Select
-                    fullWidth
-                    id='demo-simple-select'
-                    label=''
-                    placeholder='Start time'
-                    IconComponent={RiArrowDownSLine}
-                  >
-                    <MenuItem value={10}>Start time 1</MenuItem>
-                    <MenuItem value={20}>Start time 2</MenuItem>
-                    <MenuItem value={30}>Start time 3</MenuItem>
-                  </Select>
+                  <TimePicker className='time-picker' />
                 </Box>
               </Grid>
               <Grid item xs={12} md={6}>
                 <Box variant='div' component='div'>
                   <label>To:</label>
-                  <Select
-                    fullWidth
-                    id='demo-simple-select'
-                    label=''
-                    placeholder='End time'
-                    IconComponent={RiArrowDownSLine}
-                  >
-                    <MenuItem value={10}>Start time 1</MenuItem>
-                    <MenuItem value={20}>Start time 2</MenuItem>
-                    <MenuItem value={30}>Start time 3</MenuItem>
-                  </Select>
+                  <TimePicker className='time-picker' />
                 </Box>
               </Grid>
             </Grid>

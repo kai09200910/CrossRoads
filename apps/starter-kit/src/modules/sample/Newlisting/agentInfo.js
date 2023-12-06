@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import { RiPencilFill } from 'react-icons/ri';
 
-const Steptitle = ({
+const Agentinfo = ({
   isEditClicked,
   setIsEditClicked,
   personName,
@@ -42,10 +42,7 @@ const Steptitle = ({
 
   return (
     <>
-      <Box variant='div' component='div' className='step-title'>
-        <Typography variant='h2' component='h2'>
-          Listing Details
-        </Typography>
+      <Box variant='div' component='div' className='agent-info '>
         Agent:{''}
         <IconButton
           aria-label='edit'
@@ -132,4 +129,4 @@ const Steptitle = ({
   );
 };
 
-export default Steptitle;
+export default Agentinfo;

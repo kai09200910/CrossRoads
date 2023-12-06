@@ -8,6 +8,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Box, Grid, MenuItem, Select, Stack, TextField } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 const EditinquiryinformationDialog = ({ open, handleClose }) => {
   return (
@@ -65,38 +66,18 @@ const EditinquiryinformationDialog = ({ open, handleClose }) => {
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
-              {/* Empty grid here for reason - do not delete  */}
+              {/* Empty grid here for reason to match figma design - do not delete  */}
             </Grid>
             <Grid item xs={12} md={6}>
               <Box variant='div' component='div'>
                 <label>From:</label>
-                <Select
-                  fullWidth
-                  id='demo-simple-select'
-                  label=''
-                  placeholder='Start time'
-                  IconComponent={RiArrowDownSLine}
-                >
-                  <MenuItem value={10}>Start time 1</MenuItem>
-                  <MenuItem value={20}>Start time 2</MenuItem>
-                  <MenuItem value={30}>Start time 3</MenuItem>
-                </Select>
+                <TimePicker className='time-picker' />
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
               <Box variant='div' component='div'>
                 <label>To:</label>
-                <Select
-                  fullWidth
-                  id='demo-simple-select'
-                  label=''
-                  placeholder='End time'
-                  IconComponent={RiArrowDownSLine}
-                >
-                  <MenuItem value={10}>Start time 1</MenuItem>
-                  <MenuItem value={20}>Start time 2</MenuItem>
-                  <MenuItem value={30}>Start time 3</MenuItem>
-                </Select>
+                <TimePicker className='time-picker' />
               </Box>
             </Grid>
           </Grid>
