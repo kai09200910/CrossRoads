@@ -98,7 +98,6 @@ const ContactDetails = () => {
           direction='row'
           justifyContent='space-between'
           alignItems='center'
-          flexWrap='wrap'
           sx={{
             paddingBottom: { xs: 4, xl: 4 },
             paddingTop: { xs: 5, xl: 5 },
@@ -195,7 +194,7 @@ const ContactDetails = () => {
             <Button
               variant='contained'
               startIcon={<RiPencilFill />}
-              className='dwnload-btn primary-btn btn blue-btn'
+              className='dwnload-btn primary-btn btn blue-btn edit-btn'
               onClick={() => setIsAddcontact(true)}
             >
               Edit

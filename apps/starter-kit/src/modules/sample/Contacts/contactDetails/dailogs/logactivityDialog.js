@@ -6,11 +6,14 @@ import DialogActions from '@mui/material/DialogActions';
 import {
   Box,
   Button,
+  FormControl,
   Grid,
   MenuItem,
   Select,
   Stack,
   TextField,
+  Checkbox,
+  ListItemText,
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
 
@@ -18,13 +21,30 @@ const LogactivityDialog = ({ open, handleClose }) => {
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
 
+  const names = [
+    'Email sent',
+    'Spoke with client',
+    'Left voicemail',
+    'SMS',
+    'Appointment set',
+    'Meeting held ',
+  ];
+  const [personName, setPersonName] = React.useState([]);
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(typeof value === 'string' ? value.split(',') : value);
+  };
+
   return (
     <div>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
         open={open}
-        className='modal-dailog-wrapper small-modal'
+        className='modal-dailog-wrapper small-modal log-activity-modal'
       >
         <DialogTitle
           sx={{ m: 0, p: 2 }}
@@ -48,33 +68,25 @@ const LogactivityDialog = ({ open, handleClose }) => {
                 <Grid item xs={12} md={12}>
                   <Box variant='div' component='div'>
                     <label>Activity type </label>
-                    <Select
-                      fullWidth
-                      id='demo-simple-select'
-                      value={value}
-                      defaultValue='none'
-                      onChange={(e) => setValue(e.target.value)}
-                      onFocus={(e) => setShowPlaceholder(false)}
-                      onClose={(e) =>
-                        setShowPlaceholder(e.target.value === undefined)
-                      }
-                      IconComponent={RiArrowDownSLine}
-                    >
-                      <MenuItem
-                        key='0'
-                        disabled
-                        value='none'
-                        className='place-holder'
+                    <FormControl>
+                      <Select
+                        labelId='demo-multiple-checkbox-label'
+                        id='contact-type-multiple-checkbox'
+                        multiple
+                        placeholder='Select Contact Type'
+                        value={personName}
+                        onChange={handleChange}
+                        IconComponent={RiArrowDownSLine}
+                        renderValue={(selected) => selected.join(', ')}
                       >
-                        Select Activity type
-                      </MenuItem>
-                      <MenuItem value={10}>Email sent </MenuItem>
-                      <MenuItem value={20}>Spoke with client </MenuItem>
-                      <MenuItem value={10}>Left voicemail </MenuItem>
-                      <MenuItem value={20}>SMS</MenuItem>
-                      <MenuItem value={10}>Appointment set</MenuItem>
-                      <MenuItem value={20}>Meeting held </MenuItem>
-                    </Select>
+                        {names.map((name) => (
+                          <MenuItem key={name} value={name}>
+                            <Checkbox checked={personName.indexOf(name) > -1} />
+                            <ListItemText primary={name} />
+                          </MenuItem>
+                        ))}
+                      </Select>
+                    </FormControl>
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>

@@ -4,7 +4,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import { Box, Grid, IconButton } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -15,8 +15,9 @@ import TableRow from '@mui/material/TableRow';
 import AppList from '@crema/components/AppList';
 import { useDropzone } from 'react-dropzone';
 import { RiDeleteBinLine } from 'react-icons/ri';
-import UploadModern from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
 import ConfirmationDialog from '../../common/confirmationDialog';
+import UploadModern from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
+import FileRow from '../../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
 
 function createData(name, size, action) {
   return { name, size, action };
@@ -58,26 +59,6 @@ const ListingagreementDialog = ({ open, handleClose }) => {
         <DialogContent className='modal-dailog-content'>
           <Grid container spacing={5}>
             <Grid item xs={12} md={12}>
-              <Box sx={{ position: 'relative' }} className='custome-dropzone'>
-                <UploadModern
-                  uploadText='Re-upload  corrected document if applicable '
-                  dropzone={dropzone}
-                />
-                <aside className='upload-doc-info'>
-                  <AppList
-                    data={uploadedFiles}
-                    renderRow={(file, index) => (
-                      <FileRow
-                        key={index + file.path}
-                        file={file}
-                        onDeleteUploadFile={onDeleteUploadFile}
-                      />
-                    )}
-                  />
-                </aside>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={12}>
               <Box sx={{ position: 'relative' }} className='document-list'>
                 <TableContainer className='table-wrapper'>
                   <Table sx={{ minWidth: 400 }} aria-label='simple table'>
@@ -95,39 +76,69 @@ const ListingagreementDialog = ({ open, handleClose }) => {
                         ></TableCell>
                       </TableRow>
                     </TableHead>
-                    <TableBody>
-                      {rows.map((row) => (
-                        <TableRow
-                          sx={{
-                            '&:last-child td, &:last-child th': { border: 0 },
-                          }}
-                        >
-                          <TableCell
-                            component='th'
-                            scope='row'
-                            className='field-name'
+                    {rows.length > 0 ? (
+                      <TableBody>
+                        {rows.map((row) => (
+                          <TableRow
+                            sx={{
+                              '&:last-child td, &:last-child th': { border: 0 },
+                            }}
                           >
-                            <Typography variant='body1' component='p'>
-                              {row.name}
-                            </Typography>
-                          </TableCell>
-                          <TableCell align='left'>{row.size}</TableCell>
-                          <TableCell align='left'>
-                            {/* <IconButton aria-label='edit' disableRipple>
+                            <TableCell
+                              component='th'
+                              scope='row'
+                              className='field-name'
+                            >
+                              <Typography variant='body1' component='p'>
+                                {row.name}
+                              </Typography>
+                            </TableCell>
+                            <TableCell align='left'>{row.size}</TableCell>
+                            <TableCell align='left'>
+                              {/* <IconButton aria-label='edit' disableRipple>
                               <RiDeleteBinLine size={20} />
                             </IconButton> */}
-                            <Button
-                              variant='outlined'
-                              size='small'
-                              className='icon-small-btn'
-                              onClick={handleDeleteOpen}
-                            >
-                              <RiDeleteBinLine size={20} />
-                            </Button>{' '}
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
+                              <Button
+                                variant='outlined'
+                                size='small'
+                                className='icon-small-btn'
+                                onClick={handleDeleteOpen}
+                              >
+                                <RiDeleteBinLine size={20} />
+                              </Button>{' '}
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    ) : (
+                      <Box
+                        variant='div'
+                        component='div'
+                        className='table-empty-state'
+                      >
+                        <Box
+                          sx={{ position: 'relative' }}
+                          className='custome-dropzone'
+                        >
+                          <UploadModern
+                            uploadText='Click to upload or drag and drop documents here '
+                            dropzone={dropzone}
+                          />
+                          <aside className='upload-doc-info'>
+                            <AppList
+                              data={uploadedFiles}
+                              renderRow={(file, index) => (
+                                <FileRow
+                                  key={index + file.path}
+                                  file={file}
+                                  onDeleteUploadFile={onDeleteUploadFile}
+                                />
+                              )}
+                            />
+                          </aside>
+                        </Box>
+                      </Box>
+                    )}
                   </Table>
                 </TableContainer>
               </Box>

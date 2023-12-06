@@ -5,6 +5,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import {
   Box,
+  Checkbox,
+  FormControl,
   FormControlLabel,
   MenuItem,
   Select,
@@ -16,21 +18,37 @@ import {
   Radio,
   InputAdornment,
   Switch,
+  ListItemText,
 } from '@mui/material';
 import { RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
 
 const ListingalertDialog = ({ open, handleClose, title }) => {
-  // const [value, setValue] = React.useState('1');
-
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue);
-  // };
-
   const [activebed, setActivebed] = useState('');
   const [activebath, setActivebath] = useState('');
 
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
+
+  const [personName, setPersonName] = React.useState([]);
+  const [person, setPerson] = React.useState([]);
+
+  const names = [
+    'Wifi',
+    'Parking',
+    'Pet-friendly ',
+    'Fully equipped kitchen',
+    'Gym',
+    'Pool',
+    'Spa',
+    'Laundry',
+  ];
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(typeof value === 'string' ? value.split(',') : value);
+  };
   return (
     <div>
       <Dialog
@@ -387,35 +405,25 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                 <Grid item xs={12} md={12}>
                   <Box variant='div' component='div'>
                     <label>Amenities </label>
-                    <Select
-                      fullWidth
-                      id='demo-simple-select'
-                      value={value}
-                      defaultValue='none'
-                      onChange={(e) => setValue(e.target.value)}
-                      onFocus={(e) => setShowPlaceholder(false)}
-                      onClose={(e) =>
-                        setShowPlaceholder(e.target.value === undefined)
-                      }
-                      IconComponent={RiArrowDownSLine}
-                    >
-                      <MenuItem
-                        key='0'
-                        disabled
-                        value='none'
-                        className='place-holder'
+                    <FormControl>
+                      <Select
+                        labelId='demo-multiple-checkbox-label'
+                        id='contact-type-multiple-checkbox'
+                        multiple
+                        placeholder='Select Contact Type'
+                        value={personName}
+                        onChange={handleChange}
+                        IconComponent={RiArrowDownSLine}
+                        renderValue={(selected) => selected.join(', ')}
                       >
-                        Select Amenities
-                      </MenuItem>
-                      <MenuItem value={10}>Wifi</MenuItem>
-                      <MenuItem value={20}>Parking</MenuItem>
-                      <MenuItem value={30}>Pet-friendly </MenuItem>
-                      <MenuItem value={40}>Fully equipped kitchen</MenuItem>
-                      <MenuItem value={10}>Gym</MenuItem>
-                      <MenuItem value={20}>Pool</MenuItem>
-                      <MenuItem value={30}>Spa </MenuItem>
-                      <MenuItem value={40}>Laundry</MenuItem>
-                    </Select>
+                        {names.map((name) => (
+                          <MenuItem key={name} value={name}>
+                            <Checkbox checked={personName.indexOf(name) > -1} />
+                            <ListItemText primary={name} />
+                          </MenuItem>
+                        ))}
+                      </Select>
+                    </FormControl>
                   </Box>
                 </Grid>
               </Grid>

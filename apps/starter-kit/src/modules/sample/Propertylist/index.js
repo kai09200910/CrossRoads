@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   FormControlLabel,
@@ -14,6 +14,9 @@ import { RiArrowDownSLine } from 'react-icons/ri';
 import './propertylist.scss';
 
 const PropertyList = () => {
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
+
   return (
     <>
       <Typography
@@ -39,13 +42,23 @@ const PropertyList = () => {
                 <label>Listing Type </label>
                 <Select
                   fullWidth
-                  id='demo-simple-select'
+                  id='listing-type-1'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
-                  displayEmpty
-                  inputProps={{ 'aria-label': 'Without label' }}
                 >
-                  <MenuItem disabled value=''>
-                    Placeholder
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Listing Type
                   </MenuItem>
                   <MenuItem value={10}>MLS Exclusive</MenuItem>
                   <MenuItem value={20}>General</MenuItem>
@@ -59,15 +72,28 @@ const PropertyList = () => {
                 <label>Island </label>
                 <Select
                   fullWidth
-                  id='demo-simple-select'
-                  label=''
-                  placeholder='Select Island'
+                  id='island'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
-                  <MenuItem value={10}>Island 1</MenuItem>
-                  <MenuItem value={20}>Island 2</MenuItem>
-                  <MenuItem value={30}>Island 3 </MenuItem>
-                  <MenuItem value={40}>Island 4</MenuItem>
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Island
+                  </MenuItem>
+                  <MenuItem value={1}>Island 1</MenuItem>
+                  <MenuItem value={2}>Island 2</MenuItem>
+                  <MenuItem value={3}>Island 3 </MenuItem>
+                  <MenuItem value={4}>Island 4</MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -76,15 +102,28 @@ const PropertyList = () => {
                 <label>Listing Type </label>
                 <Select
                   fullWidth
-                  id='demo-simple-select'
-                  label=''
-                  placeholder='Sale or Rent'
+                  id='listing-type-1'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
-                  <MenuItem value={10}>MLS Exclusive</MenuItem>
-                  <MenuItem value={20}>General</MenuItem>
-                  <MenuItem value={30}>Co-broke </MenuItem>
-                  <MenuItem value={40}>Exclusive (not on MLS)</MenuItem>
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Listing Type
+                  </MenuItem>
+                  <MenuItem value={5}>MLS Exclusive</MenuItem>
+                  <MenuItem value={6}>General</MenuItem>
+                  <MenuItem value={7}>Co-broke </MenuItem>
+                  <MenuItem value={8}>Exclusive (not on MLS)</MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -93,15 +132,28 @@ const PropertyList = () => {
                 <label>Beds & Baths </label>
                 <Select
                   fullWidth
-                  id='demo-simple-select'
-                  label=''
-                  placeholder='Select Bed & Baths'
+                  id='beds-baths'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
-                  <MenuItem value={10}>select Bath 1</MenuItem>
-                  <MenuItem value={20}>select Bath 2</MenuItem>
-                  <MenuItem value={30}>select Bed 1 </MenuItem>
-                  <MenuItem value={40}>select Bed 2</MenuItem>
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select Beds & Baths
+                  </MenuItem>
+                  <MenuItem value={11}>select Bath 1</MenuItem>
+                  <MenuItem value={12}>select Bath 2</MenuItem>
+                  <MenuItem value={13}>select Bed 1 </MenuItem>
+                  <MenuItem value={14}>select Bed 2</MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -110,11 +162,29 @@ const PropertyList = () => {
                 <label>Listing status </label>
                 <Select
                   fullWidth
-                  id='demo-simple-select'
-                  label=''
-                  placeholder='Sale or Rent'
+                  id='listing-status'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
                   IconComponent={RiArrowDownSLine}
                 >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value={value}
+                    defaultValue='none'
+                    onChange={(e) => setValue(e.target.value)}
+                    onFocus={(e) => setShowPlaceholder(false)}
+                    onClose={(e) =>
+                      setShowPlaceholder(e.target.value === undefined)
+                    }
+                  >
+                    Select Listing status
+                  </MenuItem>
                   <MenuItem value={10}>Listing status 1</MenuItem>
                   <MenuItem value={20}>Listing status 2</MenuItem>
                   <MenuItem value={30}>Listing status 3 </MenuItem>

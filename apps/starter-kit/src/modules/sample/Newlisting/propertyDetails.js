@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   Box,
   Checkbox,
+  FormControl,
   FormControlLabel,
   Grid,
   MenuItem,
@@ -9,10 +10,11 @@ import {
   Stack,
   TextField,
   Typography,
+  ListItemText,
 } from '@mui/material';
 
 import { RiArrowDownSLine, RiCloseLine } from 'react-icons/ri';
-import Steptitle from './stepTitle';
+import Agentinfo from './agentInfo';
 
 const PropertyDetails = () => {
   const [isEditClicked, setIsEditClicked] = useState(false);
@@ -23,10 +25,33 @@ const PropertyDetails = () => {
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
 
+  const names = [
+    'Wifi',
+    'Parking',
+    'Pet-friendly ',
+    'Fully equipped kitchen',
+    'Gym',
+    'Pool',
+    'Spa',
+    'Laundry',
+  ];
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(typeof value === 'string' ? value.split(',') : value);
+  };
+
   return (
     <>
       <Box variant='div' component='div' className='propery-detial-form'>
-        <Steptitle
+        <Box variant='div' component='div' className='step-title'>
+          <Typography variant='h2' component='h2'>
+            Property Details
+          </Typography>
+        </Box>
+        <Agentinfo
           isEditClicked={isEditClicked}
           setIsEditClicked={setIsEditClicked}
           personName={personName}
@@ -84,24 +109,31 @@ const PropertyDetails = () => {
           </Grid>
           <Grid container spacing={5} mt={4}>
             <Grid item xs={12} md={12}>
-              <Box variant='div' component='div'>
+              <Box
+                variant='div'
+                component='div'
+                className='amenities-selection'
+              >
                 <label>Amenities </label>
-                <Select
-                  fullWidth
-                  id='demo-simple-select'
-                  label=''
-                  placeholder='Select'
-                  IconComponent={RiArrowDownSLine}
-                >
-                  <MenuItem value={10}>Wifi</MenuItem>
-                  <MenuItem value={20}>Parking</MenuItem>
-                  <MenuItem value={30}>Pet-friendly </MenuItem>
-                  <MenuItem value={40}>Fully equipped kitchen</MenuItem>
-                  <MenuItem value={10}>Gym</MenuItem>
-                  <MenuItem value={20}>Pool</MenuItem>
-                  <MenuItem value={30}>Spa </MenuItem>
-                  <MenuItem value={40}>Laundry</MenuItem>
-                </Select>
+                <FormControl>
+                  <Select
+                    labelId='demo-multiple-checkbox-label'
+                    id='contact-type-multiple-checkbox'
+                    multiple
+                    placeholder='Select Contact Type'
+                    value={personName}
+                    onChange={handleChange}
+                    IconComponent={RiArrowDownSLine}
+                    renderValue={(selected) => selected.join(', ')}
+                  >
+                    {names.map((name) => (
+                      <MenuItem key={name} value={name}>
+                        <Checkbox checked={personName.indexOf(name) > -1} />
+                        <ListItemText primary={name} />
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
               </Box>
             </Grid>
           </Grid>

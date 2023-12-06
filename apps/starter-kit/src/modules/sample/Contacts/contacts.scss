@@ -209,7 +209,11 @@
     width: 100%;
   }
 }
-
+.modal-dailog-wrapper.log-activity-modal {
+  .MuiFormControl-root {
+    width: 100%;
+  }
+}
 ul.MuiList-root {
   li.MuiMenuItem-root {
     padding: 4px 12px !important;
@@ -384,6 +388,9 @@ ul.MuiList-root {
 
 .contact-detail-wrapper {
   .contact-detail-title {
+    @media (max-width: 1366px) {
+      flex-wrap: wrap;
+    }
     .main-title {
       .MuiChip-root.green {
         font-size: 12px;
@@ -393,16 +400,23 @@ ul.MuiList-root {
         color: #009a6c;
         text-transform: capitalize;
       }
+      .MuiChip-root {
+        margin-left: 6px;
+        span.MuiChip-label {
+          padding: 0 8px;
+        }
+      }
       .chip {
         font-size: 12px;
         height: 32px;
         font-weight: 500;
         border-radius: 23px;
-        padding: 2px 12px;
+        padding: 2px 8px;
         display: flex;
         align-items: center;
         justify-content: center;
         text-transform: capitalize;
+        margin-left: 6px;
       }
       .chip.green {
         background-color: #c2eade;
@@ -422,6 +436,10 @@ ul.MuiList-root {
       }
     }
     .btn-group {
+      .btn {
+        padding: 8px 8px !important;
+        min-width: 105px !important;
+      }
       a.btn {
         display: flex;
         align-items: center;
@@ -439,7 +457,7 @@ ul.MuiList-root {
       Button.custom-btn {
         gap: 8px;
       }
-      @media (max-width: 1470px) {
+      @media (max-width: 1366px) {
         margin-top: 24px;
       }
       button.btn {
@@ -450,6 +468,9 @@ ul.MuiList-root {
         @media (max-width: 480px) {
           margin: 0 16px 16px 0 !important;
         }
+      }
+      .btn.edit-btn {
+        min-width: 74px !important;
       }
     }
   }

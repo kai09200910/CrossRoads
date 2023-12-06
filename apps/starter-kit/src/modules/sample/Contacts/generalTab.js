@@ -38,6 +38,7 @@ const GeneralTab = () => {
     } = event;
     setPersonName(typeof value === 'string' ? value.split(',') : value);
   };
+
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   return (
