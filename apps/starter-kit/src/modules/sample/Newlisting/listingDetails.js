@@ -21,6 +21,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import KycdocumentsDialog from './kycdocumentsDialog';
 import Agentinfo from './agentInfo';
+import ReactFlagsSelect from 'react-flags-select';
 
 function createData(name, match, email) {
   return { name, match, email };
@@ -46,6 +47,8 @@ const ListingDetails = () => {
 
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
+
+  const [selected, setSelected] = useState('');
 
   return (
     <>
@@ -184,6 +187,7 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='First Name'
+                className='success'
               />
             </Box>
           </Grid>
@@ -217,6 +221,7 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='Last Name'
+                className='success'
               />
             </Box>
           </Grid>
@@ -231,6 +236,7 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='Email '
+                className='error'
               />
             </Box>
           </Grid>
@@ -437,30 +443,11 @@ const ListingDetails = () => {
           <Grid item xs={12} md={4}>
             <Box variant='div' component='div'>
               <label>Country </label>
-              <Select
-                fullWidth
-                id='demo-simple-select'
-                value={value}
-                defaultValue='none'
-                onChange={(e) => setValue(e.target.value)}
-                onFocus={(e) => setShowPlaceholder(false)}
-                onClose={(e) =>
-                  setShowPlaceholder(e.target.value === undefined)
-                }
-                IconComponent={RiArrowDownSLine}
-              >
-                <MenuItem
-                  key='0'
-                  disabled
-                  value='none'
-                  className='place-holder'
-                >
-                  Select Country
-                </MenuItem>
-                <MenuItem value={10}>Country 1 </MenuItem>
-                <MenuItem value={20}>Country 2</MenuItem>
-                <MenuItem value={30}>Country 3</MenuItem>
-              </Select>
+              <ReactFlagsSelect
+                selected={selected}
+                onSelect={(code) => setSelected(code)}
+                className='country-dropdown'
+              />
             </Box>
           </Grid>
 

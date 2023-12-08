@@ -96,11 +96,15 @@ label.empty-label {
   display: flex;
 }
 .MuiInputBase-input.MuiOutlinedInput-input {
-  padding: 13.5px 14px;
+  padding: 13.5px 14px !important;
   background-color: #fff;
   border-radius: 8px;
+  border: 2px solid transparent;
+  font-weight: 600;
 }
-
+textarea.MuiInputBase-input.MuiOutlinedInput-input {
+  padding: 0 !important;
+}
 .MuiInputBase-root.MuiOutlinedInput-root {
   &:hover {
     fieldset.MuiOutlinedInput-notchedOutline {
@@ -114,10 +118,12 @@ label.empty-label {
   }
 }
 fieldset.MuiOutlinedInput-notchedOutline {
-  border-color: #e1e1e1;
+  // border-color: #e1e1e1;
 }
 textarea {
   padding: 0 !important;
+  border: 2px solid transparent;
+  font-weight: 600;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -126,6 +132,62 @@ input::-webkit-inner-spin-button {
 }
 input[type='number'] {
   -moz-appearance: textfield;
+  border: 2px solid transparent;
+  font-weight: 600;
+}
+.MuiTextField-root.success {
+  input {
+    color: #009a6c;
+    border-color: #009a6c;
+    background-color: #f3fffb;
+    position: relative;
+    padding-right: 36px;
+  }
+  &::before {
+    content: '\02714';
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    z-index: 99;
+    display: inline-block;
+    font-size: 22px;
+    color: #009a6c;
+  }
+}
+.MuiTextField-root.error {
+  input {
+    color: #d60000;
+    border-color: #d60000;
+    background-color: #fff3f3;
+    position: relative;
+    &::after {
+      content: 'p';
+      position: absolute;
+      right: 12px;
+      top: 6px;
+    }
+  }
+}
+.country-dropdown {
+  button {
+    font-size: 14px;
+    padding: 11.5px 8px;
+    border-radius: 8px;
+    span {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    &::after {
+    }
+  }
+  ul {
+    max-height: 270px !important;
+  }
+}
+.react-select-wrap {
+  > div {
+    min-height: 50px;
+  }
 }
 .color-blue {
   color: #2871ff;
@@ -360,6 +422,7 @@ h4 {
     }
     .MuiInputBase-input.MuiOutlinedInput-input {
       width: fit-content;
+      padding-left: 4px;
     }
     .Mui-focused {
       input.MuiInputBase-input {
@@ -1283,4 +1346,7 @@ header {
   .MuiFormControl-root {
     width: 100%;
   }
+}
+
+.app-sidebar {
 }
