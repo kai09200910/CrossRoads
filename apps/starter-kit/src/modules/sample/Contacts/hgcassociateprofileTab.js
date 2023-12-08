@@ -174,8 +174,8 @@ const HgcassociateprofileTab = () => {
                 variant='outlined'
                 placeholder='Enter biography to display on site '
                 multiline
-                rows={4}
-                maxRows={4}
+                rows={3}
+                maxRows={3}
               />
             </Box>
           </Grid>
@@ -189,8 +189,8 @@ const HgcassociateprofileTab = () => {
                 variant='outlined'
                 placeholder='Enter job description '
                 multiline
-                rows={4}
-                maxRows={4}
+                rows={3}
+                maxRows={3}
               />
             </Box>
           </Grid>
@@ -262,7 +262,7 @@ const HgcassociateprofileTab = () => {
                   value='none'
                   className='place-holder'
                 >
-                  Employment status
+                  Enter Employment status
                 </MenuItem>
                 <MenuItem value={10}>Employment status 1</MenuItem>
                 <MenuItem value={20}>Employment status 2</MenuItem>
@@ -293,8 +293,8 @@ const HgcassociateprofileTab = () => {
                 variant='outlined'
                 placeholder='Additional comment'
                 multiline
-                rows={4}
-                maxRows={4}
+                rows={3}
+                maxRows={3}
               />
             </Box>
           </Grid>

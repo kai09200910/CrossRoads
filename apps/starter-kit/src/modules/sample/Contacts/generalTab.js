@@ -53,7 +53,7 @@ const GeneralTab = () => {
                 id='first-name'
                 label=''
                 variant='outlined'
-                placeholder='Enter Last Name'
+                placeholder='Enter first name'
               />
             </Box>
           </Grid>
@@ -65,13 +65,13 @@ const GeneralTab = () => {
                 id='last-name'
                 label=''
                 variant='outlined'
-                placeholder='Enter Last Name '
+                placeholder='Enter last name '
               />
             </Box>
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={6}>
+          {/* <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Nick name</label>
               <TextField
@@ -94,21 +94,21 @@ const GeneralTab = () => {
                 placeholder='Enter Spouse Name'
               />
             </Box>
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Home phone </label>
+              <label> Phone </label>
               <TextField
                 fullWidth
-                id='home-phone'
+                id='phone'
                 type='number'
                 variant='outlined'
-                placeholder='Enter Home Phone'
+                placeholder='Enter phone number'
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          {/* <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Mobile phone </label>
               <TextField
@@ -119,7 +119,7 @@ const GeneralTab = () => {
                 placeholder='Enter Mobile Phone'
               />
             </Box>
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
@@ -129,28 +129,13 @@ const GeneralTab = () => {
                 id='email'
                 type='email'
                 variant='outlined'
-                placeholder='Enter Email'
+                placeholder='Enter email address'
               />
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Tags </label>
-              <TagsInput
-                selectedTags={handleSelecetedTags}
-                fullWidth
-                variant='outlined'
-                id='tags'
-                name='tags'
-                placeholder='Tags (type and press enter)'
-                className='tag-input'
-              />
-            </Box>
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <Box variant='div' component='div'>
-              <label>Contact type </label>
+              <label>Contact/Profile type </label>
               <FormControl>
                 <Select
                   labelId='demo-multiple-checkbox-label'
@@ -172,8 +157,22 @@ const GeneralTab = () => {
               </FormControl>
             </Box>
           </Grid>
-
           <Grid item xs={12} md={6}>
+            <Box variant='div' component='div'>
+              <label>Tags </label>
+              <TagsInput
+                selectedTags={handleSelecetedTags}
+                fullWidth
+                variant='outlined'
+                id='tags'
+                name='tags'
+                placeholder='Tags (type and press enter)'
+                className='tag-input'
+              />
+            </Box>
+          </Grid>
+
+          {/* <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Company name </label>
               <TextField
@@ -184,11 +183,11 @@ const GeneralTab = () => {
                 placeholder='Enter Company name'
               />
             </Box>
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Primary Agent </label>
+              <label> Agent </label>
               <Select
                 fullWidth
                 id='primary-agent'
@@ -207,7 +206,7 @@ const GeneralTab = () => {
                   value='none'
                   className='place-holder'
                 >
-                  Select Primary Agent
+                  Add agent
                 </MenuItem>
                 <MenuItem value={10}>Primary Agent 1</MenuItem>
                 <MenuItem value={20}>Primary Agent 2</MenuItem>
@@ -249,7 +248,7 @@ const GeneralTab = () => {
                   value='none'
                   className='place-holder'
                 >
-                  Select Secondary Agent
+                  Add secondary agent
                 </MenuItem>
                 <MenuItem value={10}>Secondary Agent 1</MenuItem>
                 <MenuItem value={20}>Secondary Agent 2</MenuItem>
@@ -263,16 +262,29 @@ const GeneralTab = () => {
 
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Source</label>
+              <label>Office location </label>
+              <TextField
+                fullWidth
+                id='care-of'
+                label=''
+                variant='outlined'
+                placeholder='Add location '
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box variant='div' component='div'>
+              <label>Website </label>
               <TextField
                 fullWidth
                 id='outlined-basic'
                 label=''
                 variant='outlined'
-                placeholder='Enter Source Name'
+                placeholder='Enter website URL'
               />
             </Box>
           </Grid>
+
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Care of</label>
@@ -281,7 +293,19 @@ const GeneralTab = () => {
                 id='care-of'
                 label=''
                 variant='outlined'
-                placeholder='Enter Care of'
+                placeholder='Add care of'
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box variant='div' component='div'>
+              <label>Source</label>
+              <TextField
+                fullWidth
+                id='outlined-basic'
+                label=''
+                variant='outlined'
+                placeholder='Add source'
               />
             </Box>
           </Grid>

@@ -15,7 +15,7 @@ const VerticalNavGroup = ({ item, level }) => {
   const { user } = useAuthUser();
   const hasPermission = useMemo(
     () => checkPermission(item.permittedRole, user.role),
-    [item.permittedRole, user.role]
+    [item.permittedRole, user.role],
   );
 
   if (!hasPermission) {
@@ -26,7 +26,7 @@ const VerticalNavGroup = ({ item, level }) => {
       <VerticalNavGroupItem
         level={level}
         sidebarTextColor={sidebarTextColor}
-        component="div"
+        component='div'
         className={clsx('nav-item nav-item-header')}
       >
         {allowMultiLanguage ? <IntlMessages id={item.messageId} /> : item.title}

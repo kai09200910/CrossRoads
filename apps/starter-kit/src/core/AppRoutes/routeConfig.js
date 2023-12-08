@@ -41,14 +41,6 @@ const routesConfig = [
         url: '/add-new-listing',
       },
       {
-        id: 'campaigns',
-        title: 'Add new campaigns',
-        messageId: 'sidebar.sample.campaigns',
-        type: 'item',
-        icon: <RiMailLine />,
-        url: '/campaigns',
-      },
-      {
         id: 'worklists',
         title: 'Add new worklists',
         messageId: 'Worklists',
@@ -56,6 +48,15 @@ const routesConfig = [
         icon: <RiFileList2Line />,
         url: '/worklists',
       },
+      {
+        id: 'campaigns',
+        title: 'Add new campaigns',
+        messageId: 'sidebar.sample.campaigns',
+        type: 'item',
+        icon: <RiMailLine />,
+        url: '/campaigns',
+      },
+
       {
         id: 'contacts',
         title: 'Add new contact',
