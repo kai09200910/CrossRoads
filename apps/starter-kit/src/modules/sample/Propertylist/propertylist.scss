@@ -1,3 +1,8 @@
+.all-listing-wrapper {
+  .secondary-btn-small {
+    padding: 3px 15px;
+  }
+}
 .listing-fillter {
   .fillter-switch.ios-switch-custom {
     padding: 0;
@@ -38,7 +43,7 @@
       box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
       border: 1px solid #d9d9d9;
       border-radius: 25px;
-      background-color: #fff;
+      background-color: #fff !important;
       box-shadow: none;
       opacity: 1;
       &::before {
@@ -155,5 +160,11 @@
   padding-right: 8px;
   @media (max-width: 991px) {
     height: calc(100vh - 162px);
+  }
+}
+.advanced-search {
+  padding: 40px 20px;
+  .search-form-wrapper {
+    margin-bottom: 56px;
   }
 }

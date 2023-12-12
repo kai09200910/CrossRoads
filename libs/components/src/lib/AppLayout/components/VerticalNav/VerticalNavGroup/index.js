@@ -23,15 +23,6 @@ const VerticalNavGroup = ({ item, level }) => {
   }
   return (
     <>
-      <VerticalNavGroupItem
-        level={level}
-        sidebarTextColor={sidebarTextColor}
-        component='div'
-        className={clsx('nav-item nav-item-header')}
-      >
-        {allowMultiLanguage ? <IntlMessages id={item.messageId} /> : item.title}
-      </VerticalNavGroupItem>
-
       {item.children && (
         <>
           {item.children.map((item) => (
