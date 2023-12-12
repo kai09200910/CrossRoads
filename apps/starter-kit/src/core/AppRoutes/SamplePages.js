@@ -2,8 +2,12 @@ import React from 'react';
 import { RoutePermittedRole } from '@crema/constants/AppEnums';
 
 const Dashboard = React.lazy(() => import('../../modules/sample/Dashboard'));
+
 const PropertyList = React.lazy(() =>
   import('../../modules/sample/Propertylist'),
+);
+const AdvanceSearch = React.lazy(() =>
+  import('../../modules/sample/Propertylist/advanceSearch'),
 );
 const NewListing = React.lazy(() => import('../../modules/sample/Newlisting'));
 const Campaigns = React.lazy(() => import('../../modules/sample/Campaigns'));
@@ -22,6 +26,11 @@ export const samplePagesConfigs = [
     permittedRole: RoutePermittedRole.User,
     path: '/my-listing',
     element: <PropertyList />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/advancesearch',
+    element: <AdvanceSearch />,
   },
   {
     permittedRole: RoutePermittedRole.User,

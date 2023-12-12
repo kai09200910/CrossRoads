@@ -1347,6 +1347,118 @@ header {
     width: 100%;
   }
 }
-
+// Navbar|Sidebar Styles //
 .app-sidebar {
+  .simplebar-wrapper {
+    .simplebar-content {
+      .MuiList-root {
+        a.MuiListItem-root {
+          height: 50px;
+          margin: 0px 16px 8px 16px;
+          width: 246px;
+          span.nav-item-text {
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+        a.MuiListItem-root.active {
+          background-color: #2e2e2e;
+          span {
+            color: #fff !important;
+          }
+        }
+        .MuiListItem-button.menu-vertical-collapse {
+          margin: 1px 16px 8px 16px;
+          padding-left: 22px;
+          width: 246px;
+          height: 50px;
+          border-radius: 6px;
+          position: relative;
+
+          .nav-item-content {
+            span {
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+          .nav-item-icon-arrow-btn {
+            height: 24px;
+            width: 24px;
+            position: relative;
+            margin: 0;
+            span.nav-item-icon-arrow {
+              font-family: 'Material Icons' !important;
+              transform: rotate(90deg);
+            }
+          }
+        }
+        .MuiListItem-button.menu-vertical-collapse.open {
+          background-color: #2e2e2e;
+          span {
+            color: #fff !important;
+          }
+          .nav-item-icon-arrow {
+            transform: rotate(180deg) !important;
+          }
+        }
+        .MuiCollapse-vertical {
+          a.MuiListItem-root {
+            height: inherit !important;
+            margin-bottom: 0px !important;
+            padding: 8px 12px 8px 40px;
+            span.nav-item-text {
+              font-size: 14px !important;
+              // font-weight: 600;
+            }
+            &:hover {
+              background-color: #dfe8fa !important;
+              span {
+                color: #2871ff !important;
+              }
+            }
+          }
+          .MuiCollapse-wrapper.MuiCollapse-vertical {
+            margin: 0px 16px 8px 16px;
+            border: 1px solid #d9d9d9;
+            border-radius: 8px;
+            padding: 8px 0;
+            width: 246px;
+            .MuiCollapse-wrapperInner {
+              a.MuiButtonBase-root {
+                margin: 0px 8px 4px 8px !important;
+                width: 228px;
+              }
+              .MuiListItem-root.active {
+                background-color: #dfe8fa;
+                span {
+                  color: #2871ff !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
+.logout-btn {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  margin: 16px 16px;
+  width: 246px;
+  height: 50px;
+  border-radius: 6px;
+  background-color: #ffbbbb;
+  color: #292929;
+  font-size: 16px;
+  box-shadow: none;
+  &:hover {
+    background-color: #f7a2a2;
+    box-shadow: none;
+  }
+}
+.simplebar-content-wrapper {
+  height: calc(100vh - 148px) !important;
+}
+// Navbar|Sidebar Styles END //

@@ -213,6 +213,12 @@
   .MuiFormControl-root {
     width: 100%;
   }
+  .MuiPaper-root {
+    @media (max-width: 650px) {
+      min-width: 80%;
+      width: 85%;
+    }
+  }
 }
 ul.MuiList-root {
   li.MuiMenuItem-root {
