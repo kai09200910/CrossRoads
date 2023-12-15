@@ -21,7 +21,7 @@ const PropertyList = () => {
 
   const navigate = useNavigate();
   const navigateToCreate = () => {
-    navigate('/advancesearch');
+    navigate('/advanced-search');
   };
 
   return (

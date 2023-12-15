@@ -164,7 +164,35 @@
 }
 .advanced-search {
   padding: 40px 20px;
+  @media (max-width: 767px) {
+    padding: 20px 20px;
+  }
+
+  > .MuiBox-root {
+    @media (max-width: 767px) {
+      padding-top: 0;
+    }
+  }
   .search-form-wrapper {
     margin-bottom: 56px;
+    @media (max-width: 767px) {
+      margin-bottom: 16px;
+    }
+    .search-categories {
+      @media (max-width: 767px) {
+        margin: 8px 0 16px 0;
+      }
+    }
+    .search-form-controls {
+      margin-top: 56px;
+      @media (max-width: 767px) {
+        margin-top: 32px;
+      }
+      button {
+        @media (max-width: 475px) {
+          margin: 8px 02;
+        }
+      }
+    }
   }
 }

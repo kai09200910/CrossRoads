@@ -12,7 +12,7 @@
           .MuiInputBase-adornedStart {
             background-color: #fff;
             input {
-              padding-left: 4px;
+              padding-left: 4px !important;
             }
           }
         }
@@ -189,7 +189,7 @@
       }
     }
     .MuiDialogActions-root.MuiDialogActions-spacing {
-      padding: 8px 42px 16px 42px;
+      padding: 8px 42px 32px 42px;
       @media (max-width: 767px) {
         padding: 8px 24px 32px 24px;
       }
@@ -555,5 +555,12 @@ ul.MuiList-root {
     }
   }
 }
-
+.tab-content-wrapper {
+  .main-title {
+    margin: 12px 0 16px 0;
+    @media (max-width: 767px) {
+      flex-wrap: inherit;
+    }
+  }
+}
 // Contact Details Styles END //

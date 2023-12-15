@@ -1,0 +1,226 @@
+import React from 'react';
+import { Box, Stack, TablePagination, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+
+import './contacts.scss';
+
+function createData(
+  firstname,
+  lastname,
+  contactinfo,
+  email,
+  lastactive,
+  assignedagent,
+  creationdate,
+) {
+  return {
+    firstname,
+    lastname,
+    contactinfo,
+    email,
+    lastactive,
+    assignedagent,
+    creationdate,
+  };
+}
+
+const rows = [
+  createData(
+    'Robert',
+    'Doe',
+    '242-324-1356',
+    'john.smith@example.com ',
+    '30 Jun 2024',
+    'Charles Smith',
+    '25 Jun 2024',
+  ),
+  createData(
+    'Michalle',
+    'Bois',
+    '242-324-1356',
+    'john.smith@example.com ',
+    '30 Jun 2024',
+    'Charles Smith',
+    '25 Jun 2024',
+  ),
+  createData(
+    'Jacob',
+    'Milles',
+    '242-324-1356',
+    'john.smith@example.com ',
+    '30 Jun 2024',
+    'Charles Smith',
+    '25 Jun 2024',
+  ),
+  createData(
+    'Johnathan',
+    'Smith',
+    '242-324-1356',
+    'john.smith@example.com ',
+    '30 Jun 2024',
+    'Charles Smith',
+    '25 Jun 2024',
+  ),
+  createData(
+    'Petter',
+    'England',
+    '242-324-1356',
+    'john.smith@example.com ',
+    '30 Jun 2024',
+    'Charles Smith',
+    '25 Jun 2024',
+  ),
+  createData(
+    'Stefan',
+    'marry',
+    '242-324-1356',
+    'john.smith@example.com ',
+    '30 Jun 2024',
+    'Charles Smith',
+    '25 Jun 2024',
+  ),
+  createData(
+    'Marai',
+    'monica',
+    '242-324-1356',
+    'john.smith@example.com ',
+    '30 Jun 2024',
+    'Charles Smith',
+    '25 Jun 2024',
+  ),
+  createData(
+    'Joseph',
+    'Rao',
+    '242-324-1356',
+    'john.smith@example.com ',
+    '30 Jun 2024',
+    'Charles Smith',
+    '25 Jun 2024',
+  ),
+];
+
+const ListingAlert = () => {
+  const navigate = useNavigate();
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
+  return (
+    <>
+      <Typography
+        variant='h3'
+        component='h3'
+        sx={{
+          paddingBottom: { xs: 3, xl: 2 },
+          paddingTop: { xs: 5, xl: 5 },
+        }}
+      >
+        Listing Alerts
+      </Typography>
+
+      <Box
+        sx={{ width: '100%', overflow: 'hidden' }}
+        className='table-wrapper contact-list-table'
+      >
+        <TableContainer>
+          <Table sx={{ minWidth: 400 }} aria-label='simple table'>
+            <TableHead>
+              <TableRow>
+                <TableCell align='left'>First name </TableCell>
+                <TableCell align='left'>Last Name </TableCell>
+                <TableCell align='left'>Contact info </TableCell>
+                <TableCell align='left'>Last active </TableCell>
+                <TableCell align='left'>Assigned agent </TableCell>
+                <TableCell align='left'>Creation date</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow
+                  className={
+                    row?.approval === false ? 'resubmitted-approval' : ''
+                  }
+                  key={row.name}
+                  sx={{
+                    '&:last-child td, &:last-child th': { border: 0 },
+                  }}
+                  onClick={() => navigate('/contacts/details')}
+                >
+                  <TableCell component='th' scope='row' className='field-name'>
+                    <Typography variant='body1' component='p'>
+                      {row.firstname}{' '}
+                    </Typography>
+                  </TableCell>
+                  <TableCell align='left'>
+                    <Typography variant='body1' component='p'>
+                      {row.lastname}
+                    </Typography>
+                  </TableCell>
+                  <TableCell align='left'>
+                    <Stack
+                      direction='column'
+                      justifyContent='center'
+                      alignItems='flex-start'
+                      spacing={2}
+                    >
+                      <Typography variant='body1' component='p'>
+                        {row.contactinfo}
+                      </Typography>
+                      <Typography variant='span' component='span'>
+                        {row.email}
+                      </Typography>
+                    </Stack>
+                  </TableCell>
+                  <TableCell align='left'>
+                    <Typography variant='body1' component='p'>
+                      {row.lastactive}
+                    </Typography>
+                  </TableCell>
+                  <TableCell align='left'>
+                    <Typography
+                      variant='body1'
+                      component='p'
+                      className='listing-number'
+                    >
+                      {row.assignedagent}
+                    </Typography>
+                  </TableCell>
+                  <TableCell align='left'>
+                    <Typography variant='body1' component='p'>
+                      {row.creationdate}
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 100]}
+          component='div'
+          count={rows.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </Box>
+    </>
+  );
+};
+
+export default ListingAlert;
