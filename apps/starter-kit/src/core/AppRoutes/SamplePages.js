@@ -20,6 +20,30 @@ const Contacts = React.lazy(() => import('../../modules/sample/Contacts'));
 const ContactDetails = React.lazy(() =>
   import('../../modules/sample/Contacts/contactDetails'),
 );
+const MyContacts = React.lazy(() =>
+  import('../../modules/sample/Contacts/myContacts'),
+);
+const ListingalertsTab = React.lazy(() =>
+  import(
+    '../../modules/sample/Contacts/contactDetails/Otherdetails/listingalertsTab'
+  ),
+);
+
+// import MyContacts from '../../modules/sample/Contacts/myContacts';
+// import ListingalertsTab from '../../modules/sample/Contacts/contactDetails/Otherdetails/listingalertsTab';
+
+const Document = React.lazy(() => import('../../modules/sample/Document'));
+
+const HelpDocument = React.lazy(() =>
+  import('../../modules/sample/Document/helpDocuments'),
+);
+
+const SharedDocument = React.lazy(() =>
+  import('../../modules/sample/Document/sharedDocuments'),
+);
+// import Document from '../../modules/sample/Document';
+// import HelpDocument from '../../modules/sample/Document/helpDocuments';
+// import SharedDocument from '../../modules/sample/Document/sharedDocuments';
 
 export const samplePagesConfigs = [
   {
@@ -29,7 +53,7 @@ export const samplePagesConfigs = [
   },
   {
     permittedRole: RoutePermittedRole.User,
-    path: '/advancesearch',
+    path: '/advanced-search',
     element: <AdvanceSearch />,
   },
   {
@@ -66,5 +90,32 @@ export const samplePagesConfigs = [
     permittedRole: RoutePermittedRole.User,
     path: '/contacts/details',
     element: <ContactDetails />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/my-contacts',
+    element: <MyContacts />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/listing-alert',
+    // element: <ListingAlert />,
+    element: <ListingalertsTab />,
+  },
+
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/documents',
+    element: <Document />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/shared-documents',
+    element: <SharedDocument />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/help-documents',
+    element: <HelpDocument />,
   },
 ];

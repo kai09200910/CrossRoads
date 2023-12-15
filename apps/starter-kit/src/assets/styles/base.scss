@@ -434,6 +434,12 @@ h4 {
 .time-picker {
   width: 100%;
 }
+.MuiInputBase-adornedStart {
+  .MuiInputBase-inputAdornedStart {
+    padding-left: 2px !important;
+  }
+}
+
 // Add Document Button Styles //
 
 .add-doc-btn-grp {
@@ -565,7 +571,7 @@ h4 {
       margin: 32px 16px;
     }
     .modal-dailog-title {
-      padding: 40px 42px 0px 42px;
+      padding: 40px 32px 0px 32px;
       @media (max-width: 767px) {
         font-size: 20px !important;
         padding: 24px 16px 0px 16px;
@@ -577,7 +583,7 @@ h4 {
       }
     }
     .modal-dailog-content {
-      padding: 40px 42px 20px 42px;
+      padding: 40px 32px 20px 32px;
       @media (max-width: 767px) {
         padding: 24px 16px 0px 16px;
       }
@@ -629,7 +635,7 @@ h4 {
       }
     }
     .MuiDialogActions-root.MuiDialogActions-spacing {
-      padding: 8px 42px 48px 42px;
+      padding: 8px 32px 32px 32px;
       @media (max-width: 767px) {
         padding: 24px 16px 24px 16px;
       }
