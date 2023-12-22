@@ -15,6 +15,8 @@ import {
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import TagsInput from '../common/tagsInput';
+import MatchingContacts from '../common/matchingContacts';
+import ReactSelect from 'react-select';
 
 const GeneralTab = () => {
   function handleSelecetedTags(items) {}
@@ -41,6 +43,18 @@ const GeneralTab = () => {
 
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
+
+  const options = [
+    { value: 'chocolate', label: 'Jhone Smith' },
+    { value: 'Robert Doe', label: 'Robert Doe' },
+    { value: 'Victoria', label: 'Victoria' },
+    { value: 'Joss Mackison', label: 'Joss Mackison' },
+    { value: 'Merry Jane', label: 'Merry Jane' },
+    { value: 'Hoper', label: 'Stan Hoper' },
+  ];
+
+  const [selectedOption, setSelectedOption] = useState(null);
+
   return (
     <>
       <Box className='genral-tab'>
@@ -135,7 +149,7 @@ const GeneralTab = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Contact/Profile type </label>
+              <label>Profile type </label>
               <FormControl>
                 <Select
                   labelId='demo-multiple-checkbox-label'
@@ -260,7 +274,7 @@ const GeneralTab = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          {/* <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Office location </label>
               <TextField
@@ -283,7 +297,7 @@ const GeneralTab = () => {
                 placeholder='Enter website URL'
               />
             </Box>
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
@@ -307,6 +321,61 @@ const GeneralTab = () => {
                 variant='outlined'
                 placeholder='Add source'
               />
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} md={6}>
+            <Box variant='div' component='div'>
+              <label>Related contact </label>
+              <ReactSelect
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={options}
+                isSearchable={true}
+                isClearable={true}
+                className='react-select-wrap'
+                placeholder='Search for contact record'
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box variant='div' component='div'>
+              <label>Relationship type </label>
+              <Select
+                fullWidth
+                id='secondary-agent'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
+                IconComponent={RiArrowDownSLine}
+              >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select
+                </MenuItem>
+                <MenuItem value={10}>Type 1</MenuItem>
+                <MenuItem value={20}>Type 2</MenuItem>
+                <MenuItem value={30}>Type 3</MenuItem>
+                <MenuItem value={10}>Type 4</MenuItem>
+                <MenuItem value={20}>Type 5</MenuItem>
+                <MenuItem value={30}>Type 6</MenuItem>
+              </Select>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} md={12}>
+            <Box variant='div' component='div'>
+              <label>Matching contacts</label>
+
+              <MatchingContacts />
             </Box>
           </Grid>
         </Grid>

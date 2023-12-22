@@ -98,143 +98,119 @@ const RenterprofileTab = () => {
               <Grid item xs={12} md={6}>
                 <Box variant='div' component='div'>
                   <label>Bedrooms </label>
-                  <Stack
-                    direction='row'
-                    justifyContent='flex-start'
-                    alignItems='center'
-                    spacing={2}
-                    className='bed-bath-wrap'
+
+                  <Select
+                    fullWidth
+                    id='secondary-agent'
+                    value={value}
+                    defaultValue='none'
+                    onChange={(e) => setValue(e.target.value)}
+                    onFocus={(e) => setShowPlaceholder(false)}
+                    onClose={(e) =>
+                      setShowPlaceholder(e.target.value === undefined)
+                    }
+                    IconComponent={RiArrowDownSLine}
                   >
-                    <RadioGroup
-                      row
-                      aria-labelledby='demo-row-radio-buttons-group-label'
-                      name='row-radio-buttons-group'
-                      className='bed-bath-radio-btn-grp'
-                      disableRipple
-                      onChange={(event) => setActivebed(event.target.value)}
+                    <MenuItem
+                      key='0'
+                      disabled
+                      value='none'
+                      className='place-holder'
                     >
-                      <FormControlLabel
-                        value='bedroom0'
-                        control={<Radio />}
-                        label='0+'
-                        disableRipple
-                        className={activebed === 'bedroom0' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bedroom1'
-                        control={<Radio />}
-                        label='1+'
-                        disableRipple
-                        className={activebed === 'bedroom1' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bedroom2'
-                        control={<Radio />}
-                        label='2+'
-                        disableRipple
-                        className={activebed === 'bedroom2' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bedroom3'
-                        control={<Radio />}
-                        label='3+'
-                        disableRipple
-                        className={activebed === 'bedroom3' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bedroom4'
-                        control={<Radio />}
-                        label='4+'
-                        disableRipple
-                        className={activebed === 'bedroom4' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bedroom5'
-                        control={<Radio />}
-                        label='5+'
-                        disableRipple
-                        className={activebed === 'bedroom5' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bedroom6'
-                        control={<Radio />}
-                        label='6+'
-                        disableRipple
-                        className={activebed === 'bedroom6' && 'btn-selected'}
-                      />
-                    </RadioGroup>
-                  </Stack>
+                      Select
+                    </MenuItem>
+                    <MenuItem value={1}> 1</MenuItem>
+                    <MenuItem value={2}> 2</MenuItem>
+                    <MenuItem value={3}> 3</MenuItem>
+                    <MenuItem value={4}> 4</MenuItem>
+                    <MenuItem value={5}> 5</MenuItem>
+                    <MenuItem value={6}> 6</MenuItem>
+                    <MenuItem value={7}> 7</MenuItem>
+                    <MenuItem value={8}> 8</MenuItem>
+                    <MenuItem value={9}> 9</MenuItem>
+
+                    <MenuItem value={10}> 10</MenuItem>
+                    <MenuItem value={11}> 11</MenuItem>
+                    <MenuItem value={12}> 12</MenuItem>
+                    <MenuItem value={13}> 13</MenuItem>
+                    <MenuItem value={14}> 14</MenuItem>
+                    <MenuItem value={15}> 15</MenuItem>
+                    <MenuItem value={16}> 16</MenuItem>
+                    <MenuItem value={17}> 17</MenuItem>
+                    <MenuItem value={18}> 18</MenuItem>
+                    <MenuItem value={19}> 19</MenuItem>
+                    <MenuItem value={20}> 20</MenuItem>
+
+                    <MenuItem value={21}> 21</MenuItem>
+                    <MenuItem value={22}> 22</MenuItem>
+                    <MenuItem value={23}> 23</MenuItem>
+                    <MenuItem value={24}> 24</MenuItem>
+                    <MenuItem value={25}> 25</MenuItem>
+                    <MenuItem value={26}> 26</MenuItem>
+                    <MenuItem value={27}> 27</MenuItem>
+                    <MenuItem value={28}> 28</MenuItem>
+                    <MenuItem value={29}> 29</MenuItem>
+                    <MenuItem value={30}> 30</MenuItem>
+                  </Select>
                 </Box>
               </Grid>
               <Grid item xs={12} md={6}>
                 <Box variant='div' component='div'>
                   <label>Bathrooms </label>
-                  <Stack
-                    direction='row'
-                    justifyContent='flex-start'
-                    alignItems='center'
-                    spacing={2}
-                    className='bed-bath-wrap'
+
+                  <Select
+                    fullWidth
+                    id='secondary-agent'
+                    value={value}
+                    defaultValue='none'
+                    onChange={(e) => setValue(e.target.value)}
+                    onFocus={(e) => setShowPlaceholder(false)}
+                    onClose={(e) =>
+                      setShowPlaceholder(e.target.value === undefined)
+                    }
+                    IconComponent={RiArrowDownSLine}
                   >
-                    <RadioGroup
-                      row
-                      aria-labelledby='demo-row-radio-buttons-group-label'
-                      name='row-radio-buttons-group'
-                      className='bed-bath-radio-btn-grp'
-                      disableRipple
-                      onChange={(event) => setActivebath(event.target.value)}
+                    <MenuItem
+                      key='0'
+                      disabled
+                      value='none'
+                      className='place-holder'
                     >
-                      <FormControlLabel
-                        value='bathroom0'
-                        control={<Radio />}
-                        label='0+'
-                        disableRipple
-                        className={activebath === 'bathroom0' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bathroom1'
-                        control={<Radio />}
-                        label='1+'
-                        disableRipple
-                        className={activebath === 'bathroom1' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bathroom2'
-                        control={<Radio />}
-                        label='2+'
-                        disableRipple
-                        className={activebath === 'bathroom2' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bathroom3'
-                        control={<Radio />}
-                        label='3+'
-                        disableRipple
-                        className={activebath === 'bathroom3' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bathroom4'
-                        control={<Radio />}
-                        label='4+'
-                        disableRipple
-                        className={activebath === 'bathroom4' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bathroom5'
-                        control={<Radio />}
-                        label='5+'
-                        disableRipple
-                        className={activebath === 'bathroom5' && 'btn-selected'}
-                      />
-                      <FormControlLabel
-                        value='bathroom6'
-                        control={<Radio />}
-                        label='6+'
-                        disableRipple
-                        className={activebath === 'bathroom6' && 'btn-selected'}
-                      />
-                    </RadioGroup>
-                  </Stack>
+                      Select
+                    </MenuItem>
+                    <MenuItem value={1}> 1</MenuItem>
+                    <MenuItem value={2}> 2</MenuItem>
+                    <MenuItem value={3}> 3</MenuItem>
+                    <MenuItem value={4}> 4</MenuItem>
+                    <MenuItem value={5}> 5</MenuItem>
+                    <MenuItem value={6}> 6</MenuItem>
+                    <MenuItem value={7}> 7</MenuItem>
+                    <MenuItem value={8}> 8</MenuItem>
+                    <MenuItem value={9}> 9</MenuItem>
+
+                    <MenuItem value={10}> 10</MenuItem>
+                    <MenuItem value={11}> 11</MenuItem>
+                    <MenuItem value={12}> 12</MenuItem>
+                    <MenuItem value={13}> 13</MenuItem>
+                    <MenuItem value={14}> 14</MenuItem>
+                    <MenuItem value={15}> 15</MenuItem>
+                    <MenuItem value={16}> 16</MenuItem>
+                    <MenuItem value={17}> 17</MenuItem>
+                    <MenuItem value={18}> 18</MenuItem>
+                    <MenuItem value={19}> 19</MenuItem>
+                    <MenuItem value={20}> 20</MenuItem>
+
+                    <MenuItem value={21}> 21</MenuItem>
+                    <MenuItem value={22}> 22</MenuItem>
+                    <MenuItem value={23}> 23</MenuItem>
+                    <MenuItem value={24}> 24</MenuItem>
+                    <MenuItem value={25}> 25</MenuItem>
+                    <MenuItem value={26}> 26</MenuItem>
+                    <MenuItem value={27}> 27</MenuItem>
+                    <MenuItem value={28}> 28</MenuItem>
+                    <MenuItem value={29}> 29</MenuItem>
+                    <MenuItem value={30}> 30</MenuItem>
+                  </Select>
                 </Box>
               </Grid>
             </Grid>

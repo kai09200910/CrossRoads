@@ -96,7 +96,7 @@ label.empty-label {
   display: flex;
 }
 .MuiInputBase-input.MuiOutlinedInput-input {
-  padding: 13.5px 14px !important;
+  padding: 13.5px 10px !important;
   background-color: #fff;
   border-radius: 8px;
   border: 2px solid transparent;
@@ -437,6 +437,48 @@ h4 {
 .MuiInputBase-adornedStart {
   .MuiInputBase-inputAdornedStart {
     padding-left: 2px !important;
+  }
+}
+
+.MuiMenu-paper {
+  ul.MuiList-root {
+    li.MuiMenuItem-root {
+      padding: 6px 16px;
+      span.MuiCheckbox-root {
+        padding: 0px 9px;
+      }
+      div.MuiListItemText-root {
+        span.MuiTypography-root {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+[aria-labelledby='amenities-selection'] {
+  column-count: 3;
+  gap: 4px;
+  @media (max-width: 767px) {
+    column-count: 1;
+  }
+}
+
+.date-range-picker {
+  .MuiFormControl-root {
+    .MuiInputBase-root {
+      position: relative;
+      cursor: pointer;
+      &::before {
+        content: '\1F4C5';
+        position: absolute;
+        right: 14px;
+        font-size: 17px;
+        filter: grayscale(1);
+      }
+      input {
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -1348,7 +1390,7 @@ header {
   }
 }
 
-.amenities-selection {
+.multiple-selection {
   .MuiFormControl-root {
     width: 100%;
   }
@@ -1468,3 +1510,20 @@ header {
   height: calc(100vh - 148px) !important;
 }
 // Navbar|Sidebar Styles END //
+
+// Coming Soon Styles//
+.coming-soon-screen {
+  padding: 50px;
+  text-align: center;
+  height: calc(100vh - 155px);
+  h3 {
+    margin-bottom: 48px;
+    font-size: 24px !important;
+  }
+  .coming-soon-img-wrap {
+    > .MuiBox-root {
+      margin: 0 auto;
+    }
+  }
+}
+// Coming Soon Styles END //

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Container, Paper, Stack, Typography } from '@mui/material';
+import { Box, Container, Paper, Typography } from '@mui/material';
 import ComingsoonComponent from '../common/comingsoonComponent';
 
 // import './contacts.scss';
 
-const HelpDocument = () => {
+const MyTransfers = () => {
   return (
     <>
       <Typography
@@ -15,7 +15,7 @@ const HelpDocument = () => {
           paddingTop: { xs: 5, xl: 5 },
         }}
       >
-        Help Documents
+        My Transfers
       </Typography>
 
       <Paper className='coming-soon-screen'>
@@ -30,17 +30,17 @@ const HelpDocument = () => {
               sx={{
                 paddingBottom: { xs: 3, xl: 2 },
                 paddingTop: { xs: 5, xl: 5 },
+                // height:{100vh},
               }}
             >
-              Coming Soon: 'Help Documents' List Screen
+              Coming Soon: ' My Transfers' List Screen
             </Typography>
+            <ComingsoonComponent />
           </Box>
-
-          <ComingsoonComponent />
         </Container>
       </Paper>
     </>
   );
 };
 
-export default HelpDocument;
+export default MyTransfers;

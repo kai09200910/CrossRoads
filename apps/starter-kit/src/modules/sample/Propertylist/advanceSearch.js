@@ -20,33 +20,71 @@ import { Link } from 'react-router-dom';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+// import { LocalizationProvider } from '@mui/x-date-pickers-pro';
+// import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
+// import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
+import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
+import { SingleInputDateRangeField } from '@mui/x-date-pickers-pro/SingleInputDateRangeField';
 import { useNavigate } from 'react-router-dom';
 import './propertylist.scss';
 import PropertyCard from './propertyCard';
 import ReactFlagsSelect from 'react-flags-select';
 import MatchingContacts from '../common/matchingContacts';
 
+const breadcrumbs = [
+  <Link
+    underline='hover'
+    key='1'
+    color='inherit'
+    // onClick={() => setIsList(false)}
+    to='/my-listing'
+  >
+    All listings
+  </Link>,
+  <Typography key='3' color='text.primary'>
+    Advanced search
+  </Typography>,
+];
+const names = [
+  'Wifi',
+  'Parking',
+  'Pet-friendly ',
+  'Fully equipped kitchen',
+  'Gym',
+  'Pool',
+  'Spa',
+  'Laundry',
+];
+const propertytype = [
+  'Single Family Home ',
+  'Half Duplex ',
+  'Condo ',
+  'Full Duplex ',
+  'Triplex',
+  'Fourplex',
+  'Farm/Ranch ',
+  'Lots/Acreage',
+  'Resort/Hotel  ',
+  'Private Island ',
+  'Sixplex',
+  'Apartment Complex ',
+  'Dock',
+];
+
 const AdvanceSearch = () => {
+  const navigate = useNavigate();
   const [personName, setPersonName] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const breadcrumbs = [
-    <Link
-      underline='hover'
-      key='1'
-      color='inherit'
-      // onClick={() => setIsList(false)}
-      to='/my-listing'
-    >
-      All listings
-    </Link>,
-    <Typography key='3' color='text.primary'>
-      Advanced search
-    </Typography>,
-  ];
-
+  const [propertylistName, setPropertylistName] = React.useState([]);
+  const [value, setValue] = useState('none');
+  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
+  const [selected, setSelected] = useState('');
   const [breadcrumbsItems, setBreadcrumbsItems] = useState(breadcrumbs);
+  const [propertyvalue, setpropertyValue] = useState('none');
+  const [showPropertyPlaceholder, setShowPropertyPlaceholder] = useState(
+    value === 'none',
+  );
 
   useEffect(() => {
     if (isSubmitted) {
@@ -73,6 +111,10 @@ const AdvanceSearch = () => {
     }
   }, [isSubmitted]);
 
+  const navigateToListing = () => {
+    navigate('/my-listing');
+  };
+
   const handleChange = (event) => {
     const {
       target: { value },
@@ -80,32 +122,18 @@ const AdvanceSearch = () => {
     setPersonName(typeof value === 'string' ? value.split(',') : value);
   };
 
-  const [value, setValue] = useState('none');
-  const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
-
-  const names = [
-    'Wifi',
-    'Parking',
-    'Pet-friendly ',
-    'Fully equipped kitchen',
-    'Gym',
-    'Pool',
-    'Spa',
-    'Laundry',
-  ];
-
-  const navigate = useNavigate();
-  const navigateToListing = () => {
-    navigate('/my-listing');
+  const handlepropertyChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPropertylistName(typeof value === 'string' ? value.split(',') : value);
   };
-
-  const [selected, setSelected] = useState('');
 
   return (
     <>
       <Paper mt={2}>
         {/* <Container> */}
-        <Container maxWidth='md'>
+        <Container className='advanced-search-wrapper'>
           <Box
             sx={{
               padding: { xs: 5, xl: 5 },
@@ -304,70 +332,86 @@ const AdvanceSearch = () => {
                     </Grid>
 
                     <Grid item xs={12} md={6} mt={3}>
-                      <Box variant='div' component='div'>
+                      <Box
+                        variant='div'
+                        component='div'
+                        className='date-range-picker'
+                      >
                         <label>Date listed </label>
-                        <DemoContainer components={['DatePicker']}>
+                        {/* <DemoContainer components={['DatePicker']}>
                           <DatePicker sx={{ width: '100%' }} />
-                        </DemoContainer>
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={6} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Date sold </label>
-                        <DemoContainer components={['DatePicker']}>
-                          <DatePicker sx={{ width: '100%' }} />
-                        </DemoContainer>
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={6} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Date under contract </label>
-                        <DemoContainer components={['DatePicker']}>
-                          <DatePicker sx={{ width: '100%' }} />
-                        </DemoContainer>
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={6} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Date of expiry </label>
-                        <DemoContainer components={['DatePicker']}>
-                          <DatePicker sx={{ width: '100%' }} />
-                        </DemoContainer>
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Property Type</label>
-                        <Select
-                          fullWidth
-                          id='secondary-agent'
-                          value={value}
-                          defaultValue='none'
-                          onChange={(e) => setValue(e.target.value)}
-                          onFocus={(e) => setShowPlaceholder(false)}
-                          onClose={(e) =>
-                            setShowPlaceholder(e.target.value === undefined)
-                          }
-                          IconComponent={RiArrowDownSLine}
+                        </DemoContainer> */}
+                        {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                          <DemoContainer components={['DateRangeCalendar']}>
+                            <DateRangeCalendar calendars={1} />
+                          </DemoContainer>
+                        </LocalizationProvider> */}
+                        <DemoContainer
+                          components={['SingleInputDateRangeField']}
                         >
-                          <MenuItem
-                            key='0'
-                            disabled
-                            value='none'
-                            className='place-holder'
-                          >
-                            Select Property Type
-                          </MenuItem>
-                          <MenuItem value={10}>MLS Exclusive</MenuItem>
-                          <MenuItem value={20}>General </MenuItem>
-                          <MenuItem value={30}>
-                            Exclusive (not on MLS){' '}
-                          </MenuItem>
-                        </Select>
+                          <DateRangePicker
+                            slots={{ field: SingleInputDateRangeField }}
+                            // calendars={1}
+                            calendars={2}
+                          />
+                        </DemoContainer>
+                      </Box>
+                    </Grid>
+
+                    <Grid item xs={12} md={6} mt={3}>
+                      <Box
+                        variant='div'
+                        component='div'
+                        className='date-range-picker'
+                      >
+                        <label>Date sold </label>
+                        <DemoContainer
+                          components={['SingleInputDateRangeField']}
+                        >
+                          <DateRangePicker
+                            slots={{ field: SingleInputDateRangeField }}
+                            calendars={2}
+                          />
+                        </DemoContainer>
+                        {/* <DemoContainer components={['DatePicker']}>
+                          <DatePicker sx={{ width: '100%' }} />
+                        </DemoContainer> */}
+                      </Box>
+                    </Grid>
+
+                    <Grid item xs={12} md={6} mt={3}>
+                      <Box
+                        variant='div'
+                        component='div'
+                        className='date-range-picker'
+                      >
+                        <label>Date under contract </label>
+                        <DemoContainer
+                          components={['SingleInputDateRangeField']}
+                        >
+                          <DateRangePicker
+                            slots={{ field: SingleInputDateRangeField }}
+                            calendars={2}
+                          />
+                        </DemoContainer>
+                      </Box>
+                    </Grid>
+
+                    <Grid item xs={12} md={6} mt={3}>
+                      <Box
+                        variant='div'
+                        component='div'
+                        className='date-range-picker'
+                      >
+                        <label>Date of expiry </label>
+                        <DemoContainer
+                          components={['SingleInputDateRangeField']}
+                        >
+                          <DateRangePicker
+                            slots={{ field: SingleInputDateRangeField }}
+                            calendars={2}
+                          />
+                        </DemoContainer>
                       </Box>
                     </Grid>
 
@@ -534,6 +578,39 @@ const AdvanceSearch = () => {
                     </Grid>
 
                     <Grid item xs={12} md={4} mt={3}>
+                      <Box
+                        variant='div'
+                        component='div'
+                        className='multiple-selection'
+                      >
+                        <label>Property Type</label>
+                        <FormControl>
+                          <Select
+                            labelId='demo-multiple-checkbox-label'
+                            id='contact-type-multiple-checkbox'
+                            multiple
+                            placeholder='Select Contact Type'
+                            value={propertylistName}
+                            onChange={handlepropertyChange}
+                            IconComponent={RiArrowDownSLine}
+                            renderValue={(selected) => selected.join(', ')}
+                          >
+                            {propertytype.map((propertyname) => (
+                              <MenuItem key={propertyname} value={propertyname}>
+                                <Checkbox
+                                  checked={
+                                    propertylistName.indexOf(propertyname) > -1
+                                  }
+                                />
+                                <ListItemText primary={propertyname} />
+                              </MenuItem>
+                            ))}
+                          </Select>
+                        </FormControl>
+                      </Box>
+                    </Grid>
+
+                    <Grid item xs={12} md={4} mt={3}>
                       <Box variant='div' component='div'>
                         <label>Status </label>
                         <Select
@@ -659,22 +736,27 @@ const AdvanceSearch = () => {
                       <Box
                         variant='div'
                         component='div'
-                        className='amenities-selection'
+                        className='multiple-selection'
                       >
                         <label>Amenities </label>
-                        <FormControl>
+                        <FormControl className=''>
                           <Select
-                            labelId='demo-multiple-checkbox-label'
-                            id='contact-type-multiple-checkbox'
+                            labelId='amenities-selection'
+                            id='contact-type-multiple-checkbox '
                             multiple
                             placeholder='Select Contact Type'
                             value={personName}
                             onChange={handleChange}
                             IconComponent={RiArrowDownSLine}
                             renderValue={(selected) => selected.join(', ')}
+                            className=''
                           >
                             {names.map((name) => (
-                              <MenuItem key={name} value={name}>
+                              <MenuItem
+                                key={name}
+                                value={name}
+                                className='li-menu'
+                              >
                                 <Checkbox
                                   checked={personName.indexOf(name) > -1}
                                 />
