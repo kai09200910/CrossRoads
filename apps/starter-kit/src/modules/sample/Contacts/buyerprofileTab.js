@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {
   Box,
+  Checkbox,
+  FormControl,
   FormControlLabel,
   MenuItem,
   Select,
@@ -11,6 +13,7 @@ import {
   RadioGroup,
   Radio,
   InputAdornment,
+  ListItemText,
 } from '@mui/material';
 import { RiAddFill, RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
 
@@ -21,6 +24,25 @@ const BuyerprofileTab = () => {
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
 
+  const [personName, setPersonName] = React.useState([]);
+  const [person, setPerson] = React.useState([]);
+  const names = [
+    'Wifi',
+    'Parking',
+    'Pet-friendly ',
+    'Fully equipped kitchen',
+    'Gym',
+    'Pool',
+    'Spa',
+    'Laundry',
+  ];
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(typeof value === 'string' ? value.split(',') : value);
+  };
   return (
     <>
       <Box className='personalinfo-tab'>
@@ -93,7 +115,7 @@ const BuyerprofileTab = () => {
         </Grid>
 
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={8}>
+          {/* <Grid item xs={12} md={8}>
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
                 <Box variant='div' component='div'>
@@ -238,7 +260,129 @@ const BuyerprofileTab = () => {
                 </Box>
               </Grid>
             </Grid>
+          </Grid> */}
+
+          <Grid item xs={12} md={8}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={6}>
+                <Box variant='div' component='div'>
+                  <label>Bedrooms</label>
+                  <Select
+                    fullWidth
+                    id='secondary-agent'
+                    value={value}
+                    defaultValue='none'
+                    onChange={(e) => setValue(e.target.value)}
+                    onFocus={(e) => setShowPlaceholder(false)}
+                    onClose={(e) =>
+                      setShowPlaceholder(e.target.value === undefined)
+                    }
+                    IconComponent={RiArrowDownSLine}
+                  >
+                    <MenuItem
+                      key='0'
+                      disabled
+                      value='none'
+                      className='place-holder'
+                    >
+                      Select
+                    </MenuItem>
+                    <MenuItem value={1}> 1</MenuItem>
+                    <MenuItem value={2}> 2</MenuItem>
+                    <MenuItem value={3}> 3</MenuItem>
+                    <MenuItem value={4}> 4</MenuItem>
+                    <MenuItem value={5}> 5</MenuItem>
+                    <MenuItem value={6}> 6</MenuItem>
+                    <MenuItem value={7}> 7</MenuItem>
+                    <MenuItem value={8}> 8</MenuItem>
+                    <MenuItem value={9}> 9</MenuItem>
+
+                    <MenuItem value={10}> 10</MenuItem>
+                    <MenuItem value={11}> 11</MenuItem>
+                    <MenuItem value={12}> 12</MenuItem>
+                    <MenuItem value={13}> 13</MenuItem>
+                    <MenuItem value={14}> 14</MenuItem>
+                    <MenuItem value={15}> 15</MenuItem>
+                    <MenuItem value={16}> 16</MenuItem>
+                    <MenuItem value={17}> 17</MenuItem>
+                    <MenuItem value={18}> 18</MenuItem>
+                    <MenuItem value={19}> 19</MenuItem>
+                    <MenuItem value={20}> 20</MenuItem>
+
+                    <MenuItem value={21}> 21</MenuItem>
+                    <MenuItem value={22}> 22</MenuItem>
+                    <MenuItem value={23}> 23</MenuItem>
+                    <MenuItem value={24}> 24</MenuItem>
+                    <MenuItem value={25}> 25</MenuItem>
+                    <MenuItem value={26}> 26</MenuItem>
+                    <MenuItem value={27}> 27</MenuItem>
+                    <MenuItem value={28}> 28</MenuItem>
+                    <MenuItem value={29}> 29</MenuItem>
+                    <MenuItem value={30}> 30</MenuItem>
+                  </Select>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Box variant='div' component='div'>
+                  <label>Bathrooms</label>
+                  <Select
+                    fullWidth
+                    id='secondary-agent'
+                    value={value}
+                    defaultValue='none'
+                    onChange={(e) => setValue(e.target.value)}
+                    onFocus={(e) => setShowPlaceholder(false)}
+                    onClose={(e) =>
+                      setShowPlaceholder(e.target.value === undefined)
+                    }
+                    IconComponent={RiArrowDownSLine}
+                  >
+                    <MenuItem
+                      key='0'
+                      disabled
+                      value='none'
+                      className='place-holder'
+                    >
+                      Select
+                    </MenuItem>
+                    <MenuItem value={1}> 1</MenuItem>
+                    <MenuItem value={2}> 2</MenuItem>
+                    <MenuItem value={3}> 3</MenuItem>
+                    <MenuItem value={4}> 4</MenuItem>
+                    <MenuItem value={5}> 5</MenuItem>
+                    <MenuItem value={6}> 6</MenuItem>
+                    <MenuItem value={7}> 7</MenuItem>
+                    <MenuItem value={8}> 8</MenuItem>
+                    <MenuItem value={9}> 9</MenuItem>
+
+                    <MenuItem value={10}> 10</MenuItem>
+                    <MenuItem value={11}> 11</MenuItem>
+                    <MenuItem value={12}> 12</MenuItem>
+                    <MenuItem value={13}> 13</MenuItem>
+                    <MenuItem value={14}> 14</MenuItem>
+                    <MenuItem value={15}> 15</MenuItem>
+                    <MenuItem value={16}> 16</MenuItem>
+                    <MenuItem value={17}> 17</MenuItem>
+                    <MenuItem value={18}> 18</MenuItem>
+                    <MenuItem value={19}> 19</MenuItem>
+                    <MenuItem value={20}> 20</MenuItem>
+
+                    <MenuItem value={21}> 21</MenuItem>
+                    <MenuItem value={22}> 22</MenuItem>
+                    <MenuItem value={23}> 23</MenuItem>
+                    <MenuItem value={24}> 24</MenuItem>
+                    <MenuItem value={25}> 25</MenuItem>
+                    <MenuItem value={26}> 26</MenuItem>
+                    <MenuItem value={27}> 27</MenuItem>
+                    <MenuItem value={28}> 28</MenuItem>
+                    <MenuItem value={29}> 29</MenuItem>
+                    <MenuItem value={30}> 30</MenuItem>
+                  </Select>
+                </Box>
+              </Grid>
+            </Grid>
           </Grid>
+
           <Grid item xs={12} md={4}>
             <Box variant='div' component='div'>
               <label>Price range ($)</label>
@@ -325,12 +469,37 @@ const BuyerprofileTab = () => {
               </Stack>
             </Box>
           </Grid>
+          <Grid item xs={12} md={12}>
+            <Box variant='div' component='div' className='multiple-selection'>
+              <label>Amenities </label>
+              <FormControl className=''>
+                <Select
+                  labelId='amenities-selection'
+                  id='contact-type-multiple-checkbox '
+                  multiple
+                  placeholder='Select Contact Type'
+                  value={personName}
+                  onChange={handleChange}
+                  IconComponent={RiArrowDownSLine}
+                  renderValue={(selected) => selected.join(', ')}
+                  className=''
+                >
+                  {names.map((name) => (
+                    <MenuItem key={name} value={name} className='li-menu'>
+                      <Checkbox checked={personName.indexOf(name) > -1} />
+                      <ListItemText primary={name} />
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Box>
+          </Grid>
         </Grid>
 
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={10}>
             <Grid container spacing={5}>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={6} md={5}>
                 <Box variant='div' component='div'>
                   <label>This contact currently: </label>
                   <RadioGroup
@@ -351,7 +520,7 @@ const BuyerprofileTab = () => {
                   </RadioGroup>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={6} md={7}>
                 <Box variant='div' component='div'>
                   <label>Brokerage: </label>
                   <RadioGroup
@@ -360,14 +529,19 @@ const BuyerprofileTab = () => {
                     name='row-radio-buttons-group'
                   >
                     <FormControlLabel
+                      value='All'
+                      control={<Radio />}
+                      label='All  '
+                    />
+                    <FormControlLabel
                       value='Brokerage only'
                       control={<Radio />}
                       label='Brokerage only  '
                     />
                     <FormControlLabel
-                      value='MLS'
+                      value='MLS only'
                       control={<Radio />}
-                      label='MLS '
+                      label='MLS only'
                     />
                   </RadioGroup>
                 </Box>

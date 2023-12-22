@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Paper, Stack, Typography } from '@mui/material';
-
+import ComingsoonComponent from '../common/comingsoonComponent';
 // import './contacts.scss';
 
 const SharedDocument = () => {
@@ -17,7 +17,7 @@ const SharedDocument = () => {
         Shared Documents
       </Typography>
 
-      <Paper>
+      <Paper className='coming-soon-screen'>
         <Container maxWidth='md'>
           <Box
             sx={{ width: '100%', overflow: 'hidden' }}
@@ -32,9 +32,10 @@ const SharedDocument = () => {
                 // height:{100vh},
               }}
             >
-              Shared Document list coming soon
+              Coming Soon: 'Shared Documents' List Screen
             </Typography>
           </Box>
+          <ComingsoonComponent />
         </Container>
       </Paper>
     </>

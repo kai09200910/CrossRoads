@@ -29,9 +29,6 @@ const ListingalertsTab = React.lazy(() =>
   ),
 );
 
-// import MyContacts from '../../modules/sample/Contacts/myContacts';
-// import ListingalertsTab from '../../modules/sample/Contacts/contactDetails/Otherdetails/listingalertsTab';
-
 const Document = React.lazy(() => import('../../modules/sample/Document'));
 
 const HelpDocument = React.lazy(() =>
@@ -41,9 +38,11 @@ const HelpDocument = React.lazy(() =>
 const SharedDocument = React.lazy(() =>
   import('../../modules/sample/Document/sharedDocuments'),
 );
-// import Document from '../../modules/sample/Document';
-// import HelpDocument from '../../modules/sample/Document/helpDocuments';
-// import SharedDocument from '../../modules/sample/Document/sharedDocuments';
+
+const AddTransfer = React.lazy(() =>
+  import('../../modules/sample/Accounting/addTransfers'),
+);
+const MyTransfers = React.lazy(() => import('../../modules/sample/Accounting'));
 
 export const samplePagesConfigs = [
   {
@@ -117,5 +116,16 @@ export const samplePagesConfigs = [
     permittedRole: RoutePermittedRole.User,
     path: '/help-documents',
     element: <HelpDocument />,
+  },
+
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/my-transfers',
+    element: <MyTransfers />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/add-transfers',
+    element: <AddTransfer />,
   },
 ];

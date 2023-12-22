@@ -10,7 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { RiAddLine, RiErrorWarningFill } from 'react-icons/ri';
 import AddfamilymemberDialog from './addfamilymemberDialog';
-import Select from 'react-select';
+import ReactSelect from 'react-select';
 
 function createData(name, relationship, contact, note) {
   return {
@@ -81,7 +81,7 @@ const PersonalinfoTab = () => {
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Related contact </label>
-              <Select
+              <ReactSelect
                 defaultValue={selectedOption}
                 onChange={setSelectedOption}
                 options={options}
