@@ -363,16 +363,6 @@ ul.MuiList-root {
     @media (max-width: 580px) {
       width: 85%;
     }
-    &::before {
-      // content: '';
-      // position: absolute;
-      // top: -12px;
-      // left: 10px;
-      // pointer-events: auto;
-      // border: 15px solid;
-      // border-color: transparent transparent #fff transparent;
-      // border-width: 0 15px 15px 15px;
-    }
     .add-note-modal-inner {
       background-color: #fff;
       width: 420px;
@@ -382,6 +372,7 @@ ul.MuiList-root {
       border-radius: 10px;
       @media (max-width: 580px) {
         width: 100%;
+        padding: 12px;
       }
       .primary-btn-small {
         margin-top: 8px;
@@ -560,6 +551,9 @@ ul.MuiList-root {
     margin: 12px 0 16px 0;
     @media (max-width: 767px) {
       flex-wrap: inherit;
+    }
+    @media (max-width: px) {
+      flex-wrap: wrap;
     }
   }
 }

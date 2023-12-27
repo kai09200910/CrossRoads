@@ -132,7 +132,6 @@ const AdvanceSearch = () => {
   return (
     <>
       <Paper mt={2}>
-        {/* <Container> */}
         <Container className='advanced-search-wrapper'>
           <Box
             sx={{

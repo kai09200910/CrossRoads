@@ -62,12 +62,16 @@
     width: fit-content;
     position: relative;
     z-index: 1;
+
+    @media (max-width: 1315px) {
+      width: 100%;
+    }
   }
   .worklist-fillter {
     position: absolute;
     width: 100%;
     top: -20px;
-    @media (max-width: 1380px) {
+    @media (max-width: 1315px) {
       position: unset;
       margin-bottom: 24px;
     }
@@ -89,6 +93,11 @@
         margin-left: 16px;
         @media (max-width: 850px) {
           margin: 16px 0 0 16px;
+        }
+      }
+      > .MuiGrid-container {
+        @media only screen and (min-device-width: 630px) and (max-device-width: 1315px) {
+          flex-wrap: nowrap;
         }
       }
     }

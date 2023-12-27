@@ -186,19 +186,6 @@ const GeneralTab = () => {
             </Box>
           </Grid>
 
-          {/* <Grid item xs={12} md={6}>
-            <Box variant='div' component='div'>
-              <label>Company name </label>
-              <TextField
-                fullWidth
-                id='company-name'
-                label=''
-                variant='outlined'
-                placeholder='Enter Company name'
-              />
-            </Box>
-          </Grid> */}
-
           <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label> Agent </label>

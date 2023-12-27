@@ -204,7 +204,7 @@ const PropertyDetails = () => {
               <Box
                 variant='div'
                 component='div'
-                className='amenities-selection'
+                className='multiple-selection amenities-selection'
               >
                 <label>Amenities </label>
                 <FormControl sx={{ width: '100%' }}>

@@ -98,7 +98,6 @@ export const samplePagesConfigs = [
   {
     permittedRole: RoutePermittedRole.User,
     path: '/listing-alert',
-    // element: <ListingAlert />,
     element: <ListingalertsTab />,
   },
 
