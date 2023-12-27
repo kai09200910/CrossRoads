@@ -261,15 +261,6 @@ const Campaigns = () => {
                             View campaign
                           </Button>
                         )}
-                        {/* <Button
-                          variant='contained'
-                          size='small'
-                          autoFocus
-                          onClick={() => SetIsCompanignStatsOpen(true)}
-                          className='primary-btn'
-                        >
-                          View campaign
-                        </Button> */}
                         <Button
                           variant='outlined'
                           size='small'

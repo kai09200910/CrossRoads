@@ -465,6 +465,9 @@ h4 {
 
 .date-range-picker {
   .MuiFormControl-root {
+    @media (max-width: 767px) {
+      min-width: 100% !important;
+    }
     .MuiInputBase-root {
       position: relative;
       cursor: pointer;
@@ -477,6 +480,9 @@ h4 {
       }
       input {
         cursor: pointer;
+        @media (max-width: 475px) {
+          font-size: 13px;
+        }
       }
     }
   }
@@ -611,11 +617,12 @@ h4 {
       width: 100%;
       min-width: inherit;
       margin: 32px 16px;
+      max-height: calc(100% - 24px);
     }
     .modal-dailog-title {
       padding: 40px 32px 0px 32px;
       @media (max-width: 767px) {
-        font-size: 20px !important;
+        font-size: 18px !important;
         padding: 24px 16px 0px 16px;
       }
       button {
@@ -625,9 +632,10 @@ h4 {
       }
     }
     .modal-dailog-content {
-      padding: 40px 32px 20px 32px;
+      padding: 24px 32px 20px 32px;
+
       @media (max-width: 767px) {
-        padding: 24px 16px 0px 16px;
+        padding: 8px 24px 8px 24px !important;
       }
       .error-value {
         span {
@@ -679,7 +687,7 @@ h4 {
     .MuiDialogActions-root.MuiDialogActions-spacing {
       padding: 8px 32px 32px 32px;
       @media (max-width: 767px) {
-        padding: 24px 16px 24px 16px;
+        padding: 8px 24px 24px 24px !important;
       }
       .MuiStack-root {
         padding: 0;
@@ -1160,6 +1168,7 @@ header {
 }
 .main-title {
   display: flex;
+  margin-bottom: 8px;
   @media (max-width: 767px) {
     flex-wrap: wrap;
     gap: 16px;
@@ -1316,8 +1325,16 @@ header {
         padding: 6px 16px;
         min-height: 38px;
         color: #292929;
+        @media (max-width: 580px) {
+          margin: 0px 4px;
+          padding: 4px 16px;
+          min-height: 32px;
+        }
         p {
           font-weight: 600;
+          @media (max-width: 580px) {
+            font-size: 13px;
+          }
         }
         &:hover {
           background-color: #4381fd;
@@ -1516,9 +1533,22 @@ header {
   padding: 50px;
   text-align: center;
   height: calc(100vh - 155px);
+  @media (max-width: 580px) {
+    padding: 50px 14px;
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+    height: inherit;
+  }
   h3 {
     margin-bottom: 48px;
     font-size: 24px !important;
+    @media (max-width: 767px) {
+      font-size: 18px !important;
+    }
+    @media (max-width: 580px) {
+      margin-bottom: 16px;
+      font-size: 16px !important;
+    }
   }
   .coming-soon-img-wrap {
     > .MuiBox-root {

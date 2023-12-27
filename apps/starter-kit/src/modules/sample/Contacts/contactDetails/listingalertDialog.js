@@ -345,7 +345,11 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box
+                    variant='div'
+                    component='div'
+                    className='multiple-selection'
+                  >
                     <label>Amenities </label>
                     <FormControl>
                       <Select
