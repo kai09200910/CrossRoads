@@ -52,7 +52,7 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
           </DialogTitle>
           <DialogContent className='modal-dailog-content'>
             <Grid container spacing={5}>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div' className='error-value'>
                   <Typography variant='body1' component='span' className=''>
                     Name
@@ -62,7 +62,7 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div' className='error-value'>
                   <Typography variant='body1' component='span' className=''>
                     Date
@@ -72,7 +72,7 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div' className='error-value'>
                   <Typography variant='body1' component='span' className=''>
                     Number
@@ -82,7 +82,7 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div' className='error-value'>
                   <Typography variant='body1' component='span' className=''>
                     Email
@@ -92,7 +92,7 @@ const InquiryinformationDialog = ({ open, handleClose }) => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={12}>
+              <Grid item xs={12} sm={12} md={12}>
                 <Box variant='div' component='div' className='error-value'>
                   <Typography variant='body1' component='span' className=''>
                     Details

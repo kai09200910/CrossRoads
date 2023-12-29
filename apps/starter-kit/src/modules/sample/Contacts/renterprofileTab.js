@@ -27,7 +27,7 @@ const RenterprofileTab = () => {
         <Grid container spacing={5} mt={3}>
           <Grid item xs={12} md={8}>
             <Grid container spacing={2}>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={12} sm={8} md={8}>
                 <Box variant='div' component='div'>
                   <label>Location </label>
                   <TextField
@@ -46,7 +46,7 @@ const RenterprofileTab = () => {
                   />
                 </Box>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid item xs={12} sm={4} md={4}>
                 <Box variant='div' component='div'>
                   <label className='empty-label'></label>
                   <Button
@@ -95,7 +95,7 @@ const RenterprofileTab = () => {
         <Grid container spacing={5} mt={3}>
           <Grid item xs={12} md={8}>
             <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div'>
                   <label>Bedrooms </label>
 
@@ -154,7 +154,7 @@ const RenterprofileTab = () => {
                   </Select>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div'>
                   <label>Bathrooms </label>
 

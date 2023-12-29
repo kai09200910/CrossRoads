@@ -15,7 +15,7 @@ import {
   ListItemText,
   FormControlLabel,
 } from '@mui/material';
-import { RiArrowDownSLine } from 'react-icons/ri';
+import { RiArrowDownSLine, RiPencilFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -31,6 +31,7 @@ import './propertylist.scss';
 import PropertyCard from './propertyCard';
 import ReactFlagsSelect from 'react-flags-select';
 import MatchingContacts from '../common/matchingContacts';
+import Filters from './filters';
 
 const breadcrumbs = [
   <Link
@@ -129,722 +130,725 @@ const AdvanceSearch = () => {
     setPropertylistName(typeof value === 'string' ? value.split(',') : value);
   };
 
+  const getbreadcrumb = () => {
+    return (
+      <Box
+        variant='div'
+        component='div'
+        sx={{
+          paddingBottom: { xs: 4, xl: 4 },
+        }}
+        className='breadcrumb-wrap'
+      >
+        <Breadcrumbs
+          separator={<NavigateNextIcon fontSize='small' />}
+          aria-label='breadcrumb'
+        >
+          {breadcrumbsItems}
+        </Breadcrumbs>
+      </Box>
+    );
+  };
+
   return (
     <>
-      <Paper mt={2}>
-        <Container className='advanced-search-wrapper'>
-          <Box
-            sx={{
-              padding: { xs: 5, xl: 5 },
-              width: '100%',
-            }}
-            className='advanced-search'
-          >
-            <Box
-              variant='div'
-              component='div'
-              sx={{
-                paddingBottom: { xs: 4, xl: 4 },
-              }}
-              className='breadcrumb-wrap'
-            >
-              <Breadcrumbs
-                separator={<NavigateNextIcon fontSize='small' />}
-                aria-label='breadcrumb'
+      {/* <Paper mt={2}> */}
+      {/* <Container className='advanced-search-wrapper'> */}
+      <Box
+        sx={{
+          padding: { xs: 5, xl: 5 },
+          width: '100%',
+        }}
+        className='advanced-search'
+      >
+        {!isSubmitted ? (
+          <Paper mt={2}>
+            <Container className='advanced-search-wrapper'>
+              {getbreadcrumb()}
+              <Box
+                sx={{ width: '100%', overflow: 'hidden' }}
+                className='search-form-wrapper'
               >
-                {breadcrumbsItems}
-              </Breadcrumbs>
-            </Box>
-
-            <Box
-              sx={{
-                paddingTop: { xs: 5, xl: 5 },
-              }}
-            >
-              {!isSubmitted ? (
+                <Stack
+                  direction='row'
+                  justifyContent='space-between'
+                  alignItems='center'
+                  sx={{
+                    paddingBottom: { xs: 2, xl: 2 },
+                    paddingTop: { xs: 2, xl: 2 },
+                  }}
+                  className='main-title'
+                >
+                  <Typography variant='h3' component='h3'>
+                    Advanced Search
+                  </Typography>
+                </Stack>
                 <Box
-                  sx={{ width: '100%', overflow: 'hidden' }}
-                  className='search-form-wrapper'
+                  variant='div'
+                  component='div'
+                  className='search-categories'
                 >
                   <Stack
+                    spacing={{ xs: 0.5, sm: 1 }}
                     direction='row'
-                    justifyContent='space-between'
-                    alignItems='center'
-                    sx={{
-                      paddingBottom: { xs: 2, xl: 2 },
-                      paddingTop: { xs: 2, xl: 2 },
-                    }}
-                    className='main-title'
+                    useFlexGap
+                    flexWrap='wrap'
                   >
-                    <Typography variant='h3' component='h3'>
-                      Advanced Search
-                    </Typography>
+                    <FormControlLabel
+                      control={<Checkbox defaultChecked />}
+                      label='Sale'
+                    />
+                    <FormControlLabel control={<Checkbox />} label='Rental  ' />
+                    <FormControlLabel control={<Checkbox />} label='Co-broke' />
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label='Appraisal  '
+                    />
                   </Stack>
-                  <Box
-                    variant='div'
-                    component='div'
-                    className='search-categories'
-                  >
-                    <Stack
-                      spacing={{ xs: 0.5, sm: 1 }}
-                      direction='row'
-                      useFlexGap
-                      flexWrap='wrap'
-                    >
-                      <FormControlLabel
-                        control={<Checkbox defaultChecked />}
-                        label='Sale'
+                </Box>
+
+                <Grid container spacing={5}>
+                  <Grid item xs={12} sm={6} md={6} mt={3}>
+                    {' '}
+                    <Box variant='div' component='div'>
+                      <label>Owners first name </label>
+                      <TextField
+                        fullWidth
+                        id='first-name'
+                        label=''
+                        variant='outlined'
+                        placeholder='Enter first name'
                       />
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label='Rental  '
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={6} mt={3}>
+                    <Box variant='div' component='div'>
+                      <label>Owners last name </label>
+                      <TextField
+                        fullWidth
+                        id='last-name'
+                        label=''
+                        variant='outlined'
+                        placeholder='Enter last name '
                       />
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label='Co-broke'
+                    </Box>
+                  </Grid>
+
+                  <Grid item xs={12} md={12}>
+                    <Box variant='div' component='div'>
+                      <label>Matching contacts</label>
+
+                      <MatchingContacts />
+                    </Box>
+                  </Grid>
+
+                  <Grid item xs={12} md={4} mt={3}>
+                    <Box variant='div' component='div'>
+                      <label> Country </label>
+                      <ReactFlagsSelect
+                        selected={selected}
+                        onSelect={(code) => setSelected(code)}
+                        className='country-dropdown'
                       />
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label='Appraisal  '
-                      />
-                    </Stack>
-                  </Box>
-
-                  <Grid container spacing={5}>
-                    <Grid item xs={12} md={6} mt={3}>
-                      {' '}
-                      <Box variant='div' component='div'>
-                        <label>Owners first name </label>
-                        <TextField
-                          fullWidth
-                          id='first-name'
-                          label=''
-                          variant='outlined'
-                          placeholder='Enter first name'
-                        />
-                      </Box>
-                    </Grid>
-                    <Grid item xs={12} md={6} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Owners last name </label>
-                        <TextField
-                          fullWidth
-                          id='last-name'
-                          label=''
-                          variant='outlined'
-                          placeholder='Enter last name '
-                        />
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={12}>
-                      <Box variant='div' component='div'>
-                        <label>Matching contacts</label>
-
-                        <MatchingContacts />
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label> Country </label>
-                        <ReactFlagsSelect
-                          selected={selected}
-                          onSelect={(code) => setSelected(code)}
-                          className='country-dropdown'
-                        />
-                      </Box>
-                    </Grid>
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label> Island </label>
-                        <Select
-                          fullWidth
-                          id='primary-agent'
-                          value={value}
-                          defaultValue='none'
-                          onChange={(e) => setValue(e.target.value)}
-                          onFocus={(e) => setShowPlaceholder(false)}
-                          onClose={(e) =>
-                            setShowPlaceholder(e.target.value === undefined)
-                          }
-                          IconComponent={RiArrowDownSLine}
-                        >
-                          <MenuItem
-                            key='0'
-                            disabled
-                            value='none'
-                            className='place-holder'
-                          >
-                            Select Island
-                          </MenuItem>
-                          <MenuItem value={10}>Island 1</MenuItem>
-                          <MenuItem value={20}>Island 2</MenuItem>
-                          <MenuItem value={30}>Island 3</MenuItem>
-                          <MenuItem value={10}>Island 4</MenuItem>
-                          <MenuItem value={20}>Island 5</MenuItem>
-                          <MenuItem value={30}>Island 6</MenuItem>
-                        </Select>
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>
-                          Area
-                          <Typography
-                            variant='body1'
-                            component='span'
-                            className='optional-label'
-                          >
-                            Optional
-                          </Typography>
-                        </label>
-                        <Select
-                          fullWidth
-                          id='secondary-agent'
-                          value={value}
-                          defaultValue='none'
-                          onChange={(e) => setValue(e.target.value)}
-                          onFocus={(e) => setShowPlaceholder(false)}
-                          onClose={(e) =>
-                            setShowPlaceholder(e.target.value === undefined)
-                          }
-                          IconComponent={RiArrowDownSLine}
-                        >
-                          <MenuItem
-                            key='0'
-                            disabled
-                            value='none'
-                            className='place-holder'
-                          >
-                            Select Location
-                          </MenuItem>
-                          <MenuItem value={10}>Location 1</MenuItem>
-                          <MenuItem value={20}>Location 2</MenuItem>
-                          <MenuItem value={30}>Location 3</MenuItem>
-                          <MenuItem value={10}>Location 4</MenuItem>
-                          <MenuItem value={20}>Location 5</MenuItem>
-                          <MenuItem value={30}>Location 6</MenuItem>
-                        </Select>
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={6} mt={3}>
-                      <Box
-                        variant='div'
-                        component='div'
-                        className='date-range-picker'
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} mt={3}>
+                    <Box variant='div' component='div'>
+                      <label> Island </label>
+                      <Select
+                        fullWidth
+                        id='primary-agent'
+                        value={value}
+                        defaultValue='none'
+                        onChange={(e) => setValue(e.target.value)}
+                        onFocus={(e) => setShowPlaceholder(false)}
+                        onClose={(e) =>
+                          setShowPlaceholder(e.target.value === undefined)
+                        }
+                        IconComponent={RiArrowDownSLine}
                       >
-                        <label>Date listed </label>
-                        {/* <DemoContainer components={['DatePicker']}>
+                        <MenuItem
+                          key='0'
+                          disabled
+                          value='none'
+                          className='place-holder'
+                        >
+                          Select Island
+                        </MenuItem>
+                        <MenuItem value={10}>Island 1</MenuItem>
+                        <MenuItem value={20}>Island 2</MenuItem>
+                        <MenuItem value={30}>Island 3</MenuItem>
+                        <MenuItem value={10}>Island 4</MenuItem>
+                        <MenuItem value={20}>Island 5</MenuItem>
+                        <MenuItem value={30}>Island 6</MenuItem>
+                      </Select>
+                    </Box>
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={4} mt={3}>
+                    <Box variant='div' component='div'>
+                      <label>
+                        Area
+                        <Typography
+                          variant='body1'
+                          component='span'
+                          className='optional-label'
+                        >
+                          Optional
+                        </Typography>
+                      </label>
+                      <Select
+                        fullWidth
+                        id='secondary-agent'
+                        value={value}
+                        defaultValue='none'
+                        onChange={(e) => setValue(e.target.value)}
+                        onFocus={(e) => setShowPlaceholder(false)}
+                        onClose={(e) =>
+                          setShowPlaceholder(e.target.value === undefined)
+                        }
+                        IconComponent={RiArrowDownSLine}
+                      >
+                        <MenuItem
+                          key='0'
+                          disabled
+                          value='none'
+                          className='place-holder'
+                        >
+                          Select Location
+                        </MenuItem>
+                        <MenuItem value={10}>Location 1</MenuItem>
+                        <MenuItem value={20}>Location 2</MenuItem>
+                        <MenuItem value={30}>Location 3</MenuItem>
+                        <MenuItem value={10}>Location 4</MenuItem>
+                        <MenuItem value={20}>Location 5</MenuItem>
+                        <MenuItem value={30}>Location 6</MenuItem>
+                      </Select>
+                    </Box>
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={6} mt={3}>
+                    <Box
+                      variant='div'
+                      component='div'
+                      className='date-range-picker'
+                    >
+                      <label>Date listed </label>
+                      {/* <DemoContainer components={['DatePicker']}>
                           <DatePicker sx={{ width: '100%' }} />
                         </DemoContainer> */}
-                        {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
                           <DemoContainer components={['DateRangeCalendar']}>
                             <DateRangeCalendar calendars={1} />
                           </DemoContainer>
                         </LocalizationProvider> */}
-                        <DemoContainer
-                          components={['SingleInputDateRangeField']}
-                        >
-                          <DateRangePicker
-                            slots={{ field: SingleInputDateRangeField }}
-                            // calendars={1}
-                            calendars={2}
-                          />
-                        </DemoContainer>
-                      </Box>
-                    </Grid>
+                      <DemoContainer components={['SingleInputDateRangeField']}>
+                        <DateRangePicker
+                          slots={{ field: SingleInputDateRangeField }}
+                          // calendars={1}
+                          calendars={2}
+                        />
+                      </DemoContainer>
+                    </Box>
+                  </Grid>
 
-                    <Grid item xs={12} md={6} mt={3}>
-                      <Box
-                        variant='div'
-                        component='div'
-                        className='date-range-picker'
-                      >
-                        <label>Date sold </label>
-                        <DemoContainer
-                          components={['SingleInputDateRangeField']}
-                        >
-                          <DateRangePicker
-                            slots={{ field: SingleInputDateRangeField }}
-                            calendars={2}
-                          />
-                        </DemoContainer>
-                        {/* <DemoContainer components={['DatePicker']}>
+                  <Grid item xs={12} sm={6} md={6} mt={3}>
+                    <Box
+                      variant='div'
+                      component='div'
+                      className='date-range-picker'
+                    >
+                      <label>Date sold </label>
+                      <DemoContainer components={['SingleInputDateRangeField']}>
+                        <DateRangePicker
+                          slots={{ field: SingleInputDateRangeField }}
+                          calendars={2}
+                        />
+                      </DemoContainer>
+                      {/* <DemoContainer components={['DatePicker']}>
                           <DatePicker sx={{ width: '100%' }} />
                         </DemoContainer> */}
-                      </Box>
-                    </Grid>
+                    </Box>
+                  </Grid>
 
-                    <Grid item xs={12} md={6} mt={3}>
-                      <Box
-                        variant='div'
-                        component='div'
-                        className='date-range-picker'
+                  <Grid item xs={12} sm={6} md={6} mt={3}>
+                    <Box
+                      variant='div'
+                      component='div'
+                      className='date-range-picker'
+                    >
+                      <label>Date under contract </label>
+                      <DemoContainer components={['SingleInputDateRangeField']}>
+                        <DateRangePicker
+                          slots={{ field: SingleInputDateRangeField }}
+                          calendars={2}
+                        />
+                      </DemoContainer>
+                    </Box>
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={6} mt={3}>
+                    <Box
+                      variant='div'
+                      component='div'
+                      className='date-range-picker'
+                    >
+                      <label>Date of expiry </label>
+                      <DemoContainer components={['SingleInputDateRangeField']}>
+                        <DateRangePicker
+                          slots={{ field: SingleInputDateRangeField }}
+                          calendars={2}
+                        />
+                      </DemoContainer>
+                    </Box>
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={4} mt={3}>
+                    <Box variant='div' component='div'>
+                      <label>Bedrooms </label>
+                      <Select
+                        fullWidth
+                        id='secondary-agent'
+                        value={value}
+                        defaultValue='none'
+                        onChange={(e) => setValue(e.target.value)}
+                        onFocus={(e) => setShowPlaceholder(false)}
+                        onClose={(e) =>
+                          setShowPlaceholder(e.target.value === undefined)
+                        }
+                        IconComponent={RiArrowDownSLine}
                       >
-                        <label>Date under contract </label>
-                        <DemoContainer
-                          components={['SingleInputDateRangeField']}
+                        <MenuItem
+                          key='0'
+                          disabled
+                          value='none'
+                          className='place-holder'
                         >
-                          <DateRangePicker
-                            slots={{ field: SingleInputDateRangeField }}
-                            calendars={2}
-                          />
-                        </DemoContainer>
-                      </Box>
-                    </Grid>
+                          Select Bedrooms
+                        </MenuItem>
+                        <MenuItem value={1}> 1</MenuItem>
+                        <MenuItem value={2}> 2</MenuItem>
+                        <MenuItem value={3}> 3</MenuItem>
+                        <MenuItem value={4}> 4</MenuItem>
+                        <MenuItem value={5}> 5</MenuItem>
+                        <MenuItem value={6}> 6</MenuItem>
+                        <MenuItem value={7}> 7</MenuItem>
+                        <MenuItem value={8}> 8</MenuItem>
+                        <MenuItem value={9}> 9</MenuItem>
 
-                    <Grid item xs={12} md={6} mt={3}>
-                      <Box
-                        variant='div'
-                        component='div'
-                        className='date-range-picker'
+                        <MenuItem value={10}> 10</MenuItem>
+                        <MenuItem value={11}> 11</MenuItem>
+                        <MenuItem value={12}> 12</MenuItem>
+                        <MenuItem value={13}> 13</MenuItem>
+                        <MenuItem value={14}> 14</MenuItem>
+                        <MenuItem value={15}> 15</MenuItem>
+                        <MenuItem value={16}> 16</MenuItem>
+                        <MenuItem value={17}> 17</MenuItem>
+                        <MenuItem value={18}> 18</MenuItem>
+                        <MenuItem value={19}> 19</MenuItem>
+                        <MenuItem value={20}> 20</MenuItem>
+
+                        <MenuItem value={21}> 21</MenuItem>
+                        <MenuItem value={22}> 22</MenuItem>
+                        <MenuItem value={23}> 23</MenuItem>
+                        <MenuItem value={24}> 24</MenuItem>
+                        <MenuItem value={25}> 25</MenuItem>
+                      </Select>
+                    </Box>
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={4} mt={3}>
+                    <Box variant='div' component='div'>
+                      <label>Bathrooms </label>
+                      <Select
+                        fullWidth
+                        id='secondary-agent'
+                        value={value}
+                        defaultValue='none'
+                        onChange={(e) => setValue(e.target.value)}
+                        onFocus={(e) => setShowPlaceholder(false)}
+                        onClose={(e) =>
+                          setShowPlaceholder(e.target.value === undefined)
+                        }
+                        IconComponent={RiArrowDownSLine}
                       >
-                        <label>Date of expiry </label>
-                        <DemoContainer
-                          components={['SingleInputDateRangeField']}
+                        <MenuItem
+                          key='0'
+                          disabled
+                          value='none'
+                          className='place-holder'
                         >
-                          <DateRangePicker
-                            slots={{ field: SingleInputDateRangeField }}
-                            calendars={2}
-                          />
-                        </DemoContainer>
-                      </Box>
-                    </Grid>
+                          Select Bathrooms
+                        </MenuItem>
+                        <MenuItem value={1}> 1</MenuItem>
+                        <MenuItem value={2}> 2</MenuItem>
+                        <MenuItem value={3}> 3</MenuItem>
+                        <MenuItem value={4}> 4</MenuItem>
+                        <MenuItem value={5}> 5</MenuItem>
+                        <MenuItem value={6}> 6</MenuItem>
+                        <MenuItem value={7}> 7</MenuItem>
+                        <MenuItem value={8}> 8</MenuItem>
+                        <MenuItem value={9}> 9</MenuItem>
 
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Bedrooms </label>
-                        <Select
-                          fullWidth
-                          id='secondary-agent'
-                          value={value}
-                          defaultValue='none'
-                          onChange={(e) => setValue(e.target.value)}
-                          onFocus={(e) => setShowPlaceholder(false)}
-                          onClose={(e) =>
-                            setShowPlaceholder(e.target.value === undefined)
-                          }
-                          IconComponent={RiArrowDownSLine}
-                        >
-                          <MenuItem
-                            key='0'
-                            disabled
-                            value='none'
-                            className='place-holder'
-                          >
-                            Select Bedrooms
-                          </MenuItem>
-                          <MenuItem value={1}> 1</MenuItem>
-                          <MenuItem value={2}> 2</MenuItem>
-                          <MenuItem value={3}> 3</MenuItem>
-                          <MenuItem value={4}> 4</MenuItem>
-                          <MenuItem value={5}> 5</MenuItem>
-                          <MenuItem value={6}> 6</MenuItem>
-                          <MenuItem value={7}> 7</MenuItem>
-                          <MenuItem value={8}> 8</MenuItem>
-                          <MenuItem value={9}> 9</MenuItem>
+                        <MenuItem value={10}> 10</MenuItem>
+                        <MenuItem value={11}> 11</MenuItem>
+                        <MenuItem value={12}> 12</MenuItem>
+                        <MenuItem value={13}> 13</MenuItem>
+                        <MenuItem value={14}> 14</MenuItem>
+                        <MenuItem value={15}> 15</MenuItem>
+                        <MenuItem value={16}> 16</MenuItem>
+                        <MenuItem value={17}> 17</MenuItem>
+                        <MenuItem value={18}> 18</MenuItem>
+                        <MenuItem value={19}> 19</MenuItem>
+                        <MenuItem value={20}> 20</MenuItem>
 
-                          <MenuItem value={10}> 10</MenuItem>
-                          <MenuItem value={11}> 11</MenuItem>
-                          <MenuItem value={12}> 12</MenuItem>
-                          <MenuItem value={13}> 13</MenuItem>
-                          <MenuItem value={14}> 14</MenuItem>
-                          <MenuItem value={15}> 15</MenuItem>
-                          <MenuItem value={16}> 16</MenuItem>
-                          <MenuItem value={17}> 17</MenuItem>
-                          <MenuItem value={18}> 18</MenuItem>
-                          <MenuItem value={19}> 19</MenuItem>
-                          <MenuItem value={20}> 20</MenuItem>
+                        <MenuItem value={21}> 21</MenuItem>
+                        <MenuItem value={22}> 22</MenuItem>
+                        <MenuItem value={23}> 23</MenuItem>
+                        <MenuItem value={24}> 24</MenuItem>
+                        <MenuItem value={25}> 25</MenuItem>
+                      </Select>
+                    </Box>
+                  </Grid>
 
-                          <MenuItem value={21}> 21</MenuItem>
-                          <MenuItem value={22}> 22</MenuItem>
-                          <MenuItem value={23}> 23</MenuItem>
-                          <MenuItem value={24}> 24</MenuItem>
-                          <MenuItem value={25}> 25</MenuItem>
-                        </Select>
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Bathrooms </label>
-                        <Select
-                          fullWidth
-                          id='secondary-agent'
-                          value={value}
-                          defaultValue='none'
-                          onChange={(e) => setValue(e.target.value)}
-                          onFocus={(e) => setShowPlaceholder(false)}
-                          onClose={(e) =>
-                            setShowPlaceholder(e.target.value === undefined)
-                          }
-                          IconComponent={RiArrowDownSLine}
-                        >
-                          <MenuItem
-                            key='0'
-                            disabled
-                            value='none'
-                            className='place-holder'
-                          >
-                            Select Bathrooms
-                          </MenuItem>
-                          <MenuItem value={1}> 1</MenuItem>
-                          <MenuItem value={2}> 2</MenuItem>
-                          <MenuItem value={3}> 3</MenuItem>
-                          <MenuItem value={4}> 4</MenuItem>
-                          <MenuItem value={5}> 5</MenuItem>
-                          <MenuItem value={6}> 6</MenuItem>
-                          <MenuItem value={7}> 7</MenuItem>
-                          <MenuItem value={8}> 8</MenuItem>
-                          <MenuItem value={9}> 9</MenuItem>
-
-                          <MenuItem value={10}> 10</MenuItem>
-                          <MenuItem value={11}> 11</MenuItem>
-                          <MenuItem value={12}> 12</MenuItem>
-                          <MenuItem value={13}> 13</MenuItem>
-                          <MenuItem value={14}> 14</MenuItem>
-                          <MenuItem value={15}> 15</MenuItem>
-                          <MenuItem value={16}> 16</MenuItem>
-                          <MenuItem value={17}> 17</MenuItem>
-                          <MenuItem value={18}> 18</MenuItem>
-                          <MenuItem value={19}> 19</MenuItem>
-                          <MenuItem value={20}> 20</MenuItem>
-
-                          <MenuItem value={21}> 21</MenuItem>
-                          <MenuItem value={22}> 22</MenuItem>
-                          <MenuItem value={23}> 23</MenuItem>
-                          <MenuItem value={24}> 24</MenuItem>
-                          <MenuItem value={25}> 25</MenuItem>
-                        </Select>
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Partial Bathrooms</label>
-                        <Select
-                          fullWidth
-                          id='secondary-agent'
-                          value={value}
-                          defaultValue='none'
-                          onChange={(e) => setValue(e.target.value)}
-                          onFocus={(e) => setShowPlaceholder(false)}
-                          onClose={(e) =>
-                            setShowPlaceholder(e.target.value === undefined)
-                          }
-                          IconComponent={RiArrowDownSLine}
-                        >
-                          <MenuItem
-                            key='0'
-                            disabled
-                            value='none'
-                            className='place-holder'
-                          >
-                            Select Partial Bathrooms
-                          </MenuItem>
-                          <MenuItem value={1}> 1</MenuItem>
-                          <MenuItem value={2}> 2</MenuItem>
-                          <MenuItem value={3}> 3</MenuItem>
-                          <MenuItem value={4}> 4</MenuItem>
-                          <MenuItem value={5}> 5</MenuItem>
-                          <MenuItem value={6}> 6</MenuItem>
-                          <MenuItem value={7}> 7</MenuItem>
-                          <MenuItem value={8}> 8</MenuItem>
-                          <MenuItem value={9}> 9</MenuItem>
-
-                          <MenuItem value={10}> 10</MenuItem>
-                          <MenuItem value={11}> 11</MenuItem>
-                          <MenuItem value={12}> 12</MenuItem>
-                          <MenuItem value={13}> 13</MenuItem>
-                          <MenuItem value={14}> 14</MenuItem>
-                          <MenuItem value={15}> 15</MenuItem>
-                          <MenuItem value={16}> 16</MenuItem>
-                          <MenuItem value={17}> 17</MenuItem>
-                          <MenuItem value={18}> 18</MenuItem>
-                          <MenuItem value={19}> 19</MenuItem>
-                          <MenuItem value={20}> 20</MenuItem>
-
-                          <MenuItem value={21}> 21</MenuItem>
-                          <MenuItem value={22}> 22</MenuItem>
-                          <MenuItem value={23}> 23</MenuItem>
-                          <MenuItem value={24}> 24</MenuItem>
-                          <MenuItem value={25}> 25</MenuItem>
-                        </Select>
-                      </Box>
-                    </Grid>
-
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box
-                        variant='div'
-                        component='div'
-                        className='multiple-selection'
+                  <Grid item xs={12} sm={6} md={4} mt={3}>
+                    <Box variant='div' component='div'>
+                      <label>Partial Bathrooms</label>
+                      <Select
+                        fullWidth
+                        id='secondary-agent'
+                        value={value}
+                        defaultValue='none'
+                        onChange={(e) => setValue(e.target.value)}
+                        onFocus={(e) => setShowPlaceholder(false)}
+                        onClose={(e) =>
+                          setShowPlaceholder(e.target.value === undefined)
+                        }
+                        IconComponent={RiArrowDownSLine}
                       >
-                        <label>Property Type</label>
-                        <FormControl>
-                          <Select
-                            labelId='demo-multiple-checkbox-label'
-                            id='contact-type-multiple-checkbox'
-                            multiple
-                            placeholder='Select Contact Type'
-                            value={propertylistName}
-                            onChange={handlepropertyChange}
-                            IconComponent={RiArrowDownSLine}
-                            renderValue={(selected) => selected.join(', ')}
-                          >
-                            {propertytype.map((propertyname) => (
-                              <MenuItem key={propertyname} value={propertyname}>
-                                <Checkbox
-                                  checked={
-                                    propertylistName.indexOf(propertyname) > -1
-                                  }
-                                />
-                                <ListItemText primary={propertyname} />
-                              </MenuItem>
-                            ))}
-                          </Select>
-                        </FormControl>
-                      </Box>
-                    </Grid>
+                        <MenuItem
+                          key='0'
+                          disabled
+                          value='none'
+                          className='place-holder'
+                        >
+                          Select Partial Bathrooms
+                        </MenuItem>
+                        <MenuItem value={1}> 1</MenuItem>
+                        <MenuItem value={2}> 2</MenuItem>
+                        <MenuItem value={3}> 3</MenuItem>
+                        <MenuItem value={4}> 4</MenuItem>
+                        <MenuItem value={5}> 5</MenuItem>
+                        <MenuItem value={6}> 6</MenuItem>
+                        <MenuItem value={7}> 7</MenuItem>
+                        <MenuItem value={8}> 8</MenuItem>
+                        <MenuItem value={9}> 9</MenuItem>
 
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Status </label>
+                        <MenuItem value={10}> 10</MenuItem>
+                        <MenuItem value={11}> 11</MenuItem>
+                        <MenuItem value={12}> 12</MenuItem>
+                        <MenuItem value={13}> 13</MenuItem>
+                        <MenuItem value={14}> 14</MenuItem>
+                        <MenuItem value={15}> 15</MenuItem>
+                        <MenuItem value={16}> 16</MenuItem>
+                        <MenuItem value={17}> 17</MenuItem>
+                        <MenuItem value={18}> 18</MenuItem>
+                        <MenuItem value={19}> 19</MenuItem>
+                        <MenuItem value={20}> 20</MenuItem>
+
+                        <MenuItem value={21}> 21</MenuItem>
+                        <MenuItem value={22}> 22</MenuItem>
+                        <MenuItem value={23}> 23</MenuItem>
+                        <MenuItem value={24}> 24</MenuItem>
+                        <MenuItem value={25}> 25</MenuItem>
+                      </Select>
+                    </Box>
+                  </Grid>
+
+                  <Grid item xs={12} sm={6} md={4} mt={3}>
+                    <Box
+                      variant='div'
+                      component='div'
+                      className='multiple-selection'
+                    >
+                      <label>Property Type</label>
+                      <FormControl>
                         <Select
-                          fullWidth
-                          id='secondary-agent'
-                          value={value}
-                          defaultValue='none'
-                          onChange={(e) => setValue(e.target.value)}
-                          onFocus={(e) => setShowPlaceholder(false)}
-                          onClose={(e) =>
-                            setShowPlaceholder(e.target.value === undefined)
-                          }
+                          labelId='demo-multiple-checkbox-label'
+                          id='contact-type-multiple-checkbox'
+                          multiple
+                          placeholder='Select Contact Type'
+                          value={propertylistName}
+                          onChange={handlepropertyChange}
                           IconComponent={RiArrowDownSLine}
+                          renderValue={(selected) => selected.join(', ')}
                         >
-                          <MenuItem
-                            key='0'
-                            disabled
-                            value='none'
-                            className='place-holder'
-                          >
-                            Select Status
-                          </MenuItem>
-                          <MenuItem value={10}>Listed</MenuItem>
-                          <MenuItem value={20}>Offer Pending</MenuItem>
-                          <MenuItem value={30}>Under contract</MenuItem>
-                          <MenuItem value={40}>Sold</MenuItem>
+                          {propertytype.map((propertyname) => (
+                            <MenuItem key={propertyname} value={propertyname}>
+                              <Checkbox
+                                checked={
+                                  propertylistName.indexOf(propertyname) > -1
+                                }
+                              />
+                              <ListItemText primary={propertyname} />
+                            </MenuItem>
+                          ))}
                         </Select>
-                      </Box>
-                    </Grid>
+                      </FormControl>
+                    </Box>
+                  </Grid>
 
-                    <Grid item xs={12} md={4} mt={3}>
-                      <Box variant='div' component='div'>
-                        <label>Sq. Ft. </label>
-                        <Select
-                          fullWidth
-                          id='secondary-agent'
-                          value={value}
-                          defaultValue='none'
-                          onChange={(e) => setValue(e.target.value)}
-                          onFocus={(e) => setShowPlaceholder(false)}
-                          onClose={(e) =>
-                            setShowPlaceholder(e.target.value === undefined)
-                          }
-                          IconComponent={RiArrowDownSLine}
+                  <Grid item xs={12} sm={6} md={4} mt={3}>
+                    <Box variant='div' component='div'>
+                      <label>Status </label>
+                      <Select
+                        fullWidth
+                        id='secondary-agent'
+                        value={value}
+                        defaultValue='none'
+                        onChange={(e) => setValue(e.target.value)}
+                        onFocus={(e) => setShowPlaceholder(false)}
+                        onClose={(e) =>
+                          setShowPlaceholder(e.target.value === undefined)
+                        }
+                        IconComponent={RiArrowDownSLine}
+                      >
+                        <MenuItem
+                          key='0'
+                          disabled
+                          value='none'
+                          className='place-holder'
                         >
-                          <MenuItem
-                            key='0'
-                            disabled
-                            value='none'
-                            className='place-holder'
-                          >
-                            Select Sq. Ft.
-                          </MenuItem>
-                          <MenuItem value={10}>Sq. Ft. 1</MenuItem>
-                          <MenuItem value={20}>Sq. Ft. 2</MenuItem>
-                          <MenuItem value={30}>Sq. Ft. 3</MenuItem>
-                          <MenuItem value={10}>Sq. Ft. 4</MenuItem>
-                        </Select>
-                      </Box>
-                    </Grid>
+                          Select Status
+                        </MenuItem>
+                        <MenuItem value={10}>Listed</MenuItem>
+                        <MenuItem value={20}>Offer Pending</MenuItem>
+                        <MenuItem value={30}>Under contract</MenuItem>
+                        <MenuItem value={40}>Sold</MenuItem>
+                      </Select>
+                    </Box>
+                  </Grid>
 
-                    <Grid item xs={12} md={4}>
-                      <Box variant='div' component='div'>
-                        <label>Listing price ($) </label>
-                        <Stack
-                          spacing={{ xs: 1, sm: 2 }}
-                          direction='row'
-                          useFlexGap
-                          alignItems='center'
+                  <Grid item xs={12} sm={6} md={4} mt={3}>
+                    <Box variant='div' component='div'>
+                      <label>Sq. Ft. </label>
+                      <Select
+                        fullWidth
+                        id='secondary-agent'
+                        value={value}
+                        defaultValue='none'
+                        onChange={(e) => setValue(e.target.value)}
+                        onFocus={(e) => setShowPlaceholder(false)}
+                        onClose={(e) =>
+                          setShowPlaceholder(e.target.value === undefined)
+                        }
+                        IconComponent={RiArrowDownSLine}
+                      >
+                        <MenuItem
+                          key='0'
+                          disabled
+                          value='none'
+                          className='place-holder'
                         >
-                          <TextField
-                            fullWidth
-                            id='outlined-basic'
-                            type='number'
-                            variant='outlined'
-                            placeholder='Enter minimum '
-                          />
-                          <TextField
-                            fullWidth
-                            id='outlined-basic'
-                            type='number'
-                            variant='outlined'
-                            placeholder='Enter maximum'
-                          />
-                        </Stack>
-                      </Box>
-                    </Grid>
+                          Select Sq. Ft.
+                        </MenuItem>
+                        <MenuItem value={10}>Sq. Ft. 1</MenuItem>
+                        <MenuItem value={20}>Sq. Ft. 2</MenuItem>
+                        <MenuItem value={30}>Sq. Ft. 3</MenuItem>
+                        <MenuItem value={10}>Sq. Ft. 4</MenuItem>
+                      </Select>
+                    </Box>
+                  </Grid>
 
-                    <Grid item xs={12} md={3}>
-                      <Box variant='div' component='div'>
-                        <label>Land Size </label>
-                        <Stack
-                          spacing={{ xs: 1, sm: 2 }}
-                          direction='row'
-                          useFlexGap
-                        >
-                          <FormControlLabel
-                            control={<Checkbox defaultChecked />}
-                            label='Acres'
-                          />
-                          <FormControlLabel
-                            control={<Checkbox />}
-                            label='Sq. Ft. '
-                          />
-                        </Stack>
-                      </Box>
-                    </Grid>
-                    <Grid item xs={12} md={5}>
-                      <Box variant='div' component='div'>
-                        <label className='empty-label'></label>
-
+                  <Grid item xs={12} md={4}>
+                    <Box variant='div' component='div'>
+                      <label>Listing price ($) </label>
+                      <Stack
+                        spacing={{ xs: 1, sm: 2 }}
+                        direction='row'
+                        useFlexGap
+                        alignItems='center'
+                      >
                         <TextField
                           fullWidth
                           id='outlined-basic'
                           type='number'
                           variant='outlined'
-                          placeholder='4.758'
+                          placeholder='Enter minimum '
                         />
-                      </Box>
-                    </Grid>
+                        <TextField
+                          fullWidth
+                          id='outlined-basic'
+                          type='number'
+                          variant='outlined'
+                          placeholder='Enter maximum'
+                        />
+                      </Stack>
+                    </Box>
+                  </Grid>
 
-                    <Grid item xs={12} md={12}>
-                      <Box
-                        variant='div'
-                        component='div'
-                        className='multiple-selection'
+                  <Grid item xs={12} sm={4} md={3}>
+                    <Box variant='div' component='div'>
+                      <label>Land Size </label>
+                      <Stack
+                        spacing={{ xs: 1, sm: 2 }}
+                        direction='row'
+                        useFlexGap
                       >
-                        <label>Amenities </label>
-                        <FormControl className=''>
-                          <Select
-                            labelId='amenities-selection'
-                            id='contact-type-multiple-checkbox '
-                            multiple
-                            placeholder='Select Contact Type'
-                            value={personName}
-                            onChange={handleChange}
-                            IconComponent={RiArrowDownSLine}
-                            renderValue={(selected) => selected.join(', ')}
-                            className=''
-                          >
-                            {names.map((name) => (
-                              <MenuItem
-                                key={name}
-                                value={name}
-                                className='li-menu'
-                              >
-                                <Checkbox
-                                  checked={personName.indexOf(name) > -1}
-                                />
-                                <ListItemText primary={name} />
-                              </MenuItem>
-                            ))}
-                          </Select>
-                        </FormControl>
-                      </Box>
-                    </Grid>
+                        <FormControlLabel
+                          control={<Checkbox defaultChecked />}
+                          label='Acres'
+                        />
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label='Sq. Ft. '
+                        />
+                      </Stack>
+                    </Box>
                   </Grid>
-                  <Stack
-                    direction='row'
-                    justifyContent='flex-end'
-                    alignItems='center'
-                    flexWrap='wrap'
-                    spacing={2}
-                    sx={{
-                      marginTop: { xs: 3, sm: 5, xl: 5 },
-                    }}
-                    className='search-form-controls'
-                  >
-                    <Button
-                      variant='outlined'
-                      size='large'
-                      className='outline-btn btn'
-                      // onClick={handleClose}
-                      onClick={navigateToListing}
-                    >
-                      Back
-                    </Button>
-                    <Button
-                      variant='contained'
-                      size='large'
-                      onClick={() => setIsSubmitted(true)}
-                      className='primary-btn btn'
-                    >
-                      Search
-                    </Button>
-                  </Stack>
-                </Box>
-              ) : (
-                <Box className='listing-card-scrollable-content advanced-search-result'>
-                  <Stack
-                    direction='row'
-                    justifyContent='space-between'
-                    alignItems='center'
-                    sx={{
-                      paddingBottom: { xs: 2, xl: 2 },
-                      paddingTop: { xs: 2, xl: 2 },
-                    }}
-                    className='main-title'
-                  >
-                    <Typography variant='h3' component='h3'>
-                      Results
-                    </Typography>
-                  </Stack>
-                  <Grid container spacing={5} mt={1} className='listing-card'>
-                    <Grid item xs={12} md={6}>
-                      <PropertyCard />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <PropertyCard />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <PropertyCard />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <PropertyCard />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <PropertyCard />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <PropertyCard />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <PropertyCard />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <PropertyCard />
-                    </Grid>
+                  <Grid item xs={12} sm={8} md={5}>
+                    <Box variant='div' component='div'>
+                      <label className='empty-label'></label>
+
+                      <TextField
+                        fullWidth
+                        id='outlined-basic'
+                        type='number'
+                        variant='outlined'
+                        placeholder='4.758'
+                      />
+                    </Box>
                   </Grid>
-                </Box>
-              )}
+
+                  <Grid item xs={12} md={12}>
+                    <Box
+                      variant='div'
+                      component='div'
+                      className='multiple-selection'
+                    >
+                      <label>Amenities </label>
+                      <FormControl className=''>
+                        <Select
+                          labelId='amenities-selection'
+                          id='contact-type-multiple-checkbox '
+                          multiple
+                          placeholder='Select Contact Type'
+                          value={personName}
+                          onChange={handleChange}
+                          IconComponent={RiArrowDownSLine}
+                          renderValue={(selected) => selected.join(', ')}
+                          className=''
+                        >
+                          {names.map((name) => (
+                            <MenuItem
+                              key={name}
+                              value={name}
+                              className='li-menu'
+                            >
+                              <Checkbox
+                                checked={personName.indexOf(name) > -1}
+                              />
+                              <ListItemText primary={name} />
+                            </MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    </Box>
+                  </Grid>
+                </Grid>
+                <Stack
+                  direction='row'
+                  justifyContent='flex-end'
+                  alignItems='center'
+                  flexWrap='wrap'
+                  spacing={2}
+                  sx={{
+                    marginTop: { xs: 3, sm: 5, xl: 5 },
+                  }}
+                  className='search-form-controls'
+                >
+                  <Button
+                    variant='outlined'
+                    size='large'
+                    className='outline-btn btn'
+                    // onClick={handleClose}
+                    onClick={navigateToListing}
+                  >
+                    Back
+                  </Button>
+                  <Button
+                    variant='contained'
+                    size='large'
+                    onClick={() => setIsSubmitted(true)}
+                    className='primary-btn btn'
+                  >
+                    Search
+                  </Button>
+                </Stack>
+              </Box>
+            </Container>
+          </Paper>
+        ) : (
+          <Box className='advanced-search-result'>
+            {getbreadcrumb()}
+            <Stack
+              direction='row'
+              justifyContent='space-between'
+              alignItems='center'
+              sx={{
+                paddingBottom: { xs: 2, xl: 2 },
+                paddingTop: { xs: 2, xl: 2 },
+              }}
+              className='main-title'
+            >
+              <Typography variant='h3' component='h3'>
+                Results
+              </Typography>
+              <Button
+                variant='outlined'
+                size='small'
+                className='edit-btn secondary-btn-small'
+                // onClick={navigateToCreate}
+                startIcon={<RiPencilFill size={14} />}
+              >
+                Edit
+              </Button>
+            </Stack>
+
+            <Filters />
+            <Box className='listing-card-scrollable-content'>
+              <Grid container spacing={5} mt={1} className='listing-card'>
+                <Grid item xs={12} md={6}>
+                  <PropertyCard />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <PropertyCard />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <PropertyCard />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <PropertyCard />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <PropertyCard />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <PropertyCard />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <PropertyCard />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <PropertyCard />
+                </Grid>
+              </Grid>
             </Box>
           </Box>
-        </Container>
-      </Paper>
+        )}
+      </Box>
+      {/* </Container> */}
+      {/* </Paper> */}
     </>
   );
 };

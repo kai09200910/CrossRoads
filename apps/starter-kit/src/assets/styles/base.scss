@@ -1341,7 +1341,7 @@ header {
           color: #fff;
         }
         @media (max-width: 580px) {
-          width: 96%;
+          width: 100%;
         }
       }
       button.Mui-selected {
@@ -1351,6 +1351,7 @@ header {
       @media (max-width: 580px) {
         flex-wrap: wrap;
         width: 100%;
+        overflow: hidden;
       }
     }
     .MuiTabs-indicator {
@@ -1363,6 +1364,9 @@ header {
     padding: 0 6px 0 0;
     overflow-y: auto;
     height: calc(100vh - 320px);
+    @media (max-width: 812px) {
+      height: calc(100vh - 267px);
+    }
   }
 }
 // Tab list and Tab panel Styles END //

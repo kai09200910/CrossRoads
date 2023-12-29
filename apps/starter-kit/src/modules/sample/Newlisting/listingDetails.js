@@ -117,7 +117,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Listing Type </label>
               <Select
@@ -146,7 +146,7 @@ const ListingDetails = () => {
               </Select>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Second Agent </label>
 
@@ -178,7 +178,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} sm={12} md={5}>
             <Box variant='div' component='div'>
               <label>Owners first name </label>
               <TextField
@@ -191,7 +191,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={2}>
+          <Grid item xs={12} sm={12} md={2}>
             <Box variant='div' component='div'>
               <label>
                 Middle in.{' '}
@@ -212,7 +212,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} sm={12} md={5}>
             <Box variant='div' component='div'>
               <label>Owners last name </label>
               <TextField
@@ -227,7 +227,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Email </label>
               <TextField
@@ -240,7 +240,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Cell-phone </label>
               <TextField
@@ -263,7 +263,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Contract start date </label>
               <DemoContainer components={['DatePicker']}>
@@ -271,7 +271,7 @@ const ListingDetails = () => {
               </DemoContainer>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Contract end date </label>
               <DemoContainer components={['DatePicker']}>
@@ -281,7 +281,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Listing price </label>
               <TextField
@@ -293,7 +293,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Total commission</label>
               <TextField
@@ -305,7 +305,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Commission Split </label>
               <TextField
@@ -317,9 +317,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-        </Grid>
-        <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>HOA Fees </label>
               <TextField
@@ -331,7 +329,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Property Type</label>
               <TextField
@@ -343,7 +341,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Currency </label>
               <TextField
@@ -357,7 +355,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} sm={6} md={8}>
             <Box variant='div' component='div'>
               <label>Brokerage </label>
               <TextField
@@ -369,7 +367,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Occupancy </label>
               <Select
@@ -400,7 +398,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={12}>
+          <Grid item xs={12} sm={12} md={12}>
             <Box variant='div' component='div'>
               <label>Property name </label>
               <TextField
@@ -414,7 +412,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} sm={6} md={8}>
             <Box variant='div' component='div'>
               <label>Address (street name) </label>
               <TextField
@@ -426,7 +424,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>City </label>
               <TextField
@@ -440,7 +438,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Country </label>
               <ReactFlagsSelect
@@ -451,7 +449,7 @@ const ListingDetails = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Islands </label>
               <Select
@@ -481,7 +479,7 @@ const ListingDetails = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>
                 Area{' '}
@@ -519,9 +517,8 @@ const ListingDetails = () => {
               </Select>
             </Box>
           </Grid>
-        </Grid>
-        <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={4}>
+
+          <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>
                 Subdivision{' '}
@@ -542,7 +539,7 @@ const ListingDetails = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} sm={12} md={8}>
             <Box variant='div' component='div'>
               <label>Legal Description </label>
               <TextField
@@ -556,7 +553,7 @@ const ListingDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} sm={4} md={4}>
             <label className='empty-label'></label>
             <Button
               variant='contained'
@@ -575,7 +572,7 @@ const ListingDetails = () => {
               </Stack>
             </Button>
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} sm={8} md={8}>
             <Box variant='div' component='div'>
               <label>Headline </label>
               <TextField

@@ -2,85 +2,92 @@
   .secondary-btn-small {
     padding: 3px 15px;
   }
-}
-.listing-fillter {
-  .fillter-switch.ios-switch-custom {
-    padding: 0;
-    box-sizing: border-box;
-    height: 48px;
-    width: initial;
-    .MuiSwitch-switchBase {
-      top: -4px;
-      left: -4px;
-      &:hover {
-        background-color: transparent;
-      }
-    }
-    .MuiSwitch-switchBase.Mui-checked {
-      right: -35px;
-      .MuiSwitch-track {
-        background-color: #2871ff;
-        opacity: 1;
-      }
-      .MuiSwitch-thumb {
-        background-color: #2871ff;
-        color: #fff;
-        &::before {
-          content: 'Oldest';
-          position: absolute;
-          display: inline-block;
-          top: 11px;
-          left: 13px;
-        }
-      }
-    }
-    .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
-      opacity: 1;
-    }
-    .MuiSwitch-track {
-      width: 154px;
-      height: 48px;
-      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-      border: 1px solid #d9d9d9;
-      border-radius: 25px;
-      background-color: #fff !important;
-      box-shadow: none;
-      opacity: 1;
-      &::before {
-        content: 'Newest';
-        position: absolute;
-        display: inline-block;
-        top: 16px;
-        left: 16px;
-        color: #292929;
-      }
-      &::after {
-        content: 'Oldest';
-        position: absolute;
-        display: inline-block;
-        top: 16px;
-        right: 22px;
-        color: #292929;
-      }
-    }
-    .MuiSwitch-thumb {
-      box-sizing: border-box;
-      width: 73px;
-      height: 40px;
-      border-radius: 25px;
-      background-color: #2871ff;
-      box-shadow: none;
-      position: relative;
-      &::before {
-        content: 'Newest';
-        position: absolute;
-        display: inline-block;
-        top: 11px;
-        left: 11px;
+  .main-title {
+    button {
+      @media (max-width: 767px) {
+        width: inherit;
       }
     }
   }
 }
+
+.fillter-switch.ios-switch-custom {
+  padding: 0;
+  box-sizing: border-box;
+  height: 48px;
+  width: initial;
+  .MuiSwitch-switchBase {
+    top: -4px;
+    left: -4px;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .MuiSwitch-switchBase.Mui-checked {
+    right: -35px;
+    .MuiSwitch-track {
+      background-color: #2871ff;
+      opacity: 1;
+    }
+    .MuiSwitch-thumb {
+      background-color: #2871ff;
+      color: #fff;
+      &::before {
+        content: 'Oldest';
+        position: absolute;
+        display: inline-block;
+        top: 11px;
+        left: 13px;
+      }
+    }
+  }
+  .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+    opacity: 1;
+  }
+  .MuiSwitch-track {
+    width: 150px;
+    height: 48px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    background-color: #fff !important;
+    box-shadow: none;
+    opacity: 1;
+    &::before {
+      content: 'Newest';
+      position: absolute;
+      display: inline-block;
+      top: 16px;
+      left: 16px;
+      color: #292929;
+    }
+    &::after {
+      content: 'Oldest';
+      position: absolute;
+      display: inline-block;
+      top: 16px;
+      right: 16px;
+      color: #292929;
+    }
+  }
+  .MuiSwitch-thumb {
+    box-sizing: border-box;
+    width: 73px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #2871ff;
+    box-shadow: none;
+    position: relative;
+    &::before {
+      content: 'Newest';
+      position: absolute;
+      display: inline-block;
+      top: 11px;
+      left: 11px;
+    }
+  }
+}
+
 .property-card-wrap {
   border-radius: 6px;
   overflow: hidden;
@@ -155,29 +162,32 @@
   }
 }
 .listing-card-scrollable-content {
-  height: calc(100vh - 254px);
+  height: calc(100vh - 274px);
   overflow: auto;
   padding-right: 8px;
+  margin-top: 8px;
   @media (max-width: 991px) {
     height: calc(100vh - 80px);
   }
 }
-.advanced-search-wrapper {
-  padding: 0 60px;
-  @media (max-width: 991px) {
-    padding: 0 8px;
+
+.advanced-search {
+  padding: 40px 20px;
+  @media (max-width: 767px) {
+    padding: 20px 8px;
   }
-  .advanced-search {
-    padding: 40px 20px;
+
+  > .MuiBox-root {
     @media (max-width: 767px) {
-      padding: 20px 8px;
+      padding-top: 0;
+    }
+  }
+  .advanced-search-wrapper {
+    padding: 32px 48px;
+    @media (max-width: 991px) {
+      padding: 24px 24px;
     }
 
-    > .MuiBox-root {
-      @media (max-width: 767px) {
-        padding-top: 0;
-      }
-    }
     .search-form-wrapper {
       margin-bottom: 56px;
       @media (max-width: 767px) {
@@ -199,6 +209,74 @@
           @media (max-width: 475px) {
             margin: 8px 0px;
           }
+        }
+      }
+    }
+  }
+}
+.advanced-search-result {
+  .main-title {
+    button {
+      @media (max-width: 767px) {
+        width: inherit;
+      }
+    }
+  }
+  .search-result-fillter {
+    .fillter-inner-wrap {
+      gap: 6px;
+      flex-wrap: nowrap;
+      @media (max-width: 1366px) {
+        flex-wrap: wrap;
+      }
+      .listing-type {
+        min-width: 15%;
+        @media (max-width: 1366px) {
+          min-width: 28%;
+        }
+        @media (max-width: 580px) {
+          min-width: 100%;
+        }
+      }
+      .lsland-selection {
+        min-width: 12%;
+        @media (max-width: 1366px) {
+          min-width: 22%;
+        }
+        @media (max-width: 580px) {
+          min-width: 100%;
+        }
+      }
+      .bed-bath-selection {
+        min-width: 7%;
+        @media (max-width: 1366px) {
+          min-width: 15%;
+        }
+        @media (max-width: 580px) {
+          min-width: 48%;
+        }
+      }
+      .date-range-picker {
+        min-width: 20%;
+        @media (max-width: 1366px) {
+          min-width: 35%;
+        }
+        @media (max-width: 580px) {
+          min-width: 100%;
+        }
+        .MuiStack-root {
+          .MuiTextField-root {
+            min-width: 210px;
+            input {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+      .sort-by-switch {
+        min-width: 10%;
+        .MuiFormControlLabel-root {
+          margin-right: 0;
         }
       }
     }

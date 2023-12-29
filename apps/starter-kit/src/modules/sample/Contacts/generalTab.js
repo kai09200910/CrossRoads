@@ -59,7 +59,7 @@ const GeneralTab = () => {
     <>
       <Box className='genral-tab'>
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>First name </label>
               <TextField
@@ -71,7 +71,7 @@ const GeneralTab = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Last name </label>
               <TextField
@@ -110,7 +110,7 @@ const GeneralTab = () => {
             </Box>
           </Grid> */}
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label> Phone </label>
               <TextField
@@ -135,7 +135,7 @@ const GeneralTab = () => {
             </Box>
           </Grid> */}
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Email </label>
               <TextField
@@ -147,7 +147,7 @@ const GeneralTab = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             <Box variant='div' component='div'>
               <label>Profile type </label>
               <FormControl>
@@ -186,7 +186,7 @@ const GeneralTab = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label> Agent </label>
               <Select
@@ -219,7 +219,7 @@ const GeneralTab = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>
                 Secondary Agent
@@ -286,7 +286,7 @@ const GeneralTab = () => {
             </Box>
           </Grid> */}
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Care of</label>
               <TextField
@@ -298,7 +298,7 @@ const GeneralTab = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Source</label>
               <TextField
@@ -325,7 +325,7 @@ const GeneralTab = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             <Box variant='div' component='div'>
               <label>Relationship type </label>
               <Select

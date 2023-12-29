@@ -62,7 +62,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
           {step === 1 ? (
             <Box className='buyer-info'>
               <Grid container spacing={5} mt={4}>
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} sm={5} md={5}>
                   <Box variant='div' component='div'>
                     <label>First name </label>
                     <TextField
@@ -74,7 +74,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     />
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} sm={5} md={5}>
                   <Box variant='div' component='div'>
                     <label>Last name </label>
                     <TextField
@@ -86,7 +86,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     />
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={2}>
+                <Grid item xs={12} sm={2} md={2}>
                   <label className='empty-label '></label>
                   <Button
                     variant='outlined'
@@ -96,7 +96,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                 </Grid>
               </Grid>
               <Grid container spacing={5} mt={2}>
-                <Grid item xs={12} md={12}>
+                <Grid item xs={12} sm={6} md={12}>
                   <Box variant='div' component='div'>
                     <label>Sold price</label>
                     <TextField
@@ -104,11 +104,12 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                       id='outlined-basic'
                       label=''
                       variant='outlined'
+                      type='number'
                       placeholder='$500,000'
                     />
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6} md={6}>
                   <Box variant='div' component='div'>
                     <label>Agent sold by</label>
                     <TextField
@@ -120,7 +121,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     />
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6} md={6}>
                   <Box variant='div' component='div'>
                     <label>Secondary agent </label>
                     <TextField
@@ -132,7 +133,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     />
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6} md={6}>
                   <Box variant='div' component='div'>
                     <label>Under contract date </label>
                     <DemoContainer components={['DatePicker']}>
@@ -162,7 +163,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                 </Grid>
               </Grid>
               <Grid container spacing={5} mt={4}>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6} md={6}>
                   <Box variant='div' component='div'>
                     <label>Status </label>
                     <Stack
@@ -178,7 +179,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     </Stack>
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6} md={6}>
                   <Box variant='div' component='div'>
                     <label>Display on site </label>
                     <FormControlLabel

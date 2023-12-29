@@ -38,7 +38,7 @@ const PropertyList = () => {
           className='main-title'
         >
           <Typography variant='h3' component='h3'>
-            My Listings
+            All Listings
           </Typography>
           <Button
             variant='outlined'
@@ -58,7 +58,7 @@ const PropertyList = () => {
             className='detail'
           >
             <Grid container spacing={3} mt={1}>
-              <Grid item xs={12} md={2}>
+              <Grid item xs={12} sm={6} md={2}>
                 <Box variant='div' component='div'>
                   <label>Listing Type </label>
                   <Select
@@ -88,7 +88,7 @@ const PropertyList = () => {
                   </Select>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={2}>
+              <Grid item xs={12} sm={6} md={2}>
                 <Box variant='div' component='div'>
                   <label>Island </label>
                   <Select
@@ -118,7 +118,7 @@ const PropertyList = () => {
                   </Select>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={2}>
+              <Grid item xs={12} sm={6} md={2}>
                 <Box variant='div' component='div'>
                   <label>Listing Type </label>
                   <Select
@@ -148,7 +148,7 @@ const PropertyList = () => {
                   </Select>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={2}>
+              <Grid item xs={12} sm={6} md={2}>
                 <Box variant='div' component='div'>
                   <label>Beds & Baths </label>
                   <Select
@@ -178,7 +178,7 @@ const PropertyList = () => {
                   </Select>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={2}>
+              <Grid item xs={12} sm={6} md={2}>
                 <Box variant='div' component='div'>
                   <label>Listing status </label>
                   <Select
@@ -213,7 +213,7 @@ const PropertyList = () => {
                   </Select>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={2}>
+              <Grid item xs={12} sm={6} md={2}>
                 <Box variant='div' component='div'>
                   <label>Sort by </label>
                   <FormControlLabel
