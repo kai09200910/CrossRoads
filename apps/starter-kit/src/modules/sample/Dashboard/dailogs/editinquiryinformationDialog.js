@@ -68,13 +68,13 @@ const EditinquiryinformationDialog = ({ open, handleClose }) => {
             <Grid item xs={12} md={6}>
               {/* Empty grid here for reason to match figma design - do not delete  */}
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <Box variant='div' component='div'>
                 <label>From:</label>
                 <TimePicker className='time-picker' />
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <Box variant='div' component='div'>
                 <label>To:</label>
                 <TimePicker className='time-picker' />

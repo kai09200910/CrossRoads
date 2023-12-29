@@ -20,7 +20,7 @@ const HgcassociateprofileTab = () => {
     <>
       <Box className='genral-tab'>
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Date of employment </label>
               <DemoContainer components={['DatePicker']}>
@@ -28,7 +28,7 @@ const HgcassociateprofileTab = () => {
               </DemoContainer>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Termination date </label>
               <DemoContainer components={['DatePicker']}>
@@ -38,7 +38,7 @@ const HgcassociateprofileTab = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Employment role </label>
               <Select
@@ -69,7 +69,7 @@ const HgcassociateprofileTab = () => {
               </Select>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Supervisor </label>
               <Select
@@ -102,7 +102,7 @@ const HgcassociateprofileTab = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Gender </label>
               <Select
@@ -131,7 +131,7 @@ const HgcassociateprofileTab = () => {
               </Select>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>NIB Number </label>
               <Select
@@ -195,7 +195,7 @@ const HgcassociateprofileTab = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Base salary </label>
               <TextField
@@ -203,12 +203,13 @@ const HgcassociateprofileTab = () => {
                 id='outlined-basic'
                 label=''
                 variant='outlined'
+                type='number'
                 placeholder='Enter Salary'
               />
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>CR Account Status </label>
               <Select
@@ -241,7 +242,7 @@ const HgcassociateprofileTab = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Employment status </label>
               <Select
@@ -274,7 +275,7 @@ const HgcassociateprofileTab = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Date effective</label>
               <DemoContainer components={['DatePicker']}>

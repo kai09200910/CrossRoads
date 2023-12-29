@@ -62,7 +62,7 @@ const PersonalinfoTab = () => {
     <>
       <Box className='personalinfo-tab'>
         <Grid container spacing={5} mt={4}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Birthday </label>
               <DemoContainer components={['DatePicker']}>
@@ -70,7 +70,7 @@ const PersonalinfoTab = () => {
               </DemoContainer>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Anniversary </label>
               <DemoContainer components={['DatePicker']}>
@@ -92,7 +92,7 @@ const PersonalinfoTab = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             <Box variant='div' component='div'>
               <label>Relationship </label>
               <TextField

@@ -98,7 +98,7 @@
       }
       @media (max-width: 767px) {
         border: none;
-        width: 27.33%;
+        width: 37.33%;
         margin: 0;
       }
       &:last-child {
@@ -182,6 +182,9 @@
         justify-content: center;
         align-items: center;
         position: relative;
+        @media (max-width: 320px) {
+          width: 100%;
+        }
         svg {
           color: #d9d9d9;
         }
@@ -201,6 +204,12 @@
           position: absolute;
           right: -22px;
           top: 8px;
+          @media (max-width: 320px) {
+            right: 117px;
+            top: 66px;
+            width: 4px;
+            height: 47px;
+          }
         }
         &:last-child {
           &::before {
@@ -227,6 +236,12 @@
           color: #d60000;
         }
       }
+      > .MuiStack-root {
+        @media (max-width: 320px) {
+          flex-wrap: wrap;
+          gap: 66px;
+        }
+      }
     }
   }
   .btn-group {
@@ -244,6 +259,9 @@
       @media (max-width: 575px) {
         width: 100%;
       }
+      @media (max-width: 320px) {
+        flex-wrap: wrap;
+      }
     }
     .btn {
       height: 40px !important;
@@ -252,6 +270,9 @@
       font-size: 13px;
       @media (max-width: 575px) {
         width: 50% !important;
+      }
+      @media (max-width: 320px) {
+        width: 100% !important;
       }
     }
   }

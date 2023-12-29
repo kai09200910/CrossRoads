@@ -72,7 +72,7 @@ const AddeventDialog = ({ open, handleClose }) => {
               </Grid>
             </Grid>
             <Grid container spacing={5} mt={0}>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div'>
                   <label>Event date</label>
                   <DemoContainer components={['DatePicker']}>
@@ -80,7 +80,7 @@ const AddeventDialog = ({ open, handleClose }) => {
                   </DemoContainer>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div'>
                   <label>Privacy </label>
                   <Stack spacing={{ xs: 1, sm: 2 }} direction='row' useFlexGap>
@@ -95,13 +95,13 @@ const AddeventDialog = ({ open, handleClose }) => {
                   </Stack>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div'>
                   <label>From:</label>
                   <TimePicker className='time-picker' />
                 </Box>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} sm={6} md={6}>
                 <Box variant='div' component='div'>
                   <label>To:</label>
                   <TimePicker className='time-picker' />

@@ -75,7 +75,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
           <>
             <Box className='personalinfo-tab'>
               <Grid container spacing={5} mt={3}>
-                <Grid item xs={12} md={12}>
+                <Grid item xs={12} sm={6} md={12}>
                   <Box variant='div' component='div'>
                     <label>Name </label>
                     <TextField
@@ -87,7 +87,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                     />
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12} sm={6} md={8}>
                   <Box variant='div' component='div'>
                     <label>Location </label>
                     <TextField
@@ -106,7 +106,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                     />
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} sm={12} md={4}>
                   <Box variant='div' component='div'>
                     <label>Property type </label>
                     <Select
@@ -138,9 +138,9 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
               </Grid>
 
               <Grid container spacing={5} mt={3}>
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12} sm={12} md={8}>
                   <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} sm={6} md={6}>
                       <Box variant='div' component='div'>
                         <label>Bedrooms </label>
                         <Select
@@ -198,7 +198,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                         </Select>
                       </Box>
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} sm={6} md={6}>
                       <Box variant='div' component='div'>
                         <label>Bathrooms </label>
                         <Select

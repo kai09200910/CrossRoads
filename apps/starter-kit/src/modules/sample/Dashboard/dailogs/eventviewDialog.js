@@ -42,7 +42,7 @@ const EventviewDialog = ({ open, handleClose }) => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <Box variant='div' component='div' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
                   Date
@@ -52,7 +52,7 @@ const EventviewDialog = ({ open, handleClose }) => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <Box variant='div' component='div' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
                   Time
