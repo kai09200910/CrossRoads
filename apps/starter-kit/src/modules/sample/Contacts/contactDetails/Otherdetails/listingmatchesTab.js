@@ -89,7 +89,6 @@ const ListingmatchesTab = () => {
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          {/* {row.action} */}
                           <Link
                             className='icon-small-btn green-btn'
                             to='/campaigns/create'

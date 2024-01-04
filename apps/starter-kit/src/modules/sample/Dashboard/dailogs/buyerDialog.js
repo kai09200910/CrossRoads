@@ -11,18 +11,11 @@ import {
   FormControlLabel,
   Grid,
   IconButton,
-  MenuItem,
-  Select,
   Stack,
   Switch,
   TextField,
 } from '@mui/material';
-import {
-  RiAddFill,
-  RiArrowDownSLine,
-  RiPencilFill,
-  RiSearchLine,
-} from 'react-icons/ri';
+import { RiAddFill, RiPencilFill, RiSearchLine } from 'react-icons/ri';
 import MatchingContacts from '../../common/matchingContacts';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -139,17 +132,6 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     <DemoContainer components={['DatePicker']}>
                       <DatePicker sx={{ width: '100%' }} />
                     </DemoContainer>
-                    {/* <Select
-                      fullWidth
-                      id='demo-simple-select'
-                      label=''
-                      placeholder='Select'
-                      IconComponent={RiArrowDownSLine}
-                    >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
-                    </Select> */}
                   </Box>
                 </Grid>
 

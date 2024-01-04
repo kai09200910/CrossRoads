@@ -413,7 +413,7 @@ const BuyerprofileTab = () => {
         </Grid>
 
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={8}>
+          {/* <Grid item xs={12} md={8}>
             <Box variant='div' component='div'>
               <label>Lot acreage </label>
               <Select
@@ -440,6 +440,33 @@ const BuyerprofileTab = () => {
                 <MenuItem value={20}>Lot acreage 456</MenuItem>
                 <MenuItem value={30}>Lot acreage 789</MenuItem>
               </Select>
+            </Box>
+          </Grid> */}
+          <Grid item xs={12} md={4}>
+            <Box variant='div' component='div'>
+              <label>Interior size (sq. ft.):</label>
+              <Stack
+                spacing={{ xs: 1, sm: 2 }}
+                direction='row'
+                useFlexGap
+                alignItems='center'
+              >
+                <TextField
+                  fullWidth
+                  id='outlined-basic'
+                  type='number'
+                  variant='outlined'
+                  placeholder='$Min '
+                />
+
+                <TextField
+                  fullWidth
+                  id='outlined-basic'
+                  type='number'
+                  variant='outlined'
+                  placeholder='$Max  '
+                />
+              </Stack>
             </Box>
           </Grid>
           <Grid item xs={12} md={4}>
@@ -469,7 +496,7 @@ const BuyerprofileTab = () => {
               </Stack>
             </Box>
           </Grid>
-          <Grid item xs={12} md={12}>
+          {/* <Grid item xs={12} md={12}>
             <Box variant='div' component='div' className='multiple-selection'>
               <label>Amenities </label>
               <FormControl className=''>
@@ -493,7 +520,7 @@ const BuyerprofileTab = () => {
                 </Select>
               </FormControl>
             </Box>
-          </Grid>
+          </Grid> */}
         </Grid>
 
         <Grid container spacing={5} mt={3}>
