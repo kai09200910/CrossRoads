@@ -9,7 +9,6 @@ const PropertyCard = () => {
       <Box
         sx={{
           padding: { xs: 0, xl: 0 },
-          // height: '205px',
         }}
         className='property-card'
       >

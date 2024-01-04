@@ -2,8 +2,6 @@ import React from 'react';
 import { Box, Container, Paper, Stack, Typography } from '@mui/material';
 import ComingsoonComponent from '../common/comingsoonComponent';
 
-// import './contacts.scss';
-
 const Document = () => {
   return (
     <>

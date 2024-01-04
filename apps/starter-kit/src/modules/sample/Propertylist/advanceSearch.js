@@ -34,13 +34,7 @@ import MatchingContacts from '../common/matchingContacts';
 import Filters from './filters';
 
 const breadcrumbs = [
-  <Link
-    underline='hover'
-    key='1'
-    color='inherit'
-    // onClick={() => setIsList(false)}
-    to='/my-listing'
-  >
+  <Link underline='hover' key='1' color='inherit' to='/my-listing'>
     All listings
   </Link>,
   <Typography key='3' color='text.primary'>
@@ -152,8 +146,6 @@ const AdvanceSearch = () => {
 
   return (
     <>
-      {/* <Paper mt={2}> */}
-      {/* <Container className='advanced-search-wrapper'> */}
       <Box
         sx={{
           padding: { xs: 5, xl: 5 },
@@ -847,8 +839,6 @@ const AdvanceSearch = () => {
           </Box>
         )}
       </Box>
-      {/* </Container> */}
-      {/* </Paper> */}
     </>
   );
 };

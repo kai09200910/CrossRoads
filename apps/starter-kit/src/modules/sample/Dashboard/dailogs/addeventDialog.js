@@ -11,12 +11,10 @@ import {
   Checkbox,
   FormControlLabel,
   Grid,
-  MenuItem,
-  Select,
   Stack,
   TextField,
 } from '@mui/material';
-import { RiAddFill, RiArrowDownSLine } from 'react-icons/ri';
+import { RiAddFill } from 'react-icons/ri';
 import InquiryinformationDialog from './inquiryinformationDialog';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 

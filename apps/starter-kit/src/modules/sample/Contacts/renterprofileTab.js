@@ -304,7 +304,61 @@ const RenterprofileTab = () => {
         </Grid>
 
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={4}>
+            <Box variant='div' component='div'>
+              <label>Interior size (sq. ft.): </label>
+              <Stack
+                spacing={{ xs: 1, sm: 2 }}
+                direction='row'
+                useFlexGap
+                alignItems='center'
+              >
+                <TextField
+                  fullWidth
+                  id='outlined-basic'
+                  type='number'
+                  variant='outlined'
+                  placeholder='Min '
+                />
+
+                <TextField
+                  fullWidth
+                  id='outlined-basic'
+                  type='number'
+                  variant='outlined'
+                  placeholder='Max  '
+                />
+              </Stack>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Box variant='div' component='div'>
+              <label>Interior size (sq. ft.): </label>
+              <Stack
+                spacing={{ xs: 1, sm: 2 }}
+                direction='row'
+                useFlexGap
+                alignItems='center'
+              >
+                <TextField
+                  fullWidth
+                  id='outlined-basic'
+                  type='number'
+                  variant='outlined'
+                  placeholder='Min '
+                />
+
+                <TextField
+                  fullWidth
+                  id='outlined-basic'
+                  type='number'
+                  variant='outlined'
+                  placeholder='Max  '
+                />
+              </Stack>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
             <Box variant='div' component='div'>
               <label>People per household </label>
               <Select
@@ -334,7 +388,7 @@ const RenterprofileTab = () => {
               </Select>
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}></Grid>
+          {/* <Grid item xs={12} md={4}></Grid> */}
         </Grid>
 
         <Grid container spacing={5} mt={3}>
