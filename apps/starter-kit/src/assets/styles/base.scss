@@ -210,8 +210,8 @@ input[type='number'] {
   opacity: 0.2;
 }
 .primary-btn {
-  background-color: #2871ff !important;
-  color: #fff !important;
+  background-color: #2871ff;
+  color: #fff;
   text-transform: capitalize !important;
   box-shadow: none !important;
   &:hover {
@@ -221,8 +221,8 @@ input[type='number'] {
 
 .primary-btn-small {
   border-radius: 6px;
-  background-color: #2871ff !important;
-  color: #fff !important;
+  background-color: #2871ff;
+  color: #fff;
   box-shadow: none;
   text-transform: capitalize !important;
   &:hover {
@@ -231,15 +231,16 @@ input[type='number'] {
   }
 }
 .secondary-btn {
-  background-color: #dfe8fa !important;
-  color: #2871ff !important;
+  background-color: #dfe8fa;
+  color: #2871ff;
+  font-weight: 600;
   &:hover {
     background-color: #c7d9fc !important;
   }
 }
 .outline-btn {
-  border-color: #292929 !important;
-  color: #292929 !important;
+  border-color: #292929;
+  color: #292929;
   border-width: 1.5px !important;
   cursor: pointer !important;
   &:hover {
@@ -248,8 +249,8 @@ input[type='number'] {
   }
 }
 .outline-primary {
-  border-color: #2871ff !important;
-  color: #2871ff !important;
+  border-color: #2871ff;
+  color: #2871ff;
   &:hover {
     border-color: #2871ff !important;
     background-color: #fafafa !important;

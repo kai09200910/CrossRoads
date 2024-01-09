@@ -1,5 +1,12 @@
 import React from 'react';
-import { Box, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Stack,
+  Typography,
+} from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -38,11 +45,23 @@ const ListingmatchesTab = () => {
           <Typography variant='h3' component='h3'>
             Listing Matches
           </Typography>
+
+          <Button
+            variant='contained'
+            size='small'
+            autoFocus
+            className='primary-btn secondary-btn'
+            // onClick={() => setIsLogactivity(true)}
+            startIcon={<RiMailLine size={18} />}
+            disabled
+          >
+            Send Multiple
+          </Button>
         </Stack>
 
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
-          className='table-wrapper note-list-table '
+          className='table-wrapper note-list-table listing-matches-table'
         >
           <TableContainer>
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
@@ -74,13 +93,21 @@ const ListingmatchesTab = () => {
                       <TableCell
                         component='th'
                         scope='row'
-                        className='field-name'
+                        className='listing-number'
                         align='left'
                       >
-                        <Typography variant='body1' component='p'>
-                          {' '}
-                          <Link to='/dashboard'>{row.listing}</Link>
-                        </Typography>
+                        <Stack
+                          direction='row'
+                          justifyContent='flex-start'
+                          alignItems='center'
+                          spacing={0.5}
+                        >
+                          <FormControlLabel control={<Checkbox />} label='' />
+                          <Typography variant='body1' component='p'>
+                            {' '}
+                            <Link to='/dashboard'>{row.listing}</Link>
+                          </Typography>
+                        </Stack>
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
