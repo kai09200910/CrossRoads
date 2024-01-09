@@ -119,38 +119,38 @@ const RenterprofileTab = () => {
                     >
                       Select
                     </MenuItem>
-                    <MenuItem value={1}> 1</MenuItem>
-                    <MenuItem value={2}> 2</MenuItem>
-                    <MenuItem value={3}> 3</MenuItem>
-                    <MenuItem value={4}> 4</MenuItem>
-                    <MenuItem value={5}> 5</MenuItem>
-                    <MenuItem value={6}> 6</MenuItem>
-                    <MenuItem value={7}> 7</MenuItem>
-                    <MenuItem value={8}> 8</MenuItem>
-                    <MenuItem value={9}> 9</MenuItem>
+                    <MenuItem value={1}> 1+</MenuItem>
+                    <MenuItem value={2}> 2+</MenuItem>
+                    <MenuItem value={3}> 3+</MenuItem>
+                    <MenuItem value={4}> 4+</MenuItem>
+                    <MenuItem value={5}> 5+</MenuItem>
+                    <MenuItem value={6}> 6+</MenuItem>
+                    <MenuItem value={7}> 7+</MenuItem>
+                    <MenuItem value={8}> 8+</MenuItem>
+                    <MenuItem value={9}> 9+</MenuItem>
 
-                    <MenuItem value={10}> 10</MenuItem>
-                    <MenuItem value={11}> 11</MenuItem>
-                    <MenuItem value={12}> 12</MenuItem>
-                    <MenuItem value={13}> 13</MenuItem>
-                    <MenuItem value={14}> 14</MenuItem>
-                    <MenuItem value={15}> 15</MenuItem>
-                    <MenuItem value={16}> 16</MenuItem>
-                    <MenuItem value={17}> 17</MenuItem>
-                    <MenuItem value={18}> 18</MenuItem>
-                    <MenuItem value={19}> 19</MenuItem>
-                    <MenuItem value={20}> 20</MenuItem>
+                    <MenuItem value={10}> 10+</MenuItem>
+                    <MenuItem value={11}> 11+</MenuItem>
+                    <MenuItem value={12}> 12+</MenuItem>
+                    <MenuItem value={13}> 13+</MenuItem>
+                    <MenuItem value={14}> 14+</MenuItem>
+                    <MenuItem value={15}> 15+</MenuItem>
+                    <MenuItem value={16}> 16+</MenuItem>
+                    <MenuItem value={17}> 17+</MenuItem>
+                    <MenuItem value={18}> 18+</MenuItem>
+                    <MenuItem value={19}> 19+</MenuItem>
+                    <MenuItem value={20}> 20+</MenuItem>
 
-                    <MenuItem value={21}> 21</MenuItem>
-                    <MenuItem value={22}> 22</MenuItem>
-                    <MenuItem value={23}> 23</MenuItem>
-                    <MenuItem value={24}> 24</MenuItem>
-                    <MenuItem value={25}> 25</MenuItem>
-                    <MenuItem value={26}> 26</MenuItem>
-                    <MenuItem value={27}> 27</MenuItem>
-                    <MenuItem value={28}> 28</MenuItem>
-                    <MenuItem value={29}> 29</MenuItem>
-                    <MenuItem value={30}> 30</MenuItem>
+                    <MenuItem value={21}> 21+</MenuItem>
+                    <MenuItem value={22}> 22+</MenuItem>
+                    <MenuItem value={23}> 23+</MenuItem>
+                    <MenuItem value={24}> 24+</MenuItem>
+                    <MenuItem value={25}> 25+</MenuItem>
+                    <MenuItem value={26}> 26+</MenuItem>
+                    <MenuItem value={27}> 27+</MenuItem>
+                    <MenuItem value={28}> 28+</MenuItem>
+                    <MenuItem value={29}> 29+</MenuItem>
+                    <MenuItem value={30}> 30+</MenuItem>
                   </Select>
                 </Box>
               </Grid>
@@ -178,38 +178,38 @@ const RenterprofileTab = () => {
                     >
                       Select
                     </MenuItem>
-                    <MenuItem value={1}> 1</MenuItem>
-                    <MenuItem value={2}> 2</MenuItem>
-                    <MenuItem value={3}> 3</MenuItem>
-                    <MenuItem value={4}> 4</MenuItem>
-                    <MenuItem value={5}> 5</MenuItem>
-                    <MenuItem value={6}> 6</MenuItem>
-                    <MenuItem value={7}> 7</MenuItem>
-                    <MenuItem value={8}> 8</MenuItem>
-                    <MenuItem value={9}> 9</MenuItem>
+                    <MenuItem value={1}> 1+</MenuItem>
+                    <MenuItem value={2}> 2+</MenuItem>
+                    <MenuItem value={3}> 3+</MenuItem>
+                    <MenuItem value={4}> 4+</MenuItem>
+                    <MenuItem value={5}> 5+</MenuItem>
+                    <MenuItem value={6}> 6+</MenuItem>
+                    <MenuItem value={7}> 7+</MenuItem>
+                    <MenuItem value={8}> 8+</MenuItem>
+                    <MenuItem value={9}> 9+</MenuItem>
 
-                    <MenuItem value={10}> 10</MenuItem>
-                    <MenuItem value={11}> 11</MenuItem>
-                    <MenuItem value={12}> 12</MenuItem>
-                    <MenuItem value={13}> 13</MenuItem>
-                    <MenuItem value={14}> 14</MenuItem>
-                    <MenuItem value={15}> 15</MenuItem>
-                    <MenuItem value={16}> 16</MenuItem>
-                    <MenuItem value={17}> 17</MenuItem>
-                    <MenuItem value={18}> 18</MenuItem>
-                    <MenuItem value={19}> 19</MenuItem>
-                    <MenuItem value={20}> 20</MenuItem>
+                    <MenuItem value={10}> 10+</MenuItem>
+                    <MenuItem value={11}> 11+</MenuItem>
+                    <MenuItem value={12}> 12+</MenuItem>
+                    <MenuItem value={13}> 13+</MenuItem>
+                    <MenuItem value={14}> 14+</MenuItem>
+                    <MenuItem value={15}> 15+</MenuItem>
+                    <MenuItem value={16}> 16+</MenuItem>
+                    <MenuItem value={17}> 17+</MenuItem>
+                    <MenuItem value={18}> 18+</MenuItem>
+                    <MenuItem value={19}> 19+</MenuItem>
+                    <MenuItem value={20}> 20+</MenuItem>
 
-                    <MenuItem value={21}> 21</MenuItem>
-                    <MenuItem value={22}> 22</MenuItem>
-                    <MenuItem value={23}> 23</MenuItem>
-                    <MenuItem value={24}> 24</MenuItem>
-                    <MenuItem value={25}> 25</MenuItem>
-                    <MenuItem value={26}> 26</MenuItem>
-                    <MenuItem value={27}> 27</MenuItem>
-                    <MenuItem value={28}> 28</MenuItem>
-                    <MenuItem value={29}> 29</MenuItem>
-                    <MenuItem value={30}> 30</MenuItem>
+                    <MenuItem value={21}> 21+</MenuItem>
+                    <MenuItem value={22}> 22+</MenuItem>
+                    <MenuItem value={23}> 23+</MenuItem>
+                    <MenuItem value={24}> 24+</MenuItem>
+                    <MenuItem value={25}> 25+</MenuItem>
+                    <MenuItem value={26}> 26+</MenuItem>
+                    <MenuItem value={27}> 27+</MenuItem>
+                    <MenuItem value={28}> 28+</MenuItem>
+                    <MenuItem value={29}> 29+</MenuItem>
+                    <MenuItem value={30}> 30+</MenuItem>
                   </Select>
                 </Box>
               </Grid>
@@ -243,66 +243,6 @@ const RenterprofileTab = () => {
             </Box>
           </Grid>
         </Grid>
-
-        <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} md={8}>
-            <Box variant='div' component='div'>
-              <label>Lot acreage </label>
-              <Select
-                fullWidth
-                id='demo-simple-select'
-                value={value}
-                defaultValue='none'
-                onChange={(e) => setValue(e.target.value)}
-                onFocus={(e) => setShowPlaceholder(false)}
-                onClose={(e) =>
-                  setShowPlaceholder(e.target.value === undefined)
-                }
-                IconComponent={RiArrowDownSLine}
-              >
-                <MenuItem
-                  key='0'
-                  disabled
-                  value='none'
-                  className='place-holder'
-                >
-                  Select Lot acreage
-                </MenuItem>
-                <MenuItem value={10}>Lot acreage 123</MenuItem>
-                <MenuItem value={20}>Lot acreage 456</MenuItem>
-                <MenuItem value={30}>Lot acreage 789</MenuItem>
-              </Select>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box variant='div' component='div'>
-              <label>Interior size (sq. ft.): </label>
-              <Stack
-                spacing={{ xs: 1, sm: 2 }}
-                direction='row'
-                useFlexGap
-                alignItems='center'
-              >
-                <TextField
-                  fullWidth
-                  id='outlined-basic'
-                  type='number'
-                  variant='outlined'
-                  placeholder='Min '
-                />
-
-                <TextField
-                  fullWidth
-                  id='outlined-basic'
-                  type='number'
-                  variant='outlined'
-                  placeholder='Max  '
-                />
-              </Stack>
-            </Box>
-          </Grid>
-        </Grid>
-
         <Grid container spacing={5} mt={3}>
           <Grid item xs={12} md={4}>
             <Box variant='div' component='div'>
@@ -333,7 +273,7 @@ const RenterprofileTab = () => {
           </Grid>
           <Grid item xs={12} md={4}>
             <Box variant='div' component='div'>
-              <label>Interior size (sq. ft.): </label>
+              <label>Lot Size (Acres) </label>
               <Stack
                 spacing={{ xs: 1, sm: 2 }}
                 direction='row'
@@ -388,7 +328,6 @@ const RenterprofileTab = () => {
               </Select>
             </Box>
           </Grid>
-          {/* <Grid item xs={12} md={4}></Grid> */}
         </Grid>
 
         <Grid container spacing={5} mt={3}>

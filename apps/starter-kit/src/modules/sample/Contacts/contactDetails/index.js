@@ -20,6 +20,7 @@ import AddcontactDialog from '../addcontactDialog';
 import TransferDialog from './dailogs/transfercontactDialog';
 import LogactivityDialog from './dailogs/logactivityDialog';
 import FollowupDialog from './dailogs/followupDialog';
+import SendemailDialog from './dailogs/sendemailDialog';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' to='/contacts'>
@@ -54,6 +55,11 @@ const ContactDetails = () => {
   const [isFollowup, setIsFollowup] = useState(false);
   const handlefollowupClose = () => {
     setIsFollowup(false);
+  };
+
+  const [isSendemail, setIsSendemail] = useState(false);
+  const handlesendemailClose = () => {
+    setIsSendemail(false);
   };
 
   // const emailAddress = 'example@example.com';
@@ -176,8 +182,8 @@ const ContactDetails = () => {
               Send email
             </Link> */}
             <Button
-              onClick={handleEmailButtonClick}
               className='custom-btn btn green-btn'
+              onClick={() => setIsSendemail(true)}
             >
               <RiMailLine size={20} />
               Send Email
@@ -227,6 +233,8 @@ const ContactDetails = () => {
       />
 
       <FollowupDialog open={isFollowup} handleClose={handlefollowupClose} />
+
+      <SendemailDialog open={isSendemail} handleClose={handlesendemailClose} />
     </>
   );
 };

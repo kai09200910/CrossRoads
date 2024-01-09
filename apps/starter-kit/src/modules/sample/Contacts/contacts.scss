@@ -359,6 +359,13 @@ ul.MuiList-root {
     }
   }
 }
+.table-wrapper.note-list-table.listing-matches-table {
+  .listing-number {
+    label.MuiFormControlLabel-root {
+      margin: 0 8px 0 0;
+    }
+  }
+}
 .add-note-modal {
   .MuiPopover-paper {
     margin-top: 8px;
@@ -555,8 +562,38 @@ ul.MuiList-root {
     @media (max-width: 767px) {
       flex-wrap: inherit;
     }
-    @media (max-width: px) {
+    @media (max-width: 480px) {
       flex-wrap: wrap;
+    }
+  }
+}
+.send-email-modal {
+  .modal-dailog-content {
+    padding-bottom: 32px;
+    @media (max-width: 767px) {
+      padding-bottom: 24px !important;
+    }
+    .custom-btn {
+      background-color: #dfeaff;
+      border-radius: 10px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-direction: column;
+      cursor: pointer;
+      &:hover {
+        background-color: #cfdffb;
+      }
+      svg {
+        color: #2871ff;
+      }
+      p {
+        color: #2871ff;
+        font-weight: 600;
+        font-size: 18px;
+      }
     }
   }
 }

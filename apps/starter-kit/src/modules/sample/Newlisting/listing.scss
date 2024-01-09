@@ -203,4 +203,15 @@ ul.MuiMenu-list {
       }
     }
   }
+  .listing-profile-photo-wrap {
+    position: relative;
+    .upload {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      input {
+        opacity: 0;
+      }
+    }
+  }
 }

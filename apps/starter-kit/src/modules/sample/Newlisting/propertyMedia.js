@@ -1,6 +1,13 @@
-import { Box, Grid, TextField, Typography } from '@mui/material';
+import {
+  Box,
+  Grid,
+  InputAdornment,
+  TextField,
+  Typography,
+} from '@mui/material';
 import React from 'react';
 import MediaTabs from './mediaTabs';
+import { RiSearchLine, RiUpload2Line } from 'react-icons/ri';
 
 const PropertyMedia = () => {
   return (
@@ -127,18 +134,9 @@ const PropertyMedia = () => {
           </Grid>
 
           <Grid container spacing={5} mt={4}>
-            <Grid item xs={12} md={12}>
+            <Grid item xs={12} md={6}>
               <Box variant='div' component='div'>
-                <label>
-                  Cover photo
-                  <Typography
-                    variant='body1'
-                    component='span'
-                    className='optional-label'
-                  >
-                    Optional
-                  </Typography>
-                </label>
+                <label>Cover photo</label>
                 <TextField
                   fullWidth
                   id='outlined-basic'
@@ -146,6 +144,32 @@ const PropertyMedia = () => {
                   variant='outlined'
                   placeholder='Enter cover photo link '
                 />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                variant='div'
+                component='div'
+                className='listing-profile-photo-wrap'
+              >
+                <label>Listing profile photo</label>
+
+                <TextField
+                  fullWidth
+                  id='outlined-basic'
+                  label=''
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position='start'>
+                        <RiUpload2Line size={22} />
+                      </InputAdornment>
+                    ),
+                  }}
+                  variant='outlined'
+                  placeholder='Click to upload or drag and drop '
+                  className='upload-text-box'
+                />
+                <TextField type='file' className='upload'></TextField>
               </Box>
             </Grid>
           </Grid>
