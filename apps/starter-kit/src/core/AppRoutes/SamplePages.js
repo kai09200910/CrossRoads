@@ -3,6 +3,10 @@ import { RoutePermittedRole } from '@crema/constants/AppEnums';
 
 const Dashboard = React.lazy(() => import('../../modules/sample/Dashboard'));
 
+const Salespipeline = React.lazy(() =>
+  import('../../modules/sample/Salespipeline'),
+);
+
 const PropertyList = React.lazy(() =>
   import('../../modules/sample/Propertylist'),
 );
@@ -64,6 +68,11 @@ export const samplePagesConfigs = [
     permittedRole: RoutePermittedRole.User,
     path: '/dashboard',
     element: <Dashboard />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/salespipeline',
+    element: <Salespipeline />,
   },
   {
     permittedRole: RoutePermittedRole.User,

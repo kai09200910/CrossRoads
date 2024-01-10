@@ -19,6 +19,14 @@ const routesConfig = [
         url: '/dashboard',
       },
       {
+        id: 'salespipeline',
+        title: 'salespipeline',
+        messageId: 'Salespipeline',
+        type: 'item',
+        icon: <RiLayoutGridFill />,
+        url: '/salespipeline',
+      },
+      {
         id: 'listing',
         title: 'listing',
         messageId: 'Listings',
