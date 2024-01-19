@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Grid, Paper, Stack, Typography } from '@mui/material';
 import PropertyImg from '../../../assets/images/property-card.png';
-import { RiCheckboxBlankCircleFill } from 'react-icons/ri';
 
 const PropertyCard = () => {
   return (
@@ -21,7 +20,7 @@ const PropertyCard = () => {
           <Grid item xs={12} sm={12} md={12}>
             <Box
               sx={{
-                padding: { padding: '20px 20px 20px 8px' },
+                padding: { padding: '16px' },
               }}
             >
               <Typography variant='h4' component='h4'>
