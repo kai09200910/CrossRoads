@@ -1,173 +1,139 @@
-.salespipeline-wrapper {
-  .property-list {
-    padding: 12px;
-    .status-title {
-      border-radius: 8px;
-      padding: 8px 12px;
-      color: #fff;
-      margin-bottom: 12px;
-      span {
-        font-size: 15px;
-        font-weight: 500;
-      }
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 16px;
+  margin-top: 16px;
+  @media (max-width: 899px) {
+    flex-wrap: wrap;
+  }
+  .small-box {
+    width: 25%;
+    background: #f7f8fa;
+    height: max-content;
+    @media (max-width: 1024px) {
+      width: 24%;
     }
-    .status-title.approval-pending {
-      background-color: #ff8a00;
+    @media (max-width: 899px) {
+      width: 48%;
     }
-    .status-title.active-listings {
-      background-color: #00c287;
+    @media (max-width: 520px) {
+      width: 100%;
     }
-    .status-title.offer-pening {
-      background-color: #7645ff;
-    }
-    .status-title.under-contract {
-      background-color: #00b3da;
-    }
-    .property-card-list {
-      height: calc(100vh - 540px);
-      overflow: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-
-      .property-card-wrap {
-        .property-img {
-          height: 180px;
-          img {
-            width: 100%;
+    .salespipeline-wrapper {
+      .property-list {
+        padding: 12px;
+        background-color: #ececec;
+        border: 1px solid #d9d9d9;
+        .status-title {
+          border-radius: 8px;
+          padding: 8px 12px;
+          color: #fff;
+          margin-bottom: 12px;
+          width: 100%;
+          height: 40px;
+          span {
+            font-size: 15px;
+            font-weight: 500;
           }
         }
-        .property-info {
-          padding: 0;
+        .status-title.approval-pending {
+          background-color: #ff8a00;
+        }
+        .status-title.active-listings {
+          background-color: #00c287;
+        }
+        .status-title.offer-pening {
+          background-color: #7645ff;
+        }
+        .status-title.under-contract {
+          background-color: #00b3da;
+        }
+        .property-card-list {
+          height: calc(100vh - 370px);
+          overflow: auto;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          .card {
+            cursor: move;
+            .property-card-wrap {
+              .property-img {
+                height: 150px !important;
+                img {
+                  width: 100% !important;
+                }
+              }
+              h4 {
+                text-align: left;
+                text-transform: capitalize;
+                margin-bottom: 12px;
+                font-size: 14px !important;
+              }
+              .property-info {
+                padding: 0;
+                @media (max-width: 1400px) {
+                  align-items: flex-start;
+                }
+                @media (min-width:900px) and (max-width:991px) {
+                  flex-wrap: wrap;
+                }
+                .info-wrap {
+                  text-align: left;
+
+                  p,
+                  span {
+                    font-size: 12px !important;
+                  }
+
+                  &:first-child {
+                   
+                    @media (min-width:900px) and (max-width:1024px) {
+                      padding-right: 8px;
+                    }
+                    @media (min-width:900px) and (max-width:991px) {
+                      padding: 0;
+                      border-right: none;
+                    }
+                  }
+
+                  &:nth-child(2) {
+                    @media (min-width:900px) and (max-width:1024px) {
+                      margin-left: 8px;
+                    }
+                    @media (min-width:900px) and (max-width:991px) {
+                      margin: 8px 0 0 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 }
-
-// .items {
-//   padding: 21px;
-// }
-
-// .item {
-//   width: calc((100% / 3) - 26px);
-//   height: 90px;
-//   padding: 2.125em 0 1.25em;
-//   user-select: none;
-//   position: absolute;
-//   border-radius: 3px;
-//   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
-//   background: #eaeaea;
-//   transition: background-color 0.1s ease-in-out;
-//   cursor: grab;
-//   text-align: center;
-
-//   &.is-active {
-//     background: #d1d0d0;
-//     cursor: grabbing;
-//   }
-// }
-
-.card {
-  width: 100%;
-  float: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 15px;
-  background: #fff;
-  box-shadow: 3px 1px 12px #0000001a;
-  border-radius: 4px;
-  margin-bottom: 15px;
+.recent-inquires-wrapper {
   cursor: move;
+  .more-action-btn {
+    svg {
+      display: none;
+    }
+    .MuiInputBase-input.MuiOutlinedInput-input {
+      padding: 4px 10px 8px 10px !important;
+    }
+  }
+  .table-wrapper.scrollable-table {
+    tbody {
+      height: 220px;
+    }
+  }
 }
-.img img {
-  width: 40px;
-  height: 40px;
-}
-.status,
-.days,
-.time {
-  font-size: 14px;
-  margin-bottom: 7px;
-}
-.card_right {
-  width: auto;
-  float: left;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.order .status {
-  background: #fff1de;
-  color: #494949;
-  padding: 3px 10px;
-  border-radius: 18px;
-}
-.done .status {
-  background: #c8ebdd;
-  color: #494949;
-  padding: 3px 10px;
-  border-radius: 18px;
-}
-.pending .status {
-  background: #cfd8f0;
-  color: #494949;
-  padding: 3px 10px;
-  border-radius: 18px;
-}
-.waiting .status {
-  background: #eac8d7;
-  color: #494949;
-  padding: 3px 10px;
-  border-radius: 18px;
-}
-.App {
-  font-family: sans-serif;
-  text-align: center;
-  background: #fbfcfd;
-  height: 100vh;
-  padding: 40px 0px;
-}
-h4 {
-  font-family: sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-top: 0px;
-  color: #416183;
-}
-.container {
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  justify-content: space-evenly;
-}
-.drag_column {
-  width: 100%;
-  float: left;
-  display: flex;
-  padding: 30px;
-}
-.drag_row {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.small-box {
-  width: 22%;
-  background: #f7f8fa;
-  height: max-content;
-}
-
-.task {
-  border: 1px solid white;
-  margin: 10px;
-  box-shadow: 1px 3px 10px gray;
-  height: 8vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.commission-outline-wrapper {
+  min-height: 355px;
+  cursor: move;
+  .color-blue {
+    font-weight: 700;
+    margin-left: 4px;
+  }
 }
