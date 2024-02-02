@@ -50,7 +50,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
     setPersonName(typeof value === 'string' ? value.split(',') : value);
   };
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -76,19 +76,19 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
             <Box className='personalinfo-tab'>
               <Grid container spacing={5} mt={3}>
                 <Grid item xs={12} sm={6} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Name </label>
                     <TextField
                       fullWidth
                       id='outlined-basic'
-                      type='number'
+                      // type='number'
                       variant='outlined'
                       placeholder='Name listing alert  '
                     />
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={6} md={7}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Location </label>
                     <TextField
                       fullWidth
@@ -107,7 +107,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={5}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Property type </label>
                     <Select
                       fullWidth
@@ -141,7 +141,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                 <Grid item xs={12} sm={12} md={7}>
                   <Grid container spacing={5}>
                     <Grid item xs={12} sm={6} md={6}>
-                      <Box variant='div' component='div'>
+                      <Box variant='Box' component='Box'>
                         <label>Bedrooms </label>
                         <Select
                           fullWidth
@@ -199,7 +199,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                       </Box>
                     </Grid>
                     <Grid item xs={12} sm={6} md={6}>
-                      <Box variant='div' component='div'>
+                      <Box variant='Box' component='Box'>
                         <label>Bathrooms </label>
                         <Select
                           fullWidth
@@ -259,7 +259,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                   </Grid>
                 </Grid>
                 <Grid item xs={12} md={5}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Price range ($)</label>
                     <Stack
                       spacing={{ xs: 1, sm: 2 }}
@@ -289,7 +289,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
 
               <Grid container spacing={5} mt={3}>
                 <Grid item xs={12} md={3.5}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Interior size (sq. ft.): </label>
                     <Stack
                       spacing={{ xs: 1, sm: 2 }}
@@ -316,7 +316,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={3.5}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Lot Size (Acres)</label>
                     <Stack
                       spacing={{ xs: 1, sm: 2 }}
@@ -343,7 +343,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={5}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Brokerage: </label>
                     <RadioGroup
                       row
@@ -371,8 +371,8 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
 
                 <Grid item xs={12} md={12}>
                   <Box
-                    variant='div'
-                    component='div'
+                    variant='Box'
+                    component='Box'
                     className='multiple-selection'
                   >
                     <label>Amenities </label>
@@ -456,7 +456,7 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

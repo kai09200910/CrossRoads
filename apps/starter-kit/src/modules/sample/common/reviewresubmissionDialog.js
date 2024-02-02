@@ -23,7 +23,7 @@ const ReviewResubmissionDialog = ({
   isClose = false,
 }) => {
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -46,7 +46,7 @@ const ReviewResubmissionDialog = ({
             <Box className='disapproval-feedback'>
               <Grid container spacing={5}>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div' className='error-value'>
+                  <Box variant='Box' component='Box' className='error-value'>
                     <label>Listing Price</label>
                     <Typography variant='body1' component='span' className=''>
                       Name
@@ -54,7 +54,7 @@ const ReviewResubmissionDialog = ({
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Reason for disapproval </label>
                     <TextField
                       fullWidth
@@ -168,7 +168,7 @@ const ReviewResubmissionDialog = ({
           </>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

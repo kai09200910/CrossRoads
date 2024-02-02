@@ -39,7 +39,7 @@ const AddfamilymemberDialog = ({ open, handleClose }) => {
   };
 
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -65,7 +65,7 @@ const AddfamilymemberDialog = ({ open, handleClose }) => {
             <Box className=''>
               <Grid container spacing={5}>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Name </label>
                     <TextField
                       fullWidth
@@ -77,7 +77,7 @@ const AddfamilymemberDialog = ({ open, handleClose }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Contact </label>
                     <TextField
                       fullWidth
@@ -88,7 +88,7 @@ const AddfamilymemberDialog = ({ open, handleClose }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Relationship </label>
                     <TextField
                       fullWidth
@@ -99,7 +99,7 @@ const AddfamilymemberDialog = ({ open, handleClose }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Note </label>
                     <TextField
                       fullWidth
@@ -139,7 +139,7 @@ const AddfamilymemberDialog = ({ open, handleClose }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

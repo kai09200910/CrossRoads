@@ -25,7 +25,7 @@ const AddeventDialog = ({ open, handleClose }) => {
   };
   return (
     <>
-      <div>
+      <Box>
         <Dialog
           onClose={handleClose}
           aria-labelledby='customized-dialog-title'
@@ -42,7 +42,7 @@ const AddeventDialog = ({ open, handleClose }) => {
           <DialogContent className='modal-dailog-content'>
             <Grid container spacing={5} mt={0}>
               <Grid item xs={12} md={12}>
-                <Box variant='div' component='div'>
+                <Box variant='Box' component='Box'>
                   <label>Title</label>
                   <TextField
                     fullWidth
@@ -54,7 +54,7 @@ const AddeventDialog = ({ open, handleClose }) => {
                 </Box>
               </Grid>
               <Grid item xs={12} md={12}>
-                <Box variant='div' component='div'>
+                <Box variant='Box' component='Box'>
                   <label>Description</label>
                   <TextField
                     fullWidth
@@ -71,7 +71,7 @@ const AddeventDialog = ({ open, handleClose }) => {
             </Grid>
             <Grid container spacing={5} mt={0}>
               <Grid item xs={12} sm={6} md={6}>
-                <Box variant='div' component='div'>
+                <Box variant='Box' component='Box'>
                   <label>Event date</label>
                   <DemoContainer components={['DatePicker']}>
                     <DatePicker sx={{ width: '100%' }} />
@@ -79,7 +79,7 @@ const AddeventDialog = ({ open, handleClose }) => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <Box variant='div' component='div'>
+                <Box variant='Box' component='Box'>
                   <label>Privacy </label>
                   <Stack spacing={{ xs: 1, sm: 2 }} direction='row' useFlexGap>
                     <FormControlLabel
@@ -94,13 +94,13 @@ const AddeventDialog = ({ open, handleClose }) => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <Box variant='div' component='div'>
+                <Box variant='Box' component='Box'>
                   <label>From:</label>
                   <TimePicker className='time-picker' />
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6} md={6}>
-                <Box variant='div' component='div'>
+                <Box variant='Box' component='Box'>
                   <label>To:</label>
                   <TimePicker className='time-picker' />
                 </Box>
@@ -141,7 +141,7 @@ const AddeventDialog = ({ open, handleClose }) => {
             </Stack>
           </DialogActions>
         </Dialog>
-      </div>
+      </Box>
       <InquiryinformationDialog
         open={isSubmitted}
         handleClose={handlemodalClose}

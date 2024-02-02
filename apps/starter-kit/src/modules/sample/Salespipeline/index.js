@@ -121,7 +121,7 @@ const Salespipeline = () => {
     'RecentInquires',
     'CommissionOutline',
     'CommissionOutline',
-  ]);
+  ]); 
 
   const handleDrop = (dragIndex, hoverIndex) => {
     const newComponents = [...components];
@@ -149,7 +149,7 @@ const Salespipeline = () => {
                   <CommissionOutline />
                 )}
               </DraggableComponent>
-            </Grid>
+            </Grid>                   
           ))}
         </Grid>
       </DndProvider>

@@ -23,7 +23,7 @@ const EventviewDialog = ({ open, handleClose, title }) => {
     setValue(newValue);
   };
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -167,7 +167,7 @@ const EventviewDialog = ({ open, handleClose, title }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

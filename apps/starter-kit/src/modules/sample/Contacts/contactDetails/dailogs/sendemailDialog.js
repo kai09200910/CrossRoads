@@ -18,6 +18,7 @@ import {
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import { LuCalendarDays, LuInbox } from 'react-icons/lu';
+import { useNavigate } from 'react-router-dom';
 
 const SendemailDialog = ({ open, handleClose }) => {
   const [value, setValue] = useState('none');
@@ -40,8 +41,14 @@ const SendemailDialog = ({ open, handleClose }) => {
     setPersonName(typeof value === 'string' ? value.split(',') : value);
   };
 
+  const navigate = useNavigate();
+  const navigateToCreate = () => {
+    navigate('/automated-email');
+  };
+
+
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -67,15 +74,17 @@ const SendemailDialog = ({ open, handleClose }) => {
             <Box className=''>
               <Grid container spacing={5}>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div' className='custom-btn'>
+                  <Box variant='Box' component='Box' className='custom-btn' >
+                  <Button variant='Box' component='Box' className='custom-btn'  onClick={navigateToCreate}>
                     <LuCalendarDays size={32} />
                     <Typography variant='body1' component='p'>
                       One-time email
                     </Typography>
+                  </Button>
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div' className='custom-btn'>
+                  <Box variant='Box' component='Box' className='custom-btn'>
                     <LuInbox size={32} />
                     <Typography variant='body1' component='p'>
                       Future Email
@@ -87,28 +96,9 @@ const SendemailDialog = ({ open, handleClose }) => {
           </>
         </DialogContent>
 
-        {/* <DialogActions align='center' className=''>
-          <Stack
-            direction='row'
-            justifyContent='center'
-            alignItems='center'
-            spacing={2}
-            sx={{
-              padding: { xs: 3, sm: 6, xl: 6 },
-            }}
-          >
-            <Button
-              variant='contained'
-              size='large'
-              autoFocus
-              className='primary-btn btn'
-            >
-              Log activity
-            </Button>
-          </Stack>
-        </DialogActions> */}
+       
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

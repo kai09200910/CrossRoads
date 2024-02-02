@@ -32,7 +32,7 @@ const KycdocumentsDialog = ({ open, handleClose }) => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -99,8 +99,8 @@ const KycdocumentsDialog = ({ open, handleClose }) => {
                       </TableBody>
                     ) : (
                       <Box
-                        variant='div'
-                        component='div'
+                        variant='Box'
+                        component='Box'
                         className='table-empty-state'
                       >
                         <Box
@@ -145,7 +145,7 @@ const KycdocumentsDialog = ({ open, handleClose }) => {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

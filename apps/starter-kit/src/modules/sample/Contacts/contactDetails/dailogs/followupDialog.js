@@ -9,7 +9,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const FollowupDialog = ({ open, handleClose }) => {
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -36,7 +36,7 @@ const FollowupDialog = ({ open, handleClose }) => {
             <Box className=''>
               <Grid container spacing={5}>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Date</label>
                     <DemoContainer components={['DatePicker']}>
                       <DatePicker sx={{ width: '100%' }} />
@@ -44,7 +44,7 @@ const FollowupDialog = ({ open, handleClose }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Follow up note </label>
                     <TextField
                       fullWidth
@@ -84,7 +84,7 @@ const FollowupDialog = ({ open, handleClose }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 
