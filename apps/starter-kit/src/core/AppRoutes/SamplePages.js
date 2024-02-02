@@ -27,6 +27,14 @@ const ContactDetails = React.lazy(() =>
 const MyContacts = React.lazy(() =>
   import('../../modules/sample/Contacts/myContacts'),
 );
+
+
+const AutomatedEmail = React.lazy(() =>
+  import('../../modules/sample/Contacts/contactDetails/email/automatedEmail'),
+);
+const TemplateDetail = React.lazy(() =>
+  import('../../modules/sample/Contacts/contactDetails/email/templateDetail'),
+);
 const ListingalertsTab = React.lazy(() =>
   import(
     '../../modules/sample/Contacts/contactDetails/Otherdetails/listingalertsTab'
@@ -84,6 +92,7 @@ export const samplePagesConfigs = [
     path: '/campaigns/create',
     element: <CreateCampaign />,
   },
+
   {
     permittedRole: RoutePermittedRole.User,
     path: '/worklists',
@@ -109,7 +118,16 @@ export const samplePagesConfigs = [
     path: '/listing-alert',
     element: <ListingalertsTab />,
   },
-
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/automated-email',
+    element: <AutomatedEmail />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
+    path: '/automated-email/create',
+    element: <TemplateDetail />,
+  },
   {
     permittedRole: RoutePermittedRole.User,
     path: '/documents',

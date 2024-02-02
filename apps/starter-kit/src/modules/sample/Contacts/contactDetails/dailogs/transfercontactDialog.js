@@ -20,7 +20,7 @@ const TransferDialog = ({ open, handleClose }) => {
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -47,7 +47,7 @@ const TransferDialog = ({ open, handleClose }) => {
             <Box className=''>
               <Grid container spacing={5}>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Transfer type </label>
                     <RadioGroup
                       row
@@ -68,7 +68,7 @@ const TransferDialog = ({ open, handleClose }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Select agent to transfer to </label>
                     <Select
                       fullWidth
@@ -138,7 +138,7 @@ const TransferDialog = ({ open, handleClose }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

@@ -22,7 +22,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const BuyerDialog = ({ open, handleClose, step }) => {
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -56,7 +56,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
             <Box className='buyer-info'>
               <Grid container spacing={5} mt={4}>
                 <Grid item xs={12} sm={5} md={5}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>First name </label>
                     <TextField
                       fullWidth
@@ -68,7 +68,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={5} md={5}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Last name </label>
                     <TextField
                       fullWidth
@@ -90,7 +90,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
               </Grid>
               <Grid container spacing={5} mt={2}>
                 <Grid item xs={12} sm={6} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Sold price</label>
                     <TextField
                       fullWidth
@@ -103,7 +103,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Agent sold by</label>
                     <TextField
                       fullWidth
@@ -115,7 +115,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Secondary agent </label>
                     <TextField
                       fullWidth
@@ -127,7 +127,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Under contract date </label>
                     <DemoContainer components={['DatePicker']}>
                       <DatePicker sx={{ width: '100%' }} />
@@ -136,7 +136,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                 </Grid>
 
                 <Grid item xs={12} md={6}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Date sold </label>
                     <DemoContainer components={['DatePicker']}>
                       <DatePicker sx={{ width: '100%' }} />
@@ -146,7 +146,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
               </Grid>
               <Grid container spacing={5} mt={4}>
                 <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Status </label>
                     <Stack
                       spacing={{ xs: 1, sm: 2 }}
@@ -162,7 +162,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Display on site </label>
                     <FormControlLabel
                       control={
@@ -178,7 +178,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Add phrase to property description</label>
                     <TextField
                       fullWidth
@@ -189,6 +189,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                       multiline
                       rows={4}
                       maxRows={4}
+                      
                     />
                   </Box>
                 </Grid>
@@ -219,7 +220,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     </Typography>
                   </Grid>
                   <Grid item xs={12} md={12}>
-                    <Box variant='div' component='div'>
+                    <Box variant='Box' component='Box'>
                       <label>
                         Sold price
                         <Typography
@@ -240,7 +241,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     </Box>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <Box variant='div' component='div'>
+                    <Box variant='Box' component='Box'>
                       <label>Agent sold by</label>
                       <TextField
                         fullWidth
@@ -252,7 +253,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     </Box>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <Box variant='div' component='div'>
+                    <Box variant='Box' component='Box'>
                       <label>Secondary agent </label>
                       <TextField
                         fullWidth
@@ -264,7 +265,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     </Box>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <Box variant='div' component='div'>
+                    <Box variant='Box' component='Box'>
                       <label>Under contract date </label>
                       <DemoContainer components={['DatePicker']}>
                         <DatePicker sx={{ width: '100%' }} />
@@ -273,7 +274,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                   </Grid>
 
                   <Grid item xs={12} md={6}>
-                    <Box variant='div' component='div'>
+                    <Box variant='Box' component='Box'>
                       <label>Date sold </label>
                       <DemoContainer components={['DatePicker']}>
                         <DatePicker sx={{ width: '100%' }} />
@@ -283,7 +284,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                 </Grid>
                 <Grid container spacing={5} mt={4}>
                   <Grid item xs={12} md={6}>
-                    <Box variant='div' component='div'>
+                    <Box variant='Box' component='Box'>
                       <label>Status </label>
                       <Stack
                         spacing={{ xs: 1, sm: 2 }}
@@ -302,7 +303,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     </Box>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <Box variant='div' component='div'>
+                    <Box variant='Box' component='Box'>
                       <label>Display on site </label>
                       <FormControlLabel
                         control={
@@ -318,7 +319,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     </Box>
                   </Grid>
                   <Grid item xs={12} md={12}>
-                    <Box variant='div' component='div'>
+                    <Box variant='Box' component='Box'>
                       <label>Add phrase to property description</label>
                       <TextField
                         fullWidth
@@ -367,7 +368,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

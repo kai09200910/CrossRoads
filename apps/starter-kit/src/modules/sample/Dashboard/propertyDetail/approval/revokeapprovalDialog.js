@@ -5,10 +5,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
 import { RiErrorWarningFill } from 'react-icons/ri';
+import { Box } from '@mui/material';
 
 const RevokeapprovalDialog = ({ open, handleClose }) => {
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -47,7 +48,7 @@ const RevokeapprovalDialog = ({ open, handleClose }) => {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

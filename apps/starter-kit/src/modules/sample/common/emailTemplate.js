@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
 import { Box, Grid, Button, Stack, Typography } from '@mui/material';
 import FileRow from '../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/FileRow';
 import UploadModern from '../../../../../../libs/modules/src/lib/thirdParty/reactDropzone/components/UploadModern';
@@ -8,21 +6,18 @@ import AppList from '@crema/components/AppList';
 import { useDropzone } from 'react-dropzone';
 import { EditText, EditTextarea } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
-import EmailTemplate from '../common/emailTemplate';
 
-const ViewemailcampaignDialog = ({ open, handleClose }) => {
+const EmailTemplate  = () => {
   const dropzone = useDropzone();
   const [uploadedFiles] = useState([]);
   return (
     <Box>
-      <Dialog
-        onClose={handleClose}
-        aria-labelledby='customized-dialog-title'
-        open={open}
-        className='modal-dailog-wrapper campaigns-view-email-wrapper'
+      <Box
+      
+        className='campaigns-view-email-wrapper'
       >
-        <DialogContent className='modal-dailog-content'>
-          {/* <Box className='photo-selection-preview-area'>
+       
+          <Box className='photo-selection-preview-area'>
             <Box className='email-template-area'>
               <Box className='email-template'>
                 <Grid container spacing={5} mt={0} alignItems='center'>
@@ -202,12 +197,10 @@ const ViewemailcampaignDialog = ({ open, handleClose }) => {
                 </Grid>
               </Box>
             </Box>
-          </Box> */}
-          <EmailTemplate />
-        </DialogContent>
-      </Dialog>
+          </Box>
+          </Box>
     </Box>
   );
 };
 
-export default ViewemailcampaignDialog;
+export default EmailTemplate;

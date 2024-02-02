@@ -9,7 +9,7 @@ import { Box, Grid, Stack } from '@mui/material';
 
 const MatchingbuyersDialog = ({ open, handleClose }) => {
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -33,7 +33,7 @@ const MatchingbuyersDialog = ({ open, handleClose }) => {
         <DialogContent className='modal-dailog-content'>
           <Grid container spacing={5}>
             <Grid item xs={12} md={12}>
-              <Box variant='div' component='div' className='error-value'>
+              <Box variant='Box' component='Box' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
                   Name
                 </Typography>
@@ -43,7 +43,7 @@ const MatchingbuyersDialog = ({ open, handleClose }) => {
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Box variant='div' component='div' className='error-value'>
+              <Box variant='Box' component='Box' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
                   Match %
                 </Typography>
@@ -75,7 +75,7 @@ const MatchingbuyersDialog = ({ open, handleClose }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

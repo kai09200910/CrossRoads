@@ -25,9 +25,10 @@ const SubmittedDialog = ({ open, handleClose }) => {
             component='h2'
             sx={{ paddingTop: 2 }}
           >
-            Listing feedback submitted!
-          </Typography>
+           Successfully submitted campaign
+          </Typography>          
         </DialogContent>
+
         <DialogActions align='center' className='modal-dailog-footer'>
           <Button
             variant='contained'
@@ -36,7 +37,7 @@ const SubmittedDialog = ({ open, handleClose }) => {
             onClick={handleClose}
             className='primary-btn btn'
           >
-            Close
+         Close
           </Button>
         </DialogActions>
       </Dialog>

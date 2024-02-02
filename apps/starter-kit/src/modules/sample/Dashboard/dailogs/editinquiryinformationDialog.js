@@ -12,7 +12,7 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 const EditinquiryinformationDialog = ({ open, handleClose }) => {
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -29,7 +29,7 @@ const EditinquiryinformationDialog = ({ open, handleClose }) => {
         <DialogContent className='modal-dailog-content'>
           <Grid container spacing={5} mt={0}>
             <Grid item xs={12} md={12}>
-              <Box variant='div' component='div'>
+              <Box variant='Box' component='Box'>
                 <label>Title</label>
                 <TextField
                   fullWidth
@@ -41,7 +41,7 @@ const EditinquiryinformationDialog = ({ open, handleClose }) => {
               </Box>
             </Grid>
             <Grid item xs={12} md={12}>
-              <Box variant='div' component='div'>
+              <Box variant='Box' component='Box'>
                 <label>Description</label>
                 <TextField
                   fullWidth
@@ -58,7 +58,7 @@ const EditinquiryinformationDialog = ({ open, handleClose }) => {
           </Grid>
           <Grid container spacing={5} mt={0}>
             <Grid item xs={12} md={6}>
-              <Box variant='div' component='div'>
+              <Box variant='Box' component='Box'>
                 <label>Event date</label>
                 <DemoContainer components={['DatePicker']}>
                   <DatePicker sx={{ width: '100%' }} />
@@ -69,13 +69,13 @@ const EditinquiryinformationDialog = ({ open, handleClose }) => {
               {/* Empty grid here for reason to match figma design - do not delete  */}
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
-              <Box variant='div' component='div'>
+              <Box variant='Box' component='Box'>
                 <label>From:</label>
                 <TimePicker className='time-picker' />
               </Box>
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
-              <Box variant='div' component='div'>
+              <Box variant='Box' component='Box'>
                 <label>To:</label>
                 <TimePicker className='time-picker' />
               </Box>
@@ -112,7 +112,7 @@ const EditinquiryinformationDialog = ({ open, handleClose }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

@@ -77,9 +77,9 @@ const BuyerprofileTab = () => {
                     className='secondary-btn btn add-location-btn '
                     startIcon={<RiAddFill size={18} />}
                   >
-                    Map location
+                    Map location 
                   </Button>
-                </Box>
+                </Box> 
               </Grid>
             </Grid>
           </Grid>

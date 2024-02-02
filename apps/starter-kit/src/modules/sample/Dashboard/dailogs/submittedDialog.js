@@ -5,10 +5,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
 import { IoCheckmarkCircle } from 'react-icons/io5';
+import { Box } from '@mui/material';
 
 const SubmittedDialog = ({ open, handleClose }) => {
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -40,7 +41,7 @@ const SubmittedDialog = ({ open, handleClose }) => {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

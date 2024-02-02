@@ -39,7 +39,7 @@ const LogactivityDialog = ({ open, handleClose }) => {
   };
 
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -66,7 +66,7 @@ const LogactivityDialog = ({ open, handleClose }) => {
             <Box className=''>
               <Grid container spacing={5}>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Activity type </label>
                     <FormControl>
                       <Select
@@ -90,7 +90,7 @@ const LogactivityDialog = ({ open, handleClose }) => {
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
-                  <Box variant='div' component='div'>
+                  <Box variant='Box' component='Box'>
                     <label>Add comment </label>
                     <TextField
                       fullWidth
@@ -130,7 +130,7 @@ const LogactivityDialog = ({ open, handleClose }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 

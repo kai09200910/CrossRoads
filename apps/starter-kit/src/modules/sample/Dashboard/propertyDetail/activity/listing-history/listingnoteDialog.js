@@ -8,7 +8,7 @@ import { Box, Grid, Stack, Typography } from '@mui/material';
 
 const ListingnoteDialog = ({ open, handleClose }) => {
   return (
-    <div>
+    <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
@@ -25,7 +25,7 @@ const ListingnoteDialog = ({ open, handleClose }) => {
         <DialogContent className='modal-dailog-content'>
           <Grid container spacing={5}>
             <Grid item xs={12} sm={6} md={6}>
-              <Box variant='div' component='div' className='error-value'>
+              <Box variant='Box' component='Box' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
                   Name
                 </Typography>
@@ -35,7 +35,7 @@ const ListingnoteDialog = ({ open, handleClose }) => {
               </Box>
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
-              <Box variant='div' component='div' className='error-value'>
+              <Box variant='Box' component='Box' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
                   Date
                 </Typography>
@@ -45,7 +45,7 @@ const ListingnoteDialog = ({ open, handleClose }) => {
               </Box>
             </Grid>
             <Grid item xs={12} md={12}>
-              <Box variant='div' component='div' className='error-value'>
+              <Box variant='Box' component='Box' className='error-value'>
                 <Typography variant='body1' component='span' className=''>
                   Details
                 </Typography>
@@ -80,7 +80,7 @@ const ListingnoteDialog = ({ open, handleClose }) => {
           </Stack>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 };
 
