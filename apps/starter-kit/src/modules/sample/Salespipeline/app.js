@@ -1,12 +1,30 @@
-import React from 'react';
-import { Box, Stack, Typography, Paper } from '@mui/material';
-import { RiTimeLine } from 'react-icons/ri';
+import React, { useState } from 'react';
+
+import {
+  Box,
+  Stack,
+  Typography,
+  Paper,
+  IconButton,
+  Select, // Import Select component
+  MenuItem, // Import MenuItem component
+} from '@mui/material';
+import { RiArrowDownSLine, RiFilter3Line, RiTimeLine } from 'react-icons/ri';
 import PropertyCard from './propertyCard';
 import './salespipeline.scss';
-import { motion } from "framer-motion"
 import Filters from './filters';
 
 class TaskList extends React.Component {
+  state = {
+    isFiltersVisible: false,
+  };
+
+  toggleFiltersVisibility = () => {
+    this.setState((prevState) => ({
+      isFiltersVisible: !prevState.isFiltersVisible,
+    }));
+  };
+
   state = { tasks: [] };
   componentDidMount() {
     const { tasks } = this.props;
@@ -14,6 +32,7 @@ class TaskList extends React.Component {
       tasks,
     });
   }
+
   onDragStart = (evt) => {
     let element = evt.currentTarget;
     element.classList.add('dragged');
@@ -58,216 +77,197 @@ class TaskList extends React.Component {
 
   render() {
     const { tasks } = this.state;
-    let approvalPending = tasks.filter((data) => data.status === 'Approval Pending');   
-    let activeListings = tasks.filter((data) => data.status === ' Active Listings');
+    let approvalPending = tasks.filter(
+      (data) => data.status === 'Approval Pending',
+    );
+    let activeListings = tasks.filter(
+      (data) => data.status === ' Active Listings',
+    );
     let offerPening = tasks.filter((data) => data.status === 'Under Contract');
-    let underContract  = tasks.filter((data) => data.status === 'Offer Pening');
-  
+    let underContract = tasks.filter((data) => data.status === 'Offer Pening');
+
+    // const [value, setValue] = useState('none');
+    // const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
+
     return (
-
       <>
-      <Typography
-        variant='h2'
-        component='h2'
-        sx={{
-          paddingBottom: { xs: 3, xl: 3 },
-          paddingTop: { xs: 5, xl: 2 },
-        }}
-      >
-        Sales Pipeline 
-      </Typography>
-
-      <Filters /> 
-
-      <Box className='container'>
-
-      <Box
-          className=' small-box'
-          onDragLeave={(e) => this.onDragLeave(e)}
-          onDragEnter={(e) => this.onDragEnter(e)}
-          onDragEnd={(e) => this.onDragEnd(e)}
-          onDragOver={(e) => this.onDragOver(e)}
-          onDrop={(e) => this.onDrop(e, false, 'Under Contract')}
-        >
-          <Box className='drag_container'>
-            <Box className='salespipeline-wrapper'>
-              <Box className='drag_column'>
-                
-                <Box variant='Box' component={Paper} className='drag_row property-list'>
-                <Stack
-                  direction='row'
-                  justifyContent='flex-start'
-                  alignItems='center'
-                  spacing={2}
-                  className='status-title approval-pending'
-                >
-                      <RiTimeLine size={22} />
-                      <Typography variant='span' component='span'>
-                        Approval Pending
-                      </Typography>
-                </Stack >
-                <Box className=' property-card-list'
-                   >
-                  {offerPening.map((task) => (
-                    
-                    <motion.div
-                      drag
-                      key={task.name}
-                      id={task.id}
-                      draggable
-                      onDragStart={(e) => this.onDragStart(e)}
-                      onDragEnd={(e) => this.onDragEnd(e)}
-                      className='card card123'
-                      dragConstraints={{
-                        top: -50,
-                        left: -50,
-                        right: 50,
-                        bottom: 50,
-                      }}
+        <Box className='dashboard-wrap'>
+          {this.state.isFiltersVisible && (
+            <Filters toggleVisibility={this.toggleFiltersVisibility} />
+          )}
+          <Box className='container'>
+            <Box
+              className=' small-box'
+              onDragLeave={(e) => this.onDragLeave(e)}
+              onDragEnter={(e) => this.onDragEnter(e)}
+              onDragEnd={(e) => this.onDragEnd(e)}
+              onDragOver={(e) => this.onDragOver(e)}
+              onDrop={(e) => this.onDrop(e, false, 'Approval Pending')}
+            >
+              <Box className='drag_container'>
+                <Box className=' salespipeline-wrapper'>
+                  <Box className='drag_column'>
+                    <Box
+                      variant='Box'
+                      component={Paper}
+                      className='drag_row property-list'
                     >
-                       <PropertyCard />
-                    </motion.div>
-                  
-                  ))}
+                      <Stack
+                        direction='row'
+                        justifyContent='flex-start'
+                        alignItems='center'
+                        spacing={2}
+                        sx={{
+                          marginBottom: { xs: 2, xl: 2 },
+                        }}
+                      >
+                        <Box className='custom-select-menu-wrapper'>
+                          <RiTimeLine className='clock-icon' />
+                          <Select
+                            value={''} // Provide the selected value
+                            onChange={(e) => {
+                              // Handle onChange event
+                            }}
+                            // onChange={(e) => setValue(e.target.value)}
+                            // onFocus={(e) => setShowPlaceholder(false)}
+                            // onClose={(e) =>
+                            //   setShowPlaceholder(e.target.value === undefined)
+                            // }
+                            displayEmpty
+                            className='custom-select-menu status-title approval-pending '
+                            IconComponent={RiArrowDownSLine}
+                            startIcon={<RiArrowDownSLine />}
+                          >
+                            <MenuItem value='' disabled>
+                              Select an option
+                            </MenuItem>
+                            <MenuItem value='option1'>
+                              Approval pending{' '}
+                            </MenuItem>
+                            <MenuItem value='option2'>Listed</MenuItem>
+                            <MenuItem value='option1'>Offer Pending </MenuItem>
+                            <MenuItem value='option2'>Under Contact </MenuItem>
+                            <MenuItem value='option2'>Closed </MenuItem>
+                          </Select>
+                        </Box>
+                        <IconButton
+                          aria-label='edit'
+                          className='filter-btn'
+                          onClick={this.toggleFiltersVisibility}
+                        >
+                          <RiFilter3Line size={30} />
+                        </IconButton>
+                      </Stack>
+                      <Box className=' property-card-list'>
+                        {approvalPending.map((task) => (
+                          <Box
+                            key={task.name}
+                            id={task.id}
+                            draggable
+                            onDragStart={(e) => this.onDragStart(e)}
+                            onDragEnd={(e) => this.onDragEnd(e)}
+                            className='card'
+                          >
+                            <PropertyCard />
+                            <PropertyCard />
+                          </Box>
+                        ))}
+                        
+                      </Box>
                     </Box>
+                  </Box>
                 </Box>
               </Box>
             </Box>
-          </Box>
-        </Box>
 
-        <Box
-          className=' small-box'
-          onDragLeave={(e) => this.onDragLeave(e)}
-          onDragEnter={(e) => this.onDragEnter(e)}
-          onDragEnd={(e) => this.onDragEnd(e)}
-          onDragOver={(e) => this.onDragOver(e)}
-          onDrop={(e) => this.onDrop(e, false, 'Approval Pending')}
-        >
-          <Box className='drag_container'>
-            <Box className=' salespipeline-wrapper'>
-              <Box className='drag_column'>
-                <Box variant='Box' component={Paper} className='drag_row property-list'>
-                <Stack
-                direction='row'
-                justifyContent='flex-start'
-                alignItems='center'
-                spacing={2}
-                className='status-title active-listings '
-              >
-                <RiTimeLine size={22} />
-                <Typography variant='span' component='span'>
-                  Active Listings
-                </Typography>
-              </Stack>
-              <Box className=' property-card-list'>
-                  {approvalPending.map((task) => (
+            <Box
+              className=' small-box'
+              onDragLeave={(e) => this.onDragLeave(e)}
+              onDragEnter={(e) => this.onDragEnter(e)}
+              onDragEnd={(e) => this.onDragEnd(e)}
+              onDragOver={(e) => this.onDragOver(e)}
+              onDrop={(e) => this.onDrop(e, true, ' Active Listings')}
+            >
+              <Box className='drag_container'>
+                <Box className=' salespipeline-wrapper'>
+                  <Box className='drag_column'>
                     <Box
-                      key={task.name}
-                      id={task.id}
-                      draggable
-                      onDragStart={(e) => this.onDragStart(e)}
-                      onDragEnd={(e) => this.onDragEnd(e)}
-                      className='card'
+                      variant='Box'
+                      component={Paper}
+                      className='drag_row property-list'
                     >
-                       <PropertyCard />
+                      <Stack
+                        direction='row'
+                        justifyContent='flex-start'
+                        alignItems='center'
+                        spacing={2}
+                        sx={{
+                          marginBottom: { xs: 2, xl: 2 },
+                        }}
+                      >
+                        <Box className='custom-select-menu-wrapper'>
+                          <RiTimeLine className='clock-icon' />
+                          <Select
+                            value={''} // Provide the selected value
+                            onChange={(e) => {
+                              // Handle onChange event
+                            }}
+                            // onChange={(e) => setValue(e.target.value)}
+                            // onFocus={(e) => setShowPlaceholder(false)}
+                            // onClose={(e) =>
+                            //   setShowPlaceholder(e.target.value === undefined)
+                            // }
+                            displayEmpty
+                            className='custom-select-menu status-title under-contract '
+                            IconComponent={RiArrowDownSLine}
+                            startIcon={<RiArrowDownSLine />}
+                          >
+                            <MenuItem value='' disabled>
+                              Select an option
+                            </MenuItem>
+                            <MenuItem value='option1'>Under Contract</MenuItem>
+                            <MenuItem value='option2'>Listed</MenuItem>
+                            <MenuItem value='option1'>Offer Pending </MenuItem>
+                            <MenuItem value='option2'>Under Contact </MenuItem>
+                            <MenuItem value='option2'>Closed </MenuItem>
+                          </Select>
+                        </Box>
+                        <IconButton
+                          aria-label='edit'
+                          className='filter-btn'
+                          onClick={this.toggleFiltersVisibility}
+                        >
+                          <RiFilter3Line size={30} />
+                        </IconButton>
+                      </Stack>
+
+                      <Box className=' property-card-list'>
+                        {activeListings.map((task) => (
+                          <Box
+                            key={task.name}
+                            id={task.id}
+                            draggable
+                            onDragStart={(e) => this.onDragStart(e)}
+                            onDragEnd={(e) => this.onDragEnd(e)}
+                            className='card'
+                          >
+                            <PropertyCard />
+                            <PropertyCard />
+                          </Box>
+
+                          
+
+                          
+                          
+                        ))}
+                      </Box>
                     </Box>
-                  ))}
                   </Box>
                 </Box>
               </Box>
             </Box>
           </Box>
         </Box>
-
-        <Box
-          className=' small-box'
-          onDragLeave={(e) => this.onDragLeave(e)}
-          onDragEnter={(e) => this.onDragEnter(e)}
-          onDragEnd={(e) => this.onDragEnd(e)}
-          onDragOver={(e) => this.onDragOver(e)}
-          onDrop={(e) => this.onDrop(e, true, 'Offer Pening')}
-        >
-          <Box className='drag_container'>
-            <Box className=' salespipeline-wrapper'>
-              <Box className='drag_column'>
-                <Box variant='Box' component={Paper} className='drag_row property-list'>
-                <Stack
-                direction='row'
-                justifyContent='flex-start'
-                alignItems='center'
-                spacing={2}
-                className='status-title offer-pening'
-              >
-                <RiTimeLine size={22} />
-                <Typography variant='span' component='span'>
-                  Offer Pending
-                </Typography>
-              </Stack>
-              <Box className=' property-card-list'>
-                  {underContract.map((task) => (
-                    <Box
-                      key={task.name}
-                      id={task.id}
-                      draggable
-                      onDragStart={(e) => this.onDragStart(e)}
-                      onDragEnd={(e) => this.onDragEnd(e)}
-                      className='card'
-                    >
-                      <PropertyCard />
-                    </Box>
-                  ))}
-                </Box>
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-
-        <Box
-          className=' small-box'
-          onDragLeave={(e) => this.onDragLeave(e)}
-          onDragEnter={(e) => this.onDragEnter(e)}
-          onDragEnd={(e) => this.onDragEnd(e)}
-          onDragOver={(e) => this.onDragOver(e)}
-          onDrop={(e) => this.onDrop(e, true, ' Active Listings')}
-        >
-          <Box className='drag_container'>
-            <Box className=' salespipeline-wrapper'>
-              <Box className='drag_column'>
-                <Box variant='Box' component={Paper} className='drag_row property-list'>
-                <Stack
-                direction='row'
-                justifyContent='flex-start'
-                alignItems='center'
-                spacing={2}
-                className='status-title under-contract'
-              >
-                <RiTimeLine size={22} />
-                <Typography variant='span' component='span'>
-                  Under Contract
-                </Typography>
-              </Stack>
-              <Box className=' property-card-list'>
-                  {activeListings.map((task) => (
-                    <Box
-                      key={task.name}
-                      id={task.id}
-                      draggable
-                      onDragStart={(e) => this.onDragStart(e)}
-                      onDragEnd={(e) => this.onDragEnd(e)}
-                      className='card'
-                    >
-                       <PropertyCard />
-                    </Box>
-                  ))}
-                   </Box>
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-        </Box>   
-     </Box>
       </>
     );
   }

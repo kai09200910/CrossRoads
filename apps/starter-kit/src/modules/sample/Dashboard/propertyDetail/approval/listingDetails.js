@@ -242,7 +242,8 @@ const ListingDetails = () => {
           }}
         >
           <Button variant='contained' size='large' className='primary-btn btn'>
-            Submit for MLS review
+            {/* Submit for MLS review */}
+            Approve listing details 
           </Button>
         </Stack>
       </Box>

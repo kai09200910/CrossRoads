@@ -611,9 +611,41 @@ ul.MuiList-root {
       }
     }
   }
+  .tag-wrap {
+    .tag-list {
+      padding: 6px;
+      background-color: #fff;
+      border: 1px solid #c4c4c4;
+      border-radius: 8px;
+      display: inline-flex;
+      gap: 6px;
+      .tag {
+        background-color: #dfe8fa;
+        color: #2871ff;
+        border-radius: 4px;
+        padding: 8px;
+        display: inline-flex;
+        span,
+        p,
+        svg {
+          color: #2871ff;
+        }
+        p{
+          font-weight: 500;
+        }
+        button.MuiButtonBase-root {
+          padding: 0 2px;
+          margin: 0;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
 }
 .select-template-wrap {
-  .template-list-title{
+  .template-list-title {
     @media (max-width: 480px) {
       flex-wrap: wrap;
       gap: 8px;
@@ -625,24 +657,28 @@ ul.MuiList-root {
     flex-wrap: wrap;
     // height: calc(100vh - 445px);
     // overflow: auto;
+    @media (max-width: 767px) {
+      gap: 20px;
+    }
     .template-btn {
       display: contents;
       cursor: pointer;
     }
     .template-wrap {
       background-color: #eeeeee;
-      padding: 32px;
-      width: 31.90%;
+      padding: 24px;
+      // width: 31.90%;
+      width: 23.4%;
       border-radius: 5px;
       @media (max-width: 1880px) {
         width: 31%;
       }
       @media (max-width: 1366px) {
-        padding: 24px;
+        padding: 16px;
         width: 30%;
       }
       @media (max-width: 992px) {
-        width: 47%;
+        width: 48%;
       }
       @media (max-width: 650px) {
         width: 100%;
@@ -654,7 +690,7 @@ ul.MuiList-root {
         }
       }
       .template-info-wrap {
-        margin-bottom: 24px;
+        margin-bottom: 8px;
         @media (max-width: 1550px) {
           flex-wrap: wrap;
           gap: 16px;
@@ -663,6 +699,9 @@ ul.MuiList-root {
           border-bottom: 1px solid #383838;
           margin-bottom: 8px;
           padding-bottom: 4px;
+          @media (max-width: 650px) {
+            font-size: 14px !important;
+          }
         }
         span {
           color: #959595;
@@ -674,19 +713,18 @@ ul.MuiList-root {
             opacity: 1;
           }
         }
-        button{
+        button {
           @media (max-width: 1550px) {
             margin-left: 0;
           }
         }
       }
-      .template-other-info{
-        h3{
-          @media (max-width: 1366px) {
-            font-size: 16px !important;
+      .template-other-info {
+        h4 {
+          @media (max-width: 650px) {
+            font-size: 14px !important;
           }
         }
-        
       }
     }
   }
@@ -700,7 +738,6 @@ ul.MuiList-root {
     }
   }
 }
-
 
 .email-template-area {
   border: 1px solid #d8d8d8;
@@ -720,29 +757,29 @@ ul.MuiList-root {
       width: 100%;
     }
   }
-  .other-data{
-    .primary-btn{
+  .other-data {
+    .primary-btn {
       width: 100% !important;
       background-color: #333 !important;
     }
   }
 
-  .agent-info-wrap{
+  .agent-info-wrap {
     flex-wrap: inherit;
-    .agent-info{
+    .agent-info {
       width: 75%;
       text-align: left;
-      h3{
+      h3 {
         margin-bottom: 12px;
         font-size: 18px !important;
         padding-bottom: 4px;
         border-bottom: 1px solid #333;
       }
-      p{
+      p {
         margin-bottom: 4px;
         font-weight: 500;
       }
-      span{
+      span {
         font-size: 9px;
         font-weight: 500;
         margin-top: 4px;
