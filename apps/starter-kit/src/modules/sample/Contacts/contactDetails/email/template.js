@@ -12,7 +12,8 @@ import { useNavigate } from 'react-router-dom';
 import { BiEdit } from 'react-icons/bi';
 
 
-const Template = () => {
+const Template = (props) => {
+  const { handleSwitchChange } = props;
   // const [value, setValue] = useState('none');
   // const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   const navigate = useNavigate();
@@ -20,23 +21,25 @@ const Template = () => {
     navigate('/automated-email/create');
   };
 
+
+ 
   return (
     <>
       <Box variant='div' component='div' className='template-wrap'>
-        <Button
+        {/* <Button
           variant='div'
           component='div'
           className='template-btn'
           disableRipple
           onClick={navigateToSelect}
-        >
+        > */}
           <Box className='img-wrap'>
             <img
               src='../../../../assets/images/Email-preview.png'
               alt='template-photo'
             />
           </Box>
-        </Button>
+        {/* </Button> */}
 
         <Stack
           direction='row'
@@ -60,7 +63,7 @@ const Template = () => {
                 className='ios-switch-custom'
                 focusVisibleClassName='.Mui-focusVisible'
                 disableRipple
-                // defaultChecked
+                onChange={handleSwitchChange}
               />
             }
             label=''
@@ -69,7 +72,8 @@ const Template = () => {
             variant='contained'
             size='large'
             // onClick={handleBuyerOpen}
-            className='primary-btn btn'
+            className='primary-btn-small'
+            onClick={navigateToSelect}
           >
             Select
           </Button>
@@ -82,7 +86,7 @@ const Template = () => {
           className='template-other-info'
           spacing={3}
         >
-          <Typography variant='h3' component='h3'>
+          <Typography variant='h4' component='h4'>
             Sending on: 1/12/23
           </Typography>
 

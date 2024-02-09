@@ -5,6 +5,7 @@ import {
   FormControlLabel,
   Switch,
   Stack,
+  Button,
 } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -150,6 +151,20 @@ const PropertyDetails = () => {
             </Table>
           </TableContainer>
         </Box>
+        <Stack
+          direction='row'
+          justifyContent='end'
+          alignItems='center'
+          spacing={1}
+          sx={{
+            paddingTop: { xs: 5, xl: 8 },
+          }}
+        >
+          <Button variant='contained' size='large' className='primary-btn btn'>
+            {/* Submit for MLS review */}
+            Approve listing details
+          </Button>
+        </Stack>
       </Box>
     </>
   );

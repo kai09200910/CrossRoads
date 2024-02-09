@@ -6,6 +6,7 @@ import Salespipelinelist from './salesPipeline';
 import CommissionOutline from './commissionOutline';
 import RecentInquires from './recentInquires';
 import './salespipeline.scss';
+import NewLeads from './newleads';
 
 // const Salespipeline = () => {
 //   return (
@@ -141,10 +142,12 @@ const Salespipeline = () => {
       <DndProvider backend={HTML5Backend}>
         <Grid container spacing={5} mt={0}>
           {components.map((component, index) => (
-            <Grid item key={index} xs={12} md={component === 'RecentInquires' ? 6 : 3}>
+            <Grid item key={index} xs={12} md={component === 'RecentInquires' ? 3 : 3}>
               <DraggableComponent id={index} onDrop={handleDrop}>
                 {component === 'RecentInquires' ? (
-                  <RecentInquires />
+                //   <RecentInquires />
+                // ) : (
+                  <NewLeads />
                 ) : (
                   <CommissionOutline />
                 )}

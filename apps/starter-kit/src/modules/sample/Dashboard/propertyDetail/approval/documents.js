@@ -16,6 +16,7 @@ import TableRow from '@mui/material/TableRow';
 import DisapprovalDialog from './disapprovalDialog';
 import { RiErrorWarningFill } from 'react-icons/ri';
 import RevokeapprovalDialog from './revokeapprovalDialog';
+import ListingapprovedDialog from './listingapprovedDialog';
 
 function createData(name, size, submitted) {
   return { name, size, submitted };
@@ -41,6 +42,16 @@ const Documents = () => {
   const handleRevokeapprovalClose = () => {
     setIsRevokeapprovalDialogOpen(false);
   };
+
+  const [isListingapprovalDialogOpen, setIsListingapprovalDialogOpen] =
+  useState(false);
+const handleListingapprovalOpen = () => {
+  setIsListingapprovalDialogOpen(true);
+};
+const handleListingapprovalClose = () => {
+  setIsListingapprovalDialogOpen(false);
+};
+
   return (
     <>
       <Box
@@ -162,10 +173,10 @@ const Documents = () => {
           <Button
             variant='contained'
             size='large'
-            // onClick={() => setIsSubmitted(true)}
+            onClick={handleListingapprovalOpen}
             className='primary-btn btn'
           >
-            Submit for MLS review
+            Approve listing details 
           </Button>
 
           <Button
@@ -179,6 +190,11 @@ const Documents = () => {
         </Stack>
       </Box>
       <DisapprovalDialog open={isSubmitted} handleClose={handleClose} />
+
+      <ListingapprovedDialog
+        open={isListingapprovalDialogOpen}
+        handleClose={handleListingapprovalClose}
+      />
 
       <RevokeapprovalDialog
         open={isRevokeapprovalDialogOpen}

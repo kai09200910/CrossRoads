@@ -164,6 +164,23 @@ const Approval = () => {
                 }}
               >
                 <MediaTabs />
+                {/* <Stack
+                  direction='row'
+                  justifyContent='end'
+                  alignItems='center'
+                  spacing={1}
+                  sx={{
+                    paddingTop: { xs: 5, xl: 8 },
+                  }}
+                >
+                  <Button
+                    variant='contained'
+                    size='large'
+                    className='primary-btn btn'
+                  >
+                    Approve listing details
+                  </Button>
+                </Stack> */}
               </Box>
             </TabPanel>
           </TabContext>

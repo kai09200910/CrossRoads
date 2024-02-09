@@ -8,12 +8,15 @@ import {
   MenuItem,
   Stack,
   Typography,
+  IconButton,
+  FormControlLabel,
+  Switch,
 } from '@mui/material';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { RiAddFill, RiArrowDownSLine } from 'react-icons/ri';
+import { RiAddFill, RiArrowDownSLine, RiCloseFill } from 'react-icons/ri';
 import TagsInput from '../../../common/tagsInput';
 import Template from './template';
 import '../../contacts.scss';
@@ -50,8 +53,16 @@ const AutomatedEmail = () => {
     setIsSubmitted(false);
   };
 
+  const [showTag, setShowTag] = useState(false);
+
+  const handleSwitchChange = () => {
+    setShowTag(!showTag);
+  };
+  
+
   return (
     <>
+
       <Box
         sx={{
           marginBottom: { xs: 3, sm: 3, lg: 4 },
@@ -118,10 +129,10 @@ const AutomatedEmail = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={4} md={3}>
-            <Box variant='div' component='div'>
-              {/* <label>Tags </label> */}
-              <label className='empty-label'> </label>
-              <TagsInput
+            
+              <Box variant='div' component='div' className='tag-wrap'>
+                <label className='empty-label'> </label>
+                {/* <TagsInput
                 selectedTags={handleSelecetedTags}
                 fullWidth
                 variant='outlined'
@@ -129,8 +140,47 @@ const AutomatedEmail = () => {
                 name='tags'
                 placeholder='Tags appear based on templates selected'
                 className='tag-input'
-              />
-            </Box>
+              /> */}
+                <Box variant='div' component='div' className='tag-list'>
+                {showTag && (
+                  <Stack
+                    direction='row'
+                    justifyContent='center'
+                    alignItems='center'
+                    spacing={1}
+                    className='tag'
+                  >
+                    <Typography variant='span' component='span'>
+                      (2)
+                    </Typography>
+                    <Typography variant='p' component='p'>
+                      Buyer
+                    </Typography>
+                    <IconButton aria-label='edit' className='color-blue'>
+                      <RiCloseFill size={22} />
+                    </IconButton>
+                  </Stack>
+   )}
+                  <Stack
+                    direction='row'
+                    justifyContent='center'
+                    alignItems='center'
+                    spacing={1}
+                    className='tag'
+                  >
+                    <Typography variant='span' component='span'>
+                      (1)
+                    </Typography>
+                    <Typography variant='p' component='p'>
+                      Holiday
+                    </Typography>
+                    <IconButton aria-label='edit' className='color-blue'>
+                      <RiCloseFill size={22} />
+                    </IconButton>
+                  </Stack>
+                </Box>
+              </Box>
+         
           </Grid>
         </Grid>
       </Box>
@@ -146,6 +196,7 @@ const AutomatedEmail = () => {
             justifyContent='space-between'
             alignItems='center'
             gap={2}
+            flexWrap='wrap'
           >
             <Box
               variant='div'
@@ -205,14 +256,27 @@ const AutomatedEmail = () => {
 
           <Box sx={{ my: 2 }}>
             <Box className='template-list'>
-              <Template />
-              <Template />
-              <Template />
-              <Template />
-              <Template />
-              <Template />
-              <Template />
-              <Template />
+              <Template
+                handleSwitchChange={handleSwitchChange}
+              />
+             <Template
+                handleSwitchChange={handleSwitchChange}
+              />
+              <Template
+                handleSwitchChange={handleSwitchChange}
+              />
+              <Template
+                handleSwitchChange={handleSwitchChange}
+              />
+              <Template
+                handleSwitchChange={handleSwitchChange}
+              />
+              <Template
+                handleSwitchChange={handleSwitchChange}
+              />
+              <Template
+                handleSwitchChange={handleSwitchChange}
+              />
             </Box>
           </Box>
         </Box>
