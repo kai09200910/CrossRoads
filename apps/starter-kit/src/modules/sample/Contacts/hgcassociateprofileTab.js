@@ -61,11 +61,15 @@ const HgcassociateprofileTab = () => {
                 >
                   Select Employment role
                 </MenuItem>
-                <MenuItem value={10}>appraiser </MenuItem>
-                <MenuItem value={20}>Employment type 2 </MenuItem>
-                <MenuItem value={30}>Admin </MenuItem>
-                <MenuItem value={40}>Agent </MenuItem>
-                <MenuItem value={50}>ETC </MenuItem>
+                <MenuItem value={10}>Sales Agent </MenuItem>
+                <MenuItem value={20}>Sales Agent/Appraiser </MenuItem>
+                <MenuItem value={30}>Sales Assistant </MenuItem>
+                <MenuItem value={40}>Office Support Representative </MenuItem>
+                <MenuItem value={50}>Sales Manager/Broker </MenuItem>
+                <MenuItem value={10}>Accounting Administrator </MenuItem>
+                <MenuItem value={20}>Marketing Administrator</MenuItem>
+                <MenuItem value={30}>HR Administrator</MenuItem>
+                <MenuItem value={40}>System Administrator</MenuItem>
               </Select>
             </Box>
           </Grid>

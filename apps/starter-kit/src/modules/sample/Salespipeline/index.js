@@ -7,6 +7,10 @@ import CommissionOutline from './commissionOutline';
 import RecentInquires from './recentInquires';
 import './salespipeline.scss';
 import NewLeads from './newleads';
+import NewContacts from './newcontacts';
+import TaskList from './tasklist';
+import Instagram from './instagram';
+import SocialMediafeed from './socialmediafeed';
 
 // const Salespipeline = () => {
 //   return (
@@ -34,10 +38,8 @@ import NewLeads from './newleads';
 
 // export default Salespipeline;
 
-
 const DraggableComponent = ({ id, children, onDrop }) => {
   const ref = useRef(null);
-
 
   const handleTouchStart = (e) => {
     // Handle touch start
@@ -96,7 +98,7 @@ const DraggableComponent = ({ id, children, onDrop }) => {
 
   const opacity = isDragging ? 0.5 : 1;
 
-const touchHandlers = {
+  const touchHandlers = {
     onTouchStart: handleTouchStart,
     onTouchMove: handleTouchMove,
     onTouchEnd: handleTouchEnd,
@@ -116,13 +118,15 @@ const touchHandlers = {
   );
 };
 
-
 const Salespipeline = () => {
   const [components, setComponents] = React.useState([
     'RecentInquires',
+    'NewContacts',
     'CommissionOutline',
-    'CommissionOutline',
-  ]); 
+    'TaskList',
+    'Instagram',
+    'SocialMediafeed',
+  ]);
 
   const handleDrop = (dragIndex, hoverIndex) => {
     const newComponents = [...components];
@@ -140,63 +144,51 @@ const Salespipeline = () => {
         </Grid>
       </Grid>
       <DndProvider backend={HTML5Backend}>
-        <Grid container spacing={5} mt={0}>
-          {components.map((component, index) => (
-            <Grid item key={index} xs={12} md={component === 'RecentInquires' ? 3 : 3}>
-              <DraggableComponent id={index} onDrop={handleDrop}>
-                {component === 'RecentInquires' ? (
-                //   <RecentInquires />
-                // ) : (
-                  <NewLeads />
-                ) : (
-                  <CommissionOutline />
-                )}
-              </DraggableComponent>
-            </Grid>                   
-          ))}
-        </Grid>
-      </DndProvider>
-
-      {/* <DndProvider backend={HTML5Backend}>
-        <Grid container spacing={5} mt={0}>
+        <Grid container spacing={5} mt={0} pt={0}>
           {components.map((component, index) => (
             <Grid
-              item
-              key={index}
-              xs={12}
-              md={component === 'RecentInquires' ? 6 : 3}
-            >
-              <DraggableComponent id={index} onDrop={handleDrop}>
-                {component === 'RecentInquires' ? (
-                  <RecentInquires />
+            item
+            key={index}
+            xs={12}
+            pt={0}
+            md={(component === 'Instagram' || component === 'SocialMediafeed') ? 6 : 3}
+          >
+         <DraggableComponent id={index} onDrop={handleDrop}>
+                {(() => {
+                  switch (component) {
+                    case 'RecentInquires':
+                      return <NewLeads />;
+                    case 'NewContacts':
+                      return <NewContacts />;
+                    case 'TaskList':
+                      return <TaskList />;
+                    case 'Instagram':
+                      return <Instagram />;
+                    case 'SocialMediafeed':
+                      return <SocialMediafeed />;
+                    default:
+                      return <CommissionOutline />;
+                  }
+                })()}
+
+                {/* {component === 'RecentInquires' ? (
+                  <NewLeads />
+                ) : component === 'NewContacts' ? (
+                  <NewContacts />
+                ) : component === 'TaskList' ? (
+                  <TaskList />
+                ) : component === 'Instagram' ? (
+                  <Instagram />
+                ) : component === 'SocialMedia' ? (
+                  <SocialMediafeed />
                 ) : (
                   <CommissionOutline />
-                )}
+                )} */}
               </DraggableComponent>
             </Grid>
           ))}
-          <Grid item xs={12} md={6}>
-            <DraggableComponent id={components.length} onDrop={handleDrop} style={{ backgroundColor: 'green' }}>
-              <RecentInquires />
-            </DraggableComponent>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <DraggableComponent id={components.length + 1} onDrop={handleDrop} style={{ backgroundColor: 'yellow' }}>
-              <RecentInquires style={{ backgroundColor: 'red' }}/>
-            </DraggableComponent>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <DraggableComponent id={components.length + 2} onDrop={handleDrop} style={{ backgroundColor: 'red' }}>
-              <CommissionOutline style={{ backgroundColor: 'yellow' }} />
-            </DraggableComponent>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <DraggableComponent id={components.length + 3} onDrop={handleDrop} style={{ backgroundColor: 'blue' }}>
-              <CommissionOutline />
-            </DraggableComponent>
-          </Grid>
         </Grid>
-      </DndProvider> */}
+      </DndProvider>
     </>
   );
 };
