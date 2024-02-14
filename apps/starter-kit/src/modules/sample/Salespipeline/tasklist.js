@@ -32,7 +32,7 @@ const rows = [
   createData('John Smith  ', '05/07/24'),
 ];
 
-const NewLeads = () => {
+const TaskList = () => {
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const NewLeads = () => {
         sx={{
           padding: { xs: 5, xl: 5 },
         }}
-        className='recent-inquires-wrapper'
+        className='task-list-wrapper'
       >
         <Stack
           direction='row'
@@ -52,9 +52,10 @@ const NewLeads = () => {
           sx={{
             paddingBottom: { xs: 4, xl: 4 },
           }}
+          className='card-title'
         >
           <Typography variant='h4' component='h4'>
-            New Leads
+            Task List
           </Typography>
           <Button
             variant='outlined'
@@ -66,36 +67,43 @@ const NewLeads = () => {
           </Button>{' '}
         </Stack>
 
-        <Box variant='div' component='div' className='recent-inquiry-list'>
+        <Box variant='div' component='div' className='task-list'>
           <Box
             sx={{ width: '100%', overflow: 'hidden' }}
-            className='table-wrapper scrollable-table'
+            className='task-wrapper scrollable-table'
           >
-            <TableContainer>
-              <Table sx={{ minWidth: 220 }} aria-label='simple table'>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Name</TableCell>
-                    <TableCell align='left'>Date</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {rows.map((row) => (
-                    <TableRow
-                      key={row.name}
-                      sx={{
-                        '&:last-child td, &:last-child th': { border: 0 },
-                      }}
-                    >
-                      <TableCell component='th' scope='row'>
-                      <Link  to='/contacts/details'>{row.name} </Link>
-                      </TableCell>
-                      <TableCell align='left'>{row.date}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+            <Box sx={{ width: '100%', overflow: 'hidden' }} className='task'>
+              <Link to='/dashboard'>Update KYC Document </Link>
+              <Typography variant='p' component='p' className=''>
+                Thursday, Nov 23
+              </Typography>
+            </Box>
+            <Box sx={{ width: '100%', overflow: 'hidden' }} className='task'>
+              <Link to='/dashboard'>Update KYC Document </Link>
+              <Typography variant='p' component='p' className=''>
+                Monday, Nov 29
+              </Typography>
+            </Box>
+            <Box sx={{ width: '100%', overflow: 'hidden' }} className='task'>
+              <Link to='/dashboard'>Update KYC Document </Link>
+              <Typography
+                variant='p'
+                component='p'
+                className='red'
+              >
+                Wednesday, Nov 15
+              </Typography>
+            </Box>
+            <Box sx={{ width: '100%', overflow: 'hidden' }} className='task'>
+              <Link to='/dashboard'>Update KYC Document </Link>
+              <Typography
+                variant='p'
+                component='p'
+                className='red'
+              >
+                Wednesday, Nov 15
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -103,4 +111,4 @@ const NewLeads = () => {
   );
 };
 
-export default NewLeads;
+export default TaskList;

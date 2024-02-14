@@ -47,9 +47,9 @@ const CommissionOutline = () => {
           Commission outline
           </Typography>
           <Typography variant='p' component='p' className='section-sub-title'>
-            Data based on last
+            Data based on
             <Typography variant='body1' component='span' className='color-blue'>
-              30 days
+              2024
             </Typography>
           </Typography>
         </Box>

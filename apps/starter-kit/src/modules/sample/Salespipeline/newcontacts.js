@@ -23,16 +23,16 @@ function createData(name, date, property, action) {
 }
 
 const rows = [
-  createData('John Smith   ', '05/07/24'),
-  createData('John Smith  ', '05/07/24'),
-  createData('John Smith  ', '05/07/24'),
-  createData('John Smith   ', '05/07/24'),
-  createData('John Smith   ', '05/07/24'),
-  createData('John Smith  ', '05/07/24'),
-  createData('John Smith  ', '05/07/24'),
+  createData('George Hamilton', '05/07/24'),
+  createData('George Hamilton  ', '05/07/24'),
+  createData('George Hamilton  ', '05/07/24'),
+  createData('George Hamilton  ', '05/07/24'),
+  createData('George Hamilton ', '05/07/24'),
+  createData('George Hamilton  ', '05/07/24'),
+  createData('George Hamilton', '05/07/24'),
 ];
 
-const NewLeads = () => {
+const NewContacts = () => {
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   const navigate = useNavigate();
@@ -54,7 +54,7 @@ const NewLeads = () => {
           }}
         >
           <Typography variant='h4' component='h4'>
-            New Leads
+            New Contacts
           </Typography>
           <Button
             variant='outlined'
@@ -103,4 +103,4 @@ const NewLeads = () => {
   );
 };
 
-export default NewLeads;
+export default NewContacts;

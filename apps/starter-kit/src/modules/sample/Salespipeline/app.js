@@ -6,8 +6,8 @@ import {
   Typography,
   Paper,
   IconButton,
-  Select, // Import Select component
-  MenuItem, // Import MenuItem component
+  Select, 
+  MenuItem, 
 } from '@mui/material';
 import { RiArrowDownSLine, RiFilter3Line, RiTimeLine } from 'react-icons/ri';
 import PropertyCard from './propertyCard';
@@ -86,9 +86,6 @@ class TaskList extends React.Component {
     let offerPening = tasks.filter((data) => data.status === 'Under Contract');
     let underContract = tasks.filter((data) => data.status === 'Offer Pening');
 
-    // const [value, setValue] = useState('none');
-    // const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
-
     return (
       <>
         <Box className='dashboard-wrap'>
@@ -128,11 +125,6 @@ class TaskList extends React.Component {
                             onChange={(e) => {
                               // Handle onChange event
                             }}
-                            // onChange={(e) => setValue(e.target.value)}
-                            // onFocus={(e) => setShowPlaceholder(false)}
-                            // onClose={(e) =>
-                            //   setShowPlaceholder(e.target.value === undefined)
-                            // }
                             displayEmpty
                             className='custom-select-menu status-title approval-pending '
                             IconComponent={RiArrowDownSLine}
@@ -160,19 +152,27 @@ class TaskList extends React.Component {
                       </Stack>
                       <Box className=' property-card-list'>
                         {approvalPending.map((task) => (
-                          <Box
-                            key={task.name}
-                            id={task.id}
-                            draggable
-                            onDragStart={(e) => this.onDragStart(e)}
-                            onDragEnd={(e) => this.onDragEnd(e)}
-                            className='card'
-                          >
-                            <PropertyCard />
-                            <PropertyCard />
-                          </Box>
+                          <>
+                            <Box
+                              id={task.id}
+                              draggable
+                              onDragStart={(e) => this.onDragStart(e)}
+                              onDragEnd={(e) => this.onDragEnd(e)}
+                              className='card'
+                            >
+                              <PropertyCard />
+                            </Box>
+                            <Box
+                              id={task.id + '_duplicate'} // Using a different key for the duplicate element
+                              draggable
+                              onDragStart={(e) => this.onDragStart(e)}
+                              onDragEnd={(e) => this.onDragEnd(e)}
+                              className='card'
+                            >
+                              <PropertyCard />
+                            </Box>
+                          </>
                         ))}
-                        
                       </Box>
                     </Box>
                   </Box>
@@ -212,11 +212,6 @@ class TaskList extends React.Component {
                             onChange={(e) => {
                               // Handle onChange event
                             }}
-                            // onChange={(e) => setValue(e.target.value)}
-                            // onFocus={(e) => setShowPlaceholder(false)}
-                            // onClose={(e) =>
-                            //   setShowPlaceholder(e.target.value === undefined)
-                            // }
                             displayEmpty
                             className='custom-select-menu status-title under-contract '
                             IconComponent={RiArrowDownSLine}
@@ -243,22 +238,35 @@ class TaskList extends React.Component {
 
                       <Box className=' property-card-list'>
                         {activeListings.map((task) => (
-                          <Box
-                            key={task.name}
-                            id={task.id}
-                            draggable
-                            onDragStart={(e) => this.onDragStart(e)}
-                            onDragEnd={(e) => this.onDragEnd(e)}
-                            className='card'
-                          >
-                            <PropertyCard />
-                            <PropertyCard />
-                          </Box>
-
-                          
-
-                          
-                          
+                          <>
+                            <Box
+                              id={task.id}
+                              draggable
+                              onDragStart={(e) => this.onDragStart(e)}
+                              onDragEnd={(e) => this.onDragEnd(e)}
+                              className='card'
+                            >
+                              <PropertyCard />
+                            </Box>
+                            <Box
+                              id={task.id}
+                              draggable
+                              onDragStart={(e) => this.onDragStart(e)}
+                              onDragEnd={(e) => this.onDragEnd(e)}
+                              className='card'
+                            >
+                              <PropertyCard />
+                            </Box>
+                            <Box
+                              id={task.id}
+                              draggable
+                              onDragStart={(e) => this.onDragStart(e)}
+                              onDragEnd={(e) => this.onDragEnd(e)}
+                              className='card'
+                            >
+                              <PropertyCard />
+                            </Box>
+                          </>
                         ))}
                       </Box>
                     </Box>
