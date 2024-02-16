@@ -189,10 +189,9 @@ const Filters = (props) => {
                     >
                       Select Listing status
                     </MenuItem>
-                    <MenuItem value={10}>Listing status 1</MenuItem>
-                    <MenuItem value={20}>Listing status 2</MenuItem>
-                    <MenuItem value={30}>Listing status 3 </MenuItem>
-                    <MenuItem value={40}>Listing status 4</MenuItem>
+                    <MenuItem value={10}>Listed</MenuItem>
+                    <MenuItem value={20}>Sold </MenuItem>
+                    <MenuItem value={30}>Under Contract</MenuItem>
                   </Select>
                 </Box>
               </Grid>

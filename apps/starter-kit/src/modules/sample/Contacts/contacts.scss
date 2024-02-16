@@ -395,7 +395,17 @@ ul.MuiList-root {
     margin: 24px 0 8px 0;
   }
 }
-
+.genral-tab, .create-listing-alert-modal {
+  label.MuiFormControlLabel-root {
+    margin-right: 8px;
+    margin-bottom: 0;
+    .ios-switch-custom {
+      width: 50px;
+      height: 30px;
+      margin-right: 0;
+    }
+  }
+}
 // Contact Details Styles //
 
 .contact-detail-wrapper {
@@ -630,7 +640,7 @@ ul.MuiList-root {
         svg {
           color: #2871ff;
         }
-        p{
+        p {
           font-weight: 500;
         }
         button.MuiButtonBase-root {

@@ -42,7 +42,9 @@ const MatchingContacts = () => {
                     />
                   </TableCell>
                   <TableCell>{row.name}</TableCell>
-                  <TableCell align=''>{row.match}</TableCell>
+                  <TableCell align=''>
+                    Status ONLINE
+                    {row.match}</TableCell>
                   <TableCell align=''>{row.email}</TableCell>
                 </TableRow>
               ))}

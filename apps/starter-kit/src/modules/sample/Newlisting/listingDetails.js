@@ -140,9 +140,10 @@ const ListingDetails = () => {
                 >
                   Select Listing Type
                 </MenuItem>
-                <MenuItem value={10}>MLS Exclusive</MenuItem>
-                <MenuItem value={20}>General</MenuItem>
-                <MenuItem value={40}>Exclusive (not on MLS)</MenuItem>
+                <MenuItem value={10}>For sale </MenuItem>
+                <MenuItem value={20}>For rent </MenuItem>
+                <MenuItem value={40}>Both</MenuItem>
+                <MenuItem value={50}>Sold</MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -332,25 +333,69 @@ const ListingDetails = () => {
           <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Property Type</label>
-              <TextField
+              <Select
                 fullWidth
-                id='outlined-basic'
-                label=''
-                variant='outlined'
-                placeholder='Select Island'
-              />
+                id='demo-simple-select'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
+                IconComponent={RiArrowDownSLine}
+              >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Property Type
+                </MenuItem>
+                <MenuItem value={10}>Single Family Home </MenuItem>
+                <MenuItem value={11}>Half Duplex  </MenuItem>
+                <MenuItem value={12}>Condo </MenuItem>
+                <MenuItem value={13}>Full Duplex </MenuItem>
+                <MenuItem value={14}>Triplex </MenuItem>
+                <MenuItem value={15}>Fourplex </MenuItem>
+                <MenuItem value={16}>Farm/Ranch </MenuItem>
+                <MenuItem value={17}>Lots/Acreage </MenuItem>
+                <MenuItem value={18}>Resort/Hotel   </MenuItem>
+                <MenuItem value={19}>Private Island </MenuItem>
+                <MenuItem value={20}>Sixplex </MenuItem>
+                <MenuItem value={21}>Apartment Complex </MenuItem>
+                <MenuItem value={22}>Dock</MenuItem>
+              </Select>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <Box variant='div' component='div'>
               <label>Currency </label>
-              <TextField
+              <Select
                 fullWidth
-                id='outlined-basic'
-                type='number'
-                variant='outlined'
-                placeholder='USD'
-              />
+                id='demo-simple-select'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
+                IconComponent={RiArrowDownSLine}
+              >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Currency
+                </MenuItem>
+                <MenuItem value={10}>USD</MenuItem>
+                <MenuItem value={20}>BSD</MenuItem>
+                <MenuItem value={30}>Either</MenuItem>
+              </Select>
             </Box>
           </Grid>
         </Grid>
@@ -390,9 +435,10 @@ const ListingDetails = () => {
                 >
                   Select Occupancy
                 </MenuItem>
-                <MenuItem value={10}>Occupancy 1</MenuItem>
-                <MenuItem value={20}>Occupancy 2</MenuItem>
-                <MenuItem value={30}>Occupancy 3</MenuItem>
+                <MenuItem value={10}>Seller occupied</MenuItem>
+                <MenuItem value={20}>Tenant occupied</MenuItem>
+                <MenuItem value={30}>Vacant</MenuItem>
+                <MenuItem value={40}>Under Construction  </MenuItem>
               </Select>
             </Box>
           </Grid>

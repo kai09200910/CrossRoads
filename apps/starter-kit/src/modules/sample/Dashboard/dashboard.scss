@@ -711,6 +711,7 @@
     }
   }
 }
+
 .media-tab-content-wrapper {
   .add-media-btn-wrapper {
     @media (max-width: 1475px) {
@@ -799,3 +800,59 @@
   }
 }
 // Property Map Styles END//
+
+// Pending Fields Styles //
+
+.pending-fields-wrapper {
+  padding: 20px !important;
+  .table-wrapper {
+    table {
+      tbody {
+        tr {
+          cursor: pointer;
+          &:hover {
+          }
+          th {
+            background-color: #fff3f3;
+            a{
+              color: #333;
+              text-decoration: underline;
+            }
+          }
+          td {
+            background-color: #fff3f3;
+            padding: 5px 16px !important;
+            p.error {
+              text-align: center;
+            }
+           
+          }
+        }
+      }
+    }
+  }
+}
+.resubmit-document-dialog {
+  .upload-pending-document-area {
+    .custome-dropzone {
+      background-color: #fff;
+      padding: 0;
+      .MuiBox-root {
+        width: 100%;
+        .dropzone {
+          background-color: #fff;
+          border-radius: 6px;
+          height: 160px;
+        }
+      }
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .modal-dailog-footer {
+    justify-content: flex-end !important;
+  }
+}
+// Pending Fields Styles END //

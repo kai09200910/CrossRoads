@@ -76,7 +76,7 @@ const ListingagreementDialog = ({ open, handleClose }) => {
                         ></TableCell>
                       </TableRow>
                     </TableHead>
-                    {rows.length > 0 ? (
+                    {rows.length == 0 ? (
                       <TableBody>
                         {rows.map((row) => (
                           <TableRow
@@ -95,9 +95,6 @@ const ListingagreementDialog = ({ open, handleClose }) => {
                             </TableCell>
                             <TableCell align='left'>{row.size}</TableCell>
                             <TableCell align='left'>
-                              {/* <IconButton aria-label='edit' disableRipple>
-                              <RiDeleteBinLine size={20} />
-                            </IconButton> */}
                               <Button
                                 variant='outlined'
                                 size='small'
