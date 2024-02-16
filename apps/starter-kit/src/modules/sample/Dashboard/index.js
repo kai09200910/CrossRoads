@@ -6,6 +6,7 @@ import PropertyDetail from './propertyDetail';
 import PropertyMap from './propertyMap';
 import PropertyEngagement from './propertyEngagement';
 import './dashboard.scss';
+import PendingFields from './pendingFields';
 
 const Dashboard = () => {
   return (
@@ -16,6 +17,7 @@ const Dashboard = () => {
         </Grid>
         <Grid item xs={12} md={8}>
           <PropertyDocument />
+          <PendingFields />
           <PropertyDetail />
         </Grid>
         <Grid item xs={12} md={4}>

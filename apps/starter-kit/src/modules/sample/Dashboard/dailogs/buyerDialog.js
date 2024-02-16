@@ -41,14 +41,6 @@ const BuyerDialog = ({ open, handleClose, step }) => {
             flexWrap='wrap'
           >
             {step == 1 || step == 3 ? 'Buyer Information' : 'Matching buyer'}
-            <Button
-              variant='outlined'
-              size='small'
-              className='edit-btn secondary-btn-small'
-              startIcon={<RiAddFill size={18} />}
-            >
-              New buyer profile
-            </Button>
           </Stack>
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
@@ -79,6 +71,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                     />
                   </Box>
                 </Grid>
+
                 <Grid item xs={12} sm={2} md={2}>
                   <label className='empty-label '></label>
                   <Button
@@ -88,6 +81,18 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                   ></Button>
                 </Grid>
               </Grid>
+              <Grid container mt={5}>
+                <Grid item xs={12} sm={12} md={12}>
+                  <MatchingContacts />
+                </Grid>
+              </Grid>
+              {/* <Button
+                variant='outlined'
+                size='small'
+                className='edit-btn secondary-btn-small'
+              >
+                Add contact
+              </Button> */}
               <Grid container spacing={5} mt={2}>
                 <Grid item xs={12} sm={6} md={12}>
                   <Box variant='Box' component='Box'>
@@ -189,7 +194,6 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                       multiline
                       rows={4}
                       maxRows={4}
-                      
                     />
                   </Box>
                 </Grid>

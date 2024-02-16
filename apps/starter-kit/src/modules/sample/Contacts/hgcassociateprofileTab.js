@@ -236,12 +236,8 @@ const HgcassociateprofileTab = () => {
                 >
                   Select Account Status
                 </MenuItem>
-                <MenuItem value={10}>Account Status 1</MenuItem>
-                <MenuItem value={20}>Account Status 2</MenuItem>
-                <MenuItem value={30}>Account Status 3</MenuItem>
-                <MenuItem value={40}>Account Status 4</MenuItem>
-                <MenuItem value={50}>Account Status 5</MenuItem>
-                <MenuItem value={60}>Account Status 6</MenuItem>
+                <MenuItem value={10}>Active</MenuItem>
+                <MenuItem value={20}>Inactive</MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -267,14 +263,12 @@ const HgcassociateprofileTab = () => {
                   value='none'
                   className='place-holder'
                 >
-                  Enter Employment status
+                  Select Employment status
                 </MenuItem>
-                <MenuItem value={10}>Employment status 1</MenuItem>
-                <MenuItem value={20}>Employment status 2</MenuItem>
-                <MenuItem value={30}>Employment status 3</MenuItem>
-                <MenuItem value={40}>Employment status 4</MenuItem>
-                <MenuItem value={50}>Employment status 5</MenuItem>
-                <MenuItem value={60}>Employment status 6</MenuItem>
+                <MenuItem value={10}>Full-Time</MenuItem>
+                <MenuItem value={20}>Part-Time</MenuItem>
+                <MenuItem value={30}>Terminated</MenuItem>
+                <MenuItem value={40}>Resigned</MenuItem>
               </Select>
             </Box>
           </Grid>

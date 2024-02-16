@@ -348,12 +348,12 @@ const GeneralTab = () => {
                 >
                   Select
                 </MenuItem>
-                <MenuItem value={10}>Type 1</MenuItem>
-                <MenuItem value={20}>Type 2</MenuItem>
-                <MenuItem value={30}>Type 3</MenuItem>
-                <MenuItem value={10}>Type 4</MenuItem>
-                <MenuItem value={20}>Type 5</MenuItem>
-                <MenuItem value={30}>Type 6</MenuItem>
+                <MenuItem value={10}>Spouse</MenuItem>
+                <MenuItem value={20}>Mother </MenuItem>
+                <MenuItem value={30}>Father </MenuItem>
+                <MenuItem value={10}>Brother </MenuItem>
+                <MenuItem value={20}>Partner </MenuItem>
+                <MenuItem value={30}>Other</MenuItem>
               </Select>
             </Box>
           </Grid>

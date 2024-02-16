@@ -189,13 +189,59 @@ const PropertyDetails = () => {
                     Optional
                   </Typography>
                 </label>
-                <TextField
+                <Select
                   fullWidth
-                  id='outlined-basic'
-                  type='number'
-                  variant='outlined'
-                  placeholder='1/2 '
-                />
+                  id='secondary-agent'
+                  value={value}
+                  defaultValue='none'
+                  onChange={(e) => setValue(e.target.value)}
+                  onFocus={(e) => setShowPlaceholder(false)}
+                  onClose={(e) =>
+                    setShowPlaceholder(e.target.value === undefined)
+                  }
+                  IconComponent={RiArrowDownSLine}
+                >
+                  <MenuItem
+                    key='0'
+                    disabled
+                    value='none'
+                    className='place-holder'
+                  >
+                    Select
+                  </MenuItem>
+                  <MenuItem value={1}> 1</MenuItem>
+                  <MenuItem value={2}> 2</MenuItem>
+                  <MenuItem value={3}> 3</MenuItem>
+                  <MenuItem value={4}> 4</MenuItem>
+                  <MenuItem value={5}> 5</MenuItem>
+                  <MenuItem value={6}> 6</MenuItem>
+                  <MenuItem value={7}> 7</MenuItem>
+                  <MenuItem value={8}> 8</MenuItem>
+                  <MenuItem value={9}> 9</MenuItem>
+
+                  <MenuItem value={10}> 10</MenuItem>
+                  <MenuItem value={11}> 11</MenuItem>
+                  <MenuItem value={12}> 12</MenuItem>
+                  <MenuItem value={13}> 13</MenuItem>
+                  <MenuItem value={14}> 14</MenuItem>
+                  <MenuItem value={15}> 15</MenuItem>
+                  <MenuItem value={16}> 16</MenuItem>
+                  <MenuItem value={17}> 17</MenuItem>
+                  <MenuItem value={18}> 18</MenuItem>
+                  <MenuItem value={19}> 19</MenuItem>
+                  <MenuItem value={20}> 20</MenuItem>
+
+                  <MenuItem value={21}> 21</MenuItem>
+                  <MenuItem value={22}> 22</MenuItem>
+                  <MenuItem value={23}> 23</MenuItem>
+                  <MenuItem value={24}> 24</MenuItem>
+                  <MenuItem value={25}> 25</MenuItem>
+                  <MenuItem value={26}> 26</MenuItem>
+                  <MenuItem value={27}> 27</MenuItem>
+                  <MenuItem value={28}> 28</MenuItem>
+                  <MenuItem value={29}> 29</MenuItem>
+                  <MenuItem value={30}> 30</MenuItem>
+                </Select>
               </Box>
             </Grid>
           </Grid>
@@ -253,10 +299,10 @@ const PropertyDetails = () => {
                   >
                     Select Water
                   </MenuItem>
-                  <MenuItem value={10}>Water 1</MenuItem>
-                  <MenuItem value={20}>Water 2</MenuItem>
-                  <MenuItem value={30}>Water 3 </MenuItem>
-                  <MenuItem value={40}>Water 4</MenuItem>
+                  <MenuItem value={10}>City</MenuItem>
+                  <MenuItem value={20}>Drilled Well </MenuItem>
+                  <MenuItem value={30}>None </MenuItem>
+                  <MenuItem value={40}>Other</MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -284,9 +330,12 @@ const PropertyDetails = () => {
                   >
                     Select Sewer
                   </MenuItem>
-                  <MenuItem value={10}>Sewer 1</MenuItem>
-                  <MenuItem value={20}>Sewer 2</MenuItem>
-                  <MenuItem value={30}>Sewer 3</MenuItem>
+                  <MenuItem value={10}>Connected </MenuItem>
+                  <MenuItem value={20}>Available</MenuItem>
+                  <MenuItem value={30}>None </MenuItem>
+                  <MenuItem value={40}>Septic - Yes </MenuItem>
+                  <MenuItem value={50}>Sepctic- No</MenuItem>
+                  <MenuItem value={60}>To lot</MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -314,9 +363,18 @@ const PropertyDetails = () => {
                   >
                     Select Parking
                   </MenuItem>
-                  <MenuItem value={10}>Parking 1</MenuItem>
-                  <MenuItem value={20}>Parking 2</MenuItem>
-                  <MenuItem value={30}>Parking 3</MenuItem>
+                  <MenuItem value={9}> Single </MenuItem>
+                  <MenuItem value={10}> Garage-single</MenuItem>
+                  <MenuItem value={11}> Garage & Carport </MenuItem>
+                  <MenuItem value={12}> Street</MenuItem>
+                  <MenuItem value={13}> Open</MenuItem>
+                  <MenuItem value={14}> Underground garage</MenuItem>
+                  <MenuItem value={15}> Other</MenuItem>
+                  <MenuItem value={16}> Multiple C/P</MenuItem>
+                  <MenuItem value={17}> Garage - Double </MenuItem>
+                  <MenuItem value={18}> Garage - 3 or more </MenuItem>
+                  <MenuItem value={19}> Additional Parking</MenuItem>
+                  <MenuItem value={20}> Visitor Parking</MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -382,10 +440,12 @@ const PropertyDetails = () => {
                   >
                     Select Appointments
                   </MenuItem>
-                  <MenuItem value={10}>Appointments 1</MenuItem>
-                  <MenuItem value={20}>Appointments 2</MenuItem>
-                  <MenuItem value={30}>Appointments 3</MenuItem>
-                  <MenuItem value={40}>Appointments 4</MenuItem>
+                  <MenuItem value={10}>Keybox</MenuItem>
+                  <MenuItem value={20}>Phone agent </MenuItem>
+                  <MenuItem value={30}>Phone seller </MenuItem>
+                  <MenuItem value={40}>Phone tenant </MenuItem>
+                  <MenuItem value={50}>Key at office</MenuItem>
+                  <MenuItem value={60}>No appts required </MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -413,9 +473,10 @@ const PropertyDetails = () => {
                   >
                     Select Occupancy
                   </MenuItem>
-                  <MenuItem value={10}>Occupancy 1</MenuItem>
-                  <MenuItem value={20}>Occupancy 2</MenuItem>
-                  <MenuItem value={30}>Occupancy 3</MenuItem>
+                  <MenuItem value={10}>Seller occupied</MenuItem>
+                  <MenuItem value={20}>Tenant occupied</MenuItem>
+                  <MenuItem value={30}>Vacant</MenuItem>
+                  <MenuItem value={40}>Under Construction </MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -445,10 +506,21 @@ const PropertyDetails = () => {
                   >
                     Select Style
                   </MenuItem>
-                  <MenuItem value={10}>Style 1</MenuItem>
-                  <MenuItem value={20}>Style 2</MenuItem>
-                  <MenuItem value={30}>Style 3</MenuItem>
-                  <MenuItem value={40}>Style 4</MenuItem>
+                  <MenuItem value={10}>Single Family Lot </MenuItem>
+                  <MenuItem value={11}>Multi-Family Lot </MenuItem>
+                  <MenuItem value={12}>Apartment </MenuItem>
+                  <MenuItem value={13}>Bahamian Style </MenuItem>
+                  <MenuItem value={14}>Colonial</MenuItem>
+                  <MenuItem value={15}>Grand L Entry Main Up </MenuItem>
+                  <MenuItem value={16}>Main L Entry with Basement </MenuItem>
+                  <MenuItem value={17}>Patio Home</MenuItem>
+                  <MenuItem value={18}>Lots/Acreage</MenuItem>
+                  <MenuItem value={19}>Penthouse</MenuItem>
+                  <MenuItem value={20}>Rancher</MenuItem>
+                  <MenuItem value={21}>Split Entry </MenuItem>
+                  <MenuItem value={22}>Split Level Home </MenuItem>
+                  <MenuItem value={23}>Townhouse </MenuItem>
+                  <MenuItem value={23}>2 Story-Main L Entry </MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -458,7 +530,7 @@ const PropertyDetails = () => {
 
                 <Select
                   fullWidth
-                  id='demo-simple-select'
+                  id='secondary-agent'
                   value={value}
                   defaultValue='none'
                   onChange={(e) => setValue(e.target.value)}
@@ -474,14 +546,18 @@ const PropertyDetails = () => {
                     value='none'
                     className='place-holder'
                   >
-                    Select Stories
+                    Select
                   </MenuItem>
-                  <MenuItem value={10}>2 Stories</MenuItem>
-                  <MenuItem value={20}>3 Stories</MenuItem>
-                  <MenuItem value={30}>4 Stories</MenuItem>
-                  <MenuItem value={10}>5 Stories</MenuItem>
-                  <MenuItem value={20}>6 Stories</MenuItem>
-                  <MenuItem value={30}>7 Stories</MenuItem>
+                  <MenuItem value={1}> 1</MenuItem>
+                  <MenuItem value={2}> 2</MenuItem>
+                  <MenuItem value={3}> 3</MenuItem>
+                  <MenuItem value={4}> 4</MenuItem>
+                  <MenuItem value={5}> 5</MenuItem>
+                  <MenuItem value={6}> 6</MenuItem>
+                  <MenuItem value={7}> 7</MenuItem>
+                  <MenuItem value={8}> 8</MenuItem>
+                  <MenuItem value={9}> 9</MenuItem>
+                  <MenuItem value={10}> 10</MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -511,10 +587,13 @@ const PropertyDetails = () => {
                   >
                     Select Construction
                   </MenuItem>
-                  <MenuItem value={10}>Construction 1</MenuItem>
-                  <MenuItem value={20}>Construction 2</MenuItem>
-                  <MenuItem value={30}>Construction 3</MenuItem>
-                  <MenuItem value={40}>Construction 4</MenuItem>
+                  <MenuItem value={10}>Brick</MenuItem>
+                  <MenuItem value={20}>Concrete Block </MenuItem>
+                  <MenuItem value={30}>Frame</MenuItem>
+                  <MenuItem value={40}>Log </MenuItem>
+                  <MenuItem value={50}>Steel/Concrete</MenuItem>
+                  <MenuItem value={60}>Other </MenuItem>
+                  <MenuItem value={70}>None </MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -542,9 +621,17 @@ const PropertyDetails = () => {
                   >
                     Select Exterior Finish
                   </MenuItem>
-                  <MenuItem value={10}>Exterior Finish 7</MenuItem>
-                  <MenuItem value={20}>Exterior Finish 8</MenuItem>
-                  <MenuItem value={30}>Exterior Finish 9</MenuItem>
+                  <MenuItem value={10}>Aluminum</MenuItem>
+                  <MenuItem value={20}>Brick </MenuItem>
+                  <MenuItem value={30}>Brick & Siding </MenuItem>
+                  <MenuItem value={40}>Finished Concrete </MenuItem>
+                  <MenuItem value={50}>Hardi Plank </MenuItem>
+                  <MenuItem value={60}>Stone</MenuItem>
+                  <MenuItem value={70}>Stucco </MenuItem>
+                  <MenuItem value={80}>Stucco & Siding </MenuItem>
+                  <MenuItem value={90}>Vinyl</MenuItem>
+                  <MenuItem value={100}>Wood</MenuItem>
+                  <MenuItem value={110}>None</MenuItem>
                 </Select>
               </Box>
             </Grid>
@@ -574,10 +661,11 @@ const PropertyDetails = () => {
                   >
                     Select Air conditioning
                   </MenuItem>
-                  <MenuItem value={10}>Air conditioning 2</MenuItem>
-                  <MenuItem value={20}>Air conditioning 3</MenuItem>
-                  <MenuItem value={30}>Air conditioning 4</MenuItem>
-                  <MenuItem value={40}>Air conditioning 5</MenuItem>
+                  <MenuItem value={10}>Central</MenuItem>
+                  <MenuItem value={20}>None</MenuItem>
+                  <MenuItem value={30}>Window unit(s)</MenuItem>
+                  <MenuItem value={40}>Split</MenuItem>
+                  <MenuItem value={50}>Other</MenuItem>
                 </Select>
               </Box>
             </Grid>

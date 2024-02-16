@@ -104,9 +104,19 @@ const SellerprofileTab = () => {
                 >
                   Select Property type
                 </MenuItem>
-                <MenuItem value={10}>MLS Exclusive</MenuItem>
-                <MenuItem value={20}>General </MenuItem>
-                <MenuItem value={30}>Exclusive (not on MLS) </MenuItem>
+                <MenuItem value={10}>Single Family Home </MenuItem>
+                <MenuItem value={11}>Half Duplex  </MenuItem>
+                <MenuItem value={12}>Condo </MenuItem>
+                <MenuItem value={13}>Full Duplex </MenuItem>
+                <MenuItem value={14}>Triplex </MenuItem>
+                <MenuItem value={15}>Fourplex </MenuItem>
+                <MenuItem value={16}>Farm/Ranch </MenuItem>
+                <MenuItem value={17}>Lots/Acreage </MenuItem>
+                <MenuItem value={18}>Resort/Hotel   </MenuItem>
+                <MenuItem value={19}>Private Island </MenuItem>
+                <MenuItem value={20}>Sixplex </MenuItem>
+                <MenuItem value={21}>Apartment Complex </MenuItem>
+                <MenuItem value={22}>Dock</MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -139,38 +149,38 @@ const SellerprofileTab = () => {
                     >
                       Select
                     </MenuItem>
-                    <MenuItem value={1}> 1+</MenuItem>
-                    <MenuItem value={2}> 2+</MenuItem>
-                    <MenuItem value={3}> 3+</MenuItem>
-                    <MenuItem value={4}> 4+</MenuItem>
-                    <MenuItem value={5}> 5+</MenuItem>
-                    <MenuItem value={6}> 6+</MenuItem>
-                    <MenuItem value={7}> 7+</MenuItem>
-                    <MenuItem value={8}> 8+</MenuItem>
-                    <MenuItem value={9}> 9+</MenuItem>
+                    <MenuItem value={1}> 1</MenuItem>
+                  <MenuItem value={2}> 2</MenuItem>
+                  <MenuItem value={3}> 3</MenuItem>
+                  <MenuItem value={4}> 4</MenuItem>
+                  <MenuItem value={5}> 5</MenuItem>
+                  <MenuItem value={6}> 6</MenuItem>
+                  <MenuItem value={7}> 7</MenuItem>
+                  <MenuItem value={8}> 8</MenuItem>
+                  <MenuItem value={9}> 9</MenuItem>
 
-                    <MenuItem value={10}> 10+</MenuItem>
-                    <MenuItem value={11}> 11+</MenuItem>
-                    <MenuItem value={12}> 12+</MenuItem>
-                    <MenuItem value={13}> 13+</MenuItem>
-                    <MenuItem value={14}> 14+</MenuItem>
-                    <MenuItem value={15}> 15+</MenuItem>
-                    <MenuItem value={16}> 16+</MenuItem>
-                    <MenuItem value={17}> 17+</MenuItem>
-                    <MenuItem value={18}> 18+</MenuItem>
-                    <MenuItem value={19}> 19+</MenuItem>
-                    <MenuItem value={20}> 20+</MenuItem>
+                  <MenuItem value={10}> 10</MenuItem>
+                  <MenuItem value={11}> 11</MenuItem>
+                  <MenuItem value={12}> 12</MenuItem>
+                  <MenuItem value={13}> 13</MenuItem>
+                  <MenuItem value={14}> 14</MenuItem>
+                  <MenuItem value={15}> 15</MenuItem>
+                  <MenuItem value={16}> 16</MenuItem>
+                  <MenuItem value={17}> 17</MenuItem>
+                  <MenuItem value={18}> 18</MenuItem>
+                  <MenuItem value={19}> 19</MenuItem>
+                  <MenuItem value={20}> 20</MenuItem>
 
-                    <MenuItem value={21}> 21+</MenuItem>
-                    <MenuItem value={22}> 22+</MenuItem>
-                    <MenuItem value={23}> 23+</MenuItem>
-                    <MenuItem value={24}> 24+</MenuItem>
-                    <MenuItem value={25}> 25+</MenuItem>
-                    <MenuItem value={26}> 26+</MenuItem>
-                    <MenuItem value={27}> 27+</MenuItem>
-                    <MenuItem value={28}> 28+</MenuItem>
-                    <MenuItem value={29}> 29+</MenuItem>
-                    <MenuItem value={30}> 30+</MenuItem>
+                  <MenuItem value={21}> 21</MenuItem>
+                  <MenuItem value={22}> 22</MenuItem>
+                  <MenuItem value={23}> 23</MenuItem>
+                  <MenuItem value={24}> 24</MenuItem>
+                  <MenuItem value={25}> 25</MenuItem>
+                  <MenuItem value={26}> 26</MenuItem>
+                  <MenuItem value={27}> 27</MenuItem>
+                  <MenuItem value={28}> 28</MenuItem>
+                  <MenuItem value={29}> 29</MenuItem>
+                  <MenuItem value={30}> 30</MenuItem>
                   </Select>
                 </Box>
               </Grid>
@@ -198,38 +208,38 @@ const SellerprofileTab = () => {
                     >
                       Select
                     </MenuItem>
-                    <MenuItem value={1}> 1+</MenuItem>
-                    <MenuItem value={2}> 2+</MenuItem>
-                    <MenuItem value={3}> 3+</MenuItem>
-                    <MenuItem value={4}> 4+</MenuItem>
-                    <MenuItem value={5}> 5+</MenuItem>
-                    <MenuItem value={6}> 6+</MenuItem>
-                    <MenuItem value={7}> 7+</MenuItem>
-                    <MenuItem value={8}> 8+</MenuItem>
-                    <MenuItem value={9}> 9+</MenuItem>
+                    <MenuItem value={1}> 1</MenuItem>
+                  <MenuItem value={2}> 2</MenuItem>
+                  <MenuItem value={3}> 3</MenuItem>
+                  <MenuItem value={4}> 4</MenuItem>
+                  <MenuItem value={5}> 5</MenuItem>
+                  <MenuItem value={6}> 6</MenuItem>
+                  <MenuItem value={7}> 7</MenuItem>
+                  <MenuItem value={8}> 8</MenuItem>
+                  <MenuItem value={9}> 9</MenuItem>
 
-                    <MenuItem value={10}> 10+</MenuItem>
-                    <MenuItem value={11}> 11+</MenuItem>
-                    <MenuItem value={12}> 12+</MenuItem>
-                    <MenuItem value={13}> 13+</MenuItem>
-                    <MenuItem value={14}> 14+</MenuItem>
-                    <MenuItem value={15}> 15+</MenuItem>
-                    <MenuItem value={16}> 16+</MenuItem>
-                    <MenuItem value={17}> 17+</MenuItem>
-                    <MenuItem value={18}> 18+</MenuItem>
-                    <MenuItem value={19}> 19+</MenuItem>
-                    <MenuItem value={20}> 20+</MenuItem>
+                  <MenuItem value={10}> 10</MenuItem>
+                  <MenuItem value={11}> 11</MenuItem>
+                  <MenuItem value={12}> 12</MenuItem>
+                  <MenuItem value={13}> 13</MenuItem>
+                  <MenuItem value={14}> 14</MenuItem>
+                  <MenuItem value={15}> 15</MenuItem>
+                  <MenuItem value={16}> 16</MenuItem>
+                  <MenuItem value={17}> 17</MenuItem>
+                  <MenuItem value={18}> 18</MenuItem>
+                  <MenuItem value={19}> 19</MenuItem>
+                  <MenuItem value={20}> 20</MenuItem>
 
-                    <MenuItem value={21}> 21+</MenuItem>
-                    <MenuItem value={22}> 22+</MenuItem>
-                    <MenuItem value={23}> 23+</MenuItem>
-                    <MenuItem value={24}> 24+</MenuItem>
-                    <MenuItem value={25}> 25+</MenuItem>
-                    <MenuItem value={26}> 26+</MenuItem>
-                    <MenuItem value={27}> 27+</MenuItem>
-                    <MenuItem value={28}> 28+</MenuItem>
-                    <MenuItem value={29}> 29+</MenuItem>
-                    <MenuItem value={30}> 30+</MenuItem>
+                  <MenuItem value={21}> 21</MenuItem>
+                  <MenuItem value={22}> 22</MenuItem>
+                  <MenuItem value={23}> 23</MenuItem>
+                  <MenuItem value={24}> 24</MenuItem>
+                  <MenuItem value={25}> 25</MenuItem>
+                  <MenuItem value={26}> 26</MenuItem>
+                  <MenuItem value={27}> 27</MenuItem>
+                  <MenuItem value={28}> 28</MenuItem>
+                  <MenuItem value={29}> 29</MenuItem>
+                  <MenuItem value={30}> 30</MenuItem>
                   </Select>
                 </Box>
               </Grid>
@@ -342,10 +352,36 @@ const SellerprofileTab = () => {
                 >
                   Select People
                 </MenuItem>
-                <MenuItem value={10}>5 People</MenuItem>
-                <MenuItem value={20}>10 People</MenuItem>
-                <MenuItem value={30}>15 People</MenuItem>
-                <MenuItem value={40}>20 People</MenuItem>
+                <MenuItem value={10}>1 </MenuItem>
+                <MenuItem value={11}>2 </MenuItem>
+                <MenuItem value={12}>3 </MenuItem>
+                <MenuItem value={13}>4 </MenuItem>
+                <MenuItem value={14}>5 </MenuItem>
+                <MenuItem value={15}>6 </MenuItem>
+                <MenuItem value={16}>7 </MenuItem>
+                <MenuItem value={17}>8 </MenuItem>
+                <MenuItem value={18}>9  </MenuItem>
+                <MenuItem value={19}>10 </MenuItem>
+                <MenuItem value={20}>11 </MenuItem>
+                <MenuItem value={21}>12 </MenuItem>
+                <MenuItem value={22}>13</MenuItem>
+                <MenuItem value={23}>14 </MenuItem>
+                <MenuItem value={24}>15 </MenuItem>
+                <MenuItem value={25}>16 </MenuItem>
+                <MenuItem value={26}>17 </MenuItem>
+                <MenuItem value={27}>18</MenuItem>
+                <MenuItem value={28}>19 </MenuItem>
+                <MenuItem value={29}>20</MenuItem>
+                <MenuItem value={30}>21 </MenuItem>
+                <MenuItem value={31}>22 </MenuItem>
+                <MenuItem value={32}>23</MenuItem>
+                <MenuItem value={33}>24 </MenuItem>
+                <MenuItem value={34}>25 </MenuItem>
+                <MenuItem value={35}>26 </MenuItem>
+                <MenuItem value={36}>27 </MenuItem>
+                <MenuItem value={37}>28</MenuItem>
+                <MenuItem value={38}>29 </MenuItem>
+                <MenuItem value={39}>30</MenuItem>
               </Select>
             </Box>
           </Grid>
