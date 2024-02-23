@@ -140,10 +140,10 @@ const ListingDetails = () => {
                 >
                   Select Listing Type
                 </MenuItem>
-                <MenuItem value={10}>For sale </MenuItem>
-                <MenuItem value={20}>For rent </MenuItem>
-                <MenuItem value={40}>Both</MenuItem>
-                <MenuItem value={50}>Sold</MenuItem>
+                <MenuItem value={10}>MLS Exclusive  </MenuItem>
+                <MenuItem value={20}>General </MenuItem>
+                <MenuItem value={40}>Co-broke  </MenuItem>
+                <MenuItem value={50}>Exclusive (not on MLS)</MenuItem>
               </Select>
             </Box>
           </Grid>

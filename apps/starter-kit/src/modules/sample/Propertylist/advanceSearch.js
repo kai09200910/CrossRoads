@@ -20,10 +20,6 @@ import { Link } from 'react-router-dom';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-// import { LocalizationProvider } from '@mui/x-date-pickers-pro';
-// import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
-// import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import { SingleInputDateRangeField } from '@mui/x-date-pickers-pro/SingleInputDateRangeField';
 import { useNavigate } from 'react-router-dom';
@@ -31,7 +27,7 @@ import './propertylist.scss';
 import PropertyCard from './propertyCard';
 import ReactFlagsSelect from 'react-flags-select';
 import MatchingContacts from '../common/matchingContacts';
-import Filters from './filters';
+import AdvancesearchFilters from './advancesearchFilters';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' to='/my-listing'>
@@ -41,15 +37,32 @@ const breadcrumbs = [
     Advanced search
   </Typography>,
 ];
-const names = [
-  'Wifi',
+const amenitiesnames = [
   'Parking',
-  'Pet-friendly ',
-  'Fully equipped kitchen',
-  'Gym',
+  'Beach/Waterfront',
+  'Turn-key',
+  'Golf Course',
+  'Dock',
+  'Fireplace',
+
+  'Fence',
+  'Pets',
+  'Enclosed yard',
+  'Canal front',
+  'Beach access',
+  'Deck',
+
+  'Furnished',
+  'Porch',
   'Pool',
-  'Spa',
-  'Laundry',
+  'Garage',
+  'Satelite',
+
+  'Gatedv',
+  'Children',
+  'Hill top / view ',
+  'A/C',
+
 ];
 const propertytype = [
   'Single Family Home ',
@@ -728,7 +741,7 @@ const AdvanceSearch = () => {
                           renderValue={(selected) => selected.join(', ')}
                           className=''
                         >
-                          {names.map((name) => (
+                          {amenitiesnames.map((name) => (
                             <MenuItem
                               key={name}
                               value={name}
@@ -804,7 +817,8 @@ const AdvanceSearch = () => {
               </Button>
             </Stack>
 
-            <Filters />
+            <AdvancesearchFilters />
+
             <Box className='listing-card-scrollable-content'>
               <Grid container spacing={5} mt={1} className='listing-card'>
                 <Grid item xs={12} md={6}>

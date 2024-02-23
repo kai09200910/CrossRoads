@@ -7,7 +7,7 @@ import {
   Paper,
   Stack,
   Typography,
-} from '@mui/material';
+} from '@mui/material';                                    
 import PropertyImg from '../../../assets/images/PI-home1.png';
 import {
   RiAddFill,
@@ -18,29 +18,37 @@ import {
 import SubmittedDialogs from './dailogs/submittedDialog';
 import BuyerDialog from './dailogs/buyerDialog';
 import { useNavigate } from 'react-router-dom';
+import AddbuyerDialog from '../common/addbuyerDialog';
 
 const PropertyTitle = () => {
   const navigate = useNavigate();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
-  const [step, setStep] = useState(1);
+  // const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
+  // const [step, setStep] = useState(1);
 
   const handleClose = () => {
     setIsSubmitted(false);
     setStep(1);
   };
-  const nextStep = () => {
-    setStep((prev) => prev + 1);
+  // const nextStep = () => {
+  //   setStep((prev) => prev + 1);
+  // };
+
+  // const handleBuyerOpen = () => {
+  //   setStep(1);
+  //   setIsBuyerDialogOpen(true);
+  // };
+
+  // const handleBuyerClose = () => {
+  //   setIsBuyerDialogOpen(false);
+  // };
+
+  const [isAddbuyer, setIsAddbuyer] = useState(false);
+  const handleaddbuyerClose = () => {
+    setIsAddbuyer(false);
   };
 
-  const handleBuyerOpen = () => {
-    setStep(1);
-    setIsBuyerDialogOpen(true);
-  };
-
-  const handleBuyerClose = () => {
-    setIsBuyerDialogOpen(false);
-  };
+  
   return (
     <>
       <Paper>
@@ -256,9 +264,10 @@ const PropertyTitle = () => {
                     <Button
                       variant='contained'
                       size='large'
-                      onClick={handleBuyerOpen}
+                      // onClick={handleBuyerOpen}
                       className='primary-btn btn'
                       startIcon={<RiAddFill size={18} />}
+                      onClick={() => setIsAddbuyer(true)}
                     >
                       Add buyer
                     </Button>
@@ -285,12 +294,18 @@ const PropertyTitle = () => {
         </Box>
       </Paper>
       <SubmittedDialogs open={isSubmitted} handleClose={handleClose} />
-      <BuyerDialog
-        open={isBuyerDialogOpen}
-        handleClose={handleBuyerClose}
-        nextStep={nextStep}
-        step={step}
-      />
+      {/* <model> */}
+        {/* <BuyerDialog
+          open={isBuyerDialogOpen}
+          handleClose={handleBuyerClose}
+          nextStep={nextStep}
+          step={step}
+        /> */}
+      {/* </model> */}
+      <AddbuyerDialog
+         open={isAddbuyer}
+         handleClose={handleaddbuyerClose}
+        />
     </>
   );
 };

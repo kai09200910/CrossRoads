@@ -40,307 +40,163 @@ const BuyerDialog = ({ open, handleClose, step }) => {
             alignItems='center'
             flexWrap='wrap'
           >
-            {step == 1 || step == 3 ? 'Buyer Information' : 'Matching buyer'}
+            Buyer Information
           </Stack>
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
-          {step === 1 ? (
-            <Box className='buyer-info'>
-              <Grid container spacing={5} mt={4}>
-                <Grid item xs={12} sm={5} md={5}>
-                  <Box variant='Box' component='Box'>
-                    <label>First name </label>
-                    <TextField
-                      fullWidth
-                      id='outlined-basic'
-                      label=''
-                      variant='outlined'
-                      placeholder='Select event type'
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={5} md={5}>
-                  <Box variant='Box' component='Box'>
-                    <label>Last name </label>
-                    <TextField
-                      fullWidth
-                      id='outlined-basic'
-                      label=''
-                      variant='outlined'
-                      placeholder='Event name '
-                    />
-                  </Box>
-                </Grid>
-
-                <Grid item xs={12} sm={2} md={2}>
-                  <label className='empty-label '></label>
-                  <Button
+          <Box className='buyer-info'>
+            <Grid container spacing={5} mt={0}>
+              <Grid item xs={12} sm={5} md={5}>
+                <Box variant='Box' component='Box'>
+                  <label>First name </label>
+                  <TextField
+                    fullWidth
+                    id='outlined-basic'
+                    label=''
                     variant='outlined'
-                    startIcon={<RiSearchLine />}
-                    className='primary-btn icon-btn'
-                  ></Button>
-                </Grid>
+                    placeholder='Select event type'
+                  />
+                </Box>
               </Grid>
-              <Grid container mt={5}>
-                <Grid item xs={12} sm={12} md={12}>
-                  <MatchingContacts />
-                </Grid>
+              <Grid item xs={12} sm={5} md={5}>
+                <Box variant='Box' component='Box'>
+                  <label>Last name </label>
+                  <TextField
+                    fullWidth
+                    id='outlined-basic'
+                    label=''
+                    variant='outlined'
+                    placeholder='Event name '
+                  />
+                </Box>
               </Grid>
-              {/* <Button
+
+              <Grid item xs={12} sm={2} md={2}>
+                <label className='empty-label '></label>
+                <Button
+                  variant='outlined'
+                  startIcon={<RiSearchLine />}
+                  className='primary-btn icon-btn'
+                ></Button>
+              </Grid>
+            </Grid>
+            <Grid container mt={5}>
+              <Grid item xs={12} sm={12} md={12}>
+                <MatchingContacts />
+              </Grid>
+            </Grid>
+            {/* <Button
                 variant='outlined'
                 size='small'
                 className='edit-btn secondary-btn-small'
               >
                 Add contact
               </Button> */}
-              <Grid container spacing={5} mt={2}>
-                <Grid item xs={12} sm={6} md={12}>
-                  <Box variant='Box' component='Box'>
-                    <label>Sold price</label>
-                    <TextField
-                      fullWidth
-                      id='outlined-basic'
-                      label=''
-                      variant='outlined'
-                      type='number'
-                      placeholder='$500,000'
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='Box' component='Box'>
-                    <label>Agent sold by</label>
-                    <TextField
-                      fullWidth
-                      id='outlined-basic'
-                      label=''
-                      variant='outlined'
-                      placeholder='Enter name'
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='Box' component='Box'>
-                    <label>Secondary agent </label>
-                    <TextField
-                      fullWidth
-                      id='outlined-basic'
-                      label=''
-                      variant='outlined'
-                      placeholder='Enter name'
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='Box' component='Box'>
-                    <label>Under contract date </label>
-                    <DemoContainer components={['DatePicker']}>
-                      <DatePicker sx={{ width: '100%' }} />
-                    </DemoContainer>
-                  </Box>
-                </Grid>
-
-                <Grid item xs={12} md={6}>
-                  <Box variant='Box' component='Box'>
-                    <label>Date sold </label>
-                    <DemoContainer components={['DatePicker']}>
-                      <DatePicker sx={{ width: '100%' }} />
-                    </DemoContainer>
-                  </Box>
-                </Grid>
+            <Grid container spacing={5} mt={2}>
+              <Grid item xs={12} sm={6} md={12}>
+                <Box variant='Box' component='Box'>
+                  <label>Sold price</label>
+                  <TextField
+                    fullWidth
+                    id='outlined-basic'
+                    label=''
+                    variant='outlined'
+                    type='number'
+                    placeholder='$500,000'
+                  />
+                </Box>
               </Grid>
-              <Grid container spacing={5} mt={4}>
-                <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='Box' component='Box'>
-                    <label>Status </label>
-                    <Stack
-                      spacing={{ xs: 1, sm: 2 }}
-                      direction='row'
-                      useFlexGap
-                    >
-                      <FormControlLabel
-                        control={<Checkbox defaultChecked />}
-                        label='Under contract '
-                      />
-                      <FormControlLabel control={<Checkbox />} label='sold  ' />
-                    </Stack>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6}>
-                  <Box variant='Box' component='Box'>
-                    <label>Display on site </label>
+              <Grid item xs={12} sm={6} md={6}>
+                <Box variant='Box' component='Box'>
+                  <label>Agent sold by</label>
+                  <TextField
+                    fullWidth
+                    id='outlined-basic'
+                    label=''
+                    variant='outlined'
+                    placeholder='Enter name'
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <Box variant='Box' component='Box'>
+                  <label>Secondary agent </label>
+                  <TextField
+                    fullWidth
+                    id='outlined-basic'
+                    label=''
+                    variant='outlined'
+                    placeholder='Enter name'
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={6} md={6}>
+                <Box variant='Box' component='Box'>
+                  <label>Under contract date </label>
+                  <DemoContainer components={['DatePicker']}>
+                    <DatePicker sx={{ width: '100%' }} />
+                  </DemoContainer>
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} md={6}>
+                <Box variant='Box' component='Box'>
+                  <label>Date sold </label>
+                  <DemoContainer components={['DatePicker']}>
+                    <DatePicker sx={{ width: '100%' }} />
+                  </DemoContainer>
+                </Box>
+              </Grid>
+            </Grid>
+            <Grid container spacing={5} mt={4}>
+              <Grid item xs={12} sm={6} md={6}>
+                <Box variant='Box' component='Box'>
+                  <label>Status </label>
+                  <Stack spacing={{ xs: 1, sm: 2 }} direction='row' useFlexGap>
                     <FormControlLabel
-                      control={
-                        <Switch
-                          sx={{ m: 1 }}
-                          className='ios-switch-custom'
-                          focusVisibleClassName='.Mui-focusVisible'
-                          disableRipple
-                        />
-                      }
-                      label=''
+                      control={<Checkbox defaultChecked />}
+                      label='Under contract '
                     />
-                  </Box>
-                </Grid>
-                <Grid item xs={12} md={12}>
-                  <Box variant='Box' component='Box'>
-                    <label>Add phrase to property description</label>
-                    <TextField
-                      fullWidth
-                      id='outlined-basic'
-                      label=''
-                      variant='outlined'
-                      placeholder='Enter phrase to property description'
-                      multiline
-                      rows={4}
-                      maxRows={4}
-                    />
-                  </Box>
-                </Grid>
+                    <FormControlLabel control={<Checkbox />} label='sold  ' />
+                  </Stack>
+                </Box>
               </Grid>
-            </Box>
-          ) : step === 2 ? (
-            <Box className='matching-contact'>
-              <MatchingContacts />
-            </Box>
-          ) : (
-            <Box>
-              {/* Buyer's information without 2 fields (first name & last name) */}
-              <Box className='buyer-info'>
-                <Grid container spacing={5} mt={2}>
-                  <Grid item xs={12} md={12}>
-                    <Typography
-                      variant='p'
-                      component='p'
-                      className='title-agent-detail'
-                    >
-                      Buyer:{''}
-                      <Typography variant='body1' component='span' className=''>
-                        John Smith
-                        <IconButton aria-label='edit'>
-                          <RiPencilFill />
-                        </IconButton>
-                      </Typography>
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12} md={12}>
-                    <Box variant='Box' component='Box'>
-                      <label>
-                        Sold price
-                        <Typography
-                          variant='body1'
-                          component='span'
-                          className='optional-label'
-                        >
-                          Optional
-                        </Typography>
-                      </label>
-                      <TextField
-                        fullWidth
-                        id='outlined-basic'
-                        label=''
-                        variant='outlined'
-                        placeholder='$500,000'
+              <Grid item xs={12} sm={6} md={6}>
+                <Box variant='Box' component='Box'>
+                  <label>Display on site </label>
+                  <FormControlLabel
+                    control={
+                      <Switch
+                        sx={{ m: 1 }}
+                        className='ios-switch-custom'
+                        focusVisibleClassName='.Mui-focusVisible'
+                        disableRipple
                       />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <Box variant='Box' component='Box'>
-                      <label>Agent sold by</label>
-                      <TextField
-                        fullWidth
-                        id='outlined-basic'
-                        label=''
-                        variant='outlined'
-                        placeholder='Enter name'
-                      />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <Box variant='Box' component='Box'>
-                      <label>Secondary agent </label>
-                      <TextField
-                        fullWidth
-                        id='outlined-basic'
-                        label=''
-                        variant='outlined'
-                        placeholder='Enter name'
-                      />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <Box variant='Box' component='Box'>
-                      <label>Under contract date </label>
-                      <DemoContainer components={['DatePicker']}>
-                        <DatePicker sx={{ width: '100%' }} />
-                      </DemoContainer>
-                    </Box>
-                  </Grid>
-
-                  <Grid item xs={12} md={6}>
-                    <Box variant='Box' component='Box'>
-                      <label>Date sold </label>
-                      <DemoContainer components={['DatePicker']}>
-                        <DatePicker sx={{ width: '100%' }} />
-                      </DemoContainer>
-                    </Box>
-                  </Grid>
-                </Grid>
-                <Grid container spacing={5} mt={4}>
-                  <Grid item xs={12} md={6}>
-                    <Box variant='Box' component='Box'>
-                      <label>Status </label>
-                      <Stack
-                        spacing={{ xs: 1, sm: 2 }}
-                        direction='row'
-                        useFlexGap
-                      >
-                        <FormControlLabel
-                          control={<Checkbox defaultChecked />}
-                          label='Under contract '
-                        />
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label='sold  '
-                        />
-                      </Stack>
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <Box variant='Box' component='Box'>
-                      <label>Display on site </label>
-                      <FormControlLabel
-                        control={
-                          <Switch
-                            sx={{ m: 1 }}
-                            className='ios-switch-custom'
-                            focusVisibleClassName='.Mui-focusVisible'
-                            disableRipple
-                          />
-                        }
-                        label=''
-                      />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} md={12}>
-                    <Box variant='Box' component='Box'>
-                      <label>Add phrase to property description</label>
-                      <TextField
-                        fullWidth
-                        id='outlined-basic'
-                        label=''
-                        variant='outlined'
-                        placeholder='Enter phrase to property description'
-                        multiline
-                        rows={4}
-                        maxRows={4}
-                      />
-                    </Box>
-                  </Grid>
-                </Grid>
-              </Box>
-            </Box>
-          )}
+                    }
+                    label=''
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={12}>
+                <Box variant='Box' component='Box'>
+                  <label>Add phrase to property description</label>
+                  <TextField
+                    fullWidth
+                    id='outlined-basic'
+                    label=''
+                    variant='outlined'
+                    placeholder='Enter phrase to property description'
+                    multiline
+                    rows={4}
+                    maxRows={4}
+                  />
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+          {/* <Box className='matching-contact'>
+            <MatchingContacts />
+          </Box> */}
         </DialogContent>
         <DialogActions className='modal-dailog-footer'>
           <Stack
@@ -358,7 +214,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
               className='outline-btn btn'
               onClick={handleClose}
             >
-              Close
+              Cancel
             </Button>
             <Button
               variant='contained'

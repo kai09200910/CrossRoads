@@ -18,9 +18,9 @@ const MediaTabs = () => {
         <StyledTabsList>
           <StyledTab value={0}>Photos</StyledTab>
           <StyledTab value={1}>Videos</StyledTab>
-          <StyledTab value={2}>3D Tours</StyledTab>
+          {/* <StyledTab value={2}>3D Tours</StyledTab>
           <StyledTab value={3}>Websites </StyledTab>
-          <StyledTab value={4}>Brochures </StyledTab>
+          <StyledTab value={4}>Brochures </StyledTab> */}
         </StyledTabsList>
 
         <StyledTabPanel value={0}>
@@ -29,7 +29,7 @@ const MediaTabs = () => {
         <StyledTabPanel value={1}>
           <MediavideosTable isAdmin={false} />
         </StyledTabPanel>
-        <StyledTabPanel value={2}>
+        {/* <StyledTabPanel value={2}>
           <Media3dtoursTable isAdmin={false} />
         </StyledTabPanel>
         <StyledTabPanel value={3}>
@@ -37,7 +37,7 @@ const MediaTabs = () => {
         </StyledTabPanel>
         <StyledTabPanel value={4}>
           <MediabrohuresTable isAdmin={false} />
-        </StyledTabPanel>
+        </StyledTabPanel> */}
       </Tabs>
     </>
   );
@@ -118,11 +118,11 @@ const StyledTabPanel = styled(TabPanel)(
 
 const StyledTabsList = styled(TabsList)(
   ({ theme }) => `
-  min-width: 400px;
-  width: 550px;
+  min-width: 250px;
+  width: 250px;
   background-color: #fff;
   border-radius: 32px;
-  margin: 0 auto 20px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -12,7 +12,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import { SingleInputDateRangeField } from '@mui/x-date-pickers-pro/SingleInputDateRangeField';
 
-const Filters = () => {
+const AdvancesearchFilters = () => {
   const [isAddcontact, setIsAddcontact] = useState(false);
   const handleaddcontactClose = () => {
     setIsAddcontact(false);
@@ -216,4 +216,4 @@ const Filters = () => {
   );
 };
 
-export default Filters;
+export default AdvancesearchFilters;

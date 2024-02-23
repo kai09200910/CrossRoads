@@ -113,7 +113,7 @@ const PropertyMedia = () => {
             <Grid item xs={12} md={12}>
               <Box variant='div' component='div'>
                 <label>
-                  Brochure Link{' '}
+                  Brochure{' '}
                   <Typography
                     variant='body1'
                     component='span'
@@ -128,6 +128,30 @@ const PropertyMedia = () => {
                   label=''
                   variant='outlined'
                   placeholder='Enter brochure link '
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          <Grid container spacing={5} mt={4}>
+            <Grid item xs={12} md={12}>
+              <Box variant='div' component='div'>
+                <label>
+                Property website {' '}
+                  <Typography
+                    variant='body1'
+                    component='span'
+                    className='optional-label'
+                  >
+                    Optional
+                  </Typography>
+                </label>
+                <TextField
+                  fullWidth
+                  id='outlined-basic'
+                  label=''
+                  variant='outlined'
+                  placeholder='Enter Property website  '
                 />
               </Box>
             </Grid>

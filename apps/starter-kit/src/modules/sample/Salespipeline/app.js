@@ -12,7 +12,7 @@ import {
 import { RiArrowDownSLine, RiFilter3Line, RiTimeLine } from 'react-icons/ri';
 import PropertyCard from './propertyCard';
 import './salespipeline.scss';
-import Filters from './filters';
+import Filters from '../common/filters';
 
 class TaskList extends React.Component {
   state = {
