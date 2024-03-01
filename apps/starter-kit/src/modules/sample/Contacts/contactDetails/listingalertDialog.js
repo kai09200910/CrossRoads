@@ -33,14 +33,30 @@ const ListingalertDialog = ({ open, handleClose, title }) => {
   const [person, setPerson] = React.useState([]);
 
   const names = [
-    'Wifi',
     'Parking',
-    'Pet-friendly ',
-    'Fully equipped kitchen',
-    'Gym',
+    'Beach/Waterfront',
+    'Turn-key',
+    'Golf Course',
+    'Dock',
+    'Fireplace',
+  
+    'Fence',
+    'Pets',
+    'Enclosed yard',
+    'Canal front',
+    'Beach access',
+    'Deck',
+  
+    'Furnished',
+    'Porch',
     'Pool',
-    'Spa',
-    'Laundry',
+    'Garage',
+    'Satelite',
+  
+    'Gatedv',
+    'Children',
+    'Hill top / view ',
+    'A/C',
   ];
 
   const handleChange = (event) => {

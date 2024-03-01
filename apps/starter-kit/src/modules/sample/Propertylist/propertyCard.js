@@ -64,7 +64,7 @@ const PropertyCard = () => {
                   alignItems='center'
                   spacing={2}
                   sx={{
-                    paddingTop: { xs: 3, xl: 3 },
+                    paddingTop: { xs: 1, xl: 1 },
                   }}
                   className='mls-info'
                 >

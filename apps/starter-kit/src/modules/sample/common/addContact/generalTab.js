@@ -14,9 +14,9 @@ import {
   Typography,
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
-import TagsInput from '../common/tagsInput';
-import MatchingContacts from '../common/matchingContacts';
 import ReactSelect from 'react-select';
+import MatchingContacts from '../matchingContacts';
+import TagsInput from '../tagsInput';
 
 const GeneralTab = () => {
   function handleSelecetedTags(items) {}
@@ -45,7 +45,7 @@ const GeneralTab = () => {
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
 
   const options = [
-    { value: 'Jhone Smith', label: 'Jhone Smith' },
+    { value: 'chocolate', label: 'Jhone Smith' },
     { value: 'Robert Doe', label: 'Robert Doe' },
     { value: 'Victoria', label: 'Victoria' },
     { value: 'Joss Mackison', label: 'Joss Mackison' },
@@ -112,28 +112,28 @@ const GeneralTab = () => {
 
           <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
-              <label> Primary phone  </label>
+              <label> Phone </label>
               <TextField
                 fullWidth
                 id='phone'
                 type='number'
                 variant='outlined'
-                placeholder='Enter Primary phone number'
+                placeholder='Enter phone number'
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          {/* <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Additional  phone </label>
+              <label>Mobile phone </label>
               <TextField
                 fullWidth
                 id='mobile-phone'
                 type='number'
                 variant='outlined'
-                placeholder='Enter Additional Phone'
+                placeholder='Enter Mobile Phone'
               />
             </Box>
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
@@ -357,19 +357,6 @@ const GeneralTab = () => {
               </Select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Box variant='div' component='div'>
-              <label>Company name </label>
-              <TextField
-                fullWidth
-                id='care-of'
-                label=''
-                variant='outlined'
-                placeholder='Enter Company Name'
-              />
-            </Box>
-          </Grid>
-          
 
           <Grid item xs={12} md={12}>
             <Box variant='div' component='div'>

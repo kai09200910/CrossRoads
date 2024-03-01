@@ -117,9 +117,9 @@ textarea.MuiInputBase-input.MuiOutlinedInput-input {
     }
   }
 }
-fieldset.MuiOutlinedInput-notchedOutline {
-  // border-color: #e1e1e1;
-}
+// fieldset.MuiOutlinedInput-notchedOutline {
+//   border-color: #e1e1e1;
+// }
 textarea {
   padding: 0 !important;
   border: 2px solid transparent;
@@ -298,7 +298,14 @@ a {
     background-color: transparent !important;
   }
 }
-
+.back-btn {
+  height: 32px;
+  width: 32px;
+  color: #fff;
+  background-color: #2871ff;
+  padding: 4px;
+  margin-right: 12px;
+}
 .secondary-btn-small {
   background-color: #dfe8fa;
   border: none !important;
@@ -446,7 +453,7 @@ h4 {
     li.MuiMenuItem-root {
       padding: 6px 16px;
       span.MuiCheckbox-root {
-        padding: 0px 9px;
+        padding: 0px 8px 0 0px;
       }
       div.MuiListItemText-root {
         span.MuiTypography-root {
@@ -457,7 +464,7 @@ h4 {
   }
 }
 [aria-labelledby='amenities-selection'] {
-  column-count: 3;
+  column-count: 4;
   gap: 4px;
   @media (max-width: 767px) {
     column-count: 1;
@@ -773,11 +780,10 @@ h4 {
     width: 50px;
     height: 30px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-    border: 1px solid #d9d9d9;
+    border: 1px solid #6e6e6e;
     border-radius: 20px;
-    // background-color: transparent;
     background-color: #fff;
-    box-shadow: none;
+    // background-color: transparent;
   }
   .MuiSwitch-thumb {
     box-sizing: border-box;
@@ -1230,7 +1236,7 @@ header {
   }
 }
 // Upload Area & Doc List Styles //
-.disapproval-feedback-dailog {                                                               
+.disapproval-feedback-dailog {
   .MuiPaper-root {
     .modal-dailog-footer {
       justify-content: flex-end !important;
@@ -1574,3 +1580,169 @@ header {
   }
 }
 // Coming Soon Styles END //
+
+// Add Buyer with Add Contact Styles//
+.modal-dailog-wrapper.add-contact-modal {
+  .MuiFormControl-root {
+    width: 100%;
+  }
+  .add-contact-tab {
+    position: relative;
+    .notes-tab {
+      .add-note-btn-wrapper {
+        position: absolute;
+        right: 0;
+        top: 15px;
+      }
+    }
+  }
+
+  label.MuiFormControlLabel-root {
+    margin-right: 8px;
+    margin-bottom: 0;
+    .ios-switch-custom {
+      width: 50px;
+      height: 30px;
+      margin-right: 0;
+    }
+  }
+  .modal-dailog-title {
+    button {
+      @media (max-width: 475px) {
+        margin-top: 0px;
+      }
+    }
+  }
+  .MuiDialogActions-root.MuiDialogActions-spacing {
+    // .MuiStack-root{
+    //   width: 100%;
+    // }
+
+    .primary-btn {
+      @media (max-width: 475px) {
+        min-width: 52% !important;
+      }
+    }
+  }
+}
+.primary-btn.btn.add-other-buyer{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #DFE8FA !important;
+  color: #2871FF !important;
+  border: 3px solid transparent;
+  height: 60px;
+  min-width: 190px;
+  border-radius: 8px !important;
+  font-weight: 700;
+}
+.add-note-modal {
+  .MuiPopover-paper {
+    .add-note-modal-inner {
+      background-color: #fff;
+      width: 420px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+  }
+}
+.modal-dailog-wrapper.add-buyer-modal,
+.modal-dailog-wrapper.add-contact-modal {
+  .MuiPaper-root {
+    min-width: 765px;
+    @media (max-width: 767px) {
+      min-width: 95%;
+    }
+  }
+}
+
+// Add Buyer with Add Contact Styles END//
+
+// Listing filter Styles END//
+.dashboard-wrap,
+.all-listing-wrapper {
+  position: relative;
+  .listing-fillter {
+    padding: 40px 16px 40px 24px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    @media (max-width: 767px) {
+      padding: 24px;
+    }
+    .fillter-menu-list {
+      position: relative;
+      @media (max-width: 991px) {
+        flex-wrap: wrap;
+      }
+      .multiple-selection {
+        width: 14%;
+        @media (max-width: 991px) {
+          width: 30%;
+        }
+        @media (max-width: 575px) {
+          width: 48%;
+        }
+        @media (max-width: 374px) {
+          width: 100%;
+        }
+      }
+      .area,
+      .bed-bath-selection,
+      .sort-by-switch {
+        width: 14%;
+        @media (max-width: 991px) {
+          width: 30%;
+        }
+        @media (max-width: 575px) {
+          width: 48%;
+        }
+        @media (max-width: 374px) {
+          width: 100%;
+        }
+      }
+    }
+    button {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      @media (max-width: 767px) {
+        right: 5px;
+        top: 5px;
+      }
+    }
+  }
+}
+.all-listing-wrapper {
+  .listing-fillter {
+    position: unset;
+    padding: 8px 0px 8px 0px;
+    background-color: transparent;
+    box-shadow: none;
+    .fillter-menu-list {
+    }
+    button {
+      display: none;
+    }
+  }
+}
+// Listing filter Styles END//
+
+
+  .listing-profile-photo-wrap {
+    position: relative;
+    .upload {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      input {
+        opacity: 0;
+      }
+    }
+  }

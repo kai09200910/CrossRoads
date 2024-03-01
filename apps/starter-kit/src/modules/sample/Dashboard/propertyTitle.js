@@ -16,31 +16,44 @@ import {
   RiPencilFill,
 } from 'react-icons/ri';
 import SubmittedDialogs from './dailogs/submittedDialog';
-import BuyerDialog from './dailogs/buyerDialog';
-import { useNavigate } from 'react-router-dom';
+// import BuyerDialog from './dailogs/buyerDialog';
+import { Link, useNavigate } from 'react-router-dom';
+import AddbuyerDialog from '../common/addbuyerDialog';
+import AssignmlsnumberDialog from './dailogs/assignmlsnumberDialog';
 
 const PropertyTitle = () => {
   const navigate = useNavigate();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
-  const [step, setStep] = useState(1);
+  // const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
+  // const [step, setStep] = useState(1);
 
   const handleClose = () => {
     setIsSubmitted(false);
     setStep(1);
   };
-  const nextStep = () => {
-    setStep((prev) => prev + 1);
+  // const nextStep = () => {
+  //   setStep((prev) => prev + 1);
+  // };
+
+  // const handleBuyerOpen = () => {
+  //   setStep(1);
+  //   setIsBuyerDialogOpen(true);
+  // };
+
+  // const handleBuyerClose = () => {
+  //   setIsBuyerDialogOpen(false);
+  // };
+
+  const [isAddbuyer, setIsAddbuyer] = useState(false);
+  const handleaddbuyerClose = () => {
+    setIsAddbuyer(false);
   };
 
-  const handleBuyerOpen = () => {
-    setStep(1);
-    setIsBuyerDialogOpen(true);
+  const [isAddcontact, setIsAddcontact] = useState(false);
+  const handleaddcontactClose = () => {
+    setIsAddcontact(false);
   };
 
-  const handleBuyerClose = () => {
-    setIsBuyerDialogOpen(false);
-  };
   return (
     <>
       <Paper>
@@ -152,10 +165,19 @@ const PropertyTitle = () => {
                       }}
                       className='mls-info'
                     >
-                      <Typography variant='p' component='p'>
-                        <RiCheckboxBlankCircleFill size={10} />
+                      {/* <Typography variant='p' component='p'>
+                        <RiCheckboxBlankCircleFill size={10} className='approved'/>
                         MLS Approved
+                      </Typography> */}
+
+                      <Typography variant='p' component='p'>
+                        <RiCheckboxBlankCircleFill
+                          size={10}
+                          className='pending'
+                        />
+                       <Link  onClick={() => setIsAddcontact(true)}> MLS not yet active </Link>
                       </Typography>
+
                       <Typography variant='p' component='p'>
                         MLS #12345
                       </Typography>
@@ -256,9 +278,10 @@ const PropertyTitle = () => {
                     <Button
                       variant='contained'
                       size='large'
-                      onClick={handleBuyerOpen}
+                      // onClick={handleBuyerOpen}
                       className='primary-btn btn'
                       startIcon={<RiAddFill size={18} />}
+                      onClick={() => setIsAddbuyer(true)}
                     >
                       Add buyer
                     </Button>
@@ -285,12 +308,22 @@ const PropertyTitle = () => {
         </Box>
       </Paper>
       <SubmittedDialogs open={isSubmitted} handleClose={handleClose} />
-      <BuyerDialog
-        open={isBuyerDialogOpen}
-        handleClose={handleBuyerClose}
-        nextStep={nextStep}
-        step={step}
+      {/* <model> */}
+      {/* <BuyerDialog
+          open={isBuyerDialogOpen}
+          handleClose={handleBuyerClose}
+          nextStep={nextStep}
+          step={step}
+        /> */}
+      {/* </model> */}
+      <AddbuyerDialog open={isAddbuyer} handleClose={handleaddbuyerClose} />
+
+      <AssignmlsnumberDialog
+        open={isAddcontact}
+        handleClose={handleaddcontactClose}
+        title={'Edit Contact'}
       />
+
     </>
   );
 };

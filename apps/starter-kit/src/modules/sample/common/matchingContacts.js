@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { Link } from 'react-router-dom';
 
 function createData(name, match, email) {
   return { name, match, email };
@@ -41,7 +42,9 @@ const MatchingContacts = () => {
                       label=''
                     />
                   </TableCell>
-                  <TableCell>{row.name}</TableCell>
+                  <TableCell>
+                  <Link to='/contacts/details'> {row.name} </Link>
+                  </TableCell>
                   <TableCell align=''>
                     Status ONLINE
                     {row.match}</TableCell>

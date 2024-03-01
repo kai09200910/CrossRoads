@@ -22,6 +22,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import KycdocumentsDialog from './kycdocumentsDialog';
 import Agentinfo from './agentInfo';
 import ReactFlagsSelect from 'react-flags-select';
+import ReactSelect from 'react-select';
 
 function createData(name, match, email) {
   return { name, match, email };
@@ -49,6 +50,17 @@ const ListingDetails = () => {
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
 
   const [selected, setSelected] = useState('');
+
+  const options = [
+    { value: 'Jhone Smith', label: 'Jhone Smith' },
+    { value: 'Robert Doe', label: 'Robert Doe' },
+    { value: 'Victoria', label: 'Victoria' },
+    { value: 'Joss Mackison', label: 'Joss Mackison' },
+    { value: 'Merry Jane', label: 'Merry Jane' },
+    { value: 'Hoper', label: 'Stan Hoper' },
+  ];
+
+  const [selectedOption, setSelectedOption] = useState(null);
 
   return (
     <>
@@ -142,8 +154,69 @@ const ListingDetails = () => {
                 </MenuItem>
                 <MenuItem value={10}>For sale </MenuItem>
                 <MenuItem value={20}>For rent </MenuItem>
-                <MenuItem value={40}>Both</MenuItem>
-                <MenuItem value={50}>Sold</MenuItem>
+                <MenuItem value={40}>Both </MenuItem>
+              </Select>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={6}>
+            <Box variant='div' component='div'>
+              <label>Listing Status</label>
+              <Select
+                fullWidth
+                id='demo-simple-select'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
+                IconComponent={RiArrowDownSLine}
+              >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Listing Status
+                </MenuItem>
+                <MenuItem value={10}>Listed </MenuItem>
+                <MenuItem value={20}>Under Contract </MenuItem>
+                <MenuItem value={40}>Offer pending </MenuItem>
+                <MenuItem value={50}>Sold </MenuItem>
+              </Select>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={6}>
+            <Box variant='div' component='div'>
+              <label>Transaction type </label>
+              <Select
+                fullWidth
+                id='demo-simple-select'
+                value={value}
+                defaultValue='none'
+                onChange={(e) => setValue(e.target.value)}
+                onFocus={(e) => setShowPlaceholder(false)}
+                onClose={(e) =>
+                  setShowPlaceholder(e.target.value === undefined)
+                }
+                IconComponent={RiArrowDownSLine}
+              >
+                <MenuItem
+                  key='0'
+                  disabled
+                  value='none'
+                  className='place-holder'
+                >
+                  Select Transaction Type
+                </MenuItem>
+                <MenuItem value={10}>MLS Exclusive </MenuItem>
+                <MenuItem value={20}>General </MenuItem>
+                <MenuItem value={40}>Co-broke </MenuItem>
+                <MenuItem value={50}>Exclusive (not on MLS)</MenuItem>
               </Select>
             </Box>
           </Grid>
@@ -177,6 +250,36 @@ const ListingDetails = () => {
               </Select>
             </Box>
           </Grid>
+          {/* Below 2 fileds Co-broke agent & Company are condtional based on if Transaction type is 'co-broke' selected */}
+          <Grid item xs={12} sm={12} md={6}>
+            <Box variant='div' component='div'>
+              <label>Co-broke agent </label>
+              <ReactSelect
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={options}
+                isSearchable={true}
+                isClearable={true}
+                className='react-select-wrap'
+                placeholder='Search for contact record'
+              />
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} sm={12} md={6}>
+            <Box variant='div' component='div'>
+              <label>Co-broke company</label>
+              <TextField
+                fullWidth
+                id='outlined-basic'
+                label=''
+                variant='outlined'
+                placeholder='Co-broke company'
+                // className='success'
+              />
+            </Box>
+          </Grid>
+          {/* Above 2 fileds Co-broke agent & Company are condtional based on if Transaction type is 'co-broke' selected */}
         </Grid>
         <Grid container spacing={5} mt={4}>
           <Grid item xs={12} sm={12} md={5}>
@@ -243,13 +346,13 @@ const ListingDetails = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
-              <label>Cell-phone </label>
+              <label>Primary phone </label>
               <TextField
                 fullWidth
                 id='outlined-basic'
                 type='number'
                 variant='outlined'
-                placeholder='Cell-phone '
+                placeholder='Primary phone  '
               />
             </Box>
           </Grid>
@@ -354,14 +457,14 @@ const ListingDetails = () => {
                   Select Property Type
                 </MenuItem>
                 <MenuItem value={10}>Single Family Home </MenuItem>
-                <MenuItem value={11}>Half Duplex  </MenuItem>
+                <MenuItem value={11}>Half Duplex </MenuItem>
                 <MenuItem value={12}>Condo </MenuItem>
                 <MenuItem value={13}>Full Duplex </MenuItem>
                 <MenuItem value={14}>Triplex </MenuItem>
                 <MenuItem value={15}>Fourplex </MenuItem>
                 <MenuItem value={16}>Farm/Ranch </MenuItem>
                 <MenuItem value={17}>Lots/Acreage </MenuItem>
-                <MenuItem value={18}>Resort/Hotel   </MenuItem>
+                <MenuItem value={18}>Resort/Hotel </MenuItem>
                 <MenuItem value={19}>Private Island </MenuItem>
                 <MenuItem value={20}>Sixplex </MenuItem>
                 <MenuItem value={21}>Apartment Complex </MenuItem>
@@ -438,7 +541,7 @@ const ListingDetails = () => {
                 <MenuItem value={10}>Seller occupied</MenuItem>
                 <MenuItem value={20}>Tenant occupied</MenuItem>
                 <MenuItem value={30}>Vacant</MenuItem>
-                <MenuItem value={40}>Under Construction  </MenuItem>
+                <MenuItem value={40}>Under Construction </MenuItem>
               </Select>
             </Box>
           </Grid>

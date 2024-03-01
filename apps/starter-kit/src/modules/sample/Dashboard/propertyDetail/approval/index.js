@@ -9,14 +9,16 @@ import ListingDetails from './listingDetails';
 import PropertyDetails from './propertyDetails';
 import MediaTabs from '../../../Newlisting/mediaTabs';
 import { RiCheckFill, RiErrorWarningLine } from 'react-icons/ri';
+import ContactType from './contactType';
 
 const Approval = () => {
-  const [value, setValue] = React.useState('1');
+  const [value, setValue] = React.useState('1');6
   const [approvalStatus, setApprovalStatus] = useState({
     documents: true,
     listing: true,
     property_detail: true,
     media: true,
+    conatct_type: true,
   });
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -132,6 +134,16 @@ const Approval = () => {
                   value='4'
                   className={approvalStatus.media ? 'submited' : 'error'}
                 />
+                <Tab
+                  label={
+                    <>
+                      <Typography>Conatct type </Typography>
+                      <RiCheckFill size={15} />{' '}
+                    </>
+                  }
+                  value='5'
+                  className={approvalStatus.conatct_type ? 'submited' : 'error'}
+                />
               </TabList>
               <Button
                 variant='contained'
@@ -182,6 +194,9 @@ const Approval = () => {
                   </Button>
                 </Stack> */}
               </Box>
+            </TabPanel>
+            <TabPanel value='5'>
+            <ContactType />
             </TabPanel>
           </TabContext>
         </Box>

@@ -72,6 +72,7 @@ const AddPopover = () => {
             justifyContent='flex-end'
             alignItems='center'
             spacing={2}
+            mt={4}
           >
             <Button
               variant='contained'
@@ -79,6 +80,7 @@ const AddPopover = () => {
               autoFocus
               className='primary-btn-small'
               onClick={handleClose}
+              
             >
               Add
             </Button>
