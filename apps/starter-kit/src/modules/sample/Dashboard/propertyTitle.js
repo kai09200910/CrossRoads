@@ -7,7 +7,7 @@ import {
   Paper,
   Stack,
   Typography,
-} from '@mui/material';                                    
+} from '@mui/material';
 import PropertyImg from '../../../assets/images/PI-home1.png';
 import {
   RiAddFill,
@@ -16,9 +16,10 @@ import {
   RiPencilFill,
 } from 'react-icons/ri';
 import SubmittedDialogs from './dailogs/submittedDialog';
-import BuyerDialog from './dailogs/buyerDialog';
-import { useNavigate } from 'react-router-dom';
+// import BuyerDialog from './dailogs/buyerDialog';
+import { Link, useNavigate } from 'react-router-dom';
 import AddbuyerDialog from '../common/addbuyerDialog';
+import AssignmlsnumberDialog from './dailogs/assignmlsnumberDialog';
 
 const PropertyTitle = () => {
   const navigate = useNavigate();
@@ -48,7 +49,11 @@ const PropertyTitle = () => {
     setIsAddbuyer(false);
   };
 
-  
+  const [isAddcontact, setIsAddcontact] = useState(false);
+  const handleaddcontactClose = () => {
+    setIsAddcontact(false);
+  };
+
   return (
     <>
       <Paper>
@@ -160,10 +165,19 @@ const PropertyTitle = () => {
                       }}
                       className='mls-info'
                     >
-                      <Typography variant='p' component='p'>
-                        <RiCheckboxBlankCircleFill size={10} />
+                      {/* <Typography variant='p' component='p'>
+                        <RiCheckboxBlankCircleFill size={10} className='approved'/>
                         MLS Approved
+                      </Typography> */}
+
+                      <Typography variant='p' component='p'>
+                        <RiCheckboxBlankCircleFill
+                          size={10}
+                          className='pending'
+                        />
+                       <Link  onClick={() => setIsAddcontact(true)}> MLS not yet active </Link>
                       </Typography>
+
                       <Typography variant='p' component='p'>
                         MLS #12345
                       </Typography>
@@ -295,17 +309,21 @@ const PropertyTitle = () => {
       </Paper>
       <SubmittedDialogs open={isSubmitted} handleClose={handleClose} />
       {/* <model> */}
-        {/* <BuyerDialog
+      {/* <BuyerDialog
           open={isBuyerDialogOpen}
           handleClose={handleBuyerClose}
           nextStep={nextStep}
           step={step}
         /> */}
       {/* </model> */}
-      <AddbuyerDialog
-         open={isAddbuyer}
-         handleClose={handleaddbuyerClose}
-        />
+      <AddbuyerDialog open={isAddbuyer} handleClose={handleaddbuyerClose} />
+
+      <AssignmlsnumberDialog
+        open={isAddcontact}
+        handleClose={handleaddcontactClose}
+        title={'Edit Contact'}
+      />
+
     </>
   );
 };

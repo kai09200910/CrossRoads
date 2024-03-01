@@ -129,13 +129,23 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
               <Box
                 variant='div'
                 component='div'
-                className='btn add-doc-btn upload-wrapper'
+                className=''
               >
-                <TextField type='file' className='upload'></TextField>
+                {/* <TextField type='file' className='upload'></TextField>
                 <Typography variant='body1' component='span' className=''>
-                  <RiAddCircleFill size={20} />
+                  <RiAddLine  size={20} />
                   Add other buyer 
-                </Typography>
+                </Typography> */}
+                <Button
+                  variant='contained'
+                  size='large'
+                  autoFocus
+                  className='primary-btn btn add-other-buyer'
+                  startIcon={<RiAddFill size={16} />}
+                  // onClick={() => setIsAddcontact(true)}
+                >
+                  Add other buyer
+                </Button>
               </Box>
               <Box
                 variant='div'

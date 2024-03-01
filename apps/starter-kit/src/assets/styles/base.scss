@@ -1625,6 +1625,18 @@ header {
     }
   }
 }
+.primary-btn.btn.add-other-buyer{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #DFE8FA !important;
+  color: #2871FF !important;
+  border: 3px solid transparent;
+  height: 60px;
+  min-width: 190px;
+  border-radius: 8px !important;
+  font-weight: 700;
+}
 .add-note-modal {
   .MuiPopover-paper {
     .add-note-modal-inner {
@@ -1721,3 +1733,16 @@ header {
   }
 }
 // Listing filter Styles END//
+
+
+  .listing-profile-photo-wrap {
+    position: relative;
+    .upload {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      input {
+        opacity: 0;
+      }
+    }
+  }

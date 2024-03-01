@@ -45,7 +45,7 @@ const GeneralTab = () => {
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
 
   const options = [
-    { value: 'chocolate', label: 'Jhone Smith' },
+    { value: 'Jhone Smith', label: 'Jhone Smith' },
     { value: 'Robert Doe', label: 'Robert Doe' },
     { value: 'Victoria', label: 'Victoria' },
     { value: 'Joss Mackison', label: 'Joss Mackison' },
@@ -112,28 +112,28 @@ const GeneralTab = () => {
 
           <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
-              <label> Phone </label>
+              <label> Primary phone  </label>
               <TextField
                 fullWidth
                 id='phone'
                 type='number'
                 variant='outlined'
-                placeholder='Enter phone number'
+                placeholder='Enter Primary phone number'
               />
             </Box>
           </Grid>
-          {/* <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
-              <label>Mobile phone </label>
+              <label>Additional  phone </label>
               <TextField
                 fullWidth
                 id='mobile-phone'
                 type='number'
                 variant='outlined'
-                placeholder='Enter Mobile Phone'
+                placeholder='Enter Additional Phone'
               />
             </Box>
-          </Grid> */}
+          </Grid>
 
           <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
@@ -357,6 +357,19 @@ const GeneralTab = () => {
               </Select>
             </Box>
           </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <Box variant='div' component='div'>
+              <label>Company name </label>
+              <TextField
+                fullWidth
+                id='care-of'
+                label=''
+                variant='outlined'
+                placeholder='Enter Company Name'
+              />
+            </Box>
+          </Grid>
+          
 
           <Grid item xs={12} md={12}>
             <Box variant='div' component='div'>

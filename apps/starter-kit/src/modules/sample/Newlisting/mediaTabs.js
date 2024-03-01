@@ -6,10 +6,11 @@ import TabPanel from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
 import Tab, { tabClasses } from '@mui/base/Tab';
 import MediavideosTable from './mediatable/mediavideosTable';
-import Media3dtoursTable from './mediatable/media3dtoursTable';
-import MediawebsitesTable from './mediatable/mediawebsitesTable';
-import MediabrohuresTable from './mediatable/mediabrohuresTable';
+// import Media3dtoursTable from './mediatable/additionallinkTab';
+// import MediawebsitesTable from './mediatable/mediawebsitesTable';
+// import MediabrohuresTable from './mediatable/mediabrohuresTable';
 import MediaphotoTable from './mediatable/mediaphotosTable';
+import AdditionallinkTab from './mediatable/additionallinkTab';
 
 const MediaTabs = () => {
   return (
@@ -18,8 +19,8 @@ const MediaTabs = () => {
         <StyledTabsList>
           <StyledTab value={0}>Photos</StyledTab>
           <StyledTab value={1}>Videos</StyledTab>
-          {/* <StyledTab value={2}>3D Tours</StyledTab>
-          <StyledTab value={3}>Websites </StyledTab>
+          <StyledTab value={2}>Additional links</StyledTab>
+          {/* <StyledTab value={3}>Websites </StyledTab>
           <StyledTab value={4}>Brochures </StyledTab> */}
         </StyledTabsList>
 
@@ -29,10 +30,10 @@ const MediaTabs = () => {
         <StyledTabPanel value={1}>
           <MediavideosTable isAdmin={false} />
         </StyledTabPanel>
-        {/* <StyledTabPanel value={2}>
-          <Media3dtoursTable isAdmin={false} />
+        <StyledTabPanel value={2}>
+          <AdditionallinkTab isAdmin={false} />
         </StyledTabPanel>
-        <StyledTabPanel value={3}>
+        {/* <StyledTabPanel value={3}>
           <MediawebsitesTable isAdmin={false} />
         </StyledTabPanel>
         <StyledTabPanel value={4}>
@@ -119,10 +120,10 @@ const StyledTabPanel = styled(TabPanel)(
 const StyledTabsList = styled(TabsList)(
   ({ theme }) => `
   min-width: 250px;
-  width: 250px;
+  width: 410px;
   background-color: #fff;
   border-radius: 32px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;

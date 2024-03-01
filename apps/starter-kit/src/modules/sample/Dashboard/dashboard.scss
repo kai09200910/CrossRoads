@@ -117,7 +117,7 @@
   }
   .other-info {
     @media (min-width: 1650px) {
-      gap: 40px;
+      gap: 32px;
     }
     @media (max-width: 1100px) {
       flex-wrap: wrap;
@@ -138,16 +138,21 @@
           font-weight: 700;
           font-size: 14px;
           border-right: 1px solid #e3e3e3;
-          padding-right: 10px;
-          padding-left: 10px;
+          padding-right: 4px;
+          padding-left: 3px;
           &:last-child {
             border: none;
             padding-right: 0px;
           }
         }
-        svg {
+        svg{
           margin-right: 4px;
+        }
+        svg.approved {
           color: #00ff0a;
+        }
+        svg.pending {
+          color: #DBDBDB;
         }
         a {
           padding: 0;
@@ -155,7 +160,7 @@
           color: #292929;
           font-size: 14px;
           font-weight: 700;
-          padding-left: 10px;
+          padding-left: 4px;
         }
       }
     }
