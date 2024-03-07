@@ -1,863 +1,299 @@
-// Listing Doc Styles //
-.listing-doc-wrapper {
-  .title-wrap {
-    @media (max-width: 767px) {
-      flex-wrap: wrap;
-      gap: 12px;
-      padding-bottom: 16px;
-    }
-    p.progress-area {
-      font-size: 16px;
-      color: #292929;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      span {
-        color: #2871ff;
-        margin-right: 2px;
-        font-weight: 600;
-      }
-      span.MuiCircularProgress-root {
-        background-color: transparent;
-        position: relative;
-        width: 25px !important;
-        height: 25px !important;
-        margin-right: 4px;
-        &::before {
-          content: '';
-          width: 25px !important;
-          height: 25px !important;
-          border: 2px solid #e9e9e9;
-          border-radius: 50%;
-          position: absolute;
-          top: 1px;
-          right: 0px;
-          z-index: -1;
-        }
-      }
-      @media (max-width: 767px) {
-        width: 100%;
-        margin: 0;
-      }
-    }
-  }
+a {
+  color: #333;
+  font-size: 15px;
 }
-
-// Listing Doc Styles END //
-
-// Property Title Styles //
-.property-title-wrap {
-  .property-img {
-    border-radius: 10px;
-    overflow: hidden;
-    img {
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  margin-top: 16px;
+  @media (max-width: 992px) {
+    flex-wrap: wrap;
+  }
+  .small-box {
+    width: 50%;
+    background: #f7f8fa;
+    height: max-content;
+    @media (max-width: 1024px) {
+      // width: 24%;
+    }
+    @media (max-width: 992px) {
       width: 100%;
     }
-  }
-  .title-wrap {
-    @media (min-width: 1650px) {
-      padding-bottom: 42px;
+    @media (max-width: 520px) {
+      // width: 100%;
     }
-    .MuiChip-filled {
-      font-size: 10px;
-      height: 20px;
-      color: #fff;
-    }
-    .MuiChip-filled.green {
-      background-color: #009a6c;
-    }
-    .MuiChip-filled.orange {
-      background-color: #fd9800;
-    }
-    .MuiChip-filled.blue {
-      background-color: #1fbbec;
-    }
-  }
-  .property-info {
-    @media (min-width: 1650px) {
-      padding-bottom: 42px;
-    }
-    @media (max-width: 1024px) {
-      align-items: start;
-    }
-    @media (max-width: 767px) {
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: flex-start;
-      margin: 12px 0;
-    }
-    .info-wrap {
-      position: relative;
-      border-right: 1px solid #e3e3e3;
-      padding-right: 28px;
-      @media (min-width: 1650px) {
-        padding-right: 68px;
-      }
-      @media (max-width: 1024px) {
-        padding-right: 16px;
-      }
-      @media (max-width: 767px) {
-        border: none;
-        width: 37.33%;
-        margin: 0;
-      }
-      &:last-child {
-        border: none;
-        padding-right: 0px;
-      }
-      p {
-        font-weight: 600;
-      }
-      span {
-        font-size: 12px;
-        font-weight: 400;
-        color: #999;
-      }
-    }
-  }
-  .other-info {
-    @media (min-width: 1650px) {
-      gap: 32px;
-    }
-    @media (max-width: 1100px) {
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-    .address {
-      @media (max-width: 1100px) {
-        width: 100%;
-      }
-      p {
-        font-weight: 400;
-      }
-      .mls-info {
-        @media (min-width: 1650px) {
-          margin-top: 24px;
-        }
-        p {
-          font-weight: 700;
-          font-size: 14px;
-          border-right: 1px solid #e3e3e3;
-          padding-right: 4px;
-          padding-left: 3px;
-          &:last-child {
-            border: none;
-            padding-right: 0px;
-          }
-        }
-        svg{
-          margin-right: 4px;
-        }
-        svg.approved {
-          color: #00ff0a;
-        }
-        svg.pending {
-          color: #DBDBDB;
-        }
-        a {
-          padding: 0;
-          text-decoration: underline;
-          color: #292929;
-          font-size: 14px;
-          font-weight: 700;
-          padding-left: 4px;
-        }
-      }
-    }
-
-    .status-bar {
-      @media (max-width: 1100px) {
-        width: 100%;
-      }
-      @media (max-width: 575px) {
-        flex-wrap: wrap;
-        margin: 0;
-      }
-      .primary-btn-small {
-        @media (max-width: 575px) {
+    .salespipeline-wrapper {
+      .property-list {
+        padding: 12px;
+        background-color: #ececec;
+        border: 1px solid #d9d9d9;
+        .custom-select-menu-wrapper {
+          position: relative;
           width: 100%;
-          margin-top: 16px;
-          margin-left: 0;
+          .clock-icon {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 99;
+            display: inline-block;
+            font-size: 20px;
+            color: #fff;
+          }
+          .custom-select-menu {
+            .MuiSelect-select {
+              padding: 10px 12px 10px 36px !important;
+              border: none !important;
+              font-weight: 400;
+              // &::before {
+              //   content: '\1F550';
+              //   position: absolute;
+              //   left: 11px;
+              //   top: 10px;
+              //   z-index: 99;
+              //   display: inline-block;
+              //   font-size: 18px;
+              //   color: #fff;
+              // }
+            }
+            svg {
+              fill: #fff;
+            }
+            fieldset {
+              border: none;
+            }
+          }
         }
-      }
-      .status {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        @media (max-width: 320px) {
+        .status-title {
+          border-radius: 8px;
+          color: #fff;
           width: 100%;
-        }
-        svg {
-          color: #d9d9d9;
-        }
-        span {
-          font-weight: 600;
-          font-size: 12px;
-          line-height: 14px;
-          max-width: 75px;
-          min-width: 75px;
-        }
-        &::before {
-          content: '';
-          background-color: #d9d9d9;
-          border-radius: 12px;
-          height: 6px;
-          width: 36px;
-          position: absolute;
-          right: -22px;
-          top: 8px;
-          @media (max-width: 320px) {
-            right: 117px;
-            top: 66px;
-            width: 4px;
-            height: 47px;
+          height: 40px;
+          span {
+            font-size: 15px;
+            font-weight: 500;
           }
         }
-        &:last-child {
-          &::before {
-            display: none;
+        .status-title.approval-pending {
+          .MuiSelect-select {
+            background-color: #ff8a00;
           }
         }
-      }
-      .status.success {
-        svg {
-          color: #009a6c;
+        .status-title.active-listings {
+          background-color: #00c287;
         }
-        span {
-          color: #009a6c;
+        .status-title.offer-pening {
+          background-color: #7645ff;
         }
-        &::before {
-          background-color: #009a6c;
-        }
-      }
-      .status.fail {
-        svg {
-          color: #d60000;
-        }
-        span {
-          color: #d60000;
-        }
-      }
-      > .MuiStack-root {
-        @media (max-width: 320px) {
-          flex-wrap: wrap;
-          gap: 66px;
-        }
-      }
-    }
-  }
-  .btn-group {
-    .secondary-btn-small {
-      @media (max-width: 900px) {
-        margin-bottom: 12px;
-      }
-    }
-    .final-btn-group {
-      gap: 8px;
-      @media (max-width: 900px) {
-        flex-direction: revert;
-        gap: 12px;
-      }
-      @media (max-width: 575px) {
-        width: 100%;
-      }
-      @media (max-width: 320px) {
-        flex-wrap: wrap;
-      }
-    }
-    .btn {
-      height: 40px !important;
-      min-height: 40px !important;
-      width: 124px !important;
-      font-size: 13px;
-      @media (max-width: 575px) {
-        width: 50% !important;
-      }
-      @media (max-width: 320px) {
-        width: 100% !important;
-      }
-    }
-  }
-}
-// Property Title Styles END//
-
-// Property Detail Styles//
-.property-detail-wrap {
-  .propertytab-wrap {
-    @media (max-width: 767px) {
-      flex-wrap: wrap;
-      gap: 4px;
-      justify-content: flex-end;
-    }
-    > .MuiTabs-root {
-      @media (max-width: 767px) {
-        order: 2;
-        width: 100%;
-      }
-      .MuiTabs-fixed {
-        .MuiTabs-flexContainer {
-          @media (max-width: 767px) {
-            width: 100%;
-            min-width: inherit;
-            flex-wrap: wrap;
-            padding: 4px;
-            border-radius: 28px;
-          }
-          button.MuiButtonBase-root.MuiTab-root {
-            text-transform: capitalize;
-            font-weight: 700;
-            border-bottom: 4px solid transparent;
-            position: relative;
-            min-width: 124px;
-            &::after {
-              content: '';
-              width: 2px;
-              height: 30px;
-              background-color: #ebebeb;
-              position: absolute;
-              right: -1px;
-              @media (max-width: 767px) {
-                display: none;
-              }
-            }
-            &:hover {
-              background-color: rgba(40, 113, 255, 0.15);
-            }
-            @media (max-width: 767px) {
-              width: 100%;
-              border-bottom: 1px solid #ebebeb;
-              min-width: 100%;
-            }
-          }
-          button.Mui-selected {
-            background-color: rgba(40, 113, 255, 0.15);
-            border-color: #2871ff;
+        .status-title.under-contract {
+          .MuiSelect-select {
+            background-color: #00b3da;
           }
         }
-      }
-    }
-  }
-  .tab-content-wrap {
-    > .MuiBox-root {
-      @media (max-width: 767px) {
-        padding: 0;
-      }
-    }
-  }
-  ul.property-feature {
-    display: flex;
-    gap: 16px;
-    flex-direction: column;
-    li {
-      gap: 6px;
-      .MuiListItemIcon-root {
-        min-width: 22px;
-        svg {
+        .filter-btn {
+          background-color: #a5d4ff;
           color: #2871ff;
+          border-radius: 5px;
+          padding: 4px;
         }
-      }
-      .MuiListItemText-root {
-        span {
-          font-weight: 400;
-          font-size: 14px;
-        }
-      }
-    }
-  }
-  .link-btn {
-    font-weight: 600 !important;
-    color: #999999;
-  }
-  .primary-btn {
-    @media (max-width: 767px) {
-      width: inherit !important;
-    }
-  }
 
-  .marketing-tab-content-wrapper {
-    button.tab-btn {
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-direction: column;
-      background-color: #dfeaff !important;
-      color: #2871ff !important;
-      width: 100% !important;
-      font-size: 18px;
-      font-weight: 700;
-      border-radius: 10px !important;
-      transition: all ease 0.3s;
-      svg {
-        color: #2871ff;
-      }
-      &:hover {
-        background-color: #d8e5ff !important;
-      }
-    }
-    .link-btn {
-      font-weight: 600;
-      min-width: inherit;
-    }
-  }
-}
-.listing-history-table {
-  .edit-btn {
-    @media (max-width: 767px) {
-      justify-content: center;
-    }
-  }
-}
-// Property Detail Styles END//
-
-// Campaign Engagements Styles //
-.campaign-engagement-wrapper {
-  .section-title {
-    .section-sub-title {
-      font-weight: 600;
-      margin-top: 4px;
-      span {
-        margin-left: 4px;
-        font-weight: 600;
-      }
-    }
-  }
-  .primary-btn {
-    width: 100% !important;
-  }
-}
-// Campaign Engagements Styles END//
-
-.modal-dailog-wrapper.add-buyer-modal {
-  .MuiPaper-root {
-    .modal-dailog-footer {
-      justify-content: flex-end;
-    }
-    p.title-agent-detail {
-      color: #999999;
-      margin: 0;
-      font-weight: 600;
-      span {
-        font-weight: 600;
-        display: inline-flex;
-        button {
-          font-size: 15px;
-          padding: 0;
-          margin-left: 8px;
-          color: #999999;
-        }
-      }
-    }
-  }
-}
-
-// Approval Tab Styles //
-.approval-tab-content {
-  // .approval-status-bar {
-  //   justify-content: center;
-  //   margin: 16px 0 32px 0;
-  //   span {
-  //     color: #999999;
-  //   }
-  //   span.Mui-checked {
-  //     color: #2871ff;
-  //   }
-  //   .primary-btn-small {
-  //     background-color: #d7d7d7 !important;
-  //     color: #747474 !important;
-  //   }
-  //   .primary-btn-small.active {
-  //   }
-  // }
-  padding: 12px !important;
-  @media (min-width: 991px) and (max-width: 1025px) {
-    padding: 0px !important;
-  }
-  .approval-tab {
-    .tab-list-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      margin-bottom: 40px;
-      @media (max-width: 1150px) {
-        gap: 10px;
-      }
-      @media (max-width: 767px) {
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-bottom: 12px;
-      }
-      .approval-tab-list {
-        .MuiTabs-fixed {
-          text-align: center;
-          .MuiTabs-centered {
-            border: 1px solid #d9d9d9;
-            border-radius: 9px;
-            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-            display: inline-flex;
-            height: 48px;
-            padding: 4px;
-            gap: 4px;
-            @media (max-width: 600px) {
-              flex-wrap: wrap;
-              height: inherit;
-            }
-            button {
-              text-transform: capitalize;
-              font-weight: 600;
-              border-radius: 6px;
-              min-height: 40px !important;
-              flex-wrap: wrap;
-              gap: 6px;
-              @media (max-width: 600px) {
-                width: 49%;
-                height: 40px;
-              }
-              @media (max-width: 375px) {
-                padding: 12px 4px;
-              }
-              p {
-                font-weight: 600;
-                @media (max-width: 375px) {
-                  font-size: 13px;
+        .property-card-list {
+          max-height: calc(100vh - 370px);
+          overflow: auto;
+          display: grid;
+          // flex-wrap: wrap;
+          grid-gap: 20px;
+          width: 100%;
+          @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+            max-height: calc(100vh - 150px);
+          }
+          .card {
+            cursor: move;
+            width: 100%;
+            .property-card-wrap {
+              .property-img {
+                @media (max-width: 767px) {
+                  height: 150px !important;
+                }
+                img {
+                  width: 100% !important;
                 }
               }
-              &:hover {
-                color: #2871ff;
+              h4 {
+                text-align: left;
+                text-transform: capitalize;
+                margin-bottom: 12px;
+                font-size: 16px !important;
+              }
+              .property-info {
+                padding: 0;
+                @media (max-width: 1400px) {
+                  align-items: flex-start;
+                }
+                // @media (min-width: 900px) and (max-width: 991px) {
+                //   flex-wrap: wrap;
+                // }
+                @media (max-width: 520px) {
+                  flex-wrap: wrap;
+                  gap: 10px;
+                }
+                .info-wrap {
+                  text-align: left;
+                  border-right: none;
+                  @media (max-width: 520px) {
+                    margin: 0;
+                    padding: 0;
+                  }
+                  p,
+                  span {
+                    font-size: 12px !important;
+                  }
+                  p {
+                    font-weight: 700;
+                  }
+                  &:first-child {
+                    @media (min-width: 900px) and (max-width: 1024px) {
+                      padding-right: 8px;
+                    }
+                    @media (min-width: 900px) and (max-width: 991px) {
+                      padding: 0;
+                      border-right: none;
+                    }
+                  }
+
+                  &:nth-child(2) {
+                    @media (min-width: 900px) and (max-width: 1024px) {
+                      // margin-left: 12px;
+                    }
+                    @media (min-width: 900px) and (max-width: 991px) {
+                      // margin: 8px 0 0 0;
+                    }
+                  }
+                }
+              }
+              .property-other-info {
+                margin-top: 24px;
+                @media (max-width: 520px) {
+                  flex-wrap: wrap;
+                  gap: 16px;
+                  margin-top: 12px;
+                }
+                p {
+                  font-weight: 500;
+                  font-size: 14px;
+                  border-right: 1px solid #e3e3e3;
+                  padding-right: 16px;
+                  padding-left: 10px;
+                  &:last-child {
+                    border: none;
+                    padding-right: 0px;
+                  }
+                  &:first-child {
+                    padding-left: 0px;
+                  }
+                  @media (max-width: 520px) {
+                    margin: 0;
+                    font-size: 13px;
+                  }
+                }
+                svg {
+                  margin-right: 4px;
+                  color: #00ff0a;
+                }
+                a {
+                  padding: 0;
+                  text-decoration: underline;
+                  color: #292929;
+                  font-size: 14px;
+                  font-weight: 700;
+                  padding-left: 10px;
+                }
               }
             }
-            button.submited {
-              background-color: #e5f4f0;
-              color: #009a6c;
-            }
-            button.error {
-              background-color: #ff99001f;
-              color: #fd9800;
-            }
-            button.Mui-selected {
-              background: #2871ff;
-              color: #fff;
-              svg {
-                display: none;
-              }
-            }
-          }
-          span.MuiTabs-indicator {
-            display: none;
           }
         }
       }
-      .primary-btn-small {
-        background-color: #d7d7d7 !important;
-        color: #747474 !important;
-      }
-      .MuiButton-sizeSmall.active {
-        box-shadow: none;
-        background: #2871ff;
-      }
-    }
-    .MuiTabPanel-root {
-      @media (max-width: 575px) {
-        padding: 0;
-      }
-    }
-    .primary-btn {
-      @media (max-width: 375px) {
-        width: 100%;
-      }
     }
   }
-  .table-wrapper {
-    border-radius: 10px;
+}
+
+.recent-inquires-wrapper {
+  cursor: move;
+  .more-action-btn {
+    svg {
+      display: none;
+    }
+    .MuiInputBase-input.MuiOutlinedInput-input {
+      padding: 4px 10px 8px 10px !important;
+    }
+  }
+  .table-wrapper.scrollable-table {
+    border: none;
+    tbody {
+      height: 235px;
+      tr {
+        td,
+        th {
+          border-bottom: none !important;
+          padding: 12px 8px !important;
+        }
+      }
+    }
+
     table {
-      position: relative;
-      min-height: 185px;
       thead {
         tr {
-          th {
-            background-color: #fff !important ;
-            font-size: 14px !important;
-            padding: 8px 16px !important;
-          }
+          border-bottom: 1px solid rgba(224, 224, 224, 1);
         }
       }
-      tbody {
-        tr {
-          th,
-          td {
-            padding: 8px 16px !important;
-            // height: 50px !important;
-            font-size: 14px;
-          }
-          .MuiIconButton-root {
-            opacity: 0;
-            color: #2871ff;
-            @media (max-width: 575px) {
-              padding: 0 0 0 8px;
-            }
-          }
-          &:hover {
-            th,
-            td {
-              background-color: #dfeaff59;
-              color: #2871ff;
-            }
-            .MuiIconButton-root {
-              opacity: 1;
-            }
-          }
-          th.field-name {
-            p {
-              color: #999999;
-              font-size: 11px;
-            }
-            p.main-name {
-              color: #292929;
-              font-size: 14px;
-            }
-          }
-          td {
-            p.error {
-              font-size: 11px;
-              text-transform: uppercase;
-              font-weight: 600;
-              color: #d60000;
-            }
-            p.success {
-              font-size: 11px;
-              text-transform: uppercase;
-              font-weight: 600;
-              color: #009a6c;
-            }
-          }
+    }
+  }
+}
+.task-list-wrapper {
+  padding: 0;
+  .card-title {
+    padding: 16px 24px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .task-list {
+    .task-wrapper {
+      overflow: auto;
+      height: 295px;
+      .task {
+        padding: 12px 24px;
+        border-bottom: 1px solid #d9d9d9;
+        a {
+          margin-bottom: 8px !important;
+          font-weight: 500;
+          display: inline-block;
         }
-      }
-
-      .table-empty-state {
-        padding: 32px;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-
         p {
-          color: #999;
+          color: #6b7094;
+          font-size: 13px;
+          margin: 0;
           font-weight: 600;
         }
-        svg {
-          color: #999;
-          margin-bottom: 4px;
+        p.red {
+          color: #d60000;
         }
-      }
-    }
-  }
-  .ios-switch-custom {
-    margin: 0;
-  }
-
-  .small-input {
-    margin: 0 0 4px 0 !important;
-    .MuiInputBase-root.MuiOutlinedInput-root {
-      width: 300px;
-      input.MuiInputBase-input.MuiOutlinedInput-input {
-        padding: 4px 8px;
-        border-radius: 2px;
-        height: 32px;
-        box-sizing: border-box;
-        width: 300px;
-      }
-      fieldset.MuiOutlinedInput-notchedOutline {
-        border-style: dashed;
-        border-color: #b7b7b7;
-      }
-    }
-  }
-  .table-wrapper.listing-detail-table {
-    .small-input {
-      // display: none;
-    }
-    table {
-      tbody {
-        tr.resubmitted-approval {
-          th,
-          td {
-            background-color: #fff3f3;
-          }
-          td {
-            .note-label {
-              color: #d60000;
-              font-size: 12px;
-              font-weight: 600;
-            }
-          }
-          th {
-            .MuiIconButton-root {
-              display: none;
-            }
-            a.resubmition-btn {
-              color: #292929;
-              font-weight: 400;
-            }
-          }
+        &:last-child {
+          border-bottom: 0;
         }
-      }
-    }
-  }
-  .media-tab-content-wrapper {
-    .add-media-btn-wrapper {
-      @media (max-width: 1540px) {
-        position: unset !important;
-        margin-bottom: 8px;
       }
     }
   }
 }
 
-.media-tab-content-wrapper {
-  .add-media-btn-wrapper {
-    @media (max-width: 1475px) {
-      position: unset !important;
-      margin-bottom: 8px;
-    }
-    @media (max-width: 812px) {
-      position: unset !important;
-      margin-bottom: 8px;
-    }
+.commission-outline-wrapper {
+  min-height: 362px;
+  cursor: move;
+  .color-blue {
+    font-weight: 700;
+    margin-left: 4px;
   }
 }
-
-.table-wrapper.activity-table {
-  border-radius: 10px;
-  table {
-    thead {
-      tr {
-        th {
-          background: #999999;
-          background-color: #f9f9f9 !important ;
-          font-size: 12px !important;
-          padding: 4px 16px !important;
-          font-weight: 400 !important;
-        }
-      }
-    }
-    tbody {
-      tr {
-        th,
-        td {
-          padding: 8px 16px !important;
-          font-size: 11px;
-        }
-        .MuiIconButton-root {
-          color: #2871ff;
-        }
-      }
-    }
-  }
+.instagram-card,
+.social-media-card {
+  height: 360px;
+  cursor: move;
 }
-.table-with-footer {
-  tbody {
-    tr {
-      td {
-        .total-row {
-          p {
-            font-weight: 700 !important;
-            font-size: 14px !important;
-          }
-        }
-      }
-      .total-row {
-        font-weight: 700 !important;
-        font-size: 14px !important;
-      }
-    }
-  }
-}
-
-.t-report-wrapper {
-  p {
-    font-weight: 600;
-    font-size: 14px;
-    margin: 0;
-  }
-  span {
-    font-weight: 400;
-    font-size: 12px;
-    color: #999;
-  }
-}
-// Approval Tab Styles END//
-
-// Property Map Styles//
-.property-map {
-  padding: 0;
-  .map-container {
-    height: 310px;
-    .google-map-wrapper {
-      height: 310px;
-      > div {
-        height: 310px !important;
-      }
-    }
-  }
-}
-// Property Map Styles END//
-
-// Pending Fields Styles //
-
-.pending-fields-wrapper {
-  padding: 20px !important;
-  .table-wrapper {
-    table {
-      tbody {
-        tr {
-          cursor: pointer;
-          &:hover {
-          }
-          th {
-            background-color: #fff3f3;
-            a{
-              color: #333;
-              text-decoration: underline;
-            }
-          }
-          td {
-            background-color: #fff3f3;
-            padding: 5px 16px !important;
-            p.error {
-              text-align: center;
-            }
-           
-          }
-        }
-      }
-    }
-  }
-}
-.resubmit-document-dialog {
-  .upload-pending-document-area {
-    .custome-dropzone {
-      background-color: #fff;
-      padding: 0;
-      .MuiBox-root {
-        width: 100%;
-        .dropzone {
-          background-color: #fff;
-          border-radius: 6px;
-          height: 160px;
-        }
-      }
-      svg {
-        width: 40px;
-        height: 40px;
-      }
-    }
-  }
-  .modal-dailog-footer {
-    justify-content: flex-end !important;
-  }
-}
-// Pending Fields Styles END //

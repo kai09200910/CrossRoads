@@ -91,7 +91,7 @@ const NewListing = () => {
                         spacing={2}
                       >
                         <Typography variant='body1' component='p'>
-                          <Link className='resubmition-btn' to='/dashboard'>
+                          <Link className='resubmition-btn' to='/propertyview'>
                             {' '}
                             {row.listing}
                           </Link>

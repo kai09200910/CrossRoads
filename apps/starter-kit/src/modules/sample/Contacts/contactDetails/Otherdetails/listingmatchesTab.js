@@ -105,7 +105,7 @@ const ListingmatchesTab = () => {
                           <FormControlLabel control={<Checkbox />} label='' />
                           <Typography variant='body1' component='p'>
                             {' '}
-                            <Link to='/dashboard'>{row.listing}</Link>
+                            <Link to='/propertyview'>{row.listing}</Link>
                           </Typography>
                         </Stack>
                       </TableCell>

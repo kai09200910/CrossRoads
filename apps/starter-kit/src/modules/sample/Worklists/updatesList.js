@@ -191,7 +191,7 @@ const UpdatesList = () => {
                         component='p'
                         className='listing-number'
                       >
-                        <Link to='/dashboard'>{row.listing}</Link>
+                        <Link to='/propertyview'>{row.listing}</Link>
                       </Typography>
                     </TableCell>
                     <TableCell align='left'>

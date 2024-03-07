@@ -117,9 +117,9 @@ textarea.MuiInputBase-input.MuiOutlinedInput-input {
     }
   }
 }
-// fieldset.MuiOutlinedInput-notchedOutline {
-//   border-color: #e1e1e1;
-// }
+/* fieldset.MuiOutlinedInput-notchedOutline {
+  border-color: #e1e1e1;
+} */
 textarea {
   padding: 0 !important;
   border: 2px solid transparent;
@@ -131,7 +131,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 input[type='number'] {
-  -moz-appearance: textfield;
+  -webkit-appearance: textfield; /* Safari/Chrome/Opera */
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield; /* Standard */
   border: 2px solid transparent;
   font-weight: 600;
 }
@@ -142,16 +144,16 @@ input[type='number'] {
     background-color: #f3fffb;
     position: relative;
     padding-right: 36px;
-  }
-  &::before {
-    content: '\02714';
-    position: absolute;
-    right: 13px;
-    top: 10px;
-    z-index: 1;
-    display: inline-block;
-    font-size: 22px;
-    color: #009a6c;
+    &::before {
+      content: '\02714';
+      position: absolute;
+      right: 13px;
+      top: 10px;
+      z-index: 1;
+      display: inline-block;
+      font-size: 22px;
+      color: #009a6c;
+    }
   }
 }
 .MuiTextField-root.error {
@@ -176,8 +178,6 @@ input[type='number'] {
     span {
       font-weight: 600;
       font-size: 14px;
-    }
-    &::after {
     }
   }
   ul {
@@ -495,8 +495,10 @@ h4 {
     }
   }
 }
-
-// Add Document Button Styles //
+a.property-card-link-wrap{
+  text-decoration: none;
+}
+/* Add Document Button Styles */
 
 .add-doc-btn-grp {
   @media (max-width: 767px) {
@@ -606,16 +608,15 @@ h4 {
     }
   }
   svg {
-    // font-size: 22px !important;
     width: 30px;
     height: 23px;
     display: inline-block;
   }
 }
 
-// Add Document Button Styles END //
+/* Add Document Button Styles END  */
 
-// Modal Dailog Styles //
+/*  Modal Dailog Styles  */
 
 .modal-dailog-wrapper {
   .MuiPaper-root {
@@ -649,7 +650,6 @@ h4 {
         span {
           display: flex;
           color: #999;
-          // font-weight: 600;
           margin-bottom: 14px;
         }
         p {
@@ -712,9 +712,9 @@ h4 {
     }
   }
 }
-// Modal Dailog Styles END //
+/*  Modal Dailog Styles END */
 
-// Matching Contact Details Styles //
+/*  Matching Contact Details Styles  */
 .matching-contact-detail {
   position: relative;
   min-height: 100px;
@@ -737,9 +737,9 @@ h4 {
     padding: 24px 20px !important;
   }
 }
-// Matching Contact Details Styles END //
+/* Matching Contact Details Styles END  */
 
-// IOS Custom Switch Styles //
+/* IOS Custom Switch Styles  */
 .ios-switch-custom {
   padding: 0;
   box-sizing: border-box;
@@ -747,8 +747,6 @@ h4 {
   width: 64px;
   height: 40px;
   .MuiSwitch-switchBase {
-    // top: -4px;
-    // left: -4px;
     top: -5px;
     left: -5px;
     &:hover {
@@ -756,8 +754,6 @@ h4 {
     }
   }
   .MuiSwitch-switchBase.Mui-checked {
-    // top: -5px;
-    // left: -2px;
     top: -5px;
     left: -5px;
     .MuiSwitch-track {
@@ -765,30 +761,23 @@ h4 {
       opacity: 1;
     }
     .MuiSwitch-thumb {
-      // background-color: #fff;
       background-color: #2871ff;
     }
   }
   .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
     opacity: 1;
-    // background-color: #2871ff;
     background-color: #fff;
   }
   .MuiSwitch-track {
-    // width: 64px;
-    // height: 40px;
     width: 50px;
     height: 30px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid #6e6e6e;
     border-radius: 20px;
     background-color: #fff;
-    // background-color: transparent;
   }
   .MuiSwitch-thumb {
     box-sizing: border-box;
-    // width: 32px;
-    // height: 32px;
     width: 22px;
     height: 22px;
     background-color: #999999;
@@ -830,7 +819,7 @@ h4 {
     height: 22px;
   }
 }
-// IOS Custom Switch Styles END //
+/* IOS Custom Switch Styles END  */
 
 .app-content {
   padding-top: 0;
@@ -860,9 +849,8 @@ header {
   }
 }
 
-// Dropzone Styles //
+/* Dropzone Styles  */
 .custome-dropzone {
-  // height: 330px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -895,9 +883,9 @@ header {
     }
   }
 }
-// Dropzone Styles END //
+/*  Dropzone Styles END */
 
-// Breadcrumbs Styles //
+/* Breadcrumbs Styles  */
 .breadcrumb-wrap {
   ol {
     li {
@@ -916,9 +904,9 @@ header {
   }
 }
 
-// Breadcrumbs Styles END //
+/* Breadcrumbs Styles END  */
 
-// Media Table Styles //
+/* Media Table Styles  */
 .media-table-wrapper {
   position: relative;
   .view-action {
@@ -993,9 +981,6 @@ header {
           }
           td.action {
             text-align: center;
-            svg {
-              // color: #b0b0b0;
-            }
           }
         }
       }
@@ -1102,9 +1087,9 @@ header {
 .red {
   color: #d60000;
 }
-// Media Table Styles END //
+/* Media Table Styles END  */
 
-// Table Styles //
+/* Table Styles  */
 
 .table-wrapper {
   border: 1px solid #d7d7d7;
@@ -1172,7 +1157,7 @@ header {
     height: 500px;
   }
 }
-// Table Styles END //
+/* Table Styles END  */
 
 .MuiPaper-root.MuiPaper-rounded {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2) !important;
@@ -1235,7 +1220,7 @@ header {
     }
   }
 }
-// Upload Area & Doc List Styles //
+/* Upload Area & Doc List Styles  */
 .disapproval-feedback-dailog {
   .MuiPaper-root {
     .modal-dailog-footer {
@@ -1245,7 +1230,7 @@ header {
       padding: 0;
       background-color: #fff;
       border-radius: 8px;
-      // border: 1px solid #e1e1e1;
+      /*  border: 1px solid #e1e1e1; */
       height: 140px;
       .MuiBox-root {
         width: 100%;
@@ -1313,9 +1298,9 @@ header {
     }
   }
 }
-// Upload Area & Doc List Styles END //
+/* Upload Area & Doc List Styles END  */
 
-// Tab list and Tab panel Styles //
+/* Tab list and Tab panel Styles */
 .tab-list-wrapper {
   .tab-list {
     margin: 8px 0 8px 0;
@@ -1386,10 +1371,44 @@ header {
       height: calc(100vh - 267px);
     }
   }
+  .additional-phone{
+    position: relative;
+    .add-more-btn{
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #2871ff;
+      font-weight: 500;
+    }
+    
+  }
+  .additional-phone.appended {    
+    label{
+      display: none;
+    }
+    .remove-btn{
+      position: absolute;
+      top: 11px;
+      right: 10px;
+      z-index: 1;
+      color: #d60000;
+      font-weight: 500;
+      border: none;
+      background-color: transparent;
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover{
+        background-color: transparent !important;
+      }
+    }
+    .MuiInputBase-input.MuiOutlinedInput-input{
+      padding: 8.5px 68px  8.5px 10px !important;
+    }
+  }
 }
-// Tab list and Tab panel Styles END //
+/* Tab list and Tab panel Styles END */
 
-// Editable text field Styles //
+/* Editable text field Styles */
 .editable-text-field {
   border: 3px dashed #2871ff;
   background-color: #e0eaff;
@@ -1421,7 +1440,7 @@ header {
     }
   }
 }
-// Editable text field Styles END //
+/* Editable text field Styles END */
 
 .notification-block {
   .MuiMenu-paper {
@@ -1435,7 +1454,7 @@ header {
     width: 100%;
   }
 }
-// Navbar|Sidebar Styles //
+/* Navbar|Sidebar Styles  */
 .app-sidebar {
   .simplebar-wrapper {
     .simplebar-content {
@@ -1496,7 +1515,6 @@ header {
             padding: 8px 12px 8px 40px;
             span.nav-item-text {
               font-size: 14px !important;
-              // font-weight: 600;
             }
             &:hover {
               background-color: #dfe8fa !important;
@@ -1549,9 +1567,9 @@ header {
 .simplebar-content-wrapper {
   height: calc(100vh - 148px) !important;
 }
-// Navbar|Sidebar Styles END //
+/* Navbar| Sidebar Styles END  */
 
-// Coming Soon Styles//
+/* Coming Soon Styles */
 .coming-soon-screen {
   padding: 50px;
   text-align: center;
@@ -1579,9 +1597,9 @@ header {
     }
   }
 }
-// Coming Soon Styles END //
+/* Coming Soon Styles END  */
 
-// Add Buyer with Add Contact Styles//
+/* Add Buyer with Add Contact Styles */
 .modal-dailog-wrapper.add-contact-modal {
   .MuiFormControl-root {
     width: 100%;
@@ -1614,9 +1632,9 @@ header {
     }
   }
   .MuiDialogActions-root.MuiDialogActions-spacing {
-    // .MuiStack-root{
-    //   width: 100%;
-    // }
+    /* .MuiStack-root{
+      width: 100%;
+    } */
 
     .primary-btn {
       @media (max-width: 475px) {
@@ -1625,12 +1643,12 @@ header {
     }
   }
 }
-.primary-btn.btn.add-other-buyer{
+.primary-btn.btn.add-other-buyer {
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: #DFE8FA !important;
-  color: #2871FF !important;
+  background-color: #dfe8fa !important;
+  color: #2871ff !important;
   border: 3px solid transparent;
   height: 60px;
   min-width: 190px;
@@ -1657,11 +1675,42 @@ header {
       min-width: 95%;
     }
   }
+  .buyer-info {
+    .buyer-basic-info {
+      position: relative;
+      margin-bottom: 12px;
+      .remove-btn {
+        position: absolute;
+        top: 8px;
+        width: 95px;
+      }
+    }
+  }
+  .buyer-name {
+    span,
+    a {
+      color: #999999;
+      font-weight: 500;
+      text-decoration-color: #999999;
+    }
+    a {
+      cursor: pointer;
+    }
+  }
+  .btn.Mui-disabled {
+    opacity: 0.5;
+  }
+}
+.remove-btn {
+  background-color: #f7d1d1;
+  &:hover {
+    background-color: #f8c4c4 !important;
+  }
 }
 
-// Add Buyer with Add Contact Styles END//
+/* Add Buyer with Add Contact Styles END */
 
-// Listing filter Styles END//
+/* Listing filter Styles END */
 .dashboard-wrap,
 .all-listing-wrapper {
   position: relative;
@@ -1719,30 +1768,149 @@ header {
     }
   }
 }
+.bed-bath-menu {
+  padding: 16px 16px 6px 16px;
+  .bed-selection , .bath-selection{
+    width: 50%;
+  }
+  .bed-bath-apply-btn {
+    display: block;
+    position: unset;
+    margin-top: 16px;
+    width: 100%;
+  }
+}
 .all-listing-wrapper {
   .listing-fillter {
     position: unset;
     padding: 8px 0px 8px 0px;
     background-color: transparent;
     box-shadow: none;
-    .fillter-menu-list {
-    }
     button {
       display: none;
     }
   }
 }
-// Listing filter Styles END//
-
-
-  .listing-profile-photo-wrap {
-    position: relative;
-    .upload {
-      position: absolute;
-      width: 100%;
-      left: 0;
-      input {
-        opacity: 0;
+.fillter-switch.ios-switch-custom {
+  padding: 0;
+  box-sizing: border-box;
+  height: 48px;
+  width: initial;
+  .MuiSwitch-switchBase {
+    top: -4px;
+    left: -4px;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .MuiSwitch-switchBase.Mui-checked {
+    right: -35px;
+    .MuiSwitch-track {
+      background-color: #2871ff;
+      opacity: 1;
+    }
+    .MuiSwitch-thumb {
+      background-color: #2871ff;
+      color: #fff;
+      &::before {
+        content: 'Oldest';
+        position: absolute;
+        display: inline-block;
+        top: 11px;
+        left: 13px;
       }
     }
   }
+  .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+    opacity: 1;
+  }
+  .MuiSwitch-track {
+    width: 150px;
+    height: 48px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    background-color: #fff !important;
+    box-shadow: none;
+    opacity: 1;
+    &::before {
+      content: 'Newest';
+      position: absolute;
+      display: inline-block;
+      top: 16px;
+      left: 16px;
+      color: #292929;
+    }
+    &::after {
+      content: 'Oldest';
+      position: absolute;
+      display: inline-block;
+      top: 16px;
+      right: 16px;
+      color: #292929;
+    }
+  }
+  .MuiSwitch-thumb {
+    box-sizing: border-box;
+    width: 73px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #2871ff;
+    box-shadow: none;
+    position: relative;
+    &::before {
+      content: 'Newest';
+      position: absolute;
+      display: inline-block;
+      top: 11px;
+      left: 11px;
+    }
+  }
+}
+/* Listing filter Styles END */
+
+.listing-profile-photo-wrap {
+  position: relative;
+  .upload {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    input {
+      opacity: 0;
+    }
+  }
+}
+
+/* Contact Detail View Styles */
+.contact-view-dialog {
+  .MuiPaper-root {
+    min-width: 765px;
+    @media (max-width: 767px) {
+      min-width: 95%;
+    }
+    .contact-tab {
+      .MuiTabPanel-root {
+        padding: 0;
+        .tab-content-wrapper {
+          .MuiGrid-container {
+            margin-top: 0 !important;
+          }
+        }
+      }
+    }
+  }
+}
+.field-value {
+  span {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #999999;
+  }
+}
+/* Contact Detail View END */

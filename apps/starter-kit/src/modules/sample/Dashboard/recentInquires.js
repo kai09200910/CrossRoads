@@ -23,16 +23,13 @@ function createData(name, date, property, action) {
 }
 
 const rows = [
-  createData('John Smith   ', '05/07/24'),
-  createData('John Smith  ', '05/07/24'),
-  createData('John Smith  ', '05/07/24'),
-  createData('John Smith   ', '05/07/24'),
-  createData('John Smith   ', '05/07/24'),
-  createData('John Smith  ', '05/07/24'),
-  createData('John Smith  ', '05/07/24'),
+  createData('John Smith   ', '05/07/24', 'NS26157 '),
+  createData('John Smith  ', '05/07/24', 'NS26157 '),
+  createData('John Smith  ', '05/07/24', 'NS26157 '),
+  createData('John Smith   ', '05/07/24', 'NS26157 '),
 ];
 
-const NewLeads = () => {
+const RecentInquires = () => {
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   const navigate = useNavigate();
@@ -54,16 +51,26 @@ const NewLeads = () => {
           }}
         >
           <Typography variant='h4' component='h4'>
-            New Leads
+            Recent Inquires
           </Typography>
-          <Button
-            variant='outlined'
-            size='small'
-            className='edit-btn secondary-btn-small'
-            // onClick={() => setIsEventview(true)}
+
+          <Select
+            id='demo-simple-select'
+            value={value}
+            defaultValue='none'
+            onChange={(e) => setValue(e.target.value)}
+            onFocus={(e) => setShowPlaceholder(false)}
+            onClose={(e) => setShowPlaceholder(e.target.value === undefined)}
+            IconComponent={RiArrowDownSLine}
+            className='more-action-btn'
           >
-            View All
-          </Button>{' '}
+            <MenuItem key='0' disabled value='none' className='place-holder'>
+              ---
+            </MenuItem>
+            <MenuItem value={20}>Action 1</MenuItem>
+            <MenuItem value={30}>Action 2 </MenuItem>
+            <MenuItem value={40}>Action 3</MenuItem>
+          </Select>
         </Stack>
 
         <Box variant='div' component='div' className='recent-inquiry-list'>
@@ -72,11 +79,13 @@ const NewLeads = () => {
             className='table-wrapper scrollable-table'
           >
             <TableContainer>
-              <Table sx={{ minWidth: 220 }} aria-label='simple table'>
+              <Table sx={{ minWidth: 430 }} aria-label='simple table'>
                 <TableHead>
                   <TableRow>
                     <TableCell>Name</TableCell>
                     <TableCell align='left'>Date</TableCell>
+                    <TableCell align='left'>Property</TableCell>
+                    <TableCell align='right'></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -88,9 +97,23 @@ const NewLeads = () => {
                       }}
                     >
                       <TableCell component='th' scope='row'>
-                      <Link  to='/contacts/details'>{row.name} </Link>
+                        {row.name}
                       </TableCell>
                       <TableCell align='left'>{row.date}</TableCell>
+                      <TableCell align='left'>
+                        <Link  to='/propertyview'>{row.property}</Link>
+                      </TableCell>
+                      <TableCell align='right'>
+                        {' '}
+                        <Button
+                          variant='outlined'
+                          size='small'
+                          className='edit-btn secondary-btn-small'
+                          // onClick={() => setIsEventview(true)}
+                        >
+                          View
+                        </Button>{' '}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -103,4 +126,4 @@ const NewLeads = () => {
   );
 };
 
-export default NewLeads;
+export default RecentInquires;

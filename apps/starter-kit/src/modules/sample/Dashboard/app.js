@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-
 import {
   Box,
   Stack,
-  Typography,
   Paper,
   IconButton,
-  Select, 
-  MenuItem, 
+  Select,
+  MenuItem,
 } from '@mui/material';
 import { RiArrowDownSLine, RiFilter3Line, RiTimeLine } from 'react-icons/ri';
 import PropertyCard from './propertyCard';
-import './salespipeline.scss';
+import './dashboard.scss';
 import Filters from '../common/filters';
+import { Link } from 'react-router-dom';
 
 class TaskList extends React.Component {
   state = {
@@ -153,24 +152,34 @@ class TaskList extends React.Component {
                       <Box className=' property-card-list'>
                         {approvalPending.map((task) => (
                           <>
-                            <Box
-                              id={task.id}
-                              draggable
-                              onDragStart={(e) => this.onDragStart(e)}
-                              onDragEnd={(e) => this.onDragEnd(e)}
-                              className='card'
+                            <Link
+                              to='/propertyview'
+                              className='property-card-link-wrap'
                             >
-                              <PropertyCard />
-                            </Box>
-                            <Box
-                              id={task.id + '_duplicate'} // Using a different key for the duplicate element
-                              draggable
-                              onDragStart={(e) => this.onDragStart(e)}
-                              onDragEnd={(e) => this.onDragEnd(e)}
-                              className='card'
+                              <Box
+                                id={task.id}
+                                draggable
+                                onDragStart={(e) => this.onDragStart(e)}
+                                onDragEnd={(e) => this.onDragEnd(e)}
+                                className='card'
+                              >
+                                <PropertyCard />
+                              </Box>
+                            </Link>
+                            <Link
+                              to='/propertyview'
+                              className='property-card-link-wrap'
                             >
-                              <PropertyCard />
-                            </Box>
+                              <Box
+                                id={task.id + '_duplicate'} // Using a different key for the duplicate element
+                                draggable
+                                onDragStart={(e) => this.onDragStart(e)}
+                                onDragEnd={(e) => this.onDragEnd(e)}
+                                className='card'
+                              >
+                                <PropertyCard />
+                              </Box>
+                            </Link>
                           </>
                         ))}
                       </Box>
@@ -239,33 +248,48 @@ class TaskList extends React.Component {
                       <Box className=' property-card-list'>
                         {activeListings.map((task) => (
                           <>
-                            <Box
-                              id={task.id}
-                              draggable
-                              onDragStart={(e) => this.onDragStart(e)}
-                              onDragEnd={(e) => this.onDragEnd(e)}
-                              className='card'
+                            <Link
+                              to='/propertyview'
+                              className='property-card-link-wrap'
                             >
-                              <PropertyCard />
-                            </Box>
-                            <Box
-                              id={task.id}
-                              draggable
-                              onDragStart={(e) => this.onDragStart(e)}
-                              onDragEnd={(e) => this.onDragEnd(e)}
-                              className='card'
+                              <Box
+                                id={task.id}
+                                draggable
+                                onDragStart={(e) => this.onDragStart(e)}
+                                onDragEnd={(e) => this.onDragEnd(e)}
+                                className='card'
+                              >
+                                <PropertyCard />
+                              </Box>
+                            </Link>
+                            <Link
+                              to='/propertyview'
+                              className='property-card-link-wrap'
                             >
-                              <PropertyCard />
-                            </Box>
-                            <Box
-                              id={task.id}
-                              draggable
-                              onDragStart={(e) => this.onDragStart(e)}
-                              onDragEnd={(e) => this.onDragEnd(e)}
-                              className='card'
+                              <Box
+                                id={task.id}
+                                draggable
+                                onDragStart={(e) => this.onDragStart(e)}
+                                onDragEnd={(e) => this.onDragEnd(e)}
+                                className='card'
+                              >
+                                <PropertyCard />
+                              </Box>
+                            </Link>
+                            <Link
+                              to='/propertyview'
+                              className='property-card-link-wrap'
                             >
-                              <PropertyCard />
-                            </Box>
+                              <Box
+                                id={task.id}
+                                draggable
+                                onDragStart={(e) => this.onDragStart(e)}
+                                onDragEnd={(e) => this.onDragEnd(e)}
+                                className='card'
+                              >
+                                <PropertyCard />
+                              </Box>
+                            </Link>
                           </>
                         ))}
                       </Box>

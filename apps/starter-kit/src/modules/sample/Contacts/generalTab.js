@@ -17,6 +17,7 @@ import { RiArrowDownSLine } from 'react-icons/ri';
 import TagsInput from '../common/tagsInput';
 import MatchingContacts from '../common/matchingContacts';
 import ReactSelect from 'react-select';
+import { Link } from 'react-router-dom';
 
 const GeneralTab = () => {
   function handleSelecetedTags(items) {}
@@ -55,11 +56,25 @@ const GeneralTab = () => {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
+  const [phoneInputs, setPhoneInputs] = useState([
+    { id: 0, isRemoveVisible: false },
+  ]);
+
+  const addPhoneInput = () => {
+    const newId = phoneInputs.length;
+    setPhoneInputs([...phoneInputs, { id: newId, isRemoveVisible: true }]);
+  };
+
+  const removePhoneInput = (id) => {
+    const updatedInputs = phoneInputs.filter((input) => input.id !== id);
+    setPhoneInputs(updatedInputs);
+  };
+
   return (
     <>
       <Box className='genral-tab'>
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid item xs={12} sm={4} md={5}>
             <Box variant='div' component='div'>
               <label>First name </label>
               <TextField
@@ -71,7 +86,19 @@ const GeneralTab = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid item xs={12} sm={4} md={2}>
+            <Box variant='div' component='div'>
+              <label>Middle name </label>
+              <TextField
+                fullWidth
+                id='first-name'
+                label=''
+                variant='outlined'
+                placeholder='Middle name'
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={4} md={5}>
             <Box variant='div' component='div'>
               <label>Last name </label>
               <TextField
@@ -84,35 +111,10 @@ const GeneralTab = () => {
             </Box>
           </Grid>
         </Grid>
-        <Grid container spacing={5} mt={3}>
-          {/* <Grid item xs={12} md={6}>
-            <Box variant='div' component='div'>
-              <label>Nick name</label>
-              <TextField
-                fullWidth
-                id='nick-name'
-                label=''
-                variant='outlined'
-                placeholder='Enter Nick Name'
-              />
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Box variant='div' component='div'>
-              <label>Spouse name </label>
-              <TextField
-                fullWidth
-                id='spouse-name'
-                label=''
-                variant='outlined'
-                placeholder='Enter Spouse Name'
-              />
-            </Box>
-          </Grid> */}
-
+        <Grid container spacing={2} mt={3}>
           <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
-              <label> Primary phone  </label>
+              <label> Primary phone </label>
               <TextField
                 fullWidth
                 id='phone'
@@ -122,19 +124,41 @@ const GeneralTab = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Box variant='div' component='div'>
-              <label>Additional  phone </label>
-              <TextField
-                fullWidth
-                id='mobile-phone'
-                type='number'
-                variant='outlined'
-                placeholder='Enter Additional Phone'
-              />
-            </Box>
-          </Grid>
 
+          {phoneInputs.map((input) => (
+            <Grid item xs={12} md={6} key={input.id}>
+              <Box
+                variant='div'
+                component='div'
+                className={`additional-phone${
+                  input.isRemoveVisible ? ' appended' : ''
+                }`}
+              >
+                 <label>Additional phone</label>
+                {input.isRemoveVisible ? (
+                  <button
+                    className='remove-btn'
+                    onClick={() => removePhoneInput(input.id)}
+                  >
+                    Remove
+                  </button>
+                ) : (
+                  <Link to='' className='add-more-btn' onClick={addPhoneInput}>
+                    Add More
+                  </Link>
+                )}
+                <TextField
+                  fullWidth
+                  id={`mobile-phone-${input.id}`}
+                  type='number'
+                  variant='outlined'
+                  placeholder={`Enter Additional Phone ${input.id + 1}`}
+                />
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container spacing={5} mt={0}>
           <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Email </label>
@@ -261,31 +285,6 @@ const GeneralTab = () => {
             </Box>
           </Grid>
 
-          {/* <Grid item xs={12} md={6}>
-            <Box variant='div' component='div'>
-              <label>Office location </label>
-              <TextField
-                fullWidth
-                id='care-of'
-                label=''
-                variant='outlined'
-                placeholder='Add location '
-              />
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Box variant='div' component='div'>
-              <label>Website </label>
-              <TextField
-                fullWidth
-                id='outlined-basic'
-                label=''
-                variant='outlined'
-                placeholder='Enter website URL'
-              />
-            </Box>
-          </Grid> */}
-
           <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label>Care of</label>
@@ -369,7 +368,6 @@ const GeneralTab = () => {
               />
             </Box>
           </Grid>
-          
 
           <Grid item xs={12} md={12}>
             <Box variant='div' component='div'>

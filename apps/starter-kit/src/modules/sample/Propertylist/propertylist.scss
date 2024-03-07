@@ -11,83 +11,6 @@
   }
 }
 
-.fillter-switch.ios-switch-custom {
-  padding: 0;
-  box-sizing: border-box;
-  height: 48px;
-  width: initial;
-  .MuiSwitch-switchBase {
-    top: -4px;
-    left: -4px;
-    &:hover {
-      background-color: transparent;
-    }
-  }
-  .MuiSwitch-switchBase.Mui-checked {
-    right: -35px;
-    .MuiSwitch-track {
-      background-color: #2871ff;
-      opacity: 1;
-    }
-    .MuiSwitch-thumb {
-      background-color: #2871ff;
-      color: #fff;
-      &::before {
-        content: 'Oldest';
-        position: absolute;
-        display: inline-block;
-        top: 11px;
-        left: 13px;
-      }
-    }
-  }
-  .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
-    opacity: 1;
-  }
-  .MuiSwitch-track {
-    width: 150px;
-    height: 48px;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-    border: 1px solid #d9d9d9;
-    border-radius: 25px;
-    background-color: #fff !important;
-    box-shadow: none;
-    opacity: 1;
-    &::before {
-      content: 'Newest';
-      position: absolute;
-      display: inline-block;
-      top: 16px;
-      left: 16px;
-      color: #292929;
-    }
-    &::after {
-      content: 'Oldest';
-      position: absolute;
-      display: inline-block;
-      top: 16px;
-      right: 16px;
-      color: #292929;
-    }
-  }
-  .MuiSwitch-thumb {
-    box-sizing: border-box;
-    width: 73px;
-    height: 40px;
-    border-radius: 25px;
-    background-color: #2871ff;
-    box-shadow: none;
-    position: relative;
-    &::before {
-      content: 'Newest';
-      position: absolute;
-      display: inline-block;
-      top: 11px;
-      left: 11px;
-    }
-  }
-}
-
 .property-card-wrap {
   border-radius: 6px;
   overflow: hidden;
@@ -170,6 +93,7 @@
   @media (max-width: 991px) {
     height: calc(100vh - 80px);
   }
+
 }
 
 .advanced-search {

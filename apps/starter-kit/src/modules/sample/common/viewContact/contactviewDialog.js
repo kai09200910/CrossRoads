@@ -1,57 +1,43 @@
 import React, { useState } from 'react';
+import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import { Box, Button, IconButton, Stack, Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import { Box, Grid } from '@mui/material';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import GeneralTab from './generalTab';
-import NotesTab from './notesTab';
 import PersonalinfoTab from './personalinfoTab';
-import { RiArrowLeftSLine } from 'react-icons/ri';
+import NotesTab from './notesTab';
 
-const EventviewDialog = ({ open, handleClose, title }) => {
+const ContactviewDialog = ({ open, handleClose }) => {
   const [value, setValue] = React.useState('1');
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <Box>
       <Dialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'
         open={open}
-        className='modal-dailog-wrapper add-contact-modal'
+        className='modal-dailog-wrapper contact-view-dialog'
       >
         <DialogTitle
           sx={{ m: 0, p: 2 }}
           id='customized-dialog-title'
           className='modal-dailog-title'
         >
-          <Stack
-            direction='row'
-            justifyContent='flex-start'
-            alignItems='center'
-            spacing={4}
-          >
-            <IconButton
-              aria-label='close'
-              className='back-btn'
-              disableRipple
-              onClick={handleClose}
-            >
-              <RiArrowLeftSLine />
-            </IconButton>
-            {title}
-          </Stack>
+          Contact View
         </DialogTitle>
         <DialogContent className='modal-dailog-content'>
-          <>
-            <Box className='add-contact-tab contact-tab'>
+
+        <Box className='contact-tab'>
               <TabContext value={value}>
                 <Box className='tab-list-wrapper'>
                   <TabList
@@ -67,6 +53,7 @@ const EventviewDialog = ({ open, handleClose, title }) => {
                       }
                       value='1'
                     />
+                   
                     <Tab
                       label={
                         <>
@@ -96,40 +83,22 @@ const EventviewDialog = ({ open, handleClose, title }) => {
                 </TabPanel>
               </TabContext>
             </Box>
-          </>
         </DialogContent>
-
-        <DialogActions align='right' className=''>
-          <Stack
-            direction='row'
-            justifyContent='flex-end'
-            alignItems='center'
-            spacing={2}
-            sx={{
-              padding: { xs: 3, sm: 6, xl: 6 },
-            }}
+        <DialogActions align='right' className='modal-dailog-footer'>
+          {/* <Button
+            variant='contained'
+            size='large'
+            autoFocus
+            onClick={handleClose}
+            className='primary-btn btn'
+            sx={{ marginTop: 2 }}
           >
-            <Button
-              variant='outlined'
-              size='large'
-              className='outline-btn btn'
-              onClick={handleClose}
-            >
-              Close
-            </Button>
-            <Button
-              variant='contained'
-              size='large'
-              autoFocus
-              className='primary-btn btn'
-            >
-              Save changes
-            </Button>
-          </Stack>
+            Send for approval
+          </Button> */}
         </DialogActions>
       </Dialog>
     </Box>
   );
 };
 
-export default EventviewDialog;
+export default ContactviewDialog;

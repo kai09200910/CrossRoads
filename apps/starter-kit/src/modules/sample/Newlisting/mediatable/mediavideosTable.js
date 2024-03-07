@@ -177,7 +177,7 @@ const Row = SortableElement(({ data, ...other }) => {
         </TableCell>
         <TableCell>
           {' '}
-          <Stack
+          {/* <Stack
             direction='row'
             justifyContent='flex-start'
             alignItems='center'
@@ -189,7 +189,18 @@ const Row = SortableElement(({ data, ...other }) => {
               checked={true}
             />
             <FormControlLabel control={<Checkbox />} label='No  ' />
-          </Stack>
+          </Stack> */}
+          <FormControlLabel
+            control={
+              <Switch
+                sx={{ m: 1 }}
+                className='ios-switch-custom'
+                focusVisibleClassName='.Mui-focusVisible'
+                disableRipple
+              />
+            }
+            label=''
+          />
         </TableCell>
         <TableCell className='action'>
           {/* <RiDeleteBinLine size={24} /> */}

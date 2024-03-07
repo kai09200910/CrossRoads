@@ -2,8 +2,6 @@ import React from 'react';
 import { Box, Container, Paper, Typography } from '@mui/material';
 import ComingsoonComponent from '../common/comingsoonComponent';
 
-// import './contacts.scss';
-
 const MyTransfers = () => {
   return (
     <>
