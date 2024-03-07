@@ -93,6 +93,7 @@ const BuyerDialog = ({ open, handleClose, step }) => {
                 Add contact
               </Button> */}
             <Grid container spacing={5} mt={2}>
+           
               <Grid item xs={12} sm={6} md={12}>
                 <Box variant='Box' component='Box'>
                   <label>Sold price</label>

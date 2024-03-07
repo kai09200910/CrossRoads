@@ -11,20 +11,12 @@ const routesConfig = [
     type: 'group',
     children: [
       {
-        id: 'dashboard',
+        id: 'Dashboard',
         title: 'Dashboard',
-        messageId: 'sidebar.sample.dashboard',
+        messageId: 'Dashboard',
         type: 'item',
         icon: <RiLayoutGridFill />,
         url: '/dashboard',
-      },
-      {
-        id: 'salespipeline',
-        title: 'salespipeline',
-        messageId: 'Salespipeline',
-        type: 'item',
-        icon: <RiLayoutGridFill />,
-        url: '/salespipeline',
       },
       {
         id: 'listing',

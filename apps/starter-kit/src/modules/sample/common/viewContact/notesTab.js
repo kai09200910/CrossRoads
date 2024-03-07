@@ -8,93 +8,64 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 import { RiErrorWarningFill } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
-// import AddPopover from '../../../common/addPopover';
 
-function createData(listing, info, date, comments) {
+
+function createData(date, by, note) {
   return {
-    listing,
-    info,
     date,
-    comments,
+    by,
+    note,
   };
 }
 
 const rows = [
   createData(
-    'NS1246',
-    'Lot#7823, Bahama Sound, EX, 15000 0 BD / 0 BA',
     '12/05/24',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ',
+    'John Smith',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
   ),
   createData(
-    'NS1246',
-    'Lot#7823, Bahama Sound, EX, 15000 0 BD / 0 BA',
     '12/05/24',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ',
+    'John Smith',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
   ),
   createData(
-    'NS1246',
-    'Lot#7823, Bahama Sound, EX, 15000 0 BD / 0 BA',
     '12/05/24',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ',
+    'John Smith',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ',
   ),
 ];
 
-const InquiriesTab = () => {
+const NotesTab = () => {
   return (
     <>
-      <Box className='notes-tab tab-content-wrapper'>
-        <Stack
-          direction='row'
-          justifyContent='space-between'
-          alignItems='center'
-          spacing={2}
-          className='main-title'
-        >
-          <Typography variant='h3' component='h3'>
-            Inquiries
-          </Typography>
-
-          {/* <Stack
-            direction='row'
-            justifyContent='flex-end'
-            alignItems='flex-start'
-            spacing={1}
-            className='add-note-btn-wrapper'
-          >
-            <AddPopover />
-          </Stack> */}
-        </Stack>
-
+      <Box className='notes-tab'  mt={4}>
         <Box
           sx={{ width: '100%', overflow: 'hidden' }}
           className='table-wrapper note-list-table '
+          
         >
           <TableContainer>
             <Table sx={{ minWidth: 400 }} aria-label='simple table'>
               <TableHead>
                 <TableRow>
-                  <TableCell align='left' style={{ width: '8%' }}>
-                    Listing #
+                  <TableCell align='left' style={{ width: '15%' }}>
+                    Date:
                   </TableCell>
-                  <TableCell align='left' style={{ width: '21%' }}>
-                    Listing info
+                  <TableCell align='left' style={{ width: '15%' }}>
+                    By:
                   </TableCell>
-                  <TableCell align='left' style={{ width: '10%' }}>
-                    Date created
-                  </TableCell>
-                  <TableCell align='left' style={{ width: '61%' }}>
-                    Comments
+                  <TableCell align='left' style={{ width: '70%' }}>
+                    Note
                   </TableCell>
                 </TableRow>
               </TableHead>
               {rows.length > 0 ? (
                 <TableBody>
-                  {rows.map((row, index) => (
+                  {rows.map((row) => (
                     <TableRow
                       className={
-                        row?.approval === false ? 'resubmitted-approval' : ''
+                        row?.approval > false ? 'resubmitted-approval' : ''
                       }
                       key={row.name}
                       sx={{
@@ -109,22 +80,17 @@ const InquiriesTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          <Link to='/propertyview'> {row.listing}</Link>
-                        </Typography>
-                      </TableCell>
-                      <TableCell align='left'>
-                        <Typography variant='body1' component='p'>
-                          {row.info}
-                        </Typography>
-                      </TableCell>
-                      <TableCell align='left'>
-                        <Typography variant='body1' component='p'>
                           {row.date}
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          {row.comments}
+                          {row.by}
+                        </Typography>
+                      </TableCell>
+                      <TableCell align='left'>
+                        <Typography variant='body1' component='p'>
+                          {row.note}
                         </Typography>
                       </TableCell>
                     </TableRow>
@@ -148,10 +114,10 @@ const InquiriesTab = () => {
                   >
                     <RiErrorWarningFill size={25} />
                     <Typography gutterBottom variant='p' component='p'>
-                      No Inquiries submitted yet,
+                      No notes found,
                     </Typography>
                     <Typography gutterBottom variant='p' component='p'>
-                      all submitted Inquiries will appear here.
+                      all recored notes will appear here
                     </Typography>
                   </Stack>
                 </Box>
@@ -164,4 +130,4 @@ const InquiriesTab = () => {
   );
 };
 
-export default InquiriesTab;
+export default NotesTab;

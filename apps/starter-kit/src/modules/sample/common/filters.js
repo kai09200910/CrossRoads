@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   Box,
-  Grid,
   FormControlLabel,
   MenuItem,
   Select,
@@ -11,10 +10,10 @@ import {
   FormControl,
   Checkbox,
   ListItemText,
+  Button,
 } from '@mui/material';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import CloseIcon from '@mui/icons-material/Close';
-// import './salespipeline.scss';
 
 const islandtype = [
   'Island 1 abcd',
@@ -174,54 +173,115 @@ const Filters = (props) => {
               </Select>
             </FormControl>
           </Box>
-          <Box variant='div' component='div' className='bed-bath-selection'>
+          <Box variant='div' component='div' className='multiple-selection bed-bath-selection'>
             <label>Beds & Baths </label>
-            <Select
-              fullWidth
-              id='beds-baths'
-              value={value}
-              defaultValue='none'
-              onChange={(e) => setValue(e.target.value)}
-              onFocus={(e) => setShowPlaceholder(false)}
-              onClose={(e) => setShowPlaceholder(e.target.value === undefined)}
-              IconComponent={RiArrowDownSLine}
-            >
-              <MenuItem key='0' disabled value='none' className='place-holder'>
-                Select Beds & Baths
-              </MenuItem>
-              <MenuItem value={1}> 1 +</MenuItem>
-              <MenuItem value={2}> 2 +</MenuItem>
-              <MenuItem value={3}> 3+</MenuItem>
-              <MenuItem value={4}> 4+</MenuItem>
-              <MenuItem value={5}> 5+</MenuItem>
-              <MenuItem value={6}> 6+</MenuItem>
-              <MenuItem value={7}> 7+</MenuItem>
-              <MenuItem value={8}> 8+</MenuItem>
-              <MenuItem value={9}> 9+</MenuItem>
-
-              <MenuItem value={10}> 10+</MenuItem>
-              <MenuItem value={11}> 11+</MenuItem>
-              <MenuItem value={12}> 12+</MenuItem>
-              <MenuItem value={13}> 13+</MenuItem>
-              <MenuItem value={14}> 14+</MenuItem>
-              <MenuItem value={15}> 15+</MenuItem>
-              <MenuItem value={16}> 16+</MenuItem>
-              <MenuItem value={17}> 17+</MenuItem>
-              <MenuItem value={18}> 18+</MenuItem>
-              <MenuItem value={19}> 19+</MenuItem>
-              <MenuItem value={20}> 20+</MenuItem>
-
-              <MenuItem value={21}> 21+</MenuItem>
-              <MenuItem value={22}> 22+</MenuItem>
-              <MenuItem value={23}> 23+</MenuItem>
-              <MenuItem value={24}> 24+</MenuItem>
-              <MenuItem value={25}> 25+</MenuItem>
-              <MenuItem value={26}> 26+</MenuItem>
-              <MenuItem value={27}> 27+</MenuItem>
-              <MenuItem value={28}> 28+</MenuItem>
-              <MenuItem value={29}> 29+</MenuItem>
-              <MenuItem value={30}> 30+</MenuItem>
+            <FormControl>
+              <Select
+                labelId='demo-multiple-checkbox-label'
+                id='contact-type-multiple-checkbox'
+                multiple
+                placeholder='Select Contact Type'
+                value={listingStatus}
+                onChange={handlelistingstatusChange}
+                IconComponent={RiArrowDownSLine}
+                renderValue={(selected) => selected.join(', ')}
+              >
+                {/* {listingstatus.map((listingstatus) => (
+                  <MenuItem key={listingstatus} value={listingstatus}>
+                    <Checkbox
+                      checked={listingStatus.indexOf(listingstatus) > -1}
+                    />
+                    <ListItemText primary={listingstatus} />
+                  </MenuItem>
+                ))} */}
+              
+            <Box variant='div' component='div' className='bed-bath-menu'>
+              <Stack
+                direction='row'
+                justifyContent='flex-start'
+                alignItems='center'
+                spacing={2}
+              >
+                <Box variant='div' component='div' className='bed-selection'>
+                  <label>Beds</label>
+                  <Select
+                    fullWidth
+                    id='beds'
+                    value={value}
+                    defaultValue='none'
+                    onChange={(e) => setValue(e.target.value)}
+                    onFocus={(e) => setShowPlaceholder(false)}
+                    onClose={(e) =>
+                      setShowPlaceholder(e.target.value === undefined)
+                    }
+                    IconComponent={RiArrowDownSLine}
+                  >
+                    <MenuItem
+                      key='0'
+                      disabled
+                      value='none'
+                      className='place-holder'
+                    >
+                      Select
+                    </MenuItem>
+                    <MenuItem value={1}> 1 +</MenuItem>
+                    <MenuItem value={2}> 2 +</MenuItem>
+                    <MenuItem value={3}> 3+</MenuItem>
+                    <MenuItem value={4}> 4+</MenuItem>
+                    <MenuItem value={5}> 5+</MenuItem>
+                    <MenuItem value={6}> 6+</MenuItem>
+                    <MenuItem value={7}> 7+</MenuItem>
+                    <MenuItem value={8}> 8+</MenuItem>
+                    <MenuItem value={9}> 9+</MenuItem>
+                    <MenuItem value={10}> 10+</MenuItem>
+                  </Select>
+                </Box>
+                <Box variant='div' component='div' className='bath-selection'>
+                  <label>Baths</label>
+                  <Select
+                    fullWidth
+                    id='baths'
+                    value={value}
+                    defaultValue='none'
+                    onChange={(e) => setValue(e.target.value)}
+                    onFocus={(e) => setShowPlaceholder(false)}
+                    onClose={(e) =>
+                      setShowPlaceholder(e.target.value === undefined)
+                    }
+                    IconComponent={RiArrowDownSLine}
+                  >
+                    <MenuItem
+                      key='0'
+                      disabled
+                      value='none'
+                      className='place-holder'
+                    >
+                      Select
+                    </MenuItem>
+                    <MenuItem value={1}> 1 +</MenuItem>
+                    <MenuItem value={2}> 2 +</MenuItem>
+                    <MenuItem value={3}> 3+</MenuItem>
+                    <MenuItem value={4}> 4+</MenuItem>
+                    <MenuItem value={5}> 5+</MenuItem>
+                    <MenuItem value={6}> 6+</MenuItem>
+                    <MenuItem value={7}> 7+</MenuItem>
+                    <MenuItem value={8}> 8+</MenuItem>
+                    <MenuItem value={9}> 9+</MenuItem>
+                    <MenuItem value={10}> 10+</MenuItem>
+                  </Select>
+                </Box>
+              </Stack>
+              <Button
+                variant='contained'
+                size='large'
+                autoFocus
+                className='primary-btn btn bed-bath-apply-btn'
+              >
+                Apply
+              </Button>
+            </Box>
             </Select>
+            </FormControl>
           </Box>
           <Box variant='div' component='div' className='multiple-selection'>
             <label>Listing status </label>

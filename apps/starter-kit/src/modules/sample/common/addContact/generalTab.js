@@ -59,7 +59,7 @@ const GeneralTab = () => {
     <>
       <Box className='genral-tab'>
         <Grid container spacing={5} mt={3}>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid item xs={12} sm={4} md={5}>
             <Box variant='div' component='div'>
               <label>First name </label>
               <TextField
@@ -71,7 +71,19 @@ const GeneralTab = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
+          <Grid item xs={12} sm={4} md={2}>
+            <Box variant='div' component='div'>
+              <label>Middle name </label>
+              <TextField
+                fullWidth
+                id='first-name'
+                label=''
+                variant='outlined'
+                placeholder='Middle name'
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={4} md={5}>
             <Box variant='div' component='div'>
               <label>Last name </label>
               <TextField
@@ -85,30 +97,6 @@ const GeneralTab = () => {
           </Grid>
         </Grid>
         <Grid container spacing={5} mt={3}>
-          {/* <Grid item xs={12} md={6}>
-            <Box variant='div' component='div'>
-              <label>Nick name</label>
-              <TextField
-                fullWidth
-                id='nick-name'
-                label=''
-                variant='outlined'
-                placeholder='Enter Nick Name'
-              />
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Box variant='div' component='div'>
-              <label>Spouse name </label>
-              <TextField
-                fullWidth
-                id='spouse-name'
-                label=''
-                variant='outlined'
-                placeholder='Enter Spouse Name'
-              />
-            </Box>
-          </Grid> */}
 
           <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>

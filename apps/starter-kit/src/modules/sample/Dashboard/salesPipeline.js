@@ -1,7 +1,7 @@
 import React from 'react';
 import TaskList from './app';
 import { Box } from '@mui/material';
-import './salespipeline.scss';
+import './dashboard.scss';
 
 export const TASKS = [
   {

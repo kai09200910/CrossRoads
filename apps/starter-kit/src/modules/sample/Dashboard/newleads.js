@@ -5,8 +5,6 @@ import {
   Paper,
   Stack,
   Typography,
-  MenuItem,
-  Select,
 } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import Table from '@mui/material/Table';
@@ -15,8 +13,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { RiArrowDownSLine } from 'react-icons/ri';
-// import Link from '@mui/material/Link';
 
 function createData(name, date, property, action) {
   return { name, date, property, action };
@@ -32,7 +28,7 @@ const rows = [
   createData('John Smith  ', '05/07/24'),
 ];
 
-const TaskList = () => {
+const NewLeads = () => {
   const [value, setValue] = useState('none');
   const [showPlaceholder, setShowPlaceholder] = useState(value === 'none');
   const navigate = useNavigate();
@@ -42,7 +38,7 @@ const TaskList = () => {
         sx={{
           padding: { xs: 5, xl: 5 },
         }}
-        className='task-list-wrapper'
+        className='recent-inquires-wrapper'
       >
         <Stack
           direction='row'
@@ -52,10 +48,9 @@ const TaskList = () => {
           sx={{
             paddingBottom: { xs: 4, xl: 4 },
           }}
-          className='card-title'
         >
           <Typography variant='h4' component='h4'>
-            Task List
+            New Leads
           </Typography>
           <Button
             variant='outlined'
@@ -67,43 +62,36 @@ const TaskList = () => {
           </Button>{' '}
         </Stack>
 
-        <Box variant='div' component='div' className='task-list'>
+        <Box variant='div' component='div' className='recent-inquiry-list'>
           <Box
             sx={{ width: '100%', overflow: 'hidden' }}
-            className='task-wrapper scrollable-table'
+            className='table-wrapper scrollable-table'
           >
-            <Box sx={{ width: '100%', overflow: 'hidden' }} className='task'>
-              <Link to='/dashboard'>Update KYC Document </Link>
-              <Typography variant='p' component='p' className=''>
-                Thursday, Nov 23
-              </Typography>
-            </Box>
-            <Box sx={{ width: '100%', overflow: 'hidden' }} className='task'>
-              <Link to='/dashboard'>Update KYC Document </Link>
-              <Typography variant='p' component='p' className=''>
-                Monday, Nov 29
-              </Typography>
-            </Box>
-            <Box sx={{ width: '100%', overflow: 'hidden' }} className='task'>
-              <Link to='/dashboard'>Update KYC Document </Link>
-              <Typography
-                variant='p'
-                component='p'
-                className='red'
-              >
-                Wednesday, Nov 15
-              </Typography>
-            </Box>
-            <Box sx={{ width: '100%', overflow: 'hidden' }} className='task'>
-              <Link to='/dashboard'>Update KYC Document </Link>
-              <Typography
-                variant='p'
-                component='p'
-                className='red'
-              >
-                Wednesday, Nov 15
-              </Typography>
-            </Box>
+            <TableContainer>
+              <Table sx={{ minWidth: 220 }} aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Name</TableCell>
+                    <TableCell align='left'>Date</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row) => (
+                    <TableRow
+                      key={row.name}
+                      sx={{
+                        '&:last-child td, &:last-child th': { border: 0 },
+                      }}
+                    >
+                      <TableCell component='th' scope='row'>
+                      <Link  to='/contacts/details'>{row.name} </Link>
+                      </TableCell>
+                      <TableCell align='left'>{row.date}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </Box>
         </Box>
       </Box>
@@ -111,4 +99,4 @@ const TaskList = () => {
   );
 };
 
-export default TaskList;
+export default NewLeads;

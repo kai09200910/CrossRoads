@@ -13,7 +13,7 @@ import {
   Checkbox,
   ListItemText,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import PropertyCard from './propertyCard';
 import { RiArrowDownSLine, RiSearchLine } from 'react-icons/ri';
 import './propertylist.scss';
@@ -61,28 +61,52 @@ const PropertyList = () => {
         <Box className='listing-card-scrollable-content'>
           <Grid container spacing={5} mt={1} className='listing-card'>
             <Grid item xs={12} md={6}>
-              <PropertyCard />
+              <Link to='/propertyview' className='property-card-link-wrap'>
+                {' '}
+                <PropertyCard />
+              </Link>
             </Grid>
             <Grid item xs={12} md={6}>
-              <PropertyCard />
+              <Link to='/propertyview' className='property-card-link-wrap'>
+                {' '}
+                <PropertyCard />
+              </Link>
             </Grid>
             <Grid item xs={12} md={6}>
-              <PropertyCard />
+              <Link to='/propertyview' className='property-card-link-wrap'>
+                {' '}
+                <PropertyCard />
+              </Link>
             </Grid>
             <Grid item xs={12} md={6}>
-              <PropertyCard />
+              <Link to='/propertyview' className='property-card-link-wrap'>
+                {' '}
+                <PropertyCard />
+              </Link>
             </Grid>
             <Grid item xs={12} md={6}>
-              <PropertyCard />
+              <Link to='/propertyview' className='property-card-link-wrap'>
+                {' '}
+                <PropertyCard />
+              </Link>
             </Grid>
             <Grid item xs={12} md={6}>
-              <PropertyCard />
+              <Link to='/propertyview' className='property-card-link-wrap'>
+                {' '}
+                <PropertyCard />
+              </Link>
             </Grid>
             <Grid item xs={12} md={6}>
-              <PropertyCard />
+              <Link to='/propertyview' className='property-card-link-wrap'>
+                {' '}
+                <PropertyCard />
+              </Link>
             </Grid>
             <Grid item xs={12} md={6}>
-              <PropertyCard />
+              <Link to='/propertyview' className='property-card-link-wrap'>
+                {' '}
+                <PropertyCard />
+              </Link>
             </Grid>
           </Grid>
         </Box>
