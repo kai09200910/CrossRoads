@@ -13,7 +13,7 @@ import {
   FormControl,
   Typography,
 } from '@mui/material';
-import { RiArrowDownSLine } from 'react-icons/ri';
+import { RiArrowDownSLine, RiDeleteBinLine } from 'react-icons/ri';
 import TagsInput from '../common/tagsInput';
 import MatchingContacts from '../common/matchingContacts';
 import ReactSelect from 'react-select';
@@ -137,10 +137,11 @@ const GeneralTab = () => {
                  <label>Additional phone</label>
                 {input.isRemoveVisible ? (
                   <button
-                    className='remove-btn'
+                    className='remove-btn red'
                     onClick={() => removePhoneInput(input.id)}
                   >
-                    Remove
+                    {/* Remove */}
+                    <RiDeleteBinLine size={20} />
                   </button>
                 ) : (
                   <Link to='' className='add-more-btn' onClick={addPhoneInput}>

@@ -60,6 +60,11 @@ const MyTransfers = React.lazy(() => import('../../modules/sample/Accounting'));
 export const samplePagesConfigs = [
   {
     permittedRole: RoutePermittedRole.User,
+    path: '/',
+    element: <Dashboard />,
+  },
+  {
+    permittedRole: RoutePermittedRole.User,
     path: '/my-listing',
     element: <PropertyList />,
   },
