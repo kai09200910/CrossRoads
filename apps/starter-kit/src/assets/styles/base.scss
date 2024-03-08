@@ -1388,10 +1388,10 @@ header {
     }
     .remove-btn{
       position: absolute;
-      top: 11px;
+      top: 10px;
       right: 10px;
       z-index: 1;
-      color: #d60000;
+      // color: #d60000;
       font-weight: 500;
       border: none;
       background-color: transparent;
@@ -1402,7 +1402,7 @@ header {
       }
     }
     .MuiInputBase-input.MuiOutlinedInput-input{
-      padding: 8.5px 68px  8.5px 10px !important;
+      padding: 6px 32px  8.5px 10px !important;
     }
   }
 }
@@ -1683,6 +1683,12 @@ header {
         position: absolute;
         top: 8px;
         width: 95px;
+      }
+      .primary-btn.icon-btn{
+        width: 80px;
+        span.MuiButton-startIcon{
+          margin: 0;
+        }
       }
     }
   }

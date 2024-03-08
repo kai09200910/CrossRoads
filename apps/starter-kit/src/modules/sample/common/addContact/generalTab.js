@@ -13,10 +13,11 @@ import {
   FormControl,
   Typography,
 } from '@mui/material';
-import { RiArrowDownSLine } from 'react-icons/ri';
+import { RiArrowDownSLine, RiDeleteBinLine } from 'react-icons/ri';
 import ReactSelect from 'react-select';
 import MatchingContacts from '../matchingContacts';
 import TagsInput from '../tagsInput';
+import { Link } from 'react-router-dom';
 
 const GeneralTab = () => {
   function handleSelecetedTags(items) {}
@@ -54,6 +55,22 @@ const GeneralTab = () => {
   ];
 
   const [selectedOption, setSelectedOption] = useState(null);
+
+
+  const [phoneInputs, setPhoneInputs] = useState([
+    { id: 0, isRemoveVisible: false },
+  ]);
+
+  const addPhoneInput = () => {
+    const newId = phoneInputs.length;
+    setPhoneInputs([...phoneInputs, { id: newId, isRemoveVisible: true }]);
+  };
+
+  const removePhoneInput = (id) => {
+    const updatedInputs = phoneInputs.filter((input) => input.id !== id);
+    setPhoneInputs(updatedInputs);
+  };
+
 
   return (
     <>
@@ -96,9 +113,59 @@ const GeneralTab = () => {
             </Box>
           </Grid>
         </Grid>
-        <Grid container spacing={5} mt={3}>
 
+        <Grid container spacing={2} mt={3}>
           <Grid item xs={12} sm={6} md={6}>
+            <Box variant='div' component='div'>
+              <label> Primary phone </label>
+              <TextField
+                fullWidth
+                id='phone'
+                type='number'
+                variant='outlined'
+                placeholder='Enter Primary phone number'
+              />
+            </Box>
+          </Grid>
+
+          {phoneInputs.map((input) => (
+            <Grid item xs={12} md={6} key={input.id}>
+              <Box
+                variant='div'
+                component='div'
+                className={`additional-phone${
+                  input.isRemoveVisible ? ' appended' : ''
+                }`}
+              >
+                 <label>Additional phone</label>
+                {input.isRemoveVisible ? (
+                  <button
+                    className='remove-btn red'
+                    onClick={() => removePhoneInput(input.id)}
+                  >
+                    {/* Remove */}
+                    <RiDeleteBinLine size={20} />
+                  </button>
+                ) : (
+                  <Link to='' className='add-more-btn' onClick={addPhoneInput}>
+                    Add More
+                  </Link>
+                )}
+                <TextField
+                  fullWidth
+                  id={`mobile-phone-${input.id}`}
+                  type='number'
+                  variant='outlined'
+                  placeholder={`Enter Additional Phone ${input.id + 1}`}
+                />
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+
+        <Grid container spacing={5} mt={0}>
+
+          {/* <Grid item xs={12} sm={6} md={6}>
             <Box variant='div' component='div'>
               <label> Phone </label>
               <TextField
@@ -109,7 +176,7 @@ const GeneralTab = () => {
                 placeholder='Enter phone number'
               />
             </Box>
-          </Grid>
+          </Grid> */}
           {/* <Grid item xs={12} md={6}>
             <Box variant='div' component='div'>
               <label>Mobile phone </label>

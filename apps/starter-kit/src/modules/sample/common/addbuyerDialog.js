@@ -22,6 +22,7 @@ import {
   RiAddFill,
   RiArrowDownSLine,
   RiSearchLine,
+  RiUpload2Line,
 } from 'react-icons/ri';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -152,7 +153,7 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
                   mt={0}
                   className='buyer-basic-info'
                 >
-                  <Grid item xs={12} sm={5} md={4}>
+                  <Grid item xs={12} sm={4} md={4}>
                     <Box variant='Box' component='Box'>
                       <label>First name </label>
                       <TextField
@@ -172,7 +173,7 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
                       />
                     </Box>
                   </Grid>
-                  <Grid item xs={12} sm={5} md={2}>
+                  <Grid item xs={12} sm={2} md={2}>
                     <Box variant='Box' component='Box'>
                       <label>Middle name </label>
                       <TextField
@@ -192,7 +193,7 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
                       />
                     </Box>
                   </Grid>
-                  <Grid item xs={12} sm={5} md={4}>
+                  <Grid item xs={12} sm={4} md={4}>
                     <Box variant='Box' component='Box'>
                       <label>Last name </label>
                       <TextField
@@ -227,7 +228,7 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
                     <label className='empty-label '></label>
                     <Button
                       variant='outlined'
-                      startIcon={<RiSearchLine />}
+                      startIcon={<RiUpload2Line  />}
                       className='primary-btn icon-btn'
                     ></Button>
                   </Grid>
