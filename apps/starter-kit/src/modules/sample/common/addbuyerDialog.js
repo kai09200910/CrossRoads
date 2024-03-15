@@ -29,6 +29,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import MatchingContacts from './matchingContacts';
 import AddcontactDialog from './addContact/addcontactDialog';
 import ContactviewDialog from './viewContact/contactviewDialog';
+import KycdocumentDialog from './addbuyerkycdocumentDialog';
 
 const AddbuyerDialog = ({ open, handleClose, step }) => {
   const [isAddcontact, setIsAddcontact] = useState(false);
@@ -87,6 +88,12 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
   //   setIsSubmitted(false);
   // };
 
+
+  const [isKycdoc, setIsKycdoc] = useState(false);
+  const handlekycdocClose = () => {
+    setIsKycdoc(false);
+  };
+  
   return (
     <>
       <Box>
@@ -111,14 +118,6 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
             </Stack>
           </DialogTitle>
           <DialogContent className='modal-dailog-content'>
-            <Stack
-              spacing={{ xs: 1, sm: 4 }}
-              direction='row'
-              useFlexGap
-              alignItems='center'
-              className='add-doc-btn-grp'
-            >
-              <Box variant='div' component='div' className=''>
                 <Button
                   variant='contained'
                   size='large'
@@ -130,19 +129,6 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
                 >
                   Add other buyer
                 </Button>
-              </Box>
-              <Box
-                variant='div'
-                component='div'
-                className='btn add-doc-btn upload-wrapper other-doc'
-              >
-                <TextField type='file' className='upload'></TextField>
-                <Typography variant='body1' component='span' className=''>
-                  <RiAddCircleFill size={20} />
-                  KYC Documents
-                </Typography>
-              </Box>
-            </Stack>
 
             <Box className='buyer-info'>
               {buyers.map((buyer, index) => (
@@ -173,7 +159,7 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
                       />
                     </Box>
                   </Grid>
-                  <Grid item xs={12} sm={2} md={2}>
+                  <Grid item xs={12} sm={3} md={2}>
                     <Box variant='Box' component='Box'>
                       <label>Middle name </label>
                       <TextField
@@ -193,7 +179,7 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
                       />
                     </Box>
                   </Grid>
-                  <Grid item xs={12} sm={4} md={4}>
+                  <Grid item xs={12} sm={3} md={4}>
                     <Box variant='Box' component='Box'>
                       <label>Last name </label>
                       <TextField
@@ -230,6 +216,7 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
                       variant='outlined'
                       startIcon={<RiUpload2Line  />}
                       className='primary-btn icon-btn'
+                      onClick={() => setIsKycdoc(true)}
                     ></Button>
                   </Grid>
                 </Grid>
@@ -488,6 +475,9 @@ const AddbuyerDialog = ({ open, handleClose, step }) => {
       /> */}
 
       <ContactviewDialog open={isSubmitted} handleClose={handleClose} />
+
+      <KycdocumentDialog open={isKycdoc} handleClose={handlekycdocClose} />
+
     </>
   );
 };

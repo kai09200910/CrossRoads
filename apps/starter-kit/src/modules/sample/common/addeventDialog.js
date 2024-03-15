@@ -15,7 +15,7 @@ import {
   TextField,
 } from '@mui/material';
 import { RiAddFill } from 'react-icons/ri';
-import InquiryinformationDialog from './inquiryinformationDialog';
+import InquiryinformationDialog from '../Propertyview/dailogs/inquiryinformationDialog';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 const AddeventDialog = ({ open, handleClose }) => {

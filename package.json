@@ -3,8 +3,8 @@
   "version": "4.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
+    "start": "nx serve ",
+    "build": "nx build --skip-nx-cache",
     "test": "nx test"
   },
   "private": true,

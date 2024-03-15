@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { Box, Container, Paper, Stack } from '@mui/material';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -47,15 +47,27 @@ const NewListing = () => {
   const getStepContent = (step) => {
     switch (step) {
       case 0:
-        return <ListingDetails />;
+        return <ListingDetails borderColor={borderColor} setBorderColor={setBorderColor}/>;
+                 {/* Pass the state and functions as props to ListingDetails */}
       case 1:
-        return <PropertyDetails />;
+        return <PropertyDetails  borderColor={borderColor} setBorderColor={setBorderColor}/>;
       case 2:
-        return <PropertyMedia />;
+        return <PropertyMedia borderColor={borderColor} setBorderColor={setBorderColor} />;
 
       default:
         break;
     }
+  };
+
+  const [borderColor, setBorderColor] = useState('');
+
+  const handleShowRequiredFields = () => {
+    setBorderColor('red');
+  };
+
+  const handleContinue = () => {
+    // setBorderColor('red');
+    // Additional logic or validation can be added here
   };
 
   return (
@@ -143,6 +155,7 @@ const NewListing = () => {
                       variant='contained'
                       size='large'
                       className='secondary-btn btn'
+                      onClick={handleShowRequiredFields}
                     >
                       Show required fields
                     </Button>
@@ -155,6 +168,8 @@ const NewListing = () => {
                       {activeStep === steps.length - 1 ? 'Finish' : 'Continue'}
                     </Button>
                   </Stack>
+          
+                    
                 </Box>
               </React.Fragment>
             )}

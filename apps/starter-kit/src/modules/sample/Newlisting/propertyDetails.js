@@ -16,7 +16,7 @@ import {
 import { RiArrowDownSLine, RiCloseLine } from 'react-icons/ri';
 import Agentinfo from './agentInfo';
 
-const PropertyDetails = () => {
+const PropertyDetails = ({ borderColor, setBorderColor }) => {
   const [isEditClicked, setIsEditClicked] = useState(false);
 
   const [personName, setPersonName] = React.useState([]);
@@ -91,6 +91,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -149,6 +150,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -279,6 +281,7 @@ const PropertyDetails = () => {
                     onChange={handleChange}
                     IconComponent={RiArrowDownSLine}
                     renderValue={(selected) => selected.join(', ')}
+                    className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                   >
                     {names.map((name) => (
                       <MenuItem key={name} value={name}>
@@ -306,6 +309,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -337,6 +341,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -370,6 +375,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -403,6 +409,7 @@ const PropertyDetails = () => {
                   type='number'
                   variant='outlined'
                   placeholder='Enter Number '
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 />
               </Box>
             </Grid>
@@ -415,6 +422,7 @@ const PropertyDetails = () => {
                   type='number'
                   variant='outlined'
                   placeholder='Enter Number '
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 />
               </Box>
             </Grid>
@@ -427,6 +435,7 @@ const PropertyDetails = () => {
                   type='number'
                   variant='outlined'
                   placeholder='1/2 '
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 />
               </Box>
             </Grid>
@@ -447,6 +456,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -480,6 +490,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -513,6 +524,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -555,6 +567,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -594,6 +607,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -628,6 +642,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -668,6 +683,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -700,6 +716,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'
@@ -739,6 +756,7 @@ const PropertyDetails = () => {
                   type='number'
                   variant='outlined'
                   placeholder='4.758'
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 />
               </Box>
             </Grid>
@@ -793,6 +811,7 @@ const PropertyDetails = () => {
                   type='number'
                   variant='outlined'
                   placeholder='Enter building size '
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 />
               </Box>
             </Grid>
@@ -811,6 +830,7 @@ const PropertyDetails = () => {
                     setShowPlaceholder(e.target.value === undefined)
                   }
                   IconComponent={RiArrowDownSLine}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 >
                   <MenuItem
                     key='0'

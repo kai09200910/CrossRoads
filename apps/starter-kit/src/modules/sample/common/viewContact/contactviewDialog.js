@@ -86,15 +86,21 @@ const ContactviewDialog = ({ open, handleClose }) => {
         </DialogContent>
         <DialogActions align='right' className='modal-dailog-footer'>
           {/* <Button
-            variant='contained'
-            size='large'
-            autoFocus
-            onClick={handleClose}
-            className='primary-btn btn'
-            sx={{ marginTop: 2 }}
-          >
-            Send for approval
-          </Button> */}
+              variant='outlined'
+              size='large'
+              className='outline-btn btn'
+              onClick={handleClose}
+            >
+              Close
+            </Button> */}
+            <Button
+              variant='outlined'
+              size='large'
+              className='primary-btn btn'
+              onClick={handleClose}
+            >
+              Got it!
+            </Button>
         </DialogActions>
       </Dialog>
     </Box>

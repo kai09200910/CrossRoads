@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Stack, Button, Typography } from '@mui/material';
+import { Box, Stack, Button, Typography, Switch } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -50,7 +50,7 @@ const rows = [
   ),
 ];
 
-const EmailcampaignsTab = () => {
+const ListingalertsTab = () => {
   const navigate = useNavigate();
   const [isListingalert, setIsListingalert] = useState(false);
   const handlelistingalertClose = () => {
@@ -70,7 +70,7 @@ const EmailcampaignsTab = () => {
           className='main-title'
         >
           <Typography variant='h3' component='h3'>
-            Listing Alerts
+            Email campaigns
           </Typography>
 
           <Button
@@ -100,13 +100,13 @@ const EmailcampaignsTab = () => {
                     Created by
                   </TableCell>
                   <TableCell align='left' style={{ width: '50%' }}>
-                    Campaign name
+                    Email name
                   </TableCell>
                   <TableCell align='left' style={{ width: '15%' }}>
-                    Date created
+                    Next send date
                   </TableCell>
                   <TableCell align='left' style={{ width: '13%' }}>
-                    Status
+                    Active
                   </TableCell>
                   <TableCell align='left' style={{ width: '19%' }}>
                     Emails sent
@@ -133,7 +133,10 @@ const EmailcampaignsTab = () => {
                       >
                         <Typography variant='body1' component='p'>
                           {' '}
-                          <Link to='/contacts/details' target='_blank'> {row.by}</Link>
+                          <Link to='/contacts/details' target='_blank'>
+                            {' '}
+                            {row.by}
+                          </Link>
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
@@ -148,24 +151,13 @@ const EmailcampaignsTab = () => {
                       </TableCell>
                       <TableCell align='left'>
                         <Typography variant='body1' component='p'>
-                          <Button
-                            variant='text'
-                            startIcon={<RiPencilFill size={16} gap={2} />}
-                            className='green-link-btn'
-                            onClick={() => {
-                              setIsListingalert(true);
-                              setAlertDailogTitle('Edit listing alert');
-                            }}
-                          >
-                            Active
-                          </Button>
-                          {/* <Button
-                            variant='text'
-                            startIcon={<RiPencilFill size={16} />}
-                            className='red-link-btn'
-                          >
-                            Inactive
-                          </Button> */}
+                          <Switch
+                            sx={{ marginRight: 1 }}
+                            className='ios-switch-custom'
+                            focusVisibleClassName='.Mui-focusVisible'
+                            disableRipple
+                            defaultChecked
+                          />
                         </Typography>
                       </TableCell>
                       <TableCell align='left'>
@@ -175,7 +167,7 @@ const EmailcampaignsTab = () => {
                             variant='text'
                             endIcon={<RiArrowRightLine size={16} />}
                             onClick={() =>
-                              navigate('/campaigns', {
+                              navigate('/automated-email', {
                                 state: { user_campaigns: true },
                               })
                             }
@@ -226,4 +218,4 @@ const EmailcampaignsTab = () => {
   );
 };
 
-export default EmailcampaignsTab;
+export default ListingalertsTab;

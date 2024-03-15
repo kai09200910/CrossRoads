@@ -224,7 +224,7 @@ const AutomatedEmail = () => {
               }}
               onClick={() => setIsSubmitted(true)}
             >
-              Send emails
+              Start campaign
             </Button>
           </Stack>
 

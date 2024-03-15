@@ -112,11 +112,13 @@ a {
             width: 100%;
             .property-card-wrap {
               .property-img {
+                height: 100%;
                 @media (max-width: 767px) {
-                  height: 150px !important;
+                  // height: 150px !important;
                 }
                 img {
                   width: 100% !important;
+                  height: 100%;
                 }
               }
               h4 {
