@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -8,7 +9,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import React, { useState } from 'react';
 import {
   RiArrowDownSLine,
   RiCheckboxCircleFill,
@@ -30,7 +30,7 @@ function createData(name, match, email) {
 
 const rows = [createData('John Smith', '95%', 'johnsmith@email.com')];
 
-const ListingDetails = () => {
+const ListingDetails = ({ borderColor, setBorderColor }) => {
   const [isEditClicked, setIsEditClicked] = useState(false);
 
   const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
@@ -143,6 +143,10 @@ const ListingDetails = () => {
                   setShowPlaceholder(e.target.value === undefined)
                 }
                 IconComponent={RiArrowDownSLine}
+                style={{ borderColor: borderColor }}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               >
                 <MenuItem
                   key='0'
@@ -173,6 +177,10 @@ const ListingDetails = () => {
                   setShowPlaceholder(e.target.value === undefined)
                 }
                 IconComponent={RiArrowDownSLine}
+                style={{ borderColor: borderColor }}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               >
                 <MenuItem
                   key='0'
@@ -204,6 +212,10 @@ const ListingDetails = () => {
                   setShowPlaceholder(e.target.value === undefined)
                 }
                 IconComponent={RiArrowDownSLine}
+                style={{ borderColor: borderColor }}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               >
                 <MenuItem
                   key='0'
@@ -235,6 +247,10 @@ const ListingDetails = () => {
                   setShowPlaceholder(e.target.value === undefined)
                 }
                 IconComponent={RiArrowDownSLine}
+                style={{ borderColor: borderColor }}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               >
                 <MenuItem
                   key='0'
@@ -260,8 +276,10 @@ const ListingDetails = () => {
                 options={options}
                 isSearchable={true}
                 isClearable={true}
-                className='react-select-wrap'
+                // className='react-select-wrap'
                 placeholder='Search for contact record'
+                className={`react-select-wrap ${borderColor === 'red' ? 'redborder' : 'greenborder'}`}
+                // className={borderColor === 'red' ? 'redborder' : 'redborder'}
               />
             </Box>
           </Grid>
@@ -275,7 +293,10 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='Co-broke company'
-                // className='success'
+                style={{ borderColor: borderColor }}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -291,7 +312,10 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='First Name'
-                className='success'
+                // className='success'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -325,7 +349,10 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='Last Name'
-                className='success'
+                // className='success'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -340,7 +367,10 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='Email '
-                className='error'
+                // className='error'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -353,6 +383,10 @@ const ListingDetails = () => {
                 type='number'
                 variant='outlined'
                 placeholder='Primary phone  '
+                style={{ borderColor: borderColor }}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -371,7 +405,15 @@ const ListingDetails = () => {
             <Box variant='div' component='div'>
               <label>Contract start date </label>
               <DemoContainer components={['DatePicker']}>
-                <DatePicker sx={{ width: '100%' }} />
+                <Box
+                  variant='div'
+                  component='div'
+                  className={
+                    borderColor === 'red' ? 'redborder' : 'greenborder'
+                  }
+                >
+                  <DatePicker sx={{ width: '100%' }} />
+                </Box>
               </DemoContainer>
             </Box>
           </Grid>
@@ -379,7 +421,12 @@ const ListingDetails = () => {
             <Box variant='div' component='div'>
               <label>Contract end date </label>
               <DemoContainer components={['DatePicker']}>
-                <DatePicker sx={{ width: '100%' }} />
+                <DatePicker
+                  sx={{ width: '100%' }}
+                  className={
+                    borderColor === 'red' ? 'redborder' : 'greenborder'
+                  }
+                />
               </DemoContainer>
             </Box>
           </Grid>
@@ -394,6 +441,9 @@ const ListingDetails = () => {
                 type='number'
                 variant='outlined'
                 placeholder='$500,000'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -406,6 +456,9 @@ const ListingDetails = () => {
                 type='number'
                 variant='outlined'
                 placeholder='$500,000'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -418,6 +471,9 @@ const ListingDetails = () => {
                 type='number'
                 variant='outlined'
                 placeholder='5%,6%,7% etc. '
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -430,6 +486,9 @@ const ListingDetails = () => {
                 type='number'
                 variant='outlined'
                 placeholder='$500,000'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -447,6 +506,9 @@ const ListingDetails = () => {
                   setShowPlaceholder(e.target.value === undefined)
                 }
                 IconComponent={RiArrowDownSLine}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               >
                 <MenuItem
                   key='0'
@@ -486,6 +548,9 @@ const ListingDetails = () => {
                   setShowPlaceholder(e.target.value === undefined)
                 }
                 IconComponent={RiArrowDownSLine}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               >
                 <MenuItem
                   key='0'
@@ -512,6 +577,9 @@ const ListingDetails = () => {
                 type='number'
                 variant='outlined'
                 placeholder='$500,000'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -529,6 +597,9 @@ const ListingDetails = () => {
                   setShowPlaceholder(e.target.value === undefined)
                 }
                 IconComponent={RiArrowDownSLine}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               >
                 <MenuItem
                   key='0'
@@ -556,6 +627,9 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='Beach Front Home'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -570,6 +644,9 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='4 Dunmore Island '
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -582,6 +659,9 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='Nassau'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -593,7 +673,11 @@ const ListingDetails = () => {
               <ReactFlagsSelect
                 selected={selected}
                 onSelect={(code) => setSelected(code)}
-                className='country-dropdown'
+                // className='country-dropdown'
+                // className={borderColor === 'red' ? 'redborder' : 'redborder'}
+                className={`country-dropdown ${
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }`}
               />
             </Box>
           </Grid>
@@ -612,6 +696,9 @@ const ListingDetails = () => {
                   setShowPlaceholder(e.target.value === undefined)
                 }
                 IconComponent={RiArrowDownSLine}
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               >
                 <MenuItem
                   key='0'
@@ -697,6 +784,9 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='Beach Front Home'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>
@@ -730,6 +820,9 @@ const ListingDetails = () => {
                 label=''
                 variant='outlined'
                 placeholder='Beach Front Home'
+                className={
+                  borderColor === 'red' ? 'redborder' : 'greenborder'
+                }
               />
             </Box>
           </Grid>

@@ -10,6 +10,7 @@ import InquiriesTab from './inquiriesTab';
 import DocumentsTab from './documentsTab';
 import ListingmatchesTab from './listingmatchesTab';
 import ListingalertsTab from './listingalertsTab';
+import EmailcampaignsTab from './emailcampaignsTab';
 
 const OtherDetails = () => {
   const [value, setValue] = React.useState('1');
@@ -75,6 +76,14 @@ const OtherDetails = () => {
               }
               value='6'
             />
+             <Tab
+              label={
+                <>
+                  <Typography>Email campaigns</Typography>
+                </>
+              }
+              value='7'
+            />
           </TabList>
         </Box>
         <TabPanel value='1'>
@@ -95,6 +104,9 @@ const OtherDetails = () => {
         </TabPanel>
         <TabPanel value='6'>
           <ListingalertsTab />
+        </TabPanel>
+        <TabPanel value='7'>
+          <EmailcampaignsTab />
         </TabPanel>
       </TabContext>
     </Box>

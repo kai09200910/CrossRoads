@@ -6,7 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import AddeventDialog from '../../dailogs/addeventDialog';
+import AddeventDialog from '../../../common/addeventDialog';
 import EventviewDialog from '../../dailogs/eventviewDialog';
 import { RiAddFill } from 'react-icons/ri';
 

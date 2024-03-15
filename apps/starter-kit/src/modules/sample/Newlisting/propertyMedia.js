@@ -9,7 +9,7 @@ import React from 'react';
 import MediaTabs from './mediaTabs';
 import { RiSearchLine, RiUpload2Line } from 'react-icons/ri';
 
-const PropertyMedia = () => {
+const PropertyMedia = ({ borderColor, setBorderColor }) => {
   return (
     <>
       <Box variant='div' component='div' className='listing-media-form'>
@@ -32,6 +32,7 @@ const PropertyMedia = () => {
                   multiline
                   rows={5}
                   maxRows={5}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 />
               </Box>
             </Grid>
@@ -56,6 +57,7 @@ const PropertyMedia = () => {
                   multiline
                   rows={5}
                   maxRows={5}
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 />
               </Box>
             </Grid>
@@ -167,6 +169,7 @@ const PropertyMedia = () => {
                   label=''
                   variant='outlined'
                   placeholder='Enter cover photo link '
+                  className={borderColor === 'red' ? 'redborder' : 'greenborder'}
                 />
               </Box>
             </Grid>
@@ -191,7 +194,8 @@ const PropertyMedia = () => {
                   }}
                   variant='outlined'
                   placeholder='Click to upload or drag and drop '
-                  className='upload-text-box'
+                  className={`upload-text-box ${borderColor === 'red' ? 'redborder' : 'greenborder'}`}
+
                 />
                 <TextField type='file' className='upload'></TextField>
               </Box>

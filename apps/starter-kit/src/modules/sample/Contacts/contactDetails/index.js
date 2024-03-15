@@ -19,8 +19,9 @@ import ListingalertDialog from './listingalertDialog';
 import AddcontactDialog from '../addcontactDialog';
 import TransferDialog from './dailogs/transfercontactDialog';
 import LogactivityDialog from './dailogs/logactivityDialog';
-import FollowupDialog from './dailogs/followupDialog';
+// import FollowupDialog from './dailogs/followupDialog';
 import SendemailDialog from './dailogs/sendemailDialog';
+import AddeventDialog from '../../common/addeventDialog';
 
 const breadcrumbs = [
   <Link underline='hover' key='1' color='inherit' to='/contacts'>
@@ -52,9 +53,9 @@ const ContactDetails = () => {
     setIsLogactivity(false);
   };
 
-  const [isFollowup, setIsFollowup] = useState(false);
-  const handlefollowupClose = () => {
-    setIsFollowup(false);
+  const [isEvent, setIsEvent] = useState(false);
+  const handleeventClose = () => {
+    setIsEvent(false);
   };
 
   const [isSendemail, setIsSendemail] = useState(false);
@@ -62,23 +63,7 @@ const ContactDetails = () => {
     setIsSendemail(false);
   };
 
-  // const emailAddress = 'example@example.com';
-  // const subject = 'Subject of the email';
-  // const body = 'Body of the email';
-
   const handleEmailButtonClick = () => {
-    // // Change the email address and other parameters as needed
-    // const emailAddress = 'example@example.com';
-    // const subject = 'Subject of the email';
-    // const body = 'Body of the email';
-
-    // // Create the mailto link
-    // const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
-    //   subject,
-    // )}&body=${encodeURIComponent(body)}`;
-
-    // // Open the user's default email client
-    // window.location.href = mailtoLink;
     window.open('mailto:email@example.com');
   };
 
@@ -153,9 +138,9 @@ const ContactDetails = () => {
               variant='contained'
               startIcon={<RiAddLine />}
               className='dwnload-btn primary-btn btn sky-blue-btn'
-              onClick={() => setIsFollowup(true)}
+              onClick={() => setIsEvent(true)}
             >
-              Follow up
+              Event
             </Button>
             <Button
               variant='contained'
@@ -232,7 +217,8 @@ const ContactDetails = () => {
         handleClose={handlelogactivityClose}
       />
 
-      <FollowupDialog open={isFollowup} handleClose={handlefollowupClose} />
+      {/* <FollowupDialog open={isFollowup} handleClose={handlefollowupClose} /> */}
+      <AddeventDialog open={isEvent} handleClose={handleeventClose} />
 
       <SendemailDialog open={isSendemail} handleClose={handlesendemailClose} />
     </>
