@@ -299,3 +299,38 @@ a {
   height: 360px;
   cursor: move;
 }
+
+.dashboard-calendar-wrapper {
+  cursor: move;
+  .dashboard-calendar {
+    @media (min-width: 899px) {
+      height: 284px;
+    } 
+     
+    .react-calendar {
+      border: none;
+      * {
+        font-size: 13px;
+      }
+      .react-calendar__navigation {
+        button {
+          font-size: 22px;
+          span {
+            font-size: 16px;
+          }
+        }
+      }
+      .react-calendar__viewContainer {
+        .react-calendar__month-view__weekdays__weekday {
+          abbr {
+            font-size: 12px;
+          }
+        }
+      }
+      .react-calendar__tile--now{
+        background: #dfe8fa;
+        color: #4381fd;
+      }
+    }
+  }
+}

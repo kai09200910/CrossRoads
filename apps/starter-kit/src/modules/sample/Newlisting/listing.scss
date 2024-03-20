@@ -291,3 +291,30 @@ ul.MuiMenu-list {
   //   }
   // }
 }
+.required-fields-dailog{
+  .table-wrapper{
+    border-radius: 10px;
+    table{
+      thead{
+        tr{
+          th{
+            background: #999999;
+            background-color: #f9f9f9 !important;
+            font-size: 12px !important;
+            padding: 4px 16px !important;
+          }
+        } 
+      }
+    } 
+  }
+  .go-to-btn{
+    height: 32px;
+    width: 32px;
+    color: #fff;
+    background-color: #2871ff;
+    padding: 4px;
+  }
+  .modal-dailog-footer{
+    justify-content: flex-end;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import { Box, Container, Paper, Stack } from '@mui/material';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -10,6 +10,7 @@ import PropertyDetails from './propertyDetails';
 import PropertyMedia from './propertyMedia';
 
 import './listing.scss';
+import RequiredfieldsDialog from './requiredfieldsDialog';
 
 const steps = ['Listing details', 'Property details', 'Listing media'];
 
@@ -47,12 +48,29 @@ const NewListing = () => {
   const getStepContent = (step) => {
     switch (step) {
       case 0:
-        return <ListingDetails borderColor={borderColor} setBorderColor={setBorderColor}/>;
-                 {/* Pass the state and functions as props to ListingDetails */}
+        return (
+          <ListingDetails
+            borderColor={borderColor}
+            setBorderColor={setBorderColor}
+          />
+        );
+        {
+          /* Pass the state and functions as props to ListingDetails */
+        }
       case 1:
-        return <PropertyDetails  borderColor={borderColor} setBorderColor={setBorderColor}/>;
+        return (
+          <PropertyDetails
+            borderColor={borderColor}
+            setBorderColor={setBorderColor}
+          />
+        );
       case 2:
-        return <PropertyMedia borderColor={borderColor} setBorderColor={setBorderColor} />;
+        return (
+          <PropertyMedia
+            borderColor={borderColor}
+            setBorderColor={setBorderColor}
+          />
+        );
 
       default:
         break;
@@ -63,6 +81,16 @@ const NewListing = () => {
 
   const handleShowRequiredFields = () => {
     setBorderColor('red');
+  };
+
+  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
+
+  const handleBuyerOpen = () => {
+    setIsBuyerDialogOpen(true);
+  };
+
+  const handleBuyerClose = () => {
+    setIsBuyerDialogOpen(false);
   };
 
   const handleContinue = () => {
@@ -162,20 +190,22 @@ const NewListing = () => {
                     <Button
                       variant='contained'
                       size='large'
-                      onClick={handleNext}
+                      onClick={activeStep === 2 ? handleBuyerOpen : handleNext}
                       className='primary-btn btn'
                     >
                       {activeStep === steps.length - 1 ? 'Finish' : 'Continue'}
                     </Button>
                   </Stack>
-          
-                    
                 </Box>
               </React.Fragment>
             )}
           </Box>
         </Container>
       </Paper>
+      <RequiredfieldsDialog
+        open={isBuyerDialogOpen}
+        handleClose={handleBuyerClose}
+      />
     </>
   );
 };

@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import React from 'react';
 import MediaTabs from './mediaTabs';
-import { RiSearchLine, RiUpload2Line } from 'react-icons/ri';
+import {  RiUpload2Line } from 'react-icons/ri';
 
 const PropertyMedia = ({ borderColor, setBorderColor }) => {
   return (

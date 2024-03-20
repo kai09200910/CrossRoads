@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Stack, Button, Typography, Switch } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -6,15 +6,12 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-
 import {
   RiAddLine,
   RiArrowRightLine,
   RiErrorWarningFill,
-  RiPencilFill,
 } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
-import ListingalertDialog from '../listingalertDialog';
 
 function createData(by, name, date, status, email) {
   return {
@@ -50,14 +47,12 @@ const rows = [
   ),
 ];
 
-const ListingalertsTab = () => {
-  const navigate = useNavigate();
-  const [isListingalert, setIsListingalert] = useState(false);
-  const handlelistingalertClose = () => {
-    setIsListingalert(false);
-  };
+const EmailcampaignsTab = () => {
 
-  const [alertDailogTitle, setAlertDailogTitle] = useState(false);
+  const navigate = useNavigate();
+  const navigateToOpen = () => {
+    navigate('/campaigns/create');
+  };
 
   return (
     <>
@@ -78,10 +73,7 @@ const ListingalertsTab = () => {
             size='small'
             autoFocus
             className='primary-btn secondary-btn'
-            onClick={() => {
-              setIsListingalert(true);
-              setAlertDailogTitle('Create listing alert');
-            }}
+            onClick={navigateToOpen}
           >
             <RiAddLine size={18} />
             Add
@@ -209,13 +201,8 @@ const ListingalertsTab = () => {
           </TableContainer>
         </Box>
       </Box>
-      <ListingalertDialog
-        open={isListingalert}
-        handleClose={handlelistingalertClose}
-        title={alertDailogTitle}
-      />
     </>
   );
 };
 
-export default ListingalertsTab;
+export default EmailcampaignsTab;

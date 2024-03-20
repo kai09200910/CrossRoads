@@ -61,6 +61,7 @@
     "react-app-polyfill": "^3.0.0",
     "react-big-calendar": "^1.6.9",
     "react-bottom-scroll-listener": "^5.1.0",
+    "react-calendar": "^4.8.0",
     "react-chartjs-2": "^5.2.0",
     "react-code-input": "^3.10.1",
     "react-color": "^2.19.3",
