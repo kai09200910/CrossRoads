@@ -10,8 +10,7 @@ import NewContacts from './newcontacts';
 import TaskList from './tasklist';
 import Instagram from './instagram';
 import SocialMediafeed from './socialmediafeed';
-
-
+import CalendarEvent from './calendarEvent';
 
 const DraggableComponent = ({ id, children, onDrop }) => {
   const ref = useRef(null);
@@ -95,10 +94,11 @@ const DraggableComponent = ({ id, children, onDrop }) => {
 
 const Dashboard = () => {
   const [components, setComponents] = React.useState([
-    'RecentInquires',
+    'NewLeads',
     'NewContacts',
-    'CommissionOutline',
+    'Calendar',
     'TaskList',
+    'CommissionOutline',
     'Instagram',
     'SocialMediafeed',
   ]);
@@ -122,16 +122,20 @@ const Dashboard = () => {
         <Grid container spacing={5} mt={0} pt={0}>
           {components.map((component, index) => (
             <Grid
-            item
-            key={index}
-            xs={12}
-            pt={0}
-            md={(component === 'Instagram' || component === 'SocialMediafeed') ? 6 : 3}
-          >
-         <DraggableComponent id={index} onDrop={handleDrop}>
+              item
+              key={index}
+              xs={12}
+              pt={0}
+              md={
+                component === 'Instagram' || component === 'SocialMediafeed'
+                  ? 6
+                  : 3
+              }
+            >
+              <DraggableComponent id={index} onDrop={handleDrop}>
                 {(() => {
                   switch (component) {
-                    case 'RecentInquires':
+                    case 'NewLeads':
                       return <NewLeads />;
                     case 'NewContacts':
                       return <NewContacts />;
@@ -141,6 +145,8 @@ const Dashboard = () => {
                       return <Instagram />;
                     case 'SocialMediafeed':
                       return <SocialMediafeed />;
+                    case 'Calendar':
+                      return <CalendarEvent />;
                     default:
                       return <CommissionOutline />;
                   }

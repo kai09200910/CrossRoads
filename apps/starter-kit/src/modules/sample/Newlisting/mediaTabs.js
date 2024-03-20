@@ -19,7 +19,7 @@ const MediaTabs = () => {
         <StyledTabsList>
           <StyledTab value={0}>Photos</StyledTab>
           <StyledTab value={1}>Videos</StyledTab>
-          <StyledTab value={2}>Additional links</StyledTab>
+          {/* <StyledTab value={2}>Additional links</StyledTab> */}
           {/* <StyledTab value={3}>Websites </StyledTab>
           <StyledTab value={4}>Brochures </StyledTab> */}
         </StyledTabsList>
@@ -30,9 +30,9 @@ const MediaTabs = () => {
         <StyledTabPanel value={1}>
           <MediavideosTable isAdmin={false} />
         </StyledTabPanel>
-        <StyledTabPanel value={2}>
+        {/* <StyledTabPanel value={2}>
           <AdditionallinkTab isAdmin={false} />
-        </StyledTabPanel>
+        </StyledTabPanel> */}
         {/* <StyledTabPanel value={3}>
           <MediawebsitesTable isAdmin={false} />
         </StyledTabPanel>
