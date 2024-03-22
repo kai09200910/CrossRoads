@@ -395,7 +395,8 @@ ul.MuiList-root {
     margin: 24px 0 8px 0;
   }
 }
-.genral-tab, .create-listing-alert-modal {
+.genral-tab,
+.create-listing-alert-modal {
   label.MuiFormControlLabel-root {
     margin-right: 8px;
     margin-bottom: 0;
@@ -613,41 +614,45 @@ ul.MuiList-root {
 // Contact Email Flow Styles //
 
 .automated-email-intro {
-  .tag-input {
-    .MuiInputBase-root {
-      background-color: #fff;
-      .MuiInputBase-input.MuiOutlinedInput-input {
-        width: 100%;
+  .category-row-wrap {
+    display: flex;
+    gap: 16px;
+    .tag-input {
+      .MuiInputBase-root {
+        background-color: #fff;
+        .MuiInputBase-input.MuiOutlinedInput-input {
+          width: 100%;
+        }
       }
     }
-  }
-  .tag-wrap {
-    .tag-list {
-      padding: 6px;
-      background-color: #fff;
-      border: 1px solid #c4c4c4;
-      border-radius: 8px;
-      display: inline-flex;
-      gap: 6px;
-      .tag {
-        background-color: #dfe8fa;
-        color: #2871ff;
-        border-radius: 4px;
-        padding: 8px;
+    .tag-wrap {
+      .tag-list {
+        padding: 6px;
+        background-color: #fff;
+        border: 1px solid #c4c4c4;
+        border-radius: 8px;
         display: inline-flex;
-        span,
-        p,
-        svg {
+        gap: 6px;
+        .tag {
+          background-color: #dfe8fa;
           color: #2871ff;
-        }
-        p {
-          font-weight: 500;
-        }
-        button.MuiButtonBase-root {
-          padding: 0 2px;
-          margin: 0;
-          &:hover {
-            background-color: transparent;
+          border-radius: 4px;
+          padding: 8px;
+          display: inline-flex;
+          span,
+          p,
+          svg {
+            color: #2871ff;
+          }
+          p {
+            font-weight: 500;
+          }
+          button.MuiButtonBase-root {
+            padding: 0 2px;
+            margin: 0;
+            &:hover {
+              background-color: transparent;
+            }
           }
         }
       }
@@ -798,3 +803,20 @@ ul.MuiList-root {
   }
 }
 // Contact Email Flow Styles END //
+
+.modal-dailog-wrapper.draft-email-dailog {
+  .editior-controll {
+    .ql-toolbar {
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,.2)!important;
+      border-radius: 5px 5px 0 0;
+    }
+    .ql-container {
+      border-radius: 0 0 5px 5px;
+      .ql-editor {
+        min-height: 300px;
+        height: 300px;
+        overflow-y: auto;
+      }
+    }
+  }
+}
