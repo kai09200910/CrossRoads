@@ -83,14 +83,14 @@ const NewListing = () => {
     setBorderColor('red');
   };
 
-  const [isBuyerDialogOpen, setIsBuyerDialogOpen] = useState(false);
+  const [isRequiredfieldsDialogOpen, setIsRequiredfieldsDialogOpen] = useState(false);
 
-  const handleBuyerOpen = () => {
-    setIsBuyerDialogOpen(true);
+  const handleRequiredfieldsOpen = () => {
+    setIsRequiredfieldsDialogOpen(true);
   };
 
-  const handleBuyerClose = () => {
-    setIsBuyerDialogOpen(false);
+  const handleRequiredfieldsClose = () => {
+    setIsRequiredfieldsDialogOpen(false);
   };
 
   const handleContinue = () => {
@@ -190,7 +190,7 @@ const NewListing = () => {
                     <Button
                       variant='contained'
                       size='large'
-                      onClick={activeStep === 2 ? handleBuyerOpen : handleNext}
+                      onClick={activeStep === 2 ? handleRequiredfieldsOpen : handleNext}
                       className='primary-btn btn'
                     >
                       {activeStep === steps.length - 1 ? 'Finish' : 'Continue'}
@@ -203,8 +203,8 @@ const NewListing = () => {
         </Container>
       </Paper>
       <RequiredfieldsDialog
-        open={isBuyerDialogOpen}
-        handleClose={handleBuyerClose}
+        open={isRequiredfieldsDialogOpen}
+        handleClose={handleRequiredfieldsClose}
       />
     </>
   );

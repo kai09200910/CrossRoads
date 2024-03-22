@@ -16,11 +16,18 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { RiAddFill, RiArrowDownSLine, RiCloseFill } from 'react-icons/ri';
+import {
+  RiAddFill,
+  RiArrowDownSLine,
+  RiCloseFill,
+  RiMailLine,
+  RiPencilLine,
+} from 'react-icons/ri';
 import TagsInput from '../../../common/tagsInput';
 import Template from './template';
 import '../../contacts.scss';
 import SubmittedDialogs from '../dailogs/submittedDialog';
+import ComposemailDialog from './composemailDialog';
 
 const AutomatedEmail = () => {
   const location = useLocation();
@@ -58,11 +65,20 @@ const AutomatedEmail = () => {
   const handleSwitchChange = () => {
     setShowTag(!showTag);
   };
-  
+
+  const [isRequiredfieldsDialogOpen, setIsRequiredfieldsDialogOpen] = useState(false);
+
+  const handleRequiredfieldsOpen = () => {
+    setIsRequiredfieldsDialogOpen(true);
+  };
+
+  const handleRequiredfieldsClose = () => {
+    setIsRequiredfieldsDialogOpen(false);
+  };
+
 
   return (
     <>
-
       <Box
         sx={{
           marginBottom: { xs: 3, sm: 3, lg: 4 },
@@ -93,7 +109,7 @@ const AutomatedEmail = () => {
             New campaign
           </Button>
         </Stack>
-        <Grid container spacing={3} justifyContent='flex-start'>
+        <Grid container spacing={3} justifyContent='flex-start'  alignItems="flex-end" className='category-row-wrap'>
           <Grid item xs={12} sm={4} md={4}>
             <Box variant='div' component='div'>
               <label>Select Category </label>
@@ -128,11 +144,10 @@ const AutomatedEmail = () => {
               </Select>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={4} md={3}>
-            
-              <Box variant='div' component='div' className='tag-wrap'>
-                <label className='empty-label'> </label>
-                {/* <TagsInput
+          {/* <Grid item xs={12} sm={4} md={3}> */}
+          <Box variant='div' component='div' className='tag-wrap'>
+            <label className='empty-label'> </label>
+            {/* <TagsInput
                 selectedTags={handleSelecetedTags}
                 fullWidth
                 variant='outlined'
@@ -141,47 +156,68 @@ const AutomatedEmail = () => {
                 placeholder='Tags appear based on templates selected'
                 className='tag-input'
               /> */}
-                <Box variant='div' component='div' className='tag-list'>
-                {showTag && (
-                  <Stack
-                    direction='row'
-                    justifyContent='center'
-                    alignItems='center'
-                    spacing={1}
-                    className='tag'
-                  >
-                    <Typography variant='span' component='span'>
-                      (2)
-                    </Typography>
-                    <Typography variant='p' component='p'>
-                      Buyer
-                    </Typography>
-                    <IconButton aria-label='edit' className='color-blue'>
-                      <RiCloseFill size={22} />
-                    </IconButton>
-                  </Stack>
-   )}
-                  <Stack
-                    direction='row'
-                    justifyContent='center'
-                    alignItems='center'
-                    spacing={1}
-                    className='tag'
-                  >
-                    <Typography variant='span' component='span'>
-                      (1)
-                    </Typography>
-                    <Typography variant='p' component='p'>
-                      Holiday
-                    </Typography>
-                    <IconButton aria-label='edit' className='color-blue'>
-                      <RiCloseFill size={22} />
-                    </IconButton>
-                  </Stack>
-                </Box>
-              </Box>
-         
-          </Grid>
+            <Box variant='div' component='div' className='tag-list'>
+              {showTag && (
+                <Stack
+                  direction='row'
+                  justifyContent='center'
+                  alignItems='center'
+                  spacing={1}
+                  className='tag'
+                >
+                  <Typography variant='span' component='span'>
+                    (2)
+                  </Typography>
+                  <Typography variant='p' component='p'>
+                    Buyer
+                  </Typography>
+                  <IconButton aria-label='edit' className='color-blue'>
+                    <RiCloseFill size={22} />
+                  </IconButton>
+                </Stack>
+              )}
+              <Stack
+                direction='row'
+                justifyContent='center'
+                alignItems='center'
+                spacing={1}
+                className='tag'
+              >
+                <Typography variant='span' component='span'>
+                  (1)
+                </Typography>
+                <Typography variant='p' component='p'>
+                  Holiday
+                </Typography>
+                <IconButton aria-label='edit' className='color-blue'>
+                  <RiCloseFill size={22} />
+                </IconButton>
+              </Stack>
+            </Box>
+          </Box>
+          {/* </Grid> */}
+
+          <Box variant='div' component='div'>
+            <label className='empty-label'></label>
+            <Button
+              variant='contained'
+              size='large'
+              className='secondary-btn btn add-location-btn '
+              startIcon={<RiMailLine size={18} />}
+              onClick={handleRequiredfieldsOpen}
+            >
+              Compose
+            </Button>
+            {/* <Button
+              variant='outlined'
+              size='small'
+              className='edit-btn secondary-btn-small'
+              onClick={navigateToCreate}
+              startIcon={<RiPencilLine size={18} />}
+            >
+              Compose
+            </Button> */}
+          </Box>
         </Grid>
       </Box>
       <Paper>
@@ -256,33 +292,24 @@ const AutomatedEmail = () => {
 
           <Box sx={{ my: 2 }}>
             <Box className='template-list'>
-              <Template
-                handleSwitchChange={handleSwitchChange}
-              />
-             <Template
-                handleSwitchChange={handleSwitchChange}
-              />
-              <Template
-                handleSwitchChange={handleSwitchChange}
-              />
-              <Template
-                handleSwitchChange={handleSwitchChange}
-              />
-              <Template
-                handleSwitchChange={handleSwitchChange}
-              />
-              <Template
-                handleSwitchChange={handleSwitchChange}
-              />
-              <Template
-                handleSwitchChange={handleSwitchChange}
-              />
+              <Template handleSwitchChange={handleSwitchChange} />
+              <Template handleSwitchChange={handleSwitchChange} />
+              <Template handleSwitchChange={handleSwitchChange} />
+              <Template handleSwitchChange={handleSwitchChange} />
+              <Template handleSwitchChange={handleSwitchChange} />
+              <Template handleSwitchChange={handleSwitchChange} />
+              <Template handleSwitchChange={handleSwitchChange} />
             </Box>
           </Box>
         </Box>
       </Paper>
 
       <SubmittedDialogs open={isSubmitted} handleClose={handleClose} />
+
+      <ComposemailDialog
+        open={isRequiredfieldsDialogOpen}
+        handleClose={handleRequiredfieldsClose}
+      />
     </>
   );
 };

@@ -176,7 +176,8 @@ const Approval = () => {
                 }}
               >
                 <MediaTabs />
-                {/* <Stack
+                
+                <Stack
                   direction='row'
                   justifyContent='end'
                   alignItems='center'
@@ -192,7 +193,9 @@ const Approval = () => {
                   >
                     Approve listing details
                   </Button>
-                </Stack> */}
+                </Stack>
+
+                
               </Box>
             </TabPanel>
             <TabPanel value='5'>
